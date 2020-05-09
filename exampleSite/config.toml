@@ -1,5 +1,5 @@
-baseURL = "https://example.com"
-title   = "Hello Friend NG"
+baseURL = "https://deardhruv.com"
+title   = "Dhruv's blog"
 
 DefaultContentLanguage = "en"
 
@@ -11,8 +11,8 @@ PygmentsStyle = "monokai"
 rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
-# googleAnalytics = ""
-# disqusShortname = ""
+# googleAnalytics = "230251097"
+# disqusShortname = "DearDhruv"
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -58,7 +58,7 @@ disableHugoGeneratorInject = false
   keywords = ""
   images = [""]
 
-  homeSubtitle = "Hello Friend NG"
+  homeSubtitle = "A step towards technology"
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   # gitUrl = ""
@@ -100,7 +100,7 @@ disableHugoGeneratorInject = false
   # Social icons
   [[params.social]]
     name = "twitter"
-    url  = "https://twitter.com/"
+    url  = "https://twitter.com/DearDhruv"
 
   [[params.social]]
     name = "email"
@@ -108,11 +108,11 @@ disableHugoGeneratorInject = false
 
   [[params.social]]
     name = "github"
-    url  = "https://github.com/"
+    url  = "https://github.com/DearDhruv"
 
   [[params.social]]
     name = "linkedin"
-    url  = "https://www.linkedin.com/"
+    url  = "https://www.linkedin.com/in/DearDhruv"
 
   [[params.social]]
     name = "stackoverflow"
