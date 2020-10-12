@@ -11,8 +11,8 @@ PygmentsStyle = "monokai"
 rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
-# googleAnalytics = "230251097"
-# disqusShortname = "DearDhruv"
+googleAnalytics = "230251097"
+disqusShortname = "DearDhruv"
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -38,7 +38,7 @@ disableHugoGeneratorInject = false
   posts = "/posts/:year/:month/:title/"
 
 [author]
-  name = "Jane Doe"
+  name = "Dhruv Patel"
 
 [blackfriday]
   hrefTargetBlank = true
