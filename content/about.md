@@ -6,14 +6,13 @@ aliases = ["about-us","about-hugo","contact"]
   name = "Dhruv Patel"
 +++
 
-Hugo is the **world’s fastest framework for building websites**. It is written in Go.
+Android Engineer, that's it!
 
-It makes use of a variety of open source projects including:
+Have you been here as well?:
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+* https://twitter.com/DearDhruv
+* https://instagram.com/DearDhruv
+* https://facebook.com/DearDhruv
+* https://linkedin.com/in/DearDhruv
 
 Learn more and contribute on [GitHub](https://github.com/gohugoio).
