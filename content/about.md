@@ -1,6 +1,6 @@
 +++
 title = "About"
-date = "10-05-2020"
+date = "03-08-2022"
 aliases = ["about-us","about-hugo","contact"]
 [ author ]
   name = "Dhruv Patel"
@@ -15,4 +15,4 @@ Have you been here as well?:
 * https://facebook.com/DearDhruv
 * https://linkedin.com/in/DearDhruv
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+Contribute on [GitHub](https://github.com/DearDhruv/deardhruv.com).
