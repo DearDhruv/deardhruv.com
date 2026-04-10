@@ -1,3 +1,10 @@
++++
+title = "Privacy Policy - Color Gate"
+date = "2026-04-10"
+[ author ]
+  name = "Dhruv Patel"
++++
+
 **Privacy Policy**
 
 This privacy policy applies to the Color Gate app (hereby referred to as "Application") for mobile devices that was created by Dhruv Patel (hereby referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".
