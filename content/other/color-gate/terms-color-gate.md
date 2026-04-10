@@ -1,3 +1,10 @@
++++
+title = "Terms & Conditions - Color Gate"
+date = "2026-04-10"
+[ author ]
+  name = "Dhruv Patel"
++++
+
 **Terms & Conditions**
 
 These terms and conditions apply to the Color Gate app (hereby referred to as "Application") for mobile devices that was created by Dhruv Patel (hereby referred to as "Service Provider") as an Ad Supported service.
