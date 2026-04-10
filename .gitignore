@@ -1,3 +1,8 @@
+# Hugo output
+public/
+resources/_gen/
+.hugo_build.lock
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -11,8 +16,8 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
-node_modules
-.vscode
-resources
+# Dependency directories
+node_modules/
+.vscode/
+.idea/
+.DS_Store

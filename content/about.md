@@ -1,6 +1,6 @@
 +++
 title = "About"
-date = "03-08-2022"
+date = "2022-08-03"
 aliases = ["about-us","about-hugo","contact"]
 [ author ]
   name = "Dhruv Patel"

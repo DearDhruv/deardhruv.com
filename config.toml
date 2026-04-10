@@ -37,9 +37,6 @@ disableHugoGeneratorInject = false
 [permalinks]
   posts = "/posts/:year/:month/:title/"
 
-[author]
-  name = "Dhruv Patel"
-
 [blackfriday]
   hrefTargetBlank = true
 
@@ -59,6 +56,23 @@ disableHugoGeneratorInject = false
   images = [""]
 
   homeSubtitle = "A step towards technology"
+
+  [params.Author]
+    name = "Dhruv Patel"
+    email = "dhruv@deardhruv.com"
+
+  [params.footer]
+    trademark = "Dhruv Patel"
+    author = true
+    copyright = true
+    rss = true
+    # topText = ["Left text", "Right text"]
+    bottomText = ["Powered by <a href=\"http://gohugo.io\">Hugo</a>", "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"]
+
+  # Plausible.io (Optional)
+  # plausibleDataDomain = ""
+  # plausibleScriptSource = ""
+
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   # gitUrl = ""
