@@ -1,5 +1,5 @@
 +++
-title = "Privacy Policy - Color Gate"
+title = "Privacy Policy - Veloci Hue"
 date = "2026-04-10"
 [ author ]
   name = "Dhruv Patel"
@@ -7,7 +7,7 @@ date = "2026-04-10"
 
 **Privacy Policy**
 
-This privacy policy applies to the Color Gate app (hereby referred to as "Application") for mobile devices that was created by Dhruv Patel (hereby referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".
+This privacy policy applies to the Veloci Hue app (hereby referred to as "Application") for mobile devices that was created by Dhruv Patel (hereby referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".
 
 **Information Collection and Use**
 

@@ -1,5 +1,5 @@
 +++
-title = "Terms & Conditions - Color Gate"
+title = "Terms & Conditions - Veloci Hue"
 date = "2026-04-10"
 [ author ]
   name = "Dhruv Patel"
@@ -7,7 +7,7 @@ date = "2026-04-10"
 
 **Terms & Conditions**
 
-These terms and conditions apply to the Color Gate app (hereby referred to as "Application") for mobile devices that was created by Dhruv Patel (hereby referred to as "Service Provider") as an Ad Supported service.
+These terms and conditions apply to the Veloci Hue app (hereby referred to as "Application") for mobile devices that was created by Dhruv Patel (hereby referred to as "Service Provider") as an Ad Supported service.
 
 Upon downloading or utilizing the Application, you are automatically agreeing to the following terms. It is strongly advised that you thoroughly read and understand these terms prior to using the Application.
 
