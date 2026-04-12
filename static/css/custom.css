@@ -1,3 +1,12 @@
 .content, .post-content {
     text-align: justify;
 }
+
+.portrait-img {
+    max-width: 180px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+}
