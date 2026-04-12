@@ -40,6 +40,11 @@ disableHugoGeneratorInject = false
   filename = "sitemap.xml"
   priority = 0.5
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
@@ -49,7 +54,7 @@ disableHugoGeneratorInject = false
   # Metadata mostly used in document's head
   description = "Dhruv Patel's personal blog about technology, Android engineering, and a step towards technology."
   keywords = "Dhruv Patel, DearDhruv, Android Engineer, Blog, Technology, Android Development, Software Engineering"
-  images = ["/pp/pro_pic.jpg"]
+  images = ["/images/pro_pic_small.jpg"]
 
   homeSubtitle = "Lead Android Engineer | A step towards technology"
 
