@@ -35,6 +35,11 @@ disableSitemap = false
 disable404     = false
 disableHugoGeneratorInject = false
 
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
@@ -165,3 +170,7 @@ disableHugoGeneratorInject = false
     identifier = "posts"
     name       = "Posts"
     url        = "posts/"
+  [[menu.main]]
+    identifier = "sitemap"
+    name       = "Sitemap"
+    url        = "sitemap/"
