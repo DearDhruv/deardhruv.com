@@ -5,8 +5,8 @@
                 <h1 class="post-title">{{ .Title }}</h1>
                 <div class="post-content">
                     <ul>
-                        {{ range .Site.Pages.ByTitle }}
-                            {{ if and (not .Draft) (ne .Kind "404") }}
+                        {{ range .Site.RegularPages.ByTitle }}
+                            {{ if and (not .Draft) (ne .RelPermalink "/sitemap/") }}
                                 <li>
                                     <a href="{{ .Permalink }}">{{ .Title | default .LinkTitle }}</a>
                                 </li>
