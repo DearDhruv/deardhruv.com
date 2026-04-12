@@ -11,8 +11,9 @@ PygmentsStyle = "monokai"
 rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
-googleAnalytics = "230251097"
-disqusShortname = "DearDhruv"
+[services]
+  [services.googleAnalytics]
+    ID = 'G-230251097' # Verify this ID, usually it starts with G- for modern GA4
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -22,7 +23,7 @@ publishDir   = "public"
 
 buildDrafts  = false
 buildFuture  = false
-buildExpored = false
+buildExpired = false
 canonifyURLs = true
 
 enableRobotsTXT = true
@@ -34,32 +35,32 @@ disableSitemap = false
 disable404     = false
 disableHugoGeneratorInject = false
 
-[permalinks]
-  posts = "/posts/:year/:month/:title/"
-
-[blackfriday]
-  hrefTargetBlank = true
-
-[taxonomies]
-  tag      = "tags"
-  category = "categories"
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
 
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04 -0700"
+  dateformNumTime = "2006-01-02 15:04"
 
   # Metadata mostly used in document's head
-  description = "Nice theme for homepages and blogs"
-  keywords = ""
-  images = [""]
+  description = "Dhruv Patel's personal blog about technology, Android engineering, and a step towards technology."
+  keywords = "Dhruv Patel, DearDhruv, Android Engineer, Blog, Technology, Android Development, Software Engineering"
+  images = ["/pp/pro_pic.jpg"]
 
-  homeSubtitle = "A step towards technology"
+  homeSubtitle = "Lead Android Engineer | A step towards technology"
 
   [params.Author]
     name = "Dhruv Patel"
-    email = "dhruv@deardhruv.com"
+    email = "dhruv.time@gmail.com"
+
+  # [params.portrait]
+  #   path     = "/pp/pro_pic.jpg"
+  #   alt      = "Dhruv Patel"
+  #   maxWidth = "100px"
 
   [params.footer]
     trademark = "Dhruv Patel"
@@ -68,6 +69,15 @@ disableHugoGeneratorInject = false
     rss = true
     # topText = ["Left text", "Right text"]
     bottomText = ["Powered by <a href=\"http://gohugo.io\">Hugo</a>", "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"]
+
+  # Enable theme toggle
+  enableThemeToggle = true
+
+  # Sharing buttons
+  enableSharingButtons = true
+
+  # Reading time
+  enableReadingTime = true
 
   # Plausible.io (Optional)
   # plausibleDataDomain = ""
@@ -146,10 +156,10 @@ disableHugoGeneratorInject = false
     weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
-  [languages.fr]
-    # subtitle  = "Hello Friend NG Theme"
-    weight    = 2
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+#  [languages.fr]
+#    # subtitle  = "Hello Friend NG Theme"
+#    weight    = 2
+#    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
 [menu]
   [[menu.main]]
@@ -160,3 +170,7 @@ disableHugoGeneratorInject = false
     identifier = "posts"
     name       = "Posts"
     url        = "posts/"
+  [[menu.main]]
+    identifier = "sitemap"
+    name       = "Sitemap"
+    url        = "sitemap/"

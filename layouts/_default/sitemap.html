@@ -1,0 +1,20 @@
+{{ define "main" }}
+    <div class="content">
+        <main class="post">
+            <article>
+                <h1 class="post-title">{{ .Title }}</h1>
+                <div class="post-content">
+                    <ul>
+                        {{ range .Site.RegularPages.ByTitle }}
+                            {{ if and (not .Draft) (ne .RelPermalink "/sitemap/") }}
+                                <li>
+                                    <a href="{{ .Permalink }}">{{ .Title | default .LinkTitle }}</a>
+                                </li>
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+            </article>
+        </main>
+    </div>
+{{ end }}
