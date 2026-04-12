@@ -51,11 +51,11 @@ disableHugoGeneratorInject = false
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Metadata mostly used in document's head
-  description = "Nice theme for homepages and blogs"
-  keywords = ""
+  description = "Dhruv Patel's personal blog about technology, Android engineering, and a step towards modern technology."
+  keywords = "Dhruv Patel, DearDhruv, Android Engineer, Blog, Technology, Android Development, Software Engineering"
   images = [""]
 
-  homeSubtitle = "A step towards technology"
+  homeSubtitle = "Android Engineer | A step towards technology"
 
   [params.Author]
     name = "Dhruv Patel"
@@ -146,10 +146,10 @@ disableHugoGeneratorInject = false
     weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
-  [languages.fr]
-    # subtitle  = "Hello Friend NG Theme"
-    weight    = 2
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+#  [languages.fr]
+#    # subtitle  = "Hello Friend NG Theme"
+#    weight    = 2
+#    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
 [menu]
   [[menu.main]]
