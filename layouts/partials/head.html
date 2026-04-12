@@ -1,6 +1,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Preconnect for performance -->
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
 {{/* Fixed .Site.Author for Hugo v0.123+ compatibility */}}
 {{ $author := .Params.author | default .Site.Params.author }}
 <meta name="author" content="{{ if reflect.IsMap $author }}{{ $author.name }}{{ else }}{{ $author }}{{ end }}">
@@ -44,8 +48,12 @@
 <!-- Icons -->
 {{- partial "favicons.html" . }}
 
+<!-- JSON-LD Structured Data -->
+{{- partial "json-ld.html" . }}
+
 {{ template "_internal/schema.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
+{{ template "_internal/google_analytics.html" . }}
 
 {{ if isset .Site.Taxonomies "series" }}
     {{ template "_internal/opengraph.html" . }}
