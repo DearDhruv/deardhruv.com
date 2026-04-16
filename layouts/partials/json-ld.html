@@ -1,0 +1,19 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ .Site.Params.Author.name }}",
+  "url": "{{ .Site.BaseURL }}",
+  "sameAs": [
+    {{ range $index, $social := .Site.Params.social }}
+      {{ if $index }},{{ end }}"{{ $social.url }}"
+    {{ end }}
+  ],
+  "jobTitle": "Lead Android Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Impact Commerce"
+  },
+  "description": "{{ .Site.Params.description }}"
+}
+</script>

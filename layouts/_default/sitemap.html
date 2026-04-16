@@ -6,7 +6,7 @@
                 <div class="post-content">
                     <ul>
                         {{ range .Site.RegularPages.ByTitle }}
-                            {{ if and (not .Draft) (ne .RelPermalink "/sitemap/") }}
+                            {{ if and (not .Draft) (ne .RelPermalink "/sitemap/") (ne .RelPermalink "/privacy-policy/") }}
                                 <li>
                                     <a href="{{ .Permalink }}">{{ .Title | default .LinkTitle }}</a>
                                 </li>

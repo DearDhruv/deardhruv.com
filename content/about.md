@@ -6,7 +6,7 @@ aliases = ["about-us","about-hugo","contact"]
   name = "Dhruv Patel"
 +++
 
-<img src="/pp/pro_pic.jpg" alt="Dhruv Patel" class="portrait-img" />
+<img src="/pp/pro_pic.jpg" alt="Dhruv Patel" class="portrait-img" loading="lazy" />
 
 # 👋 I'm Dhruv Patel
 
