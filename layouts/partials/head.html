@@ -1,6 +1,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
 <!-- Preconnect for performance -->
 <link rel="preconnect" href="https://www.google-analytics.com">
@@ -10,7 +14,11 @@
 <meta name="author" content="{{ if reflect.IsMap $author }}{{ $author.name }}{{ else }}{{ $author }}{{ end }}">
 <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .Description }}{{ .Description }}{{ else }}{{ .Summary | plainify }}{{ end }}" />
 <meta name="keywords" content="{{ .Site.Params.keywords }}{{ if .Params.tags }}{{ range .Params.tags }}, {{ . }}{{ end }}{{ end }}" />
+{{ if or .Params.noindex (eq .Kind "taxonomy") (eq .Kind "term") }}
+<meta name="robots" content="noindex, follow" />
+{{ else }}
 <meta name="robots" content="noodp" />
+{{ end }}
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
