@@ -1,13 +1,12 @@
 +++
 title = "Terms & Conditions - Veloci Hue"
-date = "2026-04-10"
+date = "2026-04-19"
 [ author ]
   name = "Dhruv Patel"
 +++
-
 **Terms & Conditions**
 
-These terms and conditions apply to the Veloci Hue app (hereby referred to as "Application") for mobile devices that was created by Dhruv Patel (hereby referred to as "Service Provider") as an Ad Supported service.
+These terms and conditions apply to the Veloci Hue app (hereby referred to as "Application") for mobile devices that was created by DearDhruv (hereby referred to as "Service Provider") as an Ad Supported service.
 
 Upon downloading or utilizing the Application, you are automatically agreeing to the following terms. It is strongly advised that you thoroughly read and understand these terms prior to using the Application.
 
@@ -19,7 +18,10 @@ The Application stores and processes personal data that you have provided to the
 
 Please note that the Application utilizes third-party services that have their own Terms and Conditions. Below are the links to the Terms and Conditions of the third-party service providers used by the Application:
 
+*   [Google Play Services](https://policies.google.com/terms)
 *   [AdMob](https://developers.google.com/admob/terms)
+*   [Google Analytics for Firebase](https://www.google.com/analytics/terms/)
+*   [Firebase Crashlytics](https://firebase.google.com/terms/crashlytics)
 
 Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.
 
@@ -35,7 +37,7 @@ The Service Provider may wish to update the application at some point. The appli
 
 The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.
 
-These terms and conditions are effective as of 2026-04-10
+These terms and conditions are effective as of 2026-04-19
 
 **Contact Us**
 
