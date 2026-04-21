@@ -18,7 +18,6 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 archetypeDir = "archetypes"
 contentDir   = "content"
 dataDir      = "data"
-layoutDir    = "layouts"
 publishDir   = "public"
 
 buildDrafts  = false
@@ -75,9 +74,6 @@ disableHugoGeneratorInject = false
     # topText = ["Left text", "Right text"]
     bottomText = ["Powered by <a href=\"http://gohugo.io\">Hugo</a>", "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"]
 
-  # Enable theme toggle
-  enableThemeToggle = true
-
   # Sharing buttons
   enableSharingButtons = true
 
@@ -120,11 +116,11 @@ disableHugoGeneratorInject = false
     logoText     = "$ cd /home/"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
-    # logoCursorDisabled = false
+    logoCursorDisabled = false
     # Set to a valid CSS color to change the cursor in the logo.
-    # logoCursorColor    = "#67a2c9"
+    logoCursorColor    = "#fe5186"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
-    # logoCursorAnimate  = "2s"
+    logoCursorAnimate  = "1s"
 
   # Social icons
   [[params.social]]
@@ -155,11 +151,12 @@ disableHugoGeneratorInject = false
   #   name = "email"
   #   url  = "mailto:nobody@example.com"
 
-[languages]
-  [languages.en]
+[languages.en]
     # subtitle  = "Hello Friend NG Theme"
     weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    [languages.en.params]
+      EnableThemeToggle = true
 
 #  [languages.fr]
 #    # subtitle  = "Hello Friend NG Theme"
