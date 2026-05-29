@@ -1,5 +1,5 @@
 +++
-title = "Privacy Policy - Veloci Hue"
+title = "Privacy Policy - Open Store"
 date = "2026-05-29"
 [ author ]
   name = "Dhruv Patel"
