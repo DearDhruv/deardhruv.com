@@ -61,6 +61,26 @@ HUGO_ENABLEGITINFO = "true"
     Content-Type = "application/linkset+json"
 
 [[headers]]
+  for = "/.well-known/oauth-protected-resource"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[headers]]
+  for = "/.well-known/oauth-authorization-server"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[headers]]
+  for = "/.well-known/openid-configuration"
+  [headers.values]
+    Content-Type = "application/json"
+
+[[headers]]
+  for = "/auth.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
+[[headers]]
   for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
