@@ -26,9 +26,9 @@ buildExpired = false
 canonifyURLs = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "Markdown"]
   page = ["HTML", "Markdown"]
-  section = ["HTML", "RSS"]
+  section = ["HTML", "RSS", "Markdown"]
 
 [outputFormats.Markdown]
   mediaType = "text/markdown"

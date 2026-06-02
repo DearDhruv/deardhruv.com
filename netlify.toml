@@ -33,6 +33,10 @@ HUGO_VERSION = "0.160.1"
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
 
+[[edge_functions]]
+  path = "/*"
+  function = "markdown-negotiation"
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -1,4 +1,4 @@
-# Authentication for Dhruv's Blog
+# Auth.md
 
 This site is a public technical blog. AI agents are welcome to access all content without authentication.
 
