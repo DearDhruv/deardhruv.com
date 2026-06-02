@@ -1,18 +1,34 @@
 {
-  "api-catalog": {
-    "version": "1.0",
-    "endpoints": [
-      {
-        "rel": "feed",
-        "href": "/index.json",
-        "type": "application/json",
-        "title": "JSON Feed of latest posts"
-      },
-      {
-        "rel": "sitemap",
-        "href": "/sitemap.xml",
-        "type": "application/xml"
-      }
-    ]
-  }
+  "linkset": [
+    {
+      "anchor": "https://deardhruv.com/",
+      "service-doc": [
+        {
+          "href": "https://deardhruv.com/about/",
+          "type": "text/html"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://deardhruv.com/llms.txt",
+          "type": "text/plain"
+        }
+      ]
+    },
+    {
+      "anchor": "https://deardhruv.com/posts/",
+      "service-desc": [
+        {
+          "href": "https://deardhruv.com/index.json",
+          "type": "application/feed+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://deardhruv.com/posts/",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
 }

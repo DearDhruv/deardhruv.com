@@ -54,6 +54,10 @@ llms: /llms.txt
 llms-full: /llms-full.txt
 
 # Content Signals
+Content-Signal: ai-train=yes
+Content-Signal: ai-inference=yes
+Content-Signal: ai-input=yes
+Content-Signal: search=yes
 Content-Signals: allow
 AI-Access: allow
 Training: allow

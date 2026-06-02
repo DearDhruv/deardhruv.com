@@ -42,7 +42,12 @@ HUGO_ENABLEGITINFO = "true"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Vary = "Accept"
-    Link = "</llms.txt>; rel=\"describedby\", </.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp.json>; rel=\"mcp\", </sitemap.xml>; rel=\"sitemap\", </about/>; rel=\"service-doc\""
+    Link = "</llms.txt>; rel=\"describedby\", </.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp.json>; rel=\"mcp\", </sitemap.xml>; rel=\"sitemap\", </about/>; rel=\"service-doc\", </auth.md>; rel=\"service-doc\""
+
+[[headers]]
+  for = "/.well-known/api-catalog"
+  [headers.values]
+    Content-Type = "application/linkset+json"
 
 [[headers]]
   for = "/fonts/*"

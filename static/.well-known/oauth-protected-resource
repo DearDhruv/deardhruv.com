@@ -1,0 +1,9 @@
+{
+  "resource": "https://deardhruv.com",
+  "authorization_servers": [
+    "https://deardhruv.com"
+  ],
+  "scopes_supported": [
+    "read"
+  ]
+}

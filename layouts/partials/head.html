@@ -100,6 +100,41 @@
 <link rel="describedby" href="/llms.txt">
 <link rel="mcp" href="/.well-known/mcp.json">
 <link rel="api-catalog" href="/.well-known/api-catalog">
+<link rel="service-doc" href="/auth.md">
+
+<!-- WebMCP -->
+<script>
+    if (navigator.modelContext && navigator.modelContext.provideContext) {
+        navigator.modelContext.provideContext({
+            tools: [
+                {
+                    name: "get_latest_posts",
+                    description: "Returns the latest blog posts from deardhruv.com",
+                    inputSchema: {
+                        type: "object",
+                        properties: {
+                            count: { type: "number", default: 5 }
+                        }
+                    },
+                    execute: async ({ count }) => {
+                        const response = await fetch('/index.json');
+                        const data = await response.json();
+                        return data.items.slice(0, count);
+                    }
+                },
+                {
+                    name: "get_about_info",
+                    description: "Returns information about the author, Dhruv Patel",
+                    inputSchema: { type: "object", properties: {} },
+                    execute: async () => {
+                        const response = await fetch('/about/index.md');
+                        return await response.text();
+                    }
+                }
+            ]
+        });
+    }
+</script>
 
 <!-- JSON Feed -->
 {{ if .OutputFormats.Get "json" }}
