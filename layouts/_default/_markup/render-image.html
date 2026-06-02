@@ -1,0 +1,35 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $src := .Destination -}}
+{{- $isRemote := or $u.Scheme $u.Host -}}
+{{- $img := "" -}}
+{{- if not $isRemote -}}
+  {{- $img = .Page.Resources.GetMatch .Destination -}}
+  {{- if not $img -}}
+    {{- $img = resources.Get .Destination -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $img -}}
+  {{- $webp := $img.Resize "1200x webp" -}}
+  <figure>
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+      <img src="{{ $img.RelPermalink }}"
+           alt="{{ .Text }}"
+           {{ with .Title }}title="{{ . }}"{{ end }}
+           loading="lazy"
+           decoding="async"
+           width="{{ $img.Width }}"
+           height="{{ $img.Height }}">
+    </picture>
+    {{- if .Text -}}
+      <figcaption>{{ .Text | safeHTML }}</figcaption>
+    {{- end -}}
+  </figure>
+{{- else -}}
+  <img src="{{ .Destination | safeURL }}"
+       alt="{{ .Text }}"
+       {{ with .Title }}title="{{ . }}"{{ end }}
+       loading="lazy"
+       decoding="async">
+{{- end -}}

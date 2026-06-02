@@ -65,9 +65,38 @@
 
 {{ range $val := $.Site.Params.customCSS }}
     {{ if gt (len $val) 0 }}
-        <link rel="stylesheet" type="text/css" href="{{ $val }}">
+        {{ $customStyle := resources.Get $val }}
+        {{ if $customStyle }}
+            {{ $style := $customStyle | minify | fingerprint }}
+            <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+        {{ else }}
+            <link rel="stylesheet" type="text/css" href="{{ $val | relURL }}">
+        {{ end }}
     {{ end }}
 {{ end }}
+
+<!-- Performance Hints -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+<!-- Speculative Prefetching -->
+<script type="module">
+    const prefetchLink = (url) => {
+        if (url && !document.querySelector(`link[rel="prefetch"][href="${url}"]`)) {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = url;
+            document.head.appendChild(link);
+        }
+    };
+
+    document.addEventListener('mouseover', (e) => {
+        const a = e.target.closest('a');
+        if (a && a.href && a.origin === location.origin && !a.href.includes('#')) {
+            prefetchLink(a.href);
+        }
+    }, { passive: true });
+</script>
 
 <!-- Icons -->
 {{- partial "favicons.html" . }}
