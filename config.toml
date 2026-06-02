@@ -36,7 +36,7 @@ canonifyURLs = true
   isPlainText = true
   notAlternative = true
 
-enableRobotsTXT = true
+enableRobotsTXT = false
 enableGitInfo   = false
 enableEmoji     = true
 enableMissingTranslationPlaceholders = false

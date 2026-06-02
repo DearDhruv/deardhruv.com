@@ -47,7 +47,7 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
-Sitemap: {{ .Site.BaseURL }}sitemap.xml
+Sitemap: https://deardhruv.com/sitemap.xml
 
 # LLM Metadata
 llms: /llms.txt

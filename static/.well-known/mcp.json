@@ -9,7 +9,7 @@
   },
   "transport": {
     "type": "streamable-http",
-    "url": "https://deardhruv.com/mcp.json"
+    "url": "https://deardhruv.com/.well-known/mcp.json"
   },
   "capabilities": {
     "resources": [
