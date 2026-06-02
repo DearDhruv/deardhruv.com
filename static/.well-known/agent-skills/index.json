@@ -1,0 +1,16 @@
+{
+  "skills": [
+    {
+      "id": "read-blog",
+      "name": "Read Blog Posts",
+      "description": "Retrieve and parse technical blog posts about Android engineering.",
+      "url": "https://deardhruv.com/posts/"
+    },
+    {
+      "id": "discover-content",
+      "name": "Discover Content",
+      "description": "Use the llms.txt or sitemap.xml to discover all available content on the site.",
+      "url": "https://deardhruv.com/llms.txt"
+    }
+  ]
+}

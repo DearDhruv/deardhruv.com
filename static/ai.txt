@@ -2,3 +2,7 @@ User-agent: *
 Permissions:
   - read
   - crawl
+  - index
+  - inference
+  - training
+  - search

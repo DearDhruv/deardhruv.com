@@ -1,0 +1,18 @@
+{
+  "api-catalog": {
+    "version": "1.0",
+    "endpoints": [
+      {
+        "rel": "feed",
+        "href": "/index.json",
+        "type": "application/json",
+        "title": "JSON Feed of latest posts"
+      },
+      {
+        "rel": "sitemap",
+        "href": "/sitemap.xml",
+        "type": "application/xml"
+      }
+    ]
+  }
+}

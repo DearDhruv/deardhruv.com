@@ -1,29 +1,61 @@
 User-agent: *
-Disallow: /pp/
-Disallow: /test/
 Allow: /
 
-# AI Agent Rules
+# AI Agent Rules - Full Access
 User-agent: GPTBot
-Disallow:
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
 
 User-agent: Claude-bot
-Disallow:
+Allow: /
+
+User-agent: ClaudeWeb
+Allow: /
 
 User-agent: Google-Extended
-Disallow:
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
 
 User-agent: PerplexityBot
-Disallow:
+Allow: /
 
 User-agent: YouBot
-Disallow:
+Allow: /
 
 User-agent: PiplBot
-Disallow:
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
 
 Sitemap: {{ .Site.BaseURL }}sitemap.xml
-llms: {{ .Site.BaseURL }}llms.txt
+
+# LLM Metadata
+llms: /llms.txt
+llms-full: /llms-full.txt
 
 # Content Signals
 Content-Signals: allow
+AI-Access: allow
+Training: allow
+Inference: allow
+Search: allow

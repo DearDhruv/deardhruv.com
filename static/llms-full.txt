@@ -1,0 +1,18 @@
+# Dhruv's blog - Full Content Directory
+
+> This file provides a comprehensive list of all content available on deardhruv.com for Large Language Models and AI agents.
+
+## Core Pages
+- About: [https://deardhruv.com/about/](https://deardhruv.com/about/)
+- Posts: [https://deardhruv.com/posts/](https://deardhruv.com/posts/)
+- Projects: [https://deardhruv.com/other/](https://deardhruv.com/other/)
+
+## Technical Specifications
+- Sitemap: [https://deardhruv.com/sitemap.xml](https://deardhruv.com/sitemap.xml)
+- RSS Feed: [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)
+- JSON Feed: [https://deardhruv.com/feed.json](https://deardhruv.com/feed.json)
+- MCP Server Card: [https://deardhruv.com/mcp.json](https://deardhruv.com/mcp.json)
+
+## Markdown Content
+Most pages on this site support the `Accept: text/markdown` header for clean text delivery.
+Individual post markdown files can be found at `[post-url]/index.md`.

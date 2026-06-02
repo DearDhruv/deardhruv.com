@@ -7,4 +7,11 @@
 - About: [https://deardhruv.com/about/](https://deardhruv.com/about/)
 - Posts: [https://deardhruv.com/posts/](https://deardhruv.com/posts/)
 - Sitemap: [https://deardhruv.com/sitemap.xml](https://deardhruv.com/sitemap.xml)
-- Feed: [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)
+- Feed (RSS): [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)
+- Feed (JSON): [https://deardhruv.com/index.json](https://deardhruv.com/index.json)
+
+## Optional
+
+- Full Directory: [https://deardhruv.com/llms-full.txt](https://deardhruv.com/llms-full.txt)
+- MCP Server Card: [https://deardhruv.com/mcp.json](https://deardhruv.com/mcp.json)
+- API Catalog: [https://deardhruv.com/.well-known/api-catalog](https://deardhruv.com/.well-known/api-catalog)

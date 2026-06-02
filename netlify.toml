@@ -41,6 +41,8 @@ HUGO_ENABLEGITINFO = "true"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Vary = "Accept"
+    Link = "</llms.txt>; rel=\"llms-index\", </mcp.json>; rel=\"mcp\", </sitemap.xml>; rel=\"sitemap\""
 
 [[headers]]
   for = "/fonts/*"
