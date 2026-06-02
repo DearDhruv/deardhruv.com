@@ -1,0 +1,12 @@
+{
+  "mcp-server": {
+    "name": "Dhruv's blog",
+    "description": "Technical blog for Android Engineers, focusing on Android development, technology, and software engineering.",
+    "version": "1.0.0",
+    "capabilities": {
+      "resources": true,
+      "prompts": false,
+      "tools": false
+    }
+  }
+}

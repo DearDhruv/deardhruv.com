@@ -25,6 +25,17 @@ buildFuture  = false
 buildExpired = false
 canonifyURLs = true
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "Markdown"]
+  section = ["HTML", "RSS"]
+
+[outputFormats.Markdown]
+  mediaType = "text/markdown"
+  baseName = "index"
+  isPlainText = true
+  notAlternative = true
+
 enableRobotsTXT = true
 enableGitInfo   = false
 enableEmoji     = true

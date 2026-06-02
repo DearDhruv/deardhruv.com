@@ -96,6 +96,10 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
+<!-- Agent Ready -->
+<link rel="llms" href="/llms.txt">
+<link rel="mcp" href="/mcp.json">
+
 <!-- JSON Feed -->
 {{ if .OutputFormats.Get "json" }}
 <link href="{{ if .OutputFormats.Get "json" }}{{ .Site.BaseURL }}feed.json{{ end }}" rel="alternate"

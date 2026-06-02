@@ -1,0 +1,10 @@
+# Dhruv's blog
+
+> Dhruv Patel's personal blog about technology, Android engineering, and a step towards technology.
+
+## Links
+
+- About: [https://deardhruv.com/about/](https://deardhruv.com/about/)
+- Posts: [https://deardhruv.com/posts/](https://deardhruv.com/posts/)
+- Sitemap: [https://deardhruv.com/sitemap.xml](https://deardhruv.com/sitemap.xml)
+- Feed: [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)

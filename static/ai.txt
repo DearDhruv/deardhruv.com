@@ -1,0 +1,4 @@
+User-agent: *
+Permissions:
+  - read
+  - crawl

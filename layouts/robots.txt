@@ -3,4 +3,27 @@ Disallow: /pp/
 Disallow: /test/
 Allow: /
 
+# AI Agent Rules
+User-agent: GPTBot
+Disallow:
+
+User-agent: Claude-bot
+Disallow:
+
+User-agent: Google-Extended
+Disallow:
+
+User-agent: PerplexityBot
+Disallow:
+
+User-agent: YouBot
+Disallow:
+
+User-agent: PiplBot
+Disallow:
+
 Sitemap: {{ .Site.BaseURL }}sitemap.xml
+llms: {{ .Site.BaseURL }}llms.txt
+
+# Content Signals
+Content-Signals: allow
