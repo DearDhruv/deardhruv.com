@@ -1,25 +1,203 @@
-.content, .post-content {
-    text-align: justify;
+/* ============================================================
+   DESIGN TOKENS & CONFIG
+   ============================================================ */
+:root {
+  --accent: #90a4ae; /* Slate/Neutral */
+  --accent-rgb: 144, 164, 174;
+  --transition-speed: 0.25s;
+
+  /* Layout Baseline */
+  --page-top-gap: clamp(2.5rem, 10vh, 6rem);
+  --content-max-width: 860px;
 }
+
+/* ============================================================
+   GLOBAL LAYOUT NORMALIZATION
+   ============================================================ */
+
+/* Ensure the first pixel of content starts at the EXACT same height on every page */
+.post, .posts {
+  width: 100% !important;
+  max-width: var(--content-max-width) !important;
+  margin: 0 auto !important;
+  padding-top: var(--page-top-gap) !important;
+  padding-bottom: 5rem !important;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem) !important;
+  box-sizing: border-box;
+}
+
+/* Remove phantom gaps from theme elements to ensure identical baseline */
+.post > .post-info:first-child:empty,
+.post > p:empty,
+.posts > .content:empty {
+  display: none !important;
+}
+
+.post > .post-info:first-child {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Fix the Baseline: All page titles (including Home hero) must have 0 top margin */
+.post-title,
+.posts > h1,
+.landing-hero-copy h3 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ============================================================
+   TYPOGRAPHY & ALIGNMENT
+   ============================================================ */
+
+.post-title,
+.posts > h1,
+.landing-hero-copy h3 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--accent);
+  margin-bottom: 1.5rem !important;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+}
+
+.post-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.landing-hero-copy p, .post-excerpt {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  opacity: 0.8;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.15rem;
+  text-align: justify;
+  margin-top: 3rem;
+}
+
+/* Base Hero Layout (Side-by-side) */
+.landing-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* VERTICAL CENTERING */
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  margin-bottom: 3.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  text-align: left;
+}
+
+/* Responsive Transitions */
+@media (max-width: 500px) {
+  .post, .posts {
+    text-align: center;
+  }
+
+  .post-title,
+  .posts > h1,
+  .landing-hero-copy h3,
+  .landing-hero-copy p,
+  .post-content h2,
+  .post-content h3 {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .landing-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
 
 .portrait-img {
-    max-width: 180px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: block;
+  width: clamp(120px, 22vw, 180px);
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--accent);
+  flex-shrink: 0;
 }
 
-/* Force cursor blinking */
+.post-content h2 {
+  border-bottom: 2px solid rgba(var(--accent-rgb), 0.1);
+  padding-bottom: 0.75rem;
+  margin-top: 4.5rem;
+  margin-bottom: 1.75rem;
+  font-size: 1.4rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+/* CTA Buttons */
+.home-explore {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 500px) {
+    .home-explore { justify-content: center; }
+    .cta-link { width: 100%; justify-content: center; }
+}
+
+.cta-link {
+  padding: 0.9rem 2.2rem;
+  border-radius: 12px;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid var(--accent);
+  transition: all var(--transition-speed) ease;
+}
+
+.cta-link.primary {
+  background: var(--accent);
+  color: #1b1c1d !important;
+}
+
+.cta-link.primary:hover {
+  background: transparent;
+  color: var(--accent) !important;
+  transform: translateY(-3px);
+}
+
+.cta-link.secondary {
+  color: var(--accent) !important;
+}
+
+.cta-link.secondary:hover {
+  background: rgba(var(--accent-rgb), 0.1);
+  transform: translateY(-3px);
+}
+
+/* Special override for About page to remove redundant title if it persists */
+body.about .post-title,
+body.about h1.post-title {
+    display: none !important;
+}
+
+/* Blinking Cursor */
 .logo__cursor {
-    animation: cursor 1s infinite !important;
-    display: inline-block !important;
-    visibility: visible !important;
+  animation: cursor 1s steps(2, start) infinite !important;
+  display: inline-block !important;
 }
 
 @keyframes cursor {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+  to { visibility: hidden; }
 }

@@ -8,7 +8,7 @@
                         {{ range .Site.RegularPages.ByTitle }}
                             {{ if and (not .Draft) (ne .RelPermalink "/sitemap/") (ne .RelPermalink "/privacy-policy/") }}
                                 <li>
-                                    <a href="{{ .Permalink }}">{{ .Title | default .LinkTitle }}</a>
+                                    <a href="{{ .RelPermalink }}">{{ .Title | default .LinkTitle }}</a>
                                 </li>
                             {{ end }}
                         {{ end }}

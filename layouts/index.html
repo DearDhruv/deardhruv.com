@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ $about := or (site.GetPage "about.md") (site.GetPage "/about") }}
+<div class="content">
+    <main class="post">
+        <article>
+            {{ partial "hero.html" . }}
+
+            <div class="post-content">
+                {{ if $about }}
+                    {{/* Strip images from the content to avoid redundancy with the hero profile pic */}}
+                    {{ $content := $about.Content }}
+                    {{ $content = replaceRE "<img[^>]*>" "" $content }}
+                    {{ $content | safeHTML }}
+                {{ else }}
+                    <p>{{ site.Params.description }}</p>
+                {{ end }}
+            </div>
+
+            <div class="home-explore">
+                <a href="/portfolio/" class="cta-link primary">View Portfolio</a>
+                <a href="/posts/" class="cta-link secondary">Read Blog</a>
+                <a href="/projects/" class="cta-link secondary">Browse Projects</a>
+                <a href="/resume.pdf" class="cta-link secondary" target="_blank">Resume (PDF)</a>
+            </div>
+        </article>
+    </main>
+</div>
+{{ end }}

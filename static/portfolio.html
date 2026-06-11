@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Dhruv Patel</title>
+  <meta name="description" content="Markdown-driven single-page portfolio for Dhruv Patel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111a2e;
+      --panel: rgba(17, 26, 46, 0.7);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(156, 163, 175, 0.2);
+      --kotlin: #7f52ff;
+      --android: #3ddc84;
+      --shadow: 0 20px 60px rgba(2, 6, 23, 0.55);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(127, 82, 255, 0.22), transparent 42%),
+        radial-gradient(circle at 90% 10%, rgba(61, 220, 132, 0.18), transparent 34%),
+        linear-gradient(180deg, #090f1b 0%, #0b1220 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.65;
+    }
+
+    .shell {
+      width: min(1140px, 92vw);
+      margin: 0 auto;
+      padding: 24px 0 60px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 14px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(11, 18, 32, 0.78);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 14px;
+    }
+
+    .brand span { color: var(--muted); font-weight: 600; }
+
+    .nav-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .btn {
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 160ms ease;
+      background: rgba(17, 26, 46, 0.65);
+    }
+
+    .btn:hover { border-color: rgba(127, 82, 255, 0.7); transform: translateY(-1px); }
+
+    .btn.primary {
+      border: none;
+      color: #081126;
+      background: linear-gradient(135deg, var(--kotlin), var(--android));
+    }
+
+    .hero {
+      margin-top: 20px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 36px 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--android);
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4.1vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      max-width: 780px;
+      font-size: clamp(15px, 2vw, 18px);
+      margin: 14px 0 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 18px;
+      margin-top: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .article-wrap { padding: 8px 22px 26px; }
+
+    #content {
+      color: #e2e8f0;
+      font-size: 16px;
+    }
+
+    #content h1, #content h2, #content h3 {
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-top: 34px;
+      margin-bottom: 14px;
+      scroll-margin-top: 90px;
+    }
+
+    #content h1 { font-size: 2rem; }
+    #content h2 { font-size: 1.45rem; color: #f8fafc; }
+    #content h3 { font-size: 1.15rem; color: #dbeafe; }
+
+    #content p { margin: 0 0 14px; color: #cbd5e1; }
+
+    #content ul { margin: 0 0 18px 20px; padding: 0; }
+
+    #content li { margin: 8px 0; color: #d1d5db; }
+
+    #content hr {
+      border: 0;
+      border-top: 1px dashed rgba(156, 163, 175, 0.35);
+      margin: 28px 0;
+    }
+
+    #content blockquote {
+      margin: 18px 0;
+      border-left: 3px solid var(--kotlin);
+      background: rgba(127, 82, 255, 0.08);
+      padding: 10px 14px;
+      border-radius: 0 10px 10px 0;
+      color: #dbeafe;
+    }
+
+    #content a { color: #93c5fd; text-decoration: none; }
+    #content a:hover { text-decoration: underline; }
+
+    #content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+    }
+
+    #content img.portrait-img {
+      width: 180px;
+      max-width: min(180px, 60vw);
+      border-radius: 999px;
+      float: left;
+      margin: 0 1rem 0.75rem 0;
+      box-shadow: 0 10px 28px rgba(2, 6, 23, 0.4);
+    }
+
+    #content::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    #content code {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9em;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 6px;
+      padding: 2px 6px;
+      color: #f8fafc;
+    }
+
+    .toc { padding: 16px; position: sticky; top: 78px; }
+
+    .toc h3 { margin: 0 0 12px; font-size: 14px; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.09em; }
+
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+
+    .toc li { margin: 8px 0; }
+
+    .toc a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.35;
+      display: inline-block;
+      border-left: 2px solid transparent;
+      padding-left: 8px;
+    }
+
+    .toc a:hover { color: #e2e8f0; border-left-color: var(--android); }
+
+    .status {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    .skeleton {
+      height: 13px;
+      border-radius: 999px;
+      margin: 10px 0;
+      background: linear-gradient(90deg, rgba(148,163,184,0.14) 25%, rgba(148,163,184,0.28) 40%, rgba(148,163,184,0.14) 70%);
+      background-size: 300% 100%;
+      animation: shimmer 1.3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    @media (max-width: 960px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .toc { position: static; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(1140px, 94vw); }
+      .hero { padding: 26px 16px; }
+      .article-wrap { padding: 2px 14px 20px; }
+      .topbar { top: 10px; }
+
+      #content img.portrait-img {
+        float: none;
+        margin: 0 auto 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="topbar">
+      <div class="brand">Dhruv Patel <span>| Portfolio</span></div>
+      <div class="nav-actions">
+        <a class="btn" href="/">Home</a>
+        <a class="btn" href="/portfolio/">Hugo Page</a>
+        <a class="btn primary" href="/resume.pdf">Download Resume</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">Single Source Portfolio</p>
+      <h1 id="heroTitle">Loading portfolio content...</h1>
+      <p class="subtitle" id="heroSubtitle">This page reads directly from your markdown portfolio so you maintain content in one place.</p>
+    </header>
+
+    <main class="content-grid">
+      <section class="panel article-wrap" aria-live="polite">
+        <div id="content">
+          <div class="skeleton" style="width: 82%;"></div>
+          <div class="skeleton" style="width: 94%;"></div>
+          <div class="skeleton" style="width: 76%;"></div>
+          <div class="skeleton" style="width: 89%;"></div>
+          <div class="skeleton" style="width: 68%;"></div>
+        </div>
+      </section>
+
+      <aside class="panel toc" aria-label="Table of contents">
+        <h3>On this page</h3>
+        <ul id="tocList">
+          <li><a href="#content">Loading sections...</a></li>
+        </ul>
+        <div class="status" id="status">Fetching markdown source...</div>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    function splitTomlFrontMatter(raw) {
+      if (!raw.startsWith("+++")) {
+        return { frontMatter: "", body: raw };
+      }
+      const end = raw.indexOf("\n+++", 3);
+      if (end === -1) {
+        return { frontMatter: "", body: raw };
+      }
+      const frontMatter = raw.slice(3, end).trim();
+      const body = raw.slice(end + 4).trim();
+      return { frontMatter, body };
+    }
+
+    function parseFrontMatterToml(frontMatter) {
+      const data = {};
+      frontMatter.split("\n").forEach((line) => {
+        const match = line.match(/^([A-Za-z0-9_]+)\s*=\s*"(.*)"\s*$/);
+        if (match) {
+          data[match[1]] = match[2];
+        }
+      });
+      return data;
+    }
+
+    function slugify(text) {
+      return text.toLowerCase().trim().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-");
+    }
+
+    async function getMarkdown() {
+      const sources = ["/portfolio/index.md", "/portfolio.md"];
+      for (const source of sources) {
+        try {
+          const response = await fetch(source, { cache: "no-store" });
+          if (response.ok) {
+            const text = await response.text();
+            return { source, text };
+          }
+        } catch (error) {
+          // Try next source path.
+        }
+      }
+      throw new Error("Could not fetch portfolio markdown from configured paths.");
+    }
+
+    function buildToc(container, tocList) {
+      const headings = container.querySelectorAll("h2, h3");
+      tocList.innerHTML = "";
+      if (!headings.length) {
+        tocList.innerHTML = '<li><a href="#content">No sections detected</a></li>';
+        return;
+      }
+
+      headings.forEach((heading, index) => {
+        const id = heading.id || `${slugify(heading.textContent)}-${index}`;
+        heading.id = id;
+
+        const li = document.createElement("li");
+        if (heading.tagName === "H3") {
+          li.style.paddingLeft = "14px";
+        }
+
+        const a = document.createElement("a");
+        a.href = `#${id}`;
+        a.textContent = heading.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+    }
+
+    async function renderPortfolio() {
+      const heroTitle = document.getElementById("heroTitle");
+      const heroSubtitle = document.getElementById("heroSubtitle");
+      const content = document.getElementById("content");
+      const tocList = document.getElementById("tocList");
+      const status = document.getElementById("status");
+
+      try {
+        const markdownResult = await getMarkdown();
+        const parts = splitTomlFrontMatter(markdownResult.text);
+        const frontMatter = parseFrontMatterToml(parts.frontMatter);
+
+        marked.setOptions({
+          gfm: true,
+          breaks: false,
+          headerIds: false,
+          mangle: false
+        });
+
+        const unsafeHtml = marked.parse(parts.body);
+        const safeHtml = DOMPurify.sanitize(unsafeHtml);
+        content.innerHTML = safeHtml;
+
+        heroTitle.textContent = frontMatter.title || "Portfolio";
+        heroSubtitle.textContent = frontMatter.description || "Rendered directly from markdown content to keep a single source of truth.";
+
+        buildToc(content, tocList);
+        status.textContent = `Source: ${markdownResult.source} | Last updated: ${new Date().toLocaleString()}`;
+      } catch (error) {
+        heroTitle.textContent = "Portfolio unavailable";
+        heroSubtitle.textContent = "Unable to load markdown source.";
+        content.innerHTML = "<p>Could not fetch markdown content. Open <a href='/portfolio/'>/portfolio/</a> or check Hugo output format configuration.</p>";
+        tocList.innerHTML = "<li><a href='#content'>Fallback mode</a></li>";
+        status.textContent = error.message;
+      }
+    }
+
+    renderPortfolio();
+  </script>
+</body>
+</html>

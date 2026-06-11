@@ -20,7 +20,7 @@
 <meta name="robots" content="noodp" />
 {{ end }}
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
-<link rel="canonical" href="{{ .Permalink }}" />
+<link rel="canonical" href="{{ .RelPermalink }}" />
 
 <!-- Theme Detection -->
 <script>
@@ -60,10 +60,14 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ else }}
     {{/* Fallback if theme assets are not being picked up correctly */}}
-    <link rel="stylesheet" href="{{ "main.css" | absURL }}">
+    <link rel="stylesheet" href="{{ "main.css" | relURL }}">
 {{ end }}
 
-{{ range $val := $.Site.Params.customCSS }}
+{{ $customCSS := $.Site.Params.customCSS }}
+{{ if not $customCSS }}
+    {{ $customCSS = $.Site.Params.footer.customCSS }}
+{{ end }}
+{{ range $val := $customCSS }}
     {{ if gt (len $val) 0 }}
         {{ $customStyle := resources.Get $val }}
         {{ if $customStyle }}
@@ -122,7 +126,7 @@
 
 <!-- RSS -->
 {{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 {{ end -}}
 
 <!-- Agent Ready -->
@@ -167,7 +171,7 @@
 
 <!-- JSON Feed -->
 {{ if .OutputFormats.Get "json" }}
-<link href="{{ if .OutputFormats.Get "json" }}{{ .Site.BaseURL }}feed.json{{ end }}" rel="alternate"
+<link href="{{ if .OutputFormats.Get "json" }}{{ "feed.json" | relURL }}{{ end }}" rel="alternate"
     type="application/json" title="{{ .Site.Title }}" />
 {{ end }}
 
