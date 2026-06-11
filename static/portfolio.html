@@ -327,8 +327,11 @@
 
     function parseFrontMatterToml(frontMatter) {
       const data = {};
+      if (!frontMatter) return data;
+
       frontMatter.split("\n").forEach((line) => {
-        const match = line.match(/^([A-Za-z0-9_]+)\s*=\s*"(.*)"\s*$/);
+        // More robust match for TOML-style key-values
+        const match = line.match(/^\s*([A-Za-z0-9_]+)\s*=\s*["']?(.*?)["']?\s*$/);
         if (match) {
           data[match[1]] = match[2];
         }
@@ -341,19 +344,26 @@
     }
 
     async function getMarkdown() {
-      const sources = ["/portfolio/index.md", "/portfolio.md"];
+      const sources = ["/portfolio/index.md", "/portfolio.md", "/portfolio/"];
       for (const source of sources) {
         try {
-          const response = await fetch(source, { cache: "no-store" });
+          const response = await fetch(source, {
+            cache: "no-store",
+            headers: { "Accept": "text/markdown" } // Explicitly ask for markdown
+          });
           if (response.ok) {
-            const text = await response.text();
-            return { source, text };
+            const contentType = response.headers.get("content-type");
+            // Only accept it if it's actually markdown
+            if (contentType && contentType.includes("markdown")) {
+              const text = await response.text();
+              return { source, text };
+            }
           }
         } catch (error) {
-          // Try next source path.
+          console.error(`Failed to fetch from ${source}:`, error);
         }
       }
-      throw new Error("Could not fetch portfolio markdown from configured paths.");
+      throw new Error("Could not fetch portfolio markdown from any configured paths.");
     }
 
     function buildToc(container, tocList) {
