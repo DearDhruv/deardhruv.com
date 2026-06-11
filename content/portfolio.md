@@ -1,6 +1,7 @@
 +++
 title = "Work & Impact"
 date = "2026-06-11"
+layout = "hero-page"
 description = "Dhruv Patel's professional portfolio showcasing work in Android development, mobile architecture, and technical leadership"
 +++
 

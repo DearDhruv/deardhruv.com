@@ -1,7 +1,7 @@
 +++
 title = "Dhruv Patel"
 date = "2022-08-03"
-layout = "about"
+layout = "hero-page"
 aliases = ["about-us", "about-hugo", "contact"]
 [author]
 name = "Dhruv Patel"
@@ -104,7 +104,6 @@ I'm always interested in:
 ### 🔗 Quick Links
 
 - **Portfolio:** [View my full portfolio](/portfolio/)
-- **Portfolio (Single-Page HTML):** <a href="/portfolio.html">Open portfolio.html</a>
 - **Projects:** [See featured projects](/projects/)
 - **Blog:** [Read my latest articles](/posts/)
 - **Sitemap:** [Explore the site](/sitemap/)
