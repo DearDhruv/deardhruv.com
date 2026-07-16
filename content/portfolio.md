@@ -74,10 +74,14 @@ Focused on native Android development with Kotlin and Jetpack Compose, balancing
 - **Mentored** junior and mid-level developers in modern Android practices
 - **Contributed** to developer communities through technical speaking and knowledge sharing
 
-### Side Project Spotlight: VelociHue
+### Featured Projects
 
-- Built and shipped as an independent Android project
-- Focused on smooth gameplay interactions and performance-first implementation
+#### Model Playground
+- An offline-first, on-device LLM playground running open-source models locally (llama.cpp & MediaPipe).
+- Play Store: [Model Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground) | GitHub: [Model-Playground](https://github.com/DearDhruv/Model-Playground)
+
+#### VelociHue
+- Built and shipped as an independent Android game project focused on smooth interactions and performance.
 - Play Store: [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)
 
 ---

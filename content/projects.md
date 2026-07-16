@@ -4,8 +4,6 @@ date = "2026-06-11"
 description = "Featured projects and work showcasing Android development expertise"
 +++
 
-# 🗂️ Featured Projects
-
 ---
 
 ## Digital Commerce Platform
@@ -18,7 +16,6 @@ Building sophisticated digital commerce solutions for global markets with seamle
 
 - Architected scalable mobile solutions handling millions of transactions
 - Implemented adaptive layouts for diverse device configurations
-- Led team of 5+ developers in modern architecture implementation
 - Reduced app load time by 40% through performance optimization
 
 ---
@@ -31,59 +28,32 @@ Developed comprehensive hardware integration layer enabling seamless connectivit
 
 **Key Achievements:**
 
-- Integrated 15+ hardware devices (printers, scanners, payment terminals)
+- Integrated 27+ hardware devices (printers, scanners, payment terminals)
 - Achieved 99.8% connection reliability
 - Reduced hardware communication latency by 60%
 - Created reusable abstraction layer for future integrations
 
 ---
 
-## Multimedia Editing Suite
+## Model Playground
 
-**Role:** Tech Lead | **Tech:** Kotlin, MediaCodec, OpenGL
+**Role:** Solo Android Developer | **Tech:** Kotlin Multiplatform, Compose Multiplatform, llama.cpp (JNI), MediaPipe
 
-Led development of advanced multimedia editing capabilities with real-time preview and sophisticated processing pipeline.
-
-**Key Achievements:**
-
-- Implemented video compression maintaining quality at 80% smaller file size
-- Real-time effect processing at 60fps on mid-range devices
-- Support for multiple audio/video codecs
-- Optimized memory usage for devices with 2GB RAM
-
----
-
-## Cross-Platform Migration
-
-**Role:** Architecture Lead | **Tech:** Kotlin, Jetpack Compose, MVVM
-
-Directed migration of legacy Java codebase to modern Kotlin + Jetpack Compose architecture while maintaining backward compatibility.
+An offline-first, on-device LLM playground for Android that allows running open-source large language models directly on the device with zero data leaving the phone.
 
 **Key Achievements:**
 
-- Completed 2-year legacy codebase modernization
-- Achieved 35% code reduction through Kotlin idioms
-- Improved app performance metrics across all devices
-- Mentored 8 developers through architectural transformation
+- Implemented a dual-engine architecture supporting llama.cpp (GGUF) and MediaPipe (.task) on-device runtimes
+- Built a multi-turn chat system with persistent conversational threads and full history management
+- Developed an automated compatibility engine with RAM/storage guardrails and Vulkan detection for optimal performance
+- Integrated offline-first Speech-to-Text (STT) and multilingual Text-to-Speech (TTS) with Arabic script support
+- Implemented download catalog with SHA-256 verification and resume capability via HTTP Range headers
+
+**Live Links:** [Model Playground on Google Play](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground) | [GitHub Repository](https://github.com/DearDhruv/Model-Playground)
 
 ---
 
-## UI Optimization Initiative
-
-**Role:** Lead Developer | **Tech:** Jetpack Compose, Layout Analysis
-
-Spearheaded UI redesign using Jetpack Compose, resulting in significant performance improvements and reduced development time.
-
-**Key Achievements:**
-
-- Reduced recomposition by 70% through state optimization
-- Cut development time for new features by 45%
-- Improved accessibility score from 72 to 95
-- Enhanced user engagement with smooth animations
-
----
-
-## VelociHue (Side Project)
+## VelociHue
 
 **Role:** Solo Android Developer | **Tech:** Kotlin, Jetpack Compose, Game UI
 
@@ -109,4 +79,3 @@ Active contributor to Android open source ecosystem with a focus on architecture
 ---
 
 Looking for more details? Feel free to explore the [Blog](/posts) for technical deep-dives on these projects and related topics.
-
