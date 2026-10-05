@@ -1,0 +1,83 @@
+{{ $main := resources.Get "js/main.js" }}
+{{ $menu := resources.Get "js/menu.js" }}
+{{ $prism := resources.Get "js/prism.js" }}
+{{ $secureJS := slice $main $menu $prism | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+
+{{ range $val := $.Site.Params.customJS }}
+    {{ if gt (len $val) 0 }}
+        <script src="{{ $val }}"></script>
+    {{ end }}
+{{ end }}
+
+{{ if .Page.Store.Get "hasMermaid" }}
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    const currentTheme = document.documentElement.getAttribute("data-theme") || localStorage.getItem("theme") || "dark";
+    const isDark = currentTheme === "dark";
+    const settings = {
+        startOnLoad: false,
+        securityLevel: "loose",
+        flowchart: {
+            useMaxWidth: true,
+            htmlLabels: true
+        },
+        theme: isDark ? "dark" : "default",
+        themeVariables: isDark ? {
+            darkMode: true,
+            background: "#18191a",
+            primaryColor: "#23262a",
+            primaryTextColor: "#f1f5f9",
+            primaryBorderColor: "#90a4ae",
+            lineColor: "#90a4ae",
+            secondaryColor: "#1c1e22",
+            tertiaryColor: "#141517",
+            edgeLabelBackground: "#1c1e22",
+            fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        } : {
+            darkMode: false,
+            primaryColor: "#f1f5f9",
+            primaryTextColor: "#0f172a",
+            primaryBorderColor: "#90a4ae",
+            lineColor: "#64748b",
+            fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        }
+    };
+    mermaid.initialize(settings);
+
+    try {
+        await mermaid.run({
+            querySelector: '.mermaid'
+        });
+
+        // Ensure graphs never scale larger than their natural design size or get squished on smaller screens
+        document.querySelectorAll('.mermaid svg').forEach(svg => {
+            const viewBox = svg.getAttribute('viewBox');
+            if (viewBox) {
+                const parts = viewBox.split(/[\s,]+/);
+                if (parts.length === 4) {
+                    const naturalWidth = parseFloat(parts[2]);
+                    if (naturalWidth && !isNaN(naturalWidth)) {
+                        const nw = Math.ceil(naturalWidth);
+                        // Prevent smaller graphs from scaling up excessively on large desktop screens
+                        svg.style.maxWidth = `${nw}px`;
+
+                        // Prevent larger graphs from getting squished/squeezed on smaller screens:
+                        // If the diagram's natural width is wider than a compact mobile viewport (~420px),
+                        // preserve its legible width so nodes and text remain full-sized and crisp,
+                        // and let the parent container scroll horizontally.
+                        if (nw > 420) {
+                            svg.style.minWidth = `${nw}px`;
+                            svg.style.width = `${nw}px`;
+                        } else {
+                            svg.style.width = "100%";
+                        }
+                    }
+                }
+            }
+        });
+    } catch (e) {
+        console.error("Mermaid render error:", e);
+    }
+</script>
+{{ end }}

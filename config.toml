@@ -118,7 +118,7 @@ customCSS = ["css/custom.css"]
 customJS = []
 
 # Toggle this option need to rebuild SCSS, requires extended version of Hugo
-justifyContent = true  # Set "text-align: justify" to .content.
+justifyContent = false  # Set "text-align: justify" to .content.
 
 # Directory name of your blog content (default is `content/posts`)
 contentTypeName = "posts"
