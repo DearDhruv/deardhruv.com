@@ -1,6 +1,16 @@
++++
+title = "Part 5 - At Some Point I Stopped Building a Chat App"
+date = "2026-10-05T14:00:00+05:30"
+description = "The project became a platform because every feature needed a place to live."
+tags = ["Android", "iOS", "Architecture", "Kotlin Multiplatform", "MVI", "Clean Architecture"]
+series = ["Beyond the Model"]
+[author]
+  name = "Dhruv Patel"
++++
+
 # At Some Point I Stopped Building a Chat App
 
-## Part 5 - The project became a platform because every feature needed a place to live
+## Part 5 - The project became a platform because every feature needed a place to live.
 
 There was a point where I stopped looking at AI Playground as:
 
@@ -44,41 +54,11 @@ It is there because the project has enough independent lifecycles that without b
 
 The simplified flow is:
 
-```text
-User action
-    |
-    v
-Composable
-    |
-    v
-MVI Store
-    |
-    v
-Use Case
-    |
-    v
-Repository / Coordinator
-    |
-    v
-Platform runtime
-```
-
-State travels back:
-
-```text
-platform runtime
-    |
-    v
-repository
-    |
-    v
-use case
-    |
-    v
-store StateFlow
-    |
-    v
-Compose
+```mermaid
+flowchart TD
+    Action["User action"] --> UI["Composable"] --> Store["MVI Store"] --> UC["Use Case"] --> Repo["Repository / Coordinator"] --> Runtime["Platform runtime"]
+    Runtime -.->|StateFlow| Store
+    Store -.-> UI
 ```
 
 The UI renders state.
@@ -239,21 +219,11 @@ If one object owns all four, cancellation and failure paths become tangled.
 
 The project instead makes boundaries explicit:
 
-```text
-Model lifecycle
-    |
-    v
-ChatModelCoordinator
-
-Generation lifecycle
-    |
-    v
-ChatGenerationCoordinator
-
-Memory policy
-    |
-    v
-Memory admission / monitor
+```mermaid
+flowchart TD
+    ML["Model lifecycle"] --> CMC["ChatModelCoordinator"]
+    GL["Generation lifecycle"] --> CGC["ChatGenerationCoordinator"]
+    MP["Memory policy"] --> MAM["Memory admission / monitor"]
 ```
 
 That is plain software engineering.
@@ -332,18 +302,13 @@ Then, several seconds later, content appears.
 
 I would rather do:
 
-```text
-tap
-  |
-  v
-render shell immediately
-  |
-  +--> load data in background
-  |
-  +--> show progress / placeholders
-  |
-  v
-populate content
+```mermaid
+flowchart TD
+    Tap["tap"] --> Shell["render shell immediately"]
+    Shell --> BG["load data in background"]
+    Shell --> Progress["show progress / placeholders"]
+    BG --> Content["populate content"]
+    Progress --> Content
 ```
 
 This is particularly important on lower-end devices.
@@ -469,17 +434,9 @@ I want to call this one out because it keeps the project honest.
 
 An AI demo can be made to look successful very easily:
 
-```text
-start
-  |
-  v
-animate progress
-  |
-  v
-return placeholder
-  |
-  v
-show “done”
+```mermaid
+flowchart TD
+    Start["start"] --> Prog["animate progress"] --> Place["return placeholder"] --> Done["show 'done'"]
 ```
 
 That is not inference.
@@ -558,11 +515,10 @@ A migration added cascading foreign keys from chat messages and generated images
 
 That made the intended relational behavior better:
 
-```text
-delete thread
-   |
-   +--> delete dependent messages
-   +--> delete dependent images
+```mermaid
+flowchart TD
+    Thread["delete thread"] --> Msg["delete dependent messages"]
+    Thread --> Img["delete dependent images"]
 ```
 
 But a replace-style write path could accidentally delete the parent row and trigger the cascade.
@@ -749,20 +705,9 @@ The work is not being represented as shipped merely because a module exists.
 
 The direction is:
 
-```text
-microphone
-    |
-    v
-local STT
-    |
-    v
-local LLM
-    |
-    v
-local TTS
-    |
-    v
-speaker
+```mermaid
+flowchart TD
+    Mic["microphone"] --> STT["local STT"] --> LLM["local LLM"] --> TTS["local TTS"] --> Speaker["speaker"]
 ```
 
 But the project's release discipline matters more than the diagram.
@@ -786,20 +731,9 @@ The project already separates model package validation and delivery from the cor
 
 That gives a clean boundary:
 
-```text
-catalog
-  |
-  v
-download
-  |
-  v
-validate
-  |
-  v
-install
-  |
-  v
-runtime
+```mermaid
+flowchart TD
+    Cat["catalog"] --> DL["download"] --> Val["validate"] --> Inst["install"] --> Run["runtime"]
 ```
 
 A runtime should not have to discover a corrupt download at the worst possible moment.
@@ -997,19 +931,19 @@ Because the model is only the center of the system.
 
 Around it sits everything that makes the experience usable:
 
-```text
-                +-------------------+
-                |       MODEL       |
-                +---------+---------+
-                          |
-     +--------------------+--------------------+
-     |          |          |         |         |
-   runtime   memory     input      lifecycle  UX
-     |          |          |         |         |
-     +----------+----------+---------+---------+
-                          |
-                          v
-                    AI Playground
+```mermaid
+flowchart TD
+    Model["MODEL"]
+    Model --> Runtime["runtime"]
+    Model --> Memory["memory"]
+    Model --> Input["input"]
+    Model --> Lifecycle["lifecycle"]
+    Model --> UX["UX"]
+    Runtime --> App["AI Playground"]
+    Memory --> App
+    Input --> App
+    Lifecycle --> App
+    UX --> App
 ```
 
 That is the work I set out to do.
@@ -1080,38 +1014,9 @@ I started with one constraint:
 
 I then discovered that the constraint creates a chain of engineering problems:
 
-```text
-existing runtimes
-       |
-       v
-integration
-       |
-       v
-capabilities
-       |
-       v
-memory
-       |
-       v
-native lifecycle
-       |
-       v
-documents / retrieval
-       |
-       v
-vision
-       |
-       v
-image generation
-       |
-       v
-platform UX
-       |
-       v
-testing + invariants
-       |
-       v
-adaptive execution
+```mermaid
+flowchart TD
+    A["existing runtimes"] --> B["integration"] --> C["capabilities"] --> D["memory"] --> E["native lifecycle"] --> F["documents / retrieval"] --> G["vision"] --> H["image generation"] --> I["platform UX"] --> J["testing + invariants"] --> K["adaptive execution"]
 ```
 
 That is why I call this project **Beyond the Model**.
@@ -1133,5 +1038,5 @@ And I am still building it.
 - **Part 5 - At Some Point I Stopped Building a Chat App**
 
 **Project:** AI Playground / Model Playground  
-**Website:** <https://deardhruv.com>  
-**Repository:** <https://github.com/DearDhruv/Model-Playground>
+**Website:** https://deardhruv.com  
+**Repository:** https://github.com/DearDhruv/Model-Playground

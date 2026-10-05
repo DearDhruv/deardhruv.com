@@ -1,6 +1,16 @@
++++
+title = "Part 4 - I Put an Image Generator Inside the Phone"
+date = "2026-10-05T13:00:00+05:30"
+description = "I did not build a diffusion engine. I integrated image-generation runtimes and then had to engineer everything around them."
+tags = ["Android", "iOS", "Diffusion Models", "LiteRT", "Image Generation", "On-Device AI"]
+series = ["Beyond the Model"]
+[author]
+  name = "Dhruv Patel"
++++
+
 # I Put an Image Generator Inside the Phone
 
-## Part 4 - I did not build a diffusion engine. I integrated image-generation runtimes and then had to engineer everything around them
+## Part 4 - I did not build a diffusion engine. I integrated image-generation runtimes and then had to engineer everything around them.
 
 Text generation had already forced me to learn about:
 
@@ -52,26 +62,9 @@ That is where this feature became interesting.
 
 A simplified diffusion-style path looks like:
 
-```text
-prompt
-  |
-  v
-text encoding
-  |
-  v
-conditioning
-  |
-  v
-denoising / DiT
-  |
-  v
-latent representation
-  |
-  v
-VAE decode
-  |
-  v
-pixels
+```mermaid
+flowchart TD
+    Prompt["prompt"] --> Enc["text encoding"] --> Cond["conditioning"] --> Denoise["denoising / DiT"] --> Latent["latent representation"] --> VAE["VAE decode"] --> Pixels["pixels"]
 ```
 
 The project therefore treats image generation as a distinct runtime family instead of pretending it is the same thing as chat.
@@ -128,14 +121,10 @@ Forcing both into a single giant interface would make the abstraction harder to 
 
 The better architecture is:
 
-```text
-LocalModelRuntime
-        |
-        +--> text generation
-
-LocalImageGenerationRuntime
-        |
-        +--> image generation
+```mermaid
+flowchart TD
+    LMR["LocalModelRuntime"] --> Text["text generation"]
+    LIGR["LocalImageGenerationRuntime"] --> Image["image generation"]
 ```
 
 Then the domain layer can orchestrate both without pretending they have identical mechanics.
@@ -148,25 +137,15 @@ The Android application currently integrates several image-generation paths.
 
 The production v1.7.0 release includes:
 
-```text
-Google LiteRT 2.2.0
-    |
-    +--> multi-graph image pipeline
-         Text Encoder
-             |
-             v
-         DiT / denoising
-             |
-             v
-         VAE
-```
+```mermaid
+flowchart TD
+    LiteRT["Google LiteRT 2.2.0"] --> MultiGraph["multi-graph image pipeline"]
+    subgraph MultiGraphPipeline["Pipeline"]
+        TextEnc["Text Encoder"] --> DiT["DiT / denoising"] --> VAE["VAE"]
+    end
+    MultiGraph --> MultiGraphPipeline
 
-and:
-
-```text
-stable-diffusion.cpp
-    |
-    +--> GGUF image models
+    SDCPP["stable-diffusion.cpp"] --> GGUF["GGUF image models"]
 ```
 
 as well as MediaPipe-based image-generation support for supported model families.
@@ -246,23 +225,9 @@ That can create a very high simultaneous peak.
 
 The project instead uses a multi-stage graph path:
 
-```text
-text encoder
-    |
-    v
-conditioning
-    |
-    v
-denoising
-    |
-    v
-latent
-    |
-    v
-VAE
-    |
-    v
-RGB output
+```mermaid
+flowchart TD
+    A["text encoder"] --> B["conditioning"] --> C["denoising"] --> D["latent"] --> E["VAE"] --> F["RGB output"]
 ```
 
 The engineering objective is:
@@ -468,20 +433,9 @@ The image generation path supports true cancellation rather than only hiding the
 
 The architecture is:
 
-```text
-Compose
-   |
-   v
-ImageGenerationStore
-   |
-   v
-LocalImageGenerationRuntime
-   |
-   v
-platform bridge
-   |
-   v
-native generation loop
+```mermaid
+flowchart TD
+    UI["Compose"] --> Store["ImageGenerationStore"] --> Runtime["LocalImageGenerationRuntime"] --> Bridge["platform bridge"] --> Loop["native generation loop"]
 ```
 
 The project specifically tests cancellation and generation race conditions.
@@ -519,14 +473,9 @@ The stable release added support for continuing image generation while navigatin
 
 The user can move from:
 
-```text
-Image
-  |
-  v
-Chat
-  |
-  v
-Discover
+```mermaid
+flowchart LR
+    Image["Image"] --> Chat["Chat"] --> Discover["Discover"]
 ```
 
 without automatically destroying the running image-generation session.
@@ -599,20 +548,9 @@ The image storage layer therefore stages writes through temporary files before p
 
 Conceptually:
 
-```text
-generate bytes
-     |
-     v
-.tmp
-     |
-     v
-validate
-     |
-     v
-rename
-     |
-     v
-final PNG
+```mermaid
+flowchart TD
+    Gen["generate bytes"] --> Tmp[".tmp file"] --> Val["validate"] --> Rename["rename"] --> PNG["final PNG"]
 ```
 
 And importantly, saving is decoupled from successful generation.
@@ -643,20 +581,9 @@ The package validator checks the expected bundle and supports repair actions whe
 
 That gives me a clean flow:
 
-```text
-catalog
-  |
-  v
-compatibility
-  |
-  v
-download package
-  |
-  v
-validate manifest / files
-  |
-  v
-install
+```mermaid
+flowchart TD
+    Cat["catalog"] --> Comp["compatibility check"] --> DL["download package"] --> Val["validate manifest / files"] --> Inst["install"]
 ```
 
 I do not want the runtime to discover a broken model package only after allocating gigabytes of memory.
@@ -678,11 +605,10 @@ Bonsai 4B 512
 
 if they can be treated as:
 
-```text
-Bonsai 4B
-    |
-    +--> supported resolution = 256
-    +--> supported resolution = 512
+```mermaid
+flowchart TD
+    Model["Bonsai 4B"] --> R1["supported resolution = 256"]
+    Model --> R2["supported resolution = 512"]
 ```
 
 The catalog should describe the **model identity**.
@@ -833,14 +759,9 @@ into PNG metadata.
 
 Then build:
 
-```text
-open image
-   |
-   v
-read metadata
-   |
-   v
-recreate request
+```mermaid
+flowchart TD
+    Open["open image"] --> Read["read metadata"] --> Recreate["recreate request"]
 ```
 
 That gives you a reproducible experimentation loop.

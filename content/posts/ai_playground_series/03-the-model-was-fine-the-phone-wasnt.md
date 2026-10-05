@@ -1,6 +1,16 @@
-# The Model Was Fine. The Phone Wasn't
++++
+title = "Part 3 - The Model Was Fine. The Phone Wasn't."
+date = "2026-10-05T12:00:00+05:30"
+description = "The difficult bugs were memory, native lifecycle, GPU drivers and operating-system behavior."
+tags = ["Android", "Performance", "Vulkan", "Memory Management", "C++", "On-Device AI"]
+series = ["Beyond the Model"]
+[author]
+  name = "Dhruv Patel"
++++
 
-## Part 3 - The difficult bugs were memory, native lifecycle, GPU drivers and operating-system behavior
+# The Model Was Fine. The Phone Wasn't.
+
+## Part 3 - The difficult bugs were memory, native lifecycle, GPU drivers and operating-system behavior.
 
 There is a point in a local AI project where the model stops being the hardest part.
 
@@ -126,15 +136,11 @@ The exact value depends on architecture and implementation.
 
 The practical lesson is enough:
 
-```text
-larger context
-    |
-    v
-larger KV cache
-+
-more prefill work
-+
-potentially higher latency
+```mermaid
+flowchart TD
+    Context["larger context"] --> KV["larger KV cache"]
+    Context --> Work["more prefill work"]
+    Context --> Latency["potentially higher latency"]
 ```
 
 This is why context budgeting from Part 2 is also a memory feature.
@@ -151,20 +157,14 @@ loadModel()
 
 the application thinks in stages:
 
-```text
-request
-   |
-   v
-estimate
-   |
-   v
-admission
-   |
-   +--> ALLOW
-   +--> WARN
-   +--> RECLAIM
-   +--> UNLOAD_OTHER
-   +--> DENY
+```mermaid
+flowchart TD
+    Req["request"] --> Est["estimate"] --> Adm["admission"]
+    Adm --> Allow["ALLOW"]
+    Adm --> Warn["WARN"]
+    Adm --> Reclaim["RECLAIM"]
+    Adm --> Unload["UNLOAD_OTHER"]
+    Adm --> Deny["DENY"]
 ```
 
 The admission result can explain itself:
@@ -238,20 +238,13 @@ So the project watches memory during long-running work as well.
 
 The conceptual path is:
 
-```text
-preflight
-   |
-   v
-load
-   |
-   v
-generation
-   |
-   +--> memory pressure monitor
-            |
-            +--> normal
-            +--> warning
-            +--> critical
+```mermaid
+flowchart TD
+    Preflight["preflight"] --> Load["load"] --> Gen["generation"]
+    Gen --> Monitor["memory pressure monitor"]
+    Monitor --> Normal["normal"]
+    Monitor --> Warning["warning"]
+    Monitor --> Critical["critical"]
 ```
 
 At higher pressure, the application can stop starting new heavy operations and reclaim disposable resources.
@@ -275,20 +268,9 @@ The fix was a **decaying memory-pressure monitor**.
 
 Conceptually:
 
-```text
-platform event
-     |
-     v
-remember severity
-     |
-     v
-time-based decay
-     |
-     v
-combine with live memory
-     |
-     v
-decision
+```mermaid
+flowchart TD
+    A["platform event"] --> B["remember severity"] --> C["time-based decay"] --> D["combine with live memory"] --> E["decision"]
 ```
 
 I prefer that approach to simply ignoring pressure callbacks.
@@ -353,28 +335,14 @@ without considering whether the chat model can be unloaded safely.
 
 A better decision tree is:
 
-```text
-new request
-    |
-    v
-estimate incremental cost
-    |
-    +--> fits with current residency
-    |       |
-    |       v
-    |      run
-    |
-    +--> doesn't fit
-            |
-            v
-      unload reclaimable model
-            |
-            v
-          re-check
-            |
-        +---+---+
-        |       |
-       fit     fail
+```mermaid
+flowchart TD
+    Req["new request"] --> Est["estimate incremental cost"]
+    Est -->|fits with current residency| Run["run"]
+    Est -->|doesn't fit| Unload["unload reclaimable model"]
+    Unload --> Recheck["re-check"]
+    Recheck -->|fit| Run
+    Recheck -->|fail| Fail["fail"]
 ```
 
 This is why the model lifecycle coordinator and memory admission policy are separate concepts.
@@ -389,12 +357,9 @@ The other decides whether the lifecycle transition is responsible.
 
 The Android GGML integration uses a hierarchical backend approach:
 
-```text
-Vulkan
-  |
-OpenCL
-  |
-CPU
+```mermaid
+flowchart TD
+    Vulkan["Vulkan"] -->|fallback| OpenCL["OpenCL"] -->|fallback| CPU["CPU"]
 ```
 
 But fallback should not happen blindly.
@@ -446,19 +411,12 @@ whole app dies
 
 So the project isolates Vulkan probing in a child process:
 
-```text
-parent process
-    |
-    +---- fork() ----> child
-                         |
-                         +--> Vulkan probe
-                               |
-                     +---------+---------+
-                     |                   |
-                   success             crash
-                     |                   |
-                     v                   v
-                report OK          parent survives
+```mermaid
+flowchart TD
+    Parent["parent process"] -->|fork| Child["child process"]
+    Child --> Probe["Vulkan probe"]
+    Probe -->|success| OK["report OK"]
+    Probe -->|crash| Survives["parent survives"]
 ```
 
 The point is not that Vulkan is “bad”.
@@ -517,21 +475,13 @@ The production Android architecture uses a foreground inference path for long-ru
 
 The lifecycle looks conceptually like:
 
-```text
-start
-  |
-  v
-foreground inference session
-  |
-  v
-native work
-  |
-  +--> cancel
-  |
-  +--> finish
-  |
-  v
-release
+```mermaid
+flowchart TD
+    Start["start"] --> Session["foreground inference session"] --> Work["native work"]
+    Work --> Cancel["cancel"]
+    Work --> Finish["finish"]
+    Cancel --> Release["release"]
+    Finish --> Release
 ```
 
 That is not an implementation detail.
@@ -554,23 +504,9 @@ does not prove cancellation.
 
 Real cancellation has to travel through the stack:
 
-```text
-UI
-  |
-  v
-Store
-  |
-  v
-Coordinator
-  |
-  v
-runtime.cancel()
-  |
-  v
-native cancellation
-  |
-  v
-native loop exits
+```mermaid
+flowchart TD
+    UI["UI"] --> Store["Store"] --> Coord["Coordinator"] --> Cancel["runtime.cancel()"] --> Native["native cancellation"] --> Exit["native loop exits"]
 ```
 
 The project has explicit tests around true cancellation and race conditions because stale cancellation state can otherwise poison the next generation.
@@ -685,26 +621,12 @@ So it deserves unit-level coverage independent of native inference.
 
 I think about testing in dimensions:
 
-```text
-RAM tier
-  |
-  +--> low
-  +--> mid
-  +--> high
-
-model
-  |
-  +--> text
-  +--> vision
-  +--> image
-
-operation
-  |
-  +--> load
-  +--> generate
-  +--> switch
-  +--> background
-  +--> cancel
+```mermaid
+flowchart TD
+    Hardware["Hardware Test Matrix"]
+    Hardware --> RAM["RAM Tier<br/>(low / mid / high)"]
+    Hardware --> Model["Model<br/>(text / vision / image)"]
+    Hardware --> Op["Operation<br/>(load / generate / switch / background / cancel)"]
 ```
 
 The question is:
@@ -768,13 +690,11 @@ Test the decision engine before connecting a real model.
 
 Build:
 
-```text
-main process
-   |
-   +--> child process
-           |
-           +--> GPU probe
-           +--> report success/failure
+```mermaid
+flowchart TD
+    Main["main process"] -->|fork| Child["child process"]
+    Child --> Probe["GPU probe"]
+    Probe --> Report["report success / failure"]
 ```
 
 Intentionally make the child fail.

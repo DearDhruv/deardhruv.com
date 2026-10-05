@@ -1,6 +1,16 @@
++++
+title = "Part 2 - The Day a Chat Box Became a Document Engine"
+date = "2026-10-05T11:00:00+05:30"
+description = "I thought “attach a PDF” would be a UI feature. It became an ingestion pipeline."
+tags = ["Android", "iOS", "Kotlin Multiplatform", "RAG", "On-Device AI", "Document Ingestion"]
+series = ["Beyond the Model"]
+[author]
+  name = "Dhruv Patel"
++++
+
 # The Day a Chat Box Became a Document Engine
 
-## Part 2 - I thought “attach a PDF” would be a UI feature. It became an ingestion pipeline
+## Part 2 - I thought “attach a PDF” would be a UI feature. It became an ingestion pipeline.
 
 Once local chat was reliable enough, I wanted the next capability that makes a local assistant genuinely useful:
 
@@ -28,20 +38,12 @@ That is the point where the application changed from a chat client into a **loca
 
 The obvious implementation is:
 
-```text
-file
-  |
-  v
-extract everything
-  |
-  v
-huge string
-  |
-  v
-prompt
-  |
-  v
-LLM
+```mermaid
+flowchart TD
+    File["file"] --> Extract["extract everything"]
+    Extract --> Huge["huge string"]
+    Huge --> Prompt["prompt"]
+    Prompt --> LLM["LLM"]
 ```
 
 For a tiny file, this works.
@@ -64,35 +66,17 @@ The repository separates attachment processing into a dedicated feature module.
 
 The pipeline is:
 
-```text
-selected file
-     |
-     v
-file identity
-     |
-     v
-capability validation
-     |
-     v
-format processor
-     |
-     v
-semantic document blocks
-     |
-     v
-chunking
-     |
-     v
-local index
-     |
-     v
-retrieval
-     |
-     v
-context budget
-     |
-     v
-local model
+```mermaid
+flowchart TD
+    A["selected file"] --> B["file identity"]
+    B --> C["capability validation"]
+    C --> D["format processor"]
+    D --> E["semantic document blocks"]
+    E --> F["chunking"]
+    F --> G["local index"]
+    G --> H["retrieval"]
+    H --> I["context budget"]
+    I --> J["local model"]
 ```
 
 This is deliberately different from chat.
@@ -189,15 +173,11 @@ to slowly diverge.
 
 Instead:
 
-```text
-shared parser contracts
-        |
-        v
-shared semantic representation
-        |
-        +--> Android UI
-        |
-        +--> iOS UI
+```mermaid
+flowchart TD
+    Contracts["shared parser contracts"] --> Repr["shared semantic representation"]
+    Repr --> Android["Android UI"]
+    Repr --> iOS["iOS UI"]
 ```
 
 That is exactly the kind of work KMP is good at.
@@ -227,20 +207,12 @@ I do not want a parser to blindly inflate an archive into memory.
 
 The conceptual path is:
 
-```text
-archive entry
-    |
-    v
-validate entry
-    |
-    v
-enforce output limit
-    |
-    v
-bounded decompression
-    |
-    v
-parse required content
+```mermaid
+flowchart TD
+    A["archive entry"] --> B["validate entry"]
+    B --> C["enforce output limit"]
+    C --> D["bounded decompression"]
+    D --> E["parse required content"]
 ```
 
 That is normal systems engineering.
@@ -298,35 +270,16 @@ A large document can be indexed once and queried many times.
 
 The flow becomes:
 
-```text
-document
-   |
-   v
-parse
-   |
-   v
-chunks
-   |
-   v
-local index
+```mermaid
+flowchart TD
+    Doc["document"] --> Parse["parse"] --> Chunks["chunks"] --> Index["local index"]
 ```
 
 Then:
 
-```text
-user question
-   |
-   v
-retrieve relevant chunks
-   |
-   v
-rank
-   |
-   v
-budget
-   |
-   v
-LLM
+```mermaid
+flowchart TD
+    Q["user question"] --> R["retrieve relevant chunks"] --> Rank["rank"] --> Budget["budget"] --> LLM["LLM"]
 ```
 
 This is not only about quality.
@@ -357,17 +310,9 @@ So the retrieval layer is deliberately followed by a strict context budget.
 
 The architecture is:
 
-```text
-retrieve generously
-       |
-       v
-rank carefully
-       |
-       v
-budget aggressively
-       |
-       v
-generate
+```mermaid
+flowchart TD
+    A["retrieve generously"] --> B["rank carefully"] --> C["budget aggressively"] --> D["generate"]
 ```
 
 A simplified version:
@@ -559,15 +504,12 @@ I do not want to choose one permanently.
 
 The application can use:
 
-```text
-image
-  |
-  +--> OCR
-  |
-  +--> vision
-  |
-  v
-combined context
+```mermaid
+flowchart TD
+    Img["image"] --> OCR["OCR"]
+    Img --> Vision["vision"]
+    OCR --> Combined["combined context"]
+    Vision --> Combined
 ```
 
 depending on the model and the task.
@@ -593,22 +535,11 @@ native runtime exception
 
 The better UX is:
 
-```text
-selected model
-       |
-       v
-capability resolver
-       |
-       +--> image input supported
-       |       |
-       |       v
-       |      enable
-       |
-       +--> not supported
-               |
-               v
-         explain limitation
-         disable incompatible action
+```mermaid
+flowchart TD
+    Model["selected model"] --> Resolver["capability resolver"]
+    Resolver -->|image input supported| Enable["enable"]
+    Resolver -->|not supported| Disable["explain limitation &<br/>disable incompatible action"]
 ```
 
 This is a direct consequence of treating model support as **data**.
@@ -627,20 +558,9 @@ That does not mean the vision model should receive those exact dimensions.
 
 A mobile image path needs something like:
 
-```text
-original image
-     |
-     v
-orientation correction
-     |
-     v
-model-aware resize
-     |
-     v
-bounded pixel representation
-     |
-     v
-vision runtime
+```mermaid
+flowchart TD
+    A["original image"] --> B["orientation correction"] --> C["model-aware resize"] --> D["bounded pixel representation"] --> E["vision runtime"]
 ```
 
 Otherwise a simple attachment can create an unnecessary memory spike.
@@ -686,33 +606,14 @@ It is the one that fails **predictably** when the input is ugly.
 
 The whole workflow now looks like:
 
-```text
-"Find the termination clause in my contract."
-
-                |
-                v
-
-         local document index
-                |
-                v
-
-           hybrid retrieval
-                |
-                v
-
-          relevant chunks
-                |
-                v
-
-          context budget
-                |
-                v
-
-            local LLM
-                |
-                v
-
-          answer + source
+```mermaid
+flowchart TD
+    Q["'Find the termination clause in my contract.'"] --> Index["local document index"]
+    Index --> Retrieval["hybrid retrieval"]
+    Retrieval --> Chunks["relevant chunks"]
+    Chunks --> Budget["context budget"]
+    Budget --> LLM["local LLM"]
+    LLM --> Ans["answer + source"]
 ```
 
 The contract never needed to become an upload.
@@ -727,20 +628,9 @@ That was the original reason for doing this locally.
 
 Start simple:
 
-```text
-PDF
- |
- v
-text extraction
- |
- v
-chunking
- |
- v
-keyword retrieval
- |
- v
-local model
+```mermaid
+flowchart TD
+    PDF["PDF"] --> Extract["text extraction"] --> Chunk["chunking"] --> Keyword["keyword retrieval"] --> Model["local model"]
 ```
 
 Then add:
@@ -763,21 +653,13 @@ Learn retrieval first.
 
 Build an app with:
 
-```text
-gallery/camera
-      |
-      v
-capability check
-      |
-      v
-image resize
-      |
-      +--> OCR
-      |
-      +--> vision
-      |
-      v
-answer
+```mermaid
+flowchart TD
+    Source["gallery / camera"] --> Check["capability check"] --> Resize["image resize"]
+    Resize --> OCR["OCR"]
+    Resize --> Vision["vision"]
+    OCR --> Answer["answer"]
+    Vision --> Answer
 ```
 
 Test it on:

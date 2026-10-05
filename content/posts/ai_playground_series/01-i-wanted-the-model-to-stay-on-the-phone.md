@@ -1,3 +1,13 @@
++++
+title = "Part 1 - I Wanted the Model to Stay on the Phone"
+date = "2026-10-05T10:00:00+05:30"
+description = "The engineering journey of integrating established on-device AI runtimes into one multimodal mobile product - and everything it takes to make the pieces behave like a coherent system."
+tags = ["Android", "iOS", "Kotlin Multiplatform", "On-Device AI", "LLM", "llama.cpp", "MediaPipe"]
+series = ["Beyond the Model"]
+[author]
+  name = "Dhruv Patel"
++++
+
 # Beyond the Model: Building a Private AI Playground for Android & iOS
 
 ## Part 1 - I Wanted the Model to Stay on the Phone
@@ -43,43 +53,31 @@ That is where the project became interesting.
 
 From a user's point of view, the experience sounds almost boring:
 
-```text
-Install application
-Download model
-Turn off network
-Start conversation
-Receive answer
+```mermaid
+flowchart TD
+    A["Install application"] --> B["Download model"] --> C["Turn off network"] --> D["Start conversation"] --> E["Receive answer"]
 ```
 
 The repository makes the offline-first boundary explicit.
 
 The inference path is local:
 
-```text
-Prompt
-  |
-  v
-shared application logic
-  |
-  v
-selected local runtime
-  |
-  v
-native inference
-  |
-  v
-local response / history
+```mermaid
+flowchart TD
+    Prompt["Prompt"] --> App["Shared application logic"]
+    App --> Runtime["Selected local runtime"]
+    Runtime --> Native["Native inference"]
+    Native --> Response["Local response / history"]
 ```
 
 The internet-enabled pieces are separated from inference:
 
-```text
-Network
-  |
-  +--> model discovery
-  +--> model download
-  +--> live Hugging Face search
-  +--> other explicitly allowed online surfaces
+```mermaid
+flowchart TD
+    Network["Network"] --> Discovery["Model discovery"]
+    Network --> Download["Model download"]
+    Network --> Search["Live Hugging Face search"]
+    Network --> Other["Other explicitly allowed surfaces"]
 ```
 
 That separation is more important than the phrase “offline”.
@@ -96,18 +94,15 @@ The project uses **Kotlin Multiplatform** and **Compose Multiplatform**, but I n
 
 The architecture is closer to:
 
-```text
-                    Shared KMP
-                        |
-         +--------------+--------------+
-         |                             |
-      Domain                         Data
-         |                             |
-         +--------------+--------------+
-                        |
-                Runtime boundaries
-                   /                          Android            iOS
-              Kotlin/C++         Swift/Metal
+```mermaid
+flowchart TD
+    subgraph KMP["Shared KMP"]
+        Domain["Domain"]
+        Data["Data"]
+    end
+    KMP --> Boundaries["Runtime boundaries"]
+    Boundaries --> Android["Android<br/><b>Kotlin / C++</b>"]
+    Boundaries --> iOS["iOS<br/><b>Swift / Metal</b>"]
 ```
 
 The shared layer is responsible for:
@@ -218,17 +213,17 @@ That led to one of the most useful concepts in the project:
 
 I started thinking of a model as a tuple of properties:
 
-```text
-Model
- |
- +--> format
- +--> architecture
- +--> modality
- +--> runtime
- +--> platform
- +--> companion artifacts
- +--> minimum runtime requirements
- +--> resource profile
+```mermaid
+flowchart TD
+    Model["Model"]
+    Model --> F["Format"]
+    Model --> A["Architecture"]
+    Model --> M["Modality"]
+    Model --> R["Runtime"]
+    Model --> P["Platform"]
+    Model --> C["Companion artifacts"]
+    Model --> Req["Minimum runtime requirements"]
+    Model --> Res["Resource profile"]
 ```
 
 A model can be:
@@ -269,20 +264,12 @@ The application has Android-side inspectors for GGUF and LiteRT-related artifact
 
 The broader architecture looks like:
 
-```text
-model artifact
-     |
-     v
-binary / metadata inspection
-     |
-     v
-capability report
-     |
-     v
-runtime resolver
-     |
-     v
-UI
+```mermaid
+flowchart TD
+    Artifact["Model artifact"] --> Inspection["Binary / metadata inspection"]
+    Inspection --> Report["Capability report"]
+    Report --> Resolver["Runtime resolver"]
+    Resolver --> UI["UI"]
 ```
 
 A simplified data structure:
@@ -367,26 +354,17 @@ resident memory
 
 The conceptual difference is:
 
-```text
-Read-all approach
-
-file
- |
- v
-large memory buffer
-```
-
-versus:
-
-```text
-mmap
-
-file
- |
- v
-mapped address range
- |
- +--> pages become resident as needed
+```mermaid
+flowchart LR
+    subgraph ReadAll["Read-all approach"]
+        direction TB
+        F1["file"] --> B1["large memory buffer"]
+    end
+    subgraph MMap["mmap approach"]
+        direction TB
+        F2["file"] --> R2["mapped address range"]
+        R2 --> P2["pages become resident as needed"]
+    end
 ```
 
 This does not make memory pressure disappear.
@@ -403,18 +381,13 @@ The project packages a baseline CPU/native stack and loads acceleration backends
 
 The intended backend order is:
 
-```text
-Vulkan
-   |
-   +--> preferred accelerated path
-   |
-OpenCL
-   |
-   +--> fallback accelerated path
-   |
-CPU
-   |
-   +--> final stable fallback
+```mermaid
+flowchart TD
+    Vulkan["Vulkan<br/><i>Preferred accelerated path</i>"]
+    OpenCL["OpenCL<br/><i>Fallback accelerated path</i>"]
+    CPU["CPU<br/><i>Final stable fallback</i>"]
+    Vulkan -->|fallback| OpenCL
+    OpenCL -->|fallback| CPU
 ```
 
 That is a project-level decision.
@@ -495,17 +468,12 @@ The Android app has native C++ integration around llama.cpp and a separate nativ
 
 The conceptual stack is:
 
-```text
-Kotlin
-  |
-  v
-JNI
-  |
-  v
-C/C++
-  |
-  +--> third-party inference runtime
-  +--> accelerator backend
+```mermaid
+flowchart TD
+    Kotlin["Kotlin"] --> JNI["JNI"]
+    JNI --> CPP["C / C++"]
+    CPP --> Runtime["Third-party inference runtime"]
+    CPP --> Backend["Accelerator backend"]
 ```
 
 Once a feature crosses JNI, I need to think about:
@@ -522,18 +490,12 @@ process crashes
 
 I learned to treat every native context like a resource with an explicit lifecycle:
 
-```text
-load
-  |
-  v
-resident
-  |
-  +--> generate
-  |
-  +--> cancel
-  |
-  v
-unload
+```mermaid
+flowchart TD
+    Load["load"] --> Resident["resident"]
+    Resident --> Generate["generate"]
+    Resident --> Cancel["cancel"]
+    Resident --> Unload["unload"]
 ```
 
 The UI should never own that lifecycle directly.
@@ -544,20 +506,13 @@ The UI should never own that lifecycle directly.
 
 The project has an explicit concurrency model:
 
-```text
-UI
- |
- v
-MVI Store
- |
- v
-Use Case
- |
- v
-Repository / Runtime
- |
- +--> Dispatchers.IO
- +--> Dispatchers.Default
+```mermaid
+flowchart TD
+    UI["UI"] --> Store["MVI Store"]
+    Store --> UseCase["Use Case"]
+    UseCase --> Repo["Repository / Runtime"]
+    Repo --> IO["Dispatchers.IO"]
+    Repo --> Default["Dispatchers.Default"]
 ```
 
 Heavy work includes:
@@ -606,21 +561,11 @@ The project keeps a dedicated generation coordinator that coalesces updates at r
 
 Conceptually:
 
-```text
-native events
- | | | | | | | | | |
- v v v v v v v v v v
-
-      coalesce
-
-        |
-        v
-
-StateFlow
-        |
-        v
-
-Compose
+```mermaid
+flowchart TD
+    Events["Native events"] --> Coalesce["Coalesce (~65ms)"]
+    Coalesce --> StateFlow["StateFlow"]
+    StateFlow --> Compose["Compose"]
 ```
 
 That is a small detail with a large effect on perceived performance.
