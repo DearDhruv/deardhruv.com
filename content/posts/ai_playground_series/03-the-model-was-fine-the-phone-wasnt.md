@@ -1,6 +1,6 @@
-# The Model Was Fine. The Phone Wasn't.
+# The Model Was Fine. The Phone Wasn't
 
-## Part 3 — The difficult bugs were memory, native lifecycle, GPU drivers and operating-system behavior.
+## Part 3 - The difficult bugs were memory, native lifecycle, GPU drivers and operating-system behavior
 
 There is a point in a local AI project where the model stops being the hardest part.
 
@@ -721,7 +721,7 @@ That is how I want to collect real device knowledge over time.
 
 # Build this yourself
 
-## Project 1 — Mobile model admission library
+## Project 1 - Mobile model admission library
 
 Create:
 
@@ -764,7 +764,7 @@ Test the decision engine before connecting a real model.
 
 ---
 
-## Project 2 — GPU crash-isolated probe
+## Project 2 - GPU crash-isolated probe
 
 Build:
 
@@ -783,7 +783,7 @@ Your parent should survive and choose a safe fallback.
 
 ---
 
-## Project 3 — Long-running local inference
+## Project 3 - Long-running local inference
 
 Build a local inference session that survives:
 

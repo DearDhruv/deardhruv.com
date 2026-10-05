@@ -1,6 +1,6 @@
 # At Some Point I Stopped Building a Chat App
 
-## Part 5 — The project became a platform because every feature needed a place to live.
+## Part 5 - The project became a platform because every feature needed a place to live
 
 There was a point where I stopped looking at AI Playground as:
 
@@ -880,7 +880,7 @@ Each layer makes the next layer safer.
 
 # 20. Projects I would give a senior engineer
 
-## Project A — Mobile Runtime Resolver
+## Project A - Mobile Runtime Resolver
 
 Input:
 
@@ -915,7 +915,7 @@ Now the selection system is observable.
 
 ---
 
-## Project B — Resource-aware local agent
+## Project B - Resource-aware local agent
 
 Build an agent that must remain under:
 
@@ -931,7 +931,7 @@ This is where local AI gets genuinely interesting.
 
 ---
 
-## Project C — Mobile AI benchmark harness
+## Project C - Mobile AI benchmark harness
 
 Build a command that records:
 
@@ -1126,12 +1126,12 @@ And I am still building it.
 
 ## The series
 
-- [Part 1 — I Wanted the Model to Stay on the Phone](./01-i-wanted-the-model-to-stay-on-the-phone.md)
-- [Part 2 — The Day a Chat Box Became a Document Engine](./02-the-day-a-chat-box-became-a-document-engine.md)
-- [Part 3 — The Model Was Fine. The Phone Wasn't.](./03-the-model-was-fine-the-phone-wasnt.md)
-- [Part 4 — I Put an Image Generator Inside the Phone](./04-i-put-an-image-generator-inside-the-phone.md)
-- **Part 5 — At Some Point I Stopped Building a Chat App**
+- [Part 1 - I Wanted the Model to Stay on the Phone](./01-i-wanted-the-model-to-stay-on-the-phone.md)
+- [Part 2 - The Day a Chat Box Became a Document Engine](./02-the-day-a-chat-box-became-a-document-engine.md)
+- [Part 3 - The Model Was Fine. The Phone Wasn't.](./03-the-model-was-fine-the-phone-wasnt.md)
+- [Part 4 - I Put an Image Generator Inside the Phone](./04-i-put-an-image-generator-inside-the-phone.md)
+- **Part 5 - At Some Point I Stopped Building a Chat App**
 
 **Project:** AI Playground / Model Playground  
-**Website:** https://deardhruv.com  
-**Repository:** https://github.com/DearDhruv/Model-Playground
+**Website:** <https://deardhruv.com>  
+**Repository:** <https://github.com/DearDhruv/Model-Playground>

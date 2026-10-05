@@ -1,8 +1,8 @@
 # Beyond the Model: Building a Private AI Playground for Android & iOS
 
-## Part 1 — I Wanted the Model to Stay on the Phone
+## Part 1 - I Wanted the Model to Stay on the Phone
 
-### The engineering journey of integrating established on-device AI runtimes into one multimodal mobile product — and everything it takes to make the pieces behave like a coherent system.
+### The engineering journey of integrating established on-device AI runtimes into one multimodal mobile product - and everything it takes to make the pieces behave like a coherent system
 
 There was one constraint behind AI Playground that shaped almost every architectural decision that came after it:
 
@@ -10,7 +10,7 @@ There was one constraint behind AI Playground that shaped almost every architect
 
 I want to be precise about what that means.
 
-I did **not** build a new mobile inference engine. I did **not** invent a new way to execute transformer models on phones. The project stands on top of established work from the open-source and platform ecosystems — `llama.cpp`, GGML, Google AI Edge/LiteRT-LM, MediaPipe, Apple MLX, and other native technologies.
+I did **not** build a new mobile inference engine. I did **not** invent a new way to execute transformer models on phones. The project stands on top of established work from the open-source and platform ecosystems - `llama.cpp`, GGML, Google AI Edge/LiteRT-LM, MediaPipe, Apple MLX, and other native technologies.
 
 My job was different.
 
@@ -39,7 +39,7 @@ That is where the project became interesting.
 
 ---
 
-# 1. The promise is simple. The engineering is not.
+# 1. The promise is simple. The engineering is not
 
 From a user's point of view, the experience sounds almost boring:
 
@@ -709,7 +709,7 @@ That is where the next phase started.
 
 # Build this yourself
 
-## Project 1 — Offline Pocket LLM
+## Project 1 - Offline Pocket LLM
 
 Do not start with a giant model.
 
@@ -743,7 +743,7 @@ It is to understand what your device is actually doing.
 
 ---
 
-## Project 2 — Capability-aware model catalog
+## Project 2 - Capability-aware model catalog
 
 Build a model details screen that answers:
 

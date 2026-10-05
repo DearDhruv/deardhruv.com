@@ -1,6 +1,6 @@
 # The Day a Chat Box Became a Document Engine
 
-## Part 2 — I thought “attach a PDF” would be a UI feature. It became an ingestion pipeline.
+## Part 2 - I thought “attach a PDF” would be a UI feature. It became an ingestion pipeline
 
 Once local chat was reliable enough, I wanted the next capability that makes a local assistant genuinely useful:
 
@@ -723,7 +723,7 @@ That was the original reason for doing this locally.
 
 # 17. Build this yourself
 
-## Project 1 — Offline PDF Q&A
+## Project 1 - Offline PDF Q&A
 
 Start simple:
 
@@ -759,7 +759,7 @@ Learn retrieval first.
 
 ---
 
-## Project 2 — A vision/OCR laboratory
+## Project 2 - A vision/OCR laboratory
 
 Build an app with:
 
@@ -797,7 +797,7 @@ That is the point.
 
 ---
 
-## Project 3 — File capability matrix
+## Project 3 - File capability matrix
 
 Build a matrix like:
 

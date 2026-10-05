@@ -1,6 +1,6 @@
 # I Put an Image Generator Inside the Phone
 
-## Part 4 — I did not build a diffusion engine. I integrated image-generation runtimes and then had to engineer everything around them.
+## Part 4 - I did not build a diffusion engine. I integrated image-generation runtimes and then had to engineer everything around them
 
 Text generation had already forced me to learn about:
 
@@ -756,7 +756,7 @@ That is exactly the same architectural principle as JNI on Android.
 
 # 19. Build this yourself
 
-## Project 1 — Tiny diffusion studio
+## Project 1 - Tiny diffusion studio
 
 Start with:
 
@@ -784,7 +784,7 @@ Make the lifecycle correct first.
 
 ---
 
-## Project 2 — Adaptive resolution selector
+## Project 2 - Adaptive resolution selector
 
 Build:
 
@@ -814,7 +814,7 @@ on physical devices.
 
 ---
 
-## Project 3 — Reproducible image artifacts
+## Project 3 - Reproducible image artifacts
 
 Write:
 
