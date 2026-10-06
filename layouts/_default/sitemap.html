@@ -1,20 +1,144 @@
 {{ define "main" }}
-    <div class="content">
-        <main class="post">
-            <article>
+<div class="content">
+    <main class="post sitemap-container">
+        <article>
+            <header class="sitemap-hero">
                 <h1 class="post-title">{{ .Title }}</h1>
-                <div class="post-content">
-                    <ul>
-                        {{ range .Site.RegularPages.ByTitle }}
-                            {{ if and (not .Draft) (ne .RelPermalink "/sitemap/") (ne .RelPermalink "/privacy-policy/") }}
-                                <li>
-                                    <a href="{{ .RelPermalink }}">{{ .Title | default .LinkTitle }}</a>
+                <p class="sitemap-subtitle">A hierarchical directory of all folders, series, articles, and pages on deardhruv.com.</p>
+            </header>
+
+            <div class="sitemap-tree">
+                <!-- 1. ROOT / MAIN PAGES -->
+                <div class="sitemap-node sitemap-root-node">
+                    <div class="sitemap-folder-header">
+                        <span class="sitemap-folder-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"></path>
+                            </svg>
+                        </span>
+                        <div class="sitemap-folder-info">
+                            <h2 class="sitemap-folder-name">Main Pages</h2>
+                            <code class="sitemap-folder-path">/</code>
+                        </div>
+                        <span class="sitemap-count-badge">4 pages</span>
+                    </div>
+
+                    <ul class="sitemap-items-list">
+                        <li class="sitemap-item">
+                            <span class="sitemap-file-icon" aria-hidden="true">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </span>
+                            <div class="sitemap-item-body">
+                                <a href="/" class="sitemap-item-title">Home</a>
+                                <p class="sitemap-item-desc">Android Engineer & Engineering Leader portfolio landing page.</p>
+                            </div>
+                        </li>
+                        {{ range where .Site.RegularPages "Section" "" }}
+                            {{ if and (ne .RelPermalink "/sitemap/") (ne .RelPermalink "/privacy-policy/") }}
+                                <li class="sitemap-item">
+                                    <span class="sitemap-file-icon" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <polyline points="14 2 14 8 20 8"></polyline>
+                                        </svg>
+                                    </span>
+                                    <div class="sitemap-item-body">
+                                        <a href="{{ .RelPermalink }}" class="sitemap-item-title">{{ .Title }}</a>
+                                        {{ with .Description }}
+                                            <p class="sitemap-item-desc">{{ . }}</p>
+                                        {{ end }}
+                                    </div>
                                 </li>
                             {{ end }}
                         {{ end }}
                     </ul>
                 </div>
-            </article>
-        </main>
-    </div>
+
+                <!-- 2. SECTIONS & SUBFOLDERS -->
+                {{ range .Site.Sections.ByWeight }}
+                    <div class="sitemap-node">
+                        <div class="sitemap-folder-header">
+                            <span class="sitemap-folder-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"></path>
+                                </svg>
+                            </span>
+                            <div class="sitemap-folder-info">
+                                <h2 class="sitemap-folder-name">
+                                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                </h2>
+                                <code class="sitemap-folder-path">{{ .RelPermalink }}</code>
+                            </div>
+                            <span class="sitemap-count-badge">{{ len .RegularPagesRecursive }} {{ if eq (len .RegularPagesRecursive) 1 }}item{{ else }}items{{ end }}</span>
+                        </div>
+
+                        <!-- Direct pages in section (if any) -->
+                        {{ if .RegularPages }}
+                            <ul class="sitemap-items-list">
+                                {{ range .RegularPages.ByDate.Reverse }}
+                                    <li class="sitemap-item">
+                                        <span class="sitemap-file-icon" aria-hidden="true">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                            </svg>
+                                        </span>
+                                        <div class="sitemap-item-body">
+                                            <a href="{{ .RelPermalink }}" class="sitemap-item-title">{{ .Title }}</a>
+                                            {{ with .Description }}
+                                                <p class="sitemap-item-desc">{{ . }}</p>
+                                            {{ end }}
+                                        </div>
+                                    </li>
+                                {{ end }}
+                            </ul>
+                        {{ end }}
+
+                        <!-- Subfolders (Subsections) -->
+                        {{ range .Sections }}
+                            <div class="sitemap-subfolder-node">
+                                <div class="sitemap-subfolder-header">
+                                    <span class="sitemap-subfolder-icon" aria-hidden="true">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="sitemap-subfolder-info">
+                                        <h3 class="sitemap-subfolder-name">
+                                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                        </h3>
+                                        <code class="sitemap-folder-path">{{ .RelPermalink }}</code>
+                                    </div>
+                                    <span class="sitemap-count-badge">{{ len .RegularPages }} {{ if eq (len .RegularPages) 1 }}item{{ else }}items{{ end }}</span>
+                                </div>
+
+                                <ul class="sitemap-items-list sitemap-nested-list">
+                                    {{ range .RegularPages.ByDate }}
+                                        <li class="sitemap-item">
+                                            <span class="sitemap-file-icon" aria-hidden="true">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                                </svg>
+                                            </span>
+                                            <div class="sitemap-item-body">
+                                                <a href="{{ .RelPermalink }}" class="sitemap-item-title">{{ .Title }}</a>
+                                                {{ with .Description }}
+                                                    <p class="sitemap-item-desc">{{ . }}</p>
+                                                {{ end }}
+                                            </div>
+                                        </li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </div>
+        </article>
+    </main>
+</div>
 {{ end }}
