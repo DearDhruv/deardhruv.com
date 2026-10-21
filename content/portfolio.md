@@ -6,7 +6,7 @@ description = "Dhruv Patel's professional portfolio showcasing work in Android d
 +++
 
 
-Welcome to my professional portfolio. I'm a **Lead Android Engineer** with **14+ years** of experience building cutting-edge mobile solutions for global markets.
+Welcome to my professional portfolio. I'm a **Lead Android & Multiplatform Engineer** with **14+ years** of experience building cutting-edge mobile solutions, on-device AI runtimes, and high-performance native systems for global markets.
 
 ---
 
@@ -28,14 +28,19 @@ Specialized in designing and implementing sophisticated digital commerce solutio
 
 ### 🛠️ Technical Stack
 
-- **Languages:** Kotlin (Expert), Java
-- **Frameworks:** Jetpack Compose, Android SDK
+- **Languages:** Kotlin (Expert), Java, Modern C++ (NDK), Swift
+- **Frameworks & UI:** Jetpack Compose, Compose Multiplatform, Android SDK, iOS (SwiftUI host)
+- **AI & Edge Compute:** llama.cpp (v0.7.0), Google AI Edge LiteRT, Apple MLX, NDK (Vulkan, OpenCL, Metal, ARM KleidiAI)
+- **Data & Cloud:** SQLDelight, Cloud Firestore (Schema v5), Room, Coroutines & StateFlow
 - **Specializations:**
-    - Android Architecture Patterns (MVVM, Clean Architecture)
-    - Adaptive Layouts & Responsive Design
-    - Multimedia Workflows & Media Processing
-    - Hardware-Software Integration
-    - Performance Optimization
+  - Mobile Architecture Patterns (MVI, Clean Architecture, MVVM)
+  - On-Device AI & LLM Inference (Speculative Turbo decoding, KV cache pre-warming, model quantization)
+  - Kotlin Multiplatform (KMP) & Cross-Platform System Design
+  - Adaptive Layouts & Multi-Window / Two-Pane Responsive UI
+  - Multimedia Workflows & Real-Time Graphics
+  - Cloud Synchronization & Offline-First Data Integrity
+  - Hardware-Software Integration & Native Crash Isolation
+  - Performance Optimization, Profiling & Memory Guardrails
 
 ### 🎓 Leadership & Community
 
@@ -48,41 +53,48 @@ Specialized in designing and implementing sophisticated digital commerce solutio
 
 ## 🚀 Key Highlights
 
-### Modern Android Development
+### On-Device AI & High-Performance Runtimes
 
-Expert in modern Android development patterns using Jetpack Compose, leveraging cutting-edge language features and architectural best practices to build scalable, maintainable applications.
+Pioneered on-device AI architectures running open-source LLMs and image generation models natively on mobile hardware with zero cloud dependencies. Engineered dual-model Speculative Turbo decoding, modular dynamic GPU feature delivery (Vulkan/OpenCL/Metal), and defensive `fork()` crash isolation.
 
-### Digital Commerce Solutions
+### Kotlin Multiplatform (KMP) & Cross-Platform Parity
 
-Currently leading the development of sophisticated digital commerce platforms, focusing on seamless user experiences and robust backend integration for global markets.
+Architected production cross-platform solutions sharing game logic, MVI presentation stores, and offline-first persistence across Android, iOS, and Android TV, while preserving 100% native platform fidelity and ergonomics.
 
-### Multimedia Capabilities
+### Modern Android & Adaptive UI
 
-Deep expertise in multimedia handling, from image/video processing to complex editing workflows, ensuring optimal performance on diverse Android devices.
+Expert in modern Android development patterns using Jetpack Compose and Compose Multiplatform, delivering responsive adaptive layouts across phones, foldables, tablets, and 10-foot TV experiences.
 
-### Native Android Focus
+### Digital Commerce & Hardware Integration
 
-Focused on native Android development with Kotlin and Jetpack Compose, balancing performance, scalability, and long-term maintainability.
+Led the development of scalable digital commerce platforms and low-latency hardware abstraction layers interfacing with 27+ POS peripherals, handling millions of transactions with high reliability.
 
 ---
 
 ## 📊 Impact & Results
 
-- **Architected** scalable Android applications serving millions of users
-- **Led** teams of developers in implementing modern architecture patterns
-- **Optimized** performance across diverse Android devices and operating systems
-- **Mentored** junior and mid-level developers in modern Android practices
-- **Contributed** to developer communities through technical speaking and knowledge sharing
+- **Architected** scalable mobile and multiplatform applications serving millions of users
+- **Pioneered** on-device LLM inference and local multimodal AI pipelines on consumer mobile hardware
+- **Led** teams of developers in implementing modern MVI and Clean Architecture patterns
+- **Optimized** performance across diverse Android devices, operating systems, and NDK backends
+- **Mentored** junior and mid-level developers in modern Android and Multiplatform practices
+- **Contributed** to developer communities through technical speaking and open-source contributions
 
 ### Featured Projects
 
-#### Model Playground
-- An offline-first, on-device LLM playground running open-source models locally (llama.cpp & MediaPipe).
-- Play Store: [Model Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground) | GitHub: [Model-Playground](https://github.com/DearDhruv/Model-Playground)
+#### AI Playground
+
+- **Director & Lead Engineer** | Kotlin Multiplatform, Compose Multiplatform, C++20 / NDK (llama.cpp v0.7.0), Google AI Edge LiteRT, Apple MLX, Vulkan/OpenCL/Metal, SQLDelight
+- An offline-first, on-device multimodal AI workstation for Android and iOS that turns mobile devices into self-contained inference engines. Executes local LLMs (GGUF, Safetensors, MediaPipe), synthesizes on-device diffusion images (Bonsai Image Ternary 4B / FLUX.2-klein), and parses 25+ document formats with zero cloud dependencies and 100% data privacy.
+- Features dual-model Speculative Turbo decoding (2x throughput speedup), crash-resilient `fork()` Vulkan driver isolation with SIGKILL watchdog, 100% offline activity ledger (SQLDelight v10), streaming mid-turn persistence, and full cross-platform voice parity.
+- Links: [Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground) | [GitHub](https://github.com/DearDhruv/Model-Playground) | [Engineering Blog Series](/posts/ai_playground_series/)
 
 #### VelociHue
-- Built and shipped as an independent Android game project focused on smooth interactions and performance.
-- Play Store: [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)
+
+- **Director & Lead Engineer** | Kotlin Multiplatform, Compose Multiplatform, Kotlin 2.4.0, AGP 9.2.1, Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV
+- A fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV, featuring endless color-gate mechanics, high-framerate physics (60–120 FPS), and multi-tiered progression.
+- Features shared pure-Kotlin game engine, Cloud Firestore schema v5 sync with 3-way union merge, 29-achievement multi-tiered engine, photo-sensitive accessibility mode, and high-resolution PNG share card generation.
+- Links: [Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)
 
 ---
 
@@ -90,10 +102,11 @@ Focused on native Android development with Kotlin and Jetpack Compose, balancing
 
 Regularly share expertise on:
 
-- Modern Android Architecture & Design Patterns
-- Jetpack Compose Best Practices
-- Hardware Integration & Performance Optimization
-- Technical Leadership & Team Development
+- On-Device AI & Local LLM Runtimes in Production
+- Kotlin Multiplatform (KMP) & Compose Multiplatform Architecture
+- Modern Android Architecture & Jetpack Compose Best Practices
+- Hardware Integration, NDK Systems & Performance Optimization
+- Technical Leadership & Engineering Culture
 
 ---
 
@@ -116,4 +129,3 @@ I'm always interested in discussing:
 ---
 
 > "Excellence in engineering comes from a commitment to continuous learning, clean code, and building solutions that genuinely improve people's lives."
-

@@ -7,10 +7,9 @@ aliases = ["about-us", "about-hugo", "contact"]
 name = "Dhruv Patel"
 +++
 
-Commonly known online as **DearDhruv**, I'm a **Lead Android Engineer** with over **14 years** of experience crafting high-performance, user-centric mobile applications for global markets.
+Commonly known online as **DearDhruv**, I'm a **Lead Android & Multiplatform Engineer** with over **14 years** of experience crafting high-performance, user-centric mobile applications, on-device AI runtimes, and distributed multiplatform systems.
 
-Currently serving as a **Lead Android Engineer at Impact Commerce**, I specialize in building sophisticated digital commerce solutions. My passion lies in pushing the boundaries of what's possible on
-the Android platform, from complex hardware integrations to advanced multimedia workflows.
+Currently serving as a **Lead Android Engineer at Impact Commerce**, I specialize in building sophisticated digital commerce solutions. Beyond enterprise systems, I actively pioneer offline-first on-device AI architectures (such as [AI Playground](https://github.com/DearDhruv/Model-Playground)) and cross-platform games in Kotlin Multiplatform (like [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)). My passion lies in pushing the boundaries of what's possible on mobile hardware-from complex hardware integrations and NDK acceleration to advanced multimedia workflows and local LLM inference.
 
 👉 **Portfolio:** [See my work and impact highlights](/portfolio/)
 
@@ -20,24 +19,25 @@ the Android platform, from complex hardware integrations to advanced multimedia 
 
 ### Languages & Frameworks
 
-- **Languages:** Kotlin (Expert), Java
-- **Mobile Frameworks:** Jetpack Compose, Android SDK
-- **Architecture:** MVVM, Clean Architecture, MVI patterns
-- **Other:** Jetpack libraries, RxJava/Coroutines, REST APIs
+- **Languages:** Kotlin (Expert), Java, Modern C++ (NDK), Swift
+- **Mobile & Multiplatform:** Jetpack Compose, Compose Multiplatform, Android SDK, iOS (SwiftUI host)
+- **On-Device AI & Runtimes:** llama.cpp (v0.7.0), Google AI Edge LiteRT, Apple MLX, NDK (Vulkan, OpenCL, Metal, ARM KleidiAI)
+- **Architecture & Data:** MVI, Clean Architecture, MVVM, SQLDelight, Cloud Firestore (Schema v5), Room, Coroutines/Flow
 
 ### Specializations
 
-- **Android Architecture Patterns** - Designing scalable, maintainable applications
-- **Jetpack Compose UI** - Modern declarative UI development with adaptive layouts
-- **Hardware Integration** - Seamless connectivity with POS systems and peripherals
-- **Multimedia Workflows** - Video/audio processing and real-time effects
-- **Performance Optimization** - Profiling, memory management, and battery optimization
-- **Adaptive Design** - Responsive layouts for diverse device configurations
+- **On-Device AI & Local LLMs** - Offline multimodal inference, Speculative Turbo decoding, KV cache pre-warming, hardware crash isolation
+- **Kotlin Multiplatform (KMP)** - Shared domain logic, MVI presentation stores, and Compose Multiplatform cross-device UI
+- **Android Architecture Patterns** - Designing scalable, maintainable Clean Architecture and MVI applications
+- **Jetpack Compose UI & Adaptive Design** - Modern declarative UI with adaptive two-pane layouts across phones, foldables, tablets, and Android TV
+- **Hardware Integration** - Seamless connectivity with POS systems and low-level NDK bridges
+- **Multimedia Workflows & Game Engines** - Real-time graphics, audio/haptic systems, and high-framerate interaction loops
+- **Performance Optimization** - Profiling, memory management, native driver isolation, and battery optimization
 
 ### Leadership & Mentorship
 
 - Technical team leadership and architecture guidance
-- Mentoring developers in modern Android practices
+- Mentoring developers in modern Android and Multiplatform practices
 - Code review and design pattern implementation
 - Developer relations and community engagement
 
@@ -47,9 +47,10 @@ the Android platform, from complex hardware integrations to advanced multimedia 
 
 Over the past 14+ years, I've worked on diverse projects ranging from small startups to large-scale enterprise applications. I've successfully:
 
-- **Architected** scalable mobile solutions serving millions of users globally
+- **Architected** scalable mobile and multiplatform solutions serving millions of users globally
+- **Pioneered** on-device LLM inference and local multimodal AI pipelines on consumer mobile hardware
 - **Led** teams of developers in implementing modern architecture patterns
-- **Optimized** applications for performance across diverse Android devices
+- **Optimized** applications for performance across diverse Android devices and NDK compute backends
 - **Mentored** junior and mid-level developers in best practices
 - **Contributed** to the developer community through technical speaking and open-source projects
 
@@ -59,11 +60,12 @@ Over the past 14+ years, I've worked on diverse projects ranging from small star
 
 I'm passionate about sharing knowledge with the developer community. I regularly speak at industry events and conferences about:
 
+- On-Device AI & Local LLM Runtimes in Production
+- Kotlin Multiplatform (KMP) & Compose Multiplatform Architecture
 - Modern Android Architecture & Design Patterns
 - Jetpack Compose Best Practices
 - Hardware Integration & Performance Optimization
 - Technical Leadership & Team Development
-- Future of Mobile Development
 
 ---
 

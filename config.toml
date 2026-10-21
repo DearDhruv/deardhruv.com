@@ -11,6 +11,11 @@ PygmentsStyle = "monokai"
 rssLimit = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
+[taxonomies]
+tag = "tags"
+category = "categories"
+series = "series"
+
 [services]
 [services.googleAnalytics]
 ID = 'G-230251097' # Verify this ID, usually it starts with G- for modern GA4
@@ -72,11 +77,12 @@ dateformNum = "2006-01-02"
 dateformNumTime = "2006-01-02 15:04"
 
 # Metadata mostly used in document's head
-description = "Dhruv Patel - Lead Android Engineer with 14+ years of experience building sophisticated mobile solutions. Specializing in Jetpack Compose, architecture patterns, and technical leadership."
-keywords = "Dhruv Patel, DearDhruv, Android Engineer, Portfolio, Android Architect, Jetpack Compose, Mobile Development, Technical Leadership"
+description = "Dhruv Patel - Lead Android & Multiplatform Engineer with 14+ years of experience building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures."
+keywords = "Dhruv Patel, DearDhruv, Android Engineer, Kotlin Multiplatform, On-Device AI, llama.cpp, Mobile Architect, Jetpack Compose, Technical Leadership"
 images = ["/images/pro_pic_small.jpg"]
 
-homeSubtitle = "Android Architect | Mobile Solutions Expert | Technical Leader"
+homeSubtitle = "Android Architect | Kotlin Multiplatform | On-Device AI"
+twitter = "DearDhruv"
 
 [params.Author]
 name = "Dhruv Patel"
@@ -93,7 +99,7 @@ author = true
 copyright = true
 rss = true
 # topText = ["Left text", "Right text"]
-bottomText = ["Powered by <a href=\"http://gohugo.io\">Hugo</a>", "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"]
+bottomText = ["Powered by <a href=\"http://gohugo.io\">Hugo</a>"]
 
 # Sharing buttons
 enableSharingButtons = true

@@ -1,17 +1,38 @@
-# Dhruv's blog
+# Dhruv Patel (@DearDhruv)
 
-> Dhruv Patel's personal blog about technology, Android engineering, and a step towards technology.
+> Lead Android & Multiplatform Engineer with 14+ years of experience building on-device AI runtimes, Kotlin Multiplatform systems, and high-performance native architectures. Director & Lead Engineer behind AI Playground and VelociHue.
 
-## Links
+## Primary Sections
 
-- About: [https://deardhruv.com/about/](https://deardhruv.com/about/)
-- Posts: [https://deardhruv.com/posts/](https://deardhruv.com/posts/)
+- [Portfolio](https://deardhruv.com/portfolio/): Comprehensive engineering profile, technical stack (Kotlin, C++ NDK, Swift, Compose Multiplatform, llama.cpp, LiteRT, Vulkan/Metal), leadership, and impact highlights.
+- [Projects](https://deardhruv.com/projects/): Deep dive into production systems including AI Playground (on-device AI workstation), VelociHue (KMP arcade game), Digital Commerce Platform, and POS Hardware Integration modules.
+- [About](https://deardhruv.com/about/): Background story, 14+ years engineering journey, conference speaking topics, core values, and contact links.
+- [Blog](https://deardhruv.com/posts/): In-depth engineering articles, architecture breakdowns, and system design explorations.
+
+## Featured Production Systems
+
+- [AI Playground](https://github.com/DearDhruv/Model-Playground): Offline-first, on-device multimodal AI workstation for Android and iOS. Built with Kotlin Multiplatform, Compose Multiplatform, C++20 JNI (llama.cpp v0.7.0), Google AI Edge LiteRT, and Apple MLX. Features dual-model Speculative Turbo decoding, native `fork()` crash isolation for Vulkan drivers, on-device image synthesis (Bonsai 4B), zero-dependency document parsing (25+ formats), and 100% offline activity ledger (`INV-OFFLINE-01`).
+  - Google Play: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
+  - GitHub: https://github.com/DearDhruv/Model-Playground
+- [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue): Fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV. Features a shared deterministic game loop, Cloud Firestore schema v5 sync with 3-way union merge, 29-achievement multi-tiered engine, and photo-sensitive accessibility mode.
+  - Google Play: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
+
+## "Beyond the Model" Engineering Series
+
+A 6-part technical journey detailing how to build an offline-first, on-device AI platform for mobile hardware:
+
+1. [Part 1 - I Wanted the Model to Stay on the Phone](https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/): Why on-device AI matters, selecting mobile runtimes, battery/thermal constraints, and zero-telemetry architecture.
+2. [Part 2 - The Day a Chat Box Became a Document Engine](https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/): Local RAG, embedding quantization, chunking strategies, and pure Kotlin Multiplatform document parsing across 25+ formats.
+3. [Part 3 - The Model Was Fine. The Phone Wasn't.](https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/): Taming the Android Low Memory Killer (LMK), thermal throttling, dynamic thread scaling, and quantization tradeoffs (Q4_K_M vs IQ4_XS).
+4. [Part 4 - I Put an Image Generator Inside the Phone](https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/): On-device diffusion synthesis, Google AI Edge LiteRT multi-graph pipelines, Apple MLX Metal GPU paths, and memory budgeting for Bonsai 4B.
+5. [Part 5 - At Some Point I Stopped Building a Chat App](https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/): Clean Architecture with MVI presentation, runtime contracts, UI decomposition, and cross-platform architectural boundaries.
+6. [Part 6 - Pushing Mobile Hardware to the Edge](https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/): Dual-model Speculative Turbo decoding (2x generation speedups), on-demand GPU dynamic delivery, native C++ `fork()` watchdog crash isolation, and streaming SQLite fault-tolerance.
+
+## Machine-Readable Feeds & Discovery
+
+- Full Content Directory: [https://deardhruv.com/llms-full.txt](https://deardhruv.com/llms-full.txt)
 - Sitemap: [https://deardhruv.com/sitemap.xml](https://deardhruv.com/sitemap.xml)
-- Feed (RSS): [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)
-- Feed (JSON): [https://deardhruv.com/index.json](https://deardhruv.com/index.json)
-
-## Optional
-
-- Full Directory: [https://deardhruv.com/llms-full.txt](https://deardhruv.com/llms-full.txt)
-- MCP Server Card: [https://deardhruv.com/mcp.json](https://deardhruv.com/mcp.json)
-- API Catalog: [https://deardhruv.com/.well-known/api-catalog](https://deardhruv.com/.well-known/api-catalog)
+- RSS Feed: [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)
+- JSON Feed: [https://deardhruv.com/feed.json](https://deardhruv.com/feed.json)
+- MCP Card: [https://deardhruv.com/.well-known/mcp.json](https://deardhruv.com/.well-known/mcp.json)
+- Markdown Negotiation: Any URL can be fetched as Markdown by setting `Accept: text/markdown` or requesting `[url]index.md`.

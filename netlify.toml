@@ -38,9 +38,21 @@ HUGO_VERSION = "0.162.1"
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
 
+[[redirects]]
+  from = "/feed.json"
+  to = "/index.json"
+  status = 200
+
 [[edge_functions]]
   path = "/*"
   function = "markdown-negotiation"
+
+[[headers]]
+  for = "/index.json"
+  [headers.values]
+    Content-Type = "application/feed+json; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
 
 [[headers]]
   for = "/*"
@@ -89,3 +101,39 @@ HUGO_ENABLEGITINFO = "true"
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/bundle*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/main*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/llms*.txt"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+    Cache-Control = "public, max-age=3600"

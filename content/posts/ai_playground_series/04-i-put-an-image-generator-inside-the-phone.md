@@ -796,4 +796,21 @@ At this point the obvious question was:
 
 That is where the story stops being about individual features and becomes about engineering the product as a platform.
 
-**Part 5:** [At Some Point I Stopped Building a Chat App](./05-at-some-point-i-stopped-building-a-chat-app.md)
+---
+
+## The Complete Series
+
+- [Part 1 - I Wanted the Model to Stay on the Phone](./01-i-wanted-the-model-to-stay-on-the-phone.md)
+- [Part 2 - The Day a Chat Box Became a Document Engine](./02-the-day-a-chat-box-became-a-document-engine.md)
+- [Part 3 - The Model Was Fine. The Phone Wasn't.](./03-the-model-was-fine-the-phone-wasnt.md)
+- **Part 4 - I Put an Image Generator Inside the Phone**
+- [Part 5 - At Some Point I Stopped Building a Chat App](./05-at-some-point-i-stopped-building-a-chat-app.md)
+- [Part 6 - Pushing Mobile Hardware to the Edge](./06-pushing-mobile-hardware-to-the-edge.md)
+
+**Next: [Part 5 - At Some Point I Stopped Building a Chat App](./05-at-some-point-i-stopped-building-a-chat-app.md)**
+
+**Project:** AI Playground  
+**Website:** https://deardhruv.com  
+**Repository:** https://github.com/DearDhruv/Model-Playground  
+**Google Play:** [AI Playground on Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)
+

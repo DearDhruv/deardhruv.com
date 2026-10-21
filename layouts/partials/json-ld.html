@@ -1,19 +1,129 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "{{ .Site.Params.Author.name }}",
-  "url": "{{ .Site.BaseURL }}",
-  "sameAs": [
-    {{ range $index, $social := .Site.Params.social }}
-      {{ if $index }},{{ end }}"{{ $social.url }}"
-    {{ end }}
-  ],
-  "jobTitle": "Lead Android Engineer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Impact Commerce"
-  },
-  "description": "{{ .Site.Params.description }}"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "{{ .Site.Title }}",
+      "description": "{{ .Site.Params.description }}",
+      "inLanguage": "{{ .Site.Language.Lang | default "en" }}",
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ .Site.BaseURL }}#person",
+      "name": "{{ .Site.Params.Author.name }}",
+      "alternateName": ["DearDhruv", "Dhruv"],
+      "url": "{{ .Site.BaseURL }}",
+      "image": "{{ .Site.BaseURL }}images/pro_pic_small.jpg",
+      "jobTitle": "Lead Android & Multiplatform Engineer",
+      "description": "{{ .Site.Params.description }}",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Impact Commerce"
+      },
+      "knowsAbout": [
+        "Android Architecture",
+        "Kotlin Multiplatform (KMP)",
+        "On-Device AI & LLM Runtimes",
+        "llama.cpp & NDK Optimization",
+        "Jetpack Compose & Compose Multiplatform",
+        "C++20 & Vulkan Compute",
+        "Mobile Systems Engineering",
+        "Cloud Firestore & Offline-First Sync"
+      ],
+      "sameAs": [
+        {{- $socials := slice -}}
+        {{- range .Site.Params.social -}}
+          {{- $socials = $socials | append (printf "\"%s\"" .url) -}}
+        {{- end -}}
+        {{- $socials = $socials | append "\"https://play.google.com/store/apps/developer?id=DearDhruv\"" -}}
+        {{- delimit $socials ", " | safeJS -}}
+      ]
+    }
+    {{- if and .IsPage (eq .Section "posts") -}}
+    ,
+    {
+      "@type": "TechArticle",
+      "@id": "{{ .Permalink }}#article",
+      "isPartOf": {
+        "@id": "{{ .Site.BaseURL }}#website"
+      },
+      "headline": "{{ .Title }}",
+      "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary | plainify }}{{ end }}",
+      "inLanguage": "{{ .Site.Language.Lang | default "en" }}",
+      "mainEntityOfPage": "{{ .Permalink }}",
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+      "wordCount": {{ .WordCount }},
+      "author": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      },
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      }
+      {{- with .Params.tags -}}
+      ,
+      "keywords": [
+        {{- $tagList := slice -}}
+        {{- range . -}}
+          {{- $tagList = $tagList | append (printf "\"%s\"" .) -}}
+        {{- end -}}
+        {{- delimit $tagList ", " | safeJS -}}
+      ]
+      {{- end -}}
+      {{- with .Params.series -}}
+      ,
+      "articleSection": "{{ index . 0 }}"
+      {{- end }}
+    }
+    {{- end -}}
+    {{- if or (eq .RelPermalink "/projects/") (eq .RelPermalink "/portfolio/") -}}
+    ,
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://github.com/DearDhruv/Model-Playground#software",
+      "name": "AI Playground",
+      "operatingSystem": "Android, iOS",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "On-Device AI & LLM Workstation",
+      "description": "An offline-first, on-device multimodal AI workstation for Android and iOS that turns mobile devices into self-contained inference engines with 100% data privacy.",
+      "url": "https://github.com/DearDhruv/Model-Playground",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground",
+      "sameAs": "https://github.com/DearDhruv/Model-Playground",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://play.google.com/store/apps/details?id=com.deardhruv.velocihue#software",
+      "name": "VelociHue",
+      "operatingSystem": "Android, iOS, Android TV",
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Arcade Action Game",
+      "description": "A fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV with cross-device cloud synchronization.",
+      "url": "https://play.google.com/store/apps/details?id=com.deardhruv.velocihue",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.deardhruv.velocihue",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      }
+    }
+    {{- end }}
+  ]
 }
 </script>

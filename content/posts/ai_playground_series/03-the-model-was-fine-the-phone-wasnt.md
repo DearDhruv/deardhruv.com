@@ -777,4 +777,21 @@ Then I did something that added a completely different class of pressure to the 
 
 I tried to generate images locally.
 
-**Part 4:** [I Put an Image Generator Inside the Phone](./04-i-put-an-image-generator-inside-the-phone.md)
+---
+
+## The Complete Series
+
+- [Part 1 - I Wanted the Model to Stay on the Phone](./01-i-wanted-the-model-to-stay-on-the-phone.md)
+- [Part 2 - The Day a Chat Box Became a Document Engine](./02-the-day-a-chat-box-became-a-document-engine.md)
+- **Part 3 - The Model Was Fine. The Phone Wasn't.**
+- [Part 4 - I Put an Image Generator Inside the Phone](./04-i-put-an-image-generator-inside-the-phone.md)
+- [Part 5 - At Some Point I Stopped Building a Chat App](./05-at-some-point-i-stopped-building-a-chat-app.md)
+- [Part 6 - Pushing Mobile Hardware to the Edge](./06-pushing-mobile-hardware-to-the-edge.md)
+
+**Next: [Part 4 - I Put an Image Generator Inside the Phone](./04-i-put-an-image-generator-inside-the-phone.md)**
+
+**Project:** AI Playground  
+**Website:** https://deardhruv.com  
+**Repository:** https://github.com/DearDhruv/Model-Playground  
+**Google Play:** [AI Playground on Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)
+

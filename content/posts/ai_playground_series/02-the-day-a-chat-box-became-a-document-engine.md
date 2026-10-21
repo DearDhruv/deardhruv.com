@@ -713,4 +713,21 @@ And once documents, images and models all started competing for the same phone r
 
 **What happens when the phone itself says no?**
 
-**Part 3:** [The Model Was Fine. The Phone Wasn't.](./03-the-model-was-fine-the-phone-wasnt.md)
+---
+
+## The Complete Series
+
+- [Part 1 - I Wanted the Model to Stay on the Phone](./01-i-wanted-the-model-to-stay-on-the-phone.md)
+- **Part 2 - The Day a Chat Box Became a Document Engine**
+- [Part 3 - The Model Was Fine. The Phone Wasn't.](./03-the-model-was-fine-the-phone-wasnt.md)
+- [Part 4 - I Put an Image Generator Inside the Phone](./04-i-put-an-image-generator-inside-the-phone.md)
+- [Part 5 - At Some Point I Stopped Building a Chat App](./05-at-some-point-i-stopped-building-a-chat-app.md)
+- [Part 6 - Pushing Mobile Hardware to the Edge](./06-pushing-mobile-hardware-to-the-edge.md)
+
+**Next: [Part 3 - The Model Was Fine. The Phone Wasn't.](./03-the-model-was-fine-the-phone-wasnt.md)**
+
+**Project:** AI Playground  
+**Website:** https://deardhruv.com  
+**Repository:** https://github.com/DearDhruv/Model-Playground  
+**Google Play:** [AI Playground on Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)
+
