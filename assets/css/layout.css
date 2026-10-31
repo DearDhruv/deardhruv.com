@@ -1,0 +1,158 @@
+/**
+ * DearDhruv Layout & Surface System — Precision Technical Editorial
+ * Standardized responsive layout primitives, container bounds, spacing, and surface elevations.
+ * Compliant with WCAG 2.2 AA and DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md Section 5.5 & 5.6.
+ */
+
+:root {
+  /* Spacing Scale Tokens */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* Section Gaps */
+  --section-gap: clamp(2.5rem, 6vw, 4.5rem);
+
+  /* Container Widths */
+  --width-reading: 72ch;
+  --width-default: 1080px;
+  --width-wide: 1140px;
+  --page-gutter: clamp(1rem, 4vw, 2rem);
+
+  /* Radius Tokens */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+}
+
+/* 1. Page Shell */
+.layout-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-shell > main {
+  flex: 1 0 auto;
+}
+
+/* 2. Container Primitives */
+.layout-container {
+  width: min(100% - (var(--page-gutter) * 2), var(--width-default));
+  margin-inline: auto;
+}
+
+.layout-container-wide {
+  width: min(100% - (var(--page-gutter) * 2), var(--width-wide));
+  margin-inline: auto;
+}
+
+.layout-container-reading {
+  width: min(100% - (var(--page-gutter) * 2), var(--width-reading));
+  margin-inline: auto;
+}
+
+/* 3. Section Primitive */
+.layout-section {
+  padding-block: var(--section-gap);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.layout-section:last-of-type {
+  border-bottom: none;
+}
+
+/* 4. Stack Primitive — Vertical rhythm between children */
+.layout-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.layout-stack > * + * {
+  margin-top: var(--stack-gap, var(--space-4));
+}
+
+.layout-stack-sm > * + * { --stack-gap: var(--space-2); }
+.layout-stack-md > * + * { --stack-gap: var(--space-4); }
+.layout-stack-lg > * + * { --stack-gap: var(--space-6); }
+.layout-stack-xl > * + * { --stack-gap: var(--space-8); }
+
+/* 5. Cluster Primitive — Wrapping inline items (badges, tags, actions) */
+.layout-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, var(--space-2));
+  align-items: center;
+}
+
+.layout-cluster-between {
+  justify-content: space-between;
+}
+
+/* 6. Grid Primitives — Auto-responsive columns */
+.layout-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: var(--grid-gap, var(--space-6));
+}
+
+.layout-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--grid-gap, var(--space-6));
+}
+
+/* 7. Media Frame Primitive */
+.layout-media-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg-surface-subtle);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.layout-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 8. Reusable Surface Primitives */
+.surface-card {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--card-padding, var(--space-6));
+  box-shadow: var(--shadow-sm);
+}
+
+.surface-card-subtle {
+  background-color: var(--color-bg-surface-subtle);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.surface-callout {
+  background-color: var(--color-accent-subtle);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5);
+}

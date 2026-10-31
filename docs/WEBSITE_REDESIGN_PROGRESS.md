@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `c1e0145`
+- Current HEAD: `f933a4f`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A3.2 — Standardize typography system
-- Next task: Task A3.3 — Define responsive layout and surface tokens
+- Last completed phase/task: Task A3.3 — Define responsive layout and surface tokens
+- Next task: Task A3.4 — Document icon and divider standards
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -591,7 +591,7 @@ Task A3.2 — Standardize typography system
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `c1e0145`
-**Commit:** Pending
+**Commit:** `f933a4f`
 
 ### Objective
 Standardize the typography system into 16 distinct semantic text roles (`assets/css/typography.css`, `static/css/typography.css`) implementing fluid clamps, zero layout shift system font stacks (`system-ui` and tabular `ui-monospace`), and strict single-H1 hierarchy rules.
@@ -627,3 +627,46 @@ None. Ready for Task A3.3 responsive layout and surface tokens.
 
 ### Exact next task
 Task A3.3 — Define responsive layout and surface tokens
+
+## 2026-10-31 — Task A3.3: Define Responsive Layout and Surface Tokens
+
+**Task:** Task A3.3 — Define responsive layout and surface tokens
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `f933a4f`
+**Commit:** Pending
+
+### Objective
+Implement modular responsive layout primitives (`assets/css/layout.css`, `static/css/layout.css`), including `.layout-shell`, bounded reading containers (`.layout-container-reading`: `72ch`), wide grid containers (`.layout-container-wide`: `1140px`), flex stacks, auto-wrapping clusters, 16:9 media frames, and unified surface card elevations.
+
+### Files inspected
+- `docs/DESIGN_AUDIT.md`
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 5.5 & 5.6
+
+### Files changed
+- `assets/css/layout.css`
+- `static/css/layout.css`
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Implemented core container primitives: `.layout-container` (`1080px`), `.layout-container-wide` (`1140px`), `.layout-container-reading` (`72ch`).
+- Added layout primitives: `.layout-stack` (with 4 spacing variants: sm, md, lg, xl), `.layout-cluster`, `.layout-grid-2`, `.layout-grid-3`, and `.layout-media-frame`.
+- Standardized surface elevations (`.surface-card`, `.surface-card-subtle`, `.surface-callout`) with unified radii (`--radius-sm: 6px`, `--radius-md: 10px`, `--radius-lg: 16px`).
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: All 5 test suites passed (38/38 legacy routes, 7/7 assets, 80 HTML docs / 1477 links, 72 edge assertions, 14/14 contrast pairs verified).
+
+### Route/content/source-path impact
+Added `/css/layout.css`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A3.4 icon and divider standards.
+
+### Exact next task
+Task A3.4 — Document icon and divider standards
