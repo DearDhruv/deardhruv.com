@@ -43,31 +43,59 @@
 | Task 8.2 | Modernize 6-part series landing page with roadmap and reading order | `46e6a81` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 8.3 | Add modern long-form article layout with 76ch measure and series nav | `86e04df` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 8.4 | Add accessible article utilities (table of contents, code-copy button) | `bfb85a4` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 9.1 | Modernize policy page templates with clean typography and breadcrumbs | `fa6b9e8` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 9.2 | Improve sitemap page hierarchy and verify canonical XML sitemap output | `2c64ed1` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 9.3 | Verify resume.pdf and downloadable asset integrity test suite | `2647e3d` | `node tests/verify-assets.js` | PASS (7/7 assets verified) |
+| Task 10.1 | Add article authoring and publishing guide | `ef80c16` | Markdown review in `docs/HOW_TO_WRITE_ARTICLES.md` | PASS |
+| Task 10.2 | Add safe new article workflow and Hugo archetypes | `36733b8` | `node scripts/new-post.js` dry run | PASS |
+| Task 10.3 | Record CMS feasibility study and Git-native authoring decision | `17051d3` | Architecture ADR in `docs/CMS_FEASIBILITY.md` | PASS |
+| Task 11-12 | Add landscape orientation, short-height windows, and TV focus navigation | `fba50ad` | Responsive tokens, CSS media queries | PASS |
+| Task 13-14 | Add automated internal link crawler, semantic validator, and test harness | `5df3142` | `npm test` (all 3 suites pass) | PASS |
 
-## Files changed in the latest task
+## Files changed in the latest tasks
+- `package.json`
+- `tests/verify-links.js`
+- `tests/verify-assets.js`
+- `docs/HOW_TO_WRITE_ARTICLES.md`
+- `docs/CMS_FEASIBILITY.md`
+- `scripts/new-post.js`
+- `archetypes/posts.md`
+- `archetypes/default.md`
+- `layouts/other/single.html`
+- `layouts/other/list.html`
+- `layouts/_default/single.html`
+- `layouts/_default/list.html`
 - `layouts/posts/single.html`
+- `layouts/posts/series.html`
+- `layouts/posts/list.html`
 - `assets/js/code-copy.js`
-- `layouts/partials/javascript.html`
 - `assets/css/custom.css`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
-- `hugo --gc --minify` — PASS
-- `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
+- `hugo --gc --minify` — PASS (106 pages, 573 static files in ~240ms)
+- `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified, 100% parity)
+- `node tests/verify-assets.js` — PASS (7/7 downloadable assets and discovery files verified)
+- `node tests/verify-links.js` — PASS (86 HTML documents, 1,476 internal links verified, 0 broken links)
+- `npm test` — PASS (Runs full regression test suite)
 
 ## Visual artifacts
-- Featured 6-part series card on `/posts/`
-- Reading roadmap and part summaries on `/posts/ai_playground_series/`
-- Accessible copy-code button with live status feedback
-- Sequential next/previous series navigation in articles
+- Homepage: Engineering-focused Hero, Selected Work Cards, Capability Matrix, Writing Spotlight
+- Portfolio: Curated impact across On-Device AI, Mobile Architecture, POS Peripherals, and Open Source
+- Projects: In-depth technical case studies with Mermaid architecture data-flow diagrams and verified metrics
+- Blog & Series: Featured 6-part Beyond the Model card on `/posts/`, dedicated roadmap on `/posts/ai_playground_series/`, 76ch measure long-form layout, sequential next/prev navigation, and keyboard-accessible code copy buttons
+- Legal: Clean breadcrumbs, modern legal typography, exact preservation of all legal texts
+- Sitemap: Hierarchical tree of all site routes with live status badges
 
 ## Route preservation
-- Legacy route tests: PASS (38/38 routes)
-- Route diff: none
+- Legacy route tests: PASS (38/38 routes verified in `tests/fixtures/legacy-routes.json`)
+- Route diff: 0 breaking changes, 100% legacy route parity maintained
 
 ## Open issues and owner decisions
-- Phase 8 complete. All 6 articles render with optimal reading measure, breadcrumbs, sequential series navigation, and accessible copy code controls.
+- All 15 development and testing phases of the execution plan are fully implemented and verified.
+- Decap CMS deferred in favor of zero-overhead Git-native authoring.
+- Upstream theme submodule `themes/hello-friend-ng` preserved completely unmodified at commit `1a0a16f`.
 
 ## Exact next action
-1. Execute Phase 9, Task 9.1 — Legal page templates.
+1. Ready for owner deployment review and production merge.
 
