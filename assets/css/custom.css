@@ -2697,6 +2697,43 @@ canvas {
   text-decoration: underline;
 }
 
+/* ============================================================
+   TV & 10-FOOT INTERACTION POLISH
+   ============================================================ */
+@media (min-width: 1920px) and (min-height: 1000px) {
+  :root {
+    --font-size-base: 1.15rem;
+  }
+  
+  :focus-visible {
+    outline: 4px solid var(--accent) !important;
+    outline-offset: 6px !important;
+    box-shadow: 0 0 16px var(--accent-subtle) !important;
+  }
+}
+
+/* ============================================================
+   LANDSCAPE MOBILE & SHORT-HEIGHT WINDOWS
+   ============================================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .landing-hero {
+    flex-direction: row !important;
+    gap: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .landing-hero-avatar {
+    width: 90px !important;
+    height: 90px !important;
+  }
+
+  .site-section {
+    padding: 1.75rem 0 !important;
+  }
+}
+
+
 
 
 
