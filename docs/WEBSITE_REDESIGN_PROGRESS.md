@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `5169be9`
+- Current HEAD: `a015e6d`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A1.3 — Audit components and states
-- Next task: Task A1.4 — Audit responsive behavior and motion
+- Last completed phase/task: Task A1.4 — Audit responsive behavior and motion
+- Next task: Task A2.1 — Define portfolio art direction options
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -324,7 +324,7 @@ Task A1.3 — Audit components and states
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `5169be9`
-**Commit:** Pending
+**Commit:** `a015e6d`
 
 ### Objective
 Audit interactive components (buttons, links, nav drawer, cards, dividers, focus indicators, theme toggle, and chips) for visual consistency, WCAG 2.2 AA touch target compliance, focus visibility, and theme parity. Document findings in `docs/DESIGN_AUDIT.md`.
@@ -363,3 +363,47 @@ None. Ready for Task A1.4 Responsive Behavior and Motion audit.
 
 ### Exact next task
 Task A1.4 — Audit responsive behavior and motion
+
+## 2026-10-31 — Task A1.4: Audit Responsive Behavior and Motion
+
+**Task:** Task A1.4 — Audit responsive behavior and motion
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `a015e6d`
+**Commit:** Pending
+
+### Objective
+Audit viewport boundary conditions (320px narrow mobile, short landscape viewports, table/pre overflow), motion performance, hover-state sticking on touch devices, and WCAG 2.2 AA `prefers-reduced-motion` compliance. Finalize `docs/DESIGN_AUDIT.md`.
+
+### Files inspected
+- `assets/css/custom.css`
+- `docs/DESIGN_AUDIT.md`
+- `tests/fixtures/visual-baseline.json`
+
+### Files changed
+- `docs/DESIGN_AUDIT.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Cataloged 4 responsive and motion defects in `docs/DESIGN_AUDIT.md`:
+  - `RESP-01` (High): Narrow viewport 320px horizontal overflow on wide tables and code blocks.
+  - `RESP-02` (Medium): Short-height landscape viewports (640×360) occluded by large hero padding and sticky header.
+  - `MOT-01` (High): Missing `@media (prefers-reduced-motion: reduce)` on card hover translations.
+  - `MOT-02` (Medium): Sticky `:hover` states lingering after touch interactions on mobile.
+- Completed full 14-issue visual audit in `docs/DESIGN_AUDIT.md`. Phase A1 is complete.
+
+### Commands executed
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 4/4 suites passed.
+
+### Route/content/source-path impact
+None. Documentation audit only.
+
+### Known issues / decisions required
+None. Ready to proceed to Phase A2 Art Direction and Visual Concepts.
+
+### Exact next task
+Task A2.1 — Define portfolio art direction options

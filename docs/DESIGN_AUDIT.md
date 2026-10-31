@@ -151,3 +151,74 @@ Audited across 6 standard viewports and 9 canonical page archetypes:
   - Page surface: `#f8fafc` (slate-50)
   - Card/container surface: `#ffffff` (white) with subtle border `#cbd5e1` (slate-300, 1.45:1 contrast) and soft shadow `--shadow-sm`.
 - **Verification Test:** Light mode contrast and surface perceptibility automated audit.
+
+---
+
+## 5. Responsive & Motion Behavior Inconsistency Inventory
+
+### [RESP-01] Narrow Viewport (320px) Code Block & Table Horizontal Overflow
+- **Severity:** High
+- **Page & Component:** Technical articles (Parts 01–06), architecture data flow diagrams, and markdown tables.
+- **Evidence Reference:** Unconstrained tables and preformatted blocks on 320px screens (`mobile-narrow`) force document-level horizontal scroll (`document.documentElement.scrollWidth > 320px`).
+- **Root Cause:** Missing `max-width: 100%` and uncontained horizontal scroll containers on parent wrappers.
+- **Design System Rule:**
+  - Enforce `overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch;` on all `<pre>` and `<table>` blocks.
+  - Set `html, body { overflow-x: hidden; }` to eliminate viewport-level horizontal blowouts.
+- **Verification Test:** Playwright / headless DOM evaluation checking `document.documentElement.scrollWidth <= window.innerWidth` at 320px, 360px, 390px, and 430px widths.
+
+### [RESP-02] Short-Height Landscape Viewport Content Occlusion (640×360)
+- **Severity:** Medium
+- **Page & Component:** Mobile landscape orientation on all pages.
+- **Evidence Reference:** Sticky header (`height: ~70px`) combined with large hero vertical padding (`clamp(2rem, 5vh, 4rem)`) occludes the entire first viewport, hiding lead content below the fold.
+- **Root Cause:** Reliance on vertical padding clamp that scales with viewport height rather than adapting to short landscape screens.
+- **Design System Rule:** Provide dedicated media query:
+  ```css
+  @media (max-height: 500px) and (orientation: landscape) {
+    :root { --page-top-gap: 1rem; }
+    .site-header { padding-block: 0.5rem; }
+    .hero { min-height: auto; padding-block: 1rem; }
+  }
+  ```
+- **Verification Test:** Screenshot and scroll-offset inspection at 640×360px.
+
+### [MOT-01] Missing Reduced-Motion Overrides on Card Hover Transforms
+- **Severity:** High
+- **Page & Component:** Card hover elevations (`transform: translateY(-4px); transition: 0.25s;`) across `/portfolio/` and `/projects/`.
+- **Evidence Reference:** `custom.css:485` applies transform transitions globally without querying `prefers-reduced-motion`.
+- **Root Cause:** Missing accessibility media query.
+- **Design System Rule:**
+  ```css
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  ```
+- **Verification Test:** Emulated media feature test in headless browser verifying zero transform animations when `prefers-reduced-motion: reduce` is active.
+
+### [MOT-02] Sticky Hover State on Touch Displays
+- **Severity:** Medium
+- **Page & Component:** Buttons and interactive cards on mobile and tablet devices.
+- **Evidence Reference:** When tapping a card or button on mobile touch screens, `:hover` pseudo-classes stay permanently triggered (retaining background tint and transform) until tapping another element.
+- **Root Cause:** Hover rules defined without `@media (hover: hover) and (pointer: fine)`.
+- **Design System Rule:** Wrap all non-essential hover transitions and elevation transforms in fine-pointer media queries:
+  ```css
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover { transform: translateY(-3px); }
+  }
+  ```
+- **Verification Test:** Emulated touch-pointer test verifying no sticky hover state remains after tap.
+
+---
+
+## 6. Audit Conclusion & Phase Transition
+
+The visual audit confirms:
+1. **Typography:** Needs single-H1 enforcement, strict 8-step fluid scale, 72ch reading measure, and dark-mode secondary text contrast fixes.
+2. **Components:** Needs standardized button heights (>=44px), unclipped `:focus-visible` rings, subtle solid dividers, and light-mode card contrast enhancements.
+3. **Responsive & Motion:** Needs 320px horizontal scroll containment, landscape short-height adaptations, comprehensive `prefers-reduced-motion` compliance, and touch-hover isolation.
+
+All 14 cataloged issues (`TYPO-01`..`05`, `COMP-01`..`05`, `RESP-01`..`02`, `MOT-01`..`02`) are mapped to design-system requirements in Phase A3/A4. Ready to proceed to Phase A2 Art Direction.
