@@ -1,0 +1,135 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Sitemap"
+  lead="A hierarchical directory of all folders, series, articles, and pages on deardhruv.com."
+  containerClass="layout-container"
+>
+  <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+    <!-- MAIN SECTIONS -->
+    <section class="card" style="padding: var(--space-6);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); border-bottom: 1px solid var(--color-border-subtle); padding-bottom: var(--space-3);">
+        <div>
+          <h2 style="font-size: var(--font-h3); margin: 0;">Main Pages</h2>
+          <code style="font-size: var(--font-small); color: var(--color-accent);">/</code>
+        </div>
+        <span class="badge">4 pages</span>
+      </div>
+      <div class="prose">
+        <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: var(--space-3);">
+          <li>
+            <a href="/" style="font-weight: 600;">Home (/)</a>
+            <p style="margin: 0; color: var(--color-text-secondary); font-size: var(--font-body-small);">Lead Android & Multiplatform Engineer portfolio landing page.</p>
+          </li>
+          <li>
+            <a href="/about/" style="font-weight: 600;">About (/about/)</a>
+            <p style="margin: 0; color: var(--color-text-secondary); font-size: var(--font-body-small);">Career narrative, technical expertise domains, speaking, and contact details.</p>
+          </li>
+          <li>
+            <a href="/portfolio/" style="font-weight: 600;">Portfolio (/portfolio/)</a>
+            <p style="margin: 0; color: var(--color-text-secondary); font-size: var(--font-body-small);">Professional work overview, flagship products, and verified systems impact.</p>
+          </li>
+          <li>
+            <a href="/projects/" style="font-weight: 600;">Projects (/projects/)</a>
+            <p style="margin: 0; color: var(--color-text-secondary); font-size: var(--font-body-small);">Detailed architectural case studies for AI Playground, VelociHue, and POS HAL.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BLOG & ENGINEERING SERIES -->
+    <section class="card" style="padding: var(--space-6);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); border-bottom: 1px solid var(--color-border-subtle); padding-bottom: var(--space-3);">
+        <div>
+          <h2 style="font-size: var(--font-h3); margin: 0;">Technical Articles & Series</h2>
+          <code style="font-size: var(--font-small); color: var(--color-accent);">/posts/</code>
+        </div>
+        <span class="badge">8 pages</span>
+      </div>
+      <div class="prose">
+        <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: var(--space-3);">
+          <li>
+            <a href="/posts/" style="font-weight: 600;">Posts Index (/posts/)</a>
+            <p style="margin: 0; color: var(--color-text-secondary); font-size: var(--font-body-small);">All published engineering articles, guides, and series.</p>
+          </li>
+          <li>
+            <a href="/posts/ai_playground_series/" style="font-weight: 600;">Beyond the Model Series (/posts/ai_playground_series/)</a>
+            <p style="margin: 0; color: var(--color-text-secondary); font-size: var(--font-body-small);">6-part architectural deep dive into on-device AI runtimes and mobile hardware limits.</p>
+            <ul style="margin-top: var(--space-2); margin-bottom: var(--space-2);">
+              <li><a href="/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/">Part 1 &middot; I Wanted the Model to Stay on the Phone</a></li>
+              <li><a href="/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/">Part 2 &middot; The Day a Chat Box Became a Document Engine</a></li>
+              <li><a href="/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/">Part 3 &middot; The Model Was Fine. The Phone Wasn't.</a></li>
+              <li><a href="/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/">Part 4 &middot; I Put an Image Generator Inside the Phone</a></li>
+              <li><a href="/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/">Part 5 &middot; At Some Point I Stopped Building a Chat App</a></li>
+              <li><a href="/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/">Part 6 &middot; Pushing Mobile Hardware to the Edge</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- POLICIES & LEGAL -->
+    <section class="card" style="padding: var(--space-6);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); border-bottom: 1px solid var(--color-border-subtle); padding-bottom: var(--space-3);">
+        <div>
+          <h2 style="font-size: var(--font-h3); margin: 0;">Legal & Policies</h2>
+          <code style="font-size: var(--font-small); color: var(--color-accent);">/other/</code>
+        </div>
+        <span class="badge">10 pages</span>
+      </div>
+      <div class="prose">
+        <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: var(--space-3);">
+          <li>
+            <a href="/other/" style="font-weight: 600;">Policy Root (/other/)</a>
+          </li>
+          <li>
+            <a href="/other/ai-playground/" style="font-weight: 600;">AI Playground (/other/ai-playground/)</a>
+            <ul>
+              <li><a href="/other/ai-playground/privacy-policy-ai-playground-app/">Privacy Policy</a></li>
+              <li><a href="/other/ai-playground/terms-ai-playground-app/">Terms of Service</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/other/open-store-app/" style="font-weight: 600;">Open Store App (/other/open-store-app/)</a>
+            <ul>
+              <li><a href="/other/open-store-app/privacy-policy-open-store-app/">Privacy Policy</a></li>
+              <li><a href="/other/open-store-app/terms-open-store-app/">Terms of Service</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="/other/veloci-hue/" style="font-weight: 600;">VelociHue Game (/other/veloci-hue/)</a>
+            <ul>
+              <li><a href="/other/veloci-hue/privacy-policy-veloci-hue-game/">Privacy Policy</a></li>
+              <li><a href="/other/veloci-hue/terms-veloci-hue/">Terms of Service</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DISCOVERY & MACHINE FEEDS -->
+    <section class="card" style="padding: var(--space-6);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); border-bottom: 1px solid var(--color-border-subtle); padding-bottom: var(--space-3);">
+        <div>
+          <h2 style="font-size: var(--font-h3); margin: 0;">Machine Discovery & Static Assets</h2>
+          <code style="font-size: var(--font-small); color: var(--color-accent);">RFC 9264 &middot; Agent Endpoints</code>
+        </div>
+        <span class="badge">8 endpoints</span>
+      </div>
+      <div class="prose">
+        <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: var(--space-2);">
+          <li><a href="/index.json">JSON Feed (/index.json)</a></li>
+          <li><a href="/index.md">Root Markdown Mirror (/index.md)</a></li>
+          <li><a href="/llms.txt">LLMs.txt Discovery (/llms.txt)</a></li>
+          <li><a href="/auth.md">Agent Authentication Spec (/auth.md)</a></li>
+          <li><a href="/.well-known/mcp.json">MCP Descriptor (/.well-known/mcp.json)</a></li>
+          <li><a href="/.well-known/api-catalog">RFC 9264 API Catalog (/.well-known/api-catalog)</a></li>
+          <li><a href="/sitemap.xml">XML Sitemap (/sitemap.xml)</a></li>
+          <li><a href="/resume.pdf">Professional Résumé PDF (/resume.pdf)</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</PageLayout>

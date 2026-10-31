@@ -2006,3 +2006,47 @@ None. Ready for Task A8.11 porting sitemap and static documents.
 
 ### Exact next task
 Task A8.11 — Port sitemap and static documents
+
+## 2026-10-31 — Task A8.11: Port Sitemap and Static Documents
+
+**Task:** Task A8.11 — Port sitemap and static documents
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `34ad5a1`
+**Commit:** Pending
+
+### Objective
+Migrate the visual sitemap (`/sitemap/`), XML sitemap (`/sitemap.xml`), and static document handling (`/resume.pdf`, RFC 9264 catalog, MCP descriptor) into Astro without disrupting legacy discovery contracts.
+
+### Files inspected
+- `content/sitemap.md`
+- `tests/verify-assets.js`
+- `tests/fixtures/legacy-routes.json`
+
+### Files changed
+- `src/pages/sitemap/index.astro`
+- `src/pages/sitemap.xml.ts`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `src/pages/sitemap/index.astro` presenting visual directory of main sections, series articles, policies, and machine discovery endpoints.
+- Implemented `src/pages/sitemap.xml.ts` generating full standard XML sitemap covering all canonical URLs with lastmod dates.
+- Verified `./static` public directory passes through `resume.pdf` (181 KB), `.well-known` endpoints, and icons directly into `dist/`.
+- Compiled static build via `npx astro build` (26 static pages built in 634ms).
+
+### Commands executed
+- `npm run build:astro`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 test suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+
+### Route/content/source-path impact
+Ported `/sitemap/` and `/sitemap.xml`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.12 rebuilding feed, JSON, and Markdown endpoints.
+
+### Exact next task
+Task A8.12 — Rebuild feed/JSON/Markdown outputs
