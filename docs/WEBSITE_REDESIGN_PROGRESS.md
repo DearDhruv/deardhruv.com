@@ -2447,3 +2447,43 @@ None. Ready for Task A10.3 evaluating browser CMS options.
 
 ### Exact next task
 Task A10.3 — Evaluate browser CMS options
+
+## 2026-10-31 — Task A10.3: Evaluate Browser Git CMS Options
+
+**Task:** Task A10.3 — Evaluate browser CMS options
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `b06379d`
+**Commit:** Pending
+
+### Objective
+Author `docs/CMS_EVALUATION.md` systematically evaluating Git-backed browser CMS solutions (Decap CMS, TinaCMS, Keystatic, Sveltia CMS) across TOML frontmatter compatibility, client bundle weight, authentication dependencies, and maintenance overhead.
+
+### Files inspected
+- `content/posts/`
+- `docs/WRITING_AND_PUBLISHING.md`
+
+### Files changed
+- `docs/CMS_EVALUATION.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Evaluated 4 candidate Git-based CMS options in `docs/CMS_EVALUATION.md`.
+- Identified **Sveltia CMS** as the highest-scoring candidate (4.6/5.0) for lightweight static drop-in integration with TOML support.
+- Recorded architecture decision to defer browser CMS deployment and retain pure Git/Markdown/CLI authoring workflow, eliminating external OAuth proxies and maintenance burdens while preserving immediate zero-code path to Sveltia CMS if needed. Phase A10 is complete.
+
+### Commands executed
+- `git diff --check`
+- `npm run test:dist`
+
+### Test results
+- `npm run test:dist`: 4/4 suites passed (38/38 legacy routes, 7/7 assets, 27 HTML docs / 627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Added `docs/CMS_EVALUATION.md`. All 38 routes intact.
+
+### Known issues / decisions required
+Phase A10 is COMPLETE. Ready to begin Phase A11 Full Regression, Switch Netlify Publish, and Final Acceptance Gate.
+
+### Exact next task
+Task A11.1 — Complete route and content regression
