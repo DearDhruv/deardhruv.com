@@ -53,14 +53,30 @@ const seriesField = seriesFolder ? `series = ["${seriesFolder.replace(/[-_]/g, '
 const content = `+++
 title = "${title.replace(/"/g, '\\"')}"
 date = "${isoDate}"
-description = ""
+lastmod = "${isoDate}"
+description = "Executive summary of the technical article (1-2 sentences) for SEO, RSS, and JSON Feed."
 tags = ["Android", "Kotlin Multiplatform"]
-${seriesField}draft = true
+${seriesField}draft = false
 [author]
   name = "Dhruv Patel"
 +++
 
-Write your engineering article here...
+## Overview
+
+Brief introduction setting the technical context, problem statement, and engineering scope.
+
+## Architecture & System Constraints
+
+Detail the hardware boundaries, memory limits, and platform-specific constraints.
+
+\`\`\`kotlin
+// Example code snippet
+\`\`\`
+
+## Key Learnings & Production Takeaways
+
+- Summary bullet 1
+- Summary bullet 2
 `;
 
 fs.writeFileSync(targetFile, content, 'utf-8');
@@ -68,4 +84,4 @@ fs.writeFileSync(targetFile, content, 'utf-8');
 console.log(`✅ Successfully scaffolded new article draft:`);
 console.log(`   File: ${path.relative(path.join(__dirname, '..'), targetFile)}`);
 console.log(`   Slug: ${slug}`);
-console.log(`   Status: draft = true (use 'hugo server -D' to preview)`);
+console.log(`   Preview: run 'npm run dev:astro' to preview locally.`);

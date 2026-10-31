@@ -2404,3 +2404,46 @@ None. Ready for Task A10.2 adding reusable article archetype template.
 
 ### Exact next task
 Task A10.2 — Add article authoring template
+
+## 2026-10-31 — Task A10.2: Add Article Authoring Template
+
+**Task:** Task A10.2 — Add article authoring template
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `b07caf4`
+**Commit:** Pending
+
+### Objective
+Provide a reusable, validated markdown archetype template (`archetypes/posts.md`) and CLI scaffolding script (`scripts/new-post.js`) enforcing the single-`<h1>` heading hierarchy, frontmatter schema, code snippet blocks, and performance benchmark tables.
+
+### Files inspected
+- `archetypes/posts.md`
+- `scripts/new-post.js`
+
+### Files changed
+- `archetypes/posts.md`
+- `scripts/new-post.js`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Updated `archetypes/posts.md` with complete TOML frontmatter schema (`title`, `date`, `lastmod`, `description`, `tags`, `series`, `draft`, `author`), overview section, architecture code blocks, and markdown performance benchmark tables.
+- Updated `scripts/new-post.js` to populate `lastmod`, set default draft status to `false`, and prompt local preview via `npm run dev:astro`.
+- Verified template conforms to WCAG single-`<h1>` outline requirements.
+
+### Commands executed
+- `npm test`
+- `npm run test:dist`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed.
+- `npm run test:dist`: 4/4 suites passed.
+
+### Route/content/source-path impact
+Updated template archetype and scaffolding script. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A10.3 evaluating browser CMS options.
+
+### Exact next task
+Task A10.3 — Evaluate browser CMS options
