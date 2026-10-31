@@ -2191,3 +2191,48 @@ None. Ready for Task A9.2 refining About and Portfolio pages.
 
 ### Exact next task
 Task A9.2 — Refine About and Portfolio pages
+
+## 2026-10-31 — Task A9.2: Refine About and Portfolio Pages
+
+**Task:** Task A9.2 — Refine About and Portfolio pages
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `b2d590d`
+**Commit:** Pending
+
+### Objective
+Apply shared text, section, and metadata components to `/about/` and `/portfolio/`, standardizing page headers with `.page-header` primitives, verifying strict single-`<h1>` heading outlines, and locking reading bounds to `72ch`.
+
+### Files inspected
+- `src/pages/about/index.astro`
+- `src/pages/portfolio/index.astro`
+- `src/layouts/PageLayout.astro`
+
+### Files changed
+- `assets/css/components.css`
+- `static/css/components.css`
+- `src/layouts/PageLayout.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Added `.page-header` primitive with standardized bottom border divider and responsive margin rhythm.
+- Updated `src/layouts/PageLayout.astro` to utilize `.page-header`, standardizing all page templates.
+- Verified `/about/` and `/portfolio/` both render inside `layout-container-reading` (72ch measure) with zero multi-H1 defects.
+- Compiled static build via `npm run build:astro` and verified 100% test pass on `dist/`.
+
+### Commands executed
+- `npm run build:astro`
+- `npm run test:dist`
+- `git diff --check`
+
+### Test results
+- `npm run test:dist`: 4/4 suites passed (38/38 legacy routes, 7/7 assets, 27 HTML docs / 627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Standardized `/about/` and `/portfolio/`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A9.3 refining Projects and project detail layouts.
+
+### Exact next task
+Task A9.3 — Refine Projects and project detail layouts

@@ -326,6 +326,13 @@
   flex: 1;
 }
 
+/* Page Header Primitive */
+.page-header {
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-4);
+}
+
 /* Badges, Tags, and Chips */
 .badge,
 .ds-badge {
