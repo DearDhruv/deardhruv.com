@@ -1307,7 +1307,7 @@ Task A7.3 — Benchmark build performance and output fidelity
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `3b49157`
-**Commit:** Pending
+**Commit:** `6aac2e9`
 
 ### Objective
 Perform quantitative and qualitative benchmark comparisons between Hugo control output and Astro static spike output across build speed, DOM footprint, CSS payload, runtime JavaScript, and heading hierarchy in `docs/ASTRO_SPIKE_BENCHMARK.md`.
@@ -1343,3 +1343,53 @@ None. Ready for Task A7.4 Netlify hosting, redirects, and edge function parity v
 
 ### Exact next task
 Task A7.4 — Validate Netlify hosting, redirects, and edge function parity in Astro spike
+
+## 2026-10-31 — Task A7.4: Validate Netlify Hosting, Redirects, and Edge Function Parity in Astro Spike
+
+**Task:** Task A7.4 — Validate Netlify hosting, redirects, and edge function parity in Astro spike
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `6aac2e9`
+**Commit:** Pending
+
+### Objective
+Verify that Netlify Edge Functions (`markdown-negotiation.ts`), `_redirects` / `netlify.toml` rules (`/feed.json` 200 rewrite to `/index.json`), and static discovery assets function with 100% exact parity when tested against Astro static build output.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 9.4
+- `netlify.toml`
+- `netlify/edge-functions/markdown-negotiation.ts`
+- `tests/verify-edge-functions.js`
+
+### Files changed
+- `tests/verify-edge-functions.js`
+- `tests/verify-astro-parity.js`
+- `package.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Enhanced `tests/verify-edge-functions.js` to support configurable `PUBLIC_DIR` via `process.env.PUBLIC_DIR`.
+- Built automated verification suite `tests/verify-astro-parity.js` testing:
+  - 8 core generated HTML, JSON, and Markdown static routes in `astro-spike/dist/`.
+  - 7 static discovery assets with exact byte-for-byte size matches against Hugo control output.
+  - Netlify `/feed.json` -> `/index.json` 200 rewrite rule preservation in `netlify.toml`.
+  - Netlify Edge Function path mapping (`/*`) and markdown rewrite simulation.
+- Integrated `npm run test:astro` into `package.json`.
+
+### Commands executed
+- `node tests/verify-astro-parity.js`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `test:astro`: 25/25 assertions passed.
+- `npm test`: 6/6 suites passed (Hugo control and Astro spike both green).
+
+### Route/content/source-path impact
+Added `tests/verify-astro-parity.js`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A7.5 formal migration go/no-go sign-off.
+
+### Exact next task
+Task A7.5 — Formal migration go/no-go sign-off

@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const PUBLIC_DIR = path.join(__dirname, '../public');
+const PUBLIC_DIR = process.env.PUBLIC_DIR ? path.resolve(process.env.PUBLIC_DIR) : path.join(__dirname, '../public');
 const EDGE_FN_FILE = path.join(__dirname, '../netlify/edge-functions/markdown-negotiation.ts');
 
 if (!fs.existsSync(EDGE_FN_FILE)) {

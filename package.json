@@ -12,6 +12,7 @@
     "test:edge": "node tests/verify-edge-functions.js",
     "test:contrast": "node tests/verify-contrast.js",
     "test:a11y": "node tests/verify-a11y-tokens.js",
+    "test:astro": "node tests/verify-astro-parity.js",
     "new:post": "node scripts/new-post.js"
   }
 }
