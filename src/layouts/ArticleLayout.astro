@@ -26,7 +26,7 @@ const {
 
 <BaseLayout title={title} description={description} ogType="article">
   <article class="layout-container-reading" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
-    <header style="margin-bottom: var(--space-8);">
+    <header class="page-header">
       {series && (
         <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-2);">
           {series.name} {series.part && series.total && `· Part ${series.part} of ${series.total}`}
@@ -49,5 +49,22 @@ const {
     <div class="prose">
       <slot />
     </div>
+
+    {series && (
+      <footer style="margin-top: var(--space-12);">
+        <nav class="card" aria-label="Series Navigation" style="padding: var(--space-6);">
+          <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
+            {series.name} Series
+          </div>
+          <h2 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Explore the 6-Part Architectural Journey</h2>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); margin-bottom: var(--space-4);">
+            This article is part of the deep-dive series on engineering private, on-device AI runtimes and mobile hardware limits.
+          </p>
+          <div class="layout-cluster">
+            <a href="/posts/ai_playground_series/" class="btn btn-secondary">View Complete Series Index &rarr;</a>
+          </div>
+        </nav>
+      </footer>
+    )}
   </article>
 </BaseLayout>

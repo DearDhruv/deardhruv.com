@@ -2277,3 +2277,46 @@ None. Ready for Task A9.4 refining blog index and article reading layout.
 
 ### Exact next task
 Task A9.4 — Refine blog index and article reading layout
+
+## 2026-10-31 — Task A9.4: Refine Blog Index and Long-Form Reading Experience
+
+**Task:** Task A9.4 — Refine blog index and article reading layout
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `4abd292`
+**Commit:** Pending
+
+### Objective
+Refine the blog indexes (`/posts/`, `/posts/ai_playground_series/`) and article reading layout (`ArticleLayout.astro`), standardizing reading measure (72ch), page headers, metadata chips, code container overflow, and post-reading series navigation.
+
+### Files inspected
+- `src/layouts/ArticleLayout.astro`
+- `src/pages/posts/index.astro`
+- `src/pages/posts/ai_playground_series/index.astro`
+
+### Files changed
+- `src/layouts/ArticleLayout.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Updated `src/layouts/ArticleLayout.astro` to use `.page-header` primitive and added an automated series navigation footer card guiding readers to the complete series index.
+- Confirmed all 6 articles retain single `<h1>` outline, bounded `72ch` measure, responsive table scrolling, and unclipped focus states.
+- Verified both `/posts/` and `/posts/ai_playground_series/` render interactive cards with tags and reading estimates.
+- Built static site via `npm run build:astro` and verified 100% test pass against `dist/`.
+
+### Commands executed
+- `npm run build:astro`
+- `npm run test:dist`
+- `git diff --check`
+
+### Test results
+- `npm run test:dist`: 4/4 suites passed (38/38 legacy routes, 7/7 assets, 27 HTML docs / 627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Refined blog layouts. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A9.5 standardizing legal, sitemap, and document pages.
+
+### Exact next task
+Task A9.5 — Refine legal, sitemap, and document pages
