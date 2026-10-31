@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `42e0778`
-- Last completed phase/task: Task 4.2 — Responsive header and navigation
-- Next task: Task 4.3 — Footer and social/contact links
+- Current HEAD: `8d895e7`
+- Last completed phase/task: Task 4.3 — Footer and social/contact links
+- Next task: Task 5.1 — Hero and identity on homepage
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -32,13 +32,13 @@
 | Task 3.2 | Implement fluid typography system and zero-request system font stacks | `19a2ed7` | `hugo --gc --minify`, fluid clamp verification | PASS |
 | Task 3.3 | Implement reusable responsive layout primitives (card, badge, grid, btn, skip-link) | `26e20a8` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 4.1 | Create project-owned base layout with accessible skip link and landmark targets | `42e0778` | `hugo --gc --minify`, skip link target verification | PASS |
-| Task 4.2 | Build accessible responsive navigation and keyboard Escape handling | Pending | `hugo --gc --minify`, `verify-routes.js`, ARIA validation | PASS |
+| Task 4.2 | Build accessible responsive navigation and keyboard Escape handling | `8d895e7` | `hugo --gc --minify`, `verify-routes.js`, ARIA validation | PASS |
+| Task 4.3 | Add responsive footer with CC license, sitemap, and RSS links | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
 
 ## Files changed in the latest task
-- `layouts/partials/header.html`
-- `layouts/partials/menu.html`
-- `assets/js/menu.js`
+- `layouts/partials/footer.html`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
 
 ## Tests executed
 - `hugo --gc --minify` — PASS
