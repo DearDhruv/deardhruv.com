@@ -1,0 +1,20 @@
+---
+interface Props {
+  to: string;
+}
+
+const { to } = Astro.props;
+const targetUrl = `https://deardhruv.com${to}`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{targetUrl}</title>
+  <link rel="canonical" href={targetUrl}>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content={`0; url=${targetUrl}`}>
+</head>
+<body>
+  <p>Redirecting to <a href={to}>{targetUrl}</a>...</p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getEntry, render } from 'astro:content';
+
+const aboutEntry = await getEntry('pages', 'about');
+if (!aboutEntry) {
+  throw new Error('Missing content/about.md entry');
+}
+const { Content } = await render(aboutEntry);
+---
+
+<PageLayout
+  title={aboutEntry.data.title}
+  description={aboutEntry.data.description || "About Dhruv Patel - Lead Android & Multiplatform Engineer"}
+  containerClass="layout-container-reading"
+>
+  <div class="prose">
+    <Content />
+  </div>
+</PageLayout>

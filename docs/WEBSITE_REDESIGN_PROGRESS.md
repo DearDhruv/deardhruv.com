@@ -1640,3 +1640,51 @@ None. Ready for Task A8.5 porting About page and aliases.
 
 ### Exact next task
 Task A8.5 — Port About page and aliases
+
+## 2026-10-31 — Task A8.5: Migrate About Page and Legacy Aliases
+
+**Task:** Task A8.5 — Port About page and aliases
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `f9312ee`
+**Commit:** Pending
+
+### Objective
+Migrate `/about/` to Astro using Content Collections (`getEntry('pages', 'about')` rendering `content/about.md` directly) and generate exact legacy alias HTML redirect pages for `/about-us/`, `/about-hugo/`, and `/contact/` with canonical link and `<meta http-equiv="refresh">` tags.
+
+### Files inspected
+- `content/about.md`
+- `tests/fixtures/legacy-routes.json`
+- `public/about-us/index.html`
+
+### Files changed
+- `src/components/AliasRedirect.astro`
+- `src/pages/about/index.astro`
+- `src/pages/about-us/index.astro`
+- `src/pages/about-hugo/index.astro`
+- `src/pages/contact/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `src/components/AliasRedirect.astro` to emit standard HTML meta-refresh redirect documents with canonical link targets.
+- Created `src/pages/about/index.astro` rendering full career narrative, technical expertise domains, specializations, professional journey, speaking, core values, and contact links from `content/about.md` inside `PageLayout` with bounded `72ch` measure.
+- Created `src/pages/about-us/index.astro`, `src/pages/about-hugo/index.astro`, and `src/pages/contact/index.astro` targeting `/about/`.
+- Verified static generation in 570ms via `npx astro build`.
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added `/about/`, `/about-us/`, `/about-hugo/`, and `/contact/` pages in Astro. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.6 porting Portfolio and Projects pages.
+
+### Exact next task
+Task A8.6 — Port Portfolio and Projects pages
