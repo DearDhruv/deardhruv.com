@@ -1828,3 +1828,47 @@ None. Ready for Task A8.9 porting remaining articles in small batches.
 
 ### Exact next task
 Task A8.9 — Port remaining articles in small batches
+
+## 2026-10-31 — Task A8.9: Migrate Articles 02 and 03 (Batch 1)
+
+**Task:** Task A8.9 — Port remaining articles in small batches (Articles 02 & 03)
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `3515ae8`
+**Commit:** Pending
+
+### Objective
+Port Part 2 ("The Day a Chat Box Became a Document Engine") and Part 3 ("The Model Was Fine. The Phone Wasn't.") to Astro, enforcing single-`<h1>` heading semantics, bounded `72ch` measure, and complete code block and diagram parity.
+
+### Files inspected
+- `content/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine.md`
+- `content/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt.md`
+
+### Files changed
+- `src/pages/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/index.astro`
+- `src/pages/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built Astro routes for Part 2 and Part 3 using `ArticleLayout` and `getEntry('posts', ...)`.
+- Replaced the multiple-H1 problem with strictly single `<h1>` hierarchy per page via `rehypeDemoteHeadings`.
+- Confirmed all code blocks, callouts, and lists render cleanly within the `72ch` reading container.
+- Compiled static build via `npx astro build` (12 static pages in 579ms).
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added Articles 02 and 03 in Astro. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Batch 2 (Articles 04 and 05).
+
+### Exact next task
+Task A8.9 (Batch 2) — Migrate Articles 04 and 05
