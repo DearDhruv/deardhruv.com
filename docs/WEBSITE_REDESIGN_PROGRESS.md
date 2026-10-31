@@ -1782,3 +1782,49 @@ None. Ready for Task A8.8 porting the first long-form article.
 
 ### Exact next task
 Task A8.8 — Port one article and verify content parity
+
+## 2026-10-31 — Task A8.8: Migrate First Long-Form Article and Solve Multi-H1 Defect
+
+**Task:** Task A8.8 — Port one article and verify content parity
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `a6c568d`
+**Commit:** Pending
+
+### Objective
+Migrate Part 1 of the Beyond the Model series (`/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/`) to Astro, verify 100% content parity across body text, 44 code blocks, blockquotes, and tables, and remediate the blocker defect `TYPO-01` (19 `<h1>` elements reduced to exactly 1 `<h1>`).
+
+### Files inspected
+- `content/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone.md`
+- `docs/DESIGN_AUDIT.md` (TYPO-01)
+- `astro.config.mjs`
+
+### Files changed
+- `astro.config.mjs`
+- `src/pages/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `src/pages/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.astro` using `ArticleLayout` with reading measure container (`72ch`), series counter, date, reading time, and tags.
+- Implemented `rehypeDemoteHeadings` plugin in `astro.config.mjs` to automatically shift body `#` headings by 1 level (`h1` -> `h2`, `h2` -> `h3`), strictly enforcing single `<h1>` per page.
+- Confirmed single `<h1>` on the generated page (`<h1 class="page-title">Part 1 - I Wanted the Model to Stay on the Phone</h1>`) and 18 structured `<h2>` section headings, fully resolving `TYPO-01`.
+- Verified all 44 `<pre>` code blocks render with syntax styling and contained horizontal scrolling.
+- Compiled static build via `npx astro build` (10 static pages in 971ms).
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added Article 01 page in Astro. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.9 porting remaining articles in small batches.
+
+### Exact next task
+Task A8.9 — Port remaining articles in small batches
