@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `6875c8d`
+- Current HEAD: `96a0f23`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A0.2 — Capture repository and production baseline
-- Next task: Task A0.3 — Generate complete legacy route manifest
+- Last completed phase/task: Task A0.3 — Generate complete legacy route manifest
+- Next task: Task A1.1 — Capture page screenshots and visual baseline
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -142,7 +142,7 @@ Task A0.2 — Capture repository and production baseline
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `6875c8d`
-**Commit:** Pending
+**Commit:** `96a0f23`
 
 ### Objective
 Capture exact repository, toolchain, Netlify build configuration, and generated static output baseline prior to design-system modifications and framework spike.
@@ -178,3 +178,46 @@ None. Ready for Task A0.3 route manifest audit and lock.
 
 ### Exact next task
 Task A0.3 — Generate complete legacy route manifest
+
+## 2026-10-31 — Task A0.3: Freeze Complete Legacy Route Manifest
+
+**Task:** Task A0.3 — Generate complete legacy route manifest
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `96a0f23`
+**Commit:** Pending
+
+### Objective
+Audit and freeze the complete legacy route inventory in machine-readable fixtures (`tests/fixtures/legacy-routes.json`) and documentation (`docs/URL-MANIFEST.md`). Ensure every single route has verified expected status, MIME content-type, source mappings, and alias/redirect targets.
+
+### Files inspected
+- `tests/fixtures/legacy-routes.json`
+- `scripts/verify-routes.js`
+- `docs/URL-MANIFEST.md`
+- `netlify.toml`
+
+### Files changed
+- `tests/fixtures/legacy-routes.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Audited all 38 routes in `legacy-routes.json`: verified all entries contain explicit `path`, `type`, `expectedStatus`, `contentType`, `sourceFile`, and `description`.
+- Hardened alias definitions (`/about-us/`, `/about-hugo/`, `/contact/`) and redirect definitions (`/feed.json`) with explicit content types.
+- Confirmed full test automation suite covers 100% of routes across HTML, Aliases, PDF, JSON, XML, Markdown, and Redirects.
+
+### Commands executed
+- `node scripts/verify-routes.js`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 4/4 suites passed (38/38 legacy routes verified, 7/7 downloadable assets verified, 79 HTML docs/1460 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Zero regressions. 100% legacy parity locked.
+
+### Known issues / decisions required
+None. Phase A0 complete. Ready to proceed to Phase A1 Visual and Interaction Audit.
+
+### Exact next task
+Task A1.1 — Capture page screenshots and visual baseline

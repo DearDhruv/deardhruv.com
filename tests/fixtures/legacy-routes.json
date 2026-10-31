@@ -19,6 +19,7 @@
     "path": "/about-us/",
     "type": "alias",
     "expectedStatus": 200,
+    "contentType": "text/html",
     "redirectTo": "/about/",
     "sourceFile": "content/about.md",
     "description": "Legacy alias for About"
@@ -27,6 +28,7 @@
     "path": "/about-hugo/",
     "type": "alias",
     "expectedStatus": 200,
+    "contentType": "text/html",
     "redirectTo": "/about/",
     "sourceFile": "content/about.md",
     "description": "Legacy alias for About"
@@ -35,6 +37,7 @@
     "path": "/contact/",
     "type": "alias",
     "expectedStatus": 200,
+    "contentType": "text/html",
     "redirectTo": "/about/",
     "sourceFile": "content/about.md",
     "description": "Legacy alias for Contact"
@@ -243,6 +246,7 @@
     "path": "/feed.json",
     "type": "redirect",
     "expectedStatus": 200,
+    "contentType": "application/feed+json",
     "redirectTo": "/index.json",
     "sourceFile": "netlify.toml",
     "description": "Redirect alias for JSON Feed"
