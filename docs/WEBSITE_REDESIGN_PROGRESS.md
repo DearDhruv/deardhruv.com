@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `fb76d09`
+- Current HEAD: `eb6846f`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A2.2 — Prototype representative screens
-- Next task: Task A2.3 — Approve portfolio visual direction
+- Last completed phase/task: Task A2.3 — Approve portfolio visual direction
+- Next task: Task A3.1 — Define semantic color and surface tokens
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -454,7 +454,7 @@ Task A2.2 — Prototype representative screens
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `fb76d09`
-**Commit:** Pending
+**Commit:** `eb6846f`
 
 ### Objective
 Implement CSS design tokens and core component primitives (`assets/css/design-system.css`, `static/css/design-system.css`) and construct a standalone prototype screen suite (`static/design-preview/index.html`) demonstrating the Precision Technical Editorial direction across hero, project cards, single H1 long-form article measure (72ch), and accessible navigation.
@@ -495,3 +495,47 @@ None. Ready for Task A2.3 visual direction approval.
 
 ### Exact next task
 Task A2.3 — Approve portfolio visual direction
+
+## 2026-10-31 — Task A2.3: Approve Portfolio Visual Direction
+
+**Task:** Task A2.3 — Approve portfolio visual direction
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `eb6846f`
+**Commit:** Pending
+
+### Objective
+Evaluate candidate concepts against design audit findings and Addendum criteria; formally record architecture decision approving Concept A ("Precision Technical Editorial") in `docs/ART_DIRECTION_DECISION.md`.
+
+### Files inspected
+- `docs/ART_DIRECTION_CONCEPTS.md`
+- `docs/DESIGN_AUDIT.md`
+- `static/design-preview/index.html`
+
+### Files changed
+- `docs/ART_DIRECTION_DECISION.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Approved Concept A ("Precision Technical Editorial"):
+  - Typography: Fluid neo-grotesque sans paired with monospace for code and metrics. Single H1 per document.
+  - Layout: Bounded `72ch` reading measure for long articles, `1140px` wide container for grids.
+  - Colors & Contrast: Full WCAG 2.2 AA compliance across dark mode (17.5:1 text, 6.8:1 secondary, 8.2:1 accent) and light mode (15.8:1 text, 7.2:1 secondary, 5.4:1 accent).
+  - States & Affordances: Unclipped `:focus-visible` rings, 44px minimum hit targets, subtle solid dividers.
+- Documented rejection of Swiss Minimalist (harsh in dark mode) and Developer Workbench/CLI (violates Addendum 4.2). Phase A2 complete.
+
+### Commands executed
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 4/4 suites passed.
+
+### Route/content/source-path impact
+None. Documentation decision only.
+
+### Known issues / decisions required
+None. Ready to proceed to Phase A3 Design Tokens and Typography.
+
+### Exact next task
+Task A3.1 — Define semantic color and surface tokens
