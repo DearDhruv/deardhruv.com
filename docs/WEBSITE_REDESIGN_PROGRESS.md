@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `7d334eb`
-- Last completed phase/task: Task 5.1 — Hero and identity on homepage
-- Next task: Task 5.2 — Capabilities and selected work
+- Current HEAD: `aa0404e`
+- Last completed phase/task: Task 5.3 — Writing and closing CTA
+- Next task: Task 6.1 — About page template
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -34,12 +34,14 @@
 | Task 4.1 | Create project-owned base layout with accessible skip link and landmark targets | `42e0778` | `hugo --gc --minify`, skip link target verification | PASS |
 | Task 4.2 | Build accessible responsive navigation and keyboard Escape handling | `8d895e7` | `hugo --gc --minify`, `verify-routes.js`, ARIA validation | PASS |
 | Task 4.3 | Add responsive footer with CC license, sitemap, and RSS links | `7d334eb` | `hugo --gc --minify`, `verify-routes.js` | PASS |
-| Task 5.1 | Add engineering-focused hero with accessible CTA buttons | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 5.1 | Add engineering-focused hero with accessible CTA buttons | `516b51a` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 5.2 | Add selected work and capability sections on homepage | `aa0404e` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 5.3 | Add writing highlights and contact CTA to homepage | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
 
 ## Files changed in the latest task
-- `layouts/partials/hero.html`
-- `assets/css/custom.css`
+- `layouts/index.html`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
 
 
 
