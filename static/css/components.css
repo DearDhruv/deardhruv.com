@@ -363,3 +363,50 @@
   margin-block: var(--space-8);
   width: 100%;
 }
+
+/* Accessible Interaction States Matrix (WCAG 2.2 AA SC 2.4.7 & 2.4.11) */
+
+/* Global focus-visible fallback */
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Interactive elements active state */
+.btn:active:not(:disabled),
+.ds-btn:active:not(:disabled),
+.tag:active {
+  transform: scale(0.98) !important;
+}
+
+/* Disabled states across buttons and inputs */
+.btn:disabled,
+.btn[aria-disabled="true"],
+.ds-btn:disabled,
+.ds-btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none !important;
+}
+
+/* Nav Link Current and Selected States */
+.nav-link[aria-current="page"],
+[aria-current="page"] {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Accessible focus ring container safeguard — prevent clipping */
+.nav-item,
+.btn-group,
+.tab-list {
+  overflow: visible;
+}
+
+/* Selection highlight styling */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+}

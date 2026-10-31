@@ -807,7 +807,7 @@ Task A4.3 — Standardize card, tag, badge, and divider components
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `9177e68`
-**Commit:** Pending
+**Commit:** `f674a80`
 
 ### Objective
 Standardize cards (`.card`, `.card-interactive`), metadata badges (`.badge`, `.badge-neutral`), taxonomy tags (`.tag`), code chips (`.chip`), and structural dividers (`.divider-subtle`, `.divider-technical`) with strict geometry, radius, and token alignment.
@@ -846,3 +846,49 @@ None. Ready for Task A4.4 accessible interaction state matrix.
 
 ### Exact next task
 Task A4.4 — Implement complete accessible interaction states
+
+## 2026-10-31 — Task A4.4: Implement Complete Accessible Interaction States
+
+**Task:** Task A4.4 — Implement complete accessible interaction states
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `f674a80`
+**Commit:** Pending
+
+### Objective
+Implement a comprehensive, accessible interaction state matrix across all components (`:hover` strictly conditioned on fine-pointer devices, `:focus-visible` with 2px unclipped offset, `:active` with micro-scale compression, `[aria-current="page"]` navigation indicators, and `:disabled` / `[aria-disabled="true"]` handling).
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 6.2
+- `docs/DESIGN_AUDIT.md` (COMP-01..05)
+- `assets/css/components.css`
+
+### Files changed
+- `assets/css/components.css`
+- `static/css/components.css`
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Implemented global `:focus-visible` fallback with `2px solid var(--color-focus-ring); outline-offset: 2px;` and unclipped parent safeguards.
+- Added interactive active states: `.btn:active:not(:disabled), .tag:active` scaled down to `0.98` for tactile feedback.
+- Added disabled states: `opacity: 0.5; pointer-events: none; cursor: not-allowed;` preventing focus/click events on inactive actions.
+- Enforced `aria-current="page"` bold/accent treatment for active navigation items.
+- Added custom text selection highlight matching `--color-accent` and `--color-text-inverse`.
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 5/5 suites passed (38 routes, 7 assets, 80 HTML docs / 1479 links, 72 edge assertions, 14 contrast pairs).
+
+### Route/content/source-path impact
+Updated `/css/components.css` and `/design-preview/index.html`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A4.5 comprehensive design-system style-guide preview page.
+
+### Exact next task
+Task A4.5 — Expand design-system style-guide preview page
