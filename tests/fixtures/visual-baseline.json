@@ -1,0 +1,204 @@
+{
+  "capturedAt": "2026-10-31T15:58:11.682Z",
+  "environment": {
+    "node": "v26.13.0",
+    "commit": "51c4aa9",
+    "hugo": "0.169.0"
+  },
+  "viewports": [
+    {
+      "name": "mobile-narrow",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "name": "mobile-standard",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "tablet-portrait",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "desktop-wide",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "title": "Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 19388,
+      "headings": {
+        "h1": 1,
+        "h2": 4,
+        "h3": 9,
+        "h4": 0
+      },
+      "codeBlocks": 0,
+      "images": 1,
+      "links": 30,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    },
+    {
+      "id": "about",
+      "path": "/about/",
+      "title": "Dhruv Patel :: Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 20018,
+      "headings": {
+        "h1": 1,
+        "h2": 5,
+        "h3": 5,
+        "h4": 0
+      },
+      "codeBlocks": 0,
+      "images": 1,
+      "links": 28,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    },
+    {
+      "id": "portfolio",
+      "path": "/portfolio/",
+      "title": "Work & Impact :: Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 20340,
+      "headings": {
+        "h1": 1,
+        "h2": 5,
+        "h3": 4,
+        "h4": 0
+      },
+      "codeBlocks": 0,
+      "images": 1,
+      "links": 27,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    },
+    {
+      "id": "projects",
+      "path": "/projects/",
+      "title": "Engineering Projects & Case Studies :: Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 23986,
+      "headings": {
+        "h1": 1,
+        "h2": 5,
+        "h3": 12,
+        "h4": 0
+      },
+      "codeBlocks": 0,
+      "images": 0,
+      "links": 19,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    },
+    {
+      "id": "posts-index",
+      "path": "/posts/",
+      "title": "Posts :: Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 16941,
+      "headings": {
+        "h1": 1,
+        "h2": 2,
+        "h3": 0,
+        "h4": 0
+      },
+      "codeBlocks": 0,
+      "images": 0,
+      "links": 25,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    },
+    {
+      "id": "series-index",
+      "path": "/posts/ai_playground_series/",
+      "title": "Beyond the Model Series :: Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 18218,
+      "headings": {
+        "h1": 1,
+        "h2": 1,
+        "h3": 6,
+        "h4": 0
+      },
+      "codeBlocks": 0,
+      "images": 0,
+      "links": 25,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    },
+    {
+      "id": "article-01",
+      "path": "/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/",
+      "title": "Part 1 - I Wanted the Model to Stay on the Phone :: Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 53511,
+      "headings": {
+        "h1": 19,
+        "h2": 4,
+        "h3": 1,
+        "h4": 0
+      },
+      "codeBlocks": 32,
+      "images": 0,
+      "links": 32,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    },
+    {
+      "id": "legal-policy",
+      "path": "/other/ai-playground/privacy-policy-ai-playground-app/",
+      "title": "Privacy Policy - AI Playground :: Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 22628,
+      "headings": {
+        "h1": 1,
+        "h2": 0,
+        "h3": 0,
+        "h4": 0
+      },
+      "codeBlocks": 0,
+      "images": 0,
+      "links": 25,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    },
+    {
+      "id": "sitemap",
+      "path": "/sitemap/",
+      "title": "Sitemap :: Dhruv Patel - Lead Android Engineer",
+      "sizeBytes": 23731,
+      "headings": {
+        "h1": 1,
+        "h2": 3,
+        "h3": 4,
+        "h4": 0
+      },
+      "codeBlocks": 0,
+      "images": 0,
+      "links": 34,
+      "buttons": 2,
+      "hasMainLandmark": true,
+      "hasSkipLink": true
+    }
+  ]
+}

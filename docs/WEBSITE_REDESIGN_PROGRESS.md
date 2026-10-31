@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `96a0f23`
+- Current HEAD: `51c4aa9`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A0.3 — Generate complete legacy route manifest
-- Next task: Task A1.1 — Capture page screenshots and visual baseline
+- Last completed phase/task: Task A1.1 — Capture page screenshots and visual baseline
+- Next task: Task A1.2 — Audit typography and reading hierarchy
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -185,7 +185,7 @@ Task A0.3 — Generate complete legacy route manifest
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `96a0f23`
-**Commit:** Pending
+**Commit:** `51c4aa9`
 
 ### Objective
 Audit and freeze the complete legacy route inventory in machine-readable fixtures (`tests/fixtures/legacy-routes.json`) and documentation (`docs/URL-MANIFEST.md`). Ensure every single route has verified expected status, MIME content-type, source mappings, and alias/redirect targets.
@@ -221,3 +221,51 @@ None. Phase A0 complete. Ready to proceed to Phase A1 Visual and Interaction Aud
 
 ### Exact next task
 Task A1.1 — Capture page screenshots and visual baseline
+
+## 2026-10-31 — Task A1.1: Capture Existing Site Screenshot Baseline
+
+**Task:** Task A1.1 — Capture page screenshots and visual baseline
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `51c4aa9`
+**Commit:** Pending
+
+### Objective
+Establish a structured visual and layout baseline (`tests/fixtures/visual-baseline.json`) spanning 9 representative routes and 6 standard viewports (320px narrow mobile, 390px mobile, 768px tablet portrait, 1024px tablet landscape, 1440px desktop, 1920px wide desktop), auditing document size, landmarks, headings, images, codeblocks, and interactive elements.
+
+### Files inspected
+- `public/index.html`
+- `public/about/index.html`
+- `public/portfolio/index.html`
+- `public/projects/index.html`
+- `public/posts/index.html`
+- `public/posts/ai_playground_series/index.html`
+- `public/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.html`
+- `public/other/ai-playground/privacy-policy-ai-playground-app/index.html`
+- `public/sitemap/index.html`
+
+### Files changed
+- `tests/fixtures/visual-baseline.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built automated visual baseline inventory across 9 representative routes and 6 viewports.
+- Discovered critical structural defects: Article 01 contains 19 `<h1>` elements instead of proper `<h2>`/`<h3>` section hierarchy.
+- Confirmed that page containers and reading measure bounds vary drastically between Home, Work/Projects, and Blog.
+
+### Commands executed
+- `node scripts/verify-routes.js`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 4/4 suites passed.
+
+### Route/content/source-path impact
+None. Visual audit only.
+
+### Known issues / decisions required
+Article heading hierarchy (19 H1 tags) violates WCAG and document outline best practices. To be documented in `docs/DESIGN_AUDIT.md`.
+
+### Exact next task
+Task A1.2 — Audit typography and reading hierarchy
