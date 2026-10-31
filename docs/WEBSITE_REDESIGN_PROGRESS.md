@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `cd0b85b`
-- Last completed phase/task: Task 1.2 — Content and metadata inventory
-- Next task: Task 1.3 — Integration and risk map
+- Current HEAD: `7de6eea`
+- Last completed phase/task: Task 1.3 — Integration and risk map
+- Next task: Task 2.1 — Navigation and page hierarchy
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -23,28 +23,30 @@
 | Task 0.3 | Capture pre-redesign visual and performance baseline | `e983fa0` | Documentation audit of layout, responsive, and performance | PASS |
 | Task 0.4 | Freeze legacy URL manifest and automated route validator | `c8dc735` | `node scripts/verify-routes.js` | PASS (38/38 legacy routes verified) |
 | Task 1.1 | Inspect source architecture and layout precedence | `cd0b85b` | Codebase audit of layouts, assets, and submodule | PASS |
-| Task 1.2 | Inventory all published Markdown content and metadata | Pending | Metadata extraction across all 22 Markdown files | PASS |
+| Task 1.2 | Inventory all published Markdown content and metadata | `7de6eea` | Metadata extraction across all 22 Markdown files | PASS |
+| Task 1.3 | Map Netlify integrations, Edge Functions, and release risks | Pending | Security headers, CSP, Edge Functions, discovery catalog audit | PASS |
 
 ## Files changed in the latest task
-- `docs/CONTENT-INVENTORY.md`
+- `docs/INTEGRATION-RISK-MAP.md`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
-- Node content scanner — PASS (22/22 content files inventoried)
+- `hugo --gc --minify` — PASS
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- Content inventory saved in `docs/CONTENT-INVENTORY.md`
+- Integration risk map saved in `docs/INTEGRATION-RISK-MAP.md`
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- All 22 content files remain at their existing file paths. Slugs and aliases are frozen.
+- Edge function `markdown-negotiation.ts` confirmed safe. Security headers aligned with requirements.
 
 ## Exact next action
-1. Execute Task 1.3 — Map Netlify integrations, Edge Functions, security headers, and release risks in `docs/INTEGRATION-RISK-MAP.md`.
+1. Execute Phase 2, Task 2.1 — Define portfolio information architecture and page navigation hierarchy in `docs/INFORMATION-ARCHITECTURE.md`.
+
 
 
 
