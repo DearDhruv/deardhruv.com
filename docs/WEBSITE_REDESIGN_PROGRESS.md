@@ -1350,7 +1350,7 @@ Task A7.4 — Validate Netlify hosting, redirects, and edge function parity in A
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `6aac2e9`
-**Commit:** Pending
+**Commit:** `4ed983f`
 
 ### Objective
 Verify that Netlify Edge Functions (`markdown-negotiation.ts`), `_redirects` / `netlify.toml` rules (`/feed.json` 200 rewrite to `/index.json`), and static discovery assets function with 100% exact parity when tested against Astro static build output.
@@ -1393,3 +1393,51 @@ None. Ready for Task A7.5 formal migration go/no-go sign-off.
 
 ### Exact next task
 Task A7.5 — Formal migration go/no-go sign-off
+
+## 2026-10-31 — Task A7.5: Formal Migration Go/No-Go Sign-Off
+
+**Task:** Task A7.5 — Formal migration go/no-go sign-off
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `4ed983f`
+**Commit:** Pending
+
+### Objective
+Execute formal migration review, synthesize benchmark and parity test findings, and document formal **GO** approval for migration to Astro v5 in `docs/MIGRATION_DECISION_SIGNOFF.md`.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 9.5
+- `docs/FRAMEWORK_DECISION.md`
+- `docs/ASTRO_SPIKE_BENCHMARK.md`
+- `tests/verify-astro-parity.js`
+
+### Files changed
+- `docs/MIGRATION_DECISION_SIGNOFF.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Formally approved migration to Astro v5 (Static MPA) after passing 100% of defined spike acceptance gates:
+  - 25/25 parity assertions passed (8 core static routes + 7 discovery assets).
+  - 0 KB runtime client JS emitted on core reading pages.
+  - 72/72 Netlify Edge Function assertions preserved.
+  - Sub-second build time (326 ms build, 1.54s CLI invocation vs 5.0s budget).
+  - 100% WCAG 2.2 AA accessibility and contrast token compliance.
+  - Remediation of the multi-H1 heading defect (`TYPO-01`).
+- Established batched migration roadmap across Phases A8–A11. Phase A7 is complete.
+
+### Commands executed
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `test:astro`: 25/25 passed.
+- `npm test`: 6/6 suites passed.
+
+### Route/content/source-path impact
+Added `docs/MIGRATION_DECISION_SIGNOFF.md`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready to proceed to Phase A8 Astro Static Architecture Setup.
+
+### Exact next task
+Task A8.1 — Configure Astro static architecture and project structure
