@@ -1,0 +1,44 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  // Dedicated static pages already handled by explicit routes
+  const dedicated = new Set([
+    '_index',
+    'ai_playground_series/_index',
+    'ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone',
+    'ai_playground_series/02-the-day-a-chat-box-became-a-document-engine',
+    'ai_playground_series/03-the-model-was-fine-the-phone-wasnt',
+    'ai_playground_series/04-i-put-an-image-generator-inside-the-phone',
+    'ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app',
+    'ai_playground_series/06-pushing-mobile-hardware-to-the-edge'
+  ]);
+
+  return posts
+    .filter((p) => !dedicated.has(p.id.replace(/\.md$/, '')) && !p.id.endsWith('_index'))
+    .map((post) => ({
+      params: { slug: post.id.replace(/\.md$/, '') },
+      props: { post }
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formatDate = (d: string | Date | undefined) => {
+  if (!d) return undefined;
+  if (typeof d === 'string') return d;
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};
+---
+
+<ArticleLayout
+  title={post.data.title}
+  description={post.data.description}
+  date={formatDate(post.data.date)}
+  tags={post.data.tags}
+>
+  <Content />
+</ArticleLayout>

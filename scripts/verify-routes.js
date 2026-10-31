@@ -7,7 +7,12 @@ const fs = require("fs");
 const path = require("path");
 
 const FIXTURES_FILE = path.join(__dirname, "../tests/fixtures/legacy-routes.json");
-const PUBLIC_DIR = process.env.PUBLIC_DIR ? path.resolve(process.env.PUBLIC_DIR) : path.join(__dirname, "../public");
+const ROOT_DIR = path.resolve(__dirname, "..");
+const PUBLIC_DIR = process.env.PUBLIC_DIR
+  ? path.resolve(process.env.PUBLIC_DIR)
+  : (fs.existsSync(path.join(ROOT_DIR, "dist"))
+      ? path.join(ROOT_DIR, "dist")
+      : path.join(ROOT_DIR, "public"));
 const NETLIFY_CONFIG = path.join(__dirname, "../netlify.toml");
 
 if (!fs.existsSync(FIXTURES_FILE)) {
@@ -28,7 +33,11 @@ for (const route of routes) {
 
   try {
     if (type === "html") {
-      const relPath = routePath === "/" ? "index.html" : path.join(routePath.replace(/^\//, ""), "index.html");
+      const relPath = routePath === "/"
+        ? "index.html"
+        : (routePath.endsWith(".html")
+            ? routePath.replace(/^\//, "")
+            : path.join(routePath.replace(/^\//, ""), "index.html"));
       const target = path.join(PUBLIC_DIR, relPath);
       if (fs.existsSync(target)) {
         const content = fs.readFileSync(target, "utf-8");

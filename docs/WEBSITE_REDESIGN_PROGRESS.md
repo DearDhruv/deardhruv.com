@@ -2763,4 +2763,57 @@ Added `docs/RELEASE_ACCEPTANCE.md`. All 38 routes, assets, and content files int
 None. Full migration plan from Phase A0 to Phase A11 complete and approved for production release.
 
 ### Exact next task
-None — Migration and Redesign Complete!
+Review and Quality Hardening
+
+## 2026-10-31 — Review & Quality Hardening: 404 Page, Dynamic Post Routing, and Edge Negotiation Guards
+
+**Task:** Review & Quality Hardening — Edge Guards, Dynamic Routing, 404 Recovery, and Output Directory Robustness
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `7b083dd`
+**Commit:** Pending
+
+### Objective
+Resolve edge gaps identified during adversarial pull request review:
+1. Missing `404.html` in Astro output (`dist/404.html`), which caused Netlify to fallback to unbranded default 404 errors.
+2. Hardcoded post routing that prevented newly authored posts in `content/posts/` from rendering in Astro.
+3. Edge Function error path bug in `netlify/edge-functions/markdown-negotiation.ts` that mutated 404 responses to claim `x-agent-ready: true` and `content-type: text/markdown`.
+4. Brittle build integration in `astro.config.mjs` that only mirrored markdown files listed in a test fixture rather than dynamically discovering all source markdown.
+5. Incomplete test runner fallback where `npm test` defaulted to `../public` instead of `../dist`.
+
+### Files changed
+- `src/pages/404.astro` (new)
+- `src/pages/posts/[...slug].astro` (new)
+- `astro.config.mjs`
+- `netlify/edge-functions/markdown-negotiation.ts`
+- `scripts/verify-routes.js`
+- `tests/fixtures/legacy-routes.json`
+- `tests/verify-assets.js`
+- `tests/verify-complete-regression.js`
+- `tests/verify-edge-functions.js`
+- `tests/verify-links.js`
+- `tests/verify-visual-regression.js`
+- `docs/RELEASE_ACCEPTANCE.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details & fixes
+- Created `src/pages/404.astro` adhering to the Precision Technical Editorial design system with single-H1 outline, accessible `<main id="main">` landmark, skip link, and quick recovery buttons.
+- Created `src/pages/posts/[...slug].astro` to dynamically route and render any newly authored markdown articles from `content/posts/`.
+- Re-architected `markdownOutputsIntegration` in `astro.config.mjs` to dynamically walk `content/` and mirror all source `.md` files to their `index.md` negotiated paths in `dist/`.
+- Hardened `markdown-negotiation.ts` with `if (!response.ok) return response;` guard so failed rewrites never emit false `x-agent-ready` headers.
+- Updated all test runners (`verify-routes.js`, `verify-assets.js`, `verify-links.js`, `verify-edge-functions.js`) to intelligently detect and default to `dist/` if present.
+- Added `/404.html` to `legacy-routes.json` (39 routes total) and `verify-visual-regression.js` (130 assertions across 10 page templates).
+
+### Commands executed & results
+- `npm run build:astro`: 27 static routes generated cleanly in 635ms.
+- `npm test`: All 7 test suites passed against `dist/` (39/39 routes, 7/7 assets, 28 HTML docs / 658 links, 74/74 edge assertions, 14/14 contrast tokens, 10/10 a11y tokens, 28/28 content loader tests).
+- `npm run test:regression`: All 5 suites passed with 100% parity against `dist/`.
+- `npm run test:visual`: 130/130 assertions passed across 10 pages and 6 viewports.
+- `npm run test:perf`: 4/4 budgets passed (<2.0s build, 33.69 KB CSS, 0 KB hydration JS, 2.49 KB total client JS).
+- `git diff --check`: 0 whitespace errors.
+
+### Known issues / decisions required
+None. All edge risks, missing pages, and test weaknesses are fully addressed.
+
+### Exact next task
+Ready for final git commit on `feature/portfolio`.

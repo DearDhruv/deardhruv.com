@@ -21,10 +21,10 @@ if (!fs.existsSync(DIST_DIR)) {
 let allPassed = true;
 
 const suites = [
-  { name: 'Legacy Routes Parity (38/38)', cmd: 'PUBLIC_DIR=dist node scripts/verify-routes.js' },
+  { name: 'Legacy Routes Parity (39/39)', cmd: 'PUBLIC_DIR=dist node scripts/verify-routes.js' },
   { name: 'Static Assets & Discovery Files (7/7)', cmd: 'PUBLIC_DIR=dist node tests/verify-assets.js' },
   { name: 'Internal Link Resolution & HTML Semantics', cmd: 'PUBLIC_DIR=dist node tests/verify-links.js' },
-  { name: 'Netlify Edge Negotiation & Markdown Rewrites (72/72)', cmd: 'PUBLIC_DIR=dist node tests/verify-edge-functions.js' },
+  { name: 'Netlify Edge Negotiation & Markdown Rewrites (74/74)', cmd: 'PUBLIC_DIR=dist node tests/verify-edge-functions.js' },
   { name: 'Content Loader Integrity (28/28)', cmd: 'node tests/verify-content-loader.js' }
 ];
 

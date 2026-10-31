@@ -306,5 +306,13 @@
     "contentType": "application/json",
     "sourceFile": "static/.well-known/openid-configuration",
     "description": "OpenID Connect configuration"
+  },
+  {
+    "path": "/404.html",
+    "type": "html",
+    "expectedStatus": 404,
+    "contentType": "text/html",
+    "sourceFile": "layouts/404.html",
+    "description": "Accessible custom 404 error page"
   }
 ]

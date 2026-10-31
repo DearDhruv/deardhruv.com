@@ -52,7 +52,8 @@ const representativePages = [
   { id: 'series', file: 'posts/ai_playground_series/index.html', title: 'Series Index' },
   { id: 'article', file: 'posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.html', title: 'Article 01' },
   { id: 'policy', file: 'other/ai-playground/privacy-policy-ai-playground-app/index.html', title: 'Privacy Policy' },
-  { id: 'sitemap', file: 'sitemap/index.html', title: 'Sitemap' }
+  { id: 'sitemap', file: 'sitemap/index.html', title: 'Sitemap' },
+  { id: '404', file: '404.html', title: '404 Error Page' }
 ];
 
 for (const p of representativePages) {

@@ -54,12 +54,12 @@ All requirements, constraints, and non-negotiables established in `plans/DEARDHR
 - [x] **CMS Architecture:** Evaluation documented in `docs/CMS_EVALUATION.md`; zero-dependency Git workflow preserved with Sveltia CMS as ready drop-in.
 
 ### Compatibility & Endpoints
-- [x] **Legacy Routes:** 38/38 legacy routes return exact status, MIME type, and structure.
+- [x] **Legacy Routes:** 39/39 routes (including custom accessible 404 error page) return exact status, MIME type, and structure.
 - [x] **Static Discovery Files:** 7/7 discovery files (`resume.pdf`, `llms.txt`, `api-catalog`, `mcp.json`, OAuth metadata) verified.
 - [x] **Feeds & Discovery:** `/index.json` (JSON Feed v1.1), `/sitemap.xml`, and `/feed.json` 200 rewrite preserved.
-- [x] **Netlify Edge Function:** `markdown-negotiation.ts` tested on all content routes with `Accept: text/markdown` producing `x-agent-ready: true` and serving `index.md`.
+- [x] **Netlify Edge Function:** `markdown-negotiation.ts` tested on all content routes with `Accept: text/markdown` producing `x-agent-ready: true` and serving `index.md`, with guarded error fallbacks for non-existent routes.
 - [x] **Security Headers:** HSTS, CSP, X-Frame-Options, Permissions-Policy, Referrer-Policy, and immutable cache headers configured in `netlify.toml`.
-- [x] **Internal Links:** 100% internal links resolve cleanly (0 broken links across 27 HTML documents).
+- [x] **Internal Links:** 100% internal links resolve cleanly (0 broken links across 28 HTML documents).
 
 ---
 
@@ -67,13 +67,13 @@ All requirements, constraints, and non-negotiables established in `plans/DEARDHR
 
 | Test Suite | Command | Coverage | Result |
 | :--- | :--- | :--- | :--- |
-| **Legacy Route Parity** | `PUBLIC_DIR=dist node scripts/verify-routes.js` | 38 routes (HTML, Aliases, Feeds, XML, Markdown) | **38 / 38 Passed (100%)** |
+| **Legacy Route Parity** | `PUBLIC_DIR=dist node scripts/verify-routes.js` | 39 routes (HTML, Aliases, Feeds, XML, Markdown, 404) | **39 / 39 Passed (100%)** |
 | **Static Discovery Assets** | `PUBLIC_DIR=dist node tests/verify-assets.js` | 7 static assets (PDF, icons, llms.txt, API catalog, MCP) | **7 / 7 Passed (100%)** |
-| **Internal Link Resolution** | `PUBLIC_DIR=dist node tests/verify-links.js` | 27 HTML docs, 633 internal links | **0 Broken Links, 0 Markup Issues** |
-| **Netlify Edge Negotiation** | `PUBLIC_DIR=dist node tests/verify-edge-functions.js` | 72 edge rewrite assertions & headers | **72 / 72 Passed (100%)** |
+| **Internal Link Resolution** | `PUBLIC_DIR=dist node tests/verify-links.js` | 28 HTML docs, 658 internal links | **0 Broken Links, 0 Markup Issues** |
+| **Netlify Edge Negotiation** | `PUBLIC_DIR=dist node tests/verify-edge-functions.js` | 74 edge rewrite assertions & headers | **74 / 74 Passed (100%)** |
 | **Content Loader Integrity** | `node tests/verify-content-loader.js` | 22 Markdown source files across 3 collections | **28 / 28 Passed (100%)** |
 | **Complete Regression Gate** | `npm run test:regression` | Full regression run across all 5 above suites | **All 5 Suites Passed (100%)** |
-| **Visual Regression Matrix** | `npm run test:visual` | 9 representative pages across 6 viewports | **118 / 118 Passed (100%)** |
+| **Visual Regression Matrix** | `npm run test:visual` | 10 representative pages across 6 viewports | **130 / 130 Passed (100%)** |
 | **WCAG Contrast Ratios** | `npm run test:contrast` | 14 design token pairs (light & dark modes) | **14 / 14 Passed (100%)** |
 | **Accessibility Tokens** | `npm run test:a11y` | Reduced-motion, focus ring, 44px touch targets | **10 / 10 Passed (100%)** |
 | **Performance Budgets** | `npm run test:perf` | Build time, CSS bundle weight, client JS payload | **4 / 4 Passed (100%)** |

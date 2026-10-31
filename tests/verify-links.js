@@ -8,10 +8,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const PUBLIC_DIR = process.env.PUBLIC_DIR ? path.resolve(process.env.PUBLIC_DIR) : path.join(__dirname, '../public');
+const ROOT_DIR = path.resolve(__dirname, '..');
+const PUBLIC_DIR = process.env.PUBLIC_DIR
+  ? path.resolve(process.env.PUBLIC_DIR)
+  : (fs.existsSync(path.join(ROOT_DIR, 'dist'))
+      ? path.join(ROOT_DIR, 'dist')
+      : path.join(ROOT_DIR, 'public'));
 
 if (!fs.existsSync(PUBLIC_DIR)) {
-  console.error("❌ public directory missing. Run 'hugo --gc --minify' first.");
+  console.error(`❌ Output directory missing: ${PUBLIC_DIR}. Run 'npm run build:astro' first.`);
   process.exit(1);
 }
 
@@ -32,7 +37,7 @@ function getHtmlFiles(dir) {
 }
 
 const htmlFiles = getHtmlFiles(PUBLIC_DIR);
-console.log(`🔍 Crawling and validating ${htmlFiles.length} generated HTML documents in public/...\n`);
+console.log(`🔍 Crawling and validating ${htmlFiles.length} generated HTML documents in ${path.relative(ROOT_DIR, PUBLIC_DIR)}/...\n`);
 
 let checkedLinks = 0;
 let brokenLinks = 0;

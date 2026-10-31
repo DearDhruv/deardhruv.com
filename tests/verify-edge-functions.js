@@ -6,26 +6,32 @@
 const fs = require('fs');
 const path = require('path');
 
-const PUBLIC_DIR = process.env.PUBLIC_DIR ? path.resolve(process.env.PUBLIC_DIR) : path.join(__dirname, '../public');
-const EDGE_FN_FILE = path.join(__dirname, '../netlify/edge-functions/markdown-negotiation.ts');
+const ROOT_DIR = path.resolve(__dirname, '..');
+const PUBLIC_DIR = process.env.PUBLIC_DIR
+  ? path.resolve(process.env.PUBLIC_DIR)
+  : (fs.existsSync(path.join(ROOT_DIR, 'dist'))
+      ? path.join(ROOT_DIR, 'dist')
+      : path.join(ROOT_DIR, 'public'));
+
+const EDGE_FN_FILE = path.join(ROOT_DIR, 'netlify/edge-functions/markdown-negotiation.ts');
 
 if (!fs.existsSync(EDGE_FN_FILE)) {
   console.error("❌ Edge function file missing:", EDGE_FN_FILE);
   process.exit(1);
 }
 
-// Ensure public directory is built
+// Ensure output directory is built
 if (!fs.existsSync(PUBLIC_DIR)) {
-  console.error("❌ public/ directory missing. Run 'hugo --gc --minify' first.");
+  console.error(`❌ Output directory missing: ${PUBLIC_DIR}. Run 'npm run build:astro' first.`);
   process.exit(1);
 }
 
-console.log("🔍 Testing Netlify Edge Function: markdown-negotiation.ts...\n");
+console.log(`🔍 Testing Netlify Edge Function: markdown-negotiation.ts against ${path.relative(ROOT_DIR, PUBLIC_DIR)}/...\n`);
 
 /**
- * Evaluates markdown-negotiation logic against given pathname and accept header
+ * Accurately models the markdown-negotiation edge function logic
  */
-function simulateEdgeFunction(pathname, acceptHeader) {
+function runEdgeFunction(pathname, acceptHeader) {
   if (!acceptHeader || !acceptHeader.includes("text/markdown")) {
     return null; // Passthrough to static HTML
   }
@@ -42,7 +48,21 @@ function simulateEdgeFunction(pathname, acceptHeader) {
     markdownPath += "/index.md";
   }
 
+  // Context.rewrite checks disk availability
+  const diskPath = path.join(PUBLIC_DIR, markdownPath.replace(/^\//, ''));
+  const fileExists = fs.existsSync(diskPath);
+
+  if (!fileExists) {
+    // 404 response returned as-is without agent readiness header
+    return {
+      status: 404,
+      rewrittenPath: markdownPath,
+      headers: {}
+    };
+  }
+
   return {
+    status: 200,
     rewrittenPath: markdownPath,
     headers: {
       "content-type": "text/markdown; charset=utf-8",
@@ -65,17 +85,27 @@ function assert(condition, message) {
 }
 
 // Test Case 1: Standard browser HTML request (passthrough)
-const browserReq = simulateEdgeFunction("/about/", "text/html,application/xhtml+xml");
+const browserReq = runEdgeFunction("/about/", "text/html,application/xhtml+xml");
 assert(browserReq === null, "Browser request with text/html passes through without rewrite");
 
 // Test Case 2: File with extension should not rewrite even with Accept: text/markdown
-const fileReq = simulateEdgeFunction("/resume.pdf", "text/markdown");
+const fileReq = runEdgeFunction("/resume.pdf", "text/markdown");
 assert(fileReq === null, "File request /resume.pdf is not rewritten");
 
-const imgReq = simulateEdgeFunction("/images/pro_pic_small.jpg", "text/markdown");
+const imgReq = runEdgeFunction("/images/pro_pic_small.jpg", "text/markdown");
 assert(imgReq === null, "Asset request /images/pro_pic_small.jpg is not rewritten");
 
-// Test Case 3: Content negotiation for key canonical routes
+const cssReq = runEdgeFunction("/css/design-system.css", "text/markdown");
+assert(cssReq === null, "Asset request /css/design-system.css is not rewritten");
+
+// Test Case 3: Non-existent route with Accept: text/markdown returns 404 without x-agent-ready
+const missingReq = runEdgeFunction("/non-existent-route-999/", "text/markdown");
+assert(
+  missingReq && missingReq.status === 404 && !missingReq.headers["x-agent-ready"],
+  "Non-existent route returns 404 without mutating headers or claiming x-agent-ready"
+);
+
+// Test Case 4: Content negotiation for key canonical routes
 const testRoutes = [
   "/",
   "/about/",
@@ -103,19 +133,20 @@ const testRoutes = [
 ];
 
 for (const route of testRoutes) {
-  const result = simulateEdgeFunction(route, "text/markdown");
+  const result = runEdgeFunction(route, "text/markdown");
   if (!result) {
     assert(false, `Expected rewrite for ${route} with Accept: text/markdown`);
     continue;
   }
 
   assert(
+    result.status === 200 &&
     result.headers["content-type"] === "text/markdown; charset=utf-8" &&
     result.headers["x-agent-ready"] === "true",
     `Headers correct for ${route}`
   );
 
-  // Check that the target file actually exists on disk in public/
+  // Check that the target file actually exists on disk in output dir
   const diskPath = path.join(PUBLIC_DIR, result.rewrittenPath.replace(/^\//, ''));
   const exists = fs.existsSync(diskPath);
   assert(exists, `Markdown file exists on disk: ${result.rewrittenPath}`);
