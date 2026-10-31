@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `a015e6d`
+- Current HEAD: `4f23c6e`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A1.4 — Audit responsive behavior and motion
-- Next task: Task A2.1 — Define portfolio art direction options
+- Last completed phase/task: Task A2.1 — Define portfolio art direction options
+- Next task: Task A2.2 — Prototype representative screens
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -370,7 +370,7 @@ Task A1.4 — Audit responsive behavior and motion
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `a015e6d`
-**Commit:** Pending
+**Commit:** `4f23c6e`
 
 ### Objective
 Audit viewport boundary conditions (320px narrow mobile, short landscape viewports, table/pre overflow), motion performance, hover-state sticking on touch devices, and WCAG 2.2 AA `prefers-reduced-motion` compliance. Finalize `docs/DESIGN_AUDIT.md`.
@@ -407,3 +407,43 @@ None. Ready to proceed to Phase A2 Art Direction and Visual Concepts.
 
 ### Exact next task
 Task A2.1 — Define portfolio art direction options
+
+## 2026-10-31 — Task A2.1: Define Portfolio Art Direction Options
+
+**Task:** Task A2.1 — Define portfolio art direction options
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `4f23c6e`
+**Commit:** Pending
+
+### Objective
+Define, compare, and document distinct visual art direction options in `docs/ART_DIRECTION_CONCEPTS.md`, evaluating Concept A (Precision Technical Editorial), Concept B (Monochromatic Swiss Grid), and Concept C (Developer Workbench) across reading comfort, maintainability, theme parity, responsiveness, and accessibility.
+
+### Files inspected
+- `docs/DESIGN_AUDIT.md`
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
+
+### Files changed
+- `docs/ART_DIRECTION_CONCEPTS.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Established "Precision Technical Editorial" as the primary direction: high-legibility fluid typography, clean ink-slate backgrounds, crisp cyan/azure accents, hairline structural borders, and subtle monospace references for metrics and code.
+- Explicitly rejected generic AI tropes (neon glow fields, excessive badge pills, fake CLI overlays, cursor trails).
+- Formatted weighted evaluation matrix showing Concept A scored 4.80/5.0 vs 3.55/5.0 (Concept B) and 2.80/5.0 (Concept C).
+
+### Commands executed
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 4/4 suites passed.
+
+### Route/content/source-path impact
+None. Documentation only.
+
+### Known issues / decisions required
+None. Ready for Task A2.2 visual prototyping.
+
+### Exact next task
+Task A2.2 — Prototype representative screens
