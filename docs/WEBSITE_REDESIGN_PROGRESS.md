@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `7de6eea`
-- Last completed phase/task: Task 1.3 — Integration and risk map
-- Next task: Task 2.1 — Navigation and page hierarchy
+- Current HEAD: `9d35ecb`
+- Last completed phase/task: Task 2.1 — Navigation and page hierarchy
+- Next task: Task 2.2 — Evidence and content audit
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -24,10 +24,11 @@
 | Task 0.4 | Freeze legacy URL manifest and automated route validator | `c8dc735` | `node scripts/verify-routes.js` | PASS (38/38 legacy routes verified) |
 | Task 1.1 | Inspect source architecture and layout precedence | `cd0b85b` | Codebase audit of layouts, assets, and submodule | PASS |
 | Task 1.2 | Inventory all published Markdown content and metadata | `7de6eea` | Metadata extraction across all 22 Markdown files | PASS |
-| Task 1.3 | Map Netlify integrations, Edge Functions, and release risks | Pending | Security headers, CSP, Edge Functions, discovery catalog audit | PASS |
+| Task 1.3 | Map Netlify integrations, Edge Functions, and release risks | `9d35ecb` | Security headers, CSP, Edge Functions, discovery catalog audit | PASS |
+| Task 2.1 | Define portfolio information architecture and page hierarchy | Pending | IA review, route parity validation | PASS |
 
 ## Files changed in the latest task
-- `docs/INTEGRATION-RISK-MAP.md`
+- `docs/INFORMATION-ARCHITECTURE.md`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
@@ -35,17 +36,18 @@
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- Integration risk map saved in `docs/INTEGRATION-RISK-MAP.md`
+- IA specification in `docs/INFORMATION-ARCHITECTURE.md`
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- Edge function `markdown-negotiation.ts` confirmed safe. Security headers aligned with requirements.
+- Clear distinction established between `/portfolio/` (curated high-level impact) and `/projects/` (technical case studies).
 
 ## Exact next action
-1. Execute Phase 2, Task 2.1 — Define portfolio information architecture and page navigation hierarchy in `docs/INFORMATION-ARCHITECTURE.md`.
+1. Execute Task 2.2 — Build claim verification checklist in `docs/CLAIM-VERIFICATION.md`.
+
 
 
 
