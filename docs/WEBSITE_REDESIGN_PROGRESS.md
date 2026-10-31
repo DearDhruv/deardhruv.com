@@ -762,7 +762,7 @@ Task A4.2 — Standardize button and link components
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `669c7d8`
-**Commit:** Pending
+**Commit:** `9177e68`
 
 ### Objective
 Standardize button and action link components across `<button>` and `<a>` elements, guaranteeing 44x44px minimum touch targets, clear primary, secondary, and ghost variants, accessible unclipped focus-visible rings, and external link indicators with screen reader announcements.
@@ -800,3 +800,49 @@ None. Ready for Task A4.3 card, tag, badge, and divider standardization.
 
 ### Exact next task
 Task A4.3 — Standardize card, tag, badge, and divider components
+
+## 2026-10-31 — Task A4.3: Standardize Card, Tag, Badge, and Divider Components
+
+**Task:** Task A4.3 — Standardize card, tag, badge, and divider components
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `9177e68`
+**Commit:** Pending
+
+### Objective
+Standardize cards (`.card`, `.card-interactive`), metadata badges (`.badge`, `.badge-neutral`), taxonomy tags (`.tag`), code chips (`.chip`), and structural dividers (`.divider-subtle`, `.divider-technical`) with strict geometry, radius, and token alignment.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 5 & 6
+- `docs/ICON_AND_DIVIDER_STANDARDS.md`
+- `assets/css/components.css`
+
+### Files changed
+- `assets/css/components.css`
+- `static/css/components.css`
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Standardized `.card` with `var(--radius-md)` (10px), subtle hairline border `var(--color-border-subtle)`, elevated surface `var(--color-bg-surface)`.
+- Added `.card-interactive` with hover elevation (`translateY(-2px)`, `var(--shadow-md)`, `var(--color-border-interactive)`).
+- Standardized metadata badges (`.badge`, `.badge-neutral`) with `var(--radius-sm)` (6px) and monospace typography.
+- Standardized taxonomy tags (`.tag`) with full pill radius `var(--radius-full)`, and `.chip` for technical metadata.
+- Implemented `.divider-subtle` (1px solid `var(--color-divider)`) and `.divider-technical` (1px dashed `var(--color-border-subtle)`).
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 5/5 suites passed (38 routes, 7 assets, 80 HTML docs / 1479 links, 72 edge assertions, 14 contrast pairs).
+
+### Route/content/source-path impact
+Updated `/css/components.css` and `/design-preview/index.html`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A4.4 accessible interaction state matrix.
+
+### Exact next task
+Task A4.4 — Implement complete accessible interaction states

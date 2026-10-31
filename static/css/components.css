@@ -254,3 +254,112 @@
     transform: translate(1px, -1px);
   }
 }
+
+/* Card Primitives */
+.card {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--motion-duration-fast) var(--motion-ease),
+              transform var(--motion-duration-fast) var(--motion-ease),
+              box-shadow var(--motion-duration-fast) var(--motion-ease);
+}
+
+.card-interactive {
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-interactive:hover {
+    border-color: var(--color-border-interactive);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.card:focus-within {
+  border-color: var(--color-border-interactive);
+}
+
+/* Badges, Tags, and Chips */
+.badge,
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--font-metadata);
+  font-weight: 500;
+  line-height: 1.2;
+  background-color: var(--color-accent-subtle);
+  color: var(--color-text-accent);
+  border: 1px solid var(--color-accent-border);
+  white-space: nowrap;
+}
+
+.badge-neutral {
+  background-color: var(--color-bg-surface-elevated);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border-subtle);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--font-metadata);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-subtle);
+  text-decoration: none;
+  transition: color var(--motion-duration-fast) var(--motion-ease),
+              border-color var(--motion-duration-fast) var(--motion-ease),
+              background-color var(--motion-duration-fast) var(--motion-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tag:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-border-strong);
+    background-color: var(--color-bg-surface-hover);
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-code);
+  border: 1px solid var(--color-border-subtle);
+}
+
+/* Structural Dividers */
+.divider-subtle {
+  border: 0;
+  border-top: 1px solid var(--color-divider);
+  margin-block: var(--space-8);
+  width: 100%;
+}
+
+.divider-technical {
+  border: 0;
+  border-top: 1px dashed var(--color-border-subtle);
+  margin-block: var(--space-8);
+  width: 100%;
+}
