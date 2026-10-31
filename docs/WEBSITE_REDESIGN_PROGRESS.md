@@ -2573,3 +2573,46 @@ None. Ready for Task A11.3 accessibility regression.
 
 ### Exact next task
 Task A11.3 — Complete accessibility regression
+
+## 2026-10-31 — Task A11.3: Complete Accessibility Regression
+
+**Task:** Task A11.3 — Complete accessibility regression
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `1d37ee3`
+**Commit:** Pending
+
+### Objective
+Execute full WCAG 2.2 AA accessibility regression verification across contrast ratios, semantic focus indicators, reduced-motion preferences, touch targets, and keyboard navigation.
+
+### Files inspected
+- `tests/verify-contrast.js`
+- `tests/verify-a11y-tokens.js`
+
+### Files changed
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Verified 14/14 design token pairs achieve >= 4.5:1 contrast in both light and dark themes (including 18.57:1 primary text in dark mode and 17.06:1 in light mode).
+- Verified accessible `:focus-visible` styling (2px solid ring, 2px unclipped offset) across all interactive elements.
+- Verified `prefers-reduced-motion: reduce` completely neutralizes animation and transition durations to 0.01ms and disables smooth scrolling.
+- Verified button and navigation touch targets enforce 44x44px minimum sizing.
+- Verified accessible skip-link allows immediate keyboard bypass to `#main`.
+
+### Commands executed
+- `npm run test:contrast`
+- `npm run test:a11y`
+- `git diff --check`
+
+### Test results
+- `test:contrast`: 14/14 passed.
+- `test:a11y`: 10/10 passed.
+
+### Route/content/source-path impact
+Verified 100% WCAG 2.2 AA compliance. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A11.4 performance regression.
+
+### Exact next task
+Task A11.4 — Complete performance regression
