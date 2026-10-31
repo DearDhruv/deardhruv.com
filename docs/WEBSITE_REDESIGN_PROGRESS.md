@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `51c4aa9`
+- Current HEAD: `ff2d92b`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A1.1 — Capture page screenshots and visual baseline
-- Next task: Task A1.2 — Audit typography and reading hierarchy
+- Last completed phase/task: Task A1.2 — Audit typography and reading hierarchy
+- Next task: Task A1.3 — Audit components and states
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -228,7 +228,7 @@ Task A1.1 — Capture page screenshots and visual baseline
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `51c4aa9`
-**Commit:** Pending
+**Commit:** `ff2d92b`
 
 ### Objective
 Establish a structured visual and layout baseline (`tests/fixtures/visual-baseline.json`) spanning 9 representative routes and 6 standard viewports (320px narrow mobile, 390px mobile, 768px tablet portrait, 1024px tablet landscape, 1440px desktop, 1920px wide desktop), auditing document size, landmarks, headings, images, codeblocks, and interactive elements.
@@ -269,3 +269,51 @@ Article heading hierarchy (19 H1 tags) violates WCAG and document outline best p
 
 ### Exact next task
 Task A1.2 — Audit typography and reading hierarchy
+
+## 2026-10-31 — Task A1.2: Audit Typography and Reading Hierarchy
+
+**Task:** Task A1.2 — Audit typography and reading hierarchy
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `ff2d92b`
+**Commit:** Pending
+
+### Objective
+Audit all font families, heading scales, reading measure widths, line heights, inline code formatting, and contrast ratios across all site templates. Document findings in `docs/DESIGN_AUDIT.md`.
+
+### Files inspected
+- `assets/css/custom.css`
+- `layouts/index.html`
+- `layouts/_default/hero-page.html`
+- `layouts/_default/single.html`
+- `layouts/posts/single.html`
+- `tests/fixtures/visual-baseline.json`
+
+### Files changed
+- `docs/DESIGN_AUDIT.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Identified 5 specific typography defects:
+  - `TYPO-01` (Blocker): 19 `<h1>` tags on article pages violating WCAG 2.2 AA.
+  - `TYPO-02` (High): Fragmented heading scale and arbitrary font clamps across templates.
+  - `TYPO-03` (Medium): Unbounded reading measure (> 120ch) on About, Projects, and Posts indexes.
+  - `TYPO-04` (Medium): Monospace code styling inconsistency causing paragraph line-height distortion.
+  - `TYPO-05` (High): Low contrast (4.12:1) on secondary metadata tokens in dark mode.
+- Defined explicit design-system remediation rules and automated verification tests for each defect.
+
+### Commands executed
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 4/4 suites passed.
+
+### Route/content/source-path impact
+None. Documentation audit only.
+
+### Known issues / decisions required
+None. Ready for Task A1.3 Component and Interaction State audit.
+
+### Exact next task
+Task A1.3 — Audit components and states
