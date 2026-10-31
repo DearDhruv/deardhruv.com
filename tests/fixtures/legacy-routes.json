@@ -1,0 +1,306 @@
+[
+  {
+    "path": "/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "layouts/index.html",
+    "description": "Homepage"
+  },
+  {
+    "path": "/about/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/about.md",
+    "description": "About & Bio page"
+  },
+  {
+    "path": "/about-us/",
+    "type": "alias",
+    "expectedStatus": 200,
+    "redirectTo": "/about/",
+    "sourceFile": "content/about.md",
+    "description": "Legacy alias for About"
+  },
+  {
+    "path": "/about-hugo/",
+    "type": "alias",
+    "expectedStatus": 200,
+    "redirectTo": "/about/",
+    "sourceFile": "content/about.md",
+    "description": "Legacy alias for About"
+  },
+  {
+    "path": "/contact/",
+    "type": "alias",
+    "expectedStatus": 200,
+    "redirectTo": "/about/",
+    "sourceFile": "content/about.md",
+    "description": "Legacy alias for Contact"
+  },
+  {
+    "path": "/portfolio/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/portfolio.md",
+    "description": "Work & Impact overview"
+  },
+  {
+    "path": "/projects/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/projects.md",
+    "description": "Technical projects case studies"
+  },
+  {
+    "path": "/posts/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/posts/_index.md",
+    "description": "Technical articles index"
+  },
+  {
+    "path": "/posts/ai_playground_series/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/posts/ai_playground_series/_index.md",
+    "description": "Beyond the Model AI Playground Series landing page"
+  },
+  {
+    "path": "/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone.md",
+    "description": "Series Part 1: Offline local LLM runtime"
+  },
+  {
+    "path": "/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine.md",
+    "description": "Series Part 2: Local document engine"
+  },
+  {
+    "path": "/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt.md",
+    "description": "Series Part 3: NDK crash isolation and Vulkan watchdog"
+  },
+  {
+    "path": "/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone.md",
+    "description": "Series Part 4: On-device diffusion and Bonsai 4B"
+  },
+  {
+    "path": "/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app.md",
+    "description": "Series Part 5: Full workstation architecture and offline ledger"
+  },
+  {
+    "path": "/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge.md",
+    "description": "Series Part 6: Pushing mobile hardware limits"
+  },
+  {
+    "path": "/sitemap/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/sitemap.md",
+    "description": "Human-readable visual tree sitemap"
+  },
+  {
+    "path": "/sitemap.xml",
+    "type": "xml",
+    "expectedStatus": 200,
+    "contentType": "application/xml",
+    "sourceFile": "layouts/sitemap.xml",
+    "description": "XML sitemap for search crawlers"
+  },
+  {
+    "path": "/resume.pdf",
+    "type": "pdf",
+    "expectedStatus": 200,
+    "contentType": "application/pdf",
+    "sourceFile": "static/resume.pdf",
+    "description": "Dhruv Patel Professional Résumé PDF"
+  },
+  {
+    "path": "/other/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/_index.md",
+    "description": "Policy and legal section root"
+  },
+  {
+    "path": "/other/ai-playground/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/ai-playground/_index.md",
+    "description": "AI Playground policy index"
+  },
+  {
+    "path": "/other/ai-playground/privacy-policy-ai-playground-app/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/ai-playground/privacy-policy-ai-playground-app.md",
+    "description": "AI Playground Privacy Policy"
+  },
+  {
+    "path": "/other/ai-playground/terms-ai-playground-app/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/ai-playground/terms-ai-playground-app.md",
+    "description": "AI Playground Terms of Service"
+  },
+  {
+    "path": "/other/open-store-app/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/open-store-app/_index.md",
+    "description": "Open Store App policy index"
+  },
+  {
+    "path": "/other/open-store-app/privacy-policy-open-store-app/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/open-store-app/privacy-policy-open-store-app.md",
+    "description": "Open Store App Privacy Policy"
+  },
+  {
+    "path": "/other/open-store-app/terms-open-store-app/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/open-store-app/terms-open-store-app.md",
+    "description": "Open Store App Terms of Service"
+  },
+  {
+    "path": "/other/veloci-hue/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/veloci-hue/_index.md",
+    "description": "VelociHue policy index"
+  },
+  {
+    "path": "/other/veloci-hue/privacy-policy-veloci-hue-game/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/veloci-hue/privacy-policy-veloci-hue-game.md",
+    "description": "VelociHue Game Privacy Policy"
+  },
+  {
+    "path": "/other/veloci-hue/terms-veloci-hue/",
+    "type": "html",
+    "expectedStatus": 200,
+    "contentType": "text/html",
+    "sourceFile": "content/other/veloci-hue/terms-veloci-hue.md",
+    "description": "VelociHue Game Terms of Service"
+  },
+  {
+    "path": "/index.json",
+    "type": "json",
+    "expectedStatus": 200,
+    "contentType": "application/feed+json",
+    "sourceFile": "layouts/index.json",
+    "description": "JSON Feed format"
+  },
+  {
+    "path": "/index.md",
+    "type": "markdown",
+    "expectedStatus": 200,
+    "contentType": "text/markdown",
+    "sourceFile": "layouts/index.md",
+    "description": "Markdown output of homepage"
+  },
+  {
+    "path": "/feed.json",
+    "type": "redirect",
+    "expectedStatus": 200,
+    "redirectTo": "/index.json",
+    "sourceFile": "netlify.toml",
+    "description": "Redirect alias for JSON Feed"
+  },
+  {
+    "path": "/llms.txt",
+    "type": "text",
+    "expectedStatus": 200,
+    "contentType": "text/markdown",
+    "sourceFile": "static/llms.txt",
+    "description": "AI agent instructions file"
+  },
+  {
+    "path": "/auth.md",
+    "type": "markdown",
+    "expectedStatus": 200,
+    "contentType": "text/markdown",
+    "sourceFile": "static/auth.md",
+    "description": "Agent service documentation"
+  },
+  {
+    "path": "/.well-known/api-catalog",
+    "type": "json",
+    "expectedStatus": 200,
+    "contentType": "application/linkset+json",
+    "sourceFile": "static/.well-known/api-catalog",
+    "description": "RFC 9264 API Catalog"
+  },
+  {
+    "path": "/.well-known/mcp.json",
+    "type": "json",
+    "expectedStatus": 200,
+    "contentType": "application/json",
+    "sourceFile": "static/.well-known/mcp.json",
+    "description": "Model Context Protocol descriptor"
+  },
+  {
+    "path": "/.well-known/oauth-protected-resource",
+    "type": "json",
+    "expectedStatus": 200,
+    "contentType": "application/json",
+    "sourceFile": "static/.well-known/oauth-protected-resource",
+    "description": "OAuth 2.0 protected resource metadata"
+  },
+  {
+    "path": "/.well-known/oauth-authorization-server",
+    "type": "json",
+    "expectedStatus": 200,
+    "contentType": "application/json",
+    "sourceFile": "static/.well-known/oauth-authorization-server",
+    "description": "OAuth 2.0 authorization server metadata"
+  },
+  {
+    "path": "/.well-known/openid-configuration",
+    "type": "json",
+    "expectedStatus": 200,
+    "contentType": "application/json",
+    "sourceFile": "static/.well-known/openid-configuration",
+    "description": "OpenID Connect configuration"
+  }
+]
