@@ -2363,3 +2363,44 @@ Phase A9 is COMPLETE. Ready to begin Phase A10 Publishing Workflow and Documenta
 
 ### Exact next task
 Task A10.1 — Author writing and publishing guide
+
+## 2026-10-31 — Task A10.1: Author Writing and Publishing Guide
+
+**Task:** Task A10.1 — Author writing and publishing guide
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `0feb93e`
+**Commit:** Pending
+
+### Objective
+Document the complete authoring, frontmatter specification, directory structure, image handling, local preview, single-H1 heading rules, and pre-commit verification workflows in `docs/WRITING_AND_PUBLISHING.md`.
+
+### Files inspected
+- `content/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone.md`
+- `scripts/new-post.js`
+- `astro.config.mjs`
+
+### Files changed
+- `docs/WRITING_AND_PUBLISHING.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Authored `docs/WRITING_AND_PUBLISHING.md` covering architecture, standalone vs series article structures, TOML frontmatter fields, typography rules (single H1, 72ch measure), local development commands, and automated machine discovery endpoints.
+- Documented content negotiation and edge function headers for agent clients.
+- Documented pre-commit validation requirements (`npm run test:dist` and `npm test`).
+
+### Commands executed
+- `git diff --check`
+- `npm run test:dist`
+
+### Test results
+- `npm run test:dist`: 4/4 suites passed (38/38 legacy routes, 7/7 assets, 27 HTML docs / 627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Added `docs/WRITING_AND_PUBLISHING.md`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A10.2 adding reusable article archetype template.
+
+### Exact next task
+Task A10.2 — Add article authoring template
