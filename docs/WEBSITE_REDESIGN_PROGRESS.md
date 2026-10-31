@@ -2236,3 +2236,44 @@ None. Ready for Task A9.3 refining Projects and project detail layouts.
 
 ### Exact next task
 Task A9.3 — Refine Projects and project detail layouts
+
+## 2026-10-31 — Task A9.3: Refine Projects Presentation and Detail Layouts
+
+**Task:** Task A9.3 — Refine Projects and project detail layouts
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `07d64df`
+**Commit:** Pending
+
+### Objective
+Verify and refine the presentation of `/projects/`, ensuring architectural case studies, diagrams, tags, code snippets, and evidence sections conform to the Precision Technical Editorial design system.
+
+### Files inspected
+- `content/projects.md`
+- `src/pages/projects/index.astro`
+- `dist/projects/index.html`
+
+### Files changed
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Verified `/projects/` renders inside `layout-container-reading` (72ch measure) with `.page-header` primitive.
+- Confirmed contained horizontal scrolling on architecture diagrams (Mermaid flowchart) and code blocks.
+- Verified single `<h1>` outline (`Engineering Projects & Case Studies`) with clean sequential `<h2>` and `<h3>` section hierarchy.
+- Confirmed all internal references and Google Play / GitHub external links resolve without 404s.
+
+### Commands executed
+- `npm run test:dist`
+- `git diff --check`
+
+### Test results
+- `npm run test:dist`: 4/4 suites passed (38/38 legacy routes, 7/7 assets, 27 HTML docs / 627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Verified `/projects/`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A9.4 refining blog index and article reading layout.
+
+### Exact next task
+Task A9.4 — Refine blog index and article reading layout
