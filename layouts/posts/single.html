@@ -1,7 +1,8 @@
 {{ define "main" }}
 <div class="content">
   <main id="main" class="post article-single" tabindex="-1">
-    <header class="article-header">
+    <article class="article-wrapper">
+      <header class="article-header">
       {{ if or .Params.series (strings.Contains .RelPermalink "/ai_playground_series/") }}
         <div class="article-series-crumb">
           <a href="/posts/ai_playground_series/" class="series-crumb-link">
@@ -59,9 +60,9 @@
       </aside>
     {{ end }}
 
-    <article class="post-content article-body">
+    <div class="post-content article-body">
       {{ .Content }}
-    </article>
+    </div>
 
     <footer class="article-footer">
       {{ with .Params.tags }}
@@ -119,6 +120,7 @@
         </nav>
       {{ end }}
     </footer>
+    </article>
   </main>
 </div>
 {{ end }}

@@ -1,32 +1,34 @@
 {{ define "main" }}
 <div class="content">
   <main id="main" class="post legal-page" tabindex="-1">
-    <header class="legal-header">
-      <nav class="legal-breadcrumbs" aria-label="Legal Breadcrumbs">
-        <a href="/other/">Legal &amp; Policies</a>
-        {{ if .Parent }}
-          <span class="crumb-separator">/</span>
-          <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a>
-        {{ end }}
-      </nav>
-      <h1 class="page-title legal-title">{{ .Title }}</h1>
-      <div class="legal-meta">
-        <span class="legal-effective">Effective / Published: <time datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format "January 2, 2006" .Date }}</time></span>
-        {{ with .Params.author }}
-          <span class="legal-author">&bull; Operator: <strong>{{ .name }}</strong></span>
-        {{ end }}
-      </div>
-    </header>
+    <article class="legal-article">
+      <header class="legal-header">
+        <nav class="legal-breadcrumbs" aria-label="Legal Breadcrumbs">
+          <a href="/other/">Legal &amp; Policies</a>
+          {{ if and .Parent (ne .Parent.RelPermalink "/other/") (ne .Parent.RelPermalink .RelPermalink) }}
+            <span class="crumb-separator">/</span>
+            <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a>
+          {{ end }}
+        </nav>
+        <h1 class="page-title legal-title">{{ .Title }}</h1>
+        <div class="legal-meta">
+          <span class="legal-effective">Effective / Published: <time datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format "January 2, 2006" .Date }}</time></span>
+          {{ with .Params.author }}
+            <span class="legal-author">&bull; Operator: <strong>{{ .name }}</strong></span>
+          {{ end }}
+        </div>
+      </header>
 
-    <article class="post-content legal-body">
-      {{ .Content }}
+      <div class="post-content legal-body">
+        {{ .Content }}
+      </div>
+
+      <footer class="legal-footer">
+        <div class="legal-back-links">
+          <a href="/other/" class="btn btn-outline btn-sm">&larr; Return to Legal &amp; Policies Directory</a>
+        </div>
+      </footer>
     </article>
-
-    <footer class="legal-footer">
-      <div class="legal-back-links">
-        <a href="/other/" class="btn btn-outline btn-sm">&larr; Return to Legal &amp; Policies Directory</a>
-      </div>
-    </footer>
   </main>
 </div>
 {{ end }}

@@ -1741,6 +1741,12 @@ canvas {
     scroll-behavior: auto !important;
   }
 
+  *:hover,
+  *:focus,
+  *:focus-visible {
+    transform: none !important;
+  }
+
   .logo__cursor {
     animation: none !important;
     opacity: 1 !important;
@@ -2117,7 +2123,8 @@ canvas {
   transition: all var(--transition-speed) ease;
 }
 
-.series-part-link:hover {
+.series-part-link:hover,
+.series-part-link:focus-visible {
   border-color: var(--accent);
   background: var(--accent-subtle);
   transform: translateY(-2px);
@@ -2521,7 +2528,8 @@ canvas {
   transition: all var(--transition-speed) ease;
 }
 
-.series-nav-btn:hover {
+.series-nav-btn:hover,
+.series-nav-btn:focus-visible {
   border-color: var(--accent);
   background: var(--accent-subtle);
   transform: translateY(-2px);
@@ -2700,7 +2708,7 @@ canvas {
 /* ============================================================
    TV & 10-FOOT INTERACTION POLISH
    ============================================================ */
-@media (min-width: 1920px) and (min-height: 1000px) {
+@media (min-width: 1800px) and (min-height: 800px) {
   :root {
     --font-size-base: 1.15rem;
   }
@@ -2723,6 +2731,7 @@ canvas {
     padding-bottom: 1.5rem !important;
   }
   
+  .portrait-img,
   .landing-hero-avatar {
     width: 90px !important;
     height: 90px !important;

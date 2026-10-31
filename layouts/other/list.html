@@ -2,6 +2,11 @@
 <div class="content">
   <main id="main" class="posts legal-list-page" tabindex="-1">
     <header class="posts-header">
+      {{ if not (eq .RelPermalink "/other/") }}
+        <nav class="legal-breadcrumbs" aria-label="Legal Breadcrumbs">
+          <a href="/other/">&larr; Return to Legal &amp; Policies Directory</a>
+        </nav>
+      {{ end }}
       <h1 class="page-title">{{ .Title }}</h1>
       {{ with .Params.Description }}
         <p class="section-lead">{{ . }}</p>

@@ -60,6 +60,10 @@ for (const filePath of htmlFiles) {
     console.error(`⚠️ Missing viewport meta in ${relFilePath}`);
     markupIssues++;
   }
+  if (!content.includes('<main') || (!content.includes('id="main"') && !content.includes('id=main'))) {
+    console.error(`⚠️ Missing accessible <main id="main"> landmark in ${relFilePath}`);
+    markupIssues++;
+  }
 
   // 2. Internal Link Extraction
   // Match href="..." or href=... in minified HTML

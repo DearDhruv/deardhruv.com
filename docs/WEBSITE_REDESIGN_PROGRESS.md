@@ -51,33 +51,29 @@
 | Task 10.3 | Record CMS feasibility study and Git-native authoring decision | `17051d3` | Architecture ADR in `docs/CMS_FEASIBILITY.md` | PASS |
 | Task 11-12 | Add landscape orientation, short-height windows, and TV focus navigation | `fba50ad` | Responsive tokens, CSS media queries | PASS |
 | Task 13-14 | Add automated internal link crawler, semantic validator, and test harness | `5df3142` | `npm test` (all 3 suites pass) | PASS |
+| Review & Hardening | Fix landscape mobile hero avatar, exclude mermaid from copy code, wrap article landmarks, add 404 main landmark, legal breadcrumbs, head preconnect, and Edge Function test suite | Pending | `npm test` (all 4 suites pass: routes, assets, links/landmarks, edge-functions) | PASS |
 
 ## Files changed in the latest tasks
 - `package.json`
 - `tests/verify-links.js`
 - `tests/verify-assets.js`
-- `docs/HOW_TO_WRITE_ARTICLES.md`
-- `docs/CMS_FEASIBILITY.md`
-- `scripts/new-post.js`
-- `archetypes/posts.md`
-- `archetypes/default.md`
+- `tests/verify-edge-functions.js`
+- `layouts/404.html`
+- `layouts/partials/head.html`
 - `layouts/other/single.html`
 - `layouts/other/list.html`
-- `layouts/_default/single.html`
-- `layouts/_default/list.html`
 - `layouts/posts/single.html`
-- `layouts/posts/series.html`
-- `layouts/posts/list.html`
 - `assets/js/code-copy.js`
 - `assets/css/custom.css`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
-- `hugo --gc --minify` — PASS (106 pages, 573 static files in ~240ms)
+- `hugo --gc --minify` — PASS (106 pages, 573 static files in ~80ms)
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified, 100% parity)
 - `node tests/verify-assets.js` — PASS (7/7 downloadable assets and discovery files verified)
-- `node tests/verify-links.js` — PASS (86 HTML documents, 1,476 internal links verified, 0 broken links)
-- `npm test` — PASS (Runs full regression test suite)
+- `node tests/verify-links.js` — PASS (79 HTML documents, 1,460 internal links verified, <main id="main"> landmark confirmed across 100% of pages, 0 broken links)
+- `node tests/verify-edge-functions.js` — PASS (72/72 edge function assertions pass: 23/23 Markdown content negotiations, header injections, asset exclusions)
+- `npm test` — PASS (Runs full regression test suite cleanly)
 
 ## Visual artifacts
 - Homepage: Engineering-focused Hero, Selected Work Cards, Capability Matrix, Writing Spotlight
@@ -86,6 +82,7 @@
 - Blog & Series: Featured 6-part Beyond the Model card on `/posts/`, dedicated roadmap on `/posts/ai_playground_series/`, 76ch measure long-form layout, sequential next/prev navigation, and keyboard-accessible code copy buttons
 - Legal: Clean breadcrumbs, modern legal typography, exact preservation of all legal texts
 - Sitemap: Hierarchical tree of all site routes with live status badges
+- 404 Error: Accessible landmark-compliant recovery screen with keyboard focus skip-link
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes verified in `tests/fixtures/legacy-routes.json`)
