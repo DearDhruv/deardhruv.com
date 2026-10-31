@@ -285,6 +285,47 @@
   border-color: var(--color-border-interactive);
 }
 
+/* Hero Panel & Avatar Primitives */
+.hero-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+  padding: clamp(var(--space-6), 4vw, var(--space-8));
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 640px) {
+  .hero-panel {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-8);
+  }
+}
+
+.hero-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-border-subtle);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .hero-avatar {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
 /* Badges, Tags, and Chips */
 .badge,
 .ds-badge {

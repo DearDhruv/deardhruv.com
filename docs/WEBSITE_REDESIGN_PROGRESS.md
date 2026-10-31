@@ -2146,3 +2146,48 @@ Phase A8 is COMPLETE. Ready to begin Phase A9 page-by-page visual refinement.
 
 ### Exact next task
 Task A9.1 — Refine homepage visual hierarchy
+
+## 2026-10-31 — Task A9.1: Refine Homepage Visual Hierarchy
+
+**Task:** Task A9.1 — Refine homepage visual hierarchy
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `a40cb8e`
+**Commit:** Pending
+
+### Objective
+Refine the homepage layout, hero section, and responsive first-viewport ergonomics across narrow mobile (320px), short landscape, and desktop viewports, removing inline styling and introducing standardized hero primitives.
+
+### Files inspected
+- `src/pages/index.astro`
+- `assets/css/components.css`
+- `assets/css/layout.css`
+
+### Files changed
+- `assets/css/components.css`
+- `static/css/components.css`
+- `src/pages/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Added `.hero-panel`, `.hero-avatar`, and `.hero-content` primitives with standardized responsive layout rules (`clamp(var(--space-6), 4vw, var(--space-8))` padding, flexible avatar sizing from 140px on mobile to 180px on desktop).
+- Refactored `src/pages/index.astro` hero to eliminate inline styling and ensure clean zero-overflow behavior on 320px screens.
+- Maintained single `<h1>` outline and verified core capabilities grid, flagship spotlight cards, and technical series sections.
+- Verified static build and passed 100% of route, asset, link, and edge tests.
+
+### Commands executed
+- `npm run build:astro`
+- `npm run test:dist`
+- `git diff --check`
+
+### Test results
+- `npm run test:dist`: 4/4 suites passed (38/38 legacy routes, 7/7 assets, 27 HTML docs / 627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Refined `/index.html`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A9.2 refining About and Portfolio pages.
+
+### Exact next task
+Task A9.2 — Refine About and Portfolio pages
