@@ -1491,3 +1491,52 @@ None. Ready for Task A8.2 base layouts and tokenized design system.
 
 ### Exact next task
 Task A8.2 — Implement static output and base layout
+
+## 2026-10-31 — Task A8.2: Implement Production Base Layout and Static Shell
+
+**Task:** Task A8.2 — Implement static output and base layout
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `9e85702`
+**Commit:** Pending
+
+### Objective
+Implement the modular production Astro layout architecture (`src/layouts/BaseLayout.astro`, `src/layouts/PageLayout.astro`, `src/layouts/ArticleLayout.astro`) and core shell components (`src/components/Header.astro`, `src/components/Footer.astro`) integrating zero-flash theme initialization, accessible navigation with `aria-current="page"`, and complete tokenized design system stylesheets.
+
+### Files inspected
+- `astro-spike/src/layouts/BaseLayout.astro`
+- `assets/js/theme-init.js`
+- `assets/js/theme-toggle.js`
+- `assets/css/nav.css`
+
+### Files changed
+- `src/components/Header.astro`
+- `src/components/Footer.astro`
+- `src/layouts/BaseLayout.astro`
+- `src/layouts/PageLayout.astro`
+- `src/layouts/ArticleLayout.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `Header.astro` with semantic landmarks, accessible desktop and mobile navigation, `aria-current="page"` resolution, and 44px minimum touch targets.
+- Built `Footer.astro` with dynamic copyright, sitemap, resume, JSON feed, and legal links.
+- Built `BaseLayout.astro` with complete SEO metadata, canonical URLs, Open Graph / Twitter cards, machine-readable agent discovery links (`llms.txt`, `mcp.json`, `api-catalog`, `auth.md`), zero-flash synchronous inline script, and token stylesheet references.
+- Built `PageLayout.astro` with strict single-`<h1>` page titles and bounded container measures.
+- Built `ArticleLayout.astro` with single `<h1>`, 72ch reading measure container, series taxonomy overline, and metadata badges.
+
+### Commands executed
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 6/6 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added modular layout components in `src/`. Zero changes to Hugo sources or existing URLs.
+
+### Known issues / decisions required
+None. Ready for Task A8.3 reading existing Markdown content without source-path changes.
+
+### Exact next task
+Task A8.3 — Read existing Markdown without source-path changes

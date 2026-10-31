@@ -1,0 +1,99 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogType?: string;
+}
+
+const {
+  title,
+  description = "Dhruv Patel - Staff Systems & Mobile Architect. Designing private on-device AI and resilient mobile runtimes.",
+  canonicalUrl,
+  ogType = "website"
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const siteOrigin = "https://deardhruv.com";
+const canonical = canonicalUrl || `${siteOrigin}${currentPath.endsWith('/') ? currentPath : currentPath + '/'}`;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} :: Dhruv Patel</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content={ogType}>
+  <meta property="og:title" content={`${title} :: Dhruv Patel`}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:site_name" content="Dhruv Patel">
+
+  <!-- Machine-readable & agent discovery -->
+  <link rel="describedby" href="/llms.txt">
+  <link rel="mcp" href="/.well-known/mcp.json">
+  <link rel="api-catalog" href="/.well-known/api-catalog">
+  <link rel="service-doc" href="/auth.md">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="application/feed+json" href="/index.json" title="Dhruv Patel JSON Feed">
+
+  <!-- Design System Token Sheets -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/nav.css">
+
+  <!-- Zero-flash synchronous theme initialization -->
+  <script is:inline>
+    (() => {
+      try {
+        const stored = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (systemDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <Header currentPath={currentPath} />
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <Footer />
+
+  <script is:inline src="/js/theme-toggle.js"></script>
+  <script is:inline>
+    (() => {
+      const menuBtn = document.getElementById('menu-toggle');
+      const siteNav = document.getElementById('site-navigation');
+      if (menuBtn && siteNav) {
+        menuBtn.addEventListener('click', () => {
+          const open = siteNav.classList.toggle('is-open');
+          menuBtn.setAttribute('aria-expanded', String(open));
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+            siteNav.classList.remove('is-open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.focus();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  date?: string;
+  readingTime?: string;
+  tags?: string[];
+  series?: {
+    name: string;
+    part?: number;
+    total?: number;
+  };
+}
+
+const {
+  title,
+  description,
+  date,
+  readingTime,
+  tags = [],
+  series
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} ogType="article">
+  <article class="layout-container-reading" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
+    <header style="margin-bottom: var(--space-8);">
+      {series && (
+        <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-2);">
+          {series.name} {series.part && series.total && `· Part ${series.part} of ${series.total}`}
+        </div>
+      )}
+      <h1 class="page-title">{title}</h1>
+      {description && <p class="page-lead">{description}</p>}
+      <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--font-small); color: var(--color-text-secondary);">
+        {date && <time datetime={date}>{date}</time>}
+        {readingTime && <span>· {readingTime}</span>}
+        {tags.length > 0 && (
+          <div style="display: flex; gap: var(--space-2); margin-left: auto; flex-wrap: wrap;">
+            {tags.map(tag => (
+              <span class="badge">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
