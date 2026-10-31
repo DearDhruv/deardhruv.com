@@ -2320,3 +2320,46 @@ None. Ready for Task A9.5 standardizing legal, sitemap, and document pages.
 
 ### Exact next task
 Task A9.5 — Refine legal, sitemap, and document pages
+
+## 2026-10-31 — Task A9.5: Standardize Legal, Sitemap, and Document Pages
+
+**Task:** Task A9.5 — Refine legal, sitemap, and document pages
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `6c7da12`
+**Commit:** Pending
+
+### Objective
+Standardize the visual presentation and structural layout of all 10 legal and policy pages (`/other/`, `/other/ai-playground/...`, `/other/open-store-app/...`, `/other/veloci-hue/...`) and the visual sitemap (`/sitemap/`), ensuring consistent typography measure (72ch) and layout stack primitives.
+
+### Files inspected
+- `src/pages/other/[...slug].astro`
+- `src/pages/sitemap/index.astro`
+- `dist/sitemap/index.html`
+
+### Files changed
+- `src/pages/sitemap/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Refactored `src/pages/sitemap/index.astro` to use design system primitive `.layout-stack-lg` instead of inline flex containers.
+- Confirmed all 10 legal pages under `/other/` use `PageLayout` with `layout-container-reading` (72ch measure) and `.page-header` dividers.
+- Verified that all legal and terms texts maintain zero copy mutations from the original source files.
+- Compiled static build via `npm run build:astro` and verified all 38 routes pass with 0 errors. Phase A9 is complete.
+
+### Commands executed
+- `npm run build:astro`
+- `npm run test:dist`
+- `git diff --check`
+
+### Test results
+- `npm run test:dist`: 4/4 suites passed (38/38 legacy routes, 7/7 assets, 27 HTML docs / 627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Standardized legal and sitemap pages. All 38 routes intact.
+
+### Known issues / decisions required
+Phase A9 is COMPLETE. Ready to begin Phase A10 Publishing Workflow and Documentation.
+
+### Exact next task
+Task A10.1 — Author writing and publishing guide
