@@ -210,6 +210,27 @@ val modelBuffer = FileChannel.open(path, StandardOpenOption.READ).use { channel 
         By isolating model execution inside an independent NDK background service communicating via shared memory, the main user interface remains responsive at 60 fps even under heavy inference compute.
       </p>
     </section>
+
+    <!-- Screen 4: Button and Action Component Showcase -->
+    <section class="ds-container" style="padding-block: var(--space-12); border-bottom: 1px solid var(--color-divider);">
+      <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-4);">Action Components & Interactive Links</h2>
+      <p style="color: var(--color-text-secondary); max-width: 60ch; margin-bottom: var(--space-6);">
+        Standardized button variants with guaranteed 44x44px minimum touch targets and external link affordances.
+      </p>
+
+      <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; margin-bottom: var(--space-6);">
+        <a href="#action-primary" class="btn btn-primary">Primary Action</a>
+        <a href="#action-secondary" class="btn btn-secondary">Secondary Action</a>
+        <a href="#action-ghost" class="btn btn-ghost">Ghost Action</a>
+        <button type="button" class="btn btn-secondary">Button Element</button>
+        <a href="#action-small" class="btn btn-secondary btn-sm">Small Button</a>
+      </div>
+
+      <div style="display: flex; gap: var(--space-6); align-items: center; flex-wrap: wrap;">
+        <span>Content link: <a href="/portfolio/" class="content-link">Architectural portfolio</a></span>
+        <span>External link: <a href="https://github.com/deardhruv" class="link-external" target="_blank" rel="noopener noreferrer">GitHub Profile<svg class="icon-external" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg><span class="sr-only">(opens in new tab)</span></a></span>
+      </div>
+    </section>
   </main>
 
   <footer class="ds-container footer">

@@ -717,7 +717,7 @@ Task A4.1 — Build core typography and content primitives
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `412a4e0`
-**Commit:** Pending
+**Commit:** `669c7d8`
 
 ### Objective
 Build standardized content primitives: persistent non-color underline links, responsive table containers with contained horizontal scrolling, callouts (info, warning, success), and list spacing into `assets/css/components.css` and `static/css/components.css`.
@@ -755,3 +755,48 @@ None. Ready for Task A4.2 buttons and links standardization.
 
 ### Exact next task
 Task A4.2 — Standardize button and link components
+
+## 2026-10-31 — Task A4.2: Standardize Button and Link Components
+
+**Task:** Task A4.2 — Standardize button and link components
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `669c7d8`
+**Commit:** Pending
+
+### Objective
+Standardize button and action link components across `<button>` and `<a>` elements, guaranteeing 44x44px minimum touch targets, clear primary, secondary, and ghost variants, accessible unclipped focus-visible rings, and external link indicators with screen reader announcements.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 6.1
+- `docs/ICON_AND_DIVIDER_STANDARDS.md`
+- `assets/css/components.css`
+
+### Files changed
+- `assets/css/components.css`
+- `static/css/components.css`
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Defined `.btn`, `.btn-primary`, `.btn-secondary`, `.btn-ghost` with `min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center;`.
+- Implemented unclipped focus outline: `outline: 2px solid var(--color-focus-ring); outline-offset: 2px;`.
+- Created `.link-external` with Lucide external icon (14px, 1.75 stroke, round caps/joins) and `.sr-only` utility for screen reader accessibility ("(opens in new tab)").
+- Maintained backwards-compatibility aliases for `.ds-btn*` primitives.
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 5/5 suites passed (38 routes, 7 assets, 80 HTML docs / 1479 links, 72 edge assertions, 14 contrast pairs).
+
+### Route/content/source-path impact
+Updated `/css/components.css` and `/design-preview/index.html`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A4.3 card, tag, badge, and divider standardization.
+
+### Exact next task
+Task A4.3 — Standardize card, tag, badge, and divider components
