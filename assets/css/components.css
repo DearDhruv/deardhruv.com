@@ -1,8 +1,4 @@
-/**
- * DearDhruv UI Primitives & Content Components — Precision Technical Editorial
- * Standardized typography primitives, responsive tables, accessible callouts, blockquotes, and lists.
- * Compliant with WCAG 2.2 AA and DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md Section 6.
- */
+/* DearDhruv UI Primitives & Components (WCAG 2.2 AA) */
 
 /* Content Links — Persistent Underline for Non-Color Dependency */
 .prose a,
@@ -64,7 +60,7 @@
   color: var(--color-text-secondary);
 }
 
-/* Responsive Table Component — Contained Horizontal Scroll */
+/* Tables */
 .table-container {
   width: 100%;
   max-width: 100%;
@@ -412,9 +408,7 @@
   width: 100%;
 }
 
-/* Accessible Interaction States Matrix (WCAG 2.2 AA SC 2.4.7 & 2.4.11) */
-
-/* Global focus-visible fallback */
+/* Interaction States */
 :focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
@@ -541,5 +535,217 @@ details[open] summary {
   .card-interactive,
   .tag {
     will-change: auto;
+  }
+}
+
+/* Container Scroll Animations */
+@keyframes scroll-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progressive JavaScript IntersectionObserver styling */
+.js-scroll-animate .scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--motion-duration-slow) var(--motion-ease),
+              transform var(--motion-duration-slow) var(--motion-ease);
+  will-change: opacity, transform;
+}
+
+.js-scroll-animate .scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-scroll-animate [data-delay="1"] { transition-delay: 70ms; }
+.js-scroll-animate [data-delay="2"] { transition-delay: 140ms; }
+.js-scroll-animate [data-delay="3"] { transition-delay: 210ms; }
+.js-scroll-animate [data-delay="4"] { transition-delay: 280ms; }
+
+/* CSS Native Scroll-Driven Animations where supported */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-reveal,
+    .scroll-driven-auto {
+      animation: scroll-fade-up var(--motion-duration-slow) var(--motion-ease) both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 25%;
+    }
+  }
+}
+
+/* Strict prefers-reduced-motion override */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-driven-auto,
+  .js-scroll-animate .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+  }
+}
+
+/* Feature-Flagged Palette Switcher Bar */
+.palette-switcher-bar {
+  position: fixed;
+  bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+  right: var(--space-4);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
+}
+
+.palette-switcher-bar[hidden] {
+  display: none !important;
+}
+
+.palette-switcher-title {
+  font-family: var(--font-mono);
+  font-size: var(--font-metadata);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-right: var(--space-1);
+  white-space: nowrap;
+}
+
+.palette-options {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.palette-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.35rem 0.65rem;
+  min-height: 40px;
+  min-width: 44px;
+  box-sizing: border-box;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--font-metadata);
+  font-weight: 550;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--motion-duration-fast) var(--motion-ease);
+}
+
+.palette-btn:hover {
+  background-color: var(--color-bg-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.palette-btn[aria-pressed="true"] {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border-color: var(--color-accent-border);
+}
+
+.palette-btn:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.palette-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.palette-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0;
+  transition: color var(--motion-duration-fast) var(--motion-ease);
+}
+
+.palette-close-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.palette-close-btn:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.palette-footer-toggle {
+  background: none;
+  border: none;
+  padding: var(--space-1) var(--space-2);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  transition: color var(--motion-duration-fast) var(--motion-ease);
+}
+
+.palette-footer-toggle:hover {
+  color: var(--color-accent);
+}
+
+.palette-footer-toggle:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .palette-switcher-bar {
+    left: var(--space-2);
+    right: var(--space-2);
+    bottom: calc(var(--space-2) + env(safe-area-inset-bottom, 0px));
+    width: calc(100% - var(--space-4));
+    max-width: calc(100vw - var(--space-4));
+    padding: var(--space-1) var(--space-2);
+    justify-content: space-between;
+  }
+  .palette-switcher-title {
+    display: none;
+  }
+  .palette-btn {
+    padding: 0.25rem 0.45rem;
+    font-size: 0.75rem;
+    min-width: auto;
   }
 }

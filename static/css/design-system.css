@@ -30,7 +30,7 @@
   --primitive-amber-400:   #fbbf24;
   --primitive-rose-400:    #fb7185;
 
-  /* Semantic Tokens — Dark Theme (Default) */
+  /* Semantic Tokens — Dark Theme (Palette 1: Precision Cyan Baseline) */
   --color-bg-page: var(--primitive-slate-950);
   --color-bg-surface: var(--primitive-slate-900);
   --color-bg-surface-elevated: var(--primitive-slate-850);
@@ -40,7 +40,7 @@
 
   --color-text-primary: #f8fafc;
   --color-text-secondary: #94a3b8;
-  --color-text-muted: #94a3b8; /* Enhanced for WCAG AA 6.8:1 */
+  --color-text-muted: #94a3b8;
   --color-text-accent: var(--primitive-cyan-400);
   --color-text-inverse: var(--primitive-slate-900);
 
@@ -122,11 +122,11 @@
 
   --color-text-primary: var(--primitive-slate-900);
   --color-text-secondary: var(--primitive-slate-700);
-  --color-text-muted: #475569; /* WCAG AA 7.2:1 */
+  --color-text-muted: #475569;
   --color-text-accent: var(--primitive-cyan-700);
   --color-text-inverse: var(--primitive-white);
 
-  --color-border-subtle: #cbd5e1; /* Enhanced for light mode card boundary */
+  --color-border-subtle: #cbd5e1;
   --color-border-strong: #94a3b8;
   --color-border-interactive: rgba(3, 105, 161, 0.45);
   --color-divider: #e2e8f0;
@@ -141,6 +141,147 @@
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 12px 36px rgba(15, 23, 42, 0.12);
+}
+
+/* Palette 2: Terminal Emerald / Matrix Dark */
+[data-palette="emerald"] {
+  --color-bg-page: #060d0a;
+  --color-bg-surface: #0d1712;
+  --color-bg-surface-elevated: #14231b;
+  --color-bg-surface-subtle: rgba(52, 211, 153, 0.04);
+  --color-bg-surface-hover: rgba(52, 211, 153, 0.08);
+  --color-bg-code: #050f09;
+  --color-text-primary: #f0fdf4;
+  --color-text-secondary: #86efac;
+  --color-text-muted: #86efac;
+  --color-text-accent: #34d399;
+  --color-text-inverse: #060d0a;
+  --color-border-subtle: rgba(52, 211, 153, 0.12);
+  --color-border-strong: rgba(52, 211, 153, 0.24);
+  --color-border-interactive: rgba(52, 211, 153, 0.45);
+  --color-divider: rgba(52, 211, 153, 0.09);
+  --color-accent: #34d399;
+  --color-accent-hover: #6ee7b7;
+  --color-accent-subtle: rgba(52, 211, 153, 0.12);
+  --color-accent-border: rgba(52, 211, 153, 0.3);
+  --color-focus-ring: #34d399;
+}
+
+[data-palette="emerald"][data-theme="light"] {
+  --color-bg-page: #f4fbf7;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-elevated: #e6f4ec;
+  --color-bg-surface-subtle: rgba(4, 120, 87, 0.04);
+  --color-bg-surface-hover: rgba(4, 120, 87, 0.08);
+  --color-bg-code: #e6f4ec;
+  --color-text-primary: #062817;
+  --color-text-secondary: #165134;
+  --color-text-muted: #2d5e46;
+  --color-text-accent: #047857;
+  --color-text-inverse: #ffffff;
+  --color-border-subtle: #bbf7d0;
+  --color-border-strong: #86efac;
+  --color-border-interactive: rgba(4, 120, 87, 0.45);
+  --color-divider: #dcfce7;
+  --color-accent: #047857;
+  --color-accent-hover: #065f46;
+  --color-accent-subtle: rgba(4, 120, 87, 0.08);
+  --color-accent-border: rgba(4, 120, 87, 0.28);
+  --color-focus-ring: #047857;
+}
+
+/* Palette 3: Warm Editorial / Monokai Sand */
+[data-palette="amber"] {
+  --color-bg-page: #121110;
+  --color-bg-surface: #1c1a17;
+  --color-bg-surface-elevated: #262320;
+  --color-bg-surface-subtle: rgba(251, 191, 36, 0.04);
+  --color-bg-surface-hover: rgba(251, 191, 36, 0.08);
+  --color-bg-code: #161412;
+  --color-text-primary: #faf8f5;
+  --color-text-secondary: #c4beba;
+  --color-text-muted: #c4beba;
+  --color-text-accent: #fbbf24;
+  --color-text-inverse: #1c1a17;
+  --color-border-subtle: rgba(251, 191, 36, 0.12);
+  --color-border-strong: rgba(251, 191, 36, 0.24);
+  --color-border-interactive: rgba(251, 191, 36, 0.45);
+  --color-divider: rgba(251, 191, 36, 0.08);
+  --color-accent: #fbbf24;
+  --color-accent-hover: #fcd34d;
+  --color-accent-subtle: rgba(251, 191, 36, 0.12);
+  --color-accent-border: rgba(251, 191, 36, 0.3);
+  --color-focus-ring: #fbbf24;
+}
+
+[data-palette="amber"][data-theme="light"] {
+  --color-bg-page: #faf8f5;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-elevated: #f3efe9;
+  --color-bg-surface-subtle: rgba(180, 83, 9, 0.04);
+  --color-bg-surface-hover: rgba(180, 83, 9, 0.08);
+  --color-bg-code: #f3efe9;
+  --color-text-primary: #1c1917;
+  --color-text-secondary: #44403c;
+  --color-text-muted: #57534e;
+  --color-text-accent: #b45309;
+  --color-text-inverse: #ffffff;
+  --color-border-subtle: #e7e0d5;
+  --color-border-strong: #d6cbbe;
+  --color-border-interactive: rgba(180, 83, 9, 0.45);
+  --color-divider: #ede6dc;
+  --color-accent: #b45309;
+  --color-accent-hover: #92400e;
+  --color-accent-subtle: rgba(180, 83, 9, 0.08);
+  --color-accent-border: rgba(180, 83, 9, 0.28);
+  --color-focus-ring: #b45309;
+}
+
+/* Palette 4: Cobalt Royal / Electric Indigo */
+[data-palette="indigo"] {
+  --color-bg-page: #0b0d19;
+  --color-bg-surface: #11162a;
+  --color-bg-surface-elevated: #18203c;
+  --color-bg-surface-subtle: rgba(129, 140, 248, 0.04);
+  --color-bg-surface-hover: rgba(129, 140, 248, 0.08);
+  --color-bg-code: #0e1222;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #94a3b8;
+  --color-text-accent: #818cf8;
+  --color-text-inverse: #0b0d19;
+  --color-border-subtle: rgba(129, 140, 248, 0.12);
+  --color-border-strong: rgba(129, 140, 248, 0.24);
+  --color-border-interactive: rgba(129, 140, 248, 0.45);
+  --color-divider: rgba(129, 140, 248, 0.08);
+  --color-accent: #818cf8;
+  --color-accent-hover: #a5b4fc;
+  --color-accent-subtle: rgba(129, 140, 248, 0.12);
+  --color-accent-border: rgba(129, 140, 248, 0.3);
+  --color-focus-ring: #818cf8;
+}
+
+[data-palette="indigo"][data-theme="light"] {
+  --color-bg-page: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-elevated: #eef2ff;
+  --color-bg-surface-subtle: rgba(67, 56, 202, 0.04);
+  --color-bg-surface-hover: rgba(67, 56, 202, 0.08);
+  --color-bg-code: #eef2ff;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #475569;
+  --color-text-accent: #4338ca;
+  --color-text-inverse: #ffffff;
+  --color-border-subtle: #c7d2fe;
+  --color-border-strong: #a5b4fc;
+  --color-border-interactive: rgba(67, 56, 202, 0.45);
+  --color-divider: #e0e7ff;
+  --color-accent: #4338ca;
+  --color-accent-hover: #3730a3;
+  --color-accent-subtle: rgba(67, 56, 202, 0.08);
+  --color-accent-border: rgba(67, 56, 202, 0.28);
+  --color-focus-ring: #4338ca;
 }
 
 /* Base HTML & Body Reset */

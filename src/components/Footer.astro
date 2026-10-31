@@ -5,11 +5,19 @@ const currentYear = new Date().getFullYear();
 <footer class="site-footer">
   <div class="site-footer-inner">
     <div>&copy; {currentYear} Dhruv Patel. Precision Technical Editorial System.</div>
-    <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+    <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;">
       <a href="/sitemap/">Sitemap</a>
       <a href="/resume.pdf">Résumé</a>
       <a href="/index.json">JSON Feed</a>
       <a href="/other/">Legal</a>
+      <button
+        type="button"
+        id="toggle-palette-feature"
+        class="palette-footer-toggle"
+        aria-controls="palette-switcher-bar"
+        aria-expanded="false"
+        aria-label="Toggle theme palette switcher"
+      >🎨 Palette</button>
     </div>
   </div>
 </footer>

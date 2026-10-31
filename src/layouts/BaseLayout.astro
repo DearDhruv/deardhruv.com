@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PaletteSwitcher from '../components/PaletteSwitcher.astro';
 
 interface Props {
   title: string;
@@ -52,16 +53,27 @@ const canonical = canonicalUrl || `${siteOrigin}${currentPath.endsWith('/') ? cu
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/nav.css">
 
-  <!-- Zero-flash synchronous theme initialization -->
+  <!-- Zero-flash synchronous theme and palette initialization -->
   <script is:inline>
     (() => {
       try {
-        const params = new URLSearchParams(window.location.search);
-        const paramTheme = params.get('theme');
-        const stored = localStorage.getItem('theme');
-        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = (paramTheme === 'light' || paramTheme === 'dark') ? paramTheme : (stored || (systemDark ? 'dark' : 'light'));
-        document.documentElement.setAttribute('data-theme', theme);
+        const q = new URLSearchParams(window.location.search), ls = localStorage, doc = document.documentElement;
+        const t = q.get('theme'), p = q.get('palette'), sw = q.get('palette-switcher');
+        const v = ['cyan', 'emerald', 'amber', 'indigo'];
+        const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        doc.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : (ls.getItem('theme') || (sysDark ? 'dark' : 'light')));
+        const validP = v.includes(p) ? p : null;
+        const storedP = ls.getItem('palette');
+        doc.setAttribute('data-palette', validP || (v.includes(storedP) ? storedP : 'cyan'));
+        if (validP) { try { ls.setItem('palette', validP); } catch (_) {} }
+        if (sw === 'true' || sw === '1' || p === 'true' || p === '1' || validP) {
+          try { ls.setItem('palette_switcher_enabled', 'true'); } catch (_) {}
+        } else if (sw === 'false' || sw === '0' || p === 'false' || p === '0') {
+          try { ls.setItem('palette_switcher_enabled', 'false'); } catch (_) {}
+        }
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+          doc.classList.add('js-scroll-animate');
+        }
       } catch (_) {}
     })();
   </script>
@@ -76,6 +88,8 @@ const canonical = canonicalUrl || `${siteOrigin}${currentPath.endsWith('/') ? cu
   </main>
 
   <Footer />
+
+  <PaletteSwitcher />
 
   <script is:inline src="/js/theme-toggle.js"></script>
   <script is:inline>

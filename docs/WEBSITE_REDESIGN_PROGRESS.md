@@ -2816,4 +2816,73 @@ Resolve edge gaps identified during adversarial pull request review:
 None. All edge risks, missing pages, and test weaknesses are fully addressed.
 
 ### Exact next task
-Ready for final git commit on `feature/portfolio`.
+Task A12: Container Scroll Animations & Feature-Flagged Palette System
+
+## 2026-11-01 — Task A12: Container Scroll Animations, 4 Technical Engineering Color Palettes, and Feature-Flagged Switcher
+
+**Task:** Container Scroll Animations, 4 WCAG AA Palettes (Dark/Light), and Feature-Flagged Palette Switcher UI
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**Commit:** Pending
+
+### Objective
+1. Implement fluid, high-performance scroll-driven container animations across cards, hero panels, callouts, and timelines with progressive IntersectionObserver enhancement, staggered layout grid delays, and strict `prefers-reduced-motion: reduce` neutralization.
+2. Curate 4 top-tier professional engineering color palettes tailored for technical portfolios:
+   - Palette 1: Precision Cyan / Slate (`cyan`) — Default
+   - Palette 2: Terminal Emerald / Matrix Dark (`emerald`)
+   - Palette 3: Warm Editorial / Monokai Sand (`amber`)
+   - Palette 4: Cobalt Royal / Electric Indigo (`indigo`)
+3. Verify 100% WCAG 2.2 AA compliance across all 4 palettes in both Dark and Light modes (56 token pairs tested).
+4. Implement a feature-flagged real-time Palette Switcher UI:
+   - Feature flag toggle via `localStorage.getItem('palette_switcher_enabled')`, URL query param `?palette-switcher=true|false`, or direct palette activation `?palette=cyan|emerald|amber|indigo`.
+   - Accessible keyboard shortcut (`Alt + P`) and subtle footer trigger (`🎨 Palette`).
+   - Zero-flash synchronous initialization in `<head>` via `theme-init.js`.
+   - Real-time palette updates across all semantic tokens, surfaces, cards, borders, buttons, and links without page reload.
+5. Strictly adhere to performance budgets (<45 KB CSS, <5 KB client JS, zero client hydration runtime).
+
+### Files changed
+- `assets/css/design-system.css`
+- `static/css/design-system.css`
+- `assets/css/components.css`
+- `static/css/components.css`
+- `assets/js/theme-init.js`
+- `static/js/theme-init.js`
+- `assets/js/theme-toggle.js`
+- `static/js/theme-toggle.js`
+- `src/components/PaletteSwitcher.astro`
+- `src/components/Footer.astro`
+- `src/layouts/BaseLayout.astro`
+- `tests/verify-contrast.js`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Commands executed & results
+- `npm run build:astro`: 27 static routes generated cleanly in 656ms.
+- `npm test`: All 7 test suites passed cleanly against `dist/`:
+  - Route parity: 39/39 passed (100% legacy parity).
+  - Static assets & discovery: 7/7 passed.
+  - Internal link crawler: 28 HTML files, 658 internal links, 0 issues.
+  - Netlify Edge Function negotiation: 74/74 assertions passed.
+  - Contrast audit: 56/56 token pairs passed WCAG 2.2 AA (>= 4.5:1 across all 4 palettes in Dark & Light modes).
+  - Accessibility tokens: 10/10 passed (reduced motion, touch targets, focus indicators).
+  - Content loader integrity: 28/28 passed without source moves.
+- `npm run test:regression`: All 5 test suites passed against `dist/` with 100% parity.
+- `npm run test:visual`: 130/130 visual assertions passed across 6 viewports.
+- `npm run test:perf`: 4/4 budgets passed:
+  - Build duration: 1364ms < 2000ms.
+  - CSS uncompressed: 43.56 KB < 45 KB (1.44 KB safe headroom).
+  - Client JS uncompressed: 4.39 KB < 5 KB (0.61 KB safe headroom).
+  - Zero hydration runtime bundles in `_astro/`.
+- `git diff --check`: 0 whitespace errors.
+
+### Adversarial audit & polish fixes applied:
+- **Mobile horizontal overflow**: Added `@media (max-width: 480px)` rules to `.palette-switcher-bar` ensuring full visibility and zero horizontal clipping across 320px–390px mobile viewports.
+- **Touch target accessibility**: Enforced minimum touch target bounds on `.palette-btn` and `.palette-footer-toggle` (WCAG 2.2 SC 2.5.8).
+- **Zero-jank scroll animations**: Enhanced IntersectionObserver fallback to immediately reveal above-the-fold containers on initial page load, preventing FOIC (flash of invisible content); hooked native `@supports (animation-timeline: view())` to `.scroll-reveal`.
+- **Keyboard navigation**: Added `Escape` key listener to dismiss the palette switcher bar and restore focus to trigger button; synchronized `aria-expanded` and `aria-controls` on the footer trigger button.
+- **Private repo privacy mandate**: Verified zero references to private repository across the codebase.
+
+### Known issues / decisions required
+None. All requirements verified and release-ready.
+
+### Exact next task
+Ready for final review and production deployment.
