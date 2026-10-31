@@ -1,0 +1,127 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const seriesArticles = [
+  {
+    num: "Part 1",
+    title: "I Wanted the Model to Stay on the Phone",
+    slug: "01-i-wanted-the-model-to-stay-on-the-phone",
+    desc: "The engineering journey of integrating established on-device AI runtimes into one multimodal mobile product - and everything it takes to make the pieces behave like a coherent system.",
+    readingTime: "10 min read",
+    date: "Oct 5, 2026",
+    tags: ["Android", "iOS", "Kotlin Multiplatform", "On-Device AI", "llama.cpp"]
+  },
+  {
+    num: "Part 2",
+    title: "The Day a Chat Box Became a Document Engine",
+    slug: "02-the-day-a-chat-box-became-a-document-engine",
+    desc: "I thought “attach a PDF” would be a UI feature. It became an ingestion pipeline.",
+    readingTime: "9 min read",
+    date: "Oct 5, 2026",
+    tags: ["Android", "iOS", "Kotlin Multiplatform", "RAG", "On-Device AI"]
+  },
+  {
+    num: "Part 3",
+    title: "The Model Was Fine. The Phone Wasn't.",
+    slug: "03-the-model-was-fine-the-phone-wasnt",
+    desc: "The difficult bugs were memory, native lifecycle, GPU drivers and operating-system behavior.",
+    readingTime: "10 min read",
+    date: "Oct 5, 2026",
+    tags: ["Android", "Performance", "Vulkan", "NDK", "Memory"]
+  },
+  {
+    num: "Part 4",
+    title: "I Put an Image Generator Inside the Phone",
+    slug: "04-i-put-an-image-generator-inside-the-phone",
+    desc: "I did not build a diffusion engine. I integrated image-generation runtimes and then had to engineer everything around them.",
+    readingTime: "11 min read",
+    date: "Oct 5, 2026",
+    tags: ["Android", "iOS", "Diffusion Models", "LiteRT", "On-Device AI"]
+  },
+  {
+    num: "Part 5",
+    title: "At Some Point I Stopped Building a Chat App",
+    slug: "05-at-some-point-i-stopped-building-a-chat-app",
+    desc: "The project became a platform because every feature needed a place to live.",
+    readingTime: "12 min read",
+    date: "Oct 5, 2026",
+    tags: ["Android", "iOS", "Architecture", "KMP", "MVI"]
+  },
+  {
+    num: "Part 6",
+    title: "Pushing Mobile Hardware to the Edge",
+    slug: "06-pushing-mobile-hardware-to-the-edge",
+    desc: "Dual-model speculative decoding, on-demand GPU dynamic delivery, isolated driver crashes, and streaming fault-tolerance.",
+    readingTime: "11 min read",
+    date: "Oct 21, 2026",
+    tags: ["Android", "iOS", "Speculative Decoding", "Vulkan", "NDK", "Performance"]
+  }
+];
+---
+
+<PageLayout
+  title="Posts"
+  lead="Articles, guides, and engineering series by Dhruv Patel."
+  containerClass="layout-container"
+>
+  <!-- FEATURED SERIES -->
+  <section class="card card-interactive" style="margin-bottom: var(--space-12); padding: var(--space-8);">
+    <div style="display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-3); flex-wrap: wrap;">
+      <span class="badge">Featured Series &bull; 6 Parts</span>
+      <span class="chip">Complete</span>
+    </div>
+    <h2 style="font-size: var(--font-h2); margin: 0 0 var(--space-2) 0;">
+      <a href="/posts/ai_playground_series/" style="text-decoration: none; color: inherit;">
+        Beyond the Model: Building a Private AI Playground
+      </a>
+    </h2>
+    <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-6);">
+      An in-depth 6-part engineering series exploring what it really takes to build an offline-first, on-device multimodal AI workstation for Android and iOS using Kotlin Multiplatform, C++20 / NDK, llama.cpp, and Google LiteRT.
+    </p>
+
+    <div class="layout-grid-2" style="gap: var(--space-3);">
+      {seriesArticles.map(art => (
+        <a
+          href={`/posts/ai_playground_series/${art.slug}/`}
+          class="card"
+          style="padding: var(--space-4); text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: var(--space-1); border-color: var(--color-border-subtle);"
+        >
+          <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent);">{art.num}</span>
+          <span style="font-weight: 600; font-size: var(--font-body);">{art.title}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ALL ARTICLES ARCHIVE -->
+  <section>
+    <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-6); border-bottom: 1px solid var(--color-divider); padding-bottom: var(--space-3);">
+      All Published Articles
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+      {seriesArticles.map(art => (
+        <article class="card card-interactive" style="padding: var(--space-6);">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2); flex-wrap: wrap; gap: var(--space-2);">
+            <h3 style="font-size: var(--font-h3); margin: 0;">
+              <a href={`/posts/ai_playground_series/${art.slug}/`} style="text-decoration: none; color: inherit;">
+                {art.num} - {art.title}
+              </a>
+            </h3>
+            <div style="font-family: var(--font-mono); font-size: var(--font-small); color: var(--color-text-secondary);">
+              <span>{art.readingTime}</span> &middot; <time>{art.date}</time>
+            </div>
+          </div>
+          <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 var(--space-4) 0; font-size: var(--font-body-small);">
+            {art.desc}
+          </p>
+          <div class="layout-cluster">
+            {art.tags.map(tag => (
+              <span class="chip">{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</PageLayout>

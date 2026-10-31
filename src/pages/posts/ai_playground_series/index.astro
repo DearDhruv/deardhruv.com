@@ -1,0 +1,95 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+const parts = [
+  {
+    part: 1,
+    title: "I Wanted the Model to Stay on the Phone",
+    slug: "01-i-wanted-the-model-to-stay-on-the-phone",
+    desc: "Why local AI matters, early runtime exploration, ARM NEON/KleidiAI, and the cost of moving beyond toy chat boxes.",
+    topics: "Offline runtime architecture &middot; llama.cpp &middot; MediaPipe &middot; ARM NEON",
+    readingTime: "10 min read"
+  },
+  {
+    part: 2,
+    title: "The Day a Chat Box Became a Document Engine",
+    slug: "02-the-day-a-chat-box-became-a-document-engine",
+    desc: "Building a zero-cloud ingestion pipeline for 25+ file formats, token budgets, and bounded vision downsampling.",
+    topics: "Pure-KMP Deflate &middot; 25+ file formats &middot; Token budget management",
+    readingTime: "9 min read"
+  },
+  {
+    part: 3,
+    title: "The Model Was Fine. The Phone Wasn't.",
+    slug: "03-the-model-was-fine-the-phone-wasnt",
+    desc: "Handling Android's Low Memory Killer (LMK), thermal throttling, background process eviction, and dynamic memory admission.",
+    topics: "Android LMK &middot; Vulkan driver crash isolation &middot; Watchdog loop",
+    readingTime: "10 min read"
+  },
+  {
+    part: 4,
+    title: "I Put an Image Generator Inside the Phone",
+    slug: "04-i-put-an-image-generator-inside-the-phone",
+    desc: "Porting Stable Diffusion onto mobile hardware, managing the on-demand :gpu_engine dynamic feature, and Vulkan compute.",
+    topics: "Google LiteRT &middot; Bonsai Ternary 4B &middot; Dynamic Feature Delivery",
+    readingTime: "11 min read"
+  },
+  {
+    part: 5,
+    title: "At Some Point I Stopped Building a Chat App",
+    slug: "05-at-some-point-i-stopped-building-a-chat-app",
+    desc: "Architectural evolution from a monolithic app into a multi-module MVI platform with rigorous runtime invariants.",
+    topics: "Clean Architecture &middot; Multiplatform MVI &middot; Offline Activity Ledger",
+    readingTime: "12 min read"
+  },
+  {
+    part: 6,
+    title: "Pushing Mobile Hardware to the Edge",
+    slug: "06-pushing-mobile-hardware-to-the-edge",
+    desc: "Speculative Turbo dual-model decoding, fork()-isolated Vulkan driver crash probing, and streaming SQLite fault tolerance.",
+    topics: "Speculative Turbo &middot; fork() sandbox &middot; KV Cache Pre-warming",
+    readingTime: "11 min read"
+  }
+];
+---
+
+<PageLayout
+  title="Beyond the Model: AI Playground Engineering Series"
+  lead="Building a Private AI Playground for Android & iOS - A 6-part architectural deep dive into on-device AI runtimes, memory guardrails, and hardware acceleration."
+  containerClass="layout-container-reading"
+>
+  <div class="prose" style="margin-bottom: var(--space-8);">
+    <p>
+      A 6-part engineering series exploring what it really takes to build <a href="https://github.com/DearDhruv/Model-Playground" target="_blank" rel="noopener noreferrer">AI Playground</a> &mdash; a private, 100% offline-first, on-device multimodal AI platform for Android and iOS.
+    </p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+    {parts.map(p => (
+      <article class="card card-interactive" style="padding: var(--space-6);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2); flex-wrap: wrap; gap: var(--space-2);">
+          <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">
+            Part {p.part} of 6
+          </span>
+          <span style="font-family: var(--font-mono); font-size: var(--font-small); color: var(--color-text-secondary);">
+            {p.readingTime}
+          </span>
+        </div>
+        <h2 style="font-size: var(--font-h3); margin: 0 0 var(--space-3) 0;">
+          <a href={`/posts/ai_playground_series/${p.slug}/`} style="text-decoration: none; color: inherit;">
+            {p.title}
+          </a>
+        </h2>
+        <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 var(--space-4) 0; font-size: var(--font-body-small);">
+          {p.desc}
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--color-border-subtle); padding-top: var(--space-3);">
+          <span style="font-family: var(--font-mono); font-size: var(--font-overline); color: var(--color-text-secondary);" set:html={p.topics} />
+          <a href={`/posts/ai_playground_series/${p.slug}/`} class="btn btn-secondary" style="padding: var(--space-2) var(--space-4); min-height: 36px;">
+            Read Part {p.part} &rarr;
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</PageLayout>

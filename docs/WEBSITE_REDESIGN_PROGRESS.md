@@ -1734,3 +1734,51 @@ None. Ready for Task A8.7 porting posts and series index.
 
 ### Exact next task
 Task A8.7 — Port posts and series index
+
+## 2026-10-31 — Task A8.7: Migrate Posts and Series Indexes
+
+**Task:** Task A8.7 — Port posts and series index
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `a356ed5`
+**Commit:** Pending
+
+### Objective
+Migrate the blog index (`/posts/`) and the 6-part AI Playground series landing page (`/posts/ai_playground_series/`) to Astro using semantic layouts, single-`<h1>` heading hierarchy, and design system cards with metadata chips and reading times.
+
+### Files inspected
+- `content/posts/_index.md`
+- `content/posts/ai_playground_series/_index.md`
+- `public/posts/index.html`
+
+### Files changed
+- `src/pages/posts/index.astro`
+- `src/pages/posts/ai_playground_series/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `src/pages/posts/index.astro` featuring:
+  - Featured series banner for Beyond the Model (6 parts) with direct links.
+  - Complete article archive listing all 6 series articles with publication dates, reading times, summaries, and taxonomy chips.
+- Built `src/pages/posts/ai_playground_series/index.astro` featuring:
+  - Series introduction and objectives.
+  - Sequential chronological breakdown of all 6 articles with part counters, technical topic pills, and explicit call-to-action buttons.
+- Compiled static build via `npx astro build` (9 static pages in 549ms).
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added `/posts/` and `/posts/ai_playground_series/` pages in Astro. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.8 porting the first long-form article.
+
+### Exact next task
+Task A8.8 — Port one article and verify content parity
