@@ -1,4 +1,4 @@
-<nav class="menu">
+<nav id="site-navigation" class="menu" aria-label="Main Navigation">
     <ul class="menu__inner">
         {{- $currentPage := . -}}
         {{ range sort .Site.Menus.main ".Identifier" -}}
@@ -16,7 +16,7 @@
                     </li>
                 </div>
             {{ else }}
-                <li><a href="{{ $menuURL }}" class="{{ if $isActive }}active{{ end }}">{{ .Name }}</a></li>
+                <li><a href="{{ $menuURL }}" class="{{ if $isActive }}active{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
             {{ end }}
         {{- end }}
 
