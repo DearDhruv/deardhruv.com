@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `c8dc735`
-- Last completed phase/task: Task 1.1 — Inspect source architecture
-- Next task: Task 1.2 — Content and metadata inventory
+- Current HEAD: `cd0b85b`
+- Last completed phase/task: Task 1.2 — Content and metadata inventory
+- Next task: Task 1.3 — Integration and risk map
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -22,28 +22,30 @@
 | Task 0.2 | Reproduce current Hugo build and verify public artifacts | `c227a6b` | `hugo --gc --minify`, file existence checks | PASS (106 pages, 573 static files, 34 aliases) |
 | Task 0.3 | Capture pre-redesign visual and performance baseline | `e983fa0` | Documentation audit of layout, responsive, and performance | PASS |
 | Task 0.4 | Freeze legacy URL manifest and automated route validator | `c8dc735` | `node scripts/verify-routes.js` | PASS (38/38 legacy routes verified) |
-| Task 1.1 | Inspect source architecture and layout precedence | Pending | Codebase audit of layouts, assets, and submodule | PASS |
+| Task 1.1 | Inspect source architecture and layout precedence | `cd0b85b` | Codebase audit of layouts, assets, and submodule | PASS |
+| Task 1.2 | Inventory all published Markdown content and metadata | Pending | Metadata extraction across all 22 Markdown files | PASS |
 
 ## Files changed in the latest task
-- `docs/ARCHITECTURE.md`
+- `docs/CONTENT-INVENTORY.md`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
-- `hugo --gc --minify` — PASS
+- Node content scanner — PASS (22/22 content files inventoried)
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- Architecture map saved in `docs/ARCHITECTURE.md`
+- Content inventory saved in `docs/CONTENT-INVENTORY.md`
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- Submodule `themes/hello-friend-ng` left unmodified; all design changes implemented via `./layouts/` and `./assets/`.
+- All 22 content files remain at their existing file paths. Slugs and aliases are frozen.
 
 ## Exact next action
-1. Execute Task 1.2 — Inventory all published Markdown content and metadata in `docs/CONTENT-INVENTORY.md`.
+1. Execute Task 1.3 — Map Netlify integrations, Edge Functions, security headers, and release risks in `docs/INTEGRATION-RISK-MAP.md`.
+
 
 
 
