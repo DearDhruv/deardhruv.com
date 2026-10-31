@@ -2531,3 +2531,45 @@ None. Ready for Task A11.2 visual regression matrix.
 
 ### Exact next task
 Task A11.2 — Complete visual regression matrix
+
+## 2026-10-31 — Task A11.2: Complete Visual Regression Matrix
+
+**Task:** Task A11.2 — Complete visual regression matrix
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `ef88300`
+**Commit:** Pending
+
+### Objective
+Establish and execute an automated visual and responsive regression matrix (`tests/verify-visual-regression.js`) covering 9 representative templates across 6 standard viewports (320px narrow mobile through 1920px wide desktop), auditing single-H1 heading hierarchies, accessibility landmarks, and CSS responsive guardrails.
+
+### Files inspected
+- `tests/fixtures/visual-baseline.json`
+- `tests/verify-visual-regression.js`
+
+### Files changed
+- `tests/verify-visual-regression.js`
+- `package.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `tests/verify-visual-regression.js` validating all 6 viewport tiers and 9 representative routes in `dist/`.
+- Verified every page enforces exactly 1 `<h1>` tag, completely resolving defect `TYPO-01` across all articles and index pages.
+- Verified skip-link, header, footer, theme toggle, and main landmarks on every HTML template.
+- Verified responsive CSS safeguards: 320px auto-wrapping grids (`min(100%, 320px)`), `72ch` bounded reading measure, 44x44px minimum touch targets, and contained table scrolling.
+
+### Commands executed
+- `npm run test:visual`
+- `git diff --check`
+
+### Test results
+- `npm run test:visual`: 118/118 visual and responsive matrix assertions passed with 0 errors.
+
+### Route/content/source-path impact
+Verified visual compliance across all representative templates. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A11.3 accessibility regression.
+
+### Exact next task
+Task A11.3 — Complete accessibility regression
