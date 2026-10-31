@@ -1,0 +1,98 @@
+{{ define "main" }}
+    <div class="content">
+        <main id="main" class="posts" tabindex="-1">
+            <header class="posts-header">
+                <h1 class="page-title">{{ .Title }}</h1>
+                {{ with .Params.Description }}
+                    <p class="section-lead">{{ . }}</p>
+                {{ end }}
+            </header>
+
+            {{/* If on /posts/ root section, highlight the 6-part Beyond the Model engineering series */}}
+            {{ if eq .RelPermalink "/posts/" }}
+            <section class="series-featured-card" aria-label="Featured Engineering Series">
+                <div class="series-card-badge">
+                    <span class="badge badge-accent">Featured Series &bull; 6 Parts</span>
+                    <span class="series-status-pill">Complete</span>
+                </div>
+                <h2 class="series-card-title">
+                    <a href="/posts/ai_playground_series/">Beyond the Model: Building a Private AI Playground</a>
+                </h2>
+                <p class="series-card-desc">
+                    An in-depth 6-part engineering series exploring what it really takes to build an offline-first, on-device multimodal AI workstation for Android and iOS using Kotlin Multiplatform, C++20 / NDK, llama.cpp, and Google LiteRT.
+                </p>
+                <div class="series-parts-grid">
+                    <a href="/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/" class="series-part-link">
+                        <span class="part-num">Part 1</span>
+                        <span class="part-title">I Wanted the Model to Stay on the Phone</span>
+                    </a>
+                    <a href="/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/" class="series-part-link">
+                        <span class="part-num">Part 2</span>
+                        <span class="part-title">The Day a Chat Box Became a Document Engine</span>
+                    </a>
+                    <a href="/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/" class="series-part-link">
+                        <span class="part-num">Part 3</span>
+                        <span class="part-title">The Model Was Fine. The Phone Wasn't.</span>
+                    </a>
+                    <a href="/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/" class="series-part-link">
+                        <span class="part-num">Part 4</span>
+                        <span class="part-title">I Put an Image Generator Inside the Phone</span>
+                    </a>
+                    <a href="/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/" class="series-part-link">
+                        <span class="part-num">Part 5</span>
+                        <span class="part-title">At Some Point I Stopped Building a Chat App</span>
+                    </a>
+                    <a href="/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/" class="series-part-link">
+                        <span class="part-num">Part 6</span>
+                        <span class="part-title">Pushing Mobile Hardware to the Edge</span>
+                    </a>
+                </div>
+            </section>
+            {{ end }}
+
+            {{/* Display content of _index.md if present */}}
+            {{ if .Content }}
+                <div class="post-intro-content">{{ .Content }}</div>
+            {{ end }}
+
+            <section class="posts-archive" aria-label="Articles archive">
+                <h2 class="archive-heading">{{ if eq .RelPermalink "/posts/" }}All Published Articles{{ else }}Articles in this Series{{ end }}</h2>
+                {{ $pages := .RegularPagesRecursive }}
+                {{ if not (eq .RelPermalink "/posts/") }}
+                    {{ $pages = .RegularPages }}
+                {{ end }}
+                
+                {{ range $pages.GroupByDate "2006" }}
+                    <div class="posts-group">
+                        <div class="post-year">{{ .Key }}</div>
+                        <ul class="posts-list">
+                            {{ range .Pages }}
+                                <li class="post-item">
+                                    <a href="{{ .RelPermalink }}" class="post-item-inner">
+                                        <span class="post-title">{{ .Title }}</span>
+                                        <span class="post-meta-inline">
+                                            <span class="post-reading-time">{{ .ReadingTime }} min read</span>
+                                            <span class="post-day">
+                                                {{ time.Format "Jan 2" .Date }}
+                                            </span>
+                                        </span>
+                                    </a>
+                                    {{ with .Description }}
+                                        <p class="post-card-desc">{{ . }}</p>
+                                    {{ end }}
+                                    {{ with .Params.tags }}
+                                        <div class="post-card-tags">
+                                            {{ range . }}
+                                                <span class="badge badge-subtle">{{ . }}</span>
+                                            {{ end }}
+                                        </div>
+                                    {{ end }}
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                {{ end }}
+            </section>
+        </main>
+    </div>
+{{ end }}

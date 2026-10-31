@@ -1,0 +1,36 @@
+{{ define "main" }}
+    <div class="content">
+        <main id="main" class="posts" tabindex="-1">
+            <header class="posts-header">
+                <h1 class="page-title">{{ .Title }}</h1>
+                {{ with .Params.Description }}
+                    <p class="section-lead">{{ . }}</p>
+                {{ end }}
+            </header>
+
+            {{ if .Content }}
+                <div class="content post-intro-content">{{ .Content }}</div>
+            {{ end }}
+
+            {{ $paginator := .Paginate .Data.Pages }}
+            {{ range $paginator.Pages.GroupByDate "2006" }}
+                <div class="posts-group">
+                    <div class="post-year">{{ .Key }}</div>
+                    <ul class="posts-list">
+                        {{ range .Pages }}
+                            <li class="post-item">
+                                <a href="{{ .RelPermalink }}" class="post-item-inner">
+                                    <span class="post-title">{{ .Title }}</span>
+                                    <span class="post-day">
+                                        {{ time.Format "Jan 2" .Date }}
+                                    </span>
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            {{ end }}
+            {{ partial "pagination-list.html" . }}
+        </main>
+    </div>
+{{ end }}

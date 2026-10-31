@@ -1,6 +1,6 @@
 {{ define "main" }}
     <div class="content">
-        <main class="post">
+        <main id="main" class="post" tabindex="-1">
 
             <div class="post-info">
                 {{ if .IsTranslated }}
@@ -12,7 +12,7 @@
             </div>
 
             <article>
-                <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
+                <h1 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h1>
 
                 {{ if .Params.Cover }}
                     <figure class="post-cover">

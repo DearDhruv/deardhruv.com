@@ -77,7 +77,7 @@
 {{ end }}
 
 <!-- Performance Hints -->
-{{ if .Page.Store.Get "hasMermaid" }}
+{{ if or (.Page.Store.Get "hasMermaid") (strings.Contains .RawContent "```mermaid") (strings.Contains .RawContent "class=\"mermaid\"") }}
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 {{ end }}

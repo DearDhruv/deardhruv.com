@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="content">
+  <main id="main" class="posts legal-list-page" tabindex="-1">
+    <header class="posts-header">
+      {{ if not (eq .RelPermalink "/other/") }}
+        <nav class="legal-breadcrumbs" aria-label="Legal Breadcrumbs">
+          <a href="/other/">&larr; Return to Legal &amp; Policies Directory</a>
+        </nav>
+      {{ end }}
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{ with .Params.Description }}
+        <p class="section-lead">{{ . }}</p>
+      {{ end }}
+    </header>
+
+    {{ if .Content }}
+      <div class="post-intro-content">{{ .Content }}</div>
+    {{ end }}
+
+    <section class="legal-directory-section" aria-label="Policy Documents">
+      {{ $pages := .RegularPagesRecursive }}
+      {{ if not (eq .RelPermalink "/other/") }}
+        {{ $pages = .RegularPages }}
+      {{ end }}
+
+      <div class="legal-cards-grid">
+        {{ range $pages }}
+          <div class="feature-card legal-doc-card">
+            <h2 class="legal-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="legal-card-date">Updated: {{ time.Format "Jan 2, 2006" .Date }}</p>
+            <a href="{{ .RelPermalink }}" class="legal-card-link">Read Policy &rarr;</a>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  </main>
+</div>
+{{ end }}

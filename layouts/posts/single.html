@@ -1,0 +1,126 @@
+{{ define "main" }}
+<div class="content">
+  <main id="main" class="post article-single" tabindex="-1">
+    <article class="article-wrapper">
+      <header class="article-header">
+      {{ if or .Params.series (strings.Contains .RelPermalink "/ai_playground_series/") }}
+        <div class="article-series-crumb">
+          <a href="/posts/ai_playground_series/" class="series-crumb-link">
+            &larr; Beyond the Model Series Overview
+          </a>
+        </div>
+      {{ end }}
+
+      <h1 class="post-title article-title">
+        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+      </h1>
+
+      <div class="article-meta-bar">
+        <div class="article-meta-primary">
+          <span class="meta-item meta-date">
+            <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format "Jan 2, 2006" .Date }}</time>
+          </span>
+          <span class="meta-separator">&bull;</span>
+          <span class="meta-item meta-reading-time">
+            <svg class="meta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>{{ .ReadingTime }} min read</span>
+          </span>
+          <span class="meta-separator">&bull;</span>
+          <span class="meta-item meta-words">
+            <span>{{ .WordCount }} words</span>
+          </span>
+        </div>
+
+        {{ with .Params.author }}
+          <div class="article-author">
+            <span>By <strong>{{ .name }}</strong></span>
+          </div>
+        {{ end }}
+      </div>
+
+      {{ with .Params.Description }}
+        <p class="article-lead-description">{{ . }}</p>
+      {{ end }}
+    </header>
+
+    {{ if .Params.Cover }}
+      <figure class="post-cover">
+        <img src="{{ .Params.Cover | relURL }}" alt="{{ .Title }}" loading="lazy" decoding="async" />
+        {{ if .Params.CoverCaption }}
+          <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+    {{ end }}
+
+    {{ if .Params.toc }}
+      <aside id="toc" class="article-toc" aria-label="Table of contents">
+        <div class="toc-title">Table of Contents</div>
+        {{ .TableOfContents }}
+      </aside>
+    {{ end }}
+
+    <div class="post-content article-body">
+      {{ .Content }}
+    </div>
+
+    <footer class="article-footer">
+      {{ with .Params.tags }}
+        <div class="article-tags" aria-label="Tags">
+          <span class="tags-label">Tags:</span>
+          {{ range . }}
+            <a href="/tags/{{ . | urlize }}/" class="badge badge-subtle">{{ . }}</a>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{/* Series Next/Previous Navigation */}}
+      {{ if or .Params.series (strings.Contains .RelPermalink "/ai_playground_series/") }}
+        {{ $seriesPages := where .Site.RegularPages ".Params.series" "intersect" (slice "Beyond the Model") }}
+        {{ $sortedPages := sort $seriesPages "Date" "asc" }}
+        
+        <nav class="series-navigation-box" aria-label="Series navigation">
+          <div class="series-nav-header">
+            <span class="badge badge-accent">Series Navigation</span>
+            <span class="series-nav-title">Beyond the Model: Building a Private AI Playground</span>
+          </div>
+          <div class="series-nav-links">
+            {{ $currentPage := . }}
+            {{ range $i, $p := $sortedPages }}
+              {{ if eq $p.RelPermalink $currentPage.RelPermalink }}
+                {{/* Previous link */}}
+                {{ if gt $i 0 }}
+                  {{ $prev := index $sortedPages (sub $i 1) }}
+                  <a href="{{ $prev.RelPermalink }}" class="series-nav-btn prev-btn">
+                    <span class="nav-dir">&larr; Previous Part</span>
+                    <span class="nav-title">{{ $prev.Title }}</span>
+                  </a>
+                {{ else }}
+                  <div class="series-nav-placeholder"></div>
+                {{ end }}
+
+                {{/* Next link */}}
+                {{ if lt (add $i 1) (len $sortedPages) }}
+                  {{ $next := index $sortedPages (add $i 1) }}
+                  <a href="{{ $next.RelPermalink }}" class="series-nav-btn next-btn">
+                    <span class="nav-dir">Next Part &rarr;</span>
+                    <span class="nav-title">{{ $next.Title }}</span>
+                  </a>
+                {{ else }}
+                  <div class="series-nav-placeholder"></div>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div>
+          <div class="series-nav-all">
+            <a href="/posts/ai_playground_series/" class="btn btn-outline btn-sm">
+              View all 6 parts in this series &rarr;
+            </a>
+          </div>
+        </nav>
+      {{ end }}
+    </footer>
+    </article>
+  </main>
+</div>
+{{ end }}

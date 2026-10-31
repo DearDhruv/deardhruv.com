@@ -1,27 +1,184 @@
 {{ define "main" }}
-{{ $about := or (site.GetPage "about.md") (site.GetPage "/about") }}
 <div class="content">
-    <main class="post">
+    <main id="main" class="post home-layout" tabindex="-1">
         <article>
             {{ partial "hero.html" . }}
 
-            <div class="post-content">
-                {{ if $about }}
-                    {{/* Strip images from the content to avoid redundancy with the hero profile pic */}}
-                    {{ $content := $about.Content }}
-                    {{ $content = replaceRE "<img[^>]*>" "" $content }}
-                    {{ $content | safeHTML }}
-                {{ else }}
-                    <p>{{ site.Params.description }}</p>
-                {{ end }}
-            </div>
+            <!-- SECTION 1: CORE CAPABILITIES -->
+            <section class="site-section home-capabilities">
+                <span class="section-eyebrow">Engineering Domains</span>
+                <h2 class="section-title">Specialization & Technical Focus</h2>
+                <p class="section-subtitle">Deep expertise across native mobile systems, cross-platform runtimes, and low-level edge compute.</p>
 
-            <div class="home-explore">
-                <a href="/portfolio/" class="cta-link primary">View Portfolio</a>
-                <a href="/posts/" class="cta-link secondary">Read Blog</a>
-                <a href="/projects/" class="cta-link secondary">Browse Projects</a>
-                <a href="/resume.pdf" class="cta-link secondary" target="_blank">Resume (PDF)</a>
-            </div>
+                <div class="grid-cards">
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <h3 class="feature-card-title">Android & Native Architecture</h3>
+                            <span class="badge badge-accent">14+ Years</span>
+                        </div>
+                        <p class="feature-card-desc">Production Clean Architecture, unidirectional data flow (MVI/MVVM), Jetpack Compose, modular multi-module codebases, memory profiling, and battery guardrails.</p>
+                        <div class="badge-group">
+                            <span class="badge">Kotlin</span>
+                            <span class="badge">Jetpack Compose</span>
+                            <span class="badge">Coroutines/Flow</span>
+                            <span class="badge">NDK / C++20</span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <h3 class="feature-card-title">Kotlin Multiplatform (KMP/CMP)</h3>
+                            <span class="badge badge-accent">Production</span>
+                        </div>
+                        <p class="feature-card-desc">Cross-platform architecture sharing deterministic game loops, MVI state stores, and offline-first persistence across Android, iOS (SwiftUI host), and Android TV.</p>
+                        <div class="badge-group">
+                            <span class="badge">Compose Multiplatform</span>
+                            <span class="badge">SQLDelight</span>
+                            <span class="badge">Cloud Firestore</span>
+                            <span class="badge">Swift Interop</span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <h3 class="feature-card-title">On-Device AI & Edge Compute</h3>
+                            <span class="badge badge-accent">Offline-First</span>
+                        </div>
+                        <p class="feature-card-desc">Pioneered local LLM inference engines (llama.cpp, LiteRT, Apple MLX) on mobile silicon with Speculative Turbo decoding, diffusion studios, and defensive driver crash isolation.</p>
+                        <div class="badge-group">
+                            <span class="badge">llama.cpp</span>
+                            <span class="badge">Google LiteRT</span>
+                            <span class="badge">Apple MLX</span>
+                            <span class="badge">Vulkan / Metal</span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <h3 class="feature-card-title">Commerce & Hardware Integration</h3>
+                            <span class="badge badge-accent">Enterprise</span>
+                        </div>
+                        <p class="feature-card-desc">Architected high-throughput digital commerce flows, secure payment terminal interfaces, and resilient hardware abstraction layers across 27+ POS peripherals.</p>
+                        <div class="badge-group">
+                            <span class="badge">POS Peripherals</span>
+                            <span class="badge">Payment IPC</span>
+                            <span class="badge">HAL Bridges</span>
+                            <span class="badge">Zero Cloud Leak</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: SELECTED WORK -->
+            <section class="site-section home-selected-work">
+                <span class="section-eyebrow">Featured Work</span>
+                <h2 class="section-title">Selected Production Systems</h2>
+                <p class="section-subtitle">Real-world applications and native libraries engineered for performance, resilience, and privacy.</p>
+
+                <div class="grid-cards">
+                    <!-- AI Playground -->
+                    <div class="feature-card project-spotlight">
+                        <div class="feature-card-header">
+                            <div>
+                                <span class="badge badge-accent">Flagship Product &middot; On-Device AI</span>
+                                <h3 class="feature-card-title" style="margin-top: 0.4rem;">AI Playground</h3>
+                            </div>
+                        </div>
+                        <p class="feature-card-desc">An offline-first, on-device multimodal AI workstation for Android and iOS that turns mobile devices into self-contained inference engines. Features dual-model Speculative Turbo decoding (2x speedup), defensive <code>fork()</code> child process Vulkan crash sandbox with SIGKILL watchdog, and a zero-dependency KMP document engine supporting 25+ formats.</p>
+                        <div class="badge-group">
+                            <span class="badge">KMP</span>
+                            <span class="badge">Compose MP</span>
+                            <span class="badge">C++20 NDK</span>
+                            <span class="badge">llama.cpp</span>
+                            <span class="badge">Vulkan/Metal</span>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Google Play</a>
+                            <a href="https://github.com/DearDhruv/Model-Playground" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a href="/posts/ai_playground_series/" class="btn btn-secondary">Read Series</a>
+                        </div>
+                    </div>
+
+                    <!-- VelociHue -->
+                    <div class="feature-card project-spotlight">
+                        <div class="feature-card-header">
+                            <div>
+                                <span class="badge badge-accent">Flagship Product &middot; Multiplatform Game</span>
+                                <h3 class="feature-card-title" style="margin-top: 0.4rem;">VelociHue</h3>
+                            </div>
+                        </div>
+                        <p class="feature-card-desc">A fast-paced, high-framerate (60–120 FPS) arcade action game engineered in Kotlin Multiplatform shipping across Android, iOS, and Android TV. Features a pure-Kotlin deterministic physics loop, conflict-free Cloud Firestore schema v5 sync with 3-way union merge, 29-achievement progression engine, and instant Compose share card generation.</p>
+                        <div class="badge-group">
+                            <span class="badge">KMP</span>
+                            <span class="badge">Compose MP</span>
+                            <span class="badge">Cloud Firestore</span>
+                            <span class="badge">Android TV</span>
+                            <span class="badge">SDK 37</span>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://play.google.com/store/apps/details?id=com.deardhruv.velocihue" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Google Play</a>
+                            <a href="/projects/" class="btn btn-secondary">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <a href="/portfolio/" class="btn btn-secondary" style="padding: 0.8rem 2rem;">View Full Portfolio & Case Studies &rarr;</a>
+                </div>
+            </section>
+
+            <!-- SECTION 3: TECHNICAL WRITING SPOTLIGHT -->
+            <section class="site-section home-writing">
+                <span class="section-eyebrow">Engineering Series</span>
+                <h2 class="section-title">Beyond the Model: AI Playground Deep Dive</h2>
+                <p class="section-subtitle">A comprehensive six-part architecture series documenting how to run local LLMs, image generation, and document processing directly on consumer phones.</p>
+
+                <div class="grid-cards">
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <h3 class="feature-card-title"><a href="/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/">Part 1 &middot; Offline Local LLMs</a></h3>
+                        </div>
+                        <p class="feature-card-desc">Architecting offline-first mobile inference, Speculative Turbo decoding with draft models, and VRAM memory admission controls.</p>
+                        <span class="badge badge-accent">Architecture</span>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <h3 class="feature-card-title"><a href="/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/">Part 3 &middot; Defensive Crash Isolation</a></h3>
+                        </div>
+                        <p class="feature-card-desc">Isolating vendor Vulkan driver GPU crashes with a <code>fork()</code> child process sandbox, 3000ms watchdog loop, and SIGKILL fallback.</p>
+                        <span class="badge badge-accent">NDK / C++20</span>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-card-header">
+                            <h3 class="feature-card-title"><a href="/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/">Part 4 &middot; On-Device Diffusion Studio</a></h3>
+                        </div>
+                        <p class="feature-card-desc">Synthesizing 4-step photorealistic diffusion images on mobile GPUs using Google LiteRT and Bonsai Image Ternary 4B.</p>
+                        <span class="badge badge-accent">Diffusion AI</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <a href="/posts/ai_playground_series/" class="btn btn-secondary" style="padding: 0.8rem 2rem;">Read All 6 Series Articles &rarr;</a>
+                </div>
+            </section>
+
+            <!-- SECTION 4: COLLABORATION & CONTACT -->
+            <section class="site-section home-contact">
+                <div class="feature-card" style="text-align: center; padding: 3rem 2rem; background: var(--bg-card);">
+                    <span class="section-eyebrow">Connect & Collaborate</span>
+                    <h2 class="section-title" style="margin-bottom: 1rem;">Let's Build Something Exceptional</h2>
+                    <p class="section-subtitle" style="margin: 0 auto 2rem auto;">Open to discussions on native Android architecture, Kotlin Multiplatform systems, on-device AI integration, and technical speaking.</p>
+
+                    <div class="btn-group" style="justify-content: center;">
+                        <a href="mailto:dhruv.time@gmail.com" class="btn btn-primary">Send Email</a>
+                        <a href="https://www.linkedin.com/in/DearDhruv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/DearDhruv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download Résumé (PDF)</a>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
 </div>
