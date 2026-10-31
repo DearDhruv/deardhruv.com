@@ -1,7 +1,7 @@
 # Hugo Layout and Dependency Architecture
 
 **Project:** DearDhruv.com  
-**Engine:** Hugo v0.169.0+extended (target v0.162.1)  
+**Engine:** Hugo v0.169.0+extended (target v0.169.0)  
 **Theme:** `hello-friend-ng` Git submodule @ `1a0a16f`  
 
 ---

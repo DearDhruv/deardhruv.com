@@ -9,7 +9,7 @@
 ## Baseline Environment
 - OS: macOS (Darwin 24.6.0 arm64)
 - Git: 2.56.0
-- Hugo: v0.169.0+extended+withdeploy darwin/arm64 (Pinned in netlify.toml: 0.162.1)
+- Hugo: v0.169.0+extended+withdeploy darwin/arm64 (Pinned in netlify.toml: 0.169.0)
 - Node: v26.13.0 (Pinned in netlify.toml: 24)
 - npm: 11.20.0
 - Submodule: `themes/hello-friend-ng` @ commit `1a0a16f39c40b8f282f55d0ae988fe4234a432da`

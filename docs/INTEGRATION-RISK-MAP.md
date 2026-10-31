@@ -9,7 +9,7 @@ Comprehensive mapping of Netlify hosting, edge features, discovery standards, se
 - **Publish Directory:** `public`
 - **Build Command:** `hugo --gc --minify`
 - **Environment Pins:**
-  - `HUGO_VERSION = "0.162.1"`
+  - `HUGO_VERSION = "0.169.0"`
   - `NODE_VERSION = "24"`
   - `HUGO_ENV = "production"`
 - **Context Environments:**
