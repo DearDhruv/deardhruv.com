@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `37cd396`
-- Last completed phase/task: Task 2.2 — Evidence and content audit
-- Next task: Task 2.3 — Page wireframes
+- Current HEAD: `4b243fb`
+- Last completed phase/task: Task 2.3 — Page wireframes
+- Next task: Task 3.1 — Define accessible design tokens
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -26,10 +26,11 @@
 | Task 1.2 | Inventory all published Markdown content and metadata | `7de6eea` | Metadata extraction across all 22 Markdown files | PASS |
 | Task 1.3 | Map Netlify integrations, Edge Functions, and release risks | `9d35ecb` | Security headers, CSP, Edge Functions, discovery catalog audit | PASS |
 | Task 2.1 | Define portfolio information architecture and page hierarchy | `37cd396` | IA review, route parity validation | PASS |
-| Task 2.2 | Build claim verification checklist and sanitize confidential metrics | Pending | Evidence mapping of all metrics against public artifacts | PASS |
+| Task 2.2 | Build claim verification checklist and sanitize confidential metrics | `4b243fb` | Evidence mapping of all metrics against public artifacts | PASS |
+| Task 2.3 | Document responsive page wireframes across devices | Pending | Multi-viewport ASCII wireframes in `docs/WIREFRAMES.md` | PASS |
 
 ## Files changed in the latest task
-- `docs/CLAIM-VERIFICATION.md`
+- `docs/WIREFRAMES.md`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
@@ -37,17 +38,18 @@
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- Claim audit in `docs/CLAIM-VERIFICATION.md`
+- Wireframes documented in `docs/WIREFRAMES.md`
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- Employer work sanitized to protect client confidentiality. Public open-source metrics independently verified.
+- Wireframes incorporate 10-foot TV readability and 320px phone reflow guidelines.
 
 ## Exact next action
-1. Execute Task 2.3 — Document responsive page wireframes in `docs/WIREFRAMES.md`.
+1. Execute Phase 3, Task 3.1 — Define accessible design tokens (surfaces, text, borders, accents, focus, spacing, radii) in `assets/css/custom.css`.
+
 
 
 
