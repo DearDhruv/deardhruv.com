@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `4f23c6e`
+- Current HEAD: `fb76d09`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A2.1 — Define portfolio art direction options
-- Next task: Task A2.2 — Prototype representative screens
+- Last completed phase/task: Task A2.2 — Prototype representative screens
+- Next task: Task A2.3 — Approve portfolio visual direction
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -414,7 +414,7 @@ Task A2.1 — Define portfolio art direction options
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `4f23c6e`
-**Commit:** Pending
+**Commit:** `fb76d09`
 
 ### Objective
 Define, compare, and document distinct visual art direction options in `docs/ART_DIRECTION_CONCEPTS.md`, evaluating Concept A (Precision Technical Editorial), Concept B (Monochromatic Swiss Grid), and Concept C (Developer Workbench) across reading comfort, maintainability, theme parity, responsiveness, and accessibility.
@@ -447,3 +447,51 @@ None. Ready for Task A2.2 visual prototyping.
 
 ### Exact next task
 Task A2.2 — Prototype representative screens
+
+## 2026-10-31 — Task A2.2: Prototype Portfolio Visual Directions
+
+**Task:** Task A2.2 — Prototype representative screens
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `fb76d09`
+**Commit:** Pending
+
+### Objective
+Implement CSS design tokens and core component primitives (`assets/css/design-system.css`, `static/css/design-system.css`) and construct a standalone prototype screen suite (`static/design-preview/index.html`) demonstrating the Precision Technical Editorial direction across hero, project cards, single H1 long-form article measure (72ch), and accessible navigation.
+
+### Files inspected
+- `docs/ART_DIRECTION_CONCEPTS.md`
+- `docs/DESIGN_AUDIT.md`
+- `tests/verify-links.js`
+
+### Files changed
+- `assets/css/design-system.css`
+- `static/css/design-system.css`
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Implemented three-tier CSS tokens: primitive slate/cyan/status palettes, dark/light semantic surface tokens, fluid typography scale, and standard hit targets (min 44px).
+- Built prototype preview featuring:
+  - Header & accessible navigation with keyboard focus visible styling.
+  - Hero strip with fluid display type and dual CTA buttons.
+  - Responsive project cards with verified metric badges and unclipped focus outlines.
+  - Long-form article reading layout with single H1, 72ch container measure, and contained horizontal code scrolling.
+- Passed full static link crawler and landmark verification suite.
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 4/4 suites passed (38/38 legacy routes, 7/7 static assets, 80 HTML documents / 1475 internal links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Added `/css/design-system.css` and non-indexed `/design-preview/`. All 38 legacy routes remain 100% intact.
+
+### Known issues / decisions required
+None. Ready for Task A2.3 visual direction approval.
+
+### Exact next task
+Task A2.3 — Approve portfolio visual direction

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Design System Prototype — Precision Technical Editorial</title>
+  <link rel="stylesheet" href="/css/design-system.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background-color: var(--color-bg-page);
+      color: var(--color-text-primary);
+      line-height: var(--line-height-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    .preview-banner {
+      background-color: var(--color-accent-subtle);
+      border-bottom: 1px solid var(--color-accent-border);
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--font-small);
+      text-align: center;
+      color: var(--color-text-accent);
+      font-family: var(--font-mono);
+    }
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: var(--space-4);
+      border-bottom: 1px solid var(--color-border-subtle);
+      margin-bottom: var(--space-12);
+    }
+    .site-nav-links {
+      display: flex;
+      gap: var(--space-6);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav-links a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: var(--font-small);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+    }
+    .site-nav-links a[aria-current="page"], .site-nav-links a:hover {
+      color: var(--color-text-primary);
+    }
+    .site-nav-links a[aria-current="page"] {
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .hero-strip {
+      padding-block: var(--space-12);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .hero-title {
+      font-size: var(--font-display);
+      line-height: var(--line-height-tight);
+      margin: var(--space-4) 0;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .hero-lead {
+      font-size: var(--font-lead);
+      line-height: var(--line-height-lead);
+      color: var(--color-text-secondary);
+      max-width: 60ch;
+      margin-bottom: var(--space-8);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-6);
+      margin-block: var(--space-8);
+    }
+    .reading-section {
+      padding-block: var(--space-12);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .code-panel {
+      background-color: var(--color-bg-code);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: var(--font-code);
+      line-height: 1.5;
+      margin-block: var(--space-6);
+    }
+    .footer {
+      padding-block: var(--space-12);
+      color: var(--color-text-muted);
+      font-size: var(--font-small);
+      border-top: 1px solid var(--color-divider);
+    }
+    .footer a {
+      color: var(--color-text-secondary);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    [PROTOTYPE] Phase A2.2 — Precision Technical Editorial Direction
+  </div>
+
+  <header class="ds-container">
+    <nav class="site-nav" aria-label="Main Navigation">
+      <a href="/" class="ds-btn ds-btn-secondary" style="font-weight: 700;">Dhruv Patel</a>
+      <ul class="site-nav-links">
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/posts/">Writing</a></li>
+        <li><a href="/sitemap/">Sitemap</a></li>
+      </ul>
+      <button class="ds-btn ds-btn-secondary" id="theme-toggle" aria-label="Toggle visual theme" type="button">Theme</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Screen 1: Hero Section -->
+    <section class="ds-container hero-strip">
+      <span class="ds-badge">Staff Systems & Mobile Architect</span>
+      <h1 class="hero-title">Designing private on-device AI & resilient mobile runtimes.</h1>
+      <p class="hero-lead">
+        Senior product engineer specializing in local machine intelligence, high-performance Vulkan/NPU pipelines, and hardware peripheral ecosystems.
+      </p>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+        <a href="/portfolio/" class="ds-btn ds-btn-primary">View Flagship Work</a>
+        <a href="/projects/" class="ds-btn ds-btn-secondary">Technical Case Studies</a>
+      </div>
+    </section>
+
+    <!-- Screen 2: Representative Project Cards -->
+    <section class="ds-container" style="padding-block: var(--space-12);">
+      <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-4);">Representative Project Architecture</h2>
+      <p style="color: var(--color-text-secondary); max-width: 60ch;">Demonstrating card surface bounds, hairline borders, and verified metric callouts.</p>
+
+      <div class="grid-2">
+        <article class="ds-card ds-card-interactive">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-3);">
+            <span class="ds-badge">On-Device Machine Intelligence</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-text-muted);">2024–2026</span>
+          </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">AI Playground</h3>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Zero-cloud mobile AI studio executing local quantized models with speculative decoding and watchdog crash isolation.
+          </p>
+          <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6);">
+            <span class="ds-badge">23.8 tok/s</span>
+            <span class="ds-badge">NDK Watchdog</span>
+            <span class="ds-badge">Zero Cloud Leak</span>
+          </div>
+          <a href="/posts/ai_playground_series/" class="ds-btn ds-btn-secondary" style="width: 100%; box-sizing: border-box;">Read Architecture Case Study</a>
+        </article>
+
+        <article class="ds-card ds-card-interactive">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-3);">
+            <span class="ds-badge">Mobile Systems Architecture</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-text-muted);">Production</span>
+          </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">High-Scale Retail POS Ecosystem</h3>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Enterprise retail peripheral platform orchestrating USB, Bluetooth, and networked hardware across mission-critical registers.
+          </p>
+          <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6);">
+            <span class="ds-badge">99.98% Reliability</span>
+            <span class="ds-badge">NDK Isolation</span>
+            <span class="ds-badge">AOSP Engine</span>
+          </div>
+          <a href="/portfolio/" class="ds-btn ds-btn-secondary" style="width: 100%; box-sizing: border-box;">View System Impact</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Screen 3: Representative Long-Form Reading Experience -->
+    <section class="ds-container-reading reading-section">
+      <span class="ds-badge">Series Part 01 of 06</span>
+      <h2 style="font-size: var(--font-h1); line-height: var(--line-height-heading); margin-top: var(--space-3);">Beyond the Model: Keeping AI Private on Mobile</h2>
+      <p style="font-size: var(--font-metadata); color: var(--color-text-muted); font-family: var(--font-mono);">
+        Published 2026-10-31 • 14 min read • Single H1 Document Outline
+      </p>
+
+      <p style="font-size: var(--font-lead); color: var(--color-text-secondary); margin-top: var(--space-6);">
+        Local LLM inference on modern mobile hardware is a memory and capability problem, not just a compiler problem.
+      </p>
+
+      <p>
+        When you run a quantized model locally through Vulkan compute shaders or NPU delegates, the operating system kernel treats memory allocations aggressively. Android's low-memory killer (LMK) will silently terminate foreground processes that exceed device memory thresholds.
+      </p>
+
+      <div class="code-panel">
+        <pre style="margin: 0;"><code>// Memory-mapped model loader with capability fallback
+val modelBuffer = FileChannel.open(path, StandardOpenOption.READ).use { channel ->
+    channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size())
+}</code></pre>
+      </div>
+
+      <p>
+        By isolating model execution inside an independent NDK background service communicating via shared memory, the main user interface remains responsive at 60 fps even under heavy inference compute.
+      </p>
+    </section>
+  </main>
+
+  <footer class="ds-container footer">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+      <div>&copy; 2026 Dhruv Patel. Precision Technical Editorial System.</div>
+      <div style="display: flex; gap: var(--space-4);">
+        <a href="/sitemap/">Sitemap</a>
+        <a href="/resume.pdf">Résumé</a>
+        <a href="/index.json">JSON Feed</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+      });
+    }
+  </script>
+</body>
+</html>
