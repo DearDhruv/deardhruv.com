@@ -1958,3 +1958,51 @@ None. Ready for Task A8.10 porting legal and policy pages.
 
 ### Exact next task
 Task A8.10 — Port legal pages
+
+## 2026-10-31 — Task A8.10: Migrate Legal and Policy Pages
+
+**Task:** Task A8.10 — Port legal pages
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `a8e1ed6`
+**Commit:** Pending
+
+### Objective
+Migrate all 10 legal and policy routes under `/other/` to Astro (`src/pages/other/[...slug].astro`) preserving exact copy, section structures, and URL paths with 0 modifications to source files or terms.
+
+### Files inspected
+- `content/other/_index.md`
+- `content/other/ai-playground/privacy-policy-ai-playground-app.md`
+- `content/other/ai-playground/terms-ai-playground-app.md`
+- `content/other/open-store-app/privacy-policy-open-store-app.md`
+- `content/other/open-store-app/terms-open-store-app.md`
+- `content/other/veloci-hue/privacy-policy-veloci-hue-game.md`
+- `content/other/veloci-hue/terms-veloci-hue.md`
+
+### Files changed
+- `src/pages/other/[...slug].astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Implemented `src/pages/other/[...slug].astro` with `getStaticPaths()` mapping all entries from the `other` collection.
+- Handled section root indices (`_index.md` mapping to `/other/`, `ai-playground/_index.md` mapping to `/other/ai-playground/`, etc.).
+- Bounded reading width to `72ch` inside `PageLayout` with clean prose hierarchy and single-`<h1>` heading outline.
+- Compiled static build via `npx astro build` (25 static pages in 631ms).
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added all 10 legal and policy pages in Astro. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.11 porting sitemap and static documents.
+
+### Exact next task
+Task A8.11 — Port sitemap and static documents

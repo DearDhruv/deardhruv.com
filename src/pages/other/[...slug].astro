@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('other');
+  return entries.map(entry => {
+    let slug = entry.id;
+    if (slug === '_index') {
+      slug = undefined;
+    } else if (slug.endsWith('/_index')) {
+      slug = slug.replace('/_index', '');
+    }
+    return {
+      params: { slug },
+      props: { entry }
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<PageLayout
+  title={entry.data.title}
+  description={entry.data.description || `${entry.data.title} - Dhruv Patel`}
+  containerClass="layout-container-reading"
+>
+  <div class="prose">
+    <Content />
+  </div>
+</PageLayout>
