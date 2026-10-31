@@ -209,6 +209,62 @@ val modelBuffer = FileChannel.open(path, StandardOpenOption.READ).use { channel 
       <p>
         By isolating model execution inside an independent NDK background service communicating via shared memory, the main user interface remains responsive at 60 fps even under heavy inference compute.
       </p>
+
+      <div class="callout callout-info" role="region" aria-label="Memory Allocation Note">
+        <div>
+          <div class="callout-title">Architectural Constraint</div>
+          <div class="callout-content">Zero-copy mmap reduces resident set size (RSS) by up to 74% compared to standard byte buffer copies in Dalvik/ART heap.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-warning" role="region" aria-label="Thermal Throttle Warning">
+        <div>
+          <div class="callout-title">Thermal Throttling Alert</div>
+          <div class="callout-content">Sustained NPU batch execution beyond 120 seconds induces SoC thermal throttling, dropping clock rates by 35%.</div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Execution Engine</th>
+              <th scope="col">Model Precision</th>
+              <th scope="col">Throughput (tok/s)</th>
+              <th scope="col">Peak RAM (MB)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vulkan Shader Pipeline</td>
+              <td>int4-q4_k_m</td>
+              <td>23.8 tok/s</td>
+              <td>2,140 MB</td>
+            </tr>
+            <tr>
+              <td>Hexagon NPU Delegate</td>
+              <td>int8-w8a8</td>
+              <td>31.4 tok/s</td>
+              <td>1,820 MB</td>
+            </tr>
+            <tr>
+              <td>CPU Neon Fallback</td>
+              <td>fp16</td>
+              <td>6.2 tok/s</td>
+              <td>3,450 MB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose">
+        <p>Key validation guarantees verified before production deployment:</p>
+        <ul>
+          <li>Zero outbound socket connections established during inference run.</li>
+          <li>Memory bounds enforced with hardware watchdog timers.</li>
+          <li>Graceful CPU fallback on unsupported GPU extensions.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Screen 4: Button and Action Component Showcase -->
@@ -262,14 +318,25 @@ val modelBuffer = FileChannel.open(path, StandardOpenOption.READ).use { channel 
   </footer>
 
   <script>
-    const btn = document.getElementById('theme-toggle');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
-        const next = cur === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', next);
-      });
-    }
+    (function() {
+      const btn = document.getElementById('theme-toggle');
+      function updateButton(theme) {
+        if (btn) btn.textContent = 'Theme: ' + (theme === 'dark' ? 'Dark' : 'Light');
+      }
+      const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateButton(savedTheme);
+
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme') || 'dark';
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          updateButton(next);
+        });
+      }
+    })();
   </script>
 </body>
 </html>

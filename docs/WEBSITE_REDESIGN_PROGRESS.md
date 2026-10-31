@@ -853,7 +853,7 @@ Task A4.4 — Implement complete accessible interaction states
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `f674a80`
-**Commit:** Pending
+**Commit:** `0e51d60`
 
 ### Objective
 Implement a comprehensive, accessible interaction state matrix across all components (`:hover` strictly conditioned on fine-pointer devices, `:focus-visible` with 2px unclipped offset, `:active` with micro-scale compression, `[aria-current="page"]` navigation indicators, and `:disabled` / `[aria-disabled="true"]` handling).
@@ -892,3 +892,47 @@ None. Ready for Task A4.5 comprehensive design-system style-guide preview page.
 
 ### Exact next task
 Task A4.5 — Expand design-system style-guide preview page
+
+## 2026-10-31 — Task A4.5: Expand Design-System Style-Guide Preview Page
+
+**Task:** Task A4.5 — Expand design-system style-guide preview page
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `0e51d60`
+**Commit:** Pending
+
+### Objective
+Expand `static/design-preview/index.html` into a complete, interactive living style-guide demonstrating all typography scales, headings, buttons, links, cards, callouts, tables, dividers, code blocks, and interaction states in both light and dark themes with localStorage persistence.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 6.3
+- `static/design-preview/index.html`
+- `static/css/components.css`
+
+### Files changed
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Added interactive semantic callout boxes (`.callout-info`, `.callout-warning`) demonstrating real-world technical mobile system constraints.
+- Added responsive technical benchmark table (`.table-container`) demonstrating execution throughput and peak RAM metrics with hover highlighting.
+- Added structured validation bullet list (`.prose ul`) with accent-colored markers.
+- Added action component showcase demonstrating all button variants (`.btn-primary`, `.btn-secondary`, `.btn-ghost`, `.btn-sm`, `:disabled`).
+- Enhanced theme switcher script to respect system `prefers-color-scheme`, save to `localStorage`, and update UI button state synchronously. Phase A4 is complete.
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 5/5 suites passed (38 routes, 7 assets, 80 HTML docs / 1479 links, 72 edge assertions, 14 contrast pairs).
+
+### Route/content/source-path impact
+Updated `/design-preview/index.html`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready to proceed to Phase A5 Theme, Accessibility & Responsive Shell.
+
+### Exact next task
+Task A5.1 — Implement zero-flash theme script and accessible toggle
