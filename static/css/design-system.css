@@ -123,20 +123,20 @@
   --color-text-primary: var(--primitive-slate-900);
   --color-text-secondary: var(--primitive-slate-700);
   --color-text-muted: #475569; /* WCAG AA 7.2:1 */
-  --color-text-accent: var(--primitive-cyan-600);
+  --color-text-accent: var(--primitive-cyan-700);
   --color-text-inverse: var(--primitive-white);
 
   --color-border-subtle: #cbd5e1; /* Enhanced for light mode card boundary */
   --color-border-strong: #94a3b8;
-  --color-border-interactive: rgba(2, 132, 199, 0.45);
+  --color-border-interactive: rgba(3, 105, 161, 0.45);
   --color-divider: #e2e8f0;
 
-  --color-accent: var(--primitive-cyan-600);
-  --color-accent-hover: var(--primitive-cyan-700);
-  --color-accent-subtle: rgba(2, 132, 199, 0.08);
-  --color-accent-border: rgba(2, 132, 199, 0.28);
+  --color-accent: var(--primitive-cyan-700);
+  --color-accent-hover: #075985;
+  --color-accent-subtle: rgba(3, 105, 161, 0.08);
+  --color-accent-border: rgba(3, 105, 161, 0.28);
 
-  --color-focus-ring: var(--primitive-cyan-600);
+  --color-focus-ring: var(--primitive-cyan-700);
 
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);

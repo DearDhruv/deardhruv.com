@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `eb6846f`
+- Current HEAD: `9754cd9`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A2.3 — Approve portfolio visual direction
-- Next task: Task A3.1 — Define semantic color and surface tokens
+- Last completed phase/task: Task A3.1 — Define semantic color and surface tokens
+- Next task: Task A3.2 — Standardize typography system
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -502,7 +502,7 @@ Task A2.3 — Approve portfolio visual direction
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `eb6846f`
-**Commit:** Pending
+**Commit:** `9754cd9`
 
 ### Objective
 Evaluate candidate concepts against design audit findings and Addendum criteria; formally record architecture decision approving Concept A ("Precision Technical Editorial") in `docs/ART_DIRECTION_DECISION.md`.
@@ -539,3 +539,48 @@ None. Ready to proceed to Phase A3 Design Tokens and Typography.
 
 ### Exact next task
 Task A3.1 — Define semantic color and surface tokens
+
+## 2026-10-31 — Task A3.1: Define Semantic Color and Surface Tokens
+
+**Task:** Task A3.1 — Define semantic color and surface tokens
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `9754cd9`
+**Commit:** Pending
+
+### Objective
+Establish mathematical three-tier color tokens (primitives -> semantic -> component) across dark and light themes, implement an automated WCAG 2.2 AA contrast verification test (`tests/verify-contrast.js`), and integrate it into the global `npm test` gate.
+
+### Files inspected
+- `assets/css/design-system.css`
+- `package.json`
+
+### Files changed
+- `assets/css/design-system.css`
+- `static/css/design-system.css`
+- `tests/verify-contrast.js`
+- `package.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Defined slate-950 through slate-50 primitives, cyan-400 through cyan-700 accents, and semantic surface, border, text, and focus tokens.
+- Audited contrast ratios via automated script: identified that light mode `#0284c7` failed WCAG AA (3.91:1); adjusted light mode accent to `#0369a1` (5.67:1 contrast on page, 5.93:1 on button labels).
+- Added `test:contrast` to `package.json` ensuring 14/14 token pairs maintain >= 4.5:1 contrast in CI.
+
+### Commands executed
+- `node tests/verify-contrast.js`
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: All 5 test suites passed (38/38 legacy routes, 7/7 assets, 80 HTML docs / 1475 links, 72 edge assertions, 14/14 contrast pairs verified).
+
+### Route/content/source-path impact
+Added `tests/verify-contrast.js`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A3.2 typography standardization.
+
+### Exact next task
+Task A3.2 — Standardize typography system

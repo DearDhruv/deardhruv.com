@@ -5,11 +5,12 @@
   "description": "DearDhruv.com - Personal portfolio & engineering blog of Dhruv Patel",
   "scripts": {
     "build": "hugo --gc --minify",
-    "test": "node scripts/verify-routes.js && node tests/verify-assets.js && node tests/verify-links.js && node tests/verify-edge-functions.js",
+    "test": "node scripts/verify-routes.js && node tests/verify-assets.js && node tests/verify-links.js && node tests/verify-edge-functions.js && node tests/verify-contrast.js",
     "test:routes": "node scripts/verify-routes.js",
     "test:assets": "node tests/verify-assets.js",
     "test:links": "node tests/verify-links.js",
     "test:edge": "node tests/verify-edge-functions.js",
+    "test:contrast": "node tests/verify-contrast.js",
     "new:post": "node scripts/new-post.js"
   }
 }
