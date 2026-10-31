@@ -2,6 +2,7 @@
 title = "Beyond the Model Series"
 description = "Building a Private AI Playground for Android & iOS - A 6-part engineering journey."
 date = "2026-10-21"
+layout = "series"
 +++
 
 A 6-part engineering series exploring what it really takes to build [AI Playground](https://github.com/DearDhruv/Model-Playground) - a private, 100% offline-first, on-device multimodal AI platform for Android and iOS.

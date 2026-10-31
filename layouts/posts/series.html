@@ -1,0 +1,54 @@
+{{ define "main" }}
+    <div class="content">
+        <main id="main" class="posts series-page" tabindex="-1">
+            <header class="series-header">
+                <div class="series-eyebrow">
+                    <span class="badge badge-accent">6-Part Engineering Series</span>
+                    <span class="series-status-pill">Complete</span>
+                </div>
+                <h1 class="page-title series-main-title">{{ .Title }}</h1>
+                <p class="section-lead series-lead">{{ .Params.Description }}</p>
+                <div class="series-meta">
+                    <span class="series-author">By <strong>Dhruv Patel</strong> &middot; Lead Android Engineer</span>
+                    <a href="https://github.com/DearDhruv/Model-Playground" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        <span>GitHub Repository</span>
+                    </a>
+                </div>
+            </header>
+
+            <section class="series-roadmap-section" aria-label="Series Reading Roadmap">
+                <h2 class="archive-heading">Reading Order & Technical Journey</h2>
+                <div class="series-timeline-list">
+                    {{ range $index, $page := sort .RegularPages "Date" "asc" }}
+                    <article class="series-timeline-card">
+                        <div class="timeline-step-badge">Part {{ add $index 1 }}</div>
+                        <div class="timeline-card-body">
+                            <div class="timeline-card-header">
+                                <h3 class="timeline-card-title">
+                                    <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+                                </h3>
+                                <div class="timeline-card-meta">
+                                    <span class="timeline-reading-time">{{ $page.ReadingTime }} min read</span>
+                                    <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ time.Format "Jan 2, 2006" $page.Date }}</time>
+                                </div>
+                            </div>
+                            <p class="timeline-card-desc">{{ $page.Description }}</p>
+                            {{ with $page.Params.tags }}
+                            <div class="timeline-card-tags">
+                                {{ range . }}
+                                    <span class="badge badge-subtle">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            <div class="timeline-card-action">
+                                <a href="{{ $page.RelPermalink }}" class="btn btn-outline btn-sm">Read Part {{ add $index 1 }} &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                    {{ end }}
+                </div>
+            </section>
+        </main>
+    </div>
+{{ end }}
