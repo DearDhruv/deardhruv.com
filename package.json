@@ -19,6 +19,7 @@
     "test:dist": "PUBLIC_DIR=dist node scripts/verify-routes.js && PUBLIC_DIR=dist node tests/verify-assets.js && PUBLIC_DIR=dist node tests/verify-links.js && PUBLIC_DIR=dist node tests/verify-edge-functions.js",
     "test:regression": "node tests/verify-complete-regression.js",
     "test:visual": "node tests/verify-visual-regression.js",
+    "test:perf": "node tests/verify-performance-budgets.js",
     "new:post": "node scripts/new-post.js"
   },
   "devDependencies": {

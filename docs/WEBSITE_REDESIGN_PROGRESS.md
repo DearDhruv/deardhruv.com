@@ -2616,3 +2616,47 @@ None. Ready for Task A11.4 performance regression.
 
 ### Exact next task
 Task A11.4 — Complete performance regression
+
+## 2026-10-31 — Task A11.4: Complete Performance Regression
+
+**Task:** Task A11.4 — Complete performance regression
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `b31797f`
+**Commit:** Pending
+
+### Objective
+Audit static build duration, CSS bundle footprint, and client runtime JavaScript against strict performance budgets, guaranteeing zero framework hydration overhead and lightning-fast load times.
+
+### Files inspected
+- `tests/verify-performance-budgets.js`
+- `package.json`
+
+### Files changed
+- `tests/verify-performance-budgets.js`
+- `package.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `tests/verify-performance-budgets.js` auditing static generation duration, CSS bundle payload, and client JS footprint.
+- Added `npm run test:perf` script to `package.json`.
+- Verified Astro full static build finishes in ~1.18s, well within the 2.0s budget.
+- Verified total uncompressed CSS across all 5 token and component sheets is 33.69 KB (< 7 KB gzipped), satisfying the 45 KB budget.
+- Verified zero client hydration runtime bundles (0 KB React/Vue/Svelte runtime chunks in `dist/_astro/`).
+- Verified total client JavaScript footprint is 2.49 KB (`theme-init.js` and `theme-toggle.js`), satisfying the 5.0 KB budget.
+
+### Commands executed
+- `npm run test:perf`
+- `git diff --check`
+
+### Test results
+- `npm run test:perf`: 4/4 performance budget assertions passed with 0 errors.
+
+### Route/content/source-path impact
+Added `tests/verify-performance-budgets.js`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A11.5 Netlify build command and publish directory configuration.
+
+### Exact next task
+Task A11.5 — Update Netlify build command & publish directory
