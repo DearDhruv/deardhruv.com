@@ -469,3 +469,29 @@
     color: var(--color-accent);
   }
 }
+
+/* Micro-Interaction Transitions & Hardware Acceleration */
+details summary {
+  cursor: pointer;
+  transition: color var(--motion-duration-fast) var(--motion-ease);
+}
+
+details[open] summary {
+  margin-bottom: var(--space-3);
+}
+
+.btn,
+.ds-btn,
+.card-interactive,
+.tag {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .ds-btn,
+  .card-interactive,
+  .tag {
+    will-change: auto;
+  }
+}

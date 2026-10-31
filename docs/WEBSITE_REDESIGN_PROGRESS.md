@@ -1080,7 +1080,7 @@ Task A5.4 — Reduced-motion and focus verification
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `a1f8028`
-**Commit:** Pending
+**Commit:** `e20028b`
 
 ### Objective
 Enforce strict compliance with `prefers-reduced-motion: reduce` (disabling all smooth scroll, transition durations, and keyframe animations), verify unclipped focus outline indicators under WCAG 2.2 AA (SC 2.4.7 and SC 2.4.11), and add automated test harness `tests/verify-a11y-tokens.js`.
@@ -1116,3 +1116,46 @@ None. Ready to proceed to Phase A6 Animation & Micro-Interactions.
 
 ### Exact next task
 Task A6.1 — Standardize motion tokens and micro-interactions
+
+## 2026-10-31 — Task A6.1: Standardize Motion Tokens and Micro-Interactions
+
+**Task:** Task A6.1 — Standardize motion tokens and micro-interactions
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `e20028b`
+**Commit:** Pending
+
+### Objective
+Standardize motion tokens, curves, and micro-interactions across all interactive components (`.btn`, `.card-interactive`, `.tag`, `.link-external`, `<details><summary>`), adding hardware-accelerated transform hints (`will-change: transform`) and conditional reduced-motion resets.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 8.1
+- `docs/DESIGN_AUDIT.md` (MOT-01, MOT-02)
+- `assets/css/design-system.css`
+- `assets/css/components.css`
+
+### Files changed
+- `assets/css/components.css`
+- `static/css/components.css`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Unified motion tokens: `--motion-duration-fast: 140ms`, `--motion-duration-normal: 220ms`, `--motion-duration-slow: 320ms`, `--motion-ease: cubic-bezier(0.16, 1, 0.3, 1)`.
+- Added GPU compositing optimization via `will-change: transform` on interactive buttons, cards, and tags, resetting gracefully to `will-change: auto` when `prefers-reduced-motion: reduce` is active.
+- Added smooth interactive summary disclosure transitions.
+
+### Commands executed
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 6/6 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules).
+
+### Route/content/source-path impact
+Updated `/css/components.css`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A6.2 view transition evaluation and low-end CPU audit.
+
+### Exact next task
+Task A6.2 — View transition evaluation and device CPU audit
