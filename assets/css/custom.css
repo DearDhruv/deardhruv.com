@@ -284,21 +284,47 @@ body {
 }
 
 /* ============================================================
-   TYPOGRAPHY & ALIGNMENT
+   TYPOGRAPHY SYSTEM & FONT STACKS (ZERO EXTERNAL REQUESTS)
    ============================================================ */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --font-size-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.85rem);
+  --font-size-sm: clamp(0.85rem, 0.82rem + 0.18vw, 0.95rem);
+  --font-size-base: clamp(1rem, 0.96rem + 0.22vw, 1.12rem);
+  --font-size-md: clamp(1.12rem, 1.05rem + 0.35vw, 1.25rem);
+  --font-size-lg: clamp(1.28rem, 1.18rem + 0.5vw, 1.55rem);
+  --font-size-xl: clamp(1.65rem, 1.45rem + 1vw, 2.1rem);
+  --font-size-2xl: clamp(2.1rem, 1.8rem + 1.6vw, 2.85rem);
+  --font-size-3xl: clamp(2.5rem, 2rem + 2.5vw, 3.6rem);
+}
+
+html, body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono) !important;
+}
 
 .post-title,
 .posts > h1,
 .landing-hero-copy h3 {
+  font-family: var(--font-sans);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.08;
   color: var(--accent);
   margin-bottom: 1.5rem !important;
-  font-size: clamp(2rem, 5.2vw, 3.6rem);
+  font-size: var(--font-size-3xl);
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+
 
 .post-title a {
   text-decoration: none;

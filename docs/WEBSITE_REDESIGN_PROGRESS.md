@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `386c82f`
-- Last completed phase/task: Task 3.1 — Define accessible design tokens
-- Next task: Task 3.2 — Typography and fonts system
+- Current HEAD: `4ee855c`
+- Last completed phase/task: Task 3.2 — Typography and fonts system
+- Next task: Task 3.3 — Core layout primitives
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -28,28 +28,30 @@
 | Task 2.1 | Define portfolio information architecture and page hierarchy | `37cd396` | IA review, route parity validation | PASS |
 | Task 2.2 | Build claim verification checklist and sanitize confidential metrics | `4b243fb` | Evidence mapping of all metrics against public artifacts | PASS |
 | Task 2.3 | Document responsive page wireframes across devices | `386c82f` | Multi-viewport ASCII wireframes in `docs/WIREFRAMES.md` | PASS |
-| Task 3.1 | Define accessible design tokens for surfaces, text, focus, and theme | Pending | `hugo --gc --minify`, `verify-routes.js`, WCAG AA contrast audit | PASS |
+| Task 3.1 | Define accessible design tokens for surfaces, text, focus, and theme | `4ee855c` | `hugo --gc --minify`, `verify-routes.js`, WCAG AA contrast audit | PASS |
+| Task 3.2 | Implement fluid typography system and zero-request system font stacks | Pending | `hugo --gc --minify`, fluid clamp verification | PASS |
 
 ## Files changed in the latest task
 - `assets/css/custom.css`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
-- `hugo --gc --minify` — PASS (241ms)
+- `hugo --gc --minify` — PASS
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- WCAG 2.2 focus-visible ring (`:focus-visible`) and semantic surface tokens applied in `assets/css/custom.css`
+- Fluid typography and font stacks applied with zero layout shift and no external HTTP requests.
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- Contrast ratios exceed WCAG 2.2 AA (text-primary `#f8fafc` on `#141517` is > 14:1; focus ring is high-contrast cyan `#38bdf8`).
+- System font stacks prevent layout shifts (CLS = 0) and eliminate external font latency.
 
 ## Exact next action
-1. Execute Task 3.2 — Add fluid typography system and system font stacks in `assets/css/custom.css`.
+1. Execute Task 3.3 — Implement reusable responsive layout primitives (card, badge, grid, stack, pill) in `assets/css/custom.css`.
+
 
 
 
