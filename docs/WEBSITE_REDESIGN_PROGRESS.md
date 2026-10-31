@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `f457d0f`
+- Current HEAD: `6875c8d`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A0.1 — Update project handoff
-- Next task: Task A0.2 — Capture repository and production baseline
+- Last completed phase/task: Task A0.2 — Capture repository and production baseline
+- Next task: Task A0.3 — Generate complete legacy route manifest
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -102,7 +102,7 @@
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `f457d0f`
-**Commit:** Pending
+**Commit:** `6875c8d`
 
 ### Objective
 Incorporate `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` as binding requirement. Formally transition architecture decision: Hugo is now baseline/control reference, and Astro is preferred static candidate for controlled spike and migration.
@@ -136,3 +136,45 @@ None. Ready to capture pre-migration build baseline.
 ### Exact next task
 Task A0.2 — Capture repository and production baseline
 
+## 2026-10-31 — Task A0.2: Capture Repository and Production Baseline
+
+**Task:** Task A0.2 — Capture repository and production baseline
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `6875c8d`
+**Commit:** Pending
+
+### Objective
+Capture exact repository, toolchain, Netlify build configuration, and generated static output baseline prior to design-system modifications and framework spike.
+
+### Files inspected
+- `package.json`
+- `netlify.toml`
+- `scripts/verify-routes.js`
+- `docs/BASELINE_PERFORMANCE_AND_VISUALS.md`
+
+### Files changed
+- `docs/BASELINE_PERFORMANCE_AND_VISUALS.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Recorded detailed environment specs (Node v26.13.0, npm 11.20.0, Hugo v0.169.0, Submodule commit `1a0a16f`).
+- Recorded Netlify configuration invariants: publish `public`, command `hugo --gc --minify`, `/feed.json` 200 rewrite to `/index.json`, edge function `markdown-negotiation` on `/*`.
+- Verified build statistics: 106 pages, 2 paginators, 573 static files, 28 aliases, 273 ms build time.
+
+### Commands executed
+- `hugo --gc --minify`
+- `git submodule status && node -v && npm -v && hugo version`
+- `npm test`
+
+### Test results
+- `npm test`: All 4 suites pass cleanly (38 routes, 7 assets, 79 HTML docs / 1460 links, 72 edge assertions).
+
+### Route/content/source-path impact
+None. All routes and source paths unaffected.
+
+### Known issues / decisions required
+None. Ready for Task A0.3 route manifest audit and lock.
+
+### Exact next task
+Task A0.3 — Generate complete legacy route manifest
