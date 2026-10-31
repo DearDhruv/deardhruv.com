@@ -1036,7 +1036,7 @@ Task A5.3 — Build page shell, main landmark, skip-link, and footer
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `9c191a3`
-**Commit:** Pending
+**Commit:** `a1f8028`
 
 ### Objective
 Standardize accessible landmark page shell architecture (`<a href="#main" class="skip-link">`, `<header role="banner">`, `<main id="main">`, `<footer class="site-footer">`) ensuring zero duplicate H1s, no nested `<main>` tags, and accessible keyboard focus navigation.
@@ -1073,3 +1073,46 @@ None. Ready for Task A5.4 reduced-motion and focus verification.
 
 ### Exact next task
 Task A5.4 — Reduced-motion and focus verification
+
+## 2026-10-31 — Task A5.4: Reduced-Motion and Focus Verification
+
+**Task:** Task A5.4 — Reduced-motion and focus verification
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `a1f8028`
+**Commit:** Pending
+
+### Objective
+Enforce strict compliance with `prefers-reduced-motion: reduce` (disabling all smooth scroll, transition durations, and keyframe animations), verify unclipped focus outline indicators under WCAG 2.2 AA (SC 2.4.7 and SC 2.4.11), and add automated test harness `tests/verify-a11y-tokens.js`.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 7.4
+- `docs/DESIGN_AUDIT.md` (MOT-01, MOT-02)
+- `assets/css/design-system.css`
+- `assets/css/components.css`
+
+### Files changed
+- `tests/verify-a11y-tokens.js`
+- `package.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Authored automated test suite `tests/verify-a11y-tokens.js` verifying 10 critical accessibility invariants: reduced-motion override presence, transition/animation neutralization, scroll-behavior neutralization, dark/light focus ring token existence, 2px outline offsets, button and nav toggle minimum touch targets (44x44px), and skip-link keyboard accessibility.
+- Integrated `test:a11y` into the default `npm test` pipeline, expanding test gates from 5 to 6 automated verification suites. Phase A5 is complete.
+
+### Commands executed
+- `node tests/verify-a11y-tokens.js`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 6/6 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules).
+
+### Route/content/source-path impact
+Added `tests/verify-a11y-tokens.js`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready to proceed to Phase A6 Animation & Micro-Interactions.
+
+### Exact next task
+Task A6.1 — Standardize motion tokens and micro-interactions
