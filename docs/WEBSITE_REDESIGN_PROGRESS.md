@@ -710,3 +710,48 @@ None. Ready to proceed to Phase A4 Component Foundation and State System.
 
 ### Exact next task
 Task A4.1 — Build core typography and content primitives
+
+## 2026-10-31 — Task A4.1: Build Core Typography and Content Primitives
+
+**Task:** Task A4.1 — Build core typography and content primitives
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `412a4e0`
+**Commit:** Pending
+
+### Objective
+Build standardized content primitives: persistent non-color underline links, responsive table containers with contained horizontal scrolling, callouts (info, warning, success), and list spacing into `assets/css/components.css` and `static/css/components.css`.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 6.1
+- `docs/DESIGN_AUDIT.md` (TYPO-01..05, COMP-01..05)
+- `static/design-preview/index.html`
+
+### Files changed
+- `assets/css/components.css`
+- `static/css/components.css`
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Added `.prose a, .content-link` with persistent underline (`text-underline-offset: 3px; text-decoration-thickness: 1.5px`), hover color transition within `(hover: hover) and (pointer: fine)`.
+- Added `.table-container` with `overflow-x: auto` and `-webkit-overflow-scrolling: touch`, bounded surface styling, and alternating/hover row states.
+- Created semantic callout boxes (`.callout-info`, `.callout-warning`, `.callout-success`) with 4px colored accent left borders and subtle alpha background tinting.
+- Standardized list spacing and accent-colored markers (`.prose li::marker`).
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 5/5 suites passed (38 routes, 7 assets, 80 HTML docs / 1478 links, 72 edge assertions, 14 contrast pairs).
+
+### Route/content/source-path impact
+Added `/css/components.css`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A4.2 buttons and links standardization.
+
+### Exact next task
+Task A4.2 — Standardize button and link components
