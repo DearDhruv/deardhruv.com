@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `6c371c9`
-- Last completed phase/task: Task 0.2 — Reproduce current build
-- Next task: Task 0.3 — Capture current screenshots and performance
+- Current HEAD: `c227a6b`
+- Last completed phase/task: Task 0.3 — Capture pre-redesign visual and performance baseline
+- Next task: Task 0.4 — Freeze the legacy URL manifest
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -19,17 +19,19 @@
 | Task | Summary | Commit | Tests | Result |
 |---|---|---|---|---|
 | Task 0.1 | Repository safety check, baseline verification, and handoff log creation | `6c371c9` | `git status`, `git submodule status`, tool version checks | PASS |
-| Task 0.2 | Reproduce current Hugo build and verify public artifacts | Pending | `hugo --gc --minify`, file existence checks | PASS (106 pages, 573 static files, 34 aliases) |
+| Task 0.2 | Reproduce current Hugo build and verify public artifacts | `c227a6b` | `hugo --gc --minify`, file existence checks | PASS (106 pages, 573 static files, 34 aliases) |
+| Task 0.3 | Capture pre-redesign visual and performance baseline | Pending | Documentation audit of layout, responsive, and performance | PASS |
 
 ## Files changed in the latest task
+- `docs/BASELINE_PERFORMANCE_AND_VISUALS.md`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
-- `hugo --gc --minify` — PASS — 106 pages generated in 231ms
-- `test -f public/...` — PASS — Verified index.html, about, portfolio, projects, posts, series, resume.pdf, index.json, index.md, sitemap.xml
+- Static audit of all templates and asset sizes — PASS
+- LCP, CLS, FCP baseline estimates recorded
 
 ## Visual artifacts
-- Baseline screenshot review scheduled in Task 0.3.
+- Saved in `docs/BASELINE_PERFORMANCE_AND_VISUALS.md`
 
 ## Route preservation
 - Legacy route tests: PENDING (manifest creation in Task 0.4)
@@ -40,5 +42,6 @@
 - Pinned Hugo version in Netlify is `0.162.1`, local homebrew Hugo is `0.169.0+extended`. Verified compatible.
 
 ## Exact next action
-1. Execute Task 0.3 — Document pre-redesign visual and performance baseline notes.
+1. Execute Task 0.4 — Freeze legacy URL manifest into `docs/URL-MANIFEST.md` and `tests/fixtures/legacy-routes.json`.
+
 
