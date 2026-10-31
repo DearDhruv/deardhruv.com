@@ -1916,3 +1916,45 @@ None. Ready for Batch 3 (Article 06).
 
 ### Exact next task
 Task A8.9 (Batch 3) — Migrate Article 06
+
+## 2026-10-31 — Task A8.9: Migrate Article 06 (Batch 3)
+
+**Task:** Task A8.9 — Port remaining articles in small batches (Article 06)
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `f30960d`
+**Commit:** Pending
+
+### Objective
+Migrate the final series article, Part 6 ("Pushing Mobile Hardware to the Edge") to Astro, completing the entire 6-part Beyond the Model series migration with verified single-`<h1>` heading outlines, code block styling, and reading metrics.
+
+### Files inspected
+- `content/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge.md`
+
+### Files changed
+- `src/pages/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built Astro route for Part 6 using `ArticleLayout` with dynamic collection rendering.
+- Confirmed single `<h1>` on the generated page (`<h1 class="page-title">Part 6 - Pushing Mobile Hardware to the Edge</h1>`).
+- All 6 series articles are now fully ported to Astro with 0 KB runtime client JS.
+- Compiled static build via `npx astro build` (15 static pages in 831ms).
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added Article 06 in Astro. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.10 porting legal and policy pages.
+
+### Exact next task
+Task A8.10 — Port legal pages
