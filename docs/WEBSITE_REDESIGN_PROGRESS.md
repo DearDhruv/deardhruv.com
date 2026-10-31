@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `6991aff`
-- Last completed phase/task: Task 0.1 — Repository safety check
-- Next task: Task 0.2 — Reproduce current build
+- Current HEAD: `6c371c9`
+- Last completed phase/task: Task 0.2 — Reproduce current build
+- Next task: Task 0.3 — Capture current screenshots and performance
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -18,16 +18,15 @@
 ## Completed tasks
 | Task | Summary | Commit | Tests | Result |
 |---|---|---|---|---|
-| Task 0.1 | Repository safety check, baseline verification, and handoff log creation | Pending | `git status`, `git submodule status`, tool version checks | PASS |
+| Task 0.1 | Repository safety check, baseline verification, and handoff log creation | `6c371c9` | `git status`, `git submodule status`, tool version checks | PASS |
+| Task 0.2 | Reproduce current Hugo build and verify public artifacts | Pending | `hugo --gc --minify`, file existence checks | PASS (106 pages, 573 static files, 34 aliases) |
 
 ## Files changed in the latest task
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
-- `plans/DEARDHRUV_WEBSITE_REDESIGN_GEMINI_EXECUTION_PLAN.md`
 
 ## Tests executed
-- `git status` — PASS — Working tree verified on `feature/portfolio`
-- `git submodule status` — PASS — Submodule intact at `1a0a16f`
-- `hugo version && node -v && npm -v && git --version` — PASS — Verified local toolchains
+- `hugo --gc --minify` — PASS — 106 pages generated in 231ms
+- `test -f public/...` — PASS — Verified index.html, about, portfolio, projects, posts, series, resume.pdf, index.json, index.md, sitemap.xml
 
 ## Visual artifacts
 - Baseline screenshot review scheduled in Task 0.3.
@@ -41,4 +40,5 @@
 - Pinned Hugo version in Netlify is `0.162.1`, local homebrew Hugo is `0.169.0+extended`. Verified compatible.
 
 ## Exact next action
-1. Execute Task 0.2 — Run `hugo --gc --minify`, verify output in `public/` and log build stats.
+1. Execute Task 0.3 — Document pre-redesign visual and performance baseline notes.
+
