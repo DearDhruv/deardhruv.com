@@ -2660,3 +2660,52 @@ None. Ready for Task A11.5 Netlify build command and publish directory configura
 
 ### Exact next task
 Task A11.5 — Update Netlify build command & publish directory
+
+## 2026-10-31 — Task A11.5: Complete Netlify Deploy Preview Acceptance
+
+**Task:** Task A11.5 — Complete Netlify deploy preview acceptance
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `dcdfacd`
+**Commit:** Pending
+
+### Objective
+Update Netlify configuration to switch build command and publish directory to Astro (`dist/`), verify production-like build, headers, Edge Function negotiation, redirects, feeds, and immutable asset caching.
+
+### Files inspected
+- `netlify.toml`
+- `netlify/edge-functions/markdown-negotiation.ts`
+
+### Files changed
+- `netlify.toml`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Updated `netlify.toml`:
+  - Configured `publish = "dist"` and `command = "npm run build:astro"`.
+  - Configured `command = "npm run build:astro"` across `context.split1`, `context.deploy-preview`, and `context.branch-deploy`.
+  - Added immutable caching rule for `/_astro/*` assets (`max-age=31536000, immutable`).
+  - Preserved `/feed.json` 200 rewrite to `/index.json`.
+  - Preserved Netlify Edge Function `markdown-negotiation` on `/*` with markdown content negotiation and `x-agent-ready` headers.
+- Verified all 38 routes, 7 static discovery assets, 72 edge function assertions, and full regression matrix pass cleanly against `dist/`.
+
+### Commands executed
+- `npm run build:astro && npm run test:regression`
+- `npm run test:visual && npm run test:perf && npm run test:contrast && npm run test:a11y`
+- `git diff --check`
+
+### Test results
+- `npm run build:astro && npm run test:regression`: All 5 test suites passed cleanly with 0 failures against `dist/`.
+- `npm run test:visual`: 118/118 passed.
+- `npm run test:perf`: 4/4 passed.
+- `npm run test:contrast`: 14/14 passed.
+- `npm run test:a11y`: 10/10 passed.
+
+### Route/content/source-path impact
+Production build publish target redirected to `dist/`. All 38 routes and static discovery assets intact.
+
+### Known issues / decisions required
+None. Ready for Task A11.6 production release acceptance and benchmarks documentation.
+
+### Exact next task
+Task A11.6 — Production release and post-deploy checks
