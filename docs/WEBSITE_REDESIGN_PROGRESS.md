@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `4ee855c`
-- Last completed phase/task: Task 3.2 — Typography and fonts system
-- Next task: Task 3.3 — Core layout primitives
+- Current HEAD: `19a2ed7`
+- Last completed phase/task: Task 3.3 — Core layout primitives
+- Next task: Task 4.1 — Base page template
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -29,7 +29,8 @@
 | Task 2.2 | Build claim verification checklist and sanitize confidential metrics | `4b243fb` | Evidence mapping of all metrics against public artifacts | PASS |
 | Task 2.3 | Document responsive page wireframes across devices | `386c82f` | Multi-viewport ASCII wireframes in `docs/WIREFRAMES.md` | PASS |
 | Task 3.1 | Define accessible design tokens for surfaces, text, focus, and theme | `4ee855c` | `hugo --gc --minify`, `verify-routes.js`, WCAG AA contrast audit | PASS |
-| Task 3.2 | Implement fluid typography system and zero-request system font stacks | Pending | `hugo --gc --minify`, fluid clamp verification | PASS |
+| Task 3.2 | Implement fluid typography system and zero-request system font stacks | `19a2ed7` | `hugo --gc --minify`, fluid clamp verification | PASS |
+| Task 3.3 | Implement reusable responsive layout primitives (card, badge, grid, btn, skip-link) | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
 
 ## Files changed in the latest task
 - `assets/css/custom.css`
@@ -40,25 +41,15 @@
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- Fluid typography and font stacks applied with zero layout shift and no external HTTP requests.
+- Primitives added: `.skip-link`, `.site-section`, `.section-eyebrow`, `.feature-card`, `.badge`, `.btn`
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- System font stacks prevent layout shifts (CLS = 0) and eliminate external font latency.
+- Phase 3 complete. Clean, zero-framework, accessible design system established.
 
 ## Exact next action
-1. Execute Task 3.3 — Implement reusable responsive layout primitives (card, badge, grid, stack, pill) in `assets/css/custom.css`.
-
-
-
-
-
-
-
-
-
-
+1. Execute Phase 4, Task 4.1 — Create project-owned base layout `layouts/_default/baseof.html` with skip link, landmarks, and semantic shell.
 
