@@ -2103,3 +2103,46 @@ None. Ready for Task A8.13 reconciling Netlify Edge Function and response header
 
 ### Exact next task
 Task A8.13 — Reconcile Netlify Edge Function and headers
+
+## 2026-10-31 — Task A8.13: Reconcile Netlify Edge Function and Headers
+
+**Task:** Task A8.13 — Reconcile Netlify Edge Function and headers
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `5f0b057`
+**Commit:** Pending
+
+### Objective
+Reconcile and verify that Netlify edge configuration, markdown content negotiation, response headers, redirects, and security policies function identically across both Hugo control build and Astro static output.
+
+### Files inspected
+- `netlify.toml`
+- `netlify/edge-functions/markdown-negotiation.ts`
+- `tests/verify-edge-functions.js`
+
+### Files changed
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Audited `netlify.toml` headers against Astro static directory output: CSP, HSTS, X-Content-Type-Options, Vary: Accept, and RFC 9264 discovery Link headers match all paths.
+- Confirmed Netlify Edge Function `markdown-negotiation.ts` on `/*` properly rewrites markdown requests and sets `x-agent-ready: true` and `content-type: text/markdown; charset=utf-8`.
+- Confirmed `/feed.json` 200 rewrite to `/index.json` matches both legacy and Astro JSON Feed endpoints.
+- All 72 edge function assertions verified on `dist/`. Phase A8 exit criteria satisfied: all 38 routes and outputs function cleanly in Astro.
+
+### Commands executed
+- `npm run test:dist`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed.
+- `npm run test:dist`: 4/4 suites passed (38/38 legacy routes, 7/7 assets, 27 HTML docs / 627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Zero regressions. 100% parity verified between control and Astro build targets.
+
+### Known issues / decisions required
+Phase A8 is COMPLETE. Ready to begin Phase A9 page-by-page visual refinement.
+
+### Exact next task
+Task A9.1 — Refine homepage visual hierarchy
