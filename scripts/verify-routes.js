@@ -7,7 +7,7 @@ const fs = require("fs");
 const path = require("path");
 
 const FIXTURES_FILE = path.join(__dirname, "../tests/fixtures/legacy-routes.json");
-const PUBLIC_DIR = path.join(__dirname, "../public");
+const PUBLIC_DIR = process.env.PUBLIC_DIR ? path.resolve(process.env.PUBLIC_DIR) : path.join(__dirname, "../public");
 const NETLIFY_CONFIG = path.join(__dirname, "../netlify.toml");
 
 if (!fs.existsSync(FIXTURES_FILE)) {

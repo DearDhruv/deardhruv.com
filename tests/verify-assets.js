@@ -8,7 +8,7 @@ const path = require('path');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const STATIC_DIR = path.join(ROOT_DIR, 'static');
-const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
+const PUBLIC_DIR = process.env.PUBLIC_DIR ? path.resolve(process.env.PUBLIC_DIR) : path.join(ROOT_DIR, 'public');
 
 const checks = [
   {

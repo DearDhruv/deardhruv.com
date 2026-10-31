@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const PUBLIC_DIR = path.join(__dirname, '../public');
+const PUBLIC_DIR = process.env.PUBLIC_DIR ? path.resolve(process.env.PUBLIC_DIR) : path.join(__dirname, '../public');
 
 if (!fs.existsSync(PUBLIC_DIR)) {
   console.error("❌ public directory missing. Run 'hugo --gc --minify' first.");

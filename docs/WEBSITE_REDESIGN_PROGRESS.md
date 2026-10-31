@@ -2050,3 +2050,56 @@ None. Ready for Task A8.12 rebuilding feed, JSON, and Markdown endpoints.
 
 ### Exact next task
 Task A8.12 — Rebuild feed/JSON/Markdown outputs
+
+## 2026-10-31 — Task A8.12: Rebuild Feed, JSON, and Markdown Endpoints
+
+**Task:** Task A8.12 — Rebuild feed/JSON/Markdown outputs
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `57e7af6`
+**Commit:** Pending
+
+### Objective
+Rebuild `/index.json` (JSON Feed format), `/index.md` (root markdown mirror), and all page markdown endpoints in Astro, ensuring 100% parity with legacy feeds and machine discovery contracts.
+
+### Files inspected
+- `public/index.json`
+- `public/index.md`
+- `netlify/edge-functions/markdown-negotiation.ts`
+- `tests/fixtures/legacy-routes.json`
+
+### Files changed
+- `src/pages/index.json.ts`
+- `src/pages/index.md.ts`
+- `astro.config.mjs`
+- `scripts/verify-routes.js`
+- `tests/verify-assets.js`
+- `tests/verify-links.js`
+- `package.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Implemented `src/pages/index.json.ts` generating valid JSON Feed v1.1 format with sorted chronological articles, metadata, tags, and absolute URLs.
+- Implemented `src/pages/index.md.ts` generating root markdown overview with article references for LLM discovery.
+- Added `markdownOutputsIntegration` in `astro.config.mjs` using `astro:build:done` hook to generate corresponding `index.md` files for all content routes in `dist/`.
+- Updated test runners to support `PUBLIC_DIR` environment override, and added `"test:dist"` script to `package.json`.
+- Verified that all 38 routes, 7 assets, 27 HTML docs (627 links), and 72 edge assertions pass with 0 errors against `dist/`.
+
+### Commands executed
+- `npm run build:astro`
+- `npm run test:dist`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 test suites passed against control build.
+- `npm run test:dist`: 4/4 test suites passed against Astro `dist/` build (38/38 legacy routes, 7/7 assets, 27 HTML docs/627 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+Ported `/index.json` and `/index.md`, plus markdown outputs. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.13 reconciling Netlify Edge Function and response headers.
+
+### Exact next task
+Task A8.13 — Reconcile Netlify Edge Function and headers
