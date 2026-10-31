@@ -1593,3 +1593,50 @@ None. Ready for Task A8.4 porting homepage to Astro.
 
 ### Exact next task
 Task A8.4 — Port home page
+
+## 2026-10-31 — Task A8.4: Migrate Homepage to Astro
+
+**Task:** Task A8.4 — Port home page
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `7f8e43c`
+**Commit:** Pending
+
+### Objective
+Migrate the homepage (`/`) to `src/pages/index.astro` utilizing the Precision Technical Editorial design system tokens, single semantic `<h1>` tag, complete content parity from Hugo control (hero portrait, engineering domains, flagship project spotlights, series cards, and collaboration CTAs), and 0 KB client runtime JavaScript.
+
+### Files inspected
+- `layouts/index.html`
+- `layouts/partials/hero.html`
+- `astro-spike/src/pages/index.astro`
+
+### Files changed
+- `src/pages/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Reconstructed the homepage in `src/pages/index.astro` with:
+  - Hero card: portrait image (180x180, eager loading, async decoding), single `<h1>` ("Dhruv Patel"), role badge, subtitle, and 4 primary/secondary CTAs.
+  - Section 1 (Core Capabilities): 2x2 grid of engineering domains (Android architecture, KMP, On-Device AI, Commerce/Hardware).
+  - Section 2 (Selected Systems): Interactive cards for AI Playground and VelociHue with live store/repo links, technical chips, and full portfolio link.
+  - Section 3 (Engineering Series): Spotlight cards for 3 representative series articles and series landing page link.
+  - Section 4 (Connect & Collaborate): Contact card with email, LinkedIn, GitHub, and Résumé PDF download.
+- Compiled static build via `npx astro build` in 460ms into `dist/index.html`.
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added `src/pages/index.astro` with complete content parity. All 38 legacy routes remain 100% intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.5 porting About page and aliases.
+
+### Exact next task
+Task A8.5 — Port About page and aliases

@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Dhruv Patel - Lead Android & Multiplatform Engineer"
+  description="Lead Android & Multiplatform Engineer with 14+ years crafting high-performance native architectures, distributed KMP systems, and privacy-first on-device AI runtimes."
+>
+  <div class="layout-container-wide" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
+    <!-- HERO SECTION -->
+    <section class="card" style="padding: var(--space-8); margin-bottom: var(--space-12); display: flex; flex-direction: column; md:flex-row; gap: var(--space-8); align-items: center;">
+      <div style="display: flex; flex-direction: column; sm:flex-row; gap: var(--space-8); align-items: center; width: 100%;">
+        <img
+          src="/images/pro_pic_small.jpg"
+          alt="Dhruv Patel"
+          width="180"
+          height="180"
+          loading="eager"
+          decoding="async"
+          style="border-radius: var(--radius-full); border: 2px solid var(--color-border-subtle); object-fit: cover; flex-shrink: 0;"
+        />
+        <div style="display: flex; flex-direction: column; gap: var(--space-3); flex: 1;">
+          <div style="display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap;">
+            <span class="badge">Lead Android & Multiplatform Engineer</span>
+            <span class="chip">14+ Years Exp</span>
+          </div>
+          <h1 class="page-title" style="margin: 0;">Dhruv Patel</h1>
+          <p style="font-family: var(--font-mono); font-size: var(--font-small); color: var(--color-accent); margin: 0;">
+            Android Architect &middot; Kotlin Multiplatform &middot; On-Device AI
+          </p>
+          <p class="page-lead" style="margin: 0; font-size: 1.125rem;">
+            Lead Android & Multiplatform Engineer crafting high-performance native architectures, distributed KMP systems, and privacy-first on-device AI runtimes.
+          </p>
+          <div class="layout-cluster" style="margin-top: var(--space-4);">
+            <a href="/portfolio/" class="btn btn-primary">Explore Portfolio</a>
+            <a href="/projects/" class="btn btn-secondary">Featured Projects</a>
+            <a href="/posts/ai_playground_series/" class="btn btn-secondary">AI Engineering Series</a>
+            <a href="/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Résumé (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: CORE CAPABILITIES -->
+    <section style="margin-bottom: var(--space-16);">
+      <div style="margin-bottom: var(--space-6);">
+        <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
+          Engineering Domains
+        </div>
+        <h2 style="font-size: var(--font-h2); margin: 0;">Specialization & Technical Focus</h2>
+        <p style="color: var(--color-text-secondary); margin-top: var(--space-2);">
+          Deep expertise across native mobile systems, cross-platform runtimes, and low-level edge compute.
+        </p>
+      </div>
+
+      <div class="layout-grid-2">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+            <h3 style="font-size: var(--font-h3); margin: 0;">Android & Native Architecture</h3>
+            <span class="badge">14+ Years</span>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
+            Production Clean Architecture, unidirectional data flow (MVI/MVVM), Jetpack Compose, modular multi-module codebases, memory profiling, and battery guardrails.
+          </p>
+          <div class="layout-cluster">
+            <span class="chip">Kotlin</span>
+            <span class="chip">Jetpack Compose</span>
+            <span class="chip">Coroutines/Flow</span>
+            <span class="chip">NDK / C++20</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+            <h3 style="font-size: var(--font-h3); margin: 0;">Kotlin Multiplatform (KMP/CMP)</h3>
+            <span class="badge">Production</span>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
+            Cross-platform architecture sharing deterministic game loops, MVI state stores, and offline-first persistence across Android, iOS (SwiftUI host), and Android TV.
+          </p>
+          <div class="layout-cluster">
+            <span class="chip">Compose Multiplatform</span>
+            <span class="chip">SQLDelight</span>
+            <span class="chip">Cloud Firestore</span>
+            <span class="chip">Swift Interop</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+            <h3 style="font-size: var(--font-h3); margin: 0;">On-Device AI & Edge Compute</h3>
+            <span class="badge">Offline-First</span>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
+            Pioneered local LLM inference engines (llama.cpp, LiteRT, Apple MLX) on mobile silicon with Speculative Turbo decoding, diffusion studios, and defensive driver crash isolation.
+          </p>
+          <div class="layout-cluster">
+            <span class="chip">llama.cpp</span>
+            <span class="chip">Google LiteRT</span>
+            <span class="chip">Apple MLX</span>
+            <span class="chip">Vulkan / Metal</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+            <h3 style="font-size: var(--font-h3); margin: 0;">Commerce & Hardware Integration</h3>
+            <span class="badge">Enterprise</span>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
+            Architected high-throughput digital commerce flows, secure payment terminal interfaces, and resilient hardware abstraction layers across 27+ POS peripherals.
+          </p>
+          <div class="layout-cluster">
+            <span class="chip">POS Peripherals</span>
+            <span class="chip">Payment IPC</span>
+            <span class="chip">HAL Bridges</span>
+            <span class="chip">Zero Cloud Leak</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SELECTED WORK -->
+    <section style="margin-bottom: var(--space-16);">
+      <div style="margin-bottom: var(--space-6);">
+        <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
+          Featured Work
+        </div>
+        <h2 style="font-size: var(--font-h2); margin: 0;">Selected Production Systems</h2>
+        <p style="color: var(--color-text-secondary); margin-top: var(--space-2);">
+          Real-world applications and native libraries engineered for performance, resilience, and privacy.
+        </p>
+      </div>
+
+      <div class="layout-grid-2">
+        <!-- AI Playground -->
+        <article class="card card-interactive">
+          <div style="margin-bottom: var(--space-3);">
+            <span class="badge" style="margin-bottom: var(--space-2);">Flagship Product &middot; On-Device AI</span>
+            <h3 style="font-size: var(--font-h3); margin: var(--space-2) 0 0 0;">AI Playground</h3>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
+            An offline-first, on-device multimodal AI workstation for Android and iOS that turns mobile devices into self-contained inference engines. Features dual-model Speculative Turbo decoding (2x speedup), defensive <code>fork()</code> child process Vulkan crash sandbox with SIGKILL watchdog, and a zero-dependency KMP document engine supporting 25+ formats.
+          </p>
+          <div class="layout-cluster" style="margin-bottom: var(--space-6);">
+            <span class="chip">KMP</span>
+            <span class="chip">Compose MP</span>
+            <span class="chip">C++20 NDK</span>
+            <span class="chip">llama.cpp</span>
+            <span class="chip">Vulkan/Metal</span>
+          </div>
+          <div class="layout-cluster">
+            <a href="https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a href="https://github.com/DearDhruv/Model-Playground" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="/posts/ai_playground_series/" class="btn btn-secondary">Read Series</a>
+          </div>
+        </article>
+
+        <!-- VelociHue -->
+        <article class="card card-interactive">
+          <div style="margin-bottom: var(--space-3);">
+            <span class="badge" style="margin-bottom: var(--space-2);">Flagship Product &middot; Multiplatform Game</span>
+            <h3 style="font-size: var(--font-h3); margin: var(--space-2) 0 0 0;">VelociHue</h3>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
+            A fast-paced, high-framerate (60–120 FPS) arcade action game engineered in Kotlin Multiplatform shipping across Android, iOS, and Android TV. Features a pure-Kotlin deterministic physics loop, conflict-free Cloud Firestore schema v5 sync with 3-way union merge, 29-achievement progression engine, and instant Compose share card generation.
+          </p>
+          <div class="layout-cluster" style="margin-bottom: var(--space-6);">
+            <span class="chip">KMP</span>
+            <span class="chip">Compose MP</span>
+            <span class="chip">Cloud Firestore</span>
+            <span class="chip">Android TV</span>
+            <span class="chip">SDK 37</span>
+          </div>
+          <div class="layout-cluster">
+            <a href="https://play.google.com/store/apps/details?id=com.deardhruv.velocihue" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a href="/projects/" class="btn btn-secondary">Case Study</a>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top: var(--space-8); text-align: center;">
+        <a href="/portfolio/" class="btn btn-secondary">View Full Portfolio & Case Studies &rarr;</a>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TECHNICAL WRITING SPOTLIGHT -->
+    <section style="margin-bottom: var(--space-16);">
+      <div style="margin-bottom: var(--space-6);">
+        <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
+          Engineering Series
+        </div>
+        <h2 style="font-size: var(--font-h2); margin: 0;">Beyond the Model: AI Playground Deep Dive</h2>
+        <p style="color: var(--color-text-secondary); margin-top: var(--space-2);">
+          A comprehensive six-part architecture series documenting how to run local LLMs, image generation, and document processing directly on consumer phones.
+        </p>
+      </div>
+
+      <div class="layout-grid-3">
+        <div class="card card-interactive">
+          <div style="margin-bottom: var(--space-3);">
+            <h3 style="font-size: var(--font-h4); margin: 0;">
+              <a href="/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/" style="text-decoration: none; color: inherit;">
+                Part 1 &middot; Offline Local LLMs
+              </a>
+            </h3>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Architecting offline-first mobile inference, Speculative Turbo decoding with draft models, and VRAM memory admission controls.
+          </p>
+          <span class="badge">Architecture</span>
+        </div>
+
+        <div class="card card-interactive">
+          <div style="margin-bottom: var(--space-3);">
+            <h3 style="font-size: var(--font-h4); margin: 0;">
+              <a href="/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/" style="text-decoration: none; color: inherit;">
+                Part 3 &middot; Defensive Crash Isolation
+              </a>
+            </h3>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Isolating vendor Vulkan driver GPU crashes with a <code>fork()</code> child process sandbox, 3000ms watchdog loop, and SIGKILL fallback.
+          </p>
+          <span class="badge">NDK / C++20</span>
+        </div>
+
+        <div class="card card-interactive">
+          <div style="margin-bottom: var(--space-3);">
+            <h3 style="font-size: var(--font-h4); margin: 0;">
+              <a href="/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/" style="text-decoration: none; color: inherit;">
+                Part 4 &middot; On-Device Diffusion Studio
+              </a>
+            </h3>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Synthesizing 4-step photorealistic diffusion images on mobile GPUs using Google LiteRT and Bonsai Image Ternary 4B.
+          </p>
+          <span class="badge">Diffusion AI</span>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--space-8); text-align: center;">
+        <a href="/posts/ai_playground_series/" class="btn btn-secondary">Read All 6 Series Articles &rarr;</a>
+      </div>
+    </section>
+
+    <!-- SECTION 4: COLLABORATION & CONTACT -->
+    <section>
+      <div class="card" style="text-align: center; padding: var(--space-12) var(--space-6);">
+        <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
+          Connect & Collaborate
+        </div>
+        <h2 style="font-size: var(--font-h2); margin: var(--space-2) 0 var(--space-4) 0;">Let's Build Something Exceptional</h2>
+        <p style="color: var(--color-text-secondary); max-width: 60ch; margin: 0 auto var(--space-8) auto; line-height: 1.6;">
+          Open to discussions on native Android architecture, Kotlin Multiplatform systems, on-device AI integration, and technical speaking.
+        </p>
+
+        <div class="layout-cluster" style="justify-content: center;">
+          <a href="mailto:dhruv.time@gmail.com" class="btn btn-primary">Send Email</a>
+          <a href="https://www.linkedin.com/in/DearDhruv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/DearDhruv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download Résumé (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
