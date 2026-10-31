@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `aa0404e`
-- Last completed phase/task: Task 5.3 — Writing and closing CTA
-- Next task: Task 6.1 — About page template
+- Current HEAD: `7933de8`
+- Last completed phase/task: Task 6.3 — Improve speaking and résumé discovery
+- Next task: Task 7.1 — Portfolio overview
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -36,14 +36,14 @@
 | Task 4.3 | Add responsive footer with CC license, sitemap, and RSS links | `7d334eb` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 5.1 | Add engineering-focused hero with accessible CTA buttons | `516b51a` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 5.2 | Add selected work and capability sections on homepage | `aa0404e` | `hugo --gc --minify`, `verify-routes.js` | PASS |
-| Task 5.3 | Add writing highlights and contact CTA to homepage | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 5.3 | Add writing highlights and contact CTA to homepage | `7933de8` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 6.1 | Modernize profile page template and preserve all legacy aliases | Pending | `hugo --gc --minify`, `verify-routes.js` (/about-us/, /contact/, /about-hugo/) | PASS |
+| Task 6.2 | Add accessible experience timeline and competency clusters | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 6.3 | Improve speaking and résumé discovery actions | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
 
 ## Files changed in the latest task
-- `layouts/index.html`
+- `assets/css/custom.css`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
-
-
-
 
 ## Tests executed
 - `hugo --gc --minify` — PASS

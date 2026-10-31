@@ -1941,29 +1941,84 @@ canvas {
   transform: translateY(-2px);
 }
 
-/* Light Theme Overrides for Primitives */
-[data-theme="light"] .feature-card {
-  background: #ffffff;
-  border-color: #e2e8f0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+/* ============================================================
+   ABOUT & PROFILE ENHANCEMENTS (TIMELINE & COMPETENCIES)
+   ============================================================ */
+.about-timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin: 2.5rem 0;
+  border-left: 2px solid var(--border-subtle);
 }
-[data-theme="light"] .feature-card:hover {
+
+.about-timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.about-timeline-marker {
+  position: absolute;
+  left: -2.45rem;
+  top: 0.25rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 0 2px var(--accent-border);
+}
+
+.about-timeline-date {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.about-timeline-title {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-timeline-desc {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Connect / Collaboration Pills */
+.connect-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.connect-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary) !important;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  text-decoration: none !important;
+  transition: all var(--transition-speed) ease;
+}
+
+.connect-pill:hover {
   border-color: var(--accent);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  background: var(--accent-subtle);
+  transform: translateY(-2px);
 }
-[data-theme="light"] .badge {
-  background: #f1f5f9;
-  border-color: #e2e8f0;
-  color: #475569;
-}
-[data-theme="light"] .btn-secondary {
-  background: #f8fafc;
-  border-color: #e2e8f0;
-  color: #0f172a !important;
-}
-[data-theme="light"] .btn-secondary:hover {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-}
+
 
 
