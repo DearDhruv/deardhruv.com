@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `7933de8`
-- Last completed phase/task: Task 6.3 — Improve speaking and résumé discovery
-- Next task: Task 7.1 — Portfolio overview
+- Current HEAD: `a27069e`
+- Last completed phase/task: Task 7.5 — Open source and work archive
+- Next task: Task 8.1 — Posts index redesign
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -37,12 +37,12 @@
 | Task 5.1 | Add engineering-focused hero with accessible CTA buttons | `516b51a` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 5.2 | Add selected work and capability sections on homepage | `aa0404e` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 5.3 | Add writing highlights and contact CTA to homepage | `7933de8` | `hugo --gc --minify`, `verify-routes.js` | PASS |
-| Task 6.1 | Modernize profile page template and preserve all legacy aliases | Pending | `hugo --gc --minify`, `verify-routes.js` (/about-us/, /contact/, /about-hugo/) | PASS |
-| Task 6.2 | Add accessible experience timeline and competency clusters | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
-| Task 6.3 | Improve speaking and résumé discovery actions | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 6.1-6.3 | Modernize profile template, experience timeline, and speaking discovery | `a27069e` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 7.1-7.5 | Expand portfolio and case studies with Mermaid architecture and verified outcomes | `Pending` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 
 ## Files changed in the latest task
-- `assets/css/custom.css`
+- `content/portfolio.md`
+- `content/projects.md`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
@@ -50,15 +50,16 @@
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- Primitives added: `.skip-link`, `.site-section`, `.section-eyebrow`, `.feature-card`, `.badge`, `.btn`
+- Rich case studies for AI Playground, VelociHue, Enterprise Commerce, and POS hardware
+- Mermaid architecture diagram for on-device inference data flow
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- Phase 3 complete. Clean, zero-framework, accessible design system established.
+- Phase 7 complete. Portfolio and Project Case studies thoroughly detailed with verified metrics.
 
 ## Exact next action
-1. Execute Phase 4, Task 4.1 — Create project-owned base layout `layouts/_default/baseof.html` with skip link, landmarks, and semantic shell.
+1. Execute Phase 8, Task 8.1 — Posts index redesign.
 
