@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `9754cd9`
+- Current HEAD: `c1e0145`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A3.1 — Define semantic color and surface tokens
-- Next task: Task A3.2 — Standardize typography system
+- Last completed phase/task: Task A3.2 — Standardize typography system
+- Next task: Task A3.3 — Define responsive layout and surface tokens
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -546,7 +546,7 @@ Task A3.1 — Define semantic color and surface tokens
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `9754cd9`
-**Commit:** Pending
+**Commit:** `c1e0145`
 
 ### Objective
 Establish mathematical three-tier color tokens (primitives -> semantic -> component) across dark and light themes, implement an automated WCAG 2.2 AA contrast verification test (`tests/verify-contrast.js`), and integrate it into the global `npm test` gate.
@@ -584,3 +584,46 @@ None. Ready for Task A3.2 typography standardization.
 
 ### Exact next task
 Task A3.2 — Standardize typography system
+
+## 2026-10-31 — Task A3.2: Standardize Typography System
+
+**Task:** Task A3.2 — Standardize typography system
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `c1e0145`
+**Commit:** Pending
+
+### Objective
+Standardize the typography system into 16 distinct semantic text roles (`assets/css/typography.css`, `static/css/typography.css`) implementing fluid clamps, zero layout shift system font stacks (`system-ui` and tabular `ui-monospace`), and strict single-H1 hierarchy rules.
+
+### Files inspected
+- `docs/DESIGN_AUDIT.md`
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 5.4
+
+### Files changed
+- `assets/css/typography.css`
+- `static/css/typography.css`
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Standardized all 16 semantic typography roles: Display, H1 (single per page), H2, H3, H4, Lead, Body, Body-small, Metadata, Caption, Overline, Navigation, Button label, Inline code, Code block, and Blockquote.
+- Calibrated fluid clamp ranges: `--font-display` (2.5rem–4.25rem), `--font-h1` (2rem–3.125rem), `--font-h2` (1.5rem–2.25rem), `--font-lead` (1.0625rem–1.25rem), `--font-body` (1rem base).
+- Enforced inline code `vertical-align: baseline` to eliminate uneven paragraph line-spacing, and configured pre/code blocks with contained horizontal scrolling.
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: All 5 test suites passed (38/38 legacy routes, 7/7 assets, 80 HTML docs / 1476 links, 72 edge assertions, 14/14 contrast pairs verified).
+
+### Route/content/source-path impact
+Added `/css/typography.css`. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A3.3 responsive layout and surface tokens.
+
+### Exact next task
+Task A3.3 — Define responsive layout and surface tokens
