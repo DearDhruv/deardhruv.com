@@ -38,11 +38,17 @@
 | Task 5.2 | Add selected work and capability sections on homepage | `aa0404e` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 5.3 | Add writing highlights and contact CTA to homepage | `7933de8` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 | Task 6.1-6.3 | Modernize profile template, experience timeline, and speaking discovery | `a27069e` | `hugo --gc --minify`, `verify-routes.js` | PASS |
-| Task 7.1-7.5 | Expand portfolio and case studies with Mermaid architecture and verified outcomes | `Pending` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 7.1-7.5 | Expand portfolio and case studies with Mermaid architecture and verified outcomes | `ae57bda` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 8.1 | Redesign posts index with readable list/grid and featured series card | `b3091cb` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 8.2 | Modernize 6-part series landing page with roadmap and reading order | `46e6a81` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 8.3 | Add modern long-form article layout with 76ch measure and series nav | `86e04df` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 8.4 | Add accessible article utilities (table of contents, code-copy button) | `bfb85a4` | `hugo --gc --minify`, `verify-routes.js` | PASS |
 
 ## Files changed in the latest task
-- `content/portfolio.md`
-- `content/projects.md`
+- `layouts/posts/single.html`
+- `assets/js/code-copy.js`
+- `layouts/partials/javascript.html`
+- `assets/css/custom.css`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
@@ -50,16 +56,18 @@
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- Rich case studies for AI Playground, VelociHue, Enterprise Commerce, and POS hardware
-- Mermaid architecture diagram for on-device inference data flow
+- Featured 6-part series card on `/posts/`
+- Reading roadmap and part summaries on `/posts/ai_playground_series/`
+- Accessible copy-code button with live status feedback
+- Sequential next/previous series navigation in articles
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- Phase 7 complete. Portfolio and Project Case studies thoroughly detailed with verified metrics.
+- Phase 8 complete. All 6 articles render with optimal reading measure, breadcrumbs, sequential series navigation, and accessible copy code controls.
 
 ## Exact next action
-1. Execute Phase 8, Task 8.1 — Posts index redesign.
+1. Execute Phase 9, Task 9.1 — Legal page templates.
 
