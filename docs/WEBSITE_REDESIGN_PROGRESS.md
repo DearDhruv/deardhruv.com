@@ -2487,3 +2487,47 @@ Phase A10 is COMPLETE. Ready to begin Phase A11 Full Regression, Switch Netlify 
 
 ### Exact next task
 Task A11.1 — Complete route and content regression
+
+## 2026-10-31 — Task A11.1: Complete Route and Content Regression
+
+**Task:** Task A11.1 — Complete route and content regression
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `17946cd`
+**Commit:** Pending
+
+### Objective
+Execute complete automated regression gate verifying all 38 legacy routes, all 7 static discovery assets, all internal HTML links, all 72 edge function negotiation assertions, and all 28 content loader tests against Astro's generated `dist/` directory.
+
+### Files inspected
+- `tests/fixtures/legacy-routes.json`
+- `tests/verify-complete-regression.js`
+
+### Files changed
+- `tests/verify-complete-regression.js`
+- `package.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `tests/verify-complete-regression.js` uniting all verification suites into a deterministic end-to-end regression gate.
+- Added `npm run test:regression` script to `package.json`.
+- Verified 38/38 legacy routes (HTML, Aliases, Redirects, Feeds, XML, Markdown) pass against `dist/`.
+- Verified 7/7 static assets (`resume.pdf`, icons, llms.txt, API catalog, MCP descriptor) pass with matching byte signatures.
+- Verified 27 generated HTML documents and 633 internal links with 0 broken targets.
+- Verified 72/72 Netlify Edge Function rewrites and Markdown content negotiation targets exist on disk.
+
+### Commands executed
+- `npm run test:regression`
+- `git diff --check`
+
+### Test results
+- `npm run test:regression`: All 5 test suites passed cleanly with 0 failures against `dist/`.
+
+### Route/content/source-path impact
+Verified 100% parity across all 38 legacy routes and content files.
+
+### Known issues / decisions required
+None. Ready for Task A11.2 visual regression matrix.
+
+### Exact next task
+Task A11.2 — Complete visual regression matrix

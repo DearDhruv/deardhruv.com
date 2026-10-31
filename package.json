@@ -17,6 +17,7 @@
     "test:content": "node tests/verify-content-loader.js",
     "test:astro": "node tests/verify-astro-parity.js",
     "test:dist": "PUBLIC_DIR=dist node scripts/verify-routes.js && PUBLIC_DIR=dist node tests/verify-assets.js && PUBLIC_DIR=dist node tests/verify-links.js && PUBLIC_DIR=dist node tests/verify-edge-functions.js",
+    "test:regression": "node tests/verify-complete-regression.js",
     "new:post": "node scripts/new-post.js"
   },
   "devDependencies": {
