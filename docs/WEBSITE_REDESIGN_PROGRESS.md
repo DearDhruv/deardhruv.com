@@ -1,9 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `a27069e`
-- Last completed phase/task: Task 7.5 — Open source and work archive
-- Next task: Task 8.1 — Posts index redesign
+- Current HEAD: `f457d0f`
+- Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
+- Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
+- Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
+- Last completed phase/task: Task A0.1 — Update project handoff
+- Next task: Task A0.2 — Capture repository and production baseline
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -93,6 +96,43 @@
 - Decap CMS deferred in favor of zero-overhead Git-native authoring.
 - Upstream theme submodule `themes/hello-friend-ng` preserved completely unmodified at commit `1a0a16f`.
 
-## Exact next action
-1. Ready for owner deployment review and production merge.
+## 2026-10-31 — Task A0.1: Update Project Handoff
+
+**Task:** Task A0.1 — Update project handoff
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `f457d0f`
+**Commit:** Pending
+
+### Objective
+Incorporate `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` as binding requirement. Formally transition architecture decision: Hugo is now baseline/control reference, and Astro is preferred static candidate for controlled spike and migration.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
+- `plans/DEARDHRUV_WEBSITE_REDESIGN_GEMINI_EXECUTION_PLAN.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Files changed
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` (tracked)
+
+### Implementation details / design decisions
+- Established strict invariants: zero broken URLs (38 legacy routes), all content files preserved at current paths where feasible, Netlify static hosting maintained, Markdown content negotiation Edge Function preserved.
+- Hugo remains functional control; Astro migration conditioned on successful proof of concept and regression pass.
+
+### Commands executed
+- `npm test`
+- `git status`
+
+### Test results
+- `npm test`: 4/4 test suites passed (38/38 legacy routes, 7/7 assets, 79 HTML docs/1460 links, 72/72 edge assertions).
+
+### Route/content/source-path impact
+None. All routes and source paths unaffected.
+
+### Known issues / decisions required
+None. Ready to capture pre-migration build baseline.
+
+### Exact next task
+Task A0.2 — Capture repository and production baseline
 
