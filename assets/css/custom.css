@@ -1,16 +1,112 @@
 /* ============================================================
-   DESIGN TOKENS & RESPONSIVE CONFIG
+   DESIGN TOKENS & ACCESSIBILITY SYSTEM (WCAG 2.2 AA)
    ============================================================ */
 :root {
-  --accent: #90a4ae; /* Slate/Neutral */
-  --accent-rgb: 144, 164, 174;
-  --transition-speed: 0.25s;
+  /* Brand Accents */
+  --accent: #38bdf8; /* Crisp Cyan/Teal accent (high contrast AA/AAA) */
+  --accent-rgb: 56, 189, 248;
+  --accent-hover: #7dd3fc;
+  --accent-subtle: rgba(56, 189, 248, 0.12);
+  --accent-border: rgba(56, 189, 248, 0.3);
+
+  /* Status Colors */
+  --status-success: #10b981;
+  --status-warning: #f59e0b;
+  --status-error: #ef4444;
+  --status-info: #0ea5e9;
+
+  /* Surfaces (Dark Mode Default) */
+  --bg-primary: #141517;
+  --bg-secondary: #1a1c1e;
+  --bg-tertiary: #23262a;
+  --bg-card: rgba(255, 255, 255, 0.035);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --bg-glass: rgba(20, 21, 23, 0.92);
+
+  /* Text & Foreground */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --divider: rgba(255, 255, 255, 0.07);
+
+  /* Focus & Accessibility */
+  --focus-ring: #38bdf8;
+  --focus-ring-offset: 3px;
+  --focus-outline: 2px solid var(--focus-ring);
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* Motion & Speed */
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-speed: 0.22s;
+  --transition-fast: 0.15s var(--ease-standard);
+  --transition-normal: 0.25s var(--ease-standard);
 
   /* Layout Baseline */
-  --page-top-gap: clamp(2rem, 7vh, 5rem);
+  --page-top-gap: clamp(1.75rem, 5vh, 4rem);
   --content-max-width: 1080px;
-  --content-width: min(85%, var(--content-max-width));
+  --content-width: min(88%, var(--content-max-width));
+  --reading-measure: 72ch;
 }
+
+[data-theme="light"] {
+  --accent: #0284c7;
+  --accent-rgb: 2, 132, 199;
+  --accent-hover: #0369a1;
+  --accent-subtle: rgba(2, 132, 199, 0.1);
+  --accent-border: rgba(2, 132, 199, 0.28);
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.94);
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-inverse: #f8fafc;
+
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --divider: #e2e8f0;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Global Focus-Visible (WCAG 2.2 AA Baseline) */
+:focus-visible {
+  outline: var(--focus-outline) !important;
+  outline-offset: var(--focus-ring-offset) !important;
+}
+
 
 @media (min-width: 1600px) {
   :root {
