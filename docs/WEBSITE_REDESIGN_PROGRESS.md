@@ -1540,3 +1540,56 @@ None. Ready for Task A8.3 reading existing Markdown content without source-path 
 
 ### Exact next task
 Task A8.3 — Read existing Markdown without source-path changes
+
+## 2026-10-31 — Task A8.3: Read Existing Markdown Without Source-Path Changes
+
+**Task:** Task A8.3 — Read existing Markdown without source-path changes
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `505a2f2`
+**Commit:** Pending
+
+### Objective
+Configure Astro Content Collections (`src/content.config.ts`) using the Astro v5 Content Layer `glob()` loader to safely parse and validate all existing Markdown content in `content/` with zero source file relocations, renames, or frontmatter modifications. Implement `tests/verify-content-loader.js` and integrate it into the CI test gate.
+
+### Files inspected
+- `content/about.md`
+- `content/portfolio.md`
+- `content/projects.md`
+- `content/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone.md`
+- `content/other/ai-playground/privacy-policy-ai-playground-app.md`
+
+### Files changed
+- `src/content.config.ts`
+- `tests/verify-content-loader.js`
+- `package.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Configured three collections in `src/content.config.ts`:
+  - `posts`: glob loader targeting `./content/posts` with schema supporting title, date, description, tags, series, and author.
+  - `other`: glob loader targeting `./content/other` for policy and legal documentation.
+  - `pages`: glob loader targeting `./content/*.md` for top-level pages (`about.md`, `portfolio.md`, `projects.md`, `sitemap.md`).
+- Confirmed Astro's built-in Markdown processor parses TOML (`+++ ... +++`) frontmatter natively.
+- Created `tests/verify-content-loader.js` (28 assertions) verifying that all 22 Markdown files in `content/` parse with valid frontmatter.
+- Integrated `test:content` into root `npm test`.
+
+### Commands executed
+- `npx astro sync`
+- `node tests/verify-content-loader.js`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `test:content`: 28/28 passed (22/22 markdown files validated).
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Zero source files moved or modified. 100% legacy source preservation verified.
+
+### Known issues / decisions required
+None. Ready for Task A8.4 porting homepage to Astro.
+
+### Exact next task
+Task A8.4 — Port home page
