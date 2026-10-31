@@ -1441,3 +1441,53 @@ None. Ready to proceed to Phase A8 Astro Static Architecture Setup.
 
 ### Exact next task
 Task A8.1 — Configure Astro static architecture and project structure
+
+## 2026-10-31 — Task A8.1: Initialize Production Astro Architecture
+
+**Task:** Task A8.1 — Initialize production Astro structure
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `7b77cd5`
+**Commit:** Pending
+
+### Objective
+Initialize the production Astro architecture at root while preserving all Hugo build controls, content sources, and Netlify configurations. Pin dependencies (`astro@5.18.2`, `typescript@5.9.3`), establish root `astro.config.mjs` and `tsconfig.json`, and configure static output with directory format.
+
+### Files inspected
+- `package.json`
+- `astro-spike/astro.config.mjs`
+- `netlify.toml`
+- `.gitignore`
+
+### Files changed
+- `astro.config.mjs`
+- `tsconfig.json`
+- `package.json`
+- `package-lock.json`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Established root `astro.config.mjs` with `output: 'static'`, `trailingSlash: 'always'`, `build: { format: 'directory' }`, `publicDir: './static'`, and `outDir: './dist'`.
+- Configured `publicDir: './static'` so that Astro automatically packages all legacy discovery files and media without touching Hugo's `public/` folder.
+- Configured root `tsconfig.json` extending `astro/tsconfigs/strict`.
+- Pinned `astro` (5.18.2) and `typescript` (5.9.3) in root `package.json` with npm scripts `build:astro` and `dev:astro`.
+- Preserved existing CommonJS scripts and 100% of Hugo build commands (`hugo --gc --minify`).
+
+### Commands executed
+- `npm install --save-dev astro@5.18.2 typescript@5.9.3`
+- `npx astro --version`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 6/6 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added root Astro build configuration without modifying Hugo source paths. All 38 legacy routes remain 100% verified.
+
+### Known issues / decisions required
+None. Ready for Task A8.2 base layouts and tokenized design system.
+
+### Exact next task
+Task A8.2 — Implement static output and base layout

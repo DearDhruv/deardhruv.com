@@ -5,6 +5,8 @@
   "description": "DearDhruv.com - Personal portfolio & engineering blog of Dhruv Patel",
   "scripts": {
     "build": "hugo --gc --minify",
+    "build:astro": "astro build",
+    "dev:astro": "astro dev",
     "test": "node scripts/verify-routes.js && node tests/verify-assets.js && node tests/verify-links.js && node tests/verify-edge-functions.js && node tests/verify-contrast.js && node tests/verify-a11y-tokens.js",
     "test:routes": "node scripts/verify-routes.js",
     "test:assets": "node tests/verify-assets.js",
@@ -14,5 +16,9 @@
     "test:a11y": "node tests/verify-a11y-tokens.js",
     "test:astro": "node tests/verify-astro-parity.js",
     "new:post": "node scripts/new-post.js"
+  },
+  "devDependencies": {
+    "astro": "5.18.2",
+    "typescript": "5.9.3"
   }
 }
