@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `9d35ecb`
-- Last completed phase/task: Task 2.1 — Navigation and page hierarchy
-- Next task: Task 2.2 — Evidence and content audit
+- Current HEAD: `37cd396`
+- Last completed phase/task: Task 2.2 — Evidence and content audit
+- Next task: Task 2.3 — Page wireframes
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -25,10 +25,11 @@
 | Task 1.1 | Inspect source architecture and layout precedence | `cd0b85b` | Codebase audit of layouts, assets, and submodule | PASS |
 | Task 1.2 | Inventory all published Markdown content and metadata | `7de6eea` | Metadata extraction across all 22 Markdown files | PASS |
 | Task 1.3 | Map Netlify integrations, Edge Functions, and release risks | `9d35ecb` | Security headers, CSP, Edge Functions, discovery catalog audit | PASS |
-| Task 2.1 | Define portfolio information architecture and page hierarchy | Pending | IA review, route parity validation | PASS |
+| Task 2.1 | Define portfolio information architecture and page hierarchy | `37cd396` | IA review, route parity validation | PASS |
+| Task 2.2 | Build claim verification checklist and sanitize confidential metrics | Pending | Evidence mapping of all metrics against public artifacts | PASS |
 
 ## Files changed in the latest task
-- `docs/INFORMATION-ARCHITECTURE.md`
+- `docs/CLAIM-VERIFICATION.md`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 ## Tests executed
@@ -36,17 +37,18 @@
 - `node scripts/verify-routes.js` — PASS (38/38 legacy routes verified)
 
 ## Visual artifacts
-- IA specification in `docs/INFORMATION-ARCHITECTURE.md`
+- Claim audit in `docs/CLAIM-VERIFICATION.md`
 
 ## Route preservation
 - Legacy route tests: PASS (38/38 routes)
 - Route diff: none
 
 ## Open issues and owner decisions
-- Clear distinction established between `/portfolio/` (curated high-level impact) and `/projects/` (technical case studies).
+- Employer work sanitized to protect client confidentiality. Public open-source metrics independently verified.
 
 ## Exact next action
-1. Execute Task 2.2 — Build claim verification checklist in `docs/CLAIM-VERIFICATION.md`.
+1. Execute Task 2.3 — Document responsive page wireframes in `docs/WIREFRAMES.md`.
+
 
 
 
