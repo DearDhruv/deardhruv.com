@@ -899,7 +899,7 @@ Task A4.5 — Expand design-system style-guide preview page
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `0e51d60`
-**Commit:** Pending
+**Commit:** `0e5d74e`
 
 ### Objective
 Expand `static/design-preview/index.html` into a complete, interactive living style-guide demonstrating all typography scales, headings, buttons, links, cards, callouts, tables, dividers, code blocks, and interaction states in both light and dark themes with localStorage persistence.
@@ -936,3 +936,49 @@ None. Ready to proceed to Phase A5 Theme, Accessibility & Responsive Shell.
 
 ### Exact next task
 Task A5.1 — Implement zero-flash theme script and accessible toggle
+
+## 2026-10-31 — Task A5.1: Implement Zero-Flash Theme Script and Accessible Toggle
+
+**Task:** Task A5.1 — Implement zero-flash theme script and accessible toggle
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `0e5d74e`
+**Commit:** Pending
+
+### Objective
+Implement zero-flash synchronous theme initialization in `<head>` and accessible, in-place theme toggle engine eliminating disruptive page reloads (`window.location.reload()`) and maintaining seamless state synchronization with `aria-pressed`, `aria-label`, and OS color scheme listeners.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 7.1
+- `assets/js/main.js`
+- `layouts/partials/head.html`
+
+### Files changed
+- `assets/js/theme-init.js`
+- `static/js/theme-init.js`
+- `assets/js/theme-toggle.js`
+- `static/js/theme-toggle.js`
+- `assets/js/main.js`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Authored `assets/js/theme-init.js` (and static mirror) designed to run synchronously before CSS evaluation to completely eliminate flash of unstyled/light theme.
+- Authored `assets/js/theme-toggle.js` to manage dynamic in-place `data-theme` mutations, update `aria-pressed` ("true"/"false") and `aria-label` across all active toggles, and sync with `prefers-color-scheme` media query changes.
+- Eliminated legacy `window.location.reload()` anti-pattern in `assets/js/main.js`.
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 5/5 suites passed (38 routes, 7 assets, 80 HTML docs / 1479 links, 72 edge assertions, 14 contrast pairs).
+
+### Route/content/source-path impact
+Added `/js/theme-init.js` and `/js/theme-toggle.js`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A5.2 responsive navigation header.
+
+### Exact next task
+Task A5.2 — Build responsive navigation header
