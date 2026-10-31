@@ -1209,7 +1209,7 @@ Task A7.1 — Author framework decision analysis document
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `1da1d8c`
-**Commit:** Pending
+**Commit:** `6cd3d3c`
 
 ### Objective
 Formulate a rigorous, weighted decision analysis comparing Hugo (control/baseline) vs Astro v5 static site architecture across 8 core engineering dimensions in `docs/FRAMEWORK_DECISION.md`, defining explicit spike and go/no-go acceptance criteria.
@@ -1244,3 +1244,59 @@ None. Ready for Task A7.2 isolated Astro proof-of-concept spike.
 
 ### Exact next task
 Task A7.2 — Create isolated Astro proof-of-concept spike
+
+## 2026-10-31 — Task A7.2: Create Isolated Astro Proof-of-Concept Spike
+
+**Task:** Task A7.2 — Create isolated Astro proof-of-concept spike
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `6cd3d3c`
+**Commit:** Pending
+
+### Objective
+Construct an isolated, non-destructive Astro v5 static proof-of-concept spike in `astro-spike/`, rendering core routes (`/`, `/about/`, `/portfolio/`, `/projects/`, `/posts/`, `/sitemap/`) and machine endpoints (`/index.json`, `/index.md`) with 100% zero-JS delivery and identical layout tokens.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 9.2
+- `docs/FRAMEWORK_DECISION.md`
+- `package.json`
+
+### Files changed
+- `astro-spike/astro.config.mjs`
+- `astro-spike/package.json`
+- `astro-spike/package-lock.json`
+- `astro-spike/src/layouts/BaseLayout.astro`
+- `astro-spike/src/pages/index.astro`
+- `astro-spike/src/pages/about/index.astro`
+- `astro-spike/src/pages/portfolio/index.astro`
+- `astro-spike/src/pages/projects/index.astro`
+- `astro-spike/src/pages/posts/index.astro`
+- `astro-spike/src/pages/sitemap/index.astro`
+- `astro-spike/src/pages/index.json.ts`
+- `astro-spike/src/pages/index.md.ts`
+- `.gitignore`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built isolated Astro v5 project configured with `output: 'static'`, `trailingSlash: 'always'`, and directory-based routing.
+- Built reusable `BaseLayout.astro` incorporating the full tokenized stylesheet pipeline (`design-system.css`, `typography.css`, `layout.css`, `components.css`, `nav.css`), skip link, responsive header, and accessible footer.
+- Implemented TypeScript static endpoints for `/index.json` and `/index.md`.
+- Build completed in 369ms, generating pristine directory structure matching Hugo conventions with 0 KB runtime client JS.
+
+### Commands executed
+- `cd astro-spike && npx astro build`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- Astro build: 6 pages + 2 endpoints emitted in 369ms.
+- `npm test`: 6/6 suites passed (Hugo control unaffected).
+
+### Route/content/source-path impact
+Added `astro-spike/`. Hugo root build and existing 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A7.3 benchmark comparison against Hugo control.
+
+### Exact next task
+Task A7.3 — Benchmark build performance and output fidelity

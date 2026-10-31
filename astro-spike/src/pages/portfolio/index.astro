@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Portfolio" activeNav="portfolio">
+  <div class="ds-container" style="padding-block: var(--space-12);">
+    <h1 style="font-size: var(--font-h1); line-height: var(--line-height-heading); margin-bottom: var(--space-3);">Architectural Portfolio</h1>
+    <p style="font-size: var(--font-lead); color: var(--color-text-secondary); max-width: 70ch; margin-bottom: var(--space-8);">
+      Flagship engineering systems, high-scale infrastructure, and production deployments.
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+      <article class="card">
+        <span class="badge">Production Systems Architecture</span>
+        <h2 style="font-size: var(--font-h2); margin-block: var(--space-2);">Enterprise Point-of-Sale Hardware Ecosystem</h2>
+        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+          Architected the peripheral device framework operating thousands of registers across enterprise retail footprints. Implemented multi-interface USB/BLE communication bus with zero crash propagation to the main transaction interface.
+        </p>
+        <div style="display: flex; gap: var(--space-2); margin-top: var(--space-4); flex-wrap: wrap;">
+          <span class="badge badge-neutral">99.98% Hardware Uptime</span>
+          <span class="badge badge-neutral">NDK Watchdog</span>
+          <span class="badge badge-neutral">Sub-10ms Latency</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="badge">Local AI Engine</span>
+        <h2 style="font-size: var(--font-h2); margin-block: var(--space-2);">AI Playground: Private On-Device Intelligence Studio</h2>
+        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+          Zero-cloud mobile inference studio executing local quantized models with speculative decoding and isolated daemon crash recovery.
+        </p>
+        <div style="display: flex; gap: var(--space-2); margin-top: var(--space-4); flex-wrap: wrap;">
+          <span class="badge badge-neutral">23.8 tok/s</span>
+          <span class="badge badge-neutral">Zero Cloud Leak</span>
+          <span class="badge badge-neutral">Vulkan Shaders</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</BaseLayout>

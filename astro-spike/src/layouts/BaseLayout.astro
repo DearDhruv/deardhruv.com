@@ -1,0 +1,123 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const {
+  title,
+  description = "Dhruv Patel - Staff Systems & Mobile Architect. Designing private on-device AI and resilient mobile runtimes.",
+  activeNav = "home"
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <title>{title} :: Dhruv Patel</title>
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/nav.css">
+
+  <link rel="describedby" href="/llms.txt">
+  <link rel="mcp" href="/.well-known/mcp.json">
+  <link rel="api-catalog" href="/.well-known/api-catalog">
+  <link rel="service-doc" href="/auth.md">
+
+  <script is:inline>
+    (() => {
+      try {
+        const stored = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored || (systemDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="site-brand">Dhruv Patel</a>
+      <nav class="site-nav" id="site-navigation" aria-label="Main Navigation">
+        <ul class="site-nav-list">
+          <li><a href="/" class="site-nav-link" aria-current={currentPath === "/" ? "page" : undefined}>Home</a></li>
+          <li><a href="/about/" class="site-nav-link" aria-current={currentPath.startsWith("/about/") ? "page" : undefined}>About</a></li>
+          <li><a href="/portfolio/" class="site-nav-link" aria-current={currentPath.startsWith("/portfolio/") ? "page" : undefined}>Portfolio</a></li>
+          <li><a href="/projects/" class="site-nav-link" aria-current={currentPath.startsWith("/projects/") ? "page" : undefined}>Projects</a></li>
+          <li><a href="/posts/" class="site-nav-link" aria-current={currentPath.startsWith("/posts/") ? "page" : undefined}>Writing</a></li>
+          <li><a href="/sitemap/" class="site-nav-link" aria-current={currentPath.startsWith("/sitemap/") ? "page" : undefined}>Sitemap</a></li>
+        </ul>
+      </nav>
+      <div class="site-header-actions">
+        <button class="theme-toggle-btn theme-toggle" id="theme-toggle" aria-label="Toggle visual theme" type="button">Theme</button>
+        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>&copy; 2026 Dhruv Patel. Precision Technical Editorial System.</div>
+      <div style="display: flex; gap: var(--space-4);">
+        <a href="/sitemap/">Sitemap</a>
+        <a href="/resume.pdf">Résumé</a>
+        <a href="/index.json">JSON Feed</a>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (function() {
+      const btn = document.getElementById('theme-toggle');
+      function updateButton(theme) {
+        if (btn) btn.textContent = 'Theme: ' + (theme === 'dark' ? 'Dark' : 'Light');
+      }
+      const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      updateButton(savedTheme);
+
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme') || 'dark';
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (_) {}
+          updateButton(next);
+        });
+      }
+
+      const menuBtn = document.getElementById('menu-toggle');
+      const siteNav = document.getElementById('site-navigation');
+      if (menuBtn && siteNav) {
+        menuBtn.addEventListener('click', () => {
+          const open = siteNav.classList.toggle('is-open');
+          menuBtn.setAttribute('aria-expanded', String(open));
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+            siteNav.classList.remove('is-open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.focus();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

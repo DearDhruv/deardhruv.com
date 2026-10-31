@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" activeNav="about">
+  <article class="ds-container-reading" style="padding-block: var(--space-12);">
+    <h1 style="font-size: var(--font-h1); line-height: var(--line-height-heading); margin-bottom: var(--space-4);">About Me</h1>
+    <p style="font-size: var(--font-lead); color: var(--color-text-secondary); margin-bottom: var(--space-6);">
+      Staff Systems Engineer & Mobile Architect focused on on-device machine intelligence, kernel IPC, and resilient hardware peripherals.
+    </p>
+
+    <div class="prose">
+      <p>
+        Over the past decade, I have architected mission-critical mobile client infrastructure spanning point-of-sale hardware ecosystems, Android NDK performance optimization, and private local AI runtimes.
+      </p>
+
+      <h2>Core Competencies</h2>
+      <ul>
+        <li><strong>On-Device AI:</strong> Local LLM quantization (GGUF, AWQ), Vulkan compute shaders, Hexagon NPU delegates, speculative decoding.</li>
+        <li><strong>Mobile Systems:</strong> Android OS internals, NDK/C++ IPC, low-memory killer (LMK) mitigation, high-concurrency event loops.</li>
+        <li><strong>Hardware Ecosystems:</strong> USB host/accessory protocols, Bluetooth Low Energy (BLE), thermal management.</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <div>
+          <div class="callout-title">Engineering Philosophy</div>
+          <div class="callout-content">Software running on personal devices must respect user sovereignty: privacy by architecture, zero background telemetry leak, and graceful offline degradation.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

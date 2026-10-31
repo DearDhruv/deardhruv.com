@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Dhruv Patel" activeNav="home">
+  <!-- Hero Section -->
+  <section class="ds-container" style="padding-block: var(--space-12); border-bottom: 1px solid var(--color-divider);">
+    <span class="badge">Staff Systems & Mobile Architect</span>
+    <h1 style="font-size: var(--font-display); line-height: var(--line-height-tight); margin: var(--space-4) 0; font-weight: 700; letter-spacing: -0.02em;">
+      Designing private on-device AI & resilient mobile runtimes.
+    </h1>
+    <p style="font-size: var(--font-lead); line-height: var(--line-height-lead); color: var(--color-text-secondary); max-width: 60ch; margin-bottom: var(--space-8);">
+      Senior product engineer specializing in local machine intelligence, high-performance Vulkan/NPU pipelines, and hardware peripheral ecosystems.
+    </p>
+    <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+      <a href="/portfolio/" class="btn btn-primary">View Flagship Work</a>
+      <a href="/projects/" class="btn btn-secondary">Technical Case Studies</a>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="ds-container" style="padding-block: var(--space-12);">
+    <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-4);">Representative Systems Work</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-6); margin-top: var(--space-6);">
+      <article class="card card-interactive">
+        <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-3);">
+          <span class="badge">On-Device Machine Intelligence</span>
+          <span class="chip">2024–2026</span>
+        </div>
+        <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">AI Playground</h3>
+        <p style="color: var(--color-text-secondary); font-size: var(--font-small); line-height: 1.5; margin-bottom: var(--space-4);">
+          Zero-cloud mobile AI studio executing local quantized models with speculative decoding and watchdog crash isolation.
+        </p>
+        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6);">
+          <span class="badge badge-neutral">23.8 tok/s</span>
+          <span class="badge badge-neutral">NDK Watchdog</span>
+          <span class="badge badge-neutral">Zero Cloud Leak</span>
+        </div>
+        <a href="/posts/ai_playground_series/" class="btn btn-secondary" style="width: 100%;">Read Architecture Case Study</a>
+      </article>
+
+      <article class="card card-interactive">
+        <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-3);">
+          <span class="badge">Mobile Systems Architecture</span>
+          <span class="chip">Production</span>
+        </div>
+        <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">High-Scale Retail POS Ecosystem</h3>
+        <p style="color: var(--color-text-secondary); font-size: var(--font-small); line-height: 1.5; margin-bottom: var(--space-4);">
+          Enterprise retail peripheral platform orchestrating USB, Bluetooth, and networked hardware across mission-critical registers.
+        </p>
+        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6);">
+          <span class="badge badge-neutral">99.98% Reliability</span>
+          <span class="badge badge-neutral">NDK Isolation</span>
+          <span class="badge badge-neutral">AOSP Engine</span>
+        </div>
+        <a href="/portfolio/" class="btn btn-secondary" style="width: 100%;">View System Impact</a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

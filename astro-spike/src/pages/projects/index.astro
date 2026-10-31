@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Projects" activeNav="projects">
+  <div class="ds-container" style="padding-block: var(--space-12);">
+    <h1 style="font-size: var(--font-h1); line-height: var(--line-height-heading); margin-bottom: var(--space-3);">Technical Projects & Case Studies</h1>
+    <p style="font-size: var(--font-lead); color: var(--color-text-secondary); max-width: 70ch; margin-bottom: var(--space-8);">
+      Systems engineering, open-source initiatives, and specialized mobile tooling.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-6);">
+      <article class="card card-interactive">
+        <h2 style="font-size: var(--font-h3); margin-top: 0;">AI Playground</h2>
+        <p style="color: var(--color-text-secondary); font-size: var(--font-small); line-height: 1.5;">
+          Local generative model runner for mobile hardware with streaming token generation and thermal throttler.
+        </p>
+        <a href="/posts/ai_playground_series/" class="btn btn-secondary btn-sm" style="margin-top: var(--space-4);">Explore Project</a>
+      </article>
+
+      <article class="card card-interactive">
+        <h2 style="font-size: var(--font-h3); margin-top: 0;">Open Store</h2>
+        <p style="color: var(--color-text-secondary); font-size: var(--font-small); line-height: 1.5;">
+          Privacy-focused, lightweight app distribution catalog for verified independent software packages.
+        </p>
+        <a href="/other/open-store-app/" class="btn btn-secondary btn-sm" style="margin-top: var(--space-4);">Explore Project</a>
+      </article>
+
+      <article class="card card-interactive">
+        <h2 style="font-size: var(--font-h3); margin-top: 0;">Veloci-Hue</h2>
+        <p style="color: var(--color-text-secondary); font-size: var(--font-small); line-height: 1.5;">
+          Real-time color physics simulator demonstrating low-latency gesture input handling on 120Hz displays.
+        </p>
+        <a href="/other/veloci-hue/" class="btn btn-secondary btn-sm" style="margin-top: var(--space-4);">Explore Project</a>
+      </article>
+    </div>
+  </div>
+</BaseLayout>

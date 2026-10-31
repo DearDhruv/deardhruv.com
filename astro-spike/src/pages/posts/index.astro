@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Writing" activeNav="posts">
+  <div class="ds-container-reading" style="padding-block: var(--space-12);">
+    <h1 style="font-size: var(--font-h1); line-height: var(--line-height-heading); margin-bottom: var(--space-4);">Technical Writing</h1>
+    <p style="font-size: var(--font-lead); color: var(--color-text-secondary); margin-bottom: var(--space-8);">
+      Deep-dives into systems programming, local machine learning, and mobile platform architecture.
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: var(--space-8);">
+      <article>
+        <span class="badge">Series • 6 Parts</span>
+        <h2 style="font-size: var(--font-h2); margin-block: var(--space-2);">
+          <a href="/posts/ai_playground_series/" class="content-link">AI Playground: Keeping AI Private on Mobile</a>
+        </h2>
+        <p style="color: var(--color-text-secondary); line-height: 1.6;">
+          An engineering breakdown of running quantized open LLMs on modern smartphones with zero cloud communication, Vulkan shader compilation, and thermal throttling mitigations.
+        </p>
+      </article>
+    </div>
+  </div>
+</BaseLayout>

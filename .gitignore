@@ -21,3 +21,9 @@ node_modules/
 .vscode/
 .idea/
 .DS_Store
+
+# Astro output & cache
+dist/
+.astro/
+astro-spike/dist/
+astro-spike/.astro/

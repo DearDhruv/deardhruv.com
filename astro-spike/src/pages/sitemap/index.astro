@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sitemap" activeNav="sitemap">
+  <div class="ds-container-reading" style="padding-block: var(--space-12);">
+    <h1 style="font-size: var(--font-h1); line-height: var(--line-height-heading); margin-bottom: var(--space-4);">Sitemap</h1>
+    <p style="font-size: var(--font-lead); color: var(--color-text-secondary); margin-bottom: var(--space-8);">
+      Index of canonical routes and discovery documents.
+    </p>
+
+    <div class="prose">
+      <h2>Primary Routes</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/posts/">Writing</a></li>
+        <li><a href="/posts/ai_playground_series/">AI Playground Series</a></li>
+      </ul>
+
+      <h2>Discovery & Machine Feeds</h2>
+      <ul>
+        <li><a href="/index.json">JSON Feed (/index.json)</a></li>
+        <li><a href="/index.md">Root Markdown Mirror (/index.md)</a></li>
+        <li><a href="/llms.txt">LLMs.txt Discovery (/llms.txt)</a></li>
+        <li><a href="/auth.md">Agent Authentication Spec (/auth.md)</a></li>
+        <li><a href="/.well-known/mcp.json">MCP Discovery (/.well-known/mcp.json)</a></li>
+        <li><a href="/.well-known/api-catalog">API Catalog (/.well-known/api-catalog)</a></li>
+        <li><a href="/resume.pdf">Résumé PDF (/resume.pdf)</a></li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
