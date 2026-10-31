@@ -1,9 +1,9 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `19a2ed7`
-- Last completed phase/task: Task 3.3 — Core layout primitives
-- Next task: Task 4.1 — Base page template
+- Current HEAD: `26e20a8`
+- Last completed phase/task: Task 4.1 — Base page template
+- Next task: Task 4.2 — Responsive header and navigation
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -30,11 +30,17 @@
 | Task 2.3 | Document responsive page wireframes across devices | `386c82f` | Multi-viewport ASCII wireframes in `docs/WIREFRAMES.md` | PASS |
 | Task 3.1 | Define accessible design tokens for surfaces, text, focus, and theme | `4ee855c` | `hugo --gc --minify`, `verify-routes.js`, WCAG AA contrast audit | PASS |
 | Task 3.2 | Implement fluid typography system and zero-request system font stacks | `19a2ed7` | `hugo --gc --minify`, fluid clamp verification | PASS |
-| Task 3.3 | Implement reusable responsive layout primitives (card, badge, grid, btn, skip-link) | Pending | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 3.3 | Implement reusable responsive layout primitives (card, badge, grid, btn, skip-link) | `26e20a8` | `hugo --gc --minify`, `verify-routes.js` | PASS |
+| Task 4.1 | Create project-owned base layout with accessible skip link and landmark targets | Pending | `hugo --gc --minify`, skip link target verification | PASS |
 
 ## Files changed in the latest task
-- `assets/css/custom.css`
+- `layouts/_default/baseof.html`
+- `layouts/index.html`
+- `layouts/_default/hero-page.html`
+- `layouts/_default/single.html`
+- `layouts/_default/sitemap.html`
 - `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
 
 ## Tests executed
 - `hugo --gc --minify` — PASS

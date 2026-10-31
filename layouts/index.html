@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $about := or (site.GetPage "about.md") (site.GetPage "/about") }}
 <div class="content">
-    <main class="post">
+    <main id="main" class="post" tabindex="-1">
         <article>
             {{ partial "hero.html" . }}
 
