@@ -1251,7 +1251,7 @@ Task A7.2 — Create isolated Astro proof-of-concept spike
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `6cd3d3c`
-**Commit:** Pending
+**Commit:** `3b49157`
 
 ### Objective
 Construct an isolated, non-destructive Astro v5 static proof-of-concept spike in `astro-spike/`, rendering core routes (`/`, `/about/`, `/portfolio/`, `/projects/`, `/posts/`, `/sitemap/`) and machine endpoints (`/index.json`, `/index.md`) with 100% zero-JS delivery and identical layout tokens.
@@ -1300,3 +1300,46 @@ None. Ready for Task A7.3 benchmark comparison against Hugo control.
 
 ### Exact next task
 Task A7.3 — Benchmark build performance and output fidelity
+
+## 2026-10-31 — Task A7.3: Benchmark Build Performance and Output Fidelity
+
+**Task:** Task A7.3 — Benchmark build performance and output fidelity
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `3b49157`
+**Commit:** Pending
+
+### Objective
+Perform quantitative and qualitative benchmark comparisons between Hugo control output and Astro static spike output across build speed, DOM footprint, CSS payload, runtime JavaScript, and heading hierarchy in `docs/ASTRO_SPIKE_BENCHMARK.md`.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 9.3
+- `docs/BASELINE_PERFORMANCE_AND_VISUALS.md`
+- `astro-spike/dist/`
+
+### Files changed
+- `docs/ASTRO_SPIKE_BENCHMARK.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Quantified warm build duration: Astro compiled spike pages in 326ms (1.54s total process time including Node/Vite startup), easily satisfying the <5.0s budget.
+- Confirmed zero client runtime JavaScript: eliminated ~48 KB legacy JavaScript bundle completely.
+- Reduced home page HTML payload by 73% (from 28.4 KB to 7.5 KB) and CSS payload by 56% (from 64.8 KB to 28.2 KB).
+- Fixed the multi-H1 heading defect (`TYPO-01`), enforcing strictly one `<h1>` per document.
+
+### Commands executed
+- `cd astro-spike && time npx astro build`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 6/6 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules).
+
+### Route/content/source-path impact
+Added `docs/ASTRO_SPIKE_BENCHMARK.md`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A7.4 Netlify hosting, redirects, and edge function parity validation in Astro spike.
+
+### Exact next task
+Task A7.4 — Validate Netlify hosting, redirects, and edge function parity in Astro spike
