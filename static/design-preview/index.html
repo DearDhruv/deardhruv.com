@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/typography.css">
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/nav.css">
   <style>
     body {
       margin: 0;
@@ -112,19 +113,26 @@
     [PROTOTYPE] Phase A2.2 — Precision Technical Editorial Direction
   </div>
 
-  <header class="ds-container">
-    <nav class="site-nav" aria-label="Main Navigation">
-      <a href="/" class="ds-btn ds-btn-secondary" style="font-weight: 700;">Dhruv Patel</a>
-      <ul class="site-nav-links">
-        <li><a href="/" aria-current="page">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
-        <li><a href="/projects/">Projects</a></li>
-        <li><a href="/posts/">Writing</a></li>
-        <li><a href="/sitemap/">Sitemap</a></li>
-      </ul>
-      <button class="ds-btn ds-btn-secondary" id="theme-toggle" aria-label="Toggle visual theme" type="button">Theme</button>
-    </nav>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="site-brand">Dhruv Patel</a>
+      <nav class="site-nav" id="site-navigation" aria-label="Main Navigation">
+        <ul class="site-nav-list">
+          <li><a href="/" class="site-nav-link" aria-current="page">Home</a></li>
+          <li><a href="/about/" class="site-nav-link">About</a></li>
+          <li><a href="/portfolio/" class="site-nav-link">Portfolio</a></li>
+          <li><a href="/projects/" class="site-nav-link">Projects</a></li>
+          <li><a href="/posts/" class="site-nav-link">Writing</a></li>
+          <li><a href="/sitemap/" class="site-nav-link">Sitemap</a></li>
+        </ul>
+      </nav>
+      <div class="site-header-actions">
+        <button class="theme-toggle-btn theme-toggle" id="theme-toggle" aria-label="Toggle visual theme" type="button">Theme</button>
+        <button class="menu-toggle-btn" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main id="main">
@@ -334,6 +342,22 @@ val modelBuffer = FileChannel.open(path, StandardOpenOption.READ).use { channel 
           document.documentElement.setAttribute('data-theme', next);
           localStorage.setItem('theme', next);
           updateButton(next);
+        });
+      }
+
+      const menuBtn = document.getElementById('menu-toggle');
+      const siteNav = document.getElementById('site-navigation');
+      if (menuBtn && siteNav) {
+        menuBtn.addEventListener('click', () => {
+          const open = siteNav.classList.toggle('is-open');
+          menuBtn.setAttribute('aria-expanded', String(open));
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+            siteNav.classList.remove('is-open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.focus();
+          }
         });
       }
     })();

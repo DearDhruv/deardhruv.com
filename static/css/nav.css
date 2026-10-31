@@ -1,0 +1,189 @@
+/**
+ * DearDhruv Responsive Navigation Header — Precision Technical Editorial
+ * Fluid breakpoint scaling (320px–1440px), sticky positioning with blur surface,
+ * guaranteed 44x44px touch targets, accessible focus outlines, and mobile disclosure.
+ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: var(--color-bg-page);
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: background-color var(--motion-duration-fast) var(--motion-ease),
+              border-color var(--motion-duration-fast) var(--motion-ease);
+}
+
+@supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
+  .site-header {
+    background-color: rgba(9, 13, 22, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  [data-theme="light"] .site-header {
+    background-color: rgba(248, 250, 252, 0.90);
+  }
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding: var(--space-3) var(--gutter);
+  box-sizing: border-box;
+  min-height: 64px;
+}
+
+/* Brand Link */
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--font-lead);
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.site-brand:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Desktop Nav Links */
+.site-nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--font-small);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--motion-duration-fast) var(--motion-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-nav-link:hover {
+    color: var(--color-text-primary);
+  }
+}
+
+.site-nav-link[aria-current="page"] {
+  color: var(--color-text-primary);
+  font-weight: 650;
+}
+
+.site-nav-link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: var(--space-2);
+  right: var(--space-2);
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.site-nav-link:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Header Actions & Controls */
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.theme-toggle-btn,
+.menu-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease),
+              border-color var(--motion-duration-fast) var(--motion-ease);
+}
+
+.theme-toggle-btn:focus-visible,
+.menu-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.menu-toggle-btn {
+  display: none;
+}
+
+/* Mobile Breakpoint (<768px) */
+@media (max-width: 768px) {
+  .menu-toggle-btn {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-surface);
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding: var(--space-4) var(--gutter);
+    box-shadow: var(--shadow-md);
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+
+  .site-nav-link {
+    width: 100%;
+    padding-block: var(--space-3);
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .site-nav-link[aria-current="page"]::after {
+    display: none;
+  }
+
+  .site-nav-link[aria-current="page"] {
+    color: var(--color-accent);
+  }
+}

@@ -1,7 +1,7 @@
 // Accessible Mobile Menu with Keyboard & ARIA Support
 const menuTrigger = document.querySelector(".menu-trigger");
 const menu = document.querySelector(".menu");
-const mobileQuery = "(max-width: 684px)";
+const mobileQuery = "(max-width: 768px)";
 const isMobile = () => window.matchMedia(mobileQuery).matches;
 
 const isMobileMenu = () => {

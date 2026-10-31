@@ -943,7 +943,7 @@ Task A5.1 — Implement zero-flash theme script and accessible toggle
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `0e5d74e`
-**Commit:** Pending
+**Commit:** `a9d9d1b`
 
 ### Objective
 Implement zero-flash synchronous theme initialization in `<head>` and accessible, in-place theme toggle engine eliminating disruptive page reloads (`window.location.reload()`) and maintaining seamless state synchronization with `aria-pressed`, `aria-label`, and OS color scheme listeners.
@@ -982,3 +982,50 @@ None. Ready for Task A5.2 responsive navigation header.
 
 ### Exact next task
 Task A5.2 — Build responsive navigation header
+
+## 2026-10-31 — Task A5.2: Build Responsive Navigation Header
+
+**Task:** Task A5.2 — Build responsive navigation header
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `a9d9d1b`
+**Commit:** Pending
+
+### Objective
+Build a fully responsive, accessible navigation header across 320px–1440px viewports with sticky blur surface, 768px tablet breakpoint alignment (remediating RESP-01), 44x44px minimum touch targets, keyboard escape handler, and accessible `aria-expanded` / `aria-controls` states.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 7.2
+- `docs/DESIGN_AUDIT.md` (RESP-01, MOT-01)
+- `layouts/partials/header.html`
+- `assets/js/menu.js`
+
+### Files changed
+- `assets/css/nav.css`
+- `static/css/nav.css`
+- `assets/js/menu.js`
+- `static/design-preview/index.html`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Created `assets/css/nav.css` with sticky blur surface (`backdrop-filter: blur(12px)`), max-width bounded container (`var(--container-wide)`), desktop link row with active bottom indicator pill.
+- Standardized mobile menu breakpoint to standard 768px in both CSS and `assets/js/menu.js`, eliminating tablet navigation wrapping glitch.
+- Enforced 44x44px minimum touch targets across brand link, nav links, theme toggle, and mobile menu hamburger button.
+- Wired keyboard escape key listener to close active mobile menu and return focus cleanly to trigger button.
+
+### Commands executed
+- `hugo --gc --minify`
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 5/5 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs).
+
+### Route/content/source-path impact
+Added `/css/nav.css`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A5.3 page shell, landmarks, skip-link, and footer.
+
+### Exact next task
+Task A5.3 — Build page shell, main landmark, skip-link, and footer
