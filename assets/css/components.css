@@ -410,3 +410,62 @@
   background-color: var(--color-accent);
   color: var(--color-text-inverse);
 }
+
+/* Accessible Skip Link — WCAG 2.2 AA SC 2.4.1 */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: var(--space-4);
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse) !important;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--font-small);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  z-index: 10000;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  transition: top var(--motion-duration-fast) var(--motion-ease);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: var(--space-4);
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Site Footer Landmark */
+.site-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--color-divider);
+  padding-block: var(--space-12);
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: var(--font-small);
+}
+
+.site-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.site-footer a {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-footer a:hover {
+    color: var(--color-accent);
+  }
+}
