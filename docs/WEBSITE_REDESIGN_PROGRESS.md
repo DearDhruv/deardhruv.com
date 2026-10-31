@@ -1166,7 +1166,7 @@ Task A6.2 — View transition evaluation and device CPU audit
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `cad1801`
-**Commit:** Pending
+**Commit:** `1da1d8c`
 
 ### Objective
 Conduct comprehensive audit of motion rendering pipelines on low-end mobile hardware, formalize hardware acceleration policy (composite-only properties `transform` and `opacity`), and evaluate Cross-Document View Transitions API support across MPA architectures in `docs/ANIMATION_AND_PERFORMANCE_AUDIT.md`.
@@ -1202,3 +1202,45 @@ None. Ready to proceed to Phase A7 Architecture Decision & Framework Spike (Hugo
 
 ### Exact next task
 Task A7.1 — Author framework decision analysis document
+
+## 2026-10-31 — Task A7.1: Author Framework Decision Analysis Document
+
+**Task:** Task A7.1 — Author framework decision analysis document
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `1da1d8c`
+**Commit:** Pending
+
+### Objective
+Formulate a rigorous, weighted decision analysis comparing Hugo (control/baseline) vs Astro v5 static site architecture across 8 core engineering dimensions in `docs/FRAMEWORK_DECISION.md`, defining explicit spike and go/no-go acceptance criteria.
+
+### Files inspected
+- `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md` Section 9.1
+- `docs/BASELINE_PERFORMANCE_AND_VISUALS.md`
+- `tests/fixtures/legacy-routes.json`
+- `netlify.toml`
+
+### Files changed
+- `docs/FRAMEWORK_DECISION.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Established weighted decision matrix across 8 dimensions: Component Modularity (20%), Content Workflow (15%), Build Speed (15%), Client Hydration (15%), Multi-Format Output (15%), Netlify Hosting (10%), Ecosystem (5%), Migration Risk (5%).
+- Astro scored 8.98 / 10 vs Hugo's 7.98 / 10 (+1.00 weighted margin), driven by component scoping, Content Collections frontmatter type safety, and zero-JS MPA island control.
+- Established 5 mandatory spike criteria for Task A7.2–A7.4: 100% route/slash/status parity across 38 legacy routes, 0 KB client JS on reading pages, 72/72 Netlify Edge Function assertions passing, sub-5.0s local build time, and 100% WCAG 2.2 AA token validation pass.
+
+### Commands executed
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 6/6 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules).
+
+### Route/content/source-path impact
+Added `docs/FRAMEWORK_DECISION.md`. All 38 routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A7.2 isolated Astro proof-of-concept spike.
+
+### Exact next task
+Task A7.2 — Create isolated Astro proof-of-concept spike
