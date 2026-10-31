@@ -88,3 +88,66 @@ Audited across 6 standard viewports and 9 canonical page archetypes:
 - **Root Cause:** Inverted theme tokens without automated contrast validation.
 - **Design System Rule:** Re-calibrate `--text-muted` to `#94a3b8` in dark mode (contrast 6.8:1) and `#475569` in light mode (contrast 7.2:1).
 - **Verification Test:** Automated axe-core / contrast calculator asserting >= 4.5:1 on all text roles.
+
+---
+
+## 4. Component & Interaction State Inconsistency Inventory
+
+### [COMP-01] Button Variant Divergence & Touch Target Violations
+- **Severity:** High
+- **Page & Component:** Homepage CTA buttons, Series navigation buttons, and legal return links.
+- **Evidence Reference:**
+  - `custom.css:320` defines `.btn-primary` with `padding: 0.65rem 1.25rem; border-radius: 8px;`.
+  - `custom.css:1120` defines `.series-nav-btn` with `padding: 0.4rem 0.85rem; border-radius: 9999px; min-height: 34px;`.
+  - Touch targets below 44px fail WCAG 2.2 AA (Criterion 2.5.8 Target Size Minimum: 24×24px minimum, 44×44px recommended).
+- **Root Cause:** Decentralized component definitions across feature-specific CSS sections.
+- **Design System Rule:** Provide unified button tokens and variants:
+  - Height: `min-height: 44px; display: inline-flex; align-items: center; justify-content: center;`.
+  - Radius: uniform `--radius-md` (8px).
+  - Variants: `Button.primary`, `Button.secondary`, `Button.ghost`.
+- **Verification Test:** Automated Playwright / DOM check measuring `getBoundingClientRect().height >= 44` across all interactive buttons.
+
+### [COMP-02] Focus Outline Inconsistency & Clipped Focus Rings
+- **Severity:** High
+- **Page & Component:** Cards on `/portfolio/` and `/projects/`, code copy buttons, and header links.
+- **Evidence Reference:** Project cards apply `overflow: hidden;` (`custom.css:480`), which clips `:focus-visible` outlines on internal interactive elements. Some links lack `:focus-visible` entirely, relying on browser default.
+- **Root Cause:** Card container styling clipping child focus rings.
+- **Design System Rule:**
+  - Remove `overflow: hidden` on interactive cards; use `position: relative; isolation: isolate;` instead.
+  - Universal `:focus-visible` ring token: `outline: 2px solid var(--focus-ring); outline-offset: 3px;`.
+- **Verification Test:** Automated keyboard tab navigation test capturing screenshot of every focused element to verify complete visibility of the focus ring.
+
+### [COMP-03] Dotted vs Solid Divider Arbitrary Variation
+- **Severity:** Medium
+- **Page & Component:** `/posts/` index, `/portfolio/` case studies, `/sitemap/`.
+- **Evidence Reference:** `custom.css:1240` uses dashed borders (`border-top: 1px dashed var(--border-subtle)`), `custom.css:1480` uses dotted borders (`border-left: 2px dotted ...`), and `custom.css:180` uses solid lines.
+- **Root Cause:** Ad-hoc styling introduced during individual phase developments.
+- **Design System Rule:** Standardize dividers:
+  - Default structural separation: subtle solid line (`1px solid var(--border-subtle)`).
+  - Dashed/dotted borders: reserved exclusively for technical diagrams, architecture flowcharts, and code block headers.
+- **Verification Test:** CSS stylesheet scan verifying zero dashed/dotted borders in standard editorial containers.
+
+### [COMP-04] Surface Elevation & Border Radius Drift
+- **Severity:** Medium
+- **Page & Component:** Work cards, architecture containers, callouts, and code blocks.
+- **Evidence Reference:**
+  - Work cards: `border-radius: 16px; border: 1px solid var(--border-subtle);`
+  - Architecture boxes: `border-radius: 12px;`
+  - Callout boxes: `border-radius: 6px;`
+  - Code blocks: `border-radius: 10px;`
+- **Root Cause:** Multiple arbitrary radius tokens without a strict component binding.
+- **Design System Rule:** Three-tier radius tokens:
+  - `--radius-sm: 6px` (badges, tags, chips)
+  - `--radius-md: 10px` (cards, buttons, input fields, code blocks)
+  - `--radius-lg: 16px` (modal surfaces, large visual feature containers)
+- **Verification Test:** Token usage audit asserting 100% adherence to standard radius tokens.
+
+### [COMP-05] Light Theme Contrast Drift on Card Surfaces
+- **Severity:** High
+- **Page & Component:** Light mode card backgrounds and subtle borders across all pages.
+- **Evidence Reference:** In light mode (`[data-theme="light"]`), card surface `--bg-card: #ffffff` against page background `--bg-primary: #ffffff` relies solely on `--border-subtle: #e2e8f0` (1.15:1 contrast against white), causing cards to blend into the page.
+- **Root Cause:** Inversion of dark mode variables without dedicated light mode surface hierarchy.
+- **Design System Rule:** Light mode surface hierarchy:
+  - Page surface: `#f8fafc` (slate-50)
+  - Card/container surface: `#ffffff` (white) with subtle border `#cbd5e1` (slate-300, 1.45:1 contrast) and soft shadow `--shadow-sm`.
+- **Verification Test:** Light mode contrast and surface perceptibility automated audit.

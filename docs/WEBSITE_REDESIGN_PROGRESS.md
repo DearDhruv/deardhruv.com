@@ -1,12 +1,12 @@
 # Website Redesign Progress
 
 - Current branch: `feature/portfolio`
-- Current HEAD: `ff2d92b`
+- Current HEAD: `5169be9`
 - Binding addendum: `plans/DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md`
 - Framework status: Controlled evaluation active. Hugo is the verified baseline/control; Astro is the preferred proof-of-concept static candidate.
 - Preservation invariants: Zero public URL breaks, 100% route parity, existing content/source paths preserved, static Netlify deployment, Edge Function markdown negotiation preserved.
-- Last completed phase/task: Task A1.2 — Audit typography and reading hierarchy
-- Next task: Task A1.3 — Audit components and states
+- Last completed phase/task: Task A1.3 — Audit components and states
+- Next task: Task A1.4 — Audit responsive behavior and motion
 - Current production URL: https://deardhruv.com/
 
 ## Baseline Environment
@@ -276,7 +276,7 @@ Task A1.2 — Audit typography and reading hierarchy
 **Status:** COMPLETE
 **Branch:** `feature/portfolio`
 **HEAD before:** `ff2d92b`
-**Commit:** Pending
+**Commit:** `5169be9`
 
 ### Objective
 Audit all font families, heading scales, reading measure widths, line heights, inline code formatting, and contrast ratios across all site templates. Document findings in `docs/DESIGN_AUDIT.md`.
@@ -317,3 +317,49 @@ None. Ready for Task A1.3 Component and Interaction State audit.
 
 ### Exact next task
 Task A1.3 — Audit components and states
+
+## 2026-10-31 — Task A1.3: Audit Component and Interaction States
+
+**Task:** Task A1.3 — Audit components and states
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `5169be9`
+**Commit:** Pending
+
+### Objective
+Audit interactive components (buttons, links, nav drawer, cards, dividers, focus indicators, theme toggle, and chips) for visual consistency, WCAG 2.2 AA touch target compliance, focus visibility, and theme parity. Document findings in `docs/DESIGN_AUDIT.md`.
+
+### Files inspected
+- `assets/css/custom.css`
+- `layouts/partials/header.html`
+- `layouts/partials/footer.html`
+- `docs/DESIGN_AUDIT.md`
+
+### Files changed
+- `docs/DESIGN_AUDIT.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Cataloged 5 component-level defects in `docs/DESIGN_AUDIT.md`:
+  - `COMP-01` (High): Button variant divergence and sub-44px touch targets on mobile viewports.
+  - `COMP-02` (High): Clipped `:focus-visible` rings caused by `overflow: hidden` on cards.
+  - `COMP-03` (Medium): Unsystematic mixing of dashed, dotted, and solid dividers.
+  - `COMP-04` (Medium): Border-radius drift across cards (8px, 10px, 12px, 16px).
+  - `COMP-05` (High): Light theme contrast drift and boundary loss on white card surfaces.
+- Established design tokens and verification requirements to resolve all 5 issues.
+
+### Commands executed
+- `npm test`
+- `git diff --check`
+
+### Test results
+- `npm test`: 4/4 suites passed.
+
+### Route/content/source-path impact
+None. Documentation audit only.
+
+### Known issues / decisions required
+None. Ready for Task A1.4 Responsive Behavior and Motion audit.
+
+### Exact next task
+Task A1.4 — Audit responsive behavior and motion
