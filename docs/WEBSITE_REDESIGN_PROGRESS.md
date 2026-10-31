@@ -1872,3 +1872,47 @@ None. Ready for Batch 2 (Articles 04 and 05).
 
 ### Exact next task
 Task A8.9 (Batch 2) — Migrate Articles 04 and 05
+
+## 2026-10-31 — Task A8.9: Migrate Articles 04 and 05 (Batch 2)
+
+**Task:** Task A8.9 — Port remaining articles in small batches (Articles 04 & 05)
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `a335d45`
+**Commit:** Pending
+
+### Objective
+Port Part 4 ("I Put an Image Generator Inside the Phone") and Part 5 ("At Some Point I Stopped Building a Chat App") to Astro, verifying strict single-`<h1>` document hierarchy, code blocks, callouts, and bounded 72ch reading measure.
+
+### Files inspected
+- `content/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone.md`
+- `content/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app.md`
+
+### Files changed
+- `src/pages/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/index.astro`
+- `src/pages/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built Astro routes for Part 4 and Part 5 using `ArticleLayout` with dynamic collection rendering.
+- Verified that all headings compile cleanly into single-`<h1>` hierarchy via `rehypeDemoteHeadings`.
+- Confirmed full code block rendering, monospace styling, and contained scrolling.
+- Compiled static build via `npx astro build` (14 static pages in 806ms).
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added Articles 04 and 05 in Astro. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Batch 3 (Article 06).
+
+### Exact next task
+Task A8.9 (Batch 3) — Migrate Article 06
