@@ -1,0 +1,20 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getEntry, render } from 'astro:content';
+
+const portfolioEntry = await getEntry('pages', 'portfolio');
+if (!portfolioEntry) {
+  throw new Error('Missing content/portfolio.md entry');
+}
+const { Content } = await render(portfolioEntry);
+---
+
+<PageLayout
+  title={portfolioEntry.data.title}
+  description={portfolioEntry.data.description || "Dhruv Patel's professional portfolio showcasing native Android architecture, Kotlin Multiplatform, on-device AI runtimes, and engineering leadership."}
+  containerClass="layout-container-reading"
+>
+  <div class="prose">
+    <Content />
+  </div>
+</PageLayout>

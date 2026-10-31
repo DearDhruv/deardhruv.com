@@ -1,0 +1,20 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getEntry, render } from 'astro:content';
+
+const projectsEntry = await getEntry('pages', 'projects');
+if (!projectsEntry) {
+  throw new Error('Missing content/projects.md entry');
+}
+const { Content } = await render(projectsEntry);
+---
+
+<PageLayout
+  title={projectsEntry.data.title}
+  description={projectsEntry.data.description || "In-depth technical case studies and architectural deep dives across Android architecture, Kotlin Multiplatform, on-device AI runtimes, and native systems engineering."}
+  containerClass="layout-container-reading"
+>
+  <div class="prose">
+    <Content />
+  </div>
+</PageLayout>

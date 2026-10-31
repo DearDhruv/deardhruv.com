@@ -1688,3 +1688,49 @@ None. Ready for Task A8.6 porting Portfolio and Projects pages.
 
 ### Exact next task
 Task A8.6 — Port Portfolio and Projects pages
+
+## 2026-10-31 — Task A8.6: Migrate Portfolio and Projects Pages
+
+**Task:** Task A8.6 — Port Portfolio and Projects pages
+**Status:** COMPLETE
+**Branch:** `feature/portfolio`
+**HEAD before:** `645654e`
+**Commit:** Pending
+
+### Objective
+Migrate `/portfolio/` and `/projects/` to Astro using Content Collections (`content/portfolio.md` and `content/projects.md`), preserving 100% of the case studies, hardware constraints, architecture diagrams, benchmark metrics, and links.
+
+### Files inspected
+- `content/portfolio.md`
+- `content/projects.md`
+- `astro-spike/src/pages/portfolio/index.astro`
+- `astro-spike/src/pages/projects/index.astro`
+
+### Files changed
+- `src/pages/portfolio/index.astro`
+- `src/pages/projects/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Implementation details / design decisions
+- Built `src/pages/portfolio/index.astro` loading `content/portfolio.md` via `getEntry('pages', 'portfolio')` inside `PageLayout` with bounded `72ch` measure and prose styling.
+- Built `src/pages/projects/index.astro` loading `content/projects.md` via `getEntry('pages', 'projects')` rendering technical case studies (AI Playground, VelociHue, POS HAL) inside `PageLayout`.
+- Confirmed single-`<h1>` heading structure on both pages.
+- Compiled static build via `npx astro build` (7 static pages in 527ms).
+
+### Commands executed
+- `npx astro build`
+- `npm test && npm run test:astro`
+- `git diff --check`
+
+### Test results
+- `npm test`: 7/7 suites passed (38 routes, 7 assets, 80 HTML docs / 1480 links, 72 edge assertions, 14 contrast pairs, 10 a11y token rules, 28 content loader checks).
+- `test:astro`: 25/25 passed.
+
+### Route/content/source-path impact
+Added `/portfolio/` and `/projects/` pages in Astro. All routes intact.
+
+### Known issues / decisions required
+None. Ready for Task A8.7 porting posts and series index.
+
+### Exact next task
+Task A8.7 — Port posts and series index
