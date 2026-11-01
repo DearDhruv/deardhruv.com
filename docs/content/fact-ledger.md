@@ -19,7 +19,7 @@ This ledger records every factual claim made across deardhruv.com, its source of
 
 | Claim ID | Claim | Source | Evidence | Status | Last Checked | Used In |
 |---|---|---|---|---|---|---|
-| `AIP-001` | AI Playground is an offline-first on-device multimodal AI workstation for Android and iOS. | Source code repo `DearDhruv/Model-Playground`, Google Play Store | Public GitHub repo, Play Store `com.deardhruv.llmplayground` | **Verified** | 2026-11-01 | Home, Projects, Posts, Series |
+| `AIP-001` | AI Playground is an offline-first on-device multimodal AI workstation for Android and iOS. | Private codebase, Google Play Store | Private codebase, Play Store `com.deardhruv.llmplayground` | **Verified** | 2026-11-01 | Home, Projects, Posts, Series |
 | `AIP-002` | Uses C++20 JNI bindings to `llama.cpp`, Google AI Edge LiteRT (v2.3), and Apple MLX. | Project build scripts and native source files | `content/posts/ai_playground_series/01-*.md` code blocks | **Verified** | 2026-11-01 | Projects, Part 1, Part 3 |
 | `AIP-003` | Implements dual-model Speculative Turbo decoding achieving measured ~2x throughput increase on local device silicon. | Article 01 benchmark charts and drafting loop code | `content/posts/ai_playground_series/01-*.md#benchmark-results` | **Verified** | 2026-11-01 | Projects, Part 1 |
 | `AIP-004` | Zero-dependency pure-Kotlin document parser handling 25+ formats via memory-mapped chunks and RFC 1951 Deflate. | Article 02 architecture breakdown and source code | `content/posts/ai_playground_series/02-*.md` | **Verified** | 2026-11-01 | Projects, Part 2 |

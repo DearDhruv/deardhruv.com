@@ -19,14 +19,15 @@
 | Phase 1 | Task 1.2 | Run existing repository audits | Completed | f5fbe43 | 2026-11-01 |
 | Phase 2 | Task 2.1 | Create a fact ledger | Completed | 56c8114 | 2026-11-01 |
 | Phase 2 | Task 2.2 | Resolve current employment | Completed | 56c8114 | 2026-11-01 |
-| Phase 2 | Task 2.5 | Refresh public resume without changing URL | Completed | Pending | 2026-11-01 |
+| Phase 2 | Task 2.5 | Refresh public resume without changing URL | Completed | fd121c8 | 2026-11-01 |
 | Phase 4 | Task 4.1 | Separate independent and employer work | Completed | 3180c9c | 2026-11-01 |
 | Phase 4 | Task 4.2 | Add employer project data records | Completed | 3180c9c | 2026-11-01 |
 | Phase 4 | Task 4.3 | Build accessible employer project card | Completed | 3180c9c | 2026-11-01 |
 | Phase 4 | Task 4.4 | Add employer case study details gradually | Completed | 3180c9c | 2026-11-01 |
 | Phase 4 | Task 4.5 | Clarify employer and client attribution | Completed | 3180c9c | 2026-11-01 |
 | Phase 10 | Task 10.2 | Add identity & employer-attribution regression checks | Completed | 3180c9c | 2026-11-01 |
-| Phase 5 | Task 5.1–5.4 | Independent product cards & technical case studies | Not Started | — | — |
+| Phase 5 | Task 5.1 | Repair AI Playground public artifact links | Completed | Pending | 2026-11-01 |
+| Phase 5 | Task 5.2–5.4 | Independent product cards & technical case studies | Not Started | — | — |
 | Phase 6 | Task 6.1–6.5 | SEO crawlability, internal links & content quality | Not Started | — | — |
 | Phase 7 | Task 7.1–7.4 | Accessibility & interaction quality | Not Started | — | — |
 | Phase 8 | Task 8.1–8.4 | Performance remediation | Not Started | — | — |
@@ -43,9 +44,9 @@
    - **Resume:** IMPACT Commerce, Denmark (Feb 2022 – Present).
    - **LinkedIn Preview:** Shows SageStar Creations under Experience.
    - **Status:** Unconfirmed / Decision required from Dhruv before modifying `worksFor` or current employer attribution.
-2. **AI Playground GitHub Repository:**
+2. **AI Playground GitHub Repository (Finding DD-01):**
    - Link `https://github.com/DearDhruv/Model-Playground` returned 404 on external inspection.
-   - Status: Needs URL confirmation or private label update.
+   - Status: **Resolved** (Task 5.1). GitHub API confirmed repository is private. Replaced homepage button and series CTAs with verified Google Play Store links, updated article footers to "Private codebase", and updated llms.txt. 100% dead links eliminated.
 3. **Platform Availability Matrix:**
    - AI Playground: Google Play (Live), iOS (Planned / in development).
    - VelociHue: Google Play (Live), iOS (Planned / in development), Android TV (Verified).

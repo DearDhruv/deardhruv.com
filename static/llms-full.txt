@@ -37,8 +37,8 @@
 ## Featured Production Systems
 
 ### 1. AI Playground
-- **Repository**: [https://github.com/DearDhruv/Model-Playground](https://github.com/DearDhruv/Model-Playground)
 - **Google Play**: [https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)
+- **Repository**: Private codebase
 - **Tech Stack**: Kotlin Multiplatform (CMP 1.12), C++20 / NDK (llama.cpp), Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan/OpenCL/Metal, SQLDelight (v2.4)
 - **Key Capabilities**:
   - Dual-model Speculative Turbo decoding (draft pairing, dynamic context capping, KV cache session pre-warming)

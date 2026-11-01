@@ -9,7 +9,7 @@
 | Project / Domain | Claimed Assertion | Status | Public Evidence / Artifact |
 |---|---|---|---|
 | **Experience** | Seasoned track record in Android, Systems & Multiplatform | SUPPORTED | Continuous public Git history, published apps since Android 2.x/4.x era. |
-| **AI Playground** | Offline local LLM inference via llama.cpp | SUPPORTED | Public GitHub repo `DearDhruv/Model-Playground`, Google Play release. |
+| **AI Playground** | Offline local LLM inference via llama.cpp | SUPPORTED | Private GitHub repo `DearDhruv/Model-Playground`, Google Play release (`com.deardhruv.llmplayground`). |
 | **AI Playground** | Speculative Turbo drafting with 2x throughput | SUPPORTED | Documented in Blog Series Part 1 with benchmark charts. |
 | **AI Playground** | Pure KMP 25+ format document parser | SUPPORTED | Documented in Blog Series Part 2 with pure RFC 1951 Deflate decompression code. |
 | **AI Playground** | Defensive `fork()` Vulkan crash isolation & SIGKILL | SUPPORTED | Documented in Blog Series Part 3 with C++20 NDK implementation. |

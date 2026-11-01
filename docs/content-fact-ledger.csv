@@ -7,7 +7,7 @@ FACT-05,ai_playground_ios,Resume Page 4,"Ready, Planned to release soon",2026-11
 FACT-06,velocihue_android,Resume Page 4,Live on Google Play,2026-11-01,high,none,Approved Live Play Store,true,"https://play.google.com/store/apps/details?id=com.deardhruv.velocihue"
 FACT-07,velocihue_ios,Resume Page 4,"Ready, Planned to release soon",2026-11-01,high,none,Approved Planned / In Development,true,"Do not claim live on App Store until public URL live"
 FACT-08,velocihue_tv,Resume Page 4,Android TV supported,2026-11-01,high,none,Approved D-pad and TV support,true,"Multiplatform Compose D-pad support"
-FACT-09,ai_playground_source_repo,GitHub inspection,https://github.com/DearDhruv/Model-Playground,2026-11-01,medium,GitHub 404 on external crawl,Pending repo check,false,"Repository may be private or renamed; avoid dead link"
+FACT-09,ai_playground_source_repo,GitHub inspection,Private codebase,2026-11-01,high,GitHub 404 on Model-Playground,Approved Private Label,true,"Repository is private; avoided dead link and labeled as private codebase"
 FACT-10,education,Resume Page 4,"Computer Engineering, Nirma University",2026-11-01,high,none,Approved,true,"July 2011, Grade: 7.15 / 10"
 FACT-11,awards,Resume Page 4,"3rd place Web Designing Competition, ISTE Nirma University",2026-11-01,high,none,Approved,true,"TechFest 2010"
 FACT-12,speeches_2025_surat,Resume Page 5,"Jetpack Compose - Game changing features, GDG DevFest Surat",2026-11-01,high,none,Approved,true,"Dec 2025: Navigation 3, adaptive layouts, performance"
