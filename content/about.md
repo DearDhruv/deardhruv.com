@@ -7,13 +7,13 @@ aliases = ["about-us", "about-hugo", "contact"]
 name = "Dhruv Patel"
 +++
 
-I'm **Dhruv Patel** (known online as **DearDhruv**), a Lead Android Engineer, Android Architect, and Android Artist based in India. I focus on native mobile systems, high-performance architecture, and running local AI models directly on consumer devices.
+I'm **Dhruv Patel** (known online as **DearDhruv**), a Lead Android Engineer, Android Architect, and Android Artist based in India. With 14+ years of experience across mobile engineering, I focus on native mobile systems, high-performance architecture, hardware integration, and running local AI models directly on consumer devices.
 
-Currently, I serve as a **Lead Android Engineer at Impact Commerce**, where I work on digital commerce applications, POS payment terminal integrations, and high-throughput checkout flows.
+Currently, I serve as a **Lead Android Engineer at IMPACT Commerce**, where I work on digital commerce applications, custom Android OS touch hardware, and point-of-sale integrations.
 
-Beyond enterprise systems, I spend significant time building open-source tools and experimental applications. Two projects where I've documented my work in detail are **[AI Playground](https://github.com/DearDhruv/Model-Playground)**, an offline-first mobile workstation for running local LLMs and diffusion models, and **[VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)**, a fast-paced multiplatform game running across Android, iOS, and Android TV.
+Beyond enterprise systems, I design and build independent open-source products. Two projects where I've documented my work in detail are **[AI Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)**, an offline-first mobile workstation for running local LLMs and diffusion models, and **[VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)**, a fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android and Android TV.
 
-👉 **Portfolio:** [Explore engineering highlights and case studies](/portfolio/)
+👉 **Portfolio:** [Explore engineering highlights and employer case studies](/portfolio/)
 
 ---
 
@@ -30,45 +30,62 @@ Cloud services are convenient, but keeping compute local protects privacy, elimi
 ### 3. Share Logic Without Sacrificing Native Feel
 In Kotlin Multiplatform, I favor sharing deterministic core logic—state stores, persistence engines, and game loops—while respecting each platform's native strengths. In VelociHue, Android TV navigation uses native D-pad focus semantics, iOS runs a SwiftUI host, and Android uses Jetpack Compose, all sharing a single deterministic physics loop.
 
-### 4. Hardware Integration Demands Defensive IPC
-Working with 30+ physical point-of-sale peripherals (receipt printers, barcode scanners, payment terminals) taught me that hardware state can disconnect at any millisecond. I design hardware abstraction layers with isolated IPC channels, timeout fallbacks, and zero unhandled exceptions.
+### 4. Hardware Integration Demands Defensive State Machines
+Working with physical point-of-sale peripherals (receipt printers, payment terminals) taught me that hardware state can disconnect at any millisecond. I design hardware abstraction layers with isolated IPC channels, timeout fallbacks, and defensive reconnection state machines.
 
 ---
 
-## 🌍 Background & Technical Focus
+## 💼 Career History & Experience
 
-Over the course of my engineering career across startups to enterprise platforms, I've focused on:
-
-- **Native Android & System Internals:** Kotlin, Jetpack Compose, Coroutines/Flow, and C++20 via the Android NDK.
-- **Kotlin Multiplatform (KMP/CMP):** Shared MVI architectures, Compose Multiplatform for Android, iOS, and Android TV.
-- **On-Device Machine Learning:** Local inference engines (`llama.cpp`, Google AI Edge LiteRT, Apple MLX), speculative drafting pipelines, and on-device image synthesis (Bonsai 4B & Ternary diffusion).
-- **Architecture & Resilient Storage:** MVI, unidirectional data flow, SQLDelight, Room, and offline-first synchronization with Cloud Firestore.
-- **Team Leadership & Mentorship:** Guiding engineering teams through modern architecture migrations, code quality standards, and performance profiling.
+- **Lead Android Engineer** — *IMPACT Commerce, Denmark & India* (Feb 2022 – Present)  
+  Digital commerce mobile applications, custom Android OS research for touch screens, hardware integration (printers, payment terminals), and Jetpack Compose library architectures.
+- **Senior Android Developer** — *PLANOLY, USA & India* (Nov 2018 – Feb 2022)  
+  Visual planner for Instagram/Pinterest and StoriesEdit template editor; video manipulation using FFmpeg; photo manipulation; MVVM architecture migration; performance optimization.
+- **Tech Lead | Android Engineer** — *Ashapura Softech Inc, India* (Jun 2016 – Oct 2018)  
+  Managed and directed teams of Android developers delivering client applications, led technical sessions, and coordinated with external stakeholders.
+- **Team Lead | Senior Android Developer** — *Russmedia Tech, India* (Feb 2014 – Jun 2016)  
+  Android application design, development, and support; authored UI Automator test scripts; managed developer squads and conducted code reviews.
+- **Junior Android Developer** — *Hidden Brains InfoTech, India* (Jan 2012 – Dec 2013)  
+  Android applications, 2D mobile game development, and early iPhone application development.
+- **Early Career Foundation & Training**  
+  - *Orane Inc* (Oct 2011 – Dec 2011): Junior Android Developer (animations & games).  
+  - *DataSoft* (Feb 2011 – May 2011): Trainee (accessible app for visually impaired individuals).  
+  - *Coronation* (Feb 2010 – May 2010): Trainee (ASP.NET & VB.NET web development).
 
 ---
 
-## 🎤 Community & Technical Writing
+## 🎓 Education & Awards
 
-I enjoy breaking down complex systems into practical, readable explanations. I regularly document my findings and speak with the developer community about:
+- **Education:** Computer Engineering, Nirma University, Gujarat, India (Graduated July 2011, Grade: 7.15 / 10).
+- **Awards:** 3rd Place in State-level Web Designing Competition, ISTE Student Chapter, TechFest 2010 at Nirma University.
 
-- Running on-device LLMs and diffusion models on mobile silicon.
-- Kotlin Multiplatform architecture patterns for production apps.
-- Native crash sandboxing and memory safety with the Android NDK.
-- Performance profiling, thermal management, and battery guardrails.
+---
 
-You can read my six-part engineering breakdown in the **[Beyond the Model Series](/posts/ai_playground_series/)**.
+## 🎤 Speeches & Developer Conferences
+
+I regularly speak with the developer community at Google Developer Group (GDG) DevFest conferences:
+
+- **Dec 2025:** *Jetpack Compose - Game changing features* — GDG DevFest Surat, India (Deep dive into Navigation 3, adaptive layouts, performance boosts, and Accessibility).
+- **Nov 2025:** *Android 17 Mandates Adaptive Layouts* — GDG DevFest Ahmedabad, India (Adaptive UI architecture using window size classes across phones, foldables, tablets, and desktop windows).
+- **Jun 2022:** *What's new in Android* — Gandhinagar, India (Technical overview of APIs and system capabilities introduced in Android 13).
+- **Sep 2019:** *UI & UX with ease for Mobile* — GDG DevFest Surat, India (Handling responsive UI and multi-screen UX across mobile devices).
+- **Sep 2019:** *UI & UX with ease for Mobile* — GDG DevFest Rajkot, India.
+- **Sep 2018:** *Android Jetpack – Slices* — GDG DevFest Ahmedabad, India (Architecture and implementation demo of Android Slices).
+- **Feb 2018:** *DialogFlow Chatbot Workshop* — Gujarat State Student Convention (GSSC 2018), Anand, India.
+- **Feb 2018:** *DialogFlow Workshop* — Rajkot, India.
 
 ---
 
 ## 📱 Connect & Verified Profiles
 
-If you'd like to discuss native mobile architecture, on-device AI systems, or technical speaking, feel free to reach out directly.
+If you'd like to discuss native mobile architecture, on-device AI systems, or technical speaking, feel free to reach out directly:
 
 - **📧 Email:** [dhruv.time@gmail.com](mailto:dhruv.time@gmail.com)
 - **💼 LinkedIn:** [linkedin.com/in/deardhruv](https://www.linkedin.com/in/deardhruv/)
 - **💻 GitHub:** [@DearDhruv](https://github.com/DearDhruv)
 - **🐦 X / Twitter:** [@DearDhruv](https://x.com/DearDhruv)
 - **📸 Instagram:** [@DearDhruv](https://instagram.com/deardhruv)
+- **🛍️ Google Play:** [Dhruv Patel Developer Page](https://play.google.com/store/apps/developer?id=Dhruv+Patel)
 - **🌐 about.me:** [about.me/deardhruv](https://about.me/deardhruv)
 - **🤗 Hugging Face:** [@DearDhruv](https://huggingface.co/deardhruv)
 - **✍️ Medium:** [@DearDhruv](https://medium.com/@DearDhruv)

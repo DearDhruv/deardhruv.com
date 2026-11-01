@@ -17,11 +17,14 @@
 | Phase 0 | Task 0.4 | Correct stale repository documentation | Completed | 3421980 | 2026-11-01 |
 | Phase 1 | Task 1.1 | Generate complete URL inventory | Completed | 538ec93 | 2026-11-01 |
 | Phase 1 | Task 1.2 | Run existing repository audits | Completed | f5fbe43 | 2026-11-01 |
-| Phase 2 | Task 2.1 | Create a fact ledger | Completed | Pending | 2026-11-01 |
-| Phase 2 | Task 2.2 | Resolve current employment | Completed | Pending | 2026-11-01 |
-| Phase 2 | Task 2.1–2.5 | Evidence ledger & public fact correction | Not Started | — | — |
-| Phase 3 | Task 3.1–3.5 | DearDhruv identity & branded-search | Not Started | — | — |
-| Phase 4 | Task 4.1–4.5 | Employer project portfolio implementation | Not Started | — | — |
+| Phase 2 | Task 2.1 | Create a fact ledger | Completed | 56c8114 | 2026-11-01 |
+| Phase 2 | Task 2.2 | Resolve current employment | Completed | 56c8114 | 2026-11-01 |
+| Phase 4 | Task 4.1 | Separate independent and employer work | Completed | Pending | 2026-11-01 |
+| Phase 4 | Task 4.2 | Add employer project data records | Completed | Pending | 2026-11-01 |
+| Phase 4 | Task 4.3 | Build accessible employer project card | Completed | Pending | 2026-11-01 |
+| Phase 4 | Task 4.4 | Add employer case study details gradually | Completed | Pending | 2026-11-01 |
+| Phase 4 | Task 4.5 | Clarify employer and client attribution | Completed | Pending | 2026-11-01 |
+| Phase 10 | Task 10.2 | Add identity & employer-attribution regression checks | Completed | Pending | 2026-11-01 |
 | Phase 5 | Task 5.1–5.4 | Independent product cards & technical case studies | Not Started | — | — |
 | Phase 6 | Task 6.1–6.5 | SEO crawlability, internal links & content quality | Not Started | — | — |
 | Phase 7 | Task 7.1–7.4 | Accessibility & interaction quality | Not Started | — | — |
