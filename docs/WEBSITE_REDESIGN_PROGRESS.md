@@ -2911,6 +2911,7 @@ Ready for final review and production deployment.
 ### Commits
 - `60cfe60`: `fix(ui): place icons as prefix before text across all buttons and callouts`
 - `e3cb770`: `feat(ui): enforce international standards and differentiate actionable vs dull non-actionable element states`
+- `c4afefd`: `feat(ui): update Google Play Store icon to official 2022 brand vector and modernize GitHub mark`
 
 ### Verification & Automated Gates
 - `npm run build`: 27 static routes generated cleanly in 451ms.
