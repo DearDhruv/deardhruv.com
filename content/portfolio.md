@@ -21,7 +21,7 @@ I'm a **Lead Android & Multiplatform Engineer** specializing in systems that ope
 
 - **Languages:** Kotlin, Modern C++ (Android NDK), Java, Swift (interop)
 - **Mobile & Multiplatform:** Android SDK, Jetpack Compose, Compose Multiplatform, iOS (SwiftUI host integration), Android TV
-- **On-Device AI & Compute:** `llama.cpp` (v0.7.0), Google AI Edge LiteRT, Apple MLX, on-device image synthesis (Bonsai 4B), Vulkan / OpenCL / Metal compute backends, speculative drafting pipelines
+- **On-Device AI & Compute:** `llama.cpp`, Google AI Edge LiteRT (v2.3), LiteRT-LM, Apple MLX, on-device image synthesis (Bonsai 4B), Vulkan / OpenCL / Metal compute backends, speculative drafting pipelines
 - **Data & Architecture:** MVI, Clean Architecture, Unidirectional Data Flow, SQLDelight, Room, Cloud Firestore (Schema v5), Coroutines & Reactive Flows, memory-mapped I/O
 - **Hardware & Systems:** Hardware Abstraction Layers (HAL), Unix Domain Sockets, 30+ POS peripheral protocols, defensive IPC, POSIX `fork()` sandboxing
 
@@ -31,7 +31,7 @@ I'm a **Lead Android & Multiplatform Engineer** specializing in systems that ope
 
 ### 1. AI Playground — On-Device Multimodal AI Workstation
 **Role:** Director & Lead Engineer  
-**Tech:** Kotlin Multiplatform, Compose Multiplatform, C++20 / NDK (JNI), llama.cpp v0.7.0, Google AI Edge LiteRT, Apple MLX, Vulkan / Metal, SQLDelight  
+**Tech:** Kotlin Multiplatform (CMP 1.12), C++20 / NDK (JNI), llama.cpp, Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan / Metal, SQLDelight (v2.4)  
 
 An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon—keeping user conversations and document analysis private without cloud round-trips.
 
@@ -47,7 +47,7 @@ An offline-first multimodal AI workstation that runs local LLMs and diffusion mo
 
 ### 2. VelociHue — High-Framerate Arcade Game in KMP
 **Role:** Director & Lead Engineer  
-**Tech:** Kotlin Multiplatform, Compose Multiplatform, Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback)  
+**Tech:** Kotlin Multiplatform (Kotlin 2.4, CMP 1.12), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad)  
 
 A fast-paced arcade action game engineered with Kotlin Multiplatform and Compose Multiplatform, shipping natively across Android, iOS (SwiftUI host + shared KMP framework), and Android TV.
 

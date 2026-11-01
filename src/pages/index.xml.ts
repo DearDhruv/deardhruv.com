@@ -5,7 +5,7 @@ export const GET: APIRoute = async () => {
   const posts = await getCollection('posts');
   const articles = posts
     .filter((p) => !p.id.includes('_index'))
-    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+    .sort((a, b) => new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime());
 
   const SITE_URL = 'https://deardhruv.com';
 

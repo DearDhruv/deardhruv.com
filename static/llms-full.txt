@@ -8,7 +8,7 @@
 - **Role**: Lead Android & Multiplatform Engineer | Director & Lead Engineer
 - **Experience**: Seasoned engineering leadership building high-performance mobile architectures, on-device AI runtimes, and digital commerce platforms
 - **Core Specializations**:
-  - On-Device AI & LLM Inference (llama.cpp v0.7.0, Google AI Edge LiteRT, Apple MLX, Speculative Turbo decoding)
+  - On-Device AI & LLM Inference (llama.cpp, Google AI Edge LiteRT v2.3, Apple MLX, Speculative Turbo decoding)
   - Kotlin Multiplatform (KMP) & Compose Multiplatform
   - High-Performance Native Systems (C++20 NDK, Vulkan/OpenCL/Metal compute, ARM KleidiAI vector acceleration)
   - Architecture Patterns (MVI, Clean Architecture, Reactive StateFlow)
@@ -39,7 +39,7 @@
 ### 1. AI Playground
 - **Repository**: [https://github.com/DearDhruv/Model-Playground](https://github.com/DearDhruv/Model-Playground)
 - **Google Play**: [https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)
-- **Tech Stack**: Kotlin Multiplatform, Compose Multiplatform, C++20 / NDK (llama.cpp v0.7.0), Google AI Edge LiteRT, Apple MLX, Vulkan/OpenCL/Metal, SQLDelight
+- **Tech Stack**: Kotlin Multiplatform (CMP 1.12), C++20 / NDK (llama.cpp), Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan/OpenCL/Metal, SQLDelight (v2.4)
 - **Key Capabilities**:
   - Dual-model Speculative Turbo decoding (draft pairing, dynamic context capping, KV cache session pre-warming)
   - Multi-runtime orchestration across llama.cpp (Vulkan/OpenCL/KleidiAI CPU), LiteRT-LM, LiteRT 2.3.0 Bonsai 4B diffusion, and Apple MLX

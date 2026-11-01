@@ -8,6 +8,7 @@
     "build:astro": "astro build",
     "dev": "astro dev",
     "dev:astro": "astro dev",
+    "check": "tsc --noEmit",
     "test": "node scripts/verify-routes.js && node tests/verify-assets.js && node tests/verify-links.js && node tests/verify-edge-functions.js && node tests/verify-contrast.js && node tests/verify-a11y-tokens.js && node tests/verify-content-loader.js && node tests/verify-seo-metadata.js",
     "test:routes": "node scripts/verify-routes.js",
     "test:assets": "node tests/verify-assets.js",

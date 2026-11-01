@@ -97,8 +97,10 @@ export default defineConfig({
   trailingSlash: 'always',
   publicDir: './static',
   outDir: './dist',
+  compressHTML: true,
   build: {
-    format: 'directory'
+    format: 'directory',
+    inlineStylesheets: 'never'
   },
   integrations: [markdownOutputsIntegration()],
   markdown: {

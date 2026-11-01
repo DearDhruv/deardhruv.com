@@ -6,7 +6,7 @@ export const GET: APIRoute = async () => {
   // Filter out section indices
   const articles = posts
     .filter((p) => !p.id.includes('_index'))
-    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+    .sort((a, b) => new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime());
 
   const jsonFeed = {
     version: 'https://jsonfeed.org/version/1.1',
