@@ -1,5 +1,5 @@
 +++
-title = "Posts"
-description = "Articles, guides, and engineering series by Dhruv Patel."
+title = "Posts & Engineering Notes"
+description = "Detailed engineering case studies, architecture notes, and systems teardowns by Dhruv Patel."
 weight = 10
 +++
