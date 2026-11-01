@@ -19,6 +19,7 @@
 | Phase 1 | Task 1.2 | Run existing repository audits | Completed | f5fbe43 | 2026-11-01 |
 | Phase 2 | Task 2.1 | Create a fact ledger | Completed | 56c8114 | 2026-11-01 |
 | Phase 2 | Task 2.2 | Resolve current employment | Completed | 56c8114 | 2026-11-01 |
+| Phase 2 | Task 2.5 | Refresh public resume without changing URL | Completed | Pending | 2026-11-01 |
 | Phase 4 | Task 4.1 | Separate independent and employer work | Completed | 3180c9c | 2026-11-01 |
 | Phase 4 | Task 4.2 | Add employer project data records | Completed | 3180c9c | 2026-11-01 |
 | Phase 4 | Task 4.3 | Build accessible employer project card | Completed | 3180c9c | 2026-11-01 |

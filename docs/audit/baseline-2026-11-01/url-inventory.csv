@@ -1,8 +1,8 @@
 url,route_path,file_path,http_status,content_type,canonical,indexability,title,word_count,category
 "https://deardhruv.com/","/","index.html",200,"text/html; charset=utf-8","https://deardhruv.com/","indexable","Dhruv Patel (@DearDhruv) - Lead Android Engineer, Android Architect",764,"core"
-"https://deardhruv.com/about/","/about/","about/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/about/","indexable","About Dhruv Patel",694,"core"
-"https://deardhruv.com/portfolio/","/portfolio/","portfolio/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/portfolio/","indexable","Work &amp; Impact :: Dhruv Patel",897,"core"
-"https://deardhruv.com/projects/","/projects/","projects/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/projects/","indexable","Engineering Projects &amp; Case Studies :: Dhruv Patel",1109,"core"
+"https://deardhruv.com/about/","/about/","about/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/about/","indexable","About Dhruv Patel",934,"core"
+"https://deardhruv.com/portfolio/","/portfolio/","portfolio/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/portfolio/","indexable","Work &amp; Impact :: Dhruv Patel",1558,"core"
+"https://deardhruv.com/projects/","/projects/","projects/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/projects/","indexable","Engineering Projects &amp; Case Studies :: Dhruv Patel",1465,"core"
 "https://deardhruv.com/posts/","/posts/","posts/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/posts/","indexable","Posts :: Dhruv Patel",446,"writing"
 "https://deardhruv.com/sitemap/","/sitemap/","sitemap/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/sitemap/","indexable","Sitemap :: Dhruv Patel",285,"utility"
 "https://deardhruv.com/posts/ai_playground_series/","/posts/ai_playground_series/","posts/ai_playground_series/index.html",200,"text/html; charset=utf-8","https://deardhruv.com/posts/ai_playground_series/","indexable","Beyond the Model: AI Playground Engineering Series :: Dhruv Patel",402,"series"
