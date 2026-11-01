@@ -1,7 +1,7 @@
 +++
 title = "Part 2 - The Day a Chat Box Became a Document Engine"
 date = "2026-10-05T11:00:00+05:30"
-description = "I thought “attach a PDF” would be a UI feature. It became an ingestion pipeline."
+description = "How a simple 'attach file' button turned into an offline ingestion pipeline for 25+ formats using pure RFC 1951 Deflate and memory-mapped chunks."
 tags = ["Android", "iOS", "Kotlin Multiplatform", "RAG", "On-Device AI", "Document Ingestion"]
 series = ["Beyond the Model"]
 [author]

@@ -1,7 +1,7 @@
 +++
 title = "Part 1 - I Wanted the Model to Stay on the Phone"
 date = "2026-10-05T10:00:00+05:30"
-description = "The engineering journey of integrating established on-device AI runtimes into one multimodal mobile product - and everything it takes to make the pieces behave like a coherent system."
+description = "Why running language models locally matters for privacy, exploring llama.cpp and ARM NEON acceleration, and the realities of moving beyond toy chat boxes."
 tags = ["Android", "iOS", "Kotlin Multiplatform", "On-Device AI", "LLM", "llama.cpp", "MediaPipe"]
 series = ["Beyond the Model"]
 [author]
