@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import proPic from '../assets/images/pro_pic_small.jpg';
 ---
 
 <BaseLayout
@@ -9,11 +11,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="layout-container-wide" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
     <!-- HERO SECTION -->
     <section class="card hero-panel">
-      <img
-        src="/images/pro_pic_small.jpg"
+      <Image
+        src={proPic}
         alt="Dhruv Patel"
-        width="180"
-        height="180"
+        width={180}
+        height={180}
         loading="eager"
         decoding="async"
         class="hero-avatar"

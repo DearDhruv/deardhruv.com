@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import proPic from '../assets/images/pro_pic_small.jpg';
+
 interface Props {
   currentPath?: string;
 }
@@ -26,11 +29,11 @@ function isCurrent(href: string, exact: boolean): boolean {
   <div class="site-header-inner">
     <a href="/" class="site-brand" aria-label="Dhruv Patel - Home">
       <div class="site-brand-avatar-wrap">
-        <img
-          src="/images/pro_pic_small.jpg"
+        <Image
+          src={proPic}
           alt="Dhruv Patel"
-          width="44"
-          height="44"
+          width={44}
+          height={44}
           class="site-brand-avatar"
           loading="eager"
         />
