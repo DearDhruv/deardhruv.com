@@ -16,8 +16,9 @@
 | Phase 0 | Task 0.3 | Inspect existing audit/test system | Completed | 806fa8c | 2026-11-01 |
 | Phase 0 | Task 0.4 | Correct stale repository documentation | Completed | 3421980 | 2026-11-01 |
 | Phase 1 | Task 1.1 | Generate complete URL inventory | Completed | 538ec93 | 2026-11-01 |
-| Phase 1 | Task 1.2 | Run existing repository audits | Completed | Pending | 2026-11-01 |
-| Phase 1 | Task 1.3 | Run PageSpeed Insights | In Progress | — | — |
+| Phase 1 | Task 1.2 | Run existing repository audits | Completed | f5fbe43 | 2026-11-01 |
+| Phase 2 | Task 2.1 | Create a fact ledger | Completed | Pending | 2026-11-01 |
+| Phase 2 | Task 2.2 | Resolve current employment | Completed | Pending | 2026-11-01 |
 | Phase 2 | Task 2.1–2.5 | Evidence ledger & public fact correction | Not Started | — | — |
 | Phase 3 | Task 3.1–3.5 | DearDhruv identity & branded-search | Not Started | — | — |
 | Phase 4 | Task 4.1–4.5 | Employer project portfolio implementation | Not Started | — | — |
