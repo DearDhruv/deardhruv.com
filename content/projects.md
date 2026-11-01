@@ -99,7 +99,7 @@ Architected scalable digital commerce solutions handling millions of transaction
 **Stack:** Kotlin, Android NDK, C++, Unix Domain Sockets, Bluetooth/USB HAL
 
 ### Architectural Focus & Outcomes
-Designed a low-latency Hardware Abstraction Layer (HAL) connecting Android point-of-sale platforms to 27+ peripheral hardware devices (thermal receipt printers, barcode scanners, payment chip terminals, scale scales).
+Designed a low-latency Hardware Abstraction Layer (HAL) connecting Android point-of-sale platforms to 30+ peripheral hardware devices (thermal receipt printers, barcode scanners, payment chip terminals, scale scales).
 
 - **Reliability:** Maintained 99.8% peripheral connection reliability through defensive state machine reconnects and hardware heartbeat watchdogs.
 - **Latency Optimization:** Decreased hardware communication latency by 60% through memory-mapped shared buffers and zero-copy IPC protocols.

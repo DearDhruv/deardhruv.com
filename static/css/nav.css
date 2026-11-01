@@ -10,11 +10,10 @@
               border-color var(--motion-duration-fast) var(--motion-ease);
 }
 
-@supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
+@supports (backdrop-filter: blur(12px)) {
   .site-header {
     background-color: rgba(9, 13, 22, 0.88);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
   }
   [data-theme="light"] .site-header {
     background-color: rgba(248, 250, 252, 0.90);
@@ -110,7 +109,7 @@
   white-space: nowrap;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
   .site-brand-title {
     display: none;
   }
@@ -132,7 +131,7 @@
 .site-nav-list {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-2);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -224,7 +223,6 @@
   justify-content: center;
   min-width: 44px;
   min-height: 44px;
-  padding: var(--space-2);
   border-radius: var(--radius-md);
   background-color: var(--color-bg-surface-elevated);
   border: 1px solid var(--color-border-subtle);
@@ -232,11 +230,53 @@
   cursor: pointer;
   box-sizing: border-box;
   transition: background-color var(--motion-duration-fast) var(--motion-ease),
-              border-color var(--motion-duration-fast) var(--motion-ease);
+              border-color var(--motion-duration-fast) var(--motion-ease),
+              color var(--motion-duration-fast) var(--motion-ease);
+}
+
+.theme-toggle-btn {
+  gap: var(--space-2);
+  padding: 0 var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.theme-toggle-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background-color: var(--color-bg-surface-hover);
+}
+
+.theme-icon-sun,
+.theme-icon-moon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  transition: transform var(--motion-duration-fast) var(--motion-ease);
+}
+
+.theme-toggle-btn:hover .theme-icon-sun,
+.theme-toggle-btn:hover .theme-icon-moon {
+  transform: rotate(15deg);
+}
+
+/* Theme toggle icon switching based on data-theme */
+:root:not([data-theme="light"]) .theme-icon-moon,
+[data-theme="light"] .theme-icon-sun {
+  display: none !important;
+}
+
+:root:not([data-theme="light"]) .theme-icon-sun,
+[data-theme="light"] .theme-icon-moon {
+  display: inline-block;
+  color: var(--color-accent);
 }
 
 .menu-toggle-btn {
   display: none;
+  padding: var(--space-2);
 }
 
 /* Backdrop */
@@ -292,6 +332,9 @@
     min-height: 44px;
     min-width: 44px;
     padding: var(--space-2);
+  }
+  .theme-toggle-label {
+    display: none;
   }
   .site-nav {
     display: none;

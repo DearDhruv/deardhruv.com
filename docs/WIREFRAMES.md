@@ -75,7 +75,7 @@ Structured ASCII wireframes specifying layout structure across mobile, tablet/fo
 ```text
 +-----------------------------------------------------------------------+
 | WORK & IMPACT                                                         |
-| 14+ years of engineering leadership, native performance, and edge AI  |
+| 15+ years of engineering leadership, native performance, and edge AI  |
 +-----------------------------------------------------------------------+
 | CATEGORY FILTER: [All] [Flagship Products] [Enterprise] [Open Source] |
 +-----------------------------------------------------------------------+
@@ -87,7 +87,7 @@ Structured ASCII wireframes specifying layout structure across mobile, tablet/fo
 | Impact: Pure KMP game loop, 3-way union sync, 29-tier achievement     |
 +-----------------------------------------------------------------------+
 | [ENTERPRISE] Digital Commerce & POS Peripherals                       |
-| Impact: Millions of transactions, 27+ hardware integrations           |
+| Impact: Millions of transactions, 30+ hardware integrations           |
 +-----------------------------------------------------------------------+
 ```
 

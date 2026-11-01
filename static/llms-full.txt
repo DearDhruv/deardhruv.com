@@ -6,7 +6,7 @@
 
 - **Name**: Dhruv Patel (known online as **DearDhruv**)
 - **Role**: Lead Android & Multiplatform Engineer | Director & Lead Engineer
-- **Experience**: 14+ years building high-performance mobile architectures, on-device AI runtimes, and digital commerce platforms
+- **Experience**: 15+ years building high-performance mobile architectures, on-device AI runtimes, and digital commerce platforms
 - **Core Specializations**:
   - On-Device AI & LLM Inference (llama.cpp v0.7.0, Google AI Edge LiteRT, Apple MLX, Speculative Turbo decoding)
   - Kotlin Multiplatform (KMP) & Compose Multiplatform

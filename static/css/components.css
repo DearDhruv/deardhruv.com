@@ -169,30 +169,11 @@
   border-color: transparent;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .btn-primary:hover,
-  .ds-btn-primary:hover {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-sm);
-  }
-}
-
 .btn-secondary,
 .ds-btn-secondary {
   background-color: var(--color-bg-surface-elevated);
   color: var(--color-text-primary);
   border-color: var(--color-border-subtle);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .btn-secondary:hover,
-  .ds-btn-secondary:hover {
-    background-color: var(--color-bg-surface-hover);
-    border-color: var(--color-border-strong);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-sm);
-  }
 }
 
 .btn-ghost,
@@ -203,6 +184,21 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover,
+  .ds-btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-secondary:hover,
+  .ds-btn-secondary:hover {
+    background-color: var(--color-bg-surface-hover);
+    border-color: var(--color-border-strong);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+
   .btn-ghost:hover,
   .ds-btn-ghost:hover {
     background-color: var(--color-bg-surface-hover);
@@ -402,7 +398,7 @@
   background-color: var(--color-accent-subtle);
   color: var(--color-text-accent);
   border: 1px solid var(--color-accent-border);
-  white-space: nowrap;
+  max-width: 100%;
 }
 
 .badge-neutral {

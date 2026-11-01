@@ -5,14 +5,14 @@ layout = "hero-page"
 description = "Dhruv Patel's professional portfolio showcasing native Android architecture, Kotlin Multiplatform, on-device AI runtimes, and engineering leadership."
 +++
 
-Welcome to my portfolio. I'm a **Lead Android & Multiplatform Engineer** with **14+ years** of experience building high-performance mobile architectures, distributed Kotlin Multiplatform systems, and privacy-first on-device AI runtimes for global markets.
+Welcome to my portfolio. I'm a **Lead Android & Multiplatform Engineer** with **15+ years** of experience building high-performance mobile architectures, distributed Kotlin Multiplatform systems, and privacy-first on-device AI runtimes for global markets.
 
 ---
 
 ## 👨‍💼 Professional Overview
 
 - **Current Role:** Lead Android Engineer at Impact Commerce
-- **Specializations:** Native Android (Kotlin/Compose), Kotlin Multiplatform (KMP/CMP), On-Device AI Runtimes (llama.cpp/LiteRT/MLX), Modern C++20 / NDK, Hardware & POS Integration.
+- **Specializations:** Native Android (Kotlin/Compose), Kotlin Multiplatform (KMP/CMP), On-Device AI Runtimes (llama.cpp/LiteRT/MLX/Diffusion), On-Device Image Generation, Modern C++20 / NDK, Hardware & POS Integration.
 - **Core Philosophy:** Platform-native fidelity, offline-first reliability, defensive crash isolation, and zero unnecessary cloud dependencies.
 
 ---
@@ -72,7 +72,7 @@ Architected scalable digital commerce solutions handling high transaction volume
 **Role:** Senior Developer & Mobile Architect  
 **Tech:** Kotlin, Android NDK, C++, Unix Domain Sockets, Peripheral USB/Bluetooth HAL
 
-Designed a comprehensive hardware abstraction layer (HAL) providing a clean, non-blocking asynchronous API for 27+ point-of-sale peripherals (receipt printers, barcode scanners, payment terminals).
+Designed a comprehensive hardware abstraction layer (HAL) providing a clean, non-blocking asynchronous API for 30+ point-of-sale peripherals (receipt printers, barcode scanners, payment terminals).
 
 - Achieved 99.8% peripheral connection reliability through defensive reconnection state machines and background watchdog services.
 - Reduced hardware communication latency by 60% using memory-mapped buffers and zero-copy IPC protocols.

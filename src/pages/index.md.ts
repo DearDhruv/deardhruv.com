@@ -16,7 +16,7 @@ export const GET: APIRoute = async () => {
 
   const markdown = `# Dhruv Patel - Lead Android Engineer
 
-Dhruv Patel - Lead Android & Multiplatform Engineer with 14+ years of experience building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.
+Dhruv Patel - Lead Android & Multiplatform Engineer with 15+ years of experience building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.
 
 ## Latest Posts
 

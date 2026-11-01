@@ -1,12 +1,12 @@
 # Dhruv Patel (@DearDhruv)
 
-> Lead Android & Multiplatform Engineer with 14+ years of experience building on-device AI runtimes, Kotlin Multiplatform systems, and high-performance native architectures. Director & Lead Engineer behind AI Playground and VelociHue.
+> Lead Android & Multiplatform Engineer with 15+ years of experience building on-device AI runtimes, Kotlin Multiplatform systems, and high-performance native architectures. Director & Lead Engineer behind AI Playground and VelociHue.
 
 ## Primary Sections
 
 - [Portfolio](https://deardhruv.com/portfolio/): Comprehensive engineering profile, technical stack (Kotlin, C++ NDK, Swift, Compose Multiplatform, llama.cpp, LiteRT, Vulkan/Metal), leadership, and impact highlights.
 - [Projects](https://deardhruv.com/projects/): Deep dive into production systems including AI Playground (on-device AI workstation), VelociHue (KMP arcade game), Digital Commerce Platform, and POS Hardware Integration modules.
-- [About](https://deardhruv.com/about/): Background story, 14+ years engineering journey, conference speaking topics, core values, and contact links.
+- [About](https://deardhruv.com/about/): Background story, 15+ years engineering journey, conference speaking topics, core values, and contact links.
 - [Blog](https://deardhruv.com/posts/): In-depth engineering articles, architecture breakdowns, and system design explorations.
 
 ## Featured Production Systems
