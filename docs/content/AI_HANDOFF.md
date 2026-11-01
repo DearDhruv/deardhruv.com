@@ -6,32 +6,36 @@ This document maintains state across AI agent sessions executing the `DEARDHRUV_
 
 ## Current Status
 
-- **Current Phase:** Phase C4 — Portfolio page
+- **Current Phase:** Phase C5 — Projects page
 - **Completed Tasks:**
   - `C0.1` - `C0.4`: Content inventory, fact ledger, conflict ledger (`9bfeb9a`).
   - `C1.1` - `C1.4`: Voice and style guide, before/after examples, tone matrix, authoring guide, review log (`376f931`).
   - `C2.1` - `C2.4`: Authentic first-person homepage rewrite (`c59e552`).
   - `C3.1` - `C3.4`: About page rewrite with concrete problem-solving principles (`be1fb81`).
-  - `C4.1` - `C4.4`: Portfolio page rewrite with categorized skills, hands-on vs leadership separation, and contextualized impact statements.
-- **Next Task:** Phase C5 — Projects page (`C5.1` - `C5.4`)
+  - `C4.1` - `C4.4`: Portfolio page rewrite with categorized skills and verified impact (`56b83a7`).
+  - `C5.1` - `C5.4`: Projects page rewrite with problem-first narrative, platform constraints, and technical summaries for AI Playground, VelociHue, Commerce, and POS HAL.
+- **Next Task:** Phase C6 — Article collection and series landing pages (`C6.1` - `C6.3`)
 - **Blockers / Decisions Needed:** None.
 
 ---
 
 ## Task History
 
-### Phase C4: Portfolio Page (`content(portfolio): clarify expertise and engineering impact`)
-- **Task IDs:** `C4.1`, `C4.2`, `C4.3`, `C4.4`
+### Phase C5: Projects Page (`content(projects): rewrite project stories and technical summaries`)
+- **Task IDs:** `C5.1`, `C5.2`, `C5.3`, `C5.4`
 - **Files Changed:**
-  - `content/portfolio.md`:
-    - Lead overview rewritten to focus on device-level systems, on-device AI runtimes, and hardware integration.
-    - Technical competencies reorganized into 5 clear categories without synthetic "Expert" tags.
-    - Distinct separation between hands-on engineering systems and technical leadership.
-    - Contextualized impact metrics for AI Playground, VelociHue, Commerce, and 30+ POS peripheral HAL.
+  - `content/projects.md`:
+    - Structured every case study with: Summary, Role & Status, The Problem, Platform Constraints & Trade-offs, Architecture Overview, and Key Decisions.
+    - AI Playground: Explained why local compute matters (privacy, subscriptions, offline reliability) before detailing `llama.cpp`, dual-model drafting, and `fork()` driver sandbox.
+    - VelociHue: Described gameplay, color-matching mechanics, and accessibility first, followed by deterministic KMP game engine and Cloud Firestore sync.
+    - Commerce & POS HAL: Refined production outcomes within confidentiality boundaries.
 - **Verification:**
   - Full Astro static build generated with 27 static routes.
   - Test suites: 39 legacy routes verified, 253 SEO checks passed, 130 visual assertions passed.
-- **Commit Target:** `content(portfolio): clarify expertise and engineering impact`
+- **Commit Target:** `content(projects): rewrite project stories and technical summaries`
+
+### Phase C4: Portfolio Page (`content(portfolio): clarify expertise and engineering impact`)
+- **Commit:** `56b83a7`
 
 ### Phase C3: About Page (`content(about): rewrite profile and professional story`)
 - **Commit:** `be1fb81`
