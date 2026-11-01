@@ -116,23 +116,23 @@ Store article assets in `static/images/posts/` and reference them with leading s
 
 ## 5. Local Preview & Validation
 
-Run the Hugo development server with draft rendering:
+Run the Astro development server:
 ```bash
-hugo server -D
+npm run dev
 ```
-Open [http://localhost:1313/](http://localhost:1313/) to review changes live.
+Open [http://localhost:4321/](http://localhost:4321/) to review changes live.
 
 ### Pre-Commit Verification Gate
 Before pushing or creating a pull request, run the verification suite:
 ```bash
-# 1. Clean build and asset fingerprinting
-hugo --gc --minify
+# 1. Clean Astro static build
+npm run build
 
-# 2. Automated legacy route regression check (must be 38/38)
-node scripts/verify-routes.js
+# 2. Automated regression, route, a11y, and asset test suites
+npm test
 
-# 3. Static document and download asset integrity check
-node tests/verify-assets.js
+# 3. Continuous audit engine check
+npm run audit
 ```
 
 ---

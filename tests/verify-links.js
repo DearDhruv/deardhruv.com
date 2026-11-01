@@ -47,7 +47,7 @@ for (const filePath of htmlFiles) {
   const relFilePath = path.relative(PUBLIC_DIR, filePath);
   const content = fs.readFileSync(filePath, 'utf-8');
 
-  // Skip crawling redirect/alias pages (Hugo auto-generated meta-refresh stubs)
+  // Skip crawling redirect/alias pages (legacy meta-refresh stubs)
   if (content.includes('http-equiv="refresh"') || content.includes('http-equiv=refresh')) {
     continue;
   }

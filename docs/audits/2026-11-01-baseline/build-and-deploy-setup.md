@@ -71,7 +71,6 @@ deardhruv.com/
 │   └── .well-known/            # Machine discovery & OAuth/MCP metadata endpoints
 ├── tests/                      # Automated test suites, fixtures, regression gates
 │   └── fixtures/               # Test fixtures (legacy-routes.json: 39 routes)
-├── themes/                     # Empty directory (legacy Hugo themes directory, inert)
 ├── .gitignore                  # Git ignore rules
 ├── .node-version               # Pinned Node.js version (24)
 ├── .nvmrc                      # Pinned Node.js version (24)
@@ -151,7 +150,7 @@ As documented in `docs/MIGRATION_DECISION_SIGNOFF.md` and `docs/FRAMEWORK_DECISI
    - Zero client runtime hydration JS on content pages (`0 KB` in `dist/_astro/`).
    - Seamless 4.1ms CSS variable theme and palette toggles without page refreshes.
    - Dynamic compile-time Markdown negotiation integration.
-3. Legacy Hugo artifacts (`config.toml`, Hugo layouts, `themes/hello-friend-ng`) were safely purged in commit `38c2100`. The directory `themes/` exists in the filesystem as an empty directory and does not affect the build.
+3. Legacy Hugo artifacts (`config.toml`, Hugo layouts, `themes/hello-friend-ng` submodule) were completely decommissioned and removed. No legacy Hugo directories or submodules remain in the repository.
 
 ### Legacy Hugo Configuration Audit (`config.toml` historical inspection)
 Inspection of the historical `config.toml` (prior to decommissioning in commit `38c2100`) reveals several architectural decisions and metadata configurations that provide necessary context for the current site setup:

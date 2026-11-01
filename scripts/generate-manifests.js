@@ -357,7 +357,7 @@ const inventory = [
     in_navigation: false,
     has_markdown_mirror: false,
     canonical_url: 'https://deardhruv.com/about/',
-    notes: 'Legacy Hugo alias; redirects via meta http-equiv=refresh to /about/'
+    notes: 'Legacy alias; redirects via meta http-equiv=refresh to /about/'
   },
   {
     url: 'https://deardhruv.com/about-hugo/',
@@ -371,7 +371,7 @@ const inventory = [
     in_navigation: false,
     has_markdown_mirror: false,
     canonical_url: 'https://deardhruv.com/about/',
-    notes: 'Legacy Hugo alias; redirects via meta http-equiv=refresh to /about/'
+    notes: 'Legacy alias; redirects via meta http-equiv=refresh to /about/'
   },
   {
     url: 'https://deardhruv.com/contact/',
@@ -385,7 +385,7 @@ const inventory = [
     in_navigation: false,
     has_markdown_mirror: false,
     canonical_url: 'https://deardhruv.com/about/',
-    notes: 'Legacy Hugo alias; redirects via meta http-equiv=refresh to /about/'
+    notes: 'Legacy alias; redirects via meta http-equiv=refresh to /about/'
   },
 
   // Utility / Internal HTML (2)
@@ -1312,7 +1312,7 @@ console.log(`✅ Generated ${inventoryCsvPath} (${inventory.length} records)`);
 
 // 2. URL Status and Redirects Catalog
 const statusAndRedirects = [
-  // A. Legacy Aliases (Hugo stubs)
+  // A. Legacy Aliases (stubs)
   {
     incoming_url: 'https://deardhruv.com/about-us/',
     requested_path: '/about-us/',
@@ -1322,7 +1322,7 @@ const statusAndRedirects = [
     target_path: '/about/',
     target_url: 'https://deardhruv.com/about/',
     canonical_alignment: 'aligned',
-    notes: 'Legacy Hugo alias. Renders HTML stub with meta refresh and rel=canonical to /about/'
+    notes: 'Legacy alias. Renders HTML stub with meta refresh and rel=canonical to /about/'
   },
   {
     incoming_url: 'https://deardhruv.com/about-hugo/',
@@ -1333,7 +1333,7 @@ const statusAndRedirects = [
     target_path: '/about/',
     target_url: 'https://deardhruv.com/about/',
     canonical_alignment: 'aligned',
-    notes: 'Legacy Hugo alias. Renders HTML stub with meta refresh and rel=canonical to /about/'
+    notes: 'Legacy alias. Renders HTML stub with meta refresh and rel=canonical to /about/'
   },
   {
     incoming_url: 'https://deardhruv.com/contact/',
@@ -1344,7 +1344,7 @@ const statusAndRedirects = [
     target_path: '/about/',
     target_url: 'https://deardhruv.com/about/',
     canonical_alignment: 'aligned',
-    notes: 'Legacy Hugo alias. Renders HTML stub with meta refresh and rel=canonical to /about/'
+    notes: 'Legacy alias. Renders HTML stub with meta refresh and rel=canonical to /about/'
   },
 
   // B. Netlify Configuration Redirects
@@ -1739,7 +1739,7 @@ The following empirical count matrix reconciles discovered resources across repo
 | **XML Sitemap Published Entries** | **23** | \`dist/sitemap.xml\` | Exactly matches the 23 canonical content routes with 100% parity. Zero non-canonical routes included. |
 | **Generated HTML Documents** | **28** | \`dist/**/*.html\` | 23 canonical pages + 3 legacy alias stubs + 1 error page (\`404.html\`) + 1 internal preview (\`design-preview/\`). |
 | **Live Crawled HTML Documents** | **28** | Crawled by \`tests/verify-links.js\` | 28 HTML files visited; 903 internal hyperlink targets checked with 0 broken links (100% crawl resolution). |
-| **Legacy Aliases (HTML stubs)** | **3** | \`dist/about-us/\`, \`dist/about-hugo/\`, \`dist/contact/\` | Legacy Hugo aliases preserved with \`http-equiv="refresh"\` and \`link rel="canonical" to /about/\`. |
+| **Legacy Aliases (HTML stubs)** | **3** | \`dist/about-us/\`, \`dist/about-hugo/\`, \`dist/contact/\` | Legacy aliases preserved with \`http-equiv="refresh"\` and \`link rel="canonical" to /about/\`. |
 | **Negotiated Markdown Mirrors** | **24** | \`dist/**/*.md\` | 23 content \`index.md\` mirrors + 1 static root \`/auth.md\`. |
 | **Machine Discovery Endpoints** | **13** | \`dist/\` | \`llms.txt\`, \`llms-full.txt\`, \`ai.txt\`, \`robots.txt\`, \`.well-known/mcp.json\`, \`.well-known/api-catalog\`, \`.well-known/oauth-*\`, \`.well-known/openid-*\`, \`.well-known/agent-skills/index.json\`, \`.well-known/jwks.json\`, \`ads.txt\`, \`app-ads.txt\`. |
 | **Syndication Feeds & Indexes** | **4** | \`dist/\` & \`netlify.toml\` | \`sitemap.xml\`, \`index.xml\` (RSS), \`index.json\` (JSON Feed 1.1), plus \`feed.json\` (Netlify 200 rewrite). |
@@ -1795,7 +1795,7 @@ Every discrepancy across repository counts, XML sitemap, and build artifacts is 
 
 The \`url-status-and-redirects.csv\` catalog defines 32 test vectors across 7 routing mechanisms:
 
-1. **Legacy Hugo Aliases (3 vectors):** Verified to return HTTP 200 with \`<meta http-equiv="refresh" content="0; url=https://deardhruv.com/about/">\` and self-correcting \`<link rel="canonical" href="https://deardhruv.com/about/">\`.
+1. **Legacy Aliases (3 vectors):** Verified to return HTTP 200 with \`<meta http-equiv="refresh" content="0; url=https://deardhruv.com/about/">\` and self-correcting \`<link rel="canonical" href="https://deardhruv.com/about/">\`.
 2. **Netlify Rewrite Redirects (1 vector):** Verified in \`netlify.toml\` ([[redirects]] from = "/feed.json" to = "/index.json" status = 200).
 3. **Slash Normalization (10 vectors):** Verified Netlify pretty-URL canonical behavior where slashless directory routes (\`/about\`, \`/portfolio\`, \`/projects\`, etc.) automatically normalize to trailing slashes.
 4. **Asset Trailing Slash Stripping (5 vectors):** Verified that binary files and XML/JSON endpoints strip trailing slashes.

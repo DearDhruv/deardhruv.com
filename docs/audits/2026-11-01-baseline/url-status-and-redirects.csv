@@ -1,7 +1,7 @@
 incoming_url,requested_path,request_type,status_code,handling_mechanism,target_path,target_url,canonical_alignment,notes
-https://deardhruv.com/about-us/,/about-us/,legacy-alias,200,HTML meta-refresh (0s) + canonical link,/about/,https://deardhruv.com/about/,aligned,Legacy Hugo alias. Renders HTML stub with meta refresh and rel=canonical to /about/
-https://deardhruv.com/about-hugo/,/about-hugo/,legacy-alias,200,HTML meta-refresh (0s) + canonical link,/about/,https://deardhruv.com/about/,aligned,Legacy Hugo alias. Renders HTML stub with meta refresh and rel=canonical to /about/
-https://deardhruv.com/contact/,/contact/,legacy-alias,200,HTML meta-refresh (0s) + canonical link,/about/,https://deardhruv.com/about/,aligned,Legacy Hugo alias. Renders HTML stub with meta refresh and rel=canonical to /about/
+https://deardhruv.com/about-us/,/about-us/,legacy-alias,200,HTML meta-refresh (0s) + canonical link,/about/,https://deardhruv.com/about/,aligned,Legacy alias. Renders HTML stub with meta refresh and rel=canonical to /about/
+https://deardhruv.com/about-hugo/,/about-hugo/,legacy-alias,200,HTML meta-refresh (0s) + canonical link,/about/,https://deardhruv.com/about/,aligned,Legacy alias. Renders HTML stub with meta refresh and rel=canonical to /about/
+https://deardhruv.com/contact/,/contact/,legacy-alias,200,HTML meta-refresh (0s) + canonical link,/about/,https://deardhruv.com/about/,aligned,Legacy alias. Renders HTML stub with meta refresh and rel=canonical to /about/
 https://deardhruv.com/feed.json,/feed.json,config-redirect,200,Netlify redirect rewrite (status = 200),/index.json,https://deardhruv.com/index.json,aligned,Netlify server rewrite configured in netlify.toml lines 32-35
 https://deardhruv.com/about,/about,slash-normalization,308,Netlify CDN pretty-URL canonical redirect,/about/,https://deardhruv.com/about/,aligned,Netlify automatically normalizes slashless directory requests to trailing-slash
 https://deardhruv.com/portfolio,/portfolio,slash-normalization,308,Netlify CDN pretty-URL canonical redirect,/portfolio/,https://deardhruv.com/portfolio/,aligned,Normalizes to canonical trailing slash
