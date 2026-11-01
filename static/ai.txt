@@ -6,3 +6,13 @@ Permissions:
   - inference
   - training
   - search
+Paths:
+  Allow:
+    - /
+  Disallow:
+    - /test/
+    - /design-preview/
+    - /.git/
+    - /private/
+    - /drafts/
+    - /api/private/

@@ -1,7 +1,7 @@
 +++
 title = "Part 6 - Pushing Mobile Hardware to the Edge"
 date = "2026-10-21T15:30:00+05:30"
-description = "Dual-model speculative decoding, on-demand GPU dynamic delivery, isolated driver crashes, and streaming fault-tolerance."
+description = "Engineering dual-model speculative drafting for 2x decoding speed, isolating GPU driver segmentation faults in a native fork() sandbox, and streaming fault tolerance."
 tags = ["Android", "iOS", "On-Device AI", "llama.cpp", "Kotlin Multiplatform", "Speculative Decoding", "Vulkan", "NDK", "Performance"]
 series = ["Beyond the Model"]
 [author]

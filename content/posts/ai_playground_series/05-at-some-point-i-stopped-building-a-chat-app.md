@@ -1,7 +1,7 @@
 +++
 title = "Part 5 - At Some Point I Stopped Building a Chat App"
 date = "2026-10-05T14:00:00+05:30"
-description = "The project became a platform because every feature needed a place to live."
+description = "Refactoring a monolithic mobile app into a multi-module MVI platform with clean offline boundaries, strict state stores, and zero cloud leaks."
 tags = ["Android", "iOS", "Architecture", "Kotlin Multiplatform", "MVI", "Clean Architecture"]
 series = ["Beyond the Model"]
 [author]

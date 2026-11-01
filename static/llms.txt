@@ -1,12 +1,12 @@
 # Dhruv Patel (@DearDhruv)
 
-> Lead Android & Multiplatform Engineer with 14+ years of experience building on-device AI runtimes, Kotlin Multiplatform systems, and high-performance native architectures. Director & Lead Engineer behind AI Playground and VelociHue.
+> Lead Android & Multiplatform Engineer with extensive production leadership building on-device AI runtimes, Kotlin Multiplatform systems, and high-performance native architectures. Director & Lead Engineer behind AI Playground and VelociHue.
 
 ## Primary Sections
 
 - [Portfolio](https://deardhruv.com/portfolio/): Comprehensive engineering profile, technical stack (Kotlin, C++ NDK, Swift, Compose Multiplatform, llama.cpp, LiteRT, Vulkan/Metal), leadership, and impact highlights.
 - [Projects](https://deardhruv.com/projects/): Deep dive into production systems including AI Playground (on-device AI workstation), VelociHue (KMP arcade game), Digital Commerce Platform, and POS Hardware Integration modules.
-- [About](https://deardhruv.com/about/): Background story, 14+ years engineering journey, conference speaking topics, core values, and contact links.
+- [About](https://deardhruv.com/about/): Background story, production engineering journey, conference speaking topics, core values, and contact links.
 - [Blog](https://deardhruv.com/posts/): In-depth engineering articles, architecture breakdowns, and system design explorations.
 
 ## Featured Production Systems
@@ -28,11 +28,24 @@ A 6-part technical journey detailing how to build an offline-first, on-device AI
 5. [Part 5 - At Some Point I Stopped Building a Chat App](https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/): Clean Architecture with MVI presentation, runtime contracts, UI decomposition, and cross-platform architectural boundaries.
 6. [Part 6 - Pushing Mobile Hardware to the Edge](https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/): Dual-model Speculative Turbo decoding (2x generation speedups), on-demand GPU dynamic delivery, native C++ `fork()` watchdog crash isolation, and streaming SQLite fault-tolerance.
 
+## Verified Profiles & Online Identity
+
+- GitHub: https://github.com/DearDhruv
+- LinkedIn: https://www.linkedin.com/in/deardhruv
+- X / Twitter: https://x.com/DearDhruv
+- Instagram: https://instagram.com/deardhruv
+- about.me: https://about.me/deardhruv
+- Hugging Face: https://huggingface.co/deardhruv
+- Medium: https://medium.com/@DearDhruv
+- Stack Overflow: https://stackoverflow.com/users/596566/deardhruv
+- Google Play Developer: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+
 ## Machine-Readable Feeds & Discovery
 
 - Full Content Directory: [https://deardhruv.com/llms-full.txt](https://deardhruv.com/llms-full.txt)
 - Sitemap: [https://deardhruv.com/sitemap.xml](https://deardhruv.com/sitemap.xml)
 - RSS Feed: [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)
-- JSON Feed: [https://deardhruv.com/feed.json](https://deardhruv.com/feed.json)
+- JSON Feed: [https://deardhruv.com/index.json](https://deardhruv.com/index.json)
 - MCP Card: [https://deardhruv.com/.well-known/mcp.json](https://deardhruv.com/.well-known/mcp.json)
+- API Catalog: [https://deardhruv.com/.well-known/api-catalog](https://deardhruv.com/.well-known/api-catalog)
 - Markdown Negotiation: Any URL can be fetched as Markdown by setting `Accept: text/markdown` or requesting `[url]index.md`.

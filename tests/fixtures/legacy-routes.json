@@ -4,7 +4,7 @@
     "type": "html",
     "expectedStatus": 200,
     "contentType": "text/html",
-    "sourceFile": "layouts/index.html",
+    "sourceFile": "src/pages/index.astro",
     "description": "Homepage"
   },
   {
@@ -19,6 +19,7 @@
     "path": "/about-us/",
     "type": "alias",
     "expectedStatus": 200,
+    "contentType": "text/html",
     "redirectTo": "/about/",
     "sourceFile": "content/about.md",
     "description": "Legacy alias for About"
@@ -27,6 +28,7 @@
     "path": "/about-hugo/",
     "type": "alias",
     "expectedStatus": 200,
+    "contentType": "text/html",
     "redirectTo": "/about/",
     "sourceFile": "content/about.md",
     "description": "Legacy alias for About"
@@ -35,6 +37,7 @@
     "path": "/contact/",
     "type": "alias",
     "expectedStatus": 200,
+    "contentType": "text/html",
     "redirectTo": "/about/",
     "sourceFile": "content/about.md",
     "description": "Legacy alias for Contact"
@@ -132,7 +135,7 @@
     "type": "xml",
     "expectedStatus": 200,
     "contentType": "application/xml",
-    "sourceFile": "layouts/sitemap.xml",
+    "sourceFile": "src/pages/sitemap.xml.ts",
     "description": "XML sitemap for search crawlers"
   },
   {
@@ -228,7 +231,7 @@
     "type": "json",
     "expectedStatus": 200,
     "contentType": "application/feed+json",
-    "sourceFile": "layouts/index.json",
+    "sourceFile": "src/pages/index.json.ts",
     "description": "JSON Feed format"
   },
   {
@@ -236,13 +239,14 @@
     "type": "markdown",
     "expectedStatus": 200,
     "contentType": "text/markdown",
-    "sourceFile": "layouts/index.md",
+    "sourceFile": "src/pages/index.md.ts",
     "description": "Markdown output of homepage"
   },
   {
     "path": "/feed.json",
     "type": "redirect",
     "expectedStatus": 200,
+    "contentType": "application/feed+json",
     "redirectTo": "/index.json",
     "sourceFile": "netlify.toml",
     "description": "Redirect alias for JSON Feed"
@@ -302,5 +306,13 @@
     "contentType": "application/json",
     "sourceFile": "static/.well-known/openid-configuration",
     "description": "OpenID Connect configuration"
+  },
+  {
+    "path": "/404.html",
+    "type": "html",
+    "expectedStatus": 404,
+    "contentType": "text/html",
+    "sourceFile": "src/pages/404.astro",
+    "description": "Accessible custom 404 error page"
   }
 ]

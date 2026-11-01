@@ -46,3 +46,39 @@
 | Total Blocking Time (TBT) | ≤ 200ms | < 50ms | Minified vanilla bundle (`main.js`, `menu.js`, `prism.js`) |
 | Speed Index | ≤ 2.0s | ~1.1s | Fast static delivery via Netlify CDN edge |
 | Route Integrity | 100% | 100% | 34+ routes valid in baseline |
+
+---
+
+## 3. Pre-Migration Addendum Baseline (Phase A0.2)
+**Date:** 31 October 2026
+**Commit:** `6875c8d`
+**Branch:** `feature/portfolio`
+
+### 3.1 Environment & Toolchain
+- **OS:** macOS Darwin 24.6.0 arm64
+- **Node.js:** v26.13.0 (Netlify pinned: Node 24)
+- **npm:** 11.20.0
+- **Hugo:** v0.169.0+extended+withdeploy darwin/arm64
+- **Submodule:** `themes/hello-friend-ng` @ commit `1a0a16f39c40b8f282f55d0ae988fe4234a432da`
+- **Git status:** Clean working tree on `feature/portfolio`
+
+### 3.2 Netlify Configuration Baseline
+- `publish`: `"public"`
+- `command`: `"hugo --gc --minify"`
+- `redirects`: `/feed.json` -> `/index.json` (200 rewrite)
+- `edge_functions`: `markdown-negotiation` mapped to `/*`
+- `security headers`: CSP, HSTS (`preload`), X-Frame-Options (`DENY`), X-Content-Type-Options (`nosniff`), Permissions-Policy, Link headers for `.well-known` discovery
+
+### 3.3 Build Output Snapshot
+- **Pages:** 106
+- **Paginator pages:** 2
+- **Static files:** 573
+- **Aliases:** 28
+- **Build time:** 273 ms
+- **Public directory size:** ~18 MB (including full font archives, resume PDF, screenshots)
+
+### 3.4 Automated Test Suite Status
+- `scripts/verify-routes.js`: 38/38 legacy routes verified (100% parity)
+- `tests/verify-assets.js`: 7/7 downloadable and discovery assets verified
+- `tests/verify-links.js`: 79 HTML docs, 1,460 internal links, zero broken links, 100% `<main id="main">` landmark presence
+- `tests/verify-edge-functions.js`: 72/72 assertions passed (all 23 markdown negotiation targets verified)

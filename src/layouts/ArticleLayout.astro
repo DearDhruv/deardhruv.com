@@ -1,0 +1,95 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  date?: string;
+  readingTime?: string;
+  tags?: string[];
+  series?: {
+    name: string;
+    part?: number;
+    total?: number;
+  };
+}
+
+const {
+  title,
+  description,
+  date,
+  readingTime,
+  tags = [],
+  series
+} = Astro.props;
+
+// Convert date to ISO 8601 string if valid
+let publishedIso: string | undefined;
+try {
+  if (date) {
+    const parsed = new Date(date);
+    if (!isNaN(parsed.getTime())) {
+      publishedIso = parsed.toISOString();
+    }
+  }
+} catch (_) {}
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogType="article"
+  publishedTime={publishedIso}
+  tags={tags}
+  author="Dhruv Patel"
+>
+  <article class="layout-container-wide" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
+    <header class="page-header">
+      {series && (
+        <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-2);">
+          {series.name} {series.part && series.total && `· Part ${series.part} of ${series.total}`}
+        </div>
+      )}
+      <h1 class="page-title">{title}</h1>
+      {description && <p class="page-lead">{description}</p>}
+      <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; margin-top: var(--space-4); font-family: var(--font-mono); font-size: var(--font-small); color: var(--color-text-secondary);">
+        {date && <time datetime={date}>{date}</time>}
+        {readingTime && <span>· {readingTime}</span>}
+        {tags.length > 0 && (
+          <div style="display: flex; gap: var(--space-2); margin-left: auto; flex-wrap: wrap;">
+            {tags.map(tag => (
+              <span class="badge">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+    <div class="prose">
+      <slot />
+    </div>
+
+    {series && (
+      <footer style="margin-top: var(--space-12);">
+        <nav class="card" aria-label="Series Navigation" style="padding: var(--space-6);">
+          <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
+            {series.name} Series
+          </div>
+          <h2 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Explore the 6-Part Architectural Journey</h2>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); margin-bottom: var(--space-4);">
+            An in-depth, production-verified blueprint for architecting an offline-first, on-device AI system on mobile hardware.
+          </p>
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <a href="/posts/ai_playground_series/" class="btn btn-secondary">
+              <span>View All 6 Chapters</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="/projects/" class="btn btn-secondary">
+              <span>Related Project: AI Playground</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </nav>
+      </footer>
+    )}
+  </article>
+</BaseLayout>

@@ -1,0 +1,390 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PaletteSwitcher from '../components/PaletteSwitcher.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  ogImage?: string;
+  ogImageAlt?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  tags?: string[];
+  noindex?: boolean;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  schema?: Record<string, any> | Record<string, any>[];
+}
+
+const {
+  title,
+  description = "Dhruv Patel - Lead Android & Multiplatform Engineer crafting on-device AI runtimes, distributed KMP systems, and high-performance native architectures with extensive production leadership.",
+  canonicalUrl,
+  ogType = "website",
+  ogImage,
+  ogImageAlt,
+  publishedTime,
+  modifiedTime,
+  author = "Dhruv Patel",
+  tags = [],
+  noindex = false,
+  breadcrumbs,
+  schema
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const siteOrigin = "https://deardhruv.com";
+const normalizedPath = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+const canonical = canonicalUrl || `${siteOrigin}${normalizedPath}`;
+const isHtmlFile = canonical.endsWith('.html');
+const markdownUrl = !noindex && !isHtmlFile
+  ? `${canonical.endsWith('/') ? canonical : canonical + '/'}index.md`
+  : null;
+const formattedTitle = title.includes('Dhruv Patel') ? title : `${title} :: Dhruv Patel`;
+const defaultOgImage = `${siteOrigin}/images/pro_pic_small.jpg`;
+const resolvedOgImage = ogImage || defaultOgImage;
+const resolvedOgImageAlt = ogImageAlt || `${formattedTitle} - Dhruv Patel`;
+
+// Construct Breadcrumbs
+const breadcrumbItems = [
+  { name: 'Home', url: `${siteOrigin}/` }
+];
+if (breadcrumbs && breadcrumbs.length > 0) {
+  breadcrumbItems.push(...breadcrumbs);
+} else {
+  const pathSegments = normalizedPath.split('/').filter(Boolean);
+  let accumPath = siteOrigin;
+  for (const seg of pathSegments) {
+    accumPath += `/${seg}`;
+    const readableName = seg
+      .replace(/-/g, ' ')
+      .replace(/_/g, ' ')
+      .replace(/^\d+-/, '')
+      .replace(/\b\w/g, l => l.toUpperCase());
+    breadcrumbItems.push({ name: readableName, url: `${accumPath}/` });
+  }
+}
+
+const breadcrumbsListSchema = {
+  '@type': 'BreadcrumbList',
+  '@id': `${canonical}#breadcrumb`,
+  itemListElement: breadcrumbItems.map((item, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    name: item.name,
+    item: item.url
+  }))
+};
+
+const personSchema = {
+  '@type': 'Person',
+  '@id': `${siteOrigin}/#person`,
+  name: 'Dhruv Patel',
+  alternateName: ['DearDhruv', 'Dhruv'],
+  url: `${siteOrigin}/`,
+  image: `${siteOrigin}/android-chrome-512x512.png`,
+  jobTitle: 'Lead Android & Multiplatform Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Impact Commerce'
+  },
+  description: 'Lead Android & Multiplatform Engineer building on-device AI runtimes, Kotlin Multiplatform systems, and high-performance native architectures with extensive production leadership.',
+  sameAs: [
+    'https://github.com/DearDhruv',
+    'https://x.com/DearDhruv',
+    'https://twitter.com/DearDhruv',
+    'https://www.linkedin.com/in/deardhruv',
+    'https://instagram.com/deardhruv',
+    'https://about.me/deardhruv',
+    'https://huggingface.co/deardhruv',
+    'https://medium.com/@DearDhruv',
+    'https://stackoverflow.com/users/596566/deardhruv',
+    'https://dribbble.com/DearDhruv',
+    'https://www.youtube.com/user/Dhruvein',
+    'https://www.reddit.com/user/DearDhruv/',
+    'https://play.google.com/store/apps/developer?id=Dhruv+Patel'
+  ],
+  knowsAbout: [
+    'Android Architecture',
+    'Kotlin Multiplatform (KMP)',
+    'On-Device AI Runtimes',
+    'On-Device Image Generation',
+    'Compose Multiplatform',
+    'llama.cpp',
+    'Google AI Edge LiteRT',
+    'Modern C++20 / NDK',
+    'Vulkan Compute',
+    'Clean Architecture',
+    'Offline-First Systems',
+    'Speculative Decoding',
+    'Hardware Abstraction Layers (HAL)'
+  ]
+};
+
+const websiteSchema = {
+  '@type': 'WebSite',
+  '@id': `${siteOrigin}/#website`,
+  url: `${siteOrigin}/`,
+  name: 'Dhruv Patel',
+  description: 'Personal portfolio, engineering case studies, and systems architecture articles by Dhruv Patel.',
+  publisher: { '@id': `${siteOrigin}/#person` },
+  inLanguage: 'en-US'
+};
+
+let pageSchema: Record<string, any>;
+if (ogType === 'article') {
+  pageSchema = {
+    '@type': 'TechArticle',
+    '@id': `${canonical}#article`,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    headline: title,
+    description: description,
+    inLanguage: 'en-US',
+    mainEntityOfPage: canonical,
+    author: { '@id': `${siteOrigin}/#person` },
+    publisher: { '@id': `${siteOrigin}/#person` },
+    image: resolvedOgImage,
+    datePublished: publishedTime || '2026-10-05T10:00:00+05:30',
+    dateModified: modifiedTime || publishedTime || '2026-10-21T15:30:00+05:30',
+    keywords: tags,
+    articleSection: 'Mobile Systems & On-Device AI'
+  };
+} else if (normalizedPath === '/') {
+  pageSchema = {
+    '@type': 'ProfilePage',
+    '@id': `${siteOrigin}/#webpage`,
+    url: `${siteOrigin}/`,
+    name: formattedTitle,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    about: { '@id': `${siteOrigin}/#person` },
+    mainEntity: { '@id': `${siteOrigin}/#person` },
+    description: description,
+    inLanguage: 'en-US'
+  };
+} else {
+  pageSchema = {
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: formattedTitle,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    description: description,
+    inLanguage: 'en-US'
+  };
+}
+
+const jsonLdGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    personSchema,
+    websiteSchema,
+    pageSchema,
+    breadcrumbsListSchema,
+    ...(Array.isArray(schema) ? schema : schema ? [schema] : [])
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-palette="amber">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{formattedTitle}</title>
+  <meta name="title" content={formattedTitle}>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+
+  <!-- Robots Directives & Search Bot Hygiene -->
+  {noindex ? (
+    <>
+      <meta name="robots" content="noindex, follow">
+      <meta name="googlebot" content="noindex, follow">
+      <meta name="bingbot" content="noindex, follow">
+    </>
+  ) : (
+    <>
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+      <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    </>
+  )}
+
+  <!-- Open Graph / Facebook / LinkedIn / Discord / Slack -->
+  <meta property="og:site_name" content="Dhruv Patel">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content={ogType}>
+  <meta property="og:title" content={formattedTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={resolvedOgImage}>
+  <meta property="og:image:secure_url" content={resolvedOgImage}>
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content={resolvedOgImageAlt}>
+
+  {ogType === 'article' && publishedTime && (
+    <meta property="article:published_time" content={publishedTime}>
+  )}
+  {ogType === 'article' && modifiedTime && (
+    <meta property="article:modified_time" content={modifiedTime}>
+  )}
+  {ogType === 'article' && (
+    <>
+      <meta property="article:author" content="https://deardhruv.com/">
+      <meta property="article:section" content="Mobile Architecture & On-Device AI">
+    </>
+  )}
+  {ogType === 'article' && tags && tags.map(tag => (
+    <meta property="article:tag" content={tag}>
+  ))}
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@DearDhruv">
+  <meta name="twitter:creator" content="@DearDhruv">
+  <meta name="twitter:title" content={formattedTitle}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={resolvedOgImage}>
+  <meta name="twitter:image:alt" content={resolvedOgImageAlt}>
+
+  <!-- Favicons, Touch Icons & Web App Manifest -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#f59e0b">
+
+  <!-- AI Crawling, Agent Protocols & Machine-Readable Feeds -->
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  <link rel="help" href="/llms-full.txt" type="text/markdown">
+  <link rel="mcp" href="/.well-known/mcp.json" type="application/json">
+  <link rel="api-catalog" href="/.well-known/api-catalog" type="application/linkset+json">
+  <link rel="service-doc" href="/auth.md" type="text/markdown">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="application/feed+json" href="/index.json" title="Dhruv Patel JSON Feed">
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Dhruv Patel RSS Feed">
+  {markdownUrl && (
+    <link rel="alternate" type="text/markdown" href={markdownUrl} title="Markdown format for AI agents">
+  )}
+  <meta name="ai-agent" content="enabled=true; policy=/llms.txt; format=markdown">
+
+  <!-- Structured Data / JSON-LD Knowledge Graph -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph, null, 2)} />
+
+  <!-- Design System Token Sheets -->
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/nav.css">
+
+  <!-- Zero-flash synchronous theme and palette initialization -->
+  <script is:inline>
+    (() => {
+      try {
+        const q = new URLSearchParams(window.location.search), ls = localStorage, doc = document.documentElement;
+        const t = q.get('theme'), p = q.get('palette'), sw = q.get('palette-switcher');
+        const v = ['cyan', 'emerald', 'amber', 'indigo'];
+        const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        doc.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : (ls.getItem('theme') || 'dark'));
+        const validP = v.includes(p) ? p : null;
+        const storedP = ls.getItem('palette');
+        doc.setAttribute('data-palette', validP || (v.includes(storedP) ? storedP : 'amber'));
+        if (validP) { try { ls.setItem('palette', validP); } catch (_) {} }
+        if (sw === 'true' || sw === '1' || p === 'true' || p === '1' || validP) {
+          try { ls.setItem('palette_switcher_enabled', 'true'); } catch (_) {}
+        } else if (sw === 'false' || sw === '0' || p === 'false' || p === '0') {
+          try { ls.setItem('palette_switcher_enabled', 'false'); } catch (_) {}
+        }
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+          doc.classList.add('js-scroll-animate');
+        }
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <Header currentPath={currentPath} />
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <Footer />
+
+  <PaletteSwitcher />
+
+  <script is:inline src="/js/theme-toggle.js"></script>
+  <script is:inline>
+    (() => {
+      const menuBtn = document.getElementById('menu-toggle');
+      const siteNav = document.getElementById('site-navigation');
+      const backdrop = document.getElementById('site-nav-backdrop');
+
+      function closeMenu() {
+        if (!siteNav || !siteNav.classList.contains('is-open')) return;
+        siteNav.classList.remove('is-open');
+        if (menuBtn) {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.classList.remove('is-active');
+        }
+        if (backdrop) backdrop.classList.remove('is-open');
+      }
+
+      function toggleMenu() {
+        if (!siteNav || !menuBtn) return;
+        const open = siteNav.classList.toggle('is-open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.classList.toggle('is-active', open);
+        if (backdrop) backdrop.classList.toggle('is-open', open);
+      }
+
+      if (menuBtn && siteNav) {
+        menuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleMenu();
+        });
+
+        if (backdrop) {
+          backdrop.addEventListener('click', closeMenu);
+          backdrop.addEventListener('touchstart', closeMenu, { passive: true });
+        }
+
+        // Close when clicking or touching outside
+        document.addEventListener('click', (e) => {
+          if (siteNav.classList.contains('is-open') && !siteNav.contains(e.target) && !menuBtn.contains(e.target)) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('touchstart', (e) => {
+          if (siteNav.classList.contains('is-open') && !siteNav.contains(e.target) && !menuBtn.contains(e.target)) {
+            closeMenu();
+          }
+        }, { passive: true });
+
+        // Close when any link inside siteNav is clicked
+        siteNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+            closeMenu();
+            menuBtn.focus();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

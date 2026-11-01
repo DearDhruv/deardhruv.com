@@ -22,9 +22,12 @@ export default async (request: Request, context: Context) => {
     // Try to fetch the markdown version
     const response = await context.rewrite(markdownPath);
 
-    // If the rewrite was successful (assuming it would 404 if not found,
-    // but context.rewrite returns a response we can modify)
-    // We want to force the content-type
+    // If the rewrite was not successful (e.g. 404), return response without claiming agent readiness
+    if (!response.ok) {
+      return response;
+    }
+
+    // We want to force the content-type for markdown
     const newResponse = new Response(response.body, response);
     newResponse.headers.set("content-type", "text/markdown; charset=utf-8");
     newResponse.headers.set("x-agent-ready", "true");

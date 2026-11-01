@@ -4,12 +4,28 @@
   "private": true,
   "description": "DearDhruv.com - Personal portfolio & engineering blog of Dhruv Patel",
   "scripts": {
-    "build": "hugo --gc --minify",
-    "test": "node scripts/verify-routes.js && node tests/verify-assets.js && node tests/verify-links.js && node tests/verify-edge-functions.js",
+    "build": "astro build",
+    "build:astro": "astro build",
+    "dev": "astro dev",
+    "dev:astro": "astro dev",
+    "test": "node scripts/verify-routes.js && node tests/verify-assets.js && node tests/verify-links.js && node tests/verify-edge-functions.js && node tests/verify-contrast.js && node tests/verify-a11y-tokens.js && node tests/verify-content-loader.js && node tests/verify-seo-metadata.js",
     "test:routes": "node scripts/verify-routes.js",
     "test:assets": "node tests/verify-assets.js",
     "test:links": "node tests/verify-links.js",
     "test:edge": "node tests/verify-edge-functions.js",
+    "test:contrast": "node tests/verify-contrast.js",
+    "test:a11y": "node tests/verify-a11y-tokens.js",
+    "test:content": "node tests/verify-content-loader.js",
+    "test:seo": "node tests/verify-seo-metadata.js",
+    "test:dist": "PUBLIC_DIR=dist node scripts/verify-routes.js && PUBLIC_DIR=dist node tests/verify-assets.js && PUBLIC_DIR=dist node tests/verify-links.js && PUBLIC_DIR=dist node tests/verify-edge-functions.js",
+    "test:regression": "node tests/verify-complete-regression.js",
+    "test:visual": "node tests/verify-visual-regression.js",
+    "test:perf": "node tests/verify-performance-budgets.js",
     "new:post": "node scripts/new-post.js"
+  },
+  "devDependencies": {
+    "@astrojs/markdown-remark": "^7.3.5",
+    "astro": "^7.4.4",
+    "typescript": "^7.0.2"
   }
 }

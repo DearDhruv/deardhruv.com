@@ -1,0 +1,21 @@
+---
+import ArticleLayout from '../../../../layouts/ArticleLayout.astro';
+import { getEntry, render } from 'astro:content';
+
+const post = await getEntry('posts', 'ai_playground_series/06-pushing-mobile-hardware-to-the-edge');
+if (!post) {
+  throw new Error('Missing article 06 in posts collection');
+}
+const { Content } = await render(post);
+---
+
+<ArticleLayout
+  title={post.data.title}
+  description={post.data.description}
+  date="Oct 21, 2026"
+  readingTime="11 min read"
+  tags={post.data.tags}
+  series={{ name: "Beyond the Model", part: 6, total: 6 }}
+>
+  <Content />
+</ArticleLayout>

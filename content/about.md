@@ -1,5 +1,5 @@
 +++
-title = "Dhruv Patel"
+title = "About Dhruv Patel"
 date = "2022-08-03"
 layout = "hero-page"
 aliases = ["about-us", "about-hugo", "contact"]
@@ -7,105 +7,81 @@ aliases = ["about-us", "about-hugo", "contact"]
 name = "Dhruv Patel"
 +++
 
-Commonly known online as **DearDhruv**, I'm a **Lead Android & Multiplatform Engineer** with over **14 years** of experience crafting high-performance, user-centric mobile applications, on-device AI runtimes, and distributed multiplatform systems.
+I'm **Dhruv Patel** (known online as **DearDhruv**), a Lead Android and Multiplatform Engineer based in India. I focus on native mobile systems, Kotlin Multiplatform architecture, and running local AI models directly on consumer devices.
 
-Currently serving as a **Lead Android Engineer at Impact Commerce**, I specialize in building sophisticated digital commerce solutions. Beyond enterprise systems, I actively pioneer offline-first on-device AI architectures (such as [AI Playground](https://github.com/DearDhruv/Model-Playground)) and cross-platform games in Kotlin Multiplatform (like [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)). My passion lies in pushing the boundaries of what's possible on mobile hardware-from complex hardware integrations and NDK acceleration to advanced multimedia workflows and local LLM inference.
+Currently, I serve as a **Lead Android Engineer at Impact Commerce**, where I work on digital commerce applications, POS payment terminal integrations, and high-throughput checkout flows.
 
-👉 **Portfolio:** [See my work and impact highlights](/portfolio/)
+Beyond enterprise systems, I spend significant time building open-source tools and experimental applications. Two projects where I've documented my work in detail are **[AI Playground](https://github.com/DearDhruv/Model-Playground)**, an offline-first mobile workstation for running local LLMs and diffusion models, and **[VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)**, a fast-paced multiplatform game running across Android, iOS, and Android TV.
 
----
-
-## 🛠️ Technical Expertise
-
-### Languages & Frameworks
-
-- **Languages:** Kotlin (Expert), Java, Modern C++ (NDK), Swift
-- **Mobile & Multiplatform:** Jetpack Compose, Compose Multiplatform, Android SDK, iOS (SwiftUI host)
-- **On-Device AI & Runtimes:** llama.cpp (v0.7.0), Google AI Edge LiteRT, Apple MLX, NDK (Vulkan, OpenCL, Metal, ARM KleidiAI)
-- **Architecture & Data:** MVI, Clean Architecture, MVVM, SQLDelight, Cloud Firestore (Schema v5), Room, Coroutines/Flow
-
-### Specializations
-
-- **On-Device AI & Local LLMs** - Offline multimodal inference, Speculative Turbo decoding, KV cache pre-warming, hardware crash isolation
-- **Kotlin Multiplatform (KMP)** - Shared domain logic, MVI presentation stores, and Compose Multiplatform cross-device UI
-- **Android Architecture Patterns** - Designing scalable, maintainable Clean Architecture and MVI applications
-- **Jetpack Compose UI & Adaptive Design** - Modern declarative UI with adaptive two-pane layouts across phones, foldables, tablets, and Android TV
-- **Hardware Integration** - Seamless connectivity with POS systems and low-level NDK bridges
-- **Multimedia Workflows & Game Engines** - Real-time graphics, audio/haptic systems, and high-framerate interaction loops
-- **Performance Optimization** - Profiling, memory management, native driver isolation, and battery optimization
-
-### Leadership & Mentorship
-
-- Technical team leadership and architecture guidance
-- Mentoring developers in modern Android and Multiplatform practices
-- Code review and design pattern implementation
-- Developer relations and community engagement
+👉 **Portfolio:** [Explore engineering highlights and case studies](/portfolio/)
 
 ---
 
-## 🌍 Professional Journey
+## 🛠️ How I Approach Engineering
 
-Over the past 14+ years, I've worked on diverse projects ranging from small startups to large-scale enterprise applications. I've successfully:
+I prefer working on problems where software directly meets hardware limits. A few principles that guide how I build:
 
-- **Architected** scalable mobile and multiplatform solutions serving millions of users globally
-- **Pioneered** on-device LLM inference and local multimodal AI pipelines on consumer mobile hardware
-- **Led** teams of developers in implementing modern architecture patterns
-- **Optimized** applications for performance across diverse Android devices and NDK compute backends
-- **Mentored** junior and mid-level developers in best practices
-- **Contributed** to the developer community through technical speaking and open-source projects
+### 1. Build for Real Device Constraints
+Mobile devices have hard thermal ceilings, volatile memory budgets, and unpredictable battery drains. When building AI Playground, running inference directly on a phone meant accounting for vendor Vulkan driver segmentation faults. Rather than pretending mobile drivers never crash, I moved inference into a defensive `fork()` child process sandbox with a 3000ms watchdog loop. If a driver crashes, the child process is terminated with `SIGKILL` without taking down the user's UI.
 
----
+### 2. Prefer Local Processing Where Practical
+Cloud services are convenient, but keeping compute local protects privacy, eliminates round-trip network latency, and ensures applications work when connections fail. Running on-device LLMs (via `llama.cpp` and `LiteRT`) and keeping documents in a local SQLite database ensures personal data never leaves the device.
 
-## 🎤 Community & Speaking
+### 3. Share Logic Without Sacrificing Native Feel
+In Kotlin Multiplatform, I favor sharing deterministic core logic—state stores, persistence engines, and game loops—while respecting each platform's native strengths. In VelociHue, Android TV navigation uses native D-pad focus semantics, iOS runs a SwiftUI host, and Android uses Jetpack Compose, all sharing a single deterministic physics loop.
 
-I'm passionate about sharing knowledge with the developer community. I regularly speak at industry events and conferences about:
-
-- On-Device AI & Local LLM Runtimes in Production
-- Kotlin Multiplatform (KMP) & Compose Multiplatform Architecture
-- Modern Android Architecture & Design Patterns
-- Jetpack Compose Best Practices
-- Hardware Integration & Performance Optimization
-- Technical Leadership & Team Development
+### 4. Hardware Integration Demands Defensive IPC
+Working with 30+ physical point-of-sale peripherals (receipt printers, barcode scanners, payment terminals) taught me that hardware state can disconnect at any millisecond. I design hardware abstraction layers with isolated IPC channels, timeout fallbacks, and zero unhandled exceptions.
 
 ---
 
-## 🌟 Core Values
+## 🌍 Background & Technical Focus
 
-- **Excellence** - Commitment to high-quality, maintainable code
-- **Continuous Learning** - Staying current with emerging technologies
-- **Collaboration** - Building great teams and fostering knowledge sharing
-- **User Focus** - Creating applications that genuinely improve people's lives
-- **Innovation** - Pushing boundaries and exploring new possibilities
+Over the course of my engineering career across startups to enterprise platforms, I've focused on:
+
+- **Native Android & System Internals:** Kotlin, Jetpack Compose, Coroutines/Flow, and C++20 via the Android NDK.
+- **Kotlin Multiplatform (KMP/CMP):** Shared MVI architectures, Compose Multiplatform for Android, iOS, and Android TV.
+- **On-Device Machine Learning:** Local inference engines (`llama.cpp`, Google AI Edge LiteRT, Apple MLX), speculative drafting pipelines, and on-device image synthesis (Bonsai 4B & Ternary diffusion).
+- **Architecture & Resilient Storage:** MVI, unidirectional data flow, SQLDelight, Room, and offline-first synchronization with Cloud Firestore.
+- **Team Leadership & Mentorship:** Guiding engineering teams through modern architecture migrations, code quality standards, and performance profiling.
 
 ---
 
-## 📱 Connect & Collaborate
+## 🎤 Community & Technical Writing
 
-I'm always interested in:
+I enjoy breaking down complex systems into practical, readable explanations. I regularly document my findings and speak with the developer community about:
 
-- **Collaboration** on innovative mobile projects
-- **Speaking Engagements** at conferences and meetups
-- **Mentorship** opportunities
-- **Technical Discussions** about Android development
-- **Open-Source Contributions**
+- Running on-device LLMs and diffusion models on mobile silicon.
+- Kotlin Multiplatform architecture patterns for production apps.
+- Native crash sandboxing and memory safety with the Android NDK.
+- Performance profiling, thermal management, and battery guardrails.
 
-### Reach Out:
+You can read my six-part engineering breakdown in the **[Beyond the Model Series](/posts/ai_playground_series/)**.
+
+---
+
+## 📱 Connect & Verified Profiles
+
+If you'd like to discuss native mobile architecture, on-device AI systems, or technical speaking, feel free to reach out directly.
 
 - **📧 Email:** [dhruv.time@gmail.com](mailto:dhruv.time@gmail.com)
-- **💼 LinkedIn:** [@DearDhruv](https://www.linkedin.com/in/deardhruv/)
+- **💼 LinkedIn:** [linkedin.com/in/deardhruv](https://www.linkedin.com/in/deardhruv/)
 - **💻 GitHub:** [@DearDhruv](https://github.com/DearDhruv)
-- **🐦 Twitter:** [@DearDhruv](https://twitter.com/DearDhruv)
+- **🐦 X / Twitter:** [@DearDhruv](https://x.com/DearDhruv)
 - **📸 Instagram:** [@DearDhruv](https://instagram.com/deardhruv)
-
----
-
-> "Technology is best when it brings people together. Engineering excellence comes from a commitment to continuous learning, clean code, and building solutions that genuinely improve people's lives."
+- **🌐 about.me:** [about.me/deardhruv](https://about.me/deardhruv)
+- **🤗 Hugging Face:** [@DearDhruv](https://huggingface.co/deardhruv)
+- **✍️ Medium:** [@DearDhruv](https://medium.com/@DearDhruv)
+- **📚 Stack Overflow:** [deardhruv](https://stackoverflow.com/users/596566/deardhruv)
+- **🎨 Dribbble:** [@DearDhruv](https://dribbble.com/DearDhruv)
+- **▶️ YouTube:** [@Dhruvein](https://www.youtube.com/user/Dhruvein)
+- **🤖 Reddit:** [u/DearDhruv](https://www.reddit.com/user/DearDhruv/)
 
 ---
 
 ### 🔗 Quick Links
 
-- **Portfolio:** [View my full portfolio](/portfolio/)
-- **Projects:** [See featured projects](/projects/)
-- **Blog:** [Read my latest articles](/posts/)
-- **Sitemap:** [Explore the site](/sitemap/)
+- **Portfolio:** [View full engineering portfolio](/portfolio/)
+- **Projects:** [See production systems and case studies](/projects/)
+- **Articles:** [Read technical engineering logs](/posts/)
+- **Sitemap:** [Explore site structure](/sitemap/)

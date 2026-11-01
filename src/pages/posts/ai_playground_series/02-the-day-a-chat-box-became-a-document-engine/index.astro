@@ -1,0 +1,21 @@
+---
+import ArticleLayout from '../../../../layouts/ArticleLayout.astro';
+import { getEntry, render } from 'astro:content';
+
+const post = await getEntry('posts', 'ai_playground_series/02-the-day-a-chat-box-became-a-document-engine');
+if (!post) {
+  throw new Error('Missing article 02 in posts collection');
+}
+const { Content } = await render(post);
+---
+
+<ArticleLayout
+  title={post.data.title}
+  description={post.data.description}
+  date="Oct 5, 2026"
+  readingTime="9 min read"
+  tags={post.data.tags}
+  series={{ name: "Beyond the Model", part: 2, total: 6 }}
+>
+  <Content />
+</ArticleLayout>

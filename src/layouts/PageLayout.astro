@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  lead?: string;
+  containerClass?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  lead,
+  containerClass = "layout-container-wide",
+  noindex = false
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <div class={containerClass} style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
+    <header class="page-header">
+      <h1 class="page-title">{title}</h1>
+      {lead && <p class="page-lead">{lead}</p>}
+    </header>
+    <slot />
+  </div>
+</BaseLayout>

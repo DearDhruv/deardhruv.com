@@ -6,7 +6,7 @@
 
 - **Name**: Dhruv Patel (known online as **DearDhruv**)
 - **Role**: Lead Android & Multiplatform Engineer | Director & Lead Engineer
-- **Experience**: 14+ years building high-performance mobile architectures, on-device AI runtimes, and digital commerce platforms
+- **Experience**: Seasoned engineering leadership building high-performance mobile architectures, on-device AI runtimes, and digital commerce platforms
 - **Core Specializations**:
   - On-Device AI & LLM Inference (llama.cpp v0.7.0, Google AI Edge LiteRT, Apple MLX, Speculative Turbo decoding)
   - Kotlin Multiplatform (KMP) & Compose Multiplatform
@@ -14,6 +14,16 @@
   - Architecture Patterns (MVI, Clean Architecture, Reactive StateFlow)
   - Cloud Synchronization & Offline-First Data (Cloud Firestore Schema v5, SQLDelight v10)
   - Hardware-Software Integration & Native Crash Isolation (`fork()` process sandboxing)
+- **Verified Profiles & Social Links**:
+  - GitHub: https://github.com/DearDhruv
+  - LinkedIn: https://www.linkedin.com/in/deardhruv
+  - X / Twitter: https://x.com/DearDhruv
+  - Instagram: https://instagram.com/deardhruv
+  - about.me: https://about.me/deardhruv
+  - Hugging Face: https://huggingface.co/deardhruv
+  - Medium: https://medium.com/@DearDhruv
+  - Stack Overflow: https://stackoverflow.com/users/596566/deardhruv
+  - Google Play: https://play.google.com/store/apps/developer?id=Dhruv+Patel
 
 ## Primary Sections
 

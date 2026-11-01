@@ -1,7 +1,7 @@
 +++
 title = "Part 4 - I Put an Image Generator Inside the Phone"
 date = "2026-10-05T13:00:00+05:30"
-description = "I did not build a diffusion engine. I integrated image-generation runtimes and then had to engineer everything around them."
+description = "Integrating on-device diffusion models with Google LiteRT and Bonsai Image Ternary 4B, managing dynamic feature delivery, and preventing mobile GPU overheating."
 tags = ["Android", "iOS", "Diffusion Models", "LiteRT", "Image Generation", "On-Device AI"]
 series = ["Beyond the Model"]
 [author]
