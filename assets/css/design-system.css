@@ -5,7 +5,7 @@
  */
 
 :root {
-  /* Primitive Palette */
+
   --primitive-slate-950: #090d16;
   --primitive-slate-900: #0f172a;
   --primitive-slate-850: #141e33;
@@ -30,7 +30,6 @@
   --primitive-amber-400:   #fbbf24;
   --primitive-rose-400:    #fb7185;
 
-  /* Semantic Tokens — Dark Theme (Palette 1: Precision Cyan Baseline) */
   --color-bg-page: var(--primitive-slate-950);
   --color-bg-surface: var(--primitive-slate-900);
   --color-bg-surface-elevated: var(--primitive-slate-850);
@@ -56,29 +55,24 @@
 
   --color-focus-ring: var(--primitive-cyan-400);
 
-  /* Typography & Layout Tokens */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --font-small: 0.875rem;
   --font-metadata: 0.8125rem;
 
-  /* Layout Containers */
   --container-wide: 1140px;
   --container-reading: 72ch;
   --gutter: clamp(1rem, 4vw, 2rem);
 
-  /* Radii */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.45);
 
-  /* Motion */
   --motion-duration-fast: 140ms;
   --motion-duration-normal: 220ms;
   --motion-duration-slow: 320ms;
@@ -116,7 +110,6 @@
   --shadow-lg: 0 12px 36px rgba(15, 23, 42, 0.12);
 }
 
-/* Palette 2: Terminal Emerald / Matrix Dark */
 [data-palette="emerald"] {
   --color-bg-page: #060d0a;
   --color-bg-surface: #0d1712;
@@ -163,7 +156,6 @@
   --color-focus-ring: #047857;
 }
 
-/* Palette 3: Warm Editorial / Monokai Sand */
 [data-palette="amber"] {
   --color-bg-page: #121110;
   --color-bg-surface: #1c1a17;
@@ -210,7 +202,6 @@
   --color-focus-ring: #b45309;
 }
 
-/* Palette 4: Cobalt Royal / Electric Indigo */
 [data-palette="indigo"] {
   --color-bg-page: #0b0d19;
   --color-bg-surface: #11162a;
@@ -257,7 +248,6 @@
   --color-focus-ring: #4338ca;
 }
 
-/* Base HTML, Body & Universal Box-Sizing Reset */
 *,
 *::before,
 *::after {
@@ -280,7 +270,6 @@ body {
   max-width: 100%;
 }
 
-/* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -290,7 +279,6 @@ body {
   }
 }
 
-/* Shared Primitives */
 .ds-container {
   width: min(100% - (var(--gutter) * 2), var(--container-wide));
   margin-inline: auto;
@@ -301,7 +289,6 @@ body {
   margin-inline: auto;
 }
 
-/* Focus Visible Standard */
 :focus:not(:focus-visible) {
   outline: none;
 }

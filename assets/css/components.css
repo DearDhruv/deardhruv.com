@@ -1,6 +1,5 @@
 /* DearDhruv UI Primitives & Components (WCAG 2.2 AA) */
 
-/* Content Links — Persistent Underline for Non-Color Dependency */
 .prose a,
 .content-link {
   color: var(--color-accent);
@@ -19,7 +18,6 @@
   }
 }
 
-/* Callouts — Informational, Warning, Note, Success */
 .callout {
   display: flex;
   gap: var(--space-4);
@@ -60,7 +58,6 @@
   color: var(--color-text-secondary);
 }
 
-/* Tables */
 .table-container {
   width: 100%;
   max-width: 100%;
@@ -103,7 +100,6 @@
   background-color: var(--color-bg-surface-hover);
 }
 
-/* Content Lists */
 .prose ul, .prose ol {
   padding-left: var(--space-6);
   margin-block: var(--space-4);
@@ -118,7 +114,6 @@
   color: var(--color-accent);
 }
 
-/* Accessibility Utility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -167,7 +162,6 @@
   box-shadow: 0 0 0 2px var(--color-bg-page), 0 0 0 4px var(--color-focus-ring);
 }
 
-/* Button Variants */
 .btn-primary,
 .ds-btn-primary {
   background-color: var(--color-accent);
@@ -223,7 +217,6 @@
   font-size: var(--font-metadata);
 }
 
-/* External Link Component */
 .link-external {
   display: inline-flex;
   align-items: center;
@@ -255,7 +248,6 @@
   }
 }
 
-/* Card Primitives */
 .card {
   position: relative;
   isolation: isolate;
@@ -291,7 +283,6 @@
   border-color: var(--color-border-interactive);
 }
 
-/* Hero Panel & Avatar Primitives */
 .hero-panel {
   display: flex;
   flex-direction: column;
@@ -391,14 +382,12 @@
   flex: 1;
 }
 
-/* Page Header Primitive */
 .page-header {
   margin-bottom: var(--space-8);
   border-bottom: 1px solid var(--color-border-subtle);
   padding-bottom: var(--space-4);
 }
 
-/* Badges, Tags, and Chips */
 .badge,
 .ds-badge {
   display: inline-flex;
@@ -463,7 +452,6 @@
   border: 1px solid var(--color-border-subtle);
 }
 
-/* Structural Dividers */
 .divider-subtle {
   border: 0;
   border-top: 1px solid var(--color-divider);
@@ -478,7 +466,6 @@
   width: 100%;
 }
 
-/* Interaction States */
 :focus:not(:focus-visible) {
   outline: none;
 }
@@ -488,7 +475,6 @@
   outline-offset: 2px;
 }
 
-/* Shape-respecting state effect and selection suppression */
 button,
 .btn,
 .badge,
@@ -516,14 +502,12 @@ button::selection,
   background: transparent;
 }
 
-/* Interactive elements active state */
 .btn:active:not(:disabled),
 .ds-btn:active:not(:disabled),
 .tag:active {
   transform: scale(0.98) !important;
 }
 
-/* Disabled states across buttons and inputs */
 .btn:disabled,
 .btn[aria-disabled="true"],
 .ds-btn:disabled,
@@ -535,21 +519,18 @@ button::selection,
   transform: none !important;
 }
 
-/* Nav Link Current and Selected States */
 .nav-link[aria-current="page"],
 [aria-current="page"] {
   color: var(--color-text-primary);
   font-weight: 600;
 }
 
-/* Accessible focus ring container safeguard — prevent clipping */
 .nav-item,
 .btn-group,
 .tab-list {
   overflow: visible;
 }
 
-/* Selection highlight styling */
 ::selection {
   background-color: var(--color-accent);
   color: var(--color-text-inverse);
@@ -580,7 +561,6 @@ button::selection,
   outline-offset: 2px;
 }
 
-/* Site Footer Landmark */
 .site-footer {
   margin-top: auto;
   border-top: 1px solid var(--color-divider);
@@ -630,7 +610,6 @@ button::selection,
   }
 }
 
-/* Micro-Interaction Transitions & Hardware Acceleration */
 details summary {
   cursor: pointer;
   transition: color var(--motion-duration-fast) var(--motion-ease);
@@ -640,7 +619,6 @@ details[open] summary {
   margin-bottom: var(--space-3);
 }
 
-/* Container Scroll Animations */
 @keyframes scroll-fade-up {
   from {
     opacity: 0;
@@ -652,7 +630,6 @@ details[open] summary {
   }
 }
 
-/* Progressive JavaScript IntersectionObserver styling */
 .js-scroll-animate .scroll-reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -671,7 +648,6 @@ details[open] summary {
 .js-scroll-animate [data-delay="3"] { transition-delay: 210ms; }
 .js-scroll-animate [data-delay="4"] { transition-delay: 280ms; }
 
-/* CSS Native Scroll-Driven Animations where supported */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .scroll-reveal,
@@ -696,7 +672,6 @@ details[open] summary {
   }
 }
 
-/* Feature-Flagged Palette Switcher Bar */
 .palette-switcher-bar {
   position: fixed;
   bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
