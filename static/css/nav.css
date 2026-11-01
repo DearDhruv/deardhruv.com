@@ -126,14 +126,7 @@
   }
 }
 
-.site-brand:focus-visible,
-.site-nav-link:focus-visible,
-.theme-toggle-btn:focus-visible,
-.menu-toggle-btn:focus-visible,
-.header-icon-btn:focus-visible,
-.header-resume-btn:focus-visible {
-  border-radius: var(--radius-sm);
-}
+.site-brand:focus-visible,.site-nav-link:focus-visible,.theme-toggle-btn:focus-visible,.menu-toggle-btn:focus-visible,.header-icon-btn:focus-visible,.header-resume-btn:focus-visible{border-radius:var(--radius-sm)}
 
 .site-nav-list {
   display: flex;

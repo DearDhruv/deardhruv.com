@@ -114,6 +114,15 @@ while ((match = btnRegex.exec(homeHtml)) !== null) {
 }
 assert(btnCount > 0 && prefixCount === btnCount, `All ${btnCount} homepage buttons with icons place the icon first as prefix (${prefixCount}/${btnCount})`);
 
+// 6. Actionable vs Non-Actionable Hover Affordance Separation
+console.log('\n--- 6. Actionable vs Non-Actionable Hover Affordance Separation ---');
+assert(compCss.includes('.card {') && compCss.includes('cursor: default;'), 'Passive card containers default to cursor: default');
+assert(compCss.includes('.card-interactive,') && compCss.includes('cursor: pointer;'), 'Interactive cards enforce cursor: pointer');
+assert(compCss.includes('.card:not(.card-interactive):not(a):hover') && compCss.includes('transform: none;'), 'Non-actionable cards maintain dull hover state (no transform lift)');
+assert(compCss.includes('.card-interactive:hover,') && compCss.includes('transform: translateY(-3px);'), 'Actionable cards apply -3px vertical lift and glow on hover');
+assert(compCss.includes('span.chip:hover') && compCss.includes('transform: none;'), 'Static chips maintain dull hover without lift');
+assert(compCss.includes('a.chip:hover') && compCss.includes('transform: translateY(-1px);'), 'Clickable chips apply interactive hover lift');
+
 console.log('\n========================================');
 console.log(`Interactive Container Audit: ${passed} passed, ${failed} failed.`);
 console.log('========================================\n');

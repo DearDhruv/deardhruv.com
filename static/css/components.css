@@ -145,11 +145,7 @@
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  transition: background-color var(--motion-duration-fast) var(--motion-ease),
-              border-color var(--motion-duration-fast) var(--motion-ease),
-              color var(--motion-duration-fast) var(--motion-ease),
-              transform var(--motion-duration-fast) var(--motion-ease),
-              box-shadow var(--motion-duration-fast) var(--motion-ease);
+  transition: all var(--motion-duration-fast) var(--motion-ease);
 }
 
 .btn svg {
@@ -261,9 +257,7 @@
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: border-color var(--motion-duration-normal) var(--motion-ease),
-              transform var(--motion-duration-normal) var(--motion-ease),
-              box-shadow var(--motion-duration-normal) var(--motion-ease);
+  transition: all var(--motion-duration-normal) var(--motion-ease);
 }
 
 .card::before {
@@ -284,30 +278,43 @@
   }
 }
 
-.card-interactive {
+.card {
+  cursor: default;
+}
+
+.card-interactive,
+a.card {
   cursor: pointer;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .card:hover,
-  .card-interactive:hover {
+  .card:not(.card-interactive):not(a):hover {
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-sm);
+    transform: none;
+  }
+
+  .card-interactive:hover,
+  a.card:hover {
     border-color: var(--color-border-interactive);
     transform: translateY(-3px);
     box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.35), 0 0 20px -4px var(--color-accent-subtle);
   }
 
-  .card:hover::before,
-  .card-interactive:hover::before {
+  .card-interactive:hover::before,
+  a.card:hover::before {
     opacity: 1;
   }
 
-  .card:hover h3 {
+  .card-interactive:hover h3,
+  a.card:hover h3 {
     color: var(--color-accent);
     transition: color var(--motion-duration-fast) var(--motion-ease);
   }
 }
 
-.card:focus-within {
+.card-interactive:focus-within,
+a.card:focus-visible {
   border-color: var(--color-border-interactive);
 }
 
@@ -372,8 +379,7 @@
   user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
-  transition: transform var(--motion-duration-normal) var(--motion-ease),
-              box-shadow var(--motion-duration-normal) var(--motion-ease);
+  transition: all var(--motion-duration-normal) var(--motion-ease);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -505,10 +511,15 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .tag:hover {
-    color: var(--color-text-primary);
+  span.tag:hover {
+    color: var(--color-text-secondary);
     border-color: var(--color-border-strong);
+  }
+  a.tag:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-border-interactive);
     background-color: var(--color-bg-surface-hover);
+    cursor: pointer;
   }
 }
 
@@ -524,15 +535,22 @@
   background-color: var(--color-bg-code);
   border: 1px solid var(--color-border-subtle);
   white-space: nowrap;
+  cursor: default;
   transition: all var(--motion-duration-fast) var(--motion-ease);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .chip:hover {
+  span.chip:hover {
+    border-color: var(--color-border-strong);
+    color: var(--color-text-secondary);
+    transform: none;
+  }
+  a.chip:hover {
     border-color: var(--color-accent-border);
     color: var(--color-accent);
     background-color: var(--color-accent-subtle);
     transform: translateY(-1px);
+    cursor: pointer;
   }
 }
 
@@ -690,10 +708,7 @@ details[open] summary {
   transform: translateY(0);
 }
 
-.js-scroll-animate [data-delay="1"] { transition-delay: 70ms; }
-.js-scroll-animate [data-delay="2"] { transition-delay: 140ms; }
-.js-scroll-animate [data-delay="3"] { transition-delay: 210ms; }
-.js-scroll-animate [data-delay="4"] { transition-delay: 280ms; }
+.js-scroll-animate [data-delay="1"]{transition-delay:70ms}.js-scroll-animate [data-delay="2"]{transition-delay:140ms}.js-scroll-animate [data-delay="3"]{transition-delay:210ms}.js-scroll-animate [data-delay="4"]{transition-delay:280ms}
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
@@ -787,12 +802,6 @@ details[open] summary {
   border-color: var(--color-accent-border);
 }
 
-.palette-btn:focus-visible,
-.palette-close-btn:focus-visible,
-.palette-footer-toggle:focus-visible {
-  outline: 2px solid var(--color-focus-ring);
-  outline-offset: 2px;
-}
 
 .palette-swatch {
   width: 10px;
