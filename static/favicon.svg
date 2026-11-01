@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="35%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#f59e0b" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="120" fill="url(#bg)" stroke="#334155" stroke-width="16"/>
+  <g filter="url(#glow)">
+    <!-- First 'D' (Layered behind, left) -->
+    <path d="M125 130 h85 c60 0 108 50 108 116 s-48 116 -108 116 h-85 z" fill="none" stroke="url(#amber)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+    <!-- Second 'D' (Front, offset right) -->
+    <path d="M210 140 h85 c60 0 108 50 108 116 s-48 116 -108 116 h-85 z" fill="none" stroke="url(#amber)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Emerald Pulse Live Dot -->
+  <circle cx="410" cy="102" r="28" fill="#10b981" stroke="#020617" stroke-width="8"/>
+</svg>
