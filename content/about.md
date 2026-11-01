@@ -85,12 +85,11 @@ If you'd like to discuss native mobile architecture, on-device AI systems, or te
 - **💻 GitHub:** [@DearDhruv](https://github.com/DearDhruv)
 - **🐦 X / Twitter:** [@DearDhruv](https://x.com/DearDhruv)
 - **📸 Instagram:** [@DearDhruv](https://instagram.com/deardhruv)
-- **🛍️ Google Play:** [Dhruv Patel Developer Page](https://play.google.com/store/apps/developer?id=Dhruv+Patel)
+- **🛍️ Google Play:** [Dhruv Patel Developer Page](https://play.google.com/store/apps/dev?id=5177092407740817842)
 - **🌐 about.me:** [about.me/deardhruv](https://about.me/deardhruv)
 - **🤗 Hugging Face:** [@DearDhruv](https://huggingface.co/deardhruv)
 - **✍️ Medium:** [@DearDhruv](https://medium.com/@DearDhruv)
 - **📚 Stack Overflow:** [deardhruv](https://stackoverflow.com/users/596566/deardhruv)
-- **🎨 Dribbble:** [@DearDhruv](https://dribbble.com/DearDhruv)
 - **▶️ YouTube:** [@Dhruvein](https://www.youtube.com/user/Dhruvein)
 - **🤖 Reddit:** [u/DearDhruv](https://www.reddit.com/user/DearDhruv/)
 
