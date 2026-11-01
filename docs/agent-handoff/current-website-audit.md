@@ -26,8 +26,10 @@
 | Phase 4 | Task 4.4 | Add employer case study details gradually | Completed | 3180c9c | 2026-11-01 |
 | Phase 4 | Task 4.5 | Clarify employer and client attribution | Completed | 3180c9c | 2026-11-01 |
 | Phase 10 | Task 10.2 | Add identity & employer-attribution regression checks | Completed | 3180c9c | 2026-11-01 |
-| Phase 5 | Task 5.1 | Repair AI Playground public artifact links | Completed | Pending | 2026-11-01 |
-| Phase 5 | Task 5.2–5.4 | Independent product cards & technical case studies | Not Started | — | — |
+| Phase 5 | Task 5.1 | Repair AI Playground public artifact links | Completed | 0bfac65 | 2026-11-01 |
+| Phase 5 | Task 5.2 | Align AI Playground copy with release evidence | Completed | Pending | 2026-11-01 |
+| Phase 5 | Task 5.3 | Align VelociHue copy with release evidence | Completed | Pending | 2026-11-01 |
+| Phase 5 | Task 5.4 | Standardize technical case-study structure | Completed | Pending | 2026-11-01 |
 | Phase 6 | Task 6.1–6.5 | SEO crawlability, internal links & content quality | Not Started | — | — |
 | Phase 7 | Task 7.1–7.4 | Accessibility & interaction quality | Not Started | — | — |
 | Phase 8 | Task 8.1–8.4 | Performance remediation | Not Started | — | — |

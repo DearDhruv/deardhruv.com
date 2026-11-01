@@ -13,7 +13,7 @@ This page documents selected engineering case studies across **independent produ
 ### 1. AI Playground — On-Device Multimodal AI Workstation
 
 **Summary:** A privacy-first mobile workstation that runs multimodal LLMs and diffusion models locally on phones without cloud dependencies.  
-**Role:** Director & Lead Engineer &middot; **Status:** Production (Google Play & GitHub)  
+**Role:** Director & Lead Engineer &middot; **Status:** Live on Google Play &middot; iOS in development / planned  
 **Stack:** Kotlin Multiplatform (CMP 1.12), Modern C++20 / NDK (JNI), llama.cpp, Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan / OpenCL / Metal, SQLDelight (v2.4)  
 
 #### The Problem
@@ -65,7 +65,7 @@ flowchart TD
 ### 2. VelociHue — High-Framerate Arcade Game in KMP
 
 **Summary:** A fast-paced arcade action game engineered to prove that Kotlin Multiplatform and Compose Multiplatform can deliver fluid 60–120 FPS gameplay across phones, tablets, and TVs.  
-**Role:** Director & Lead Engineer &middot; **Status:** Production (Google Play)  
+**Role:** Director & Lead Engineer &middot; **Status:** Live on Google Play &middot; iOS in development / planned  
 **Stack:** Kotlin Multiplatform (Kotlin 2.4, CMP 1.12), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad)  
 
 #### The Problem
