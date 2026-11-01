@@ -3,9 +3,9 @@
   "version": "1.0",
   "protocolVersion": "2024-11-05",
   "serverInfo": {
-    "name": "Dhruv's blog",
-    "version": "1.0.0",
-    "description": "Technical blog for Android Engineers. Provides structured access to posts, project descriptions, and technical documentation."
+    "name": "DearDhruv Engineering Portfolio & Articles",
+    "version": "2.1.0",
+    "description": "Technical portfolio and publications of Dhruv Patel (@DearDhruv), Lead Android Engineer and Android Architect. Covers Android architecture, Kotlin Multiplatform, on-device AI runtimes, and hardware-integrated systems."
   },
   "transport": {
     "type": "streamable-http",
