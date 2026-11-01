@@ -66,6 +66,7 @@
   - Aligned GDG DevFest conference speeches (2018–2025) and academic background.
   - Resolved AI Playground dead repository 404 links (Finding DD-01) across homepage, series, and documentation; pointed to verified Google Play release.
   - Aligned AI Playground and VelociHue release status (Android live on Play Store; iOS in development / planned).
+  - Replaced custom wireframe Play icon with the official Google Play 2022 brand mark (Blue, Green, Yellow, Red) from official Google brand guidelines on all store buttons.
   - Modernized `/.well-known/mcp.json` server descriptor to "DearDhruv Engineering Portfolio & Articles" v2.1.0 (Finding DD-11).
   - Upgraded project version to `2.1.0` and verified all npm dependencies on latest stable releases.
 - **Quality Status:**
