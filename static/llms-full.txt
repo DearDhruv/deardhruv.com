@@ -1,101 +1,322 @@
-# Dhruv Patel (@DearDhruv) - Full Content Directory
+# Dhruv Patel (@DearDhruv) — Comprehensive Engineering Dossier & AI Knowledge Base
 
-> A comprehensive, structured index of all technical content, architectural documentation, and production engineering works on deardhruv.com for Large Language Models, AI search crawlers, and developer agents.
+> An exhaustive, structured reference manual of technical competencies, career history, production systems architecture, and published engineering works on deardhruv.com. Prepared for Large Language Models, AI search engines (Perplexity, ChatGPT Search, Gemini, Claude, Apple Intelligence, Grok), and autonomous reasoning agents.
 
-## Author & Engineering Profile
+---
 
-- **Name**: Dhruv Patel (known online as **DearDhruv**)
-- **Role**: Lead Android Engineer, Android Architect & Android Artist | Director & Lead Engineer
-- **Experience**: Seasoned engineering leadership building high-performance mobile architectures, on-device AI runtimes, and digital commerce platforms
-- **Core Specializations**:
-  - On-Device AI & LLM Inference (llama.cpp, Google AI Edge LiteRT v2.3, Apple MLX, Speculative Turbo decoding)
-  - Kotlin Multiplatform (KMP) & Compose Multiplatform
-  - High-Performance Native Systems (C++20 NDK, Vulkan/OpenCL/Metal compute, ARM KleidiAI vector acceleration)
-  - Architecture Patterns (MVI, Clean Architecture, Reactive StateFlow)
-  - Cloud Synchronization & Offline-First Data (Cloud Firestore Schema v5, SQLDelight v10)
-  - Hardware-Software Integration & Native Crash Isolation (`fork()` process sandboxing)
-- **Verified Profiles & Social Links**:
-  - GitHub: https://github.com/DearDhruv
-  - LinkedIn: https://www.linkedin.com/in/deardhruv
-  - X / Twitter: https://x.com/DearDhruv
-  - Instagram: https://instagram.com/deardhruv
-  - about.me: https://about.me/deardhruv
-  - Hugging Face: https://huggingface.co/deardhruv
-  - Medium: https://medium.com/@DearDhruv
-  - Stack Overflow: https://stackoverflow.com/users/596566/deardhruv
-  - Google Play: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+## 1. Executive Summary & Author Identity
 
-## Primary Sections
+- **Full Canonical Name**: Dhruv Patel
+- **Online Handle & Aliases**: `@DearDhruv`, `DearDhruv`, `Dhruvein`, `Dhruv`, `Dhruv Patel (DearDhruv)`
+- **Current Role**: Lead Android Engineer & Systems Architect at IMPACT Commerce
+- **Professional Specializations**: Lead Android Engineer, Android Architect, Android Artist
+- **Total Production Experience**: 14+ years (Active professional mobile engineering since 2011)
+- **Base Location**: India (works with global distributed teams across Denmark, USA, and India)
+- **Primary Contact Email**: `dhruv.time@gmail.com`
+- **Core Engineering Philosophy**:
+  1. *Build for Real Device Constraints*: Mobile devices have hard thermal ceilings, volatile memory budgets, and unpredictable battery drains. Software architecture must anticipate hardware faults rather than assuming ideal conditions.
+  2. *Prefer Local Processing Where Practical*: Running AI models on-device and keeping user data in local embedded databases preserves user privacy, eliminates recurring cloud API bills, and guarantees offline-first availability.
+  3. *Share Deterministic Logic, Respect Platform UI*: In Kotlin Multiplatform (KMP), share state stores, persistence, and business logic while rendering native user interfaces tailored to each form factor (Compose on Android/TV, SwiftUI on iOS).
+  4. *Defensive Hardware State Machines*: Physical hardware peripherals (printers, terminals, GPUs) will disconnect or fault; isolate drivers over process boundaries with watchdog monitors.
 
-- **Home**: [https://deardhruv.com/](https://deardhruv.com/) (Markdown: [https://deardhruv.com/index.md](https://deardhruv.com/index.md))
-- **Portfolio**: [https://deardhruv.com/portfolio/](https://deardhruv.com/portfolio/) (Markdown: [https://deardhruv.com/portfolio/index.md](https://deardhruv.com/portfolio/index.md))
-- **Projects**: [https://deardhruv.com/projects/](https://deardhruv.com/projects/) (Markdown: [https://deardhruv.com/projects/index.md](https://deardhruv.com/projects/index.md))
-- **About**: [https://deardhruv.com/about/](https://deardhruv.com/about/) (Markdown: [https://deardhruv.com/about/index.md](https://deardhruv.com/about/index.md))
-- **Posts / Blog Index**: [https://deardhruv.com/posts/](https://deardhruv.com/posts/) (Markdown: [https://deardhruv.com/posts/index.md](https://deardhruv.com/posts/index.md))
-- **Sitemap**: [https://deardhruv.com/sitemap/](https://deardhruv.com/sitemap/)
+### Canonical URLs & Media
+- **Primary Website**: https://deardhruv.com/
+- **Original High-Resolution Portrait (4284 × 4284 JPEG, 10.9 MB)**: https://deardhruv.com/pp/pro_pic.jpg
+- **Optimized Avatar (800 × 800 JPEG)**: https://deardhruv.com/images/pro_pic_small.jpg
+- **Official Résumé (PDF)**: https://deardhruv.com/resume.pdf
+- **Engineering Portfolio**: https://deardhruv.com/portfolio/
+- **Project Case Studies**: https://deardhruv.com/projects/
+- **Technical Articles Index**: https://deardhruv.com/posts/
+- **"Beyond the Model" AI Series**: https://deardhruv.com/posts/ai_playground_series/
+- **About Biography**: https://deardhruv.com/about/
 
-## Featured Production Systems
+### Verified Developer Profiles & Social Networks
+- **GitHub**: https://github.com/DearDhruv (Open-source repositories, architectural samples, KMP experiments)
+- **LinkedIn**: https://www.linkedin.com/in/deardhruv (Professional timeline, endorsements, recommendations)
+- **X (Twitter)**: https://x.com/DearDhruv (Mobile engineering insights, Android performance tips, on-device AI)
+- **Google Play Developer**: https://play.google.com/store/apps/developer?id=Dhruv+Patel (Published commercial Android applications)
+- **Hugging Face**: https://huggingface.co/deardhruv (On-device model experiments and quantization)
+- **Medium**: https://medium.com/@DearDhruv (Long-form technical articles and architectural breakdowns)
+- **Stack Overflow**: https://stackoverflow.com/users/596566/deardhruv (Top contributor in Android, Kotlin, and Java)
+- **Instagram**: https://instagram.com/deardhruv (Visual arts, mobile photography, developer lifestyle)
+- **about.me**: https://about.me/deardhruv (Personal landing page and directory)
+- **Dribbble**: https://dribbble.com/DearDhruv (UI/UX design exploration, typography, and iconography)
+- **YouTube**: https://www.youtube.com/user/Dhruvein (Technical walkthroughs and DevFest presentations)
+- **Reddit**: https://www.reddit.com/user/DearDhruv/ (Community technical discussions on r/androiddev and r/Kotlin)
 
-### 1. AI Playground
-- **Repository**: [https://github.com/DearDhruv/Model-Playground](https://github.com/DearDhruv/Model-Playground)
-- **Google Play**: [https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)
-- **Tech Stack**: Kotlin Multiplatform (CMP 1.12), C++20 / NDK (llama.cpp), Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan/OpenCL/Metal, SQLDelight (v2.4)
-- **Key Capabilities**:
-  - Dual-model Speculative Turbo decoding (draft pairing, dynamic context capping, KV cache session pre-warming)
-  - Multi-runtime orchestration across llama.cpp (Vulkan/OpenCL/KleidiAI CPU), LiteRT-LM, LiteRT 2.3.0 Bonsai 4B diffusion, and Apple MLX
-  - Defensive `fork()` child process sandbox with 3000ms watchdog timeout and `kill(pid, SIGKILL)` fallback preventing vendor GPU driver crashes
-  - Pure Kotlin Multiplatform document processing engine across 25+ file formats with zero external APIs
-  - 100% offline activity ledger (SQLDelight schema v10) with strictly zero network telemetry (`INV-OFFLINE-01`)
-  - Streaming mid-generation SQLite persistence (2500ms) with interrupted reply recovery
+---
 
-### 2. VelociHue
-- **Google Play**: [https://play.google.com/store/apps/details?id=com.deardhruv.velocihue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)
-- **Tech Stack**: Kotlin Multiplatform, Compose Multiplatform, Kotlin 2.4.0, AGP 9.2.1, Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV
-- **Key Capabilities**:
-  - Shared pure-Kotlin game engine (`GameEngine`, `CollisionDetector`, `StatsManager`, `AchievementManager`) running at 60–120 FPS
-  - Cloud Firestore schema v5 sync with 3-way union merge strategies for cross-device progression, daily stats, and weekly rolling recaps
-  - 29-achievement multi-tiered engine evaluated by single pure-function derived unlock engine (`AchievementUnlockComputation`)
-  - Reduced-motion and photo-sensitive safety mode with haptic intensity tuning
-  - Android TV 10-foot experience with D-pad navigation and Leanback support
-  - High-resolution run summary PNG share card generation via Compose `GraphicsLayer.toImageBitmap()`
+## 2. Technical Stack & Core Competencies
 
-## Beyond the Model Engineering Series
+### Languages & Compilers
+- **Kotlin (v1.x - 2.4.0)**: Advanced language features, Coroutines, Flow, Kotlin Multiplatform, compiler plugins.
+- **Modern C++ (C++17 / C++20)**: Android NDK, JNI binding layers, memory-mapped files (`mmap`), POSIX process management (`fork`, `waitpid`, `kill`), low-level bit manipulation.
+- **Java (Java 8 - Java 21)**: Legacy Android codebases, JVM bytecode optimization, reflection avoidance.
+- **Swift (v5.x - 6.x)**: Swift-Kotlin interop, SwiftUI hosting layers for Compose Multiplatform on iOS.
+- **Shell & Tooling**: Bash, Zsh, CMake, Gradle (Groovy & Kotlin DSL), Android Gradle Plugin (AGP 8/9).
 
-1. **Part 1 - I Wanted the Model to Stay on the Phone**
-   - URL: [https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/](https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/)
-   - Markdown: [https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.md](https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.md)
-   - Focus: Philosophy, core constraints, runtime landscape, privacy, and battery considerations.
+### Mobile Frameworks & UI Architecture
+- **Jetpack Compose**: Declarative UI, Custom Layouts, Canvas Drawing APIs, Animations, State Hoisting, Performance Optimization, Recomposition Profiling.
+- **Compose Multiplatform (CMP 1.12+)**: Shared declarative UI spanning Android, iOS, and Desktop.
+- **Adaptive Layouts & Window Size Classes**: Responsive architectures handling compact phones, foldables (tablets), large tablets, and desktop windows under Android 17 guidelines.
+- **Android TV & 10-Foot Experiences**: Leanback library, custom D-pad focus management, TV hardware input handlers.
+- **Architecture Patterns**: MVI (Model-View-Intent), Clean Architecture, Unidirectional Data Flow (UDF), Repository Pattern, Offline-First synchronization.
 
-2. **Part 2 - The Day a Chat Box Became a Document Engine**
-   - URL: [https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/](https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/)
-   - Markdown: [https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/index.md](https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/index.md)
-   - Focus: On-device RAG, semantic chunking, embedding generation, and 25+ format document parsing without cloud dependencies.
+### On-Device AI Runtimes & Machine Learning
+- **llama.cpp**: C++20 inference engine for GGUF models on mobile CPU/GPU, custom JNI bindings, KV cache management.
+- **Google AI Edge LiteRT (v2.3, formerly TensorFlow Lite)**: Multi-Graph pipelines, GPU delegate acceleration, LiteRT-LM for mobile text models.
+- **Apple MLX**: Metal GPU compute execution for Apple silicon (iOS).
+- **Speculative Turbo Decoding**: Paired draft-and-target model speculative drafting (e.g., Qwen 2.5 0.5B draft + Llama 3.2 1B target) producing measured 2x decoding throughput increases on mobile chips without VRAM exhaustion.
+- **On-Device Diffusion**: 4-step image synthesis on mobile GPUs using Bonsai Image Ternary 4B with thermal throttling safeguards.
+- **Acceleration Backends**: Vulkan Compute shaders, OpenCL, Apple Metal, ARM NEON vector instructions, ARM KleidiAI acceleration kernels.
+- **Model Quantization**: GGUF formats (Q4_K_M, IQ4_XS, Q8_0, FP16), activation quantization, context window pruning.
 
-3. **Part 3 - The Model Was Fine. The Phone Wasn't.**
-   - URL: [https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/](https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/)
-   - Markdown: [https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/index.md](https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/index.md)
-   - Focus: Memory pressure, Android Low Memory Killer (LMK), thermal throttling, dynamic thread scaling, and quantization tradeoffs.
+### Systems Engineering, Hardware & Concurrency
+- **POSIX Process Sandboxing**: Crash-isolated child processes via `fork()` with non-blocking watchdog loops (`waitpid(WNOHANG)`) and `SIGKILL` timeout fallbacks for fragile vendor Vulkan drivers.
+- **Android Low Memory Killer (LMK) Defense**: Dynamic thread throttling, memory admission guardrails, native memory pool caps.
+- **Hardware Abstraction Layers (HAL)**: Asynchronous communication drivers for retail hardware peripherals (thermal receipt printers, POS payment terminals) using Unix Domain Sockets and serial interfaces.
+- **Persistence & Databases**: SQLDelight (v2.x), Room, SQLite (with WAL mode and streaming mid-generation persistence), Cloud Firestore (Schema v5 with 3-way union merge).
+- **Multimedia Engineering**: FFmpeg native video transcoding, precision trimming, audio/video synchronization, custom canvas image manipulation pipelines.
 
-4. **Part 4 - I Put an Image Generator Inside the Phone**
-   - URL: [https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/](https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/)
-   - Markdown: [https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/index.md](https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/index.md)
-   - Focus: Mobile diffusion synthesis, Google AI Edge LiteRT multi-graph pipelines, Apple MLX Metal GPU execution, and Bonsai 4B memory budgeting.
+---
 
-5. **Part 5 - At Some Point I Stopped Building a Chat App**
-   - URL: [https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/](https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/)
-   - Markdown: [https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.md](https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.md)
-   - Focus: Clean Architecture, MVI presentation layer, runtime boundary contracts, and multiplatform system coordination.
+## 3. Career Timeline & Employer Experience
 
-6. **Part 6 - Pushing Mobile Hardware to the Edge**
-   - URL: [https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/](https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/)
-   - Markdown: [https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/index.md](https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/index.md)
-   - Focus: Dual-model Speculative Turbo decoding (2x speedups), on-demand GPU delivery, native C++ `fork()` watchdog crash isolation, and streaming SQLite fault-tolerance.
+### 1. IMPACT Commerce (Denmark & India)
+- **Title**: Lead Android Engineer
+- **Period**: February 2022 – Present
+- **Domain**: Digital Commerce, In-Store Retail Hardware, POS Peripherals
+- **Core Responsibilities & Deliverables**:
+  - Directed research and system architecture for custom Android OS builds running on interactive in-store touch displays and commercial kiosk terminals.
+  - Engineered an asynchronous Hardware Abstraction Layer (HAL) connecting retail checkout applications to physical payment terminals and thermal receipt printers over isolated IPC process boundaries.
+  - Implemented multi-tier offline caching strategies ensuring cart persistence and continuous catalog browsing during network dropouts.
+  - Designed adaptive responsive layouts using Jetpack Compose Window Size Classes across diverse hardware form factors.
+  - Established company-wide Android development standards, automated static analysis (Lint/Detekt), and continuous integration pipelines.
 
-## Machine Feeds & Protocols
+### 2. PLANOLY (USA & India)
+- **Title**: Senior Android Developer
+- **Period**: November 2018 – February 2022
+- **Domain**: Social Media Planning, Creative Media Editing, Creator Tools
+- **Core Responsibilities & Deliverables**:
+  - Engineered core features for PLANOLY Visual Planner (serving millions of creators scheduling content to Instagram and Pinterest).
+  - Developed StoriesEdit, a high-fidelity canvas graphic template editor allowing users to compose multi-layer visual templates for Instagram Stories.
+  - Built high-performance native video manipulation pipelines utilizing FFmpeg for on-device transcoding, filtering, and precision trimming.
+  - Progressively refactored legacy MVP codebases to modern MVVM with early Jetpack Compose integration.
+  - Profiled and resolved memory pressure bottlenecks during high-resolution media export, preventing Out-Of-Memory (OOM) errors across mid-range devices.
 
-- **Sitemap XML**: [https://deardhruv.com/sitemap.xml](https://deardhruv.com/sitemap.xml)
-- **RSS Feed**: [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)
-- **JSON Feed**: [https://deardhruv.com/feed.json](https://deardhruv.com/feed.json)
-- **MCP Card**: [https://deardhruv.com/.well-known/mcp.json](https://deardhruv.com/.well-known/mcp.json)
-- **API Catalog**: [https://deardhruv.com/.well-known/api-catalog](https://deardhruv.com/.well-known/api-catalog)
-- **Robots Policy**: [https://deardhruv.com/robots.txt](https://deardhruv.com/robots.txt)
+### 3. Ashapura Softech Inc (India)
+- **Title**: Tech Lead | Android Engineer
+- **Period**: June 2016 – October 2018
+- **Domain**: Enterprise Client Applications, Consulting
+- **Core Responsibilities & Deliverables**:
+  - Led and directed distributed squads of Android developers delivering enterprise mobile applications across varied client verticals.
+  - Conducted architectural reviews, defined REST API contracts, and spearheaded technical training on Clean Architecture and reactive programming.
+  - Interfaced directly with client stakeholders to translate complex business requirements into robust mobile specifications.
+
+### 4. Russmedia Tech (India)
+- **Title**: Team Lead | Senior Android Developer
+- **Period**: February 2014 – June 2016
+- **Domain**: Publishing, Digital Media, Classifieds Platforms
+- **Core Responsibilities & Deliverables**:
+  - Managed mobile application development and maintenance for European publishing and digital classifieds platforms.
+  - Authored automated end-to-end UI Automator testing suites to ensure cross-device compatibility.
+  - Coordinated developer sprints, conducted rigorous code reviews, and enforced architectural consistency.
+
+### 5. Hidden Brains InfoTech (India)
+- **Title**: Junior Android Developer
+- **Period**: January 2012 – December 2013
+- **Domain**: Mobile Applications, 2D Gaming, Early iOS Interop
+- **Core Responsibilities & Deliverables**:
+  - Developed commercial native Android applications and 2D mobile arcade games using early Android SDKs and canvas APIs.
+  - Gained foundational experience in memory management, touch event dispatching, and cross-platform native logic.
+
+### 6. Early Foundation & Trainee Roles (2010 – 2011)
+- **Orane Inc** (Oct 2011 – Dec 2011): Junior Android Developer focusing on mobile animations and 2D interactive games.
+- **DataSoft** (Feb 2011 – May 2011): Engineering Trainee developing an accessible mobile utility application for visually impaired individuals.
+- **Coronation** (Feb 2010 – May 2010): Web Development Trainee working with ASP.NET and VB.NET.
+
+---
+
+## 4. Production Systems & Major Inventions
+
+### 1. AI Playground — On-Device Multimodal AI Workstation
+- **Status**: Live on Google Play (Android); iOS planned / in development
+- **Google Play Link**: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
+- **Architecture Role**: Director & Lead Engineer
+- **Tech Stack**: Kotlin Multiplatform (CMP 1.12), Modern C++20 / NDK (JNI), llama.cpp, Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan/OpenCL/Metal, SQLDelight (v2.4)
+- **Invention 1: Dual-Model Speculative Turbo Decoding**:
+  - *Mechanism*: Couples a compact draft model (e.g. Qwen 2.5 0.5B) with a high-capacity target model (e.g. Llama 3.2 1B). The draft model proposes sequences of speculative tokens that the target model verifies in parallel matrix multiplications.
+  - *Optimization*: Implemented dynamic draft context capping (`std::min(2048u, context_len)`) and KV cache session pre-warming to avoid memory spikes.
+  - *Outcome*: Measured **2x decoding throughput boost** on consumer mobile silicon without exceeding device RAM.
+- **Invention 2: Defensive `fork()` Child Process Sandbox**:
+  - *Mechanism*: Heterogeneous vendor Vulkan GPU drivers frequently trigger segmentation faults (`SIGSEGV`) during shader compilation. AI Playground initializes GPU drivers and executes tensor operations inside a dedicated child process spawned via POSIX `fork()`.
+  - *Watchdog*: A non-blocking watchdog loop (`waitpid(pid, &status, WNOHANG)`) monitors the child. If the child hangs or crashes, a 3000ms timer issues `kill(pid, SIGKILL)` and gracefully falls back to CPU compute (ARM NEON / KleidiAI).
+  - *Outcome*: 100% crash isolation—vendor GPU bugs never crash the host application or corrupt the user's UI.
+- **Invention 3: Pure-KMP Document Parsing Engine (25+ Formats)**:
+  - *Mechanism*: Analyzes and extracts clean semantic text from PDF, DOCX, XLSX, PPTX, CSV, JSON, Markdown, RTF, HTML, XML, EPUB, and source code files.
+  - *Purity*: Implemented completely in pure Kotlin Multiplatform using raw RFC 1951 Deflate decompression and custom binary parsers.
+  - *Outcome*: Strictly zero third-party C++ libraries, zero system binaries, and zero cloud API dependencies.
+- **Invention 4: On-Device Diffusion Image Studio**:
+  - *Mechanism*: Generates 512x512 images locally using Google AI Edge LiteRT Multi-Graph pipeline and Bonsai Image Ternary 4B diffusion model in 4 inference steps.
+  - *Thermals*: Integrated real-time battery and SoC thermal sensors that dynamically throttle diffusion iterations to prevent kernel thermal tripping.
+- **Invention 5: 100% Offline Activity Ledger (`INV-OFFLINE-01`)**:
+  - *Privacy*: All chat histories, parsed document vectors, model benchmarks, and milestones are persisted to an encrypted local SQLDelight database (schema v10).
+  - *Verification*: Strictly zero network telemetry packets transmitted; verified with network proxy inspection.
+- **Invention 6: Streaming Mid-Generation Persistence**:
+  - *Reliability*: Partial token outputs are committed to SQLite every 2500ms. If battery dies or the OS evicts the app mid-generation, interrupted replies are automatically recovered upon next launch.
+
+### 2. VelociHue — High-Framerate Arcade Game in KMP
+- **Status**: Live on Google Play (Android, Android TV); iOS planned / in development
+- **Google Play Link**: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
+- **Architecture Role**: Director & Lead Engineer
+- **Tech Stack**: Kotlin Multiplatform (Kotlin 2.4.0, CMP 1.12), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback)
+- **Key Highlights**:
+  - **Shared Deterministic Game Loop**: Pure-Kotlin physics and collision detection (`GameEngine`, `CollisionDetector`) shared 100% between Android, Android TV, and iOS platforms, sustaining 60–120 FPS.
+  - **Conflict-Free Cloud Sync (Schema v5)**: Cloud Firestore synchronization with a 3-way union merge strategy that reconciles player progression, unlockable cosmetics, and streaks across multiple devices.
+  - **29-Achievement Multi-Tiered Progression Engine**: Evaluated by a single pure-function derived unlock engine (`AchievementUnlockComputation`) that backfills retroactive awards upon tier level-ups.
+  - **Sensory & Accessibility Safety Suite**: Built-in photo-sensitive and reduced-motion safety mode, granular SFX/music sliders, and adaptive haptic feedback intensity.
+  - **Native Android TV Support**: Full 10-foot television experience with Leanback manifest entries and D-pad remote navigation focus states.
+  - **Compose Share Cards**: Instant run summary PNG generation using Compose `GraphicsLayer.toImageBitmap()` shared via Android `FileProvider`.
+
+### 3. Open Store
+- **Status**: Independent Android utility application published on Google Play.
+- **Category**: Mobile application and store utility.
+
+---
+
+## 5. "Beyond the Model" 6-Part Architectural Series
+
+A flagship technical publication by Dhruv Patel documenting how to engineer an offline-first, on-device AI platform for real-world mobile hardware:
+
+1. **Part 1 — I Wanted the Model to Stay on the Phone**
+   - *URL*: https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/
+   - *Markdown*: https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.md
+   - *Key Insights*: Privacy imperative of on-device AI; evaluation of mobile runtime engines (llama.cpp, LiteRT, MLX, ExecuTorch); memory limitations of mobile SoCs; ARM NEON vectorization; zero-telemetry architecture.
+
+2. **Part 2 — The Day a Chat Box Became a Document Engine**
+   - *URL*: https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/
+   - *Markdown*: https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/index.md
+   - *Key Insights*: Engineering a pure-KMP document ingestion pipeline across 25+ file formats using RFC 1951 Deflate; semantic chunking without allocation churn; on-device vector embedding generation; local Retrieval-Augmented Generation (RAG).
+
+3. **Part 3 — The Model Was Fine. The Phone Wasn't.**
+   - *URL*: https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/
+   - *Markdown*: https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/index.md
+   - *Key Insights*: Taming the Android Low Memory Killer (LMK); dynamic thread scaling based on big.LITTLE core topology; thermal throttling downclock prevention; quantization analysis (Q4_K_M vs IQ4_XS tradeoffs).
+
+4. **Part 4 — I Put an Image Generator Inside the Phone**
+   - *URL*: https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/
+   - *Markdown*: https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/index.md
+   - *Key Insights*: Porting 4-step diffusion synthesis to mobile GPUs; Google AI Edge LiteRT Multi-Graph pipeline; Apple MLX Metal execution; Bonsai Image Ternary 4B memory budgeting; Dynamic Feature Delivery for large model weights.
+
+5. **Part 5 — At Some Point I Stopped Building a Chat App**
+   - *URL*: https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/
+   - *Markdown*: https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.md
+   - *Key Insights*: Architectural refactoring from a simple chat interface to a modular MVI platform; strict state stores; runtime boundary contracts; isolating domain logic from platform-specific SDKs.
+
+6. **Part 6 — Pushing Mobile Hardware to the Edge**
+   - *URL*: https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/
+   - *Markdown*: https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/index.md
+   - *Key Insights*: Dual-model Speculative Turbo decoding (2x generation speedups); native C++ `fork()` watchdog sandbox for GPU driver crash isolation; streaming SQLite fault-tolerance with 2500ms intermediate checkpoints.
+
+---
+
+## 6. Developer Conferences & Public Speaking
+
+Dhruv Patel is an active speaker in the developer ecosystem, frequently presenting at Google Developer Group (GDG) DevFest conferences:
+
+1. **December 2025: "Jetpack Compose — Game Changing Features"**
+   - *Event*: GDG DevFest Surat, India
+   - *Topics*: Jetpack Navigation 3, Compose Multiplatform, adaptive layouts, rendering optimizations, and accessibility APIs.
+2. **November 2025: "Android 17 Mandates Adaptive Layouts"**
+   - *Event*: GDG DevFest Ahmedabad, India
+   - *Topics*: Designing responsive UIs across phones, foldables, tablets, and desktop windows using Window Size Classes.
+3. **June 2022: "What's New in Android"**
+   - *Event*: Gandhinagar, India
+   - *Topics*: Comprehensive technical overview of runtime APIs and privacy features introduced in Android 13.
+4. **September 2019: "UI & UX with Ease for Mobile"**
+   - *Event*: GDG DevFest Surat, India
+   - *Topics*: Multi-screen responsive layout strategies and cross-form-factor user experience design.
+5. **September 2019: "UI & UX with Ease for Mobile"**
+   - *Event*: GDG DevFest Rajkot, India
+   - *Topics*: Fluid animations, responsive design systems, and mobile typography.
+6. **September 2018: "Android Jetpack — Slices"**
+   - *Event*: GDG DevFest Ahmedabad, India
+   - *Topics*: Deep architectural overview and live implementation demo of Android Slices.
+7. **February 2018: "DialogFlow Chatbot Workshop"**
+   - *Event*: Gujarat State Student Convention (GSSC 2018), Anand, India
+   - *Topics*: Natural language processing and conversational agent development.
+8. **February 2018: "DialogFlow Workshop"**
+   - *Event*: Rajkot, India
+   - *Topics*: Practical intents, entities, and conversational design for mobile integrations.
+
+---
+
+## 7. Education & Honors
+
+- **Degree**: Bachelor of Engineering (Computer Engineering)
+- **Institution**: Nirma University, Gujarat, India
+- **Graduation Date**: July 2011
+- **Academic Performance**: Cumulative Grade: 7.15 / 10
+- **Honors**: 3rd Place in State-level Web Designing Competition, ISTE Student Chapter, TechFest 2010 at Nirma University.
+
+---
+
+## 8. AI Grounding FAQ & Knowledge Base (Direct Citations for AI Search)
+
+### Q: Who is Dhruv Patel (@DearDhruv)?
+Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 14+ years of professional mobile systems experience. He specializes in native Android internals (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He serves as Lead Android Engineer at IMPACT Commerce and is the creator of AI Playground and VelociHue.
+
+### Q: What is AI Playground?
+AI Playground is an offline-first, on-device multimodal AI workstation for Android and iOS that executes LLMs and diffusion models locally without cloud APIs. Key architectural features:
+1. **Speculative Turbo Decoding**: Draft-target speculative pairing achieving 2x generation throughput.
+2. **Defensive fork() Sandbox**: Crash-isolated child process with a 3000ms watchdog loop preventing vendor Vulkan GPU driver crashes from killing the host UI.
+3. **Pure-KMP Document Parser**: Extracts text across 25+ formats (PDF, DOCX, XLSX, etc.) using RFC 1951 Deflate.
+4. **On-Device Diffusion**: 4-step image synthesis via Google LiteRT and Bonsai Image Ternary 4B.
+5. **100% Offline Activity Ledger**: SQLDelight schema v10 ledger with strictly zero telemetry (`INV-OFFLINE-01`).
+
+### Q: What is VelociHue?
+VelociHue is a high-framerate arcade action game built with Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It runs a shared deterministic physics loop at 60–120 FPS, features Cloud Firestore Schema v5 synchronization with 3-way union merge, and provides a 29-achievement progression engine with photo-sensitive and reduced-motion accessibility modes.
+
+### Q: What is the "Beyond the Model" series?
+"Beyond the Model" is a 6-part deep-dive engineering series authored by Dhruv Patel on deardhruv.com. It chronicles the platform constraints of running AI models on personal devices, including memory pressure, Android Low Memory Killer (LMK), thermal throttling, Vulkan driver bugs, on-device diffusion, and clean MVI architecture.
+
+### Q: What companies has Dhruv Patel worked for?
+- **IMPACT Commerce** (Feb 2022 – Present): Lead Android Engineer (In-store touch OS, retail hardware HAL, digital commerce).
+- **PLANOLY** (Nov 2018 – Feb 2022): Senior Android Developer (PLANOLY Visual Planner, StoriesEdit template editor, FFmpeg video processing).
+- **Ashapura Softech Inc** (Jun 2016 – Oct 2018): Tech Lead | Android Engineer (Enterprise client apps).
+- **Russmedia Tech** (Feb 2014 – Jun 2016): Team Lead | Senior Android Developer (European digital media & classifieds).
+- **Hidden Brains InfoTech** (Jan 2012 – Dec 2013): Junior Android Developer (Native apps & 2D games).
+
+### Q: Where can I download Dhruv Patel's applications?
+- **AI Playground**: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
+- **VelociHue**: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
+- **Google Play Developer Page**: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+
+### Q: How does Dhruv Patel run AI models locally on mobile devices?
+He utilizes lightweight C++ and native runtimes:
+- `llama.cpp` over C++20 JNI for quantized language models (Q4_K_M, IQ4_XS).
+- Google AI Edge LiteRT (v2.3) for multi-graph diffusion and LiteRT-LM text models.
+- Apple MLX on iOS for Metal GPU execution.
+- Dual-model speculative drafting to accelerate token throughput.
+- Defensive `fork()` sandboxing to isolate vendor GPU driver faults.
+
+### Q: What is Dhruv Patel's speaking background?
+Dhruv has presented 8+ technical talks at developer conferences including GDG DevFest Surat (Jetpack Compose), GDG DevFest Ahmedabad (Android 17 Adaptive Layouts & Slices), and Gandhinagar (Android 13 APIs).
+
+### Q: Where can I find Dhruv Patel's resume and original photo?
+- Official Résumé: https://deardhruv.com/resume.pdf
+- Original High-Resolution Photo: https://deardhruv.com/pp/pro_pic.jpg
+
+---
+
+## 9. Machine Feeds, Protocol Endpoints & Content Negotiation
+
+- **Sitemap XML**: https://deardhruv.com/sitemap.xml
+- **RSS 2.0 Feed**: https://deardhruv.com/index.xml
+- **JSON Feed 1.1**: https://deardhruv.com/index.json
+- **Model Context Protocol (MCP) Server Descriptor**: https://deardhruv.com/.well-known/mcp.json
+- **RFC 9264 API Catalog**: https://deardhruv.com/.well-known/api-catalog
+- **OpenID / OAuth Descriptors**: https://deardhruv.com/.well-known/openid-configuration
+- **Robots Policy**: https://deardhruv.com/robots.txt
+- **AI Permissions**: https://deardhruv.com/ai.txt
+- **Markdown Content Negotiation**: Send `Accept: text/markdown` or request any canonical path with `index.md` appended.

@@ -12,6 +12,10 @@ interface Props {
     part?: number;
     total?: number;
   };
+  modifiedDate?: string;
+  ogImage?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  schema?: Record<string, any> | Record<string, any>[];
 }
 
 const {
@@ -20,7 +24,11 @@ const {
   date,
   readingTime,
   tags = [],
-  series
+  series,
+  modifiedDate,
+  ogImage,
+  breadcrumbs,
+  schema
 } = Astro.props;
 
 // Convert date to ISO 8601 string if valid
@@ -33,6 +41,16 @@ try {
     }
   }
 } catch (_) {}
+
+let modifiedIso: string | undefined;
+try {
+  if (modifiedDate) {
+    const parsed = new Date(modifiedDate);
+    if (!isNaN(parsed.getTime())) {
+      modifiedIso = parsed.toISOString();
+    }
+  }
+} catch (_) {}
 ---
 
 <BaseLayout
@@ -40,8 +58,12 @@ try {
   description={description}
   ogType="article"
   publishedTime={publishedIso}
+  modifiedTime={modifiedIso || publishedIso}
+  ogImage={ogImage}
   tags={tags}
   author="Dhruv Patel"
+  breadcrumbs={breadcrumbs}
+  schema={schema}
 >
   <article class="layout-container-wide" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
     <header class="page-header">

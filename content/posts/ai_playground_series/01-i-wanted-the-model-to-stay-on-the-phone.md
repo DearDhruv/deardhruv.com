@@ -741,6 +741,6 @@ Those questions belong in the next layers of the platform.
 
 **Project:** AI Playground  
 **Website:** https://deardhruv.com  
-**Repository:** https://github.com/DearDhruv/Model-Playground  
+**Repository:** Private codebase  
 **Google Play:** [AI Playground on Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)
 

@@ -7,11 +7,13 @@ if (!aboutEntry) {
   throw new Error('Missing content/about.md entry');
 }
 const { Content } = await render(aboutEntry);
+
+const aboutDescription = aboutEntry.data.description || "About Dhruv Patel (@DearDhruv) - Lead Android Engineer, Android Architect, and Android Artist specializing in on-device AI runtimes, native C++ NDK, and offline-first mobile systems.";
 ---
 
 <PageLayout
   title={aboutEntry.data.title}
-  description={aboutEntry.data.description || "About Dhruv Patel - Lead Android Engineer"}
+  description={aboutDescription}
   containerClass="layout-container-wide"
 >
   <div class="prose">

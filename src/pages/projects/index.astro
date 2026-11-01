@@ -7,12 +7,65 @@ if (!projectsEntry) {
   throw new Error('Missing content/projects.md entry');
 }
 const { Content } = await render(projectsEntry);
+
+const projectSchemas = [
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/projects/#ai-playground',
+    name: 'AI Playground',
+    alternateName: 'LLM Playground',
+    operatingSystem: 'Android, iOS',
+    applicationCategory: 'DeveloperApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+    description: 'Offline-first, on-device multimodal AI workstation for Android and iOS running local LLMs, speculative decoding, and diffusion models with zero cloud telemetry.',
+    featureList: [
+      'Dual-model Speculative Turbo decoding (2x throughput)',
+      'Defensive fork() child process sandbox for Vulkan driver isolation',
+      'Pure-KMP document parser across 25+ formats',
+      'On-device diffusion synthesis via Google LiteRT',
+      '100% offline activity ledger with SQLDelight'
+    ]
+  },
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/projects/#velocihue',
+    name: 'VelociHue',
+    operatingSystem: 'Android, Android TV, iOS',
+    applicationCategory: 'GameApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
+    description: 'High-framerate arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS.',
+    featureList: [
+      'Shared pure-Kotlin deterministic physics loop at 60-120 FPS',
+      'Cloud Firestore Schema v5 sync with 3-way union merge',
+      '29-achievement multi-tiered engine',
+      'Native Android TV support with D-pad navigation',
+      'Reduced-motion and photo-sensitive safety mode'
+    ]
+  }
+];
 ---
 
 <PageLayout
   title={projectsEntry.data.title}
   description={projectsEntry.data.description || "In-depth technical case studies and architectural deep dives across Android architecture, Kotlin Multiplatform, on-device AI runtimes, and native systems engineering."}
   containerClass="layout-container-wide"
+  schema={projectSchemas}
 >
   <div class="prose">
     <Content />

@@ -261,7 +261,7 @@ function auditSeo() {
   if (fs.existsSync(robotsPath)) {
     const r = fs.readFileSync(robotsPath, 'utf-8');
     check('seo', r.includes('User-agent: Googlebot') && r.includes('User-agent: Bingbot'), 'robots.txt declares policies for Googlebot and Bingbot');
-    check('seo', r.includes('User-agent: GPTBot') && r.includes('User-agent: Claude-bot') && r.includes('User-agent: PerplexityBot'), 'robots.txt welcomes major AI crawlers');
+    check('seo', r.includes('User-agent: GPTBot') && r.includes('User-agent: PerplexityBot') && r.includes('User-agent: DeepSeekBot'), 'robots.txt welcomes major AI crawlers (OpenAI, Anthropic, Gemini, Perplexity, DeepSeek)');
     check('seo', r.includes('User-agent: SemrushBot') && r.includes('User-agent: AhrefsBot'), 'robots.txt restricts aggressive scraper bots');
     check('seo', r.includes('Sitemap: https://deardhruv.com/sitemap.xml'), 'robots.txt references canonical XML sitemap');
     check('seo', r.includes('llms: https://deardhruv.com/llms.txt'), 'robots.txt references llms.txt discovery endpoint');
@@ -336,7 +336,16 @@ function auditSeo() {
     check('seo', ldOk, `${p.title} declares valid Schema.org JSON-LD (@graph with Person & WebSite)`);
   }
 
-  // 5. 404 Error Page Robots Directive
+  // 5. Software Application Knowledge Graph
+  const projHtmlPath = path.join(DIST_DIR, 'projects', 'index.html');
+  let projHasSoftwareApp = false;
+  if (fs.existsSync(projHtmlPath)) {
+    const projHtml = fs.readFileSync(projHtmlPath, 'utf-8');
+    projHasSoftwareApp = projHtml.includes('"@type":"SoftwareApplication"') || projHtml.includes('"@type": "SoftwareApplication"');
+  }
+  check('seo', projHasSoftwareApp, 'Projects declares SoftwareApplication structured data');
+
+  // 6. 404 Error Page Robots Directive
   const errPage = path.join(DIST_DIR, '404.html');
   let errPageNoindex = false;
   if (fs.existsSync(errPage)) {
@@ -541,15 +550,31 @@ function auditAi() {
   // 1. AI Manifests
   const llmsPath = path.join(DIST_DIR, 'llms.txt');
   check('ai', fs.existsSync(llmsPath) && fs.statSync(llmsPath).size > 1000, 'llms.txt exists and exceeds 1KB');
+  if (fs.existsSync(llmsPath)) {
+    const llmsTxt = fs.readFileSync(llmsPath, 'utf-8');
+    check('ai', llmsTxt.includes('AI Grounding FAQ'), 'llms.txt declares AI Grounding FAQ & Knowledge Base');
+  }
 
   const llmsFullPath = path.join(DIST_DIR, 'llms-full.txt');
   check('ai', fs.existsSync(llmsFullPath) && fs.statSync(llmsFullPath).size > 2000, 'llms-full.txt exists and exceeds 2KB');
+  if (fs.existsSync(llmsFullPath)) {
+    const llmsFullTxt = fs.readFileSync(llmsFullPath, 'utf-8');
+    check('ai', llmsFullTxt.includes('AI Grounding FAQ'), 'llms-full.txt declares AI Grounding FAQ & Knowledge Base');
+  }
 
   const aiTxtPath = path.join(DIST_DIR, 'ai.txt');
   check('ai', fs.existsSync(aiTxtPath), 'ai.txt discovery file exists');
 
   const authMdPath = path.join(DIST_DIR, 'auth.md');
   check('ai', fs.existsSync(authMdPath) && fs.statSync(authMdPath).size > 100, 'auth.md service documentation exists');
+
+  const rootMdPath = path.join(DIST_DIR, 'index.md');
+  let rootMdOk = false;
+  if (fs.existsSync(rootMdPath)) {
+    const rootMd = fs.readFileSync(rootMdPath, 'utf-8');
+    rootMdOk = rootMd.includes('Executive Profile') && fs.statSync(rootMdPath).size > 3000;
+  }
+  check('ai', rootMdOk, 'Root index.md provides comprehensive executive profile for AI agents (>3KB)');
 
   // 2. Machine Protocol Descriptors
   const mcpPath = path.join(DIST_DIR, '.well-known', 'mcp.json');

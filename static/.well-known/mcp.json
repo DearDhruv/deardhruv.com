@@ -3,9 +3,9 @@
   "version": "1.0",
   "protocolVersion": "2024-11-05",
   "serverInfo": {
-    "name": "Dhruv's blog",
-    "version": "1.0.0",
-    "description": "Technical blog for Android Engineers. Provides structured access to posts, project descriptions, and technical documentation."
+    "name": "DearDhruv Engineering Portfolio & Articles",
+    "version": "2.1.0",
+    "description": "Technical portfolio and publications of Dhruv Patel (@DearDhruv), Lead Android Engineer and Android Architect. Covers Android architecture, Kotlin Multiplatform, on-device AI runtimes, and hardware-integrated systems."
   },
   "transport": {
     "type": "streamable-http",
@@ -20,10 +20,60 @@
       },
       {
         "uri": "https://deardhruv.com/llms.txt",
-        "name": "LLM Directory",
+        "name": "LLM Core Directory",
+        "mimeType": "text/markdown"
+      },
+      {
+        "uri": "https://deardhruv.com/llms-full.txt",
+        "name": "LLM Full Content Directory",
+        "mimeType": "text/markdown"
+      },
+      {
+        "uri": "https://deardhruv.com/index.md",
+        "name": "Root Markdown Mirror",
         "mimeType": "text/markdown"
       }
     ],
-    "tools": []
+    "tools": [
+      {
+        "name": "get_author_bio",
+        "description": "Returns verified biographical details, employer history, speaking engagements, and contact endpoints for Dhruv Patel (@DearDhruv).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "get_project_architecture",
+        "description": "Returns in-depth systems architecture and engineering trade-offs for AI Playground (on-device AI workstation), VelociHue (KMP arcade game), or retail hardware HAL integrations.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "type": "string",
+              "enum": ["ai-playground", "velocihue", "retail-hardware-hal", "planoly-video-pipeline"],
+              "description": "Name of the production system to inspect."
+            }
+          },
+          "required": ["project"]
+        }
+      },
+      {
+        "name": "get_article_summaries",
+        "description": "Returns summaries and key takeaways of the 6-part 'Beyond the Model' on-device AI engineering series.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "part": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6,
+              "description": "Specific part number of the series (1 to 6), or omit for all."
+            }
+          }
+        }
+      }
+    ]
   }
 }

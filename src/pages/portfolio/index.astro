@@ -7,12 +7,51 @@ if (!portfolioEntry) {
   throw new Error('Missing content/portfolio.md entry');
 }
 const { Content } = await render(portfolioEntry);
+
+const portfolioSchemas = [
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/portfolio/#ai-playground',
+    name: 'AI Playground',
+    alternateName: 'LLM Playground',
+    operatingSystem: 'Android, iOS',
+    applicationCategory: 'DeveloperApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+    description: 'Offline-first, on-device multimodal AI workstation for Android and iOS running local LLMs, speculative decoding, and diffusion models with zero cloud telemetry.'
+  },
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/portfolio/#velocihue',
+    name: 'VelociHue',
+    operatingSystem: 'Android, Android TV, iOS',
+    applicationCategory: 'GameApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
+    description: 'High-framerate arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS.'
+  }
+];
 ---
 
 <PageLayout
   title={portfolioEntry.data.title}
   description={portfolioEntry.data.description || "Dhruv Patel's professional portfolio showcasing native Android architecture, Kotlin Multiplatform, on-device AI runtimes, and engineering leadership."}
   containerClass="layout-container-wide"
+  schema={portfolioSchemas}
 >
   <div class="prose">
     <Content />

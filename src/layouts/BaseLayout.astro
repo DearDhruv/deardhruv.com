@@ -86,13 +86,61 @@ const personSchema = {
   alternateName: ['DearDhruv', 'deardhruv', '@DearDhruv', 'Dhruv', 'Dhruv Patel (DearDhruv)'],
   identifier: 'deardhruv',
   url: `${siteOrigin}/`,
-  image: `${siteOrigin}/android-chrome-512x512.png`,
+  image: [
+    `${siteOrigin}/pp/pro_pic.jpg`,
+    `${siteOrigin}/images/pro_pic_small.jpg`,
+    `${siteOrigin}/android-chrome-512x512.png`
+  ],
   jobTitle: 'Lead Android Engineer',
   worksFor: {
     '@type': 'Organization',
-    name: 'Impact Commerce'
+    name: 'Impact Commerce',
+    url: 'https://impactcommerce.com/'
   },
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'Nirma University',
+    url: 'https://nirmauni.ac.in/'
+  },
+  award: [
+    '3rd Place in State-level Web Designing Competition, ISTE Student Chapter, TechFest 2010 at Nirma University'
+  ],
+  hasOccupation: [
+    {
+      '@type': 'Occupation',
+      name: 'Lead Android Engineer',
+      occupationLocation: { '@type': 'Country', name: 'Denmark & India' },
+      skills: 'Native Android Architecture, Jetpack Compose, Kotlin, Android NDK C++, Hardware Abstraction Layers (HAL), In-Store Touch Displays'
+    },
+    {
+      '@type': 'Occupation',
+      name: 'Senior Android Developer',
+      skills: 'FFmpeg Video Processing, Jetpack Compose, Canvas Manipulation, MVVM Architecture'
+    },
+    {
+      '@type': 'Occupation',
+      name: 'Mobile Systems Architect',
+      skills: 'On-Device AI, llama.cpp, Google AI Edge LiteRT, Apple MLX, Speculative Decoding, Vulkan'
+    }
+  ],
+  performerIn: [
+    {
+      '@type': 'Event',
+      name: 'GDG DevFest Surat 2025: Jetpack Compose Game Changing Features',
+      startDate: '2025-12-01',
+      location: { '@type': 'Place', name: 'Surat, India' }
+    },
+    {
+      '@type': 'Event',
+      name: 'GDG DevFest Ahmedabad 2025: Android 17 Mandates Adaptive Layouts',
+      startDate: '2025-11-01',
+      location: { '@type': 'Place', name: 'Ahmedabad, India' }
+    }
+  ],
   description: 'Lead Android Engineer, Android Architect, and Android Artist building on-device AI runtimes and high-performance native architectures with extensive production leadership.',
+  disambiguatingDescription: 'Lead Android Engineer, Android Architect, and Android Artist known online as @DearDhruv, specializing in on-device AI inference, Kotlin Multiplatform, native C++ NDK, and offline-first mobile systems.',
+  mainEntityOfPage: `${siteOrigin}/`,
+  knowsLanguage: ['en', 'gu', 'hi'],
   sameAs: [
     'https://github.com/DearDhruv',
     'https://x.com/DearDhruv',
@@ -116,12 +164,22 @@ const personSchema = {
     'Compose Multiplatform',
     'llama.cpp',
     'Google AI Edge LiteRT',
+    'Apple MLX',
     'Modern C++20 / NDK',
     'Vulkan Compute',
+    'OpenCL',
+    'Metal Compute',
+    'ARM NEON & KleidiAI',
     'Clean Architecture',
+    'MVI (Model-View-Intent)',
     'Offline-First Systems',
     'Speculative Decoding',
-    'Hardware Abstraction Layers (HAL)'
+    'Hardware Abstraction Layers (HAL)',
+    'POSIX fork() Sandboxing',
+    'Android Low Memory Killer (LMK)',
+    'SQLDelight & SQLite',
+    'Cloud Firestore Schema v5',
+    'Android TV & Leanback'
   ]
 };
 
@@ -133,6 +191,8 @@ const websiteSchema = {
   alternateName: ['DearDhruv', 'deardhruv', 'deardhruv.com', 'Dhruv Patel (@DearDhruv)'],
   description: 'Personal portfolio, engineering case studies, and systems architecture articles by Dhruv Patel (@DearDhruv).',
   publisher: { '@id': `${siteOrigin}/#person` },
+  creator: { '@id': `${siteOrigin}/#person` },
+  about: { '@id': `${siteOrigin}/#person` },
   inLanguage: 'en-US'
 };
 
@@ -145,14 +205,26 @@ if (ogType === 'article') {
     headline: title,
     description: description,
     inLanguage: 'en-US',
-    mainEntityOfPage: canonical,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     author: { '@id': `${siteOrigin}/#person` },
-    publisher: { '@id': `${siteOrigin}/#person` },
+    publisher: {
+      '@type': 'Person',
+      '@id': `${siteOrigin}/#person`,
+      name: 'Dhruv Patel',
+      url: `${siteOrigin}/`,
+      image: `${siteOrigin}/pp/pro_pic.jpg`
+    },
     image: resolvedOgImage,
     datePublished: publishedTime || '2026-10-05T10:00:00+05:30',
     dateModified: modifiedTime || publishedTime || '2026-10-21T15:30:00+05:30',
     keywords: tags,
-    articleSection: 'Mobile Systems & On-Device AI'
+    articleSection: 'Mobile Systems & On-Device AI',
+    proficiencyLevel: 'Expert',
+    dependencies: 'Kotlin Multiplatform, Android NDK, llama.cpp, Google AI Edge LiteRT',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.page-title', '.page-lead', '.prose > p:first-of-type']
+    }
   };
 } else if (normalizedPath === '/') {
   pageSchema = {
@@ -163,6 +235,55 @@ if (ogType === 'article') {
     isPartOf: { '@id': `${siteOrigin}/#website` },
     about: { '@id': `${siteOrigin}/#person` },
     mainEntity: { '@id': `${siteOrigin}/#person` },
+    description: description,
+    inLanguage: 'en-US',
+    primaryImageOfPage: `${siteOrigin}/images/pro_pic_small.jpg`,
+    significantLink: [
+      `${siteOrigin}/portfolio/`,
+      `${siteOrigin}/projects/`,
+      `${siteOrigin}/posts/ai_playground_series/`,
+      `${siteOrigin}/about/`,
+      `${siteOrigin}/resume.pdf`
+    ]
+  };
+} else if (normalizedPath === '/portfolio/') {
+  pageSchema = {
+    '@type': 'ProfilePage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: formattedTitle,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    about: { '@id': `${siteOrigin}/#person` },
+    mainEntity: { '@id': `${siteOrigin}/#person` },
+    description: description,
+    inLanguage: 'en-US',
+    significantLink: [
+      `${siteOrigin}/projects/`,
+      `${siteOrigin}/resume.pdf`,
+      'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+      'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue'
+    ]
+  };
+} else if (normalizedPath === '/about/') {
+  pageSchema = {
+    '@type': 'AboutPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: formattedTitle,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    about: { '@id': `${siteOrigin}/#person` },
+    mainEntity: { '@id': `${siteOrigin}/#person` },
+    description: description,
+    inLanguage: 'en-US'
+  };
+} else if (normalizedPath === '/projects/' || normalizedPath === '/posts/' || normalizedPath === '/posts/ai_playground_series/') {
+  pageSchema = {
+    '@type': 'CollectionPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: formattedTitle,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    about: { '@id': `${siteOrigin}/#person` },
     description: description,
     inLanguage: 'en-US'
   };
@@ -178,6 +299,53 @@ if (ogType === 'article') {
   };
 }
 
+const aboutFaqSchema = normalizedPath === '/about/' ? {
+  '@type': 'FAQPage',
+  '@id': `${canonical}#faq`,
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Who is Dhruv Patel (@DearDhruv)?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 14+ years of experience in native mobile systems, Kotlin Multiplatform, on-device AI runtimes, and retail hardware integrations. He is the creator of AI Playground and VelociHue.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What does Dhruv Patel specialize in?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Dhruv specializes in native Android development (Kotlin, Jetpack Compose, C++20 NDK), Kotlin Multiplatform (CMP 1.12), on-device AI runtimes (llama.cpp, Google AI Edge LiteRT, Apple MLX), speculative decoding, defensive POSIX fork() process sandboxing, and retail POS hardware integrations.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is AI Playground?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'AI Playground is an offline-first, on-device multimodal AI workstation for Android and iOS that runs local LLMs and diffusion models with zero cloud dependencies. It features dual-model Speculative Turbo decoding for 2x speedups, a defensive fork() child process sandbox for Vulkan driver crash isolation, and a pure-KMP document parser for 25+ formats.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is VelociHue?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'VelociHue is a high-framerate arcade game built in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It runs a shared deterministic physics loop at 60-120 FPS with Cloud Firestore schema v5 sync and 29 achievements.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Where has Dhruv Patel worked?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Dhruv has worked as Lead Android Engineer at IMPACT Commerce (Feb 2022-Present), Senior Android Developer at PLANOLY (Nov 2018-Feb 2022), Tech Lead at Ashapura Softech (Jun 2016-Oct 2018), Team Lead at Russmedia Tech (Feb 2014-Jun 2016), and Junior Android Developer at Hidden Brains (Jan 2012-Dec 2013).'
+      }
+    }
+  ]
+} : null;
+
 const jsonLdGraph = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -185,6 +353,7 @@ const jsonLdGraph = {
     websiteSchema,
     pageSchema,
     breadcrumbsListSchema,
+    ...(aboutFaqSchema ? [aboutFaqSchema] : []),
     ...(Array.isArray(schema) ? schema : schema ? [schema] : [])
   ]
 };
@@ -258,10 +427,12 @@ const jsonLdGraph = {
   <meta name="twitter:image:alt" content={resolvedOgImageAlt}>
 
   <!-- Favicons, Touch Icons & Web App Manifest -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f59e0b">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#f59e0b">
 
@@ -319,6 +490,7 @@ const jsonLdGraph = {
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <Header currentPath={currentPath} />
+  <div class="site-nav-backdrop" id="site-nav-backdrop" aria-hidden="true"></div>
 
   <main id="main">
     <slot />
@@ -338,6 +510,7 @@ const jsonLdGraph = {
       function closeMenu() {
         if (!siteNav || !siteNav.classList.contains('is-open')) return;
         siteNav.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
         if (menuBtn) {
           menuBtn.setAttribute('aria-expanded', 'false');
           menuBtn.classList.remove('is-active');
@@ -348,6 +521,7 @@ const jsonLdGraph = {
       function toggleMenu() {
         if (!siteNav || !menuBtn) return;
         const open = siteNav.classList.toggle('is-open');
+        document.body.classList.toggle('menu-open', open);
         menuBtn.setAttribute('aria-expanded', String(open));
         menuBtn.classList.toggle('is-active', open);
         if (backdrop) backdrop.classList.toggle('is-open', open);
@@ -390,6 +564,130 @@ const jsonLdGraph = {
           }
         });
       }
+    })();
+  </script>
+
+  <style is:inline>
+    .mermaid-chart-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      overflow-x: auto;
+      margin: var(--space-6, 1.5rem) 0;
+      padding: var(--space-4, 1rem);
+      background-color: var(--color-bg-surface-elevated, #18181b);
+      border: 1px solid var(--color-border, #27272a);
+      border-radius: var(--radius-lg, 12px);
+      box-sizing: border-box;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+    .mermaid-chart-container svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+
+  <script is:inline>
+    (() => {
+      let mermaidInstance = null;
+      let rendering = false;
+
+      function getMermaidConfig(isLight) {
+        return {
+          startOnLoad: false,
+          securityLevel: 'loose',
+          theme: isLight ? 'neutral' : 'dark',
+          themeVariables: isLight ? {
+            primaryColor: '#f1f5f9',
+            primaryTextColor: '#0f172a',
+            primaryBorderColor: '#d97706',
+            lineColor: '#d97706',
+            secondaryColor: '#ffffff',
+            tertiaryColor: '#f8fafc',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+          } : {
+            darkMode: true,
+            background: '#0f172a',
+            primaryColor: '#1e293b',
+            primaryTextColor: '#f8fafc',
+            primaryBorderColor: '#f59e0b',
+            lineColor: '#f59e0b',
+            secondaryColor: '#18181b',
+            tertiaryColor: '#09090b',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+          }
+        };
+      }
+
+      async function renderMermaidCharts() {
+        const pres = document.querySelectorAll('pre[data-language="mermaid"]');
+        const containers = document.querySelectorAll('.mermaid-chart-container[data-mermaid-code]');
+        if (!pres.length && !containers.length) return;
+        if (rendering) return;
+        rendering = true;
+
+        try {
+          if (!mermaidInstance) {
+            const m = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+            mermaidInstance = m.default;
+          }
+
+          const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+          mermaidInstance.initialize(getMermaidConfig(isLight));
+
+          for (let i = 0; i < pres.length; i++) {
+            const pre = pres[i];
+            const rawCode = pre.textContent.trim();
+            const chartId = 'mermaid-chart-' + i + '-' + Math.random().toString(36).substring(2, 8);
+            try {
+              const { svg } = await mermaidInstance.render(chartId, rawCode);
+              const wrapper = document.createElement('div');
+              wrapper.className = 'mermaid-chart-container';
+              wrapper.setAttribute('data-mermaid-code', encodeURIComponent(rawCode));
+              wrapper.innerHTML = svg;
+              pre.parentNode.replaceChild(wrapper, pre);
+            } catch (err) {
+              console.warn('Mermaid render error for chart ' + i, err);
+            }
+          }
+
+          for (let i = 0; i < containers.length; i++) {
+            const c = containers[i];
+            const rawCode = decodeURIComponent(c.getAttribute('data-mermaid-code') || '');
+            if (!rawCode) continue;
+            const chartId = 'mermaid-rechart-' + i + '-' + Math.random().toString(36).substring(2, 8);
+            try {
+              const { svg } = await mermaidInstance.render(chartId, rawCode);
+              c.innerHTML = svg;
+            } catch (err) {
+              console.warn('Mermaid re-render error for chart ' + i, err);
+            }
+          }
+        } catch (e) {
+          console.warn('Failed to load Mermaid:', e);
+        } finally {
+          rendering = false;
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderMermaidCharts);
+      } else {
+        renderMermaidCharts();
+      }
+
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          if (m.type === 'attributes' && m.attributeName === 'data-theme') {
+            renderMermaidCharts();
+            break;
+          }
+        }
+      });
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     })();
   </script>
 </body>

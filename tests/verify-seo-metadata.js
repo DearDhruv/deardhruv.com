@@ -51,10 +51,12 @@ if (fs.existsSync(robotsPath)) {
   assert(robots.includes('User-agent: GPTBot'), 'robots.txt welcomes GPTBot (OpenAI)');
   assert(robots.includes('User-agent: ChatGPT-User'), 'robots.txt welcomes ChatGPT-User');
   assert(robots.includes('User-agent: OAI-SearchBot'), 'robots.txt welcomes OAI-SearchBot');
-  assert(robots.includes('User-agent: Claude-bot'), 'robots.txt welcomes Claude-bot (Anthropic)');
+  assert(robots.includes('User-agent: Claude-bot') || robots.includes('User-agent: ClaudeBot'), 'robots.txt welcomes Claude-bot (Anthropic)');
   assert(robots.includes('User-agent: PerplexityBot'), 'robots.txt welcomes PerplexityBot');
   assert(robots.includes('User-agent: Google-Extended'), 'robots.txt welcomes Google-Extended (Gemini)');
   assert(robots.includes('User-agent: Applebot-Extended'), 'robots.txt welcomes Applebot-Extended');
+  assert(robots.includes('User-agent: DeepSeekBot'), 'robots.txt welcomes DeepSeekBot');
+  assert(robots.includes('User-agent: MistralBot'), 'robots.txt welcomes MistralBot');
 
   // Abusive scrapers blocked
   assert(robots.includes('User-agent: SemrushBot'), 'robots.txt restricts aggressive scraper SemrushBot');
@@ -161,12 +163,18 @@ for (const p of testPages) {
       const person = graph.find(e => e['@type'] === 'Person');
       assert(person && person.name === 'Dhruv Patel', `${p.title} JSON-LD graph contains Person entity`);
       assert(person && person.sameAs && person.sameAs.includes('https://github.com/DearDhruv'), `${p.title} Person entity has public GitHub profile`);
+      assert(person && JSON.stringify(person.image).includes('/pp/pro_pic.jpg'), `${p.title} Person entity references high-res portrait (/pp/pro_pic.jpg)`);
 
       const website = graph.find(e => e['@type'] === 'WebSite');
       assert(website && website.url === 'https://deardhruv.com/', `${p.title} JSON-LD graph contains WebSite entity`);
 
       const breadcrumbs = graph.find(e => e['@type'] === 'BreadcrumbList');
       assert(breadcrumbs && Array.isArray(breadcrumbs.itemListElement), `${p.title} JSON-LD graph contains BreadcrumbList`);
+
+      if (p.file === 'projects/index.html' || p.file === 'portfolio/index.html') {
+        const apps = graph.filter(e => e['@type'] === 'SoftwareApplication');
+        assert(apps.length >= 2, `${p.title} JSON-LD graph contains SoftwareApplication entities (${apps.length} found)`);
+      }
 
       if (p.isArticle) {
         const article = graph.find(e => e['@type'] === 'TechArticle');

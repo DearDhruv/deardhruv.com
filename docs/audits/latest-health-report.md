@@ -1,11 +1,11 @@
 # Continuous Site Audit & Health Report
 
-**Audit Timestamp:** 2026-11-01T16:21:16.983Z (11/1/2026, 9:51:16 PM GMT+5:30)  
+**Audit Timestamp:** 2026-11-01T18:40:26.606Z (11/2/2026, 12:10:26 AM GMT+5:30)  
 **Environment:** Static Output (`dist/`)  
 **Target:** [deardhruv.com](https://deardhruv.com)  
 **Auditor Engine:** Built-in Continuous Audit Engine (`scripts/audit.js`)  
-**Execution Duration:** 22.9ms  
-**Overall Status:** **HEALTHY (100% PASS)** (172/172 checks passed — 100.0%)
+**Execution Duration:** 23.2ms  
+**Overall Status:** **HEALTHY (100% PASS)** (176/176 checks passed — 100.0%)
 
 ---
 
@@ -14,12 +14,12 @@
 | Audit Domain | Passed | Failed | Total Checks | Score | Status |
 |---|---|---|---|---|---|
 | **1. Site Health, Routes & Assets** | 47 | 0 | 47 | 100.0% | ✅ PASS |
-| **2. SEO, Structured Data & Feeds** | 71 | 0 | 71 | 100.0% | ✅ PASS |
+| **2. SEO, Structured Data & Feeds** | 72 | 0 | 72 | 100.0% | ✅ PASS |
 | **3. Accessibility & Tokens** | 22 | 0 | 22 | 100.0% | ✅ PASS |
 | **4. Performance & Runtime JS** | 6 | 0 | 6 | 100.0% | ✅ PASS |
 | **5. Security Headers & Leaks** | 9 | 0 | 9 | 100.0% | ✅ PASS |
-| **6. AI Discovery & Agent Readiness** | 17 | 0 | 17 | 100.0% | ✅ PASS |
-| **TOTAL / OVERALL** | **172** | **0** | **172** | **100.0%** | **HEALTHY (100% PASS)** |
+| **6. AI Discovery & Agent Readiness** | 20 | 0 | 20 | 100.0% | ✅ PASS |
+| **TOTAL / OVERALL** | **176** | **0** | **176** | **100.0%** | **HEALTHY (100% PASS)** |
 
 ---
 
@@ -74,16 +74,16 @@
 - ✅ Favicon 32x32 PNG exists and valid
 - ✅ Author avatar (pro_pic_small.jpg) exists and exceeds 5KB
 - ✅ HTML document count meets threshold (28 files found)
-- ✅ Internal link integrity (0 broken links out of 913 crawled)
+- ✅ Internal link integrity (0 broken links out of 960 crawled)
 - ✅ Custom 404 error page exists and valid
 
 ### 2. SEO, Structured Data & Feeds
 
-**Score:** 71/71 checks passed
+**Score:** 72/72 checks passed
 
 - ✅ robots.txt exists in dist/
 - ✅ robots.txt declares policies for Googlebot and Bingbot
-- ✅ robots.txt welcomes major AI crawlers
+- ✅ robots.txt welcomes major AI crawlers (OpenAI, Anthropic, Gemini, Perplexity, DeepSeek)
 - ✅ robots.txt restricts aggressive scraper bots
 - ✅ robots.txt references canonical XML sitemap
 - ✅ robots.txt references llms.txt discovery endpoint
@@ -151,6 +151,7 @@
 - ✅ Visual Sitemap declares OpenGraph social cards
 - ✅ Visual Sitemap declares Twitter card
 - ✅ Visual Sitemap declares valid Schema.org JSON-LD (@graph with Person & WebSite)
+- ✅ Projects declares SoftwareApplication structured data
 - ✅ Custom 404 page declares noindex, follow robots directive
 
 ### 3. Accessibility & Tokens
@@ -184,10 +185,10 @@
 
 **Score:** 6/6 checks passed
 
-- ✅ Total uncompressed CSS is within budget (43.32 KB < 45.0 KB)
+- ✅ Total uncompressed CSS is within budget (43.63 KB < 45.0 KB)
 - ✅ Total uncompressed Client JS is within budget (4.44 KB < 5.0 KB)
 - ✅ Zero runtime client hydration bundles generated (0 found)
-- ✅ Maximum HTML page size within budget (77.14 KB for posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.html < 100 KB)
+- ✅ Maximum HTML page size within budget (84.86 KB for posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.html < 100 KB)
 - ✅ Static assets configured with 1-year immutable caching in netlify.toml
 - ✅ Icons configured with 30-day caching in netlify.toml
 
@@ -207,12 +208,15 @@
 
 ### 6. AI Discovery & Agent Readiness
 
-**Score:** 17/17 checks passed
+**Score:** 20/20 checks passed
 
 - ✅ llms.txt exists and exceeds 1KB
+- ✅ llms.txt declares AI Grounding FAQ & Knowledge Base
 - ✅ llms-full.txt exists and exceeds 2KB
+- ✅ llms-full.txt declares AI Grounding FAQ & Knowledge Base
 - ✅ ai.txt discovery file exists
 - ✅ auth.md service documentation exists
+- ✅ Root index.md provides comprehensive executive profile for AI agents (>3KB)
 - ✅ .well-known/mcp.json exists and valid MCP schema
 - ✅ .well-known/api-catalog exists and conforms to RFC 9264 linkset
 - ✅ .well-known/oauth-protected-resource exists
