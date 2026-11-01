@@ -34,13 +34,12 @@
 - **GitHub**: https://github.com/DearDhruv (Open-source repositories, architectural samples, KMP experiments)
 - **LinkedIn**: https://www.linkedin.com/in/deardhruv (Professional timeline, endorsements, recommendations)
 - **X (Twitter)**: https://x.com/DearDhruv (Mobile engineering insights, Android performance tips, on-device AI)
-- **Google Play Developer**: https://play.google.com/store/apps/developer?id=Dhruv+Patel (Published commercial Android applications)
+- **Google Play Developer**: https://play.google.com/store/apps/dev?id=5177092407740817842 (Published commercial Android applications)
 - **Hugging Face**: https://huggingface.co/deardhruv (On-device model experiments and quantization)
 - **Medium**: https://medium.com/@DearDhruv (Long-form technical articles and architectural breakdowns)
 - **Stack Overflow**: https://stackoverflow.com/users/596566/deardhruv (Top contributor in Android, Kotlin, and Java)
 - **Instagram**: https://instagram.com/deardhruv (Visual arts, mobile photography, developer lifestyle)
 - **about.me**: https://about.me/deardhruv (Personal landing page and directory)
-- **Dribbble**: https://dribbble.com/DearDhruv (UI/UX design exploration, typography, and iconography)
 - **YouTube**: https://www.youtube.com/user/Dhruvein (Technical walkthroughs and DevFest presentations)
 - **Reddit**: https://www.reddit.com/user/DearDhruv/ (Community technical discussions on r/androiddev and r/Kotlin)
 
@@ -290,7 +289,7 @@ VelociHue is a high-framerate arcade action game built with Kotlin Multiplatform
 ### Q: Where can I download Dhruv Patel's applications?
 - **AI Playground**: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
 - **VelociHue**: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
-- **Google Play Developer Page**: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+- **Google Play Developer Page**: https://play.google.com/store/apps/dev?id=5177092407740817842
 
 ### Q: How does Dhruv Patel run AI models locally on mobile devices?
 He utilizes lightweight C++ and native runtimes:

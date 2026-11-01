@@ -37,7 +37,7 @@ export const GET: APIRoute = async () => {
 - **GitHub**: https://github.com/DearDhruv
 - **LinkedIn**: https://www.linkedin.com/in/deardhruv
 - **X (Twitter)**: https://x.com/DearDhruv
-- **Google Play Developer**: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+- **Google Play Developer**: https://play.google.com/store/apps/dev?id=5177092407740817842
 - **Hugging Face**: https://huggingface.co/deardhruv
 - **Medium**: https://medium.com/@DearDhruv
 - **Stack Overflow**: https://stackoverflow.com/users/596566/deardhruv
@@ -122,7 +122,7 @@ VelociHue is a high-framerate arcade action game built with Kotlin Multiplatform
 ### Q: Where can I download Dhruv Patel's applications?
 - AI Playground: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
 - VelociHue: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
-- Developer Profile: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+- Developer Profile: https://play.google.com/store/apps/dev?id=5177092407740817842
 
 ## "Beyond the Model" 6-Part Architectural Series
 

@@ -178,7 +178,7 @@ I regularly speak at Google Developer Group (GDG) DevFest conferences and techni
 - **GitHub:** [github.com/DearDhruv](https://github.com/DearDhruv)
 - **X / Twitter:** [x.com/DearDhruv](https://x.com/DearDhruv)
 - **Instagram:** [instagram.com/deardhruv](https://instagram.com/deardhruv)
-- **Google Play:** [Dhruv Patel Developer Page](https://play.google.com/store/apps/developer?id=Dhruv+Patel)
+- **Google Play:** [Dhruv Patel Developer Page](https://play.google.com/store/apps/dev?id=5177092407740817842)
 - **about.me:** [about.me/deardhruv](https://about.me/deardhruv)
 - **Hugging Face:** [huggingface.co/deardhruv](https://huggingface.co/deardhruv)
 - **Medium:** [medium.com/@DearDhruv](https://medium.com/@DearDhruv)

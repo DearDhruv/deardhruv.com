@@ -63,5 +63,5 @@ This ledger records every factual claim made across deardhruv.com, its source of
 | `SOC-006` | Hugging Face: `https://huggingface.co/deardhruv` | about.me/deardhruv | **Verified** | 2026-11-01 |
 | `SOC-007` | Medium: `https://medium.com/@DearDhruv` | about.me/deardhruv | **Verified** | 2026-11-01 |
 | `SOC-008` | Stack Overflow: `https://stackoverflow.com/users/596566/deardhruv` | about.me/deardhruv | **Verified** | 2026-11-01 |
-| `SOC-009` | Dribbble: `https://dribbble.com/DearDhruv` | about.me/deardhruv | **Verified** | 2026-11-01 |
+| `SOC-009` | Google Play Developer: `https://play.google.com/store/apps/dev?id=5177092407740817842` | play.google.com | **Verified** | 2026-11-01 |
 | `SOC-010` | YouTube: `https://www.youtube.com/@DearDhruv` | about.me/deardhruv | **Verified** | 2026-11-01 |
