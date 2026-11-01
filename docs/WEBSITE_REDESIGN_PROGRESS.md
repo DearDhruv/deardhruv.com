@@ -2914,7 +2914,7 @@ Ready for final review and production deployment.
 - `c4afefd`: `feat(ui): update Google Play Store icon to official 2022 brand vector and modernize GitHub mark`
 - `a8fea36`: `docs: record icon updates in progress log`
 - `05cfea2`: `feat(theme): set warm editorial amber as primary default palette across root CSS, light mode, and client init`
-- `[in-progress]`: `fix(ui): enable sticky topbar with overflow-x clip and harmonize horizontal centering`
+- `2219189`: `fix(ui): enable sticky topbar with overflow-x clip and harmonize horizontal centering`
 
 ---
 
@@ -2953,6 +2953,20 @@ Ready for final review and production deployment.
   - Brand-to-hero left margin difference: `0px` across all screen widths (500px to 1920px).
   - Actions-to-hero right margin difference: `0px` across all screen widths (500px to 1920px).
   - Nav center to container center difference: `< 0.01px` (mathematical dead center).
+
+---
+
+## Phase A6: Google Play Store Icon Harmonization & Design System Consistency
+
+### Goals
+1. Modernize Google Play button icons to use the official, standardized stroke outline geometry (`fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"`).
+2. Remove hardcoded multicolored fills (`#ea4335`, `#fbbc04`, `#4285f4`, `#34a853`) so the icon is completely consistent with all other system icons (GitHub, LinkedIn, Email, Arrows, Résumé).
+3. Ensure the icon adapts dynamically to button surface states (`currentColor`), inheriting button text color and hover states seamlessly across all themes.
+4. Add Dhruv Patel's Google Play developer profile link to the homepage contact discovery section.
+
+### Files Changed
+- `src/pages/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
 
 
 ### Verification & Automated Gates
