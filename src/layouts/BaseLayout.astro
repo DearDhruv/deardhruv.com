@@ -321,6 +321,7 @@ const jsonLdGraph = {
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <Header currentPath={currentPath} />
+  <div class="site-nav-backdrop" id="site-nav-backdrop" aria-hidden="true"></div>
 
   <main id="main">
     <slot />
@@ -340,6 +341,7 @@ const jsonLdGraph = {
       function closeMenu() {
         if (!siteNav || !siteNav.classList.contains('is-open')) return;
         siteNav.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
         if (menuBtn) {
           menuBtn.setAttribute('aria-expanded', 'false');
           menuBtn.classList.remove('is-active');
@@ -350,6 +352,7 @@ const jsonLdGraph = {
       function toggleMenu() {
         if (!siteNav || !menuBtn) return;
         const open = siteNav.classList.toggle('is-open');
+        document.body.classList.toggle('menu-open', open);
         menuBtn.setAttribute('aria-expanded', String(open));
         menuBtn.classList.toggle('is-active', open);
         if (backdrop) backdrop.classList.toggle('is-open', open);
