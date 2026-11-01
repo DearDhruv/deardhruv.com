@@ -1,14 +1,5 @@
-/**
- * DearDhruv Typography System — Precision Technical Editorial
- * Standardized semantic typography classes, fluid clamp scales, and zero-shift font stacks.
- * Compliant with WCAG 2.2 AA and DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md Section 5.4.
- */
-
+/* DearDhruv Typography System (WCAG 2.2 AA) */
 :root {
-
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
   --font-display: clamp(2.5rem, 5.5vw, 4.25rem);
   --font-h1: clamp(2rem, 4.2vw, 3.125rem);
   --font-h2: clamp(1.5rem, 3vw, 2.25rem);

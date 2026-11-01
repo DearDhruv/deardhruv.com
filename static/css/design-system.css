@@ -1,34 +1,20 @@
-/**
- * DearDhruv Design System — Precision Technical Editorial
- * Standardized Design Tokens, Fluid Typography, Accessible Surfaces & State System
- * Compliant with WCAG 2.2 AA and DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md
- */
+/* DearDhruv Design System Tokens & Surfaces (WCAG 2.2 AA) */
 
 :root {
 
   --primitive-slate-950: #090d16;
   --primitive-slate-900: #0f172a;
   --primitive-slate-850: #141e33;
-  --primitive-slate-800: #1e293b;
   --primitive-slate-700: #334155;
-  --primitive-slate-600: #475569;
-  --primitive-slate-500: #64748b;
-  --primitive-slate-400: #94a3b8;
-  --primitive-slate-300: #cbd5e1;
-  --primitive-slate-200: #e2e8f0;
   --primitive-slate-100: #f1f5f9;
   --primitive-slate-50:  #f8fafc;
   --primitive-white:     #ffffff;
 
   --primitive-cyan-400:  #38bdf8;
-  --primitive-cyan-500:  #0ea5e9;
-  --primitive-cyan-600:  #0284c7;
   --primitive-cyan-700:  #0369a1;
 
-  --primitive-emerald-400: #34d399;
   --primitive-emerald-500: #10b981;
   --primitive-amber-400:   #fbbf24;
-  --primitive-rose-400:    #fb7185;
 
   --color-bg-page: var(--primitive-slate-950);
   --color-bg-surface: var(--primitive-slate-900);
@@ -277,20 +263,6 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-.ds-container {
-  width: min(100% - (var(--gutter) * 2), var(--container-wide));
-  margin-inline: auto;
-}
-
-.ds-container-reading {
-  width: min(100% - (var(--gutter) * 2), var(--container-reading));
-  margin-inline: auto;
-}
-
-:focus:not(:focus-visible) {
-  outline: none;
 }
 
 :focus-visible {
