@@ -1,7 +1,7 @@
 +++
 title = "Part 3 - The Model Was Fine. The Phone Wasn't."
 date = "2026-10-05T12:00:00+05:30"
-description = "The difficult bugs were memory, native lifecycle, GPU drivers and operating-system behavior."
+description = "Handling the hardest bugs: Android Low Memory Killer (LMK) evictions, vendor GPU driver crashes on Vulkan, thermal throttling, and native lifecycle management."
 tags = ["Android", "Performance", "Vulkan", "Memory Management", "C++", "On-Device AI"]
 series = ["Beyond the Model"]
 [author]
