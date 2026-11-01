@@ -150,6 +150,9 @@
   box-sizing: border-box;
   cursor: pointer;
   border: 1px solid transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
   transition: background-color var(--motion-duration-fast) var(--motion-ease),
               border-color var(--motion-duration-fast) var(--motion-ease),
               color var(--motion-duration-fast) var(--motion-ease),
@@ -161,6 +164,13 @@
 .ds-btn:focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--color-bg-page), 0 0 0 4px var(--color-focus-ring);
+}
+
+.btn:focus:not(:focus-visible),
+.ds-btn:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
 /* Button Variants */
@@ -306,6 +316,9 @@
   border: 2px solid var(--color-border-subtle);
   object-fit: cover;
   flex-shrink: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 @media (min-width: 640px) {
@@ -409,9 +422,55 @@
 }
 
 /* Interaction States */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 :focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
+}
+
+/* Shape-respecting state effect and selection suppression */
+button,
+.btn,
+.ds-btn,
+.site-nav-link,
+.site-brand,
+.theme-toggle-btn,
+.menu-toggle-btn,
+.palette-btn,
+.palette-close-btn,
+.palette-footer-toggle,
+.badge,
+.ds-badge,
+.chip,
+.tag,
+.hero-avatar,
+.card-interactive,
+[role="button"] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button::selection,
+.btn::selection,
+.ds-btn::selection,
+.site-nav-link::selection,
+.site-brand::selection,
+.theme-toggle-btn::selection,
+.menu-toggle-btn::selection,
+.palette-btn::selection,
+.palette-close-btn::selection,
+.palette-footer-toggle::selection,
+.badge::selection,
+.ds-badge::selection,
+.chip::selection,
+.tag::selection {
+  background: transparent;
 }
 
 /* Interactive elements active state */
@@ -666,6 +725,14 @@ details[open] summary {
 .palette-btn:focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--color-bg-page), 0 0 0 4px var(--color-focus-ring);
+}
+
+.palette-btn:focus:not(:focus-visible),
+.palette-close-btn:focus:not(:focus-visible),
+.palette-footer-toggle:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }
 
 .palette-swatch {

@@ -321,92 +321,11 @@ body {
 }
 
 /* Focus Visible Standard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 :focus-visible {
   outline: 2px solid var(--color-focus-ring);
-  outline-offset: 3px;
-}
-
-/* Buttons */
-.ds-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  min-height: 44px;
-  min-width: 44px;
-  padding: var(--space-2) var(--space-5);
-  border-radius: var(--radius-md);
-  font-family: var(--font-sans);
-  font-size: var(--font-small);
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color var(--motion-duration-fast) var(--motion-ease),
-              border-color var(--motion-duration-fast) var(--motion-ease),
-              color var(--motion-duration-fast) var(--motion-ease),
-              transform var(--motion-duration-fast) var(--motion-ease);
-}
-
-.ds-btn-primary {
-  background-color: var(--color-accent);
-  color: var(--color-text-inverse);
-  border: 1px solid transparent;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .ds-btn-primary:hover {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-1px);
-  }
-}
-
-.ds-btn-secondary {
-  background-color: var(--color-bg-surface-subtle);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border-subtle);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .ds-btn-secondary:hover {
-    background-color: var(--color-bg-surface-hover);
-    border-color: var(--color-border-strong);
-    transform: translateY(-1px);
-  }
-}
-
-/* Card Primitive */
-.ds-card {
-  position: relative;
-  isolation: isolate;
-  background-color: var(--color-bg-surface);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-md);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-sm);
-  transition: border-color var(--motion-duration-fast) var(--motion-ease),
-              transform var(--motion-duration-fast) var(--motion-ease),
-              box-shadow var(--motion-duration-fast) var(--motion-ease);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .ds-card-interactive:hover {
-    border-color: var(--color-border-interactive);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-  }
-}
-
-/* Badge Primitive */
-.ds-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-mono);
-  font-size: var(--font-metadata);
-  font-weight: 500;
-  background-color: var(--color-accent-subtle);
-  color: var(--color-text-accent);
-  border: 1px solid var(--color-accent-border);
+  outline-offset: 2px;
 }
