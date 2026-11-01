@@ -84,22 +84,7 @@ NODE_VERSION = "24"
     Content-Type = "text/markdown; charset=utf-8"
 
 [[headers]]
-  for = "/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
   for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/bundle*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/main*.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

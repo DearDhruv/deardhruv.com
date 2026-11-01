@@ -11,9 +11,9 @@ const fs = require('fs');
 const path = require('path');
 
 const repoRoot = path.resolve(__dirname, '..');
-const dsCssPath = path.join(repoRoot, 'assets', 'css', 'design-system.css');
-const compCssPath = path.join(repoRoot, 'assets', 'css', 'components.css');
-const navCssPath = path.join(repoRoot, 'assets', 'css', 'nav.css');
+const dsCssPath = path.join(repoRoot, 'static', 'css', 'design-system.css');
+const compCssPath = path.join(repoRoot, 'static', 'css', 'components.css');
+const navCssPath = path.join(repoRoot, 'static', 'css', 'nav.css');
 
 let failures = 0;
 let passes = 0;
