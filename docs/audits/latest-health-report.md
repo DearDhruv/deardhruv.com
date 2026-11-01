@@ -1,10 +1,10 @@
 # Continuous Site Audit & Health Report
 
-**Audit Timestamp:** 2026-11-01T16:51:44.479Z (11/1/2026, 10:21:44 PM GMT+5:30)  
+**Audit Timestamp:** 2026-11-01T18:05:10.681Z (11/1/2026, 11:35:10 PM GMT+5:30)  
 **Environment:** Static Output (`dist/`)  
 **Target:** [deardhruv.com](https://deardhruv.com)  
 **Auditor Engine:** Built-in Continuous Audit Engine (`scripts/audit.js`)  
-**Execution Duration:** 43.6ms  
+**Execution Duration:** 25.6ms  
 **Overall Status:** **HEALTHY (100% PASS)** (172/172 checks passed — 100.0%)
 
 ---
@@ -74,7 +74,7 @@
 - ✅ Favicon 32x32 PNG exists and valid
 - ✅ Author avatar (pro_pic_small.jpg) exists and exceeds 5KB
 - ✅ HTML document count meets threshold (28 files found)
-- ✅ Internal link integrity (0 broken links out of 912 crawled)
+- ✅ Internal link integrity (0 broken links out of 960 crawled)
 - ✅ Custom 404 error page exists and valid
 
 ### 2. SEO, Structured Data & Feeds
@@ -184,10 +184,10 @@
 
 **Score:** 6/6 checks passed
 
-- ✅ Total uncompressed CSS is within budget (43.32 KB < 45.0 KB)
+- ✅ Total uncompressed CSS is within budget (43.63 KB < 45.0 KB)
 - ✅ Total uncompressed Client JS is within budget (4.44 KB < 5.0 KB)
 - ✅ Zero runtime client hydration bundles generated (0 found)
-- ✅ Maximum HTML page size within budget (77.14 KB for posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.html < 100 KB)
+- ✅ Maximum HTML page size within budget (77.32 KB for posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.html < 100 KB)
 - ✅ Static assets configured with 1-year immutable caching in netlify.toml
 - ✅ Icons configured with 30-day caching in netlify.toml
 
