@@ -189,7 +189,7 @@
   }
 
   .btn-primary:hover svg {
-    transform: translateX(2px);
+    transform: scale(1.1);
   }
 
   .btn-secondary:hover {
@@ -201,7 +201,7 @@
   }
 
   .btn-secondary:hover svg {
-    transform: translateX(2px);
+    transform: scale(1.1);
   }
 
   .btn-ghost:hover {

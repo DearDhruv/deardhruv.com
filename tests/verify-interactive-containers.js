@@ -95,6 +95,25 @@ assert(compCss.includes('.card-stretched-link::after') || compCss.includes('.car
 assert(compCss.includes('position: absolute') && compCss.includes('inset: 0'), 'card-stretched-link covers entire container (inset: 0)');
 assert(compCss.includes('z-index: 2'), 'Secondary action buttons and pills sit above stretched link (z-index: 2)');
 
+// 5. Icon Prefix Verification (Icon must appear before Text)
+console.log('\n--- 5. Icon-as-Prefix Placement Verification ---');
+const btnRegex = /<(?:a|button)[^>]*class="[^"]*\bbtn\b[^"]*"[^>]*>([\s\S]*?)<\/(?:a|button)>/g;
+let match;
+let btnCount = 0;
+let prefixCount = 0;
+while ((match = btnRegex.exec(homeHtml)) !== null) {
+  const content = match[1];
+  if (content.includes('<svg') && content.includes('<span')) {
+    btnCount++;
+    const svgIdx = content.indexOf('<svg');
+    const spanIdx = content.indexOf('<span');
+    if (svgIdx < spanIdx) {
+      prefixCount++;
+    }
+  }
+}
+assert(btnCount > 0 && prefixCount === btnCount, `All ${btnCount} homepage buttons with icons place the icon first as prefix (${prefixCount}/${btnCount})`);
+
 console.log('\n========================================');
 console.log(`Interactive Container Audit: ${passed} passed, ${failed} failed.`);
 console.log('========================================\n');
