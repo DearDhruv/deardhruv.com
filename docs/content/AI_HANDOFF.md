@@ -21,7 +21,10 @@ This document maintains state across AI agent sessions executing the `DEARDHRUV_
   - `C10.1` - `C10.5`: Metadata, RSS feed, schema JSON-LD, 404 and utility copy audited (`1eea23e`).
   - `C11.1` - `C11.5`: Site-wide editorial audit completed, 29/29 fact ledger claims verified (`0097c83`).
   - `C12.1` - `C12.5`: Final content regression executed with 100% test pass rate across all 6 test suites.
-- **Next Task:** None — All 12 content phases fully executed, verified, and committed.
+- **Next Task:** Transitioned to Website Audit & Search Visibility workstream (`plans/DEARDHRUV_WEBSITE_AUDIT_AND_SEARCH_VISIBILITY_IMPLEMENTATION_PLAN.md`).
+  - **Audit Workstream Status:** Phase A0, Task A0.1 COMPLETED (`docs(audit): document current site build and deploy setup`).
+  - **Audit Handoff:** See `docs/audits/GEMINI_AUDIT_HANDOFF.md`.
+  - **Next Audit Task:** Phase A0, Task A0.2 (`test(audit): add legacy url inventory`).
 - **Blockers / Decisions Needed:** None.
 
 ---
@@ -31,6 +34,7 @@ This document maintains state across AI agent sessions executing the `DEARDHRUV_
 - **Routes:** 39/39 legacy routes verified (HTML, redirects, PDFs, machine endpoints).
 - **Internal Links:** 903/903 internal links verified with 0 broken links.
 - **SEO & Bot Hygiene:** 253/253 rules passed with zero private repository references in `dist/`.
-- **Performance Budgets:** Total uncompressed CSS is 43.80 KB (budget < 45 KB); Client JS is 4.31 KB (budget < 5 KB).
+- **Performance Budgets:** Total uncompressed CSS is 43.85 KB (budget < 45 KB); Client JS is 4.31 KB (budget < 5 KB).
 - **Visual Matrix:** 130 responsive and visual assertions passed across 6 viewports.
-- **Commit Target:** `test(content): verify rewritten content and legacy routes`
+- **Audit Baseline:** Documented in `docs/audits/2026-11-01-baseline/build-and-deploy-setup.md`.
+- **Active Commit:** `docs(audit): document current site build and deploy setup` (Task A0.1 completed).
