@@ -6,7 +6,7 @@ This document maintains state across AI agent sessions executing the `DEARDHRUV_
 
 ## Current Status
 
-- **Current Phase:** Phase C9 — Technical articles, parts 5 and 6
+- **Current Phase:** Phase C10 — Metadata, captions, and utility copy
 - **Completed Tasks:**
   - `C0.1` - `C0.4`: Content inventory, fact ledger, conflict ledger (`9bfeb9a`).
   - `C1.1` - `C1.4`: Voice and style guide, before/after examples, tone matrix, authoring guide, review log (`376f931`).
@@ -17,23 +17,28 @@ This document maintains state across AI agent sessions executing the `DEARDHRUV_
   - `C6.1` - `C6.3`: Posts index and series overview rewrite with problem-first descriptions (`5c058f5`).
   - `C7.1` - `C7.3`: Beyond the Model Parts 1 & 2 verified and synchronized (`1be8274`).
   - `C8.1` - `C8.3`: Beyond the Model Parts 3 & 4 verified and synchronized (`52aa838`).
-  - `C9.1` - `C9.3`: Beyond the Model Parts 5 & 6 verified and synchronized.
-- **Next Task:** Phase C10 — Metadata, captions, and utility copy (`C10.1` - `C10.5`)
+  - `C9.1` - `C9.3`: Beyond the Model Parts 5 & 6 verified and synchronized (`69873c1`).
+  - `C10.1` - `C10.5`: Metadata, RSS feed, schema JSON-LD, 404 and utility copy audited.
+- **Next Task:** Phase C11 — Complete editorial and factual review (`C11.1` - `C11.5`)
 - **Blockers / Decisions Needed:** None.
 
 ---
 
 ## Task History
 
-### Phase C9: Beyond the Model Parts 5 and 6 (`content(articles): edit Beyond the Model parts 5 and 6`)
-- **Task IDs:** `C9.1`, `C9.2`, `C9.3`
+### Phase C10: Metadata and Utility Copy (`content(metadata): improve page descriptions and utility copy`)
+- **Task IDs:** `C10.1`, `C10.2`, `C10.3`, `C10.4`, `C10.5`
 - **Files Changed:**
-  - `content/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app.md`: Preserved Clean Architecture diagrams, MVI store contracts, modular subprojects, and offline activity ledger invariants. Synchronized front matter description to match series index.
-  - `content/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge.md`: Preserved dual-model Speculative Turbo decoding equations, ADR-202 hardware guardrails, native `fork()` crash isolation pipes, and streaming SQLite fault tolerance. Synchronized front matter description to match series index.
+  - `src/layouts/BaseLayout.astro`: Enhanced `personSchema.knowsAbout` array with `On-Device Image Generation` and `Hardware Abstraction Layers (HAL)`.
+  - `src/pages/index.xml.ts`: Verified RSS feed item titles and escape handling.
+  - `src/pages/404.astro`: Confirmed accessible landmark and search-forward navigation.
 - **Verification:**
   - Full Astro static build generated with 27 static routes.
   - Test suites: 39 legacy routes verified, 253 SEO checks passed, 130 visual assertions passed.
-- **Commit Target:** `content(articles): edit Beyond the Model parts 5 and 6`
+- **Commit Target:** `content(metadata): improve page descriptions and utility copy`
+
+### Phase C9: Beyond the Model Parts 5 and 6 (`content(articles): edit Beyond the Model parts 5 and 6`)
+- **Commit:** `69873c1`
 
 ### Phase C8: Beyond the Model Parts 3 and 4 (`content(articles): edit Beyond the Model parts 3 and 4`)
 - **Commit:** `52aa838`
