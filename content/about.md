@@ -89,13 +89,20 @@ I'm always interested in:
 - **Technical Discussions** about Android development
 - **Open-Source Contributions**
 
-### Reach Out:
+### Reach Out & Verified Profiles:
 
 - **📧 Email:** [dhruv.time@gmail.com](mailto:dhruv.time@gmail.com)
-- **💼 LinkedIn:** [@DearDhruv](https://www.linkedin.com/in/deardhruv/)
+- **💼 LinkedIn:** [linkedin.com/in/deardhruv](https://www.linkedin.com/in/deardhruv/)
 - **💻 GitHub:** [@DearDhruv](https://github.com/DearDhruv)
-- **🐦 Twitter:** [@DearDhruv](https://twitter.com/DearDhruv)
+- **🐦 X / Twitter:** [@DearDhruv](https://x.com/DearDhruv)
 - **📸 Instagram:** [@DearDhruv](https://instagram.com/deardhruv)
+- **🌐 about.me:** [about.me/deardhruv](https://about.me/deardhruv)
+- **🤗 Hugging Face:** [@DearDhruv](https://huggingface.co/deardhruv)
+- **✍️ Medium:** [@DearDhruv](https://medium.com/@DearDhruv)
+- **📚 Stack Overflow:** [deardhruv](https://stackoverflow.com/users/596566/deardhruv)
+- **🎨 Dribbble:** [@DearDhruv](https://dribbble.com/DearDhruv)
+- **▶️ YouTube:** [@Dhruvein](https://www.youtube.com/user/Dhruvein)
+- **🤖 Reddit:** [u/DearDhruv](https://www.reddit.com/user/DearDhruv/)
 
 ---
 
