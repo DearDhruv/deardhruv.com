@@ -20,7 +20,17 @@
       },
       {
         "uri": "https://deardhruv.com/llms.txt",
-        "name": "LLM Directory",
+        "name": "LLM Core Directory",
+        "mimeType": "text/markdown"
+      },
+      {
+        "uri": "https://deardhruv.com/llms-full.txt",
+        "name": "LLM Full Content Directory",
+        "mimeType": "text/markdown"
+      },
+      {
+        "uri": "https://deardhruv.com/index.md",
+        "name": "Root Markdown Mirror",
         "mimeType": "text/markdown"
       }
     ],

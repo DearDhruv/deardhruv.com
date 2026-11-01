@@ -7,6 +7,15 @@ interface Props {
   lead?: string;
   containerClass?: string;
   noindex?: boolean;
+  ogType?: 'website' | 'article' | 'profile';
+  ogImage?: string;
+  ogImageAlt?: string;
+  canonicalUrl?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  schema?: Record<string, any> | Record<string, any>[];
+  tags?: string[];
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 const {
@@ -14,11 +23,33 @@ const {
   description,
   lead,
   containerClass = "layout-container-wide",
-  noindex = false
+  noindex = false,
+  ogType,
+  ogImage,
+  ogImageAlt,
+  canonicalUrl,
+  breadcrumbs,
+  schema,
+  tags,
+  publishedTime,
+  modifiedTime
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} noindex={noindex}>
+<BaseLayout
+  title={title}
+  description={description}
+  noindex={noindex}
+  ogType={ogType}
+  ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
+  canonicalUrl={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+  schema={schema}
+  tags={tags}
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+>
   <div class={containerClass} style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
     <header class="page-header">
       <h1 class="page-title">{title}</h1>

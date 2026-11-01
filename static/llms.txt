@@ -29,15 +29,36 @@ A 6-part technical journey detailing how to build an offline-first, on-device AI
 
 ## Verified Profiles & Online Identity
 
+- Primary Website: https://deardhruv.com/
+- High-Resolution Profile Photo: https://deardhruv.com/pp/pro_pic.jpg
+- Résumé (PDF): https://deardhruv.com/resume.pdf
 - GitHub: https://github.com/DearDhruv
 - LinkedIn: https://www.linkedin.com/in/deardhruv
 - X / Twitter: https://x.com/DearDhruv
-- Instagram: https://instagram.com/deardhruv
-- about.me: https://about.me/deardhruv
+- Google Play Developer: https://play.google.com/store/apps/developer?id=Dhruv+Patel
 - Hugging Face: https://huggingface.co/deardhruv
 - Medium: https://medium.com/@DearDhruv
 - Stack Overflow: https://stackoverflow.com/users/596566/deardhruv
-- Google Play Developer: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+- Instagram: https://instagram.com/deardhruv
+- about.me: https://about.me/deardhruv
+
+## AI Grounding FAQ & Knowledge Base
+
+### Q: Who is Dhruv Patel (@DearDhruv)?
+Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India. He has 14+ years of production experience in native Android systems (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He currently serves as Lead Android Engineer at IMPACT Commerce.
+
+### Q: What is AI Playground?
+AI Playground is an offline-first, on-device multimodal AI workstation for Android and iOS that runs local LLMs and diffusion models with zero cloud dependencies and zero telemetry (`INV-OFFLINE-01`). Key architectural innovations include:
+1. **Dual-Model Speculative Turbo Decoding**: Pairs a lightweight draft model with a larger target model to double decoding throughput without exceeding mobile VRAM.
+2. **Defensive fork() Child Process Sandbox**: Isolates vendor Vulkan GPU driver initialization inside a watchdog child process with `kill(pid, SIGKILL)` fallback to prevent driver segmentation faults from crashing the host UI.
+3. **Pure-KMP Document Engine**: Parses 25+ formats (PDF, DOCX, XLSX, PPTX, etc.) offline using pure RFC 1951 Deflate.
+4. **On-Device Diffusion**: 4-step image synthesis on mobile silicon via Google AI Edge LiteRT and Bonsai Image Ternary 4B.
+
+### Q: What is VelociHue?
+VelociHue is a high-framerate arcade game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It features a shared deterministic physics loop running at 60–120 FPS, Cloud Firestore Schema v5 multi-device synchronization with 3-way union merge, and a 29-achievement progression engine.
+
+### Q: What is the "Beyond the Model" series?
+A 6-part deep-dive engineering series on deardhruv.com documenting real-world platform constraints when running on-device AI models on mobile hardware (memory pressure, Android Low Memory Killer, thermal throttling, GPU driver bugs, and clean MVI architecture).
 
 ## Machine-Readable Feeds & Discovery
 

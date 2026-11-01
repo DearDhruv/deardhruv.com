@@ -2,11 +2,50 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import proPic from '../../static/images/pro_pic_small.jpg';
+
+const homeSchemas = [
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/#app-ai-playground',
+    name: 'AI Playground',
+    alternateName: 'LLM Playground',
+    operatingSystem: 'Android, iOS',
+    applicationCategory: 'DeveloperApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+    description: 'Offline-first, on-device multimodal AI workstation for Android and iOS running local LLMs, speculative decoding, and diffusion models with zero cloud telemetry.'
+  },
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/#app-velocihue',
+    name: 'VelociHue',
+    operatingSystem: 'Android, Android TV, iOS',
+    applicationCategory: 'GameApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
+    description: 'High-framerate arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS.'
+  }
+];
 ---
 
 <BaseLayout
   title="Dhruv Patel (@DearDhruv) - Lead Android Engineer, Android Architect"
   description="Dhruv Patel (@DearDhruv) - Lead Android Engineer, Android Architect, and Android Artist crafting high-performance native architectures, on-device AI runtimes, and low-level hardware interfaces."
+  schema={homeSchemas}
 >
   <div class="layout-container-wide" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
     <!-- HERO SECTION -->

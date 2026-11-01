@@ -86,13 +86,26 @@ const personSchema = {
   alternateName: ['DearDhruv', 'deardhruv', '@DearDhruv', 'Dhruv', 'Dhruv Patel (DearDhruv)'],
   identifier: 'deardhruv',
   url: `${siteOrigin}/`,
-  image: `${siteOrigin}/android-chrome-512x512.png`,
+  image: [
+    `${siteOrigin}/pp/pro_pic.jpg`,
+    `${siteOrigin}/images/pro_pic_small.jpg`,
+    `${siteOrigin}/android-chrome-512x512.png`
+  ],
   jobTitle: 'Lead Android Engineer',
   worksFor: {
     '@type': 'Organization',
-    name: 'Impact Commerce'
+    name: 'Impact Commerce',
+    url: 'https://impactcommerce.com/'
+  },
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'Nirma University',
+    url: 'https://nirmauni.ac.in/'
   },
   description: 'Lead Android Engineer, Android Architect, and Android Artist building on-device AI runtimes and high-performance native architectures with extensive production leadership.',
+  disambiguatingDescription: 'Lead Android Engineer, Android Architect, and Android Artist known online as @DearDhruv, specializing in on-device AI inference, Kotlin Multiplatform, native C++ NDK, and offline-first mobile systems.',
+  mainEntityOfPage: `${siteOrigin}/`,
+  knowsLanguage: ['en', 'gu', 'hi'],
   sameAs: [
     'https://github.com/DearDhruv',
     'https://x.com/DearDhruv',
@@ -116,12 +129,22 @@ const personSchema = {
     'Compose Multiplatform',
     'llama.cpp',
     'Google AI Edge LiteRT',
+    'Apple MLX',
     'Modern C++20 / NDK',
     'Vulkan Compute',
+    'OpenCL',
+    'Metal Compute',
+    'ARM NEON & KleidiAI',
     'Clean Architecture',
+    'MVI (Model-View-Intent)',
     'Offline-First Systems',
     'Speculative Decoding',
-    'Hardware Abstraction Layers (HAL)'
+    'Hardware Abstraction Layers (HAL)',
+    'POSIX fork() Sandboxing',
+    'Android Low Memory Killer (LMK)',
+    'SQLDelight & SQLite',
+    'Cloud Firestore Schema v5',
+    'Android TV & Leanback'
   ]
 };
 
@@ -133,6 +156,8 @@ const websiteSchema = {
   alternateName: ['DearDhruv', 'deardhruv', 'deardhruv.com', 'Dhruv Patel (@DearDhruv)'],
   description: 'Personal portfolio, engineering case studies, and systems architecture articles by Dhruv Patel (@DearDhruv).',
   publisher: { '@id': `${siteOrigin}/#person` },
+  creator: { '@id': `${siteOrigin}/#person` },
+  about: { '@id': `${siteOrigin}/#person` },
   inLanguage: 'en-US'
 };
 
@@ -145,14 +170,26 @@ if (ogType === 'article') {
     headline: title,
     description: description,
     inLanguage: 'en-US',
-    mainEntityOfPage: canonical,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     author: { '@id': `${siteOrigin}/#person` },
-    publisher: { '@id': `${siteOrigin}/#person` },
+    publisher: {
+      '@type': 'Person',
+      '@id': `${siteOrigin}/#person`,
+      name: 'Dhruv Patel',
+      url: `${siteOrigin}/`,
+      image: `${siteOrigin}/pp/pro_pic.jpg`
+    },
     image: resolvedOgImage,
     datePublished: publishedTime || '2026-10-05T10:00:00+05:30',
     dateModified: modifiedTime || publishedTime || '2026-10-21T15:30:00+05:30',
     keywords: tags,
-    articleSection: 'Mobile Systems & On-Device AI'
+    articleSection: 'Mobile Systems & On-Device AI',
+    proficiencyLevel: 'Expert',
+    dependencies: 'Kotlin Multiplatform, Android NDK, llama.cpp, Google AI Edge LiteRT',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.page-title', '.page-lead', '.prose > p:first-of-type']
+    }
   };
 } else if (normalizedPath === '/') {
   pageSchema = {
@@ -163,6 +200,55 @@ if (ogType === 'article') {
     isPartOf: { '@id': `${siteOrigin}/#website` },
     about: { '@id': `${siteOrigin}/#person` },
     mainEntity: { '@id': `${siteOrigin}/#person` },
+    description: description,
+    inLanguage: 'en-US',
+    primaryImageOfPage: `${siteOrigin}/images/pro_pic_small.jpg`,
+    significantLink: [
+      `${siteOrigin}/portfolio/`,
+      `${siteOrigin}/projects/`,
+      `${siteOrigin}/posts/ai_playground_series/`,
+      `${siteOrigin}/about/`,
+      `${siteOrigin}/resume.pdf`
+    ]
+  };
+} else if (normalizedPath === '/portfolio/') {
+  pageSchema = {
+    '@type': 'ProfilePage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: formattedTitle,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    about: { '@id': `${siteOrigin}/#person` },
+    mainEntity: { '@id': `${siteOrigin}/#person` },
+    description: description,
+    inLanguage: 'en-US',
+    significantLink: [
+      `${siteOrigin}/projects/`,
+      `${siteOrigin}/resume.pdf`,
+      'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+      'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue'
+    ]
+  };
+} else if (normalizedPath === '/about/') {
+  pageSchema = {
+    '@type': 'AboutPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: formattedTitle,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    about: { '@id': `${siteOrigin}/#person` },
+    mainEntity: { '@id': `${siteOrigin}/#person` },
+    description: description,
+    inLanguage: 'en-US'
+  };
+} else if (normalizedPath === '/projects/' || normalizedPath === '/posts/' || normalizedPath === '/posts/ai_playground_series/') {
+  pageSchema = {
+    '@type': 'CollectionPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: formattedTitle,
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+    about: { '@id': `${siteOrigin}/#person` },
     description: description,
     inLanguage: 'en-US'
   };
