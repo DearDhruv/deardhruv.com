@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -101,6 +102,8 @@ export default defineConfig({
   },
   integrations: [markdownOutputsIntegration()],
   markdown: {
-    rehypePlugins: [rehypeDemoteHeadings]
+    processor: unified({
+      rehypePlugins: [rehypeDemoteHeadings]
+    })
   }
 });
