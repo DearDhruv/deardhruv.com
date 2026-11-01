@@ -22,9 +22,10 @@ This document maintains state across AI agent sessions executing the `DEARDHRUV_
   - `C11.1` - `C11.5`: Site-wide editorial audit completed, 29/29 fact ledger claims verified (`0097c83`).
   - `C12.1` - `C12.5`: Final content regression executed with 100% test pass rate across all 6 test suites.
 - **Next Task:** Transitioned to Website Audit & Search Visibility workstream (`plans/DEARDHRUV_WEBSITE_AUDIT_AND_SEARCH_VISIBILITY_IMPLEMENTATION_PLAN.md`).
-  - **Audit Workstream Status:** Phase A0, Task A0.1 COMPLETED (`docs(audit): document current site build and deploy setup`).
+  - **Audit Workstream Status:** Phase A0, Task A0.1 and Task A0.2 COMPLETED (`docs(audit)` and `test(audit): add legacy url inventory`).
+  - **Continuous Audit Engine:** Built into `scripts/audit.js` (`npm run audit`), 172/172 checks passing.
   - **Audit Handoff:** See `docs/audits/GEMINI_AUDIT_HANDOFF.md`.
-  - **Next Audit Task:** Phase A0, Task A0.2 (`test(audit): add legacy url inventory`).
+  - **Next Audit Task:** Phase A0, Task A0.3 (`test(audit): capture pre-change visual baseline`).
 - **Blockers / Decisions Needed:** None.
 
 ---

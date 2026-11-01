@@ -28,13 +28,45 @@ if (!fs.existsSync(PUBLIC_DIR)) {
 
 console.log(`🔍 Testing Netlify Edge Function: markdown-negotiation.ts against ${path.relative(ROOT_DIR, PUBLIC_DIR)}/...\n`);
 
+function prefersMarkdown(acceptHeader) {
+  if (!acceptHeader || !acceptHeader.includes("text/markdown")) {
+    return false;
+  }
+
+  const items = acceptHeader.split(",").map(part => {
+    const [mime, ...params] = part.trim().split(";");
+    let q = 1.0;
+    for (const p of params) {
+      const [k, v] = p.trim().split("=");
+      if (k === "q" && v) {
+        const parsed = parseFloat(v);
+        if (!isNaN(parsed)) q = parsed;
+      }
+    }
+    return { mime: mime.trim().toLowerCase(), q };
+  });
+
+  const markdownItem = items.find(i => i.mime === "text/markdown");
+  if (!markdownItem || markdownItem.q <= 0) return false;
+
+  const htmlItem = items.find(i => i.mime === "text/html");
+  if (htmlItem && htmlItem.q > markdownItem.q) {
+    return false;
+  }
+
+  return true;
+}
+
 /**
  * Accurately models the markdown-negotiation edge function logic
  */
-function runEdgeFunction(pathname, acceptHeader) {
-  if (!acceptHeader || !acceptHeader.includes("text/markdown")) {
+function runEdgeFunction(urlStr, acceptHeader) {
+  if (!prefersMarkdown(acceptHeader)) {
     return null; // Passthrough to static HTML
   }
+
+  const [pathname, search] = urlStr.split("?");
+  const searchStr = search ? `?${search}` : "";
 
   // Skip if it's already a file request (has extension) unless it's a directory
   if (pathname.includes(".") && !pathname.endsWith("/")) {
@@ -48,6 +80,8 @@ function runEdgeFunction(pathname, acceptHeader) {
     markdownPath += "/index.md";
   }
 
+  const rewriteTarget = markdownPath + searchStr;
+
   // Context.rewrite checks disk availability
   const diskPath = path.join(PUBLIC_DIR, markdownPath.replace(/^\//, ''));
   const fileExists = fs.existsSync(diskPath);
@@ -56,14 +90,14 @@ function runEdgeFunction(pathname, acceptHeader) {
     // 404 response returned as-is without agent readiness header
     return {
       status: 404,
-      rewrittenPath: markdownPath,
+      rewrittenPath: rewriteTarget,
       headers: {}
     };
   }
 
   return {
     status: 200,
-    rewrittenPath: markdownPath,
+    rewrittenPath: rewriteTarget,
     headers: {
       "content-type": "text/markdown; charset=utf-8",
       "x-agent-ready": "true"
@@ -88,7 +122,18 @@ function assert(condition, message) {
 const browserReq = runEdgeFunction("/about/", "text/html,application/xhtml+xml");
 assert(browserReq === null, "Browser request with text/html passes through without rewrite");
 
-// Test Case 2: File with extension should not rewrite even with Accept: text/markdown
+// Test Case 2: RFC 9110 Quality Weight Content Negotiation
+const weightedHtmlReq = runEdgeFunction("/about/", "text/html,application/xhtml+xml,text/markdown;q=0.5");
+assert(weightedHtmlReq === null, "Request with text/html (q=1.0) and text/markdown;q=0.5 prefers HTML");
+
+const weightedMdReq = runEdgeFunction("/about/", "text/markdown;q=1.0,text/html;q=0.8");
+assert(weightedMdReq !== null && weightedMdReq.status === 200, "Request with text/markdown (q=1.0) and text/html;q=0.8 rewrites to markdown");
+
+// Test Case 3: Query Parameter Preservation
+const queryReq = runEdgeFunction("/posts/?ref=feed&sort=desc", "text/markdown");
+assert(queryReq !== null && queryReq.rewrittenPath === "/posts/index.md?ref=feed&sort=desc", "Query parameters preserved during markdown rewrite");
+
+// Test Case 4: File with extension should not rewrite even with Accept: text/markdown
 const fileReq = runEdgeFunction("/resume.pdf", "text/markdown");
 assert(fileReq === null, "File request /resume.pdf is not rewritten");
 
@@ -98,7 +143,7 @@ assert(imgReq === null, "Asset request /images/pro_pic_small.jpg is not rewritte
 const cssReq = runEdgeFunction("/css/design-system.css", "text/markdown");
 assert(cssReq === null, "Asset request /css/design-system.css is not rewritten");
 
-// Test Case 3: Non-existent route with Accept: text/markdown returns 404 without x-agent-ready
+// Test Case 5: Non-existent route with Accept: text/markdown returns 404 without x-agent-ready
 const missingReq = runEdgeFunction("/non-existent-route-999/", "text/markdown");
 assert(
   missingReq && missingReq.status === 404 && !missingReq.headers["x-agent-ready"],
