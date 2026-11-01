@@ -1,5 +1,3 @@
-/* DearDhruv UI Primitives & Components (WCAG 2.2 AA) */
-
 .prose a,
 .content-link {
   color: var(--color-accent);
@@ -311,6 +309,20 @@
 
 .card:focus-within {
   border-color: var(--color-border-interactive);
+}
+
+.card-stretched-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.card a.btn,
+.card button,
+.card .layout-cluster a {
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes heroFadeIn {

@@ -1,10 +1,10 @@
 # Continuous Site Audit & Health Report
 
-**Audit Timestamp:** 2026-11-01T14:32:25.220Z (11/1/2026, 8:02:25 PM GMT+5:30)  
+**Audit Timestamp:** 2026-11-01T14:43:41.120Z (11/1/2026, 8:13:41 PM GMT+5:30)  
 **Environment:** Static Output (`dist/`)  
 **Target:** [deardhruv.com](https://deardhruv.com)  
 **Auditor Engine:** Built-in Continuous Audit Engine (`scripts/audit.js`)  
-**Execution Duration:** 32.5ms  
+**Execution Duration:** 49.9ms  
 **Overall Status:** **HEALTHY (100% PASS)** (172/172 checks passed — 100.0%)
 
 ---
@@ -74,7 +74,7 @@
 - ✅ Favicon 32x32 PNG exists and valid
 - ✅ Author avatar (pro_pic_small.jpg) exists and exceeds 5KB
 - ✅ HTML document count meets threshold (28 files found)
-- ✅ Internal link integrity (0 broken links out of 903 crawled)
+- ✅ Internal link integrity (0 broken links out of 913 crawled)
 - ✅ Custom 404 error page exists and valid
 
 ### 2. SEO, Structured Data & Feeds
@@ -184,7 +184,7 @@
 
 **Score:** 6/6 checks passed
 
-- ✅ Total uncompressed CSS is within budget (43.92 KB < 45.0 KB)
+- ✅ Total uncompressed CSS is within budget (43.81 KB < 45.0 KB)
 - ✅ Total uncompressed Client JS is within budget (4.31 KB < 5.0 KB)
 - ✅ Zero runtime client hydration bundles generated (0 found)
 - ✅ Maximum HTML page size within budget (76.21 KB for posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.html < 100 KB)

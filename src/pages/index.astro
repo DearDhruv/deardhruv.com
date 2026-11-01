@@ -64,47 +64,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="layout-grid-2">
-        <div class="card">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Android & Native Architecture</h3>
+        <a href="/portfolio/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Domain 01</span>
             <span class="badge">Battle-Tested</span>
           </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Android & Native Architecture</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             Production Clean Architecture, unidirectional data flow (MVI/MVVM), Jetpack Compose, modular multi-module codebases, memory profiling, and battery guardrails.
           </p>
-          <div class="layout-cluster">
+          <div class="layout-cluster" style="margin-bottom: var(--space-4);">
             <span class="chip">Kotlin</span>
             <span class="chip">Jetpack Compose</span>
             <span class="chip">Coroutines/Flow</span>
             <span class="chip">NDK / C++20</span>
           </div>
-        </div>
+          <div style="margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-1); font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">
+            <span>Explore Architecture</span> &rarr;
+          </div>
+        </a>
 
-        <div class="card">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Kotlin Multiplatform (KMP/CMP)</h3>
+        <a href="/projects/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Domain 02</span>
             <span class="badge">Production</span>
           </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Kotlin Multiplatform (KMP/CMP)</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             Cross-platform architecture sharing deterministic game loops, MVI state stores, and offline-first persistence across Android, iOS (SwiftUI host), and Android TV.
           </p>
-          <div class="layout-cluster">
+          <div class="layout-cluster" style="margin-bottom: var(--space-4);">
             <span class="chip">Compose Multiplatform</span>
             <span class="chip">SQLDelight</span>
             <span class="chip">Cloud Firestore</span>
             <span class="chip">Swift Interop</span>
           </div>
-        </div>
+          <div style="margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-1); font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">
+            <span>Explore Projects</span> &rarr;
+          </div>
+        </a>
 
-        <div class="card">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">On-Device AI & Edge Compute</h3>
+        <a href="/posts/ai_playground_series/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Domain 03</span>
             <span class="badge">Offline-First</span>
           </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">On-Device AI & Edge Compute</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             Local LLM inference and on-device diffusion studios (llama.cpp, LiteRT, Apple MLX) running on consumer phones with speculative drafting and defensive driver crash sandboxing.
           </p>
-          <div class="layout-cluster">
+          <div class="layout-cluster" style="margin-bottom: var(--space-4);">
             <span class="chip">Image Generation</span>
             <span class="chip">llama.cpp</span>
             <span class="chip">Google LiteRT</span>
@@ -112,23 +121,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="chip">Stable Diffusion</span>
             <span class="chip">Vulkan / Metal</span>
           </div>
-        </div>
+          <div style="margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-1); font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">
+            <span>Explore AI Series</span> &rarr;
+          </div>
+        </a>
 
-        <div class="card">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Commerce & Hardware Integration</h3>
+        <a href="/portfolio/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Domain 04</span>
             <span class="badge">Enterprise</span>
           </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Commerce & Hardware Integration</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             Digital commerce flows, payment terminal protocols, and resilient hardware abstraction layers across 30+ POS peripherals with defensive IPC.
           </p>
-          <div class="layout-cluster">
+          <div class="layout-cluster" style="margin-bottom: var(--space-4);">
             <span class="chip">POS Peripherals</span>
             <span class="chip">Payment IPC</span>
             <span class="chip">HAL Bridges</span>
             <span class="chip">Zero Cloud Leak</span>
           </div>
-        </div>
+          <div style="margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-1); font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">
+            <span>Explore Systems</span> &rarr;
+          </div>
+        </a>
       </div>
     </section>
 
@@ -148,8 +164,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- AI Playground -->
         <article class="card card-interactive">
           <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">AI Playground</h3>
-            <span class="badge">Flagship Product &middot; On-Device AI</span>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+              <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">System 01</span>
+              <span class="badge">Flagship &middot; On-Device AI</span>
+            </div>
+            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">
+              <a href="/posts/ai_playground_series/" class="card-stretched-link" style="text-decoration: none; color: inherit;">
+                AI Playground
+              </a>
+            </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon—keeping user conversations and documents private without cloud round-trips. Built with Kotlin Multiplatform, C++20 JNI bindings to llama.cpp, Google AI Edge LiteRT, and Apple MLX. Includes dual-model speculative drafting (2x speedup) and a native <code>fork()</code> sandbox to isolate Vulkan driver crashes.
@@ -185,8 +208,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- VelociHue -->
         <article class="card card-interactive">
           <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">VelociHue</h3>
-            <span class="badge">Flagship Product &middot; Multiplatform Game</span>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+              <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">System 02</span>
+              <span class="badge">Flagship &middot; Multiplatform Game</span>
+            </div>
+            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">
+              <a href="/projects/" class="card-stretched-link" style="text-decoration: none; color: inherit;">
+                VelociHue
+              </a>
+            </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             A fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV. Runs at 60–120 FPS using a shared deterministic physics loop, conflict-free Cloud Firestore schema v5 sync with 3-way union merge, and 29 progressive achievements.
@@ -234,47 +264,101 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="layout-grid-3">
-        <div class="card card-interactive">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h4); margin: 0;">
-              <a href="/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/" style="text-decoration: none; color: inherit;">
-                Part 1 &middot; Offline Local LLMs
-              </a>
-            </h3>
+        <!-- Part 1 -->
+        <a href="/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 1 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">10 min</span>
           </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Offline Local LLMs</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
             Architecting offline-first mobile inference, setting up speculative drafting with smaller models, and managing VRAM limits on mobile silicon.
           </p>
-          <span class="badge">Architecture</span>
-        </div>
-
-        <div class="card card-interactive">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h4); margin: 0;">
-              <a href="/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/" style="text-decoration: none; color: inherit;">
-                Part 3 &middot; Defensive Crash Isolation
-              </a>
-            </h3>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">Architecture</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">Read &rarr;</span>
           </div>
+        </a>
+
+        <!-- Part 2 -->
+        <a href="/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 2 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">9 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Offline Document Engine</h3>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            How a simple 'attach file' button turned into an offline ingestion pipeline for 25+ formats using pure RFC 1951 Deflate and memory-mapped chunks.
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">Deflate / KMP</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Part 3 -->
+        <a href="/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 3 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">10 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Defensive Crash Isolation</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
             Handling vendor Vulkan driver GPU segmentation faults by running inference inside a native <code>fork()</code> process sandbox with a 3000ms watchdog loop.
           </p>
-          <span class="badge">NDK / C++20</span>
-        </div>
-
-        <div class="card card-interactive">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h4); margin: 0;">
-              <a href="/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/" style="text-decoration: none; color: inherit;">
-                Part 4 &middot; On-Device Diffusion Studio
-              </a>
-            </h3>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">NDK / C++20</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">Read &rarr;</span>
           </div>
+        </a>
+
+        <!-- Part 4 -->
+        <a href="/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 4 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">11 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">On-Device Diffusion Studio</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
             Synthesizing 4-step diffusion images on mobile GPUs using Google LiteRT and Bonsai Image Ternary 4B without thermal runaway.
           </p>
-          <span class="badge">Diffusion AI</span>
-        </div>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">Diffusion AI</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Part 5 -->
+        <a href="/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 5 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">12 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Modular MVI Architecture</h3>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Refactoring a monolithic mobile app into a multi-module MVI platform with clean offline boundaries, strict state stores, and zero cloud leaks.
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">MVI / Clean Arch</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">Read &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Part 6 -->
+        <a href="/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 6 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">11 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Pushing Hardware to the Edge</h3>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Engineering dual-model speculative drafting for 2x decoding speed, isolating GPU driver segmentation faults in a native fork() sandbox, and streaming fault tolerance.
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">Hardware Tuning</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">Read &rarr;</span>
+          </div>
+        </a>
       </div>
 
       <div style="margin-top: var(--space-8); text-align: center;">

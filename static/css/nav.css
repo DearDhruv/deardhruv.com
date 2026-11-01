@@ -1,4 +1,3 @@
-/* DearDhruv Responsive Navigation Header */
 .site-header {
   position: sticky;
   top: 0;
@@ -33,7 +32,6 @@
   gap: var(--space-4);
 }
 
-/* Brand Link & Avatar Identity */
 .site-brand {
   display: inline-flex;
   align-items: center;
@@ -137,7 +135,6 @@
   border-radius: var(--radius-sm);
 }
 
-/* Desktop Nav Links */
 .site-nav-list {
   display: flex;
   align-items: center;
@@ -189,7 +186,6 @@
   box-shadow: 0 0 8px var(--color-accent);
 }
 
-/* Header Actions & Controls */
 .site-header-actions {
   display: flex;
   align-items: center;
@@ -265,7 +261,6 @@
   transform: rotate(15deg);
 }
 
-/* Theme toggle icon switching based on data-theme */
 :root:not([data-theme="light"]) .theme-icon-moon,
 [data-theme="light"] .theme-icon-sun {
   display: none !important;
@@ -282,7 +277,6 @@
   padding: var(--space-2);
 }
 
-/* Backdrop */
 .site-nav-backdrop {
   display: none;
   position: fixed;
@@ -311,7 +305,6 @@
   display: block;
 }
 
-/* Mobile Breakpoint (<768px) */
 @media (max-width: 768px) {
   .menu-toggle-btn {
     display: inline-flex;
