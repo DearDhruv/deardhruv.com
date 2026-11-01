@@ -5,7 +5,7 @@ layout = "hero-page"
 description = "Dhruv Patel's professional portfolio showcasing native Android architecture, Kotlin Multiplatform, on-device AI runtimes, and engineering leadership."
 +++
 
-Welcome to my portfolio. I'm a **Lead Android & Multiplatform Engineer** with **15+ years** of experience building high-performance mobile architectures, distributed Kotlin Multiplatform systems, and privacy-first on-device AI runtimes for global markets.
+Welcome to my portfolio. I'm a **Lead Android & Multiplatform Engineer** with **extensive production leadership** building high-performance mobile architectures, distributed Kotlin Multiplatform systems, and privacy-first on-device AI runtimes for global markets.
 
 ---
 

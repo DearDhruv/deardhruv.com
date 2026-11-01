@@ -7,7 +7,7 @@ aliases = ["about-us", "about-hugo", "contact"]
 name = "Dhruv Patel"
 +++
 
-Commonly known online as **DearDhruv**, I'm a **Lead Android & Multiplatform Engineer** with over **15 years** of experience crafting high-performance, user-centric mobile applications, on-device AI runtimes, and distributed multiplatform systems.
+Commonly known online as **DearDhruv**, I'm a **Lead Android & Multiplatform Engineer** with a **seasoned track record** of crafting high-performance, user-centric mobile applications, on-device AI runtimes, and distributed multiplatform systems.
 
 Currently serving as a **Lead Android Engineer at Impact Commerce**, I specialize in building sophisticated digital commerce solutions. Beyond enterprise systems, I actively pioneer offline-first on-device AI architectures (such as [AI Playground](https://github.com/DearDhruv/Model-Playground)) and cross-platform games in Kotlin Multiplatform (like [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)). My passion lies in pushing the boundaries of what's possible on mobile hardware-from complex hardware integrations and NDK acceleration to advanced multimedia workflows and local LLM inference.
 
@@ -45,7 +45,7 @@ Currently serving as a **Lead Android Engineer at Impact Commerce**, I specializ
 
 ## 🌍 Professional Journey
 
-Over the past 15+ years, I've worked on diverse projects ranging from small startups to large-scale enterprise applications. I've successfully:
+Throughout a career dedicated to high-performance mobile and systems engineering, I've worked on diverse projects ranging from early-stage startups to mission-critical enterprise applications. I've successfully:
 
 - **Architected** scalable mobile and multiplatform solutions serving millions of users globally
 - **Pioneered** on-device LLM inference and local multimodal AI pipelines on consumer mobile hardware

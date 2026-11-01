@@ -75,7 +75,7 @@ Structured ASCII wireframes specifying layout structure across mobile, tablet/fo
 ```text
 +-----------------------------------------------------------------------+
 | WORK & IMPACT                                                         |
-| 15+ years of engineering leadership, native performance, and edge AI  |
+| Battle-tested engineering leadership, native performance, and edge AI  |
 +-----------------------------------------------------------------------+
 | CATEGORY FILTER: [All] [Flagship Products] [Enterprise] [Open Source] |
 +-----------------------------------------------------------------------+

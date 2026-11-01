@@ -45,7 +45,7 @@ To eliminate redundancy and deliver maximum clarity:
     6. Verified Results & Production Artifacts
 
 ### 2.3 About (`/about/`)
-- Concise personal introduction and verified 15+ year professional journey.
+- Concise personal introduction and verified professional journey.
 - Chronological career timeline.
 - Grouped competencies (Languages, Frameworks, Edge Runtimes, Toolchains).
 - Conference talks and community mentorship history.
