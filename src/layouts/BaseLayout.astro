@@ -23,7 +23,7 @@ const canonical = canonicalUrl || `${siteOrigin}${currentPath.endsWith('/') ? cu
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-palette="amber">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,10 +61,10 @@ const canonical = canonicalUrl || `${siteOrigin}${currentPath.endsWith('/') ? cu
         const t = q.get('theme'), p = q.get('palette'), sw = q.get('palette-switcher');
         const v = ['cyan', 'emerald', 'amber', 'indigo'];
         const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        doc.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : (ls.getItem('theme') || (sysDark ? 'dark' : 'light')));
+        doc.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : (ls.getItem('theme') || 'dark'));
         const validP = v.includes(p) ? p : null;
         const storedP = ls.getItem('palette');
-        doc.setAttribute('data-palette', validP || (v.includes(storedP) ? storedP : 'cyan'));
+        doc.setAttribute('data-palette', validP || (v.includes(storedP) ? storedP : 'amber'));
         if (validP) { try { ls.setItem('palette', validP); } catch (_) {} }
         if (sw === 'true' || sw === '1' || p === 'true' || p === '1' || validP) {
           try { ls.setItem('palette_switcher_enabled', 'true'); } catch (_) {}

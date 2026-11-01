@@ -1,8 +1,8 @@
 (() => {
   const d = document.documentElement, ls = localStorage, $ = s => document.querySelectorAll(s), byId = id => document.getElementById(id);
   const sa = (el, k, v) => el && el.setAttribute(k, String(v));
-  const getTheme = () => d.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  const getPalette = () => d.getAttribute('data-palette') || 'cyan';
+  const getTheme = () => d.getAttribute('data-theme') || 'dark';
+  const getPalette = () => d.getAttribute('data-palette') || 'amber';
   const FLAG = 'palette_switcher_enabled';
 
   function setBtn(t) {

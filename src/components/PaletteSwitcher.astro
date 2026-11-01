@@ -8,9 +8,9 @@
  * 4. Electric Indigo
  */
 const palettes = [
+  { id: "amber", name: "Amber", color: "#fbbf24" },
   { id: "cyan", name: "Cyan", color: "#38bdf8" },
   { id: "emerald", name: "Emerald", color: "#34d399" },
-  { id: "amber", name: "Amber", color: "#fbbf24" },
   { id: "indigo", name: "Indigo", color: "#818cf8" }
 ];
 ---
@@ -24,7 +24,7 @@ const palettes = [
         class="palette-btn"
         data-palette-choice={p.id}
         aria-label={`${p.name} palette`}
-        aria-pressed={p.id === "cyan" ? "true" : "false"}
+        aria-pressed={p.id === "amber" ? "true" : "false"}
       >
         <span class="palette-swatch" style={`background-color: ${p.color};`}></span>
         <span>{p.name}</span>
