@@ -12,9 +12,9 @@
 | Phase | Task ID | Description | Status | Commit SHA | Verified Date |
 |---|---|---|---|---|---|
 | Phase 0 | Task 0.1 | Confirm repository and branch | Completed | ba6ea53 | 2026-11-01 |
-| Phase 0 | Task 0.2 | Confirm Astro/Netlify build contract | Completed | Pending | 2026-11-01 |
-| Phase 0 | Task 0.3 | Inspect existing audit/test system | In Progress | — | — |
-| Phase 0 | Task 0.4 | Correct stale repository documentation | Not Started | — | — |
+| Phase 0 | Task 0.2 | Confirm Astro/Netlify build contract | Completed | 2e52569 | 2026-11-01 |
+| Phase 0 | Task 0.3 | Inspect existing audit/test system | Completed | Pending | 2026-11-01 |
+| Phase 0 | Task 0.4 | Correct stale repository documentation | In Progress | — | — |
 | Phase 1 | Task 1.1–1.8 | Reproducible public-site audit baseline | Not Started | — | — |
 | Phase 2 | Task 2.1–2.5 | Evidence ledger & public fact correction | Not Started | — | — |
 | Phase 3 | Task 3.1–3.5 | DearDhruv identity & branded-search | Not Started | — | — |
