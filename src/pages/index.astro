@@ -27,8 +27,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="hero-subtitle" style="font-family: var(--font-mono); font-size: var(--font-small); color: var(--color-accent); margin: 0;">
           Android Architect &middot; Kotlin Multiplatform &middot; On-Device AI
         </p>
-        <p class="page-lead hero-lead" style="margin: 0; font-size: 1.125rem;">
-          Lead Android & Multiplatform Engineer crafting high-performance native architectures, distributed KMP systems, and privacy-first on-device AI runtimes.
+        <p class="page-lead hero-lead" style="margin: 0; font-size: 1.125rem; line-height: 1.6;">
+          I'm an Android and multiplatform engineer. I work on the parts of software that get interesting when they hit real device constraints: performance profiling, low-level hardware interfaces, and running local AI models on personal devices without cloud dependencies.
         </p>
         <div class="layout-cluster hero-actions" style="margin-top: var(--space-4);">
           <a href="/portfolio/" class="btn btn-primary">
@@ -59,7 +59,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <h2 style="font-size: var(--font-h2); margin: 0;">Specialization & Technical Focus</h2>
         <p style="color: var(--color-text-secondary); margin-top: var(--space-2);">
-          Deep expertise across native mobile systems, cross-platform runtimes, and low-level edge compute.
+          The technical areas where I spend most of my time, from native Android internals to cross-platform runtimes and low-level device hardware.
         </p>
       </div>
 
@@ -102,7 +102,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="badge">Offline-First</span>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
-            Pioneered local LLM inference and on-device image generation engines (llama.cpp, LiteRT, Apple MLX, Stable Diffusion) on mobile silicon with Speculative Turbo decoding, diffusion studios, and defensive driver crash isolation.
+            Local LLM inference and on-device diffusion studios (llama.cpp, LiteRT, Apple MLX) running on consumer phones with speculative drafting and defensive driver crash sandboxing.
           </p>
           <div class="layout-cluster">
             <span class="chip">Image Generation</span>
@@ -120,7 +120,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="badge">Enterprise</span>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
-            Architected high-throughput digital commerce flows, secure payment terminal interfaces, and resilient hardware abstraction layers across 30+ POS peripherals.
+            Digital commerce flows, payment terminal protocols, and resilient hardware abstraction layers across 30+ POS peripherals with defensive IPC.
           </p>
           <div class="layout-cluster">
             <span class="chip">POS Peripherals</span>
@@ -152,7 +152,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="badge">Flagship Product &middot; On-Device AI</span>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
-            An offline-first, on-device multimodal AI workstation for Android and iOS that turns mobile devices into self-contained inference engines. Features dual-model Speculative Turbo decoding (2x speedup), defensive <code>fork()</code> child process Vulkan crash sandbox with SIGKILL watchdog, and a zero-dependency KMP document engine supporting 25+ formats.
+            An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon—keeping user conversations and documents private without cloud round-trips. Built with Kotlin Multiplatform, C++20 JNI bindings to llama.cpp, Google AI Edge LiteRT, and Apple MLX. Includes dual-model speculative drafting (2x speedup) and a native <code>fork()</code> sandbox to isolate Vulkan driver crashes.
           </p>
           <div class="layout-cluster" style="margin-bottom: var(--space-6);">
             <span class="chip">KMP</span>
@@ -189,7 +189,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="badge">Flagship Product &middot; Multiplatform Game</span>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
-            A fast-paced, high-framerate (60–120 FPS) arcade action game engineered in Kotlin Multiplatform shipping across Android, iOS, and Android TV. Features a pure-Kotlin deterministic physics loop, conflict-free Cloud Firestore schema v5 sync with 3-way union merge, 29-achievement progression engine, and instant Compose share card generation.
+            A fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV. Runs at 60–120 FPS using a shared deterministic physics loop, conflict-free Cloud Firestore schema v5 sync with 3-way union merge, and 29 progressive achievements.
           </p>
           <div class="layout-cluster" style="margin-bottom: var(--space-6);">
             <span class="chip">KMP</span>
@@ -227,9 +227,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
           Engineering Series
         </div>
-        <h2 style="font-size: var(--font-h2); margin: 0;">Beyond the Model: AI Playground Deep Dive</h2>
+        <h2 style="font-size: var(--font-h2); margin: 0;">Beyond the Model: AI Playground Engineering Series</h2>
         <p style="color: var(--color-text-secondary); margin-top: var(--space-2);">
-          A comprehensive six-part architecture series documenting how to run local LLMs, image generation, and document processing directly on consumer phones.
+          A six-part architectural log documenting the realities of running local LLMs, image generation, and document processing directly on mobile hardware.
         </p>
       </div>
 
@@ -243,7 +243,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
-            Architecting offline-first mobile inference, Speculative Turbo decoding with draft models, and VRAM memory admission controls.
+            Architecting offline-first mobile inference, setting up speculative drafting with smaller models, and managing VRAM limits on mobile silicon.
           </p>
           <span class="badge">Architecture</span>
         </div>
@@ -257,7 +257,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
-            Isolating vendor Vulkan driver GPU crashes with a <code>fork()</code> child process sandbox, 3000ms watchdog loop, and SIGKILL fallback.
+            Handling vendor Vulkan driver GPU segmentation faults by running inference inside a native <code>fork()</code> process sandbox with a 3000ms watchdog loop.
           </p>
           <span class="badge">NDK / C++20</span>
         </div>
@@ -271,7 +271,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
-            Synthesizing 4-step photorealistic diffusion images on mobile GPUs using Google LiteRT and Bonsai Image Ternary 4B.
+            Synthesizing 4-step diffusion images on mobile GPUs using Google LiteRT and Bonsai Image Ternary 4B without thermal runaway.
           </p>
           <span class="badge">Diffusion AI</span>
         </div>
@@ -291,9 +291,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
           Connect & Collaborate
         </div>
-        <h2 style="font-size: var(--font-h2); margin: var(--space-2) 0 var(--space-4) 0;">Let's Build Something Exceptional</h2>
+        <h2 style="font-size: var(--font-h2); margin: var(--space-2) 0 var(--space-4) 0;">Get in Touch</h2>
         <p style="color: var(--color-text-secondary); max-width: 60ch; margin: 0 auto var(--space-8) auto; line-height: 1.6;">
-          Open to discussions on native Android architecture, Kotlin Multiplatform systems, on-device AI integration, and technical speaking.
+          Always glad to talk through native Android architecture, Kotlin Multiplatform systems, on-device AI runtimes, or upcoming technical speaking opportunities.
         </p>
 
         <div class="layout-cluster" style="justify-content: center;">
