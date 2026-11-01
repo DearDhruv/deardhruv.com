@@ -10,13 +10,13 @@ export const GET: APIRoute = async () => {
 
   const jsonFeed = {
     version: 'https://jsonfeed.org/version/1.1',
-    title: 'Dhruv Patel - Lead Android Engineer',
+    title: 'Dhruv Patel (@DearDhruv) - Lead Android Engineer',
     home_page_url: 'https://deardhruv.com/',
     feed_url: 'https://deardhruv.com/index.json',
     description:
       'Dhruv Patel - Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.',
     author: {
-      name: 'Dhruv Patel',
+      name: 'Dhruv Patel (@DearDhruv)',
       url: 'https://deardhruv.com/'
     },
     items: articles.map((post) => {

@@ -14,9 +14,9 @@ export const GET: APIRoute = async () => {
     })
     .join('\n\n');
 
-  const markdown = `# Dhruv Patel - Lead Android Engineer
+  const markdown = `# Dhruv Patel (@DearDhruv) - Lead Android Engineer
 
-Dhruv Patel - Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.
+Dhruv Patel (@DearDhruv) - Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.
 
 ## Latest Posts
 
