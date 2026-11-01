@@ -1,10 +1,10 @@
 # Continuous Site Audit & Health Report
 
-**Audit Timestamp:** 2026-11-01T15:11:35.831Z (11/1/2026, 8:41:35 PM GMT+5:30)  
+**Audit Timestamp:** 2026-11-01T15:19:09.820Z (11/1/2026, 8:49:09 PM GMT+5:30)  
 **Environment:** Static Output (`dist/`)  
 **Target:** [deardhruv.com](https://deardhruv.com)  
 **Auditor Engine:** Built-in Continuous Audit Engine (`scripts/audit.js`)  
-**Execution Duration:** 22.9ms  
+**Execution Duration:** 21.7ms  
 **Overall Status:** **HEALTHY (100% PASS)** (172/172 checks passed — 100.0%)
 
 ---
@@ -169,25 +169,25 @@
 - ✅ CSS neutralizes animation and transition durations for reduced motion
 - ✅ CSS disables smooth scrolling in reduced motion
 - ✅ CSS defines accessible --color-focus-ring semantic token
-- ✅ WCAG AA Contrast: Dark Mode Primary Body Text (18.57:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Dark Mode Secondary Text (7.58:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Dark Mode Link Accent (9.07:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Dark Mode Card Text (17.06:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Dark Mode Button Label (8.33:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Light Mode Primary Body Text (17.06:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Light Mode Secondary Text (9.90:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Light Mode Link Accent (5.67:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Light Mode Card Text (17.85:1 >= 4.5:1)
-- ✅ WCAG AA Contrast: Light Mode Button Label (5.93:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Dark Mode Primary Body Text (17.79:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Dark Mode Secondary Text (10.26:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Dark Mode Link Accent (11.30:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Dark Mode Card Text (16.38:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Dark Mode Button Label (10.40:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Light Mode Primary Body Text (16.50:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Light Mode Secondary Text (9.69:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Light Mode Link Accent (4.74:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Light Mode Card Text (17.49:1 >= 4.5:1)
+- ✅ WCAG AA Contrast: Light Mode Button Label (5.02:1 >= 4.5:1)
 
 ### 4. Performance & Runtime JS
 
 **Score:** 6/6 checks passed
 
-- ✅ Total uncompressed CSS is within budget (43.62 KB < 45.0 KB)
-- ✅ Total uncompressed Client JS is within budget (4.31 KB < 5.0 KB)
+- ✅ Total uncompressed CSS is within budget (43.34 KB < 45.0 KB)
+- ✅ Total uncompressed Client JS is within budget (4.44 KB < 5.0 KB)
 - ✅ Zero runtime client hydration bundles generated (0 found)
-- ✅ Maximum HTML page size within budget (76.54 KB for posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.html < 100 KB)
+- ✅ Maximum HTML page size within budget (76.67 KB for posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.html < 100 KB)
 - ✅ Static assets configured with 1-year immutable caching in netlify.toml
 - ✅ Icons configured with 30-day caching in netlify.toml
 

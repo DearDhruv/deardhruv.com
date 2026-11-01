@@ -294,9 +294,10 @@ const jsonLdGraph = {
         const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         doc.setAttribute('data-theme', (t === 'light' || t === 'dark') ? t : (ls.getItem('theme') || 'dark'));
         const validP = v.includes(p) ? p : null;
+        const hasChoice = ls.getItem('palette_user_selected') === 'true';
         const storedP = ls.getItem('palette');
-        doc.setAttribute('data-palette', validP || (v.includes(storedP) ? storedP : 'amber'));
-        if (validP) { try { ls.setItem('palette', validP); } catch (_) {} }
+        doc.setAttribute('data-palette', validP || (hasChoice && v.includes(storedP) ? storedP : 'amber'));
+        if (validP) { try { ls.setItem('palette', validP); ls.setItem('palette_user_selected', 'true'); } catch (_) {} }
         if (sw === 'true' || sw === '1' || p === 'true' || p === '1' || validP) {
           try { ls.setItem('palette_switcher_enabled', 'true'); } catch (_) {}
         } else if (sw === 'false' || sw === '0' || p === 'false' || p === '0') {

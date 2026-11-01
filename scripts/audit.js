@@ -403,18 +403,18 @@ function auditA11y() {
     check('a11y', css.includes('--color-focus-ring:'), 'CSS defines accessible --color-focus-ring semantic token');
   }
 
-  // 3. WCAG 2.2 AA Contrast Ratios
+  // 3. WCAG 2.2 AA Contrast Ratios (Default Amber Theme)
   const contrastPairs = [
-    { name: 'Dark Mode Primary Body Text', fg: '#f8fafc', bg: '#090d16', min: 4.5 },
-    { name: 'Dark Mode Secondary Text', fg: '#94a3b8', bg: '#090d16', min: 4.5 },
-    { name: 'Dark Mode Link Accent', fg: '#38bdf8', bg: '#090d16', min: 4.5 },
-    { name: 'Dark Mode Card Text', fg: '#f8fafc', bg: '#0f172a', min: 4.5 },
-    { name: 'Dark Mode Button Label', fg: '#0f172a', bg: '#38bdf8', min: 4.5 },
-    { name: 'Light Mode Primary Body Text', fg: '#0f172a', bg: '#f8fafc', min: 4.5 },
-    { name: 'Light Mode Secondary Text', fg: '#334155', bg: '#f8fafc', min: 4.5 },
-    { name: 'Light Mode Link Accent', fg: '#0369a1', bg: '#f8fafc', min: 4.5 },
-    { name: 'Light Mode Card Text', fg: '#0f172a', bg: '#ffffff', min: 4.5 },
-    { name: 'Light Mode Button Label', fg: '#ffffff', bg: '#0369a1', min: 4.5 }
+    { name: 'Dark Mode Primary Body Text', fg: '#faf8f5', bg: '#121110', min: 4.5 },
+    { name: 'Dark Mode Secondary Text', fg: '#c4beba', bg: '#121110', min: 4.5 },
+    { name: 'Dark Mode Link Accent', fg: '#fbbf24', bg: '#121110', min: 4.5 },
+    { name: 'Dark Mode Card Text', fg: '#faf8f5', bg: '#1c1a17', min: 4.5 },
+    { name: 'Dark Mode Button Label', fg: '#1c1a17', bg: '#fbbf24', min: 4.5 },
+    { name: 'Light Mode Primary Body Text', fg: '#1c1917', bg: '#faf8f5', min: 4.5 },
+    { name: 'Light Mode Secondary Text', fg: '#44403c', bg: '#faf8f5', min: 4.5 },
+    { name: 'Light Mode Link Accent', fg: '#b45309', bg: '#faf8f5', min: 4.5 },
+    { name: 'Light Mode Card Text', fg: '#1c1917', bg: '#ffffff', min: 4.5 },
+    { name: 'Light Mode Button Label', fg: '#ffffff', bg: '#b45309', min: 4.5 }
   ];
 
   for (const pair of contrastPairs) {
