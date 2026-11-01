@@ -19,12 +19,12 @@
 | Phase 1 | Task 1.2 | Run existing repository audits | Completed | f5fbe43 | 2026-11-01 |
 | Phase 2 | Task 2.1 | Create a fact ledger | Completed | 56c8114 | 2026-11-01 |
 | Phase 2 | Task 2.2 | Resolve current employment | Completed | 56c8114 | 2026-11-01 |
-| Phase 4 | Task 4.1 | Separate independent and employer work | Completed | Pending | 2026-11-01 |
-| Phase 4 | Task 4.2 | Add employer project data records | Completed | Pending | 2026-11-01 |
-| Phase 4 | Task 4.3 | Build accessible employer project card | Completed | Pending | 2026-11-01 |
-| Phase 4 | Task 4.4 | Add employer case study details gradually | Completed | Pending | 2026-11-01 |
-| Phase 4 | Task 4.5 | Clarify employer and client attribution | Completed | Pending | 2026-11-01 |
-| Phase 10 | Task 10.2 | Add identity & employer-attribution regression checks | Completed | Pending | 2026-11-01 |
+| Phase 4 | Task 4.1 | Separate independent and employer work | Completed | 3180c9c | 2026-11-01 |
+| Phase 4 | Task 4.2 | Add employer project data records | Completed | 3180c9c | 2026-11-01 |
+| Phase 4 | Task 4.3 | Build accessible employer project card | Completed | 3180c9c | 2026-11-01 |
+| Phase 4 | Task 4.4 | Add employer case study details gradually | Completed | 3180c9c | 2026-11-01 |
+| Phase 4 | Task 4.5 | Clarify employer and client attribution | Completed | 3180c9c | 2026-11-01 |
+| Phase 10 | Task 10.2 | Add identity & employer-attribution regression checks | Completed | 3180c9c | 2026-11-01 |
 | Phase 5 | Task 5.1–5.4 | Independent product cards & technical case studies | Not Started | — | — |
 | Phase 6 | Task 6.1–6.5 | SEO crawlability, internal links & content quality | Not Started | — | — |
 | Phase 7 | Task 7.1–7.4 | Accessibility & interaction quality | Not Started | — | — |
@@ -53,5 +53,6 @@
 
 ## 3. Session Handoff Notes
 
-- **Task 0.1 Completed:** Verified repository `DearDhruv/deardhruv.com` on branch `feature/portfolio`. Captured SHA, status, remote branches, and Netlify contract in `docs/audit/baseline-2026-11-01/repository-and-deployment-baseline.md`.
-- **Next Task:** Phase 0, Task 0.2 (Confirm Astro/Netlify build contract: inspect scripts, Astro config, and Netlify publish directory).
+- **Task 0.1–0.4, 1.1–1.2, 2.1–2.2, 4.1–4.5, 10.2 Completed:** Verified repository baseline, build contract, test matrix, README modernization, URL inventory (43 routes), repository audits (14/14 checks), content fact ledger, separated independent products and employer work with mandatory bottom attribution footers, GDG speech alignment, and employer test suite.
+- **Dependency & Version Upgrade:** Audited dependencies (`npx npm-check-updates`), all packages verified on latest versions (`astro@7.4.4`, `typescript@7.0.2`, `@astrojs/markdown-remark@7.3.5`). Project version bumped to `2.1.0`. All 10 test suites passing.
+- **Next Task:** Phase 1, Task 1.3–1.8 (External Tool Audits, WebPageTest/Lighthouse baseline recording, and well-known MCP inspection) and Phase 2, Task 2.5 (Resume PDF refresh).
