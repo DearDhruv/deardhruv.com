@@ -1,6 +1,6 @@
 # Dhruv Patel (@DearDhruv)
 
-> Lead Android & Multiplatform Engineer with extensive production leadership building on-device AI runtimes, Kotlin Multiplatform systems, and high-performance native architectures. Director & Lead Engineer behind AI Playground and VelociHue.
+> Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building on-device AI runtimes, high-performance native architectures, and resilient hardware integrations. Director & Lead Engineer behind AI Playground and VelociHue.
 
 ## Primary Sections
 

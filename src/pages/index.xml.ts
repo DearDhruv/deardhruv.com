@@ -26,7 +26,7 @@ export const GET: APIRoute = async () => {
   const xml = `<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dhruv Patel - Lead Android &amp; Multiplatform Engineer</title>
+    <title>Dhruv Patel - Lead Android Engineer</title>
     <link>${SITE_URL}/</link>
     <description>Recent engineering articles, system designs, and on-device AI runtime writeups by Dhruv Patel.</description>
     <language>en-us</language>

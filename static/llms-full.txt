@@ -5,7 +5,7 @@
 ## Author & Engineering Profile
 
 - **Name**: Dhruv Patel (known online as **DearDhruv**)
-- **Role**: Lead Android & Multiplatform Engineer | Director & Lead Engineer
+- **Role**: Lead Android Engineer, Android Architect & Android Artist | Director & Lead Engineer
 - **Experience**: Seasoned engineering leadership building high-performance mobile architectures, on-device AI runtimes, and digital commerce platforms
 - **Core Specializations**:
   - On-Device AI & LLM Inference (llama.cpp, Google AI Edge LiteRT v2.3, Apple MLX, Speculative Turbo decoding)

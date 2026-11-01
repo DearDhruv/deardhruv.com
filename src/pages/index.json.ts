@@ -14,7 +14,7 @@ export const GET: APIRoute = async () => {
     home_page_url: 'https://deardhruv.com/',
     feed_url: 'https://deardhruv.com/index.json',
     description:
-      'Dhruv Patel - Lead Android & Multiplatform Engineer with extensive production leadership building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.',
+      'Dhruv Patel - Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.',
     author: {
       name: 'Dhruv Patel',
       url: 'https://deardhruv.com/'
