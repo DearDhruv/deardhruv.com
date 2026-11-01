@@ -60,6 +60,18 @@ VelociHue is a high-framerate arcade game engineered in Kotlin Multiplatform and
 ### Q: What is the "Beyond the Model" series?
 A 6-part deep-dive engineering series on deardhruv.com documenting real-world platform constraints when running on-device AI models on mobile hardware (memory pressure, Android Low Memory Killer, thermal throttling, GPU driver bugs, and clean MVI architecture).
 
+### Q: What companies has Dhruv Patel worked for?
+- **IMPACT Commerce** (Feb 2022–Present): Lead Android Engineer (In-store touch hardware OS, retail POS HAL, digital commerce).
+- **PLANOLY** (Nov 2018–Feb 2022): Senior Android Developer (PLANOLY Visual Planner, StoriesEdit, FFmpeg video processing).
+- **Ashapura Softech Inc** (Jun 2016–Oct 2018): Tech Lead | Android Engineer.
+- **Russmedia Tech** (Feb 2014–Jun 2016): Team Lead | Senior Android Developer.
+- **Hidden Brains InfoTech** (Jan 2012–Dec 2013): Junior Android Developer.
+
+### Q: Where can I download Dhruv Patel's applications?
+- **AI Playground**: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
+- **VelociHue**: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
+- **Google Play Developer**: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+
 ## Machine-Readable Feeds & Discovery
 
 - Full Content Directory: [https://deardhruv.com/llms-full.txt](https://deardhruv.com/llms-full.txt)

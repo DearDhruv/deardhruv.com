@@ -77,6 +77,53 @@ export const GET: APIRoute = async () => {
 - **POS Peripheral Hardware HAL Layer**: Defensive hardware abstraction layer connecting payment terminals and receipt printers across isolated IPC process boundaries with watchdog state machines.
 - **PLANOLY Visual Planner & StoriesEdit Editor**: Native FFmpeg video manipulation pipelines, high-fidelity canvas manipulation tools for Instagram/Pinterest creators.
 
+## Professional Career & Employer Timeline
+
+- **IMPACT Commerce** (Feb 2022–Present) — *Lead Android Engineer* (Denmark & India)
+  - Research and architecture for custom Android OS touch displays and retail kiosks.
+  - Hardware Abstraction Layer (HAL) connecting checkout terminals and thermal receipt printers over isolated IPC.
+  - Multi-tier offline caching for continuous catalog browsing and cart persistence.
+- **PLANOLY** (Nov 2018–Feb 2022) — *Senior Android Developer* (USA & India)
+  - Core features for PLANOLY Visual Planner (millions of Instagram/Pinterest creators).
+  - StoriesEdit high-fidelity canvas template editor for multi-layer visual design.
+  - Native video processing pipelines using FFmpeg for transcoding, filtering, and trimming.
+- **Ashapura Softech Inc** (Jun 2016–Oct 2018) — *Tech Lead | Android Engineer* (India)
+  - Team leadership for client mobile applications, architectural governance, REST contracts.
+- **Russmedia Tech** (Feb 2014–Jun 2016) — *Team Lead | Senior Android Developer* (India)
+  - European digital publishing and classifieds platforms; authored UI Automator automated testing suites.
+- **Hidden Brains InfoTech** (Jan 2012–Dec 2013) — *Junior Android Developer* (India)
+  - Native commercial applications and 2D mobile arcade games.
+
+## Developer Conference Talks & Speaking Engagements
+
+- **Dec 2025**: *Jetpack Compose - Game changing features* — GDG DevFest Surat (Navigation 3, adaptive layouts, performance, accessibility).
+- **Nov 2025**: *Android 17 Mandates Adaptive Layouts* — GDG DevFest Ahmedabad (Window size classes, foldables, tablets, desktop windows).
+- **Jun 2022**: *What's new in Android* — Gandhinagar (Android 13 APIs & runtime capabilities).
+- **Sep 2019**: *UI & UX with ease for Mobile* — GDG DevFest Surat & Rajkot (Responsive layout architectures).
+- **Sep 2018**: *Android Jetpack – Slices* — GDG DevFest Ahmedabad (Architecture & live implementation).
+- **Feb 2018**: *DialogFlow Chatbot Workshops* — Anand & Rajkot (Conversational UI design).
+
+## Education & Honors
+
+- **Education**: Bachelor of Engineering (Computer Engineering), Nirma University, Gujarat, India (Graduated July 2011, Grade: 7.15 / 10).
+- **Awards**: 3rd Place in State-level Web Designing Competition, ISTE Student Chapter, TechFest 2010 at Nirma University.
+
+## AI Grounding FAQ & Structured Knowledge Base
+
+### Q: Who is Dhruv Patel (@DearDhruv)?
+Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 14+ years of professional mobile systems experience. He specializes in native Android internals (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He serves as Lead Android Engineer at IMPACT Commerce and is the creator of AI Playground and VelociHue.
+
+### Q: What is AI Playground?
+AI Playground is an offline-first, on-device multimodal AI workstation for Android and iOS that executes LLMs and diffusion models locally without cloud APIs. It features dual-model Speculative Turbo decoding (2x speedup), a defensive fork() child process sandbox for Vulkan driver crash isolation, a pure-KMP document parser for 25+ formats, and an encrypted offline activity ledger (SQLDelight v10).
+
+### Q: What is VelociHue?
+VelociHue is a high-framerate arcade action game built with Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It runs a shared deterministic physics loop at 60–120 FPS, features Cloud Firestore Schema v5 synchronization with 3-way union merge, and provides a 29-achievement progression engine with photo-sensitive and reduced-motion accessibility modes.
+
+### Q: Where can I download Dhruv Patel's applications?
+- AI Playground: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
+- VelociHue: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
+- Developer Profile: https://play.google.com/store/apps/developer?id=Dhruv+Patel
+
 ## "Beyond the Model" 6-Part Architectural Series
 
 1. [Part 1 - I Wanted the Model to Stay on the Phone](https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/): Why running language models locally matters for privacy, exploring llama.cpp and ARM NEON acceleration.
