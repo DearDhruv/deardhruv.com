@@ -2886,3 +2886,48 @@ None. All requirements verified and release-ready.
 
 ### Exact next task
 Ready for final review and production deployment.
+
+---
+
+## Phase A4: UI/UX Affordance, Prefix Icon Standardization & International Standards (WCAG 2.2 AA)
+
+### Goals
+1. Position all icons and arrows strictly as prefixes (icon/SVG first, text `<span>` second) across all buttons, navigation toggles, action pills, and cards.
+2. Comply with international UI/UX standards (WCAG 2.2 AA contrast, >= 44x44px touch targets, fluid modular typography clamps, centered 1140px containers with responsive gutters, zero horizontal overflow).
+3. Implement clear affordance differentiation (ISO 9241-210): actionable cards/buttons lift and glow with accent styling, while non-actionable elements maintain calm, dull, neutral states on hover.
+4. Maintain performance budgets (<45 KB CSS, <5 KB client JS, zero client hydration runtime).
+
+### Files Changed
+- `src/components/Header.astro`
+- `src/pages/index.astro`
+- `src/layouts/ArticleLayout.astro`
+- `src/pages/posts/index.astro`
+- `src/pages/posts/ai_playground_series/index.astro`
+- `static/css/components.css`
+- `static/css/nav.css`
+- `tests/verify-interactive-containers.js`
+- `docs/audits/latest-health-report.md`
+
+### Commits
+- `60cfe60`: `fix(ui): place icons as prefix before text across all buttons and callouts`
+- `e3cb770`: `feat(ui): enforce international standards and differentiate actionable vs dull non-actionable element states`
+
+### Verification & Automated Gates
+- `npm run build`: 27 static routes generated cleanly in 451ms.
+- `npm test`: All 9 test suites passed 100%:
+  - Route parity: 39/39 legacy routes verified (100% parity).
+  - Static downloadable assets: 7/7 verified.
+  - Internal link crawler: 28 HTML files, 913 internal links crawled with 0 broken links.
+  - Netlify Edge Function negotiation: 74/74 assertions passed.
+  - Contrast audit: 56/56 token pairs passed WCAG 2.2 AA (>= 4.5:1 text, >= 3.0:1 UI).
+  - Accessibility tokens: 10/10 passed (reduced motion, touch targets >= 44x44px, focus indicators).
+  - Interactive containers & ordering: 42/42 assertions passed (100% container clickability, sequential ordering, icon prefix placement, and affordance differentiation).
+- `npm run audit`: 172/172 continuous health, SEO, accessibility, performance, security, and AI discovery checks passed (100.0%).
+- `node tests/verify-performance-budgets.js`:
+  - Static page build duration: 951ms (budget < 3500ms).
+  - Total uncompressed CSS: 43.62 KB (budget < 45 KB, 1.38 KB safe headroom).
+  - Total uncompressed client JS: 4.31 KB (budget < 5 KB, 0.69 KB safe headroom).
+  - Zero hydration runtime bundles in `_astro/`.
+- `npm run check`: TypeScript `tsc --noEmit` passed with 0 errors.
+- Visual inspection: Headless Chrome screenshots captured and verified across desktop (1440px) and mobile (390px).
+
