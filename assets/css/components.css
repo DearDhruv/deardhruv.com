@@ -402,8 +402,7 @@
   background-color: var(--color-accent-subtle);
   color: var(--color-text-accent);
   border: 1px solid var(--color-accent-border);
-  white-space: normal;
-  word-break: break-word;
+  white-space: nowrap;
 }
 
 .badge-neutral {
