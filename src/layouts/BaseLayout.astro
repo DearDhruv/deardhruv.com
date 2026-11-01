@@ -96,15 +96,59 @@ const canonical = canonicalUrl || `${siteOrigin}${currentPath.endsWith('/') ? cu
     (() => {
       const menuBtn = document.getElementById('menu-toggle');
       const siteNav = document.getElementById('site-navigation');
+      const backdrop = document.getElementById('site-nav-backdrop');
+
+      function closeMenu() {
+        if (!siteNav || !siteNav.classList.contains('is-open')) return;
+        siteNav.classList.remove('is-open');
+        if (menuBtn) {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.classList.remove('is-active');
+        }
+        if (backdrop) backdrop.classList.remove('is-open');
+      }
+
+      function toggleMenu() {
+        if (!siteNav || !menuBtn) return;
+        const open = siteNav.classList.toggle('is-open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.classList.toggle('is-active', open);
+        if (backdrop) backdrop.classList.toggle('is-open', open);
+      }
+
       if (menuBtn && siteNav) {
-        menuBtn.addEventListener('click', () => {
-          const open = siteNav.classList.toggle('is-open');
-          menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleMenu();
         });
+
+        if (backdrop) {
+          backdrop.addEventListener('click', closeMenu);
+          backdrop.addEventListener('touchstart', closeMenu, { passive: true });
+        }
+
+        // Close when clicking or touching outside
+        document.addEventListener('click', (e) => {
+          if (siteNav.classList.contains('is-open') && !siteNav.contains(e.target) && !menuBtn.contains(e.target)) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('touchstart', (e) => {
+          if (siteNav.classList.contains('is-open') && !siteNav.contains(e.target) && !menuBtn.contains(e.target)) {
+            closeMenu();
+          }
+        }, { passive: true });
+
+        // Close when any link inside siteNav is clicked
+        siteNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', closeMenu);
+        });
+
+        // Close on Escape key
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
-            siteNav.classList.remove('is-open');
-            menuBtn.setAttribute('aria-expanded', 'false');
+            closeMenu();
             menuBtn.focus();
           }
         });

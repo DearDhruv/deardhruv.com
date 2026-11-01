@@ -68,7 +68,7 @@
           obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0, rootMargin: '150px 0px 100px 0px' });
 
     els.forEach((el, i) => {
       el.classList.add('scroll-reveal');
@@ -76,7 +76,7 @@
         el.dataset.delay = (i % 2) + 1;
       }
       const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-revealed');
+      if (r.top < window.innerHeight + 100 && r.bottom > -50) el.classList.add('is-revealed');
       else obs.observe(el);
     });
   }
