@@ -22,9 +22,27 @@ const {
   tags = [],
   series
 } = Astro.props;
+
+// Convert date to ISO 8601 string if valid
+let publishedIso: string | undefined;
+try {
+  if (date) {
+    const parsed = new Date(date);
+    if (!isNaN(parsed.getTime())) {
+      publishedIso = parsed.toISOString();
+    }
+  }
+} catch (_) {}
 ---
 
-<BaseLayout title={title} description={description} ogType="article">
+<BaseLayout
+  title={title}
+  description={description}
+  ogType="article"
+  publishedTime={publishedIso}
+  tags={tags}
+  author="Dhruv Patel"
+>
   <article class="layout-container-wide" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
     <header class="page-header">
       {series && (
@@ -58,10 +76,15 @@ const {
           </div>
           <h2 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Explore the 6-Part Architectural Journey</h2>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); margin-bottom: var(--space-4);">
-            This article is part of the deep-dive series on engineering private, on-device AI runtimes and mobile hardware limits.
+            An in-depth, production-verified blueprint for architecting an offline-first, on-device AI system on mobile hardware.
           </p>
-          <div class="layout-cluster">
-            <a href="/posts/ai_playground_series/" class="btn btn-secondary">View Complete Series Index &rarr;</a>
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <a href="/posts/ai_playground_series/" class="btn btn-secondary">
+              View All 6 Chapters
+            </a>
+            <a href="/projects/" class="btn btn-secondary">
+              Related Project: AI Playground
+            </a>
           </div>
         </nav>
       </footer>

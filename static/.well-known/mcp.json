@@ -14,14 +14,14 @@
   "capabilities": {
     "resources": [
       {
-        "uri": "https://deardhruv.com/posts/index.json",
-        "name": "Posts Index",
-        "mimeType": "application/json"
+        "uri": "https://deardhruv.com/index.json",
+        "name": "Site Content Feed",
+        "mimeType": "application/feed+json"
       },
       {
         "uri": "https://deardhruv.com/llms.txt",
         "name": "LLM Directory",
-        "mimeType": "text/plain"
+        "mimeType": "text/markdown"
       }
     ],
     "tools": []

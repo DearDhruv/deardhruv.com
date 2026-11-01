@@ -25,7 +25,8 @@ const suites = [
   { name: 'Static Assets & Discovery Files (7/7)', cmd: 'PUBLIC_DIR=dist node tests/verify-assets.js' },
   { name: 'Internal Link Resolution & HTML Semantics', cmd: 'PUBLIC_DIR=dist node tests/verify-links.js' },
   { name: 'Netlify Edge Negotiation & Markdown Rewrites (74/74)', cmd: 'PUBLIC_DIR=dist node tests/verify-edge-functions.js' },
-  { name: 'Content Loader Integrity (28/28)', cmd: 'node tests/verify-content-loader.js' }
+  { name: 'Content Loader Integrity (28/28)', cmd: 'node tests/verify-content-loader.js' },
+  { name: 'SEO, OpenGraph, JSON-LD & Bot Policies (253/253)', cmd: 'node tests/verify-seo-metadata.js' }
 ];
 
 for (const suite of suites) {
@@ -43,7 +44,7 @@ for (const suite of suites) {
 
 console.log(`\n==================================================`);
 if (allPassed) {
-  console.log(`🎉 ALL 5 REGRESSION TEST SUITES PASSED AGAINST dist/! 100% PARITY CONFIRMED.`);
+  console.log(`🎉 ALL 6 REGRESSION TEST SUITES PASSED AGAINST dist/! 100% PARITY CONFIRMED.`);
   process.exit(0);
 } else {
   console.error(`❌ REGRESSION FAILURES DETECTED AGAINST dist/.`);

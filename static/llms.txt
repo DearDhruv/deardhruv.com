@@ -33,6 +33,7 @@ A 6-part technical journey detailing how to build an offline-first, on-device AI
 - Full Content Directory: [https://deardhruv.com/llms-full.txt](https://deardhruv.com/llms-full.txt)
 - Sitemap: [https://deardhruv.com/sitemap.xml](https://deardhruv.com/sitemap.xml)
 - RSS Feed: [https://deardhruv.com/index.xml](https://deardhruv.com/index.xml)
-- JSON Feed: [https://deardhruv.com/feed.json](https://deardhruv.com/feed.json)
+- JSON Feed: [https://deardhruv.com/index.json](https://deardhruv.com/index.json)
 - MCP Card: [https://deardhruv.com/.well-known/mcp.json](https://deardhruv.com/.well-known/mcp.json)
+- API Catalog: [https://deardhruv.com/.well-known/api-catalog](https://deardhruv.com/.well-known/api-catalog)
 - Markdown Negotiation: Any URL can be fetched as Markdown by setting `Accept: text/markdown` or requesting `[url]index.md`.
