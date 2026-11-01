@@ -27,9 +27,9 @@
 | Phase 4 | Task 4.5 | Clarify employer and client attribution | Completed | 3180c9c | 2026-11-01 |
 | Phase 10 | Task 10.2 | Add identity & employer-attribution regression checks | Completed | 3180c9c | 2026-11-01 |
 | Phase 5 | Task 5.1 | Repair AI Playground public artifact links | Completed | 0bfac65 | 2026-11-01 |
-| Phase 5 | Task 5.2 | Align AI Playground copy with release evidence | Completed | Pending | 2026-11-01 |
-| Phase 5 | Task 5.3 | Align VelociHue copy with release evidence | Completed | Pending | 2026-11-01 |
-| Phase 5 | Task 5.4 | Standardize technical case-study structure | Completed | Pending | 2026-11-01 |
+| Phase 5 | Task 5.2 | Align AI Playground copy with release evidence | Completed | 8b0c525 | 2026-11-01 |
+| Phase 5 | Task 5.3 | Align VelociHue copy with release evidence | Completed | 8b0c525 | 2026-11-01 |
+| Phase 5 | Task 5.4 | Standardize technical case-study structure | Completed | 8b0c525 | 2026-11-01 |
 | Phase 6 | Task 6.1–6.5 | SEO crawlability, internal links & content quality | Not Started | — | — |
 | Phase 7 | Task 7.1–7.4 | Accessibility & interaction quality | Not Started | — | — |
 | Phase 8 | Task 8.1–8.4 | Performance remediation | Not Started | — | — |
@@ -57,6 +57,20 @@
 
 ## 3. Session Handoff Notes
 
-- **Task 0.1–0.4, 1.1–1.2, 2.1–2.2, 4.1–4.5, 10.2 Completed:** Verified repository baseline, build contract, test matrix, README modernization, URL inventory (43 routes), repository audits (14/14 checks), content fact ledger, separated independent products and employer work with mandatory bottom attribution footers, GDG speech alignment, and employer test suite.
-- **Dependency & Version Upgrade:** Audited dependencies (`npx npm-check-updates`), all packages verified on latest versions (`astro@7.4.4`, `typescript@7.0.2`, `@astrojs/markdown-remark@7.3.5`). Project version bumped to `2.1.0`. All 10 test suites passing.
-- **Next Task:** Phase 1, Task 1.3–1.8 (External Tool Audits, WebPageTest/Lighthouse baseline recording, and well-known MCP inspection) and Phase 2, Task 2.5 (Resume PDF refresh).
+- **Task 0.1–0.4, 1.1–1.2, 2.1–2.2, 2.5, 4.1–4.5, 5.1–5.4, 10.2 Completed:**
+  - Verified repository baseline, build contract, test matrix, and README modernization.
+  - Generated full URL inventory (43 public routes and endpoints) and captured repository test baseline (14/14 checks).
+  - Built content fact ledger resolving employment and platform claims.
+  - Refreshed canonical `/resume.pdf` with the updated 5-page PDF document (231,673 bytes) without mutating public URLs.
+  - Separated Independent Products and Selected Work by Employer across Portfolio and Projects with mandatory bottom attribution footers.
+  - Aligned GDG DevFest conference speeches (2018–2025) and academic background.
+  - Resolved AI Playground dead repository 404 links (Finding DD-01) across homepage, series, and documentation; pointed to verified Google Play release.
+  - Aligned AI Playground and VelociHue release status (Android live on Play Store; iOS in development / planned).
+  - Modernized `/.well-known/mcp.json` server descriptor to "DearDhruv Engineering Portfolio & Articles" v2.1.0 (Finding DD-11).
+  - Upgraded project version to `2.1.0` and verified all npm dependencies on latest stable releases.
+- **Quality Status:**
+  - 10 test suites passing (100%).
+  - 172 continuous audit checks passing (100%).
+  - CSS: 43.32 KB (< 45 KB budget).
+  - JS: 4.44 KB (< 5 KB budget), 0 hydration bundles.
+- **Next Task:** Phase 6 (SEO crawlability, canonical URLs & internal links) and Phase 7–9 (Accessibility & Security hardening).
