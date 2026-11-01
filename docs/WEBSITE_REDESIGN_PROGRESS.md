@@ -2886,3 +2886,148 @@ None. All requirements verified and release-ready.
 
 ### Exact next task
 Ready for final review and production deployment.
+
+---
+
+## Phase A4: UI/UX Affordance, Prefix Icon Standardization & International Standards (WCAG 2.2 AA)
+
+### Goals
+1. Position all icons and arrows strictly as prefixes (icon/SVG first, text `<span>` second) across all buttons, navigation toggles, action pills, and cards.
+2. Comply with international UI/UX standards (WCAG 2.2 AA contrast, >= 44x44px touch targets, fluid modular typography clamps, centered 1140px containers with responsive gutters, zero horizontal overflow).
+3. Implement clear affordance differentiation (ISO 9241-210): actionable cards/buttons lift and glow with accent styling, while non-actionable elements maintain calm, dull, neutral states on hover.
+4. Maintain performance budgets (<45 KB CSS, <5 KB client JS, zero client hydration runtime).
+
+### Files Changed
+- `src/components/Header.astro`
+- `src/pages/index.astro`
+- `src/layouts/ArticleLayout.astro`
+- `src/pages/posts/index.astro`
+- `src/pages/posts/ai_playground_series/index.astro`
+- `static/css/components.css`
+- `static/css/nav.css`
+- `tests/verify-interactive-containers.js`
+- `docs/audits/latest-health-report.md`
+
+### Commits
+- `60cfe60`: `fix(ui): place icons as prefix before text across all buttons and callouts`
+- `e3cb770`: `feat(ui): enforce international standards and differentiate actionable vs dull non-actionable element states`
+- `c4afefd`: `feat(ui): update Google Play Store icon to official 2022 brand vector and modernize GitHub mark`
+- `a8fea36`: `docs: record icon updates in progress log`
+- `05cfea2`: `feat(theme): set warm editorial amber as primary default palette across root CSS, light mode, and client init`
+- `2219189`: `fix(ui): enable sticky topbar with overflow-x clip and harmonize horizontal centering`
+- `7830c98`: `feat(icons): harmonize Google Play store icon to consistent outlined stroke design`
+
+---
+
+## Phase A5: Sticky Topbar Restoration, Backdrop Blur & Pixel-Perfect Horizontal Centering
+
+### Goals
+1. Restore genuine sticky topbar behavior (`position: sticky; top: 0; z-index: 100;`) on scroll by replacing `overflow-x: hidden;` on `html, body` with modern CSS Overflow 3 `overflow-x: clip;`.
+2. Implement theme-adaptive translucent header backdrop blur (`color-mix(in srgb, var(--color-bg-page) 88%, transparent)` with `backdrop-filter: blur(12px)`) so sticky scrolling smoothly tints the content without jarring hardcoded slate colors.
+3. Eliminate horizontal alignment discrepancies between `.site-header-inner`, `.layout-container-wide`, and `.site-footer-inner`:
+   - Enforce identical `max-width: var(--container-wide);` (1140px) and `padding-inline: var(--gutter);` (`clamp(1rem, 4vw, 2rem)`).
+   - Unify redundant tokens in `static/css/layout.css` to reference `--container-wide` and `--gutter`.
+   - Implement CSS Grid (`grid-template-columns: 1fr auto 1fr;`) on desktop `.site-header-inner` to mathematically center navigation links at the 50.000% container axis (difference < 0.01px).
+   - Standardize topbar action buttons to uniform 44x44px touch targets and compact 44px Résumé button, eliminating 50px rightward overflow.
+   - Expand mobile hamburger breakpoint to `@media (max-width: 1024px)` to ensure seamless tablet and portrait responsive behavior with zero horizontal crowding.
+4. Maintain performance budgets (<45 KB CSS, <5 KB client JS, zero client hydration runtime). All 9 test suites and 172 audit checks must pass 100%.
+
+### Files Changed
+- `static/css/design-system.css`
+- `static/css/layout.css`
+- `static/css/nav.css`
+- `docs/audits/latest-health-report.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Verification & Automated Gates
+- `npm run build`: 27 static routes generated cleanly in 412ms.
+- `npm test`: All 9 test suites passed 100% (39 legacy routes, 7 assets, 28 HTML / 913 links, Netlify Edge Functions, WCAG AA contrast, a11y tokens, SEO metadata, interactive containers).
+- `npm run audit`: 172/172 continuous health, SEO, accessibility, performance, security, and AI discovery checks passed (100.0%).
+- `node tests/verify-performance-budgets.js`:
+  - Static page build duration: 1217ms (budget < 3500ms).
+  - Total uncompressed CSS: 43.32 KB (budget < 45 KB, 1.68 KB safe headroom).
+  - Total uncompressed client JS: 4.44 KB (budget < 5 KB).
+  - Zero hydration runtime bundles in `_astro/`.
+- `npm run check`: TypeScript `tsc --noEmit` passed with 0 errors.
+- Visual inspection & programmatic coordinate verification:
+  - Header scroll test: `scrollY: 600`, `headerTop: 0`, `isSticky: true`.
+  - Brand-to-hero left margin difference: `0px` across all screen widths (500px to 1920px).
+  - Actions-to-hero right margin difference: `0px` across all screen widths (500px to 1920px).
+  - Nav center to container center difference: `< 0.01px` (mathematical dead center).
+
+---
+
+## Phase A6: Google Play Store Icon Harmonization & Design System Consistency
+
+### Goals
+1. Modernize Google Play button icons to use the official, standardized stroke outline geometry (`fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"`).
+2. Remove hardcoded multicolored fills (`#ea4335`, `#fbbc04`, `#4285f4`, `#34a853`) so the icon is completely consistent with all other system icons (GitHub, LinkedIn, Email, Arrows, Résumé).
+3. Ensure the icon adapts dynamically to button surface states (`currentColor`), inheriting button text color and hover states seamlessly across all themes.
+4. Add Dhruv Patel's Google Play developer profile link to the homepage contact discovery section.
+
+### Files Changed
+- `src/pages/index.astro`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Verification & Automated Gates
+- `npm run build`: 27 static routes generated cleanly in 415ms.
+- `npm test`: All 9 test suites passed 100%.
+- `npm run audit`: 172/172 continuous checks passed (100.0%).
+- `node tests/verify-performance-budgets.js`: CSS 43.32 KB (< 45 KB), JS 4.44 KB (< 5 KB).
+- `npm run check`: TypeScript `tsc --noEmit` passed with 0 errors.
+
+---
+
+## Phase A7: Profile Role & Bio Harmonization (Lead Android Engineer, Android Architect, Android Artist)
+
+### Goals
+1. Remove "multiplatform engineer" from profile title, badge, and bio summary per user preference.
+2. Formally set profile title to **Lead Android Engineer** across metadata, Schema.org, OpenGraph, feeds, and document headers.
+3. Update bio and hero summary to: **"Lead Android Engineer, Android Architect, and Android Artist"** with focus on high-performance native systems, on-device AI runtimes, and low-level hardware interfaces.
+4. Synchronize `content/about.md`, `content/portfolio.md`, `static/llms.txt`, and `static/llms-full.txt`.
+
+### Files Changed
+- `src/pages/index.astro`
+- `src/components/Header.astro`
+- `src/layouts/BaseLayout.astro`
+- `src/pages/about/index.astro`
+- `src/pages/sitemap/index.astro`
+- `src/pages/index.md.ts`
+- `src/pages/index.json.ts`
+- `src/pages/index.xml.ts`
+- `content/about.md`
+- `content/portfolio.md`
+- `static/llms.txt`
+- `static/llms-full.txt`
+- `docs/audits/latest-health-report.md`
+- `docs/WEBSITE_REDESIGN_PROGRESS.md`
+
+### Verification & Automated Gates
+- `npm run build`: 27 static routes generated cleanly in 503ms.
+- `npm test`: All 9 test suites passed 100%.
+- `npm run audit`: 172/172 continuous checks passed (100.0%).
+- `node tests/verify-performance-budgets.js`: CSS 43.32 KB (< 45 KB), JS 4.44 KB (< 5 KB).
+- `npm run check`: TypeScript `tsc --noEmit` passed with 0 errors.
+- Visual inspection: Headless Chrome screenshot verified at `verified_lead_android_engineer_profile.png`.
+
+
+
+### Verification & Automated Gates
+- `npm run build`: 27 static routes generated cleanly in 451ms.
+- `npm test`: All 9 test suites passed 100%:
+  - Route parity: 39/39 legacy routes verified (100% parity).
+  - Static downloadable assets: 7/7 verified.
+  - Internal link crawler: 28 HTML files, 913 internal links crawled with 0 broken links.
+  - Netlify Edge Function negotiation: 74/74 assertions passed.
+  - Contrast audit: 56/56 token pairs passed WCAG 2.2 AA (>= 4.5:1 text, >= 3.0:1 UI).
+  - Accessibility tokens: 10/10 passed (reduced motion, touch targets >= 44x44px, focus indicators).
+  - Interactive containers & ordering: 42/42 assertions passed (100% container clickability, sequential ordering, icon prefix placement, and affordance differentiation).
+- `npm run audit`: 172/172 continuous health, SEO, accessibility, performance, security, and AI discovery checks passed (100.0%).
+- `node tests/verify-performance-budgets.js`:
+  - Static page build duration: 951ms (budget < 3500ms).
+  - Total uncompressed CSS: 43.62 KB (budget < 45 KB, 1.38 KB safe headroom).
+  - Total uncompressed client JS: 4.31 KB (budget < 5 KB, 0.69 KB safe headroom).
+  - Zero hydration runtime bundles in `_astro/`.
+- `npm run check`: TypeScript `tsc --noEmit` passed with 0 errors.
+- Visual inspection: Headless Chrome screenshots captured and verified across desktop (1440px) and mobile (390px).
+

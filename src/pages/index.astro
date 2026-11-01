@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Dhruv Patel - Lead Android & Multiplatform Engineer"
-  description="Lead Android & Multiplatform Engineer crafting high-performance native architectures, distributed KMP systems, and privacy-first on-device AI runtimes with extensive production leadership."
+  title="Dhruv Patel (@DearDhruv) - Lead Android Engineer, Android Architect"
+  description="Dhruv Patel (@DearDhruv) - Lead Android Engineer, Android Architect, and Android Artist crafting high-performance native architectures, on-device AI runtimes, and low-level hardware interfaces."
 >
   <div class="layout-container-wide" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
     <!-- HERO SECTION -->
@@ -20,32 +20,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       />
       <div class="hero-content">
         <div class="hero-badges">
-          <span class="badge">Lead Android & Multiplatform</span>
+          <span class="badge">Lead Android Engineer</span>
+          <span class="chip" style="font-family: var(--font-mono); font-weight: 600;">@DearDhruv</span>
           <span class="chip">Battle-Tested Leadership</span>
         </div>
         <h1 class="page-title hero-title" style="margin: 0;">Dhruv Patel</h1>
         <p class="hero-subtitle" style="font-family: var(--font-mono); font-size: var(--font-small); color: var(--color-accent); margin: 0;">
-          Android Architect &middot; Kotlin Multiplatform &middot; On-Device AI
+          Android Architect &middot; Android Artist &middot; On-Device AI
         </p>
         <p class="page-lead hero-lead" style="margin: 0; font-size: 1.125rem; line-height: 1.6;">
-          I'm an Android and multiplatform engineer. I work on the parts of software that get interesting when they hit real device constraints: performance profiling, low-level hardware interfaces, and running local AI models on personal devices without cloud dependencies.
+          I'm a Lead Android Engineer, Android Architect, and Android Artist (known online as <strong>@DearDhruv</strong>). I work on the parts of software that get interesting when they hit real device constraints: performance profiling, low-level hardware interfaces, and running local AI models on personal devices without cloud dependencies.
         </p>
         <div class="layout-cluster hero-actions" style="margin-top: var(--space-4);">
           <a href="/portfolio/" class="btn btn-primary">
-            <span>Explore Portfolio</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <span>Explore Portfolio</span>
           </a>
           <a href="/projects/" class="btn btn-secondary">
-            <span>Featured Projects</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <span>Featured Projects</span>
           </a>
           <a href="/posts/ai_playground_series/" class="btn btn-secondary">
-            <span>AI Engineering Series</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <span>AI Engineering Series</span>
           </a>
           <a href="/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-            <span>Résumé (PDF)</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            <span>Résumé (PDF)</span>
           </a>
         </div>
       </div>
@@ -64,47 +65,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="layout-grid-2">
-        <div class="card">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Android & Native Architecture</h3>
+        <a href="/portfolio/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Domain 01</span>
             <span class="badge">Battle-Tested</span>
           </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Android & Native Architecture</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             Production Clean Architecture, unidirectional data flow (MVI/MVVM), Jetpack Compose, modular multi-module codebases, memory profiling, and battery guardrails.
           </p>
-          <div class="layout-cluster">
+          <div class="layout-cluster" style="margin-bottom: var(--space-4);">
             <span class="chip">Kotlin</span>
             <span class="chip">Jetpack Compose</span>
             <span class="chip">Coroutines/Flow</span>
             <span class="chip">NDK / C++20</span>
           </div>
-        </div>
+          <div style="margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-1); font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">
+            <span aria-hidden="true">&rarr;</span> <span>Explore Architecture</span>
+          </div>
+        </a>
 
-        <div class="card">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Kotlin Multiplatform (KMP/CMP)</h3>
+        <a href="/projects/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Domain 02</span>
             <span class="badge">Production</span>
           </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Kotlin Multiplatform (KMP/CMP)</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             Cross-platform architecture sharing deterministic game loops, MVI state stores, and offline-first persistence across Android, iOS (SwiftUI host), and Android TV.
           </p>
-          <div class="layout-cluster">
+          <div class="layout-cluster" style="margin-bottom: var(--space-4);">
             <span class="chip">Compose Multiplatform</span>
             <span class="chip">SQLDelight</span>
             <span class="chip">Cloud Firestore</span>
             <span class="chip">Swift Interop</span>
           </div>
-        </div>
+          <div style="margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-1); font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">
+            <span aria-hidden="true">&rarr;</span> <span>Explore Projects</span>
+          </div>
+        </a>
 
-        <div class="card">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">On-Device AI & Edge Compute</h3>
+        <a href="/posts/ai_playground_series/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Domain 03</span>
             <span class="badge">Offline-First</span>
           </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">On-Device AI & Edge Compute</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             Local LLM inference and on-device diffusion studios (llama.cpp, LiteRT, Apple MLX) running on consumer phones with speculative drafting and defensive driver crash sandboxing.
           </p>
-          <div class="layout-cluster">
+          <div class="layout-cluster" style="margin-bottom: var(--space-4);">
             <span class="chip">Image Generation</span>
             <span class="chip">llama.cpp</span>
             <span class="chip">Google LiteRT</span>
@@ -112,23 +122,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="chip">Stable Diffusion</span>
             <span class="chip">Vulkan / Metal</span>
           </div>
-        </div>
+          <div style="margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-1); font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">
+            <span aria-hidden="true">&rarr;</span> <span>Explore AI Series</span>
+          </div>
+        </a>
 
-        <div class="card">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Commerce & Hardware Integration</h3>
+        <a href="/portfolio/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Domain 04</span>
             <span class="badge">Enterprise</span>
           </div>
+          <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">Commerce & Hardware Integration</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             Digital commerce flows, payment terminal protocols, and resilient hardware abstraction layers across 30+ POS peripherals with defensive IPC.
           </p>
-          <div class="layout-cluster">
+          <div class="layout-cluster" style="margin-bottom: var(--space-4);">
             <span class="chip">POS Peripherals</span>
             <span class="chip">Payment IPC</span>
             <span class="chip">HAL Bridges</span>
             <span class="chip">Zero Cloud Leak</span>
           </div>
-        </div>
+          <div style="margin-top: auto; padding-top: var(--space-3); border-top: 1px solid var(--color-divider); display: flex; align-items: center; justify-content: flex-end; gap: var(--space-1); font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;">
+            <span aria-hidden="true">&rarr;</span> <span>Explore Systems</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -148,8 +165,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- AI Playground -->
         <article class="card card-interactive">
           <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">AI Playground</h3>
-            <span class="badge">Flagship Product &middot; On-Device AI</span>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+              <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">System 01</span>
+              <span class="badge">Flagship &middot; On-Device AI</span>
+            </div>
+            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">
+              <a href="/posts/ai_playground_series/" class="card-stretched-link" style="text-decoration: none; color: inherit;">
+                AI Playground
+              </a>
+            </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon—keeping user conversations and documents private without cloud round-trips. Built with Kotlin Multiplatform, C++20 JNI bindings to llama.cpp, Google AI Edge LiteRT, and Apple MLX. Includes dual-model speculative drafting (2x speedup) and a native <code>fork()</code> sandbox to isolate Vulkan driver crashes.
@@ -164,20 +188,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="layout-cluster">
             <a href="https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              <span>Google Play</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.008 2.008 0 0 1-.61-1.42V3.234c0-.54.225-1.037.61-1.42zM15.207 13.414l2.585 2.586-12.87 7.429 10.285-10.015zm0-2.828L4.922.571l12.87 7.43-2.585 2.585zm1.414 1.414l3.535 2.04c.88.508.88 1.332 0 1.84l-3.535 2.04-2.12-2.12 2.12-2.12z"/>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 3.71v16.58a0.7.7 0 0 0 1.057.606l14.35-8.29a0.7.7 0 0 0 0-1.214L5.057 3.104A.7.7 0 0 0 4 3.71z"/>
+                <path d="M15 12 4.5 21.5"/>
+                <path d="M4.5 2.5 15 12"/>
               </svg>
+              <span>Google Play</span>
             </a>
             <a href="https://github.com/DearDhruv/Model-Playground" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-              <span>GitHub</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
               </svg>
+              <span>GitHub</span>
             </a>
             <a href="/posts/ai_playground_series/" class="btn btn-secondary">
-              <span>Read Series</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <span>Read Series</span>
             </a>
           </div>
         </article>
@@ -185,8 +211,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <!-- VelociHue -->
         <article class="card card-interactive">
           <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">VelociHue</h3>
-            <span class="badge">Flagship Product &middot; Multiplatform Game</span>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+              <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">System 02</span>
+              <span class="badge">Flagship &middot; Multiplatform Game</span>
+            </div>
+            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">
+              <a href="/projects/" class="card-stretched-link" style="text-decoration: none; color: inherit;">
+                VelociHue
+              </a>
+            </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
             A fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV. Runs at 60–120 FPS using a shared deterministic physics loop, conflict-free Cloud Firestore schema v5 sync with 3-way union merge, and 29 progressive achievements.
@@ -200,14 +233,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="layout-cluster">
             <a href="https://play.google.com/store/apps/details?id=com.deardhruv.velocihue" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              <span>Google Play</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.008 2.008 0 0 1-.61-1.42V3.234c0-.54.225-1.037.61-1.42zM15.207 13.414l2.585 2.586-12.87 7.429 10.285-10.015zm0-2.828L4.922.571l12.87 7.43-2.585 2.585zm1.414 1.414l3.535 2.04c.88.508.88 1.332 0 1.84l-3.535 2.04-2.12-2.12 2.12-2.12z"/>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 3.71v16.58a0.7.7 0 0 0 1.057.606l14.35-8.29a0.7.7 0 0 0 0-1.214L5.057 3.104A.7.7 0 0 0 4 3.71z"/>
+                <path d="M15 12 4.5 21.5"/>
+                <path d="M4.5 2.5 15 12"/>
               </svg>
+              <span>Google Play</span>
             </a>
             <a href="/projects/" class="btn btn-secondary">
-              <span>Case Study</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <span>Case Study</span>
             </a>
           </div>
         </article>
@@ -215,8 +250,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div style="margin-top: var(--space-8); text-align: center;">
         <a href="/portfolio/" class="btn btn-secondary">
-          <span>View Full Portfolio &amp; Case Studies</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <span>View Full Portfolio &amp; Case Studies</span>
         </a>
       </div>
     </section>
@@ -234,53 +269,107 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div class="layout-grid-3">
-        <div class="card card-interactive">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h4); margin: 0;">
-              <a href="/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/" style="text-decoration: none; color: inherit;">
-                Part 1 &middot; Offline Local LLMs
-              </a>
-            </h3>
+        <!-- Part 1 -->
+        <a href="/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 1 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">10 min</span>
           </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Offline Local LLMs</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
             Architecting offline-first mobile inference, setting up speculative drafting with smaller models, and managing VRAM limits on mobile silicon.
           </p>
-          <span class="badge">Architecture</span>
-        </div>
-
-        <div class="card card-interactive">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h4); margin: 0;">
-              <a href="/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/" style="text-decoration: none; color: inherit;">
-                Part 3 &middot; Defensive Crash Isolation
-              </a>
-            </h3>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">Architecture</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;"><span aria-hidden="true">&rarr;</span> Read</span>
           </div>
+        </a>
+
+        <!-- Part 2 -->
+        <a href="/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 2 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">9 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Offline Document Engine</h3>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            How a simple 'attach file' button turned into an offline ingestion pipeline for 25+ formats using pure RFC 1951 Deflate and memory-mapped chunks.
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">Deflate / KMP</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;"><span aria-hidden="true">&rarr;</span> Read</span>
+          </div>
+        </a>
+
+        <!-- Part 3 -->
+        <a href="/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 3 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">10 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Defensive Crash Isolation</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
             Handling vendor Vulkan driver GPU segmentation faults by running inference inside a native <code>fork()</code> process sandbox with a 3000ms watchdog loop.
           </p>
-          <span class="badge">NDK / C++20</span>
-        </div>
-
-        <div class="card card-interactive">
-          <div style="margin-bottom: var(--space-3);">
-            <h3 style="font-size: var(--font-h4); margin: 0;">
-              <a href="/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/" style="text-decoration: none; color: inherit;">
-                Part 4 &middot; On-Device Diffusion Studio
-              </a>
-            </h3>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">NDK / C++20</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;"><span aria-hidden="true">&rarr;</span> Read</span>
           </div>
+        </a>
+
+        <!-- Part 4 -->
+        <a href="/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 4 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">11 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">On-Device Diffusion Studio</h3>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
             Synthesizing 4-step diffusion images on mobile GPUs using Google LiteRT and Bonsai Image Ternary 4B without thermal runaway.
           </p>
-          <span class="badge">Diffusion AI</span>
-        </div>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">Diffusion AI</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;"><span aria-hidden="true">&rarr;</span> Read</span>
+          </div>
+        </a>
+
+        <!-- Part 5 -->
+        <a href="/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 5 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">12 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Modular MVI Architecture</h3>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Refactoring a monolithic mobile app into a multi-module MVI platform with clean offline boundaries, strict state stores, and zero cloud leaks.
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">MVI / Clean Arch</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;"><span aria-hidden="true">&rarr;</span> Read</span>
+          </div>
+        </a>
+
+        <!-- Part 6 -->
+        <a href="/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/" class="card card-interactive" style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+            <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">Part 6 of 6</span>
+            <span class="chip" style="font-size: 0.7rem;">11 min</span>
+          </div>
+          <h3 style="font-size: var(--font-h4); margin: 0 0 var(--space-2) 0;">Pushing Hardware to the Edge</h3>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.5; margin-bottom: var(--space-4);">
+            Engineering dual-model speculative drafting for 2x decoding speed, isolating GPU driver segmentation faults in a native fork() sandbox, and streaming fault tolerance.
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-divider); padding-top: var(--space-3);">
+            <span class="badge">Hardware Tuning</span>
+            <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-accent); font-weight: 600;"><span aria-hidden="true">&rarr;</span> Read</span>
+          </div>
+        </a>
       </div>
 
       <div style="margin-top: var(--space-8); text-align: center;">
         <a href="/posts/ai_playground_series/" class="btn btn-secondary">
-          <span>Read All 6 Series Articles</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <span>Read All 6 Series Articles</span>
         </a>
       </div>
     </section>
@@ -289,59 +378,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section>
       <div class="card" style="text-align: center; padding: var(--space-12) var(--space-6);">
         <div style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);">
-          Connect & Collaborate
+          Connect &amp; Collaborate &middot; @DearDhruv
         </div>
         <h2 style="font-size: var(--font-h2); margin: var(--space-2) 0 var(--space-4) 0;">Get in Touch</h2>
         <p style="color: var(--color-text-secondary); max-width: 60ch; margin: 0 auto var(--space-8) auto; line-height: 1.6;">
-          Always glad to talk through native Android architecture, Kotlin Multiplatform systems, on-device AI runtimes, or upcoming technical speaking opportunities.
+          Find me as <strong style="color: var(--color-text-primary);">@DearDhruv</strong> across developer networks, or reach out directly. Always glad to talk through native Android architecture, Kotlin Multiplatform systems, on-device AI runtimes, or upcoming technical speaking opportunities.
         </p>
 
         <div class="layout-cluster" style="justify-content: center;">
           <a href="mailto:dhruv.time@gmail.com" class="btn btn-primary">
-            <span>Send Email</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect width="20" height="16" x="2" y="4" rx="2"></rect>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
             </svg>
+            <span>Send Email</span>
           </a>
           <a href="https://www.linkedin.com/in/DearDhruv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-            <span>LinkedIn</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
             </svg>
+            <span>LinkedIn</span>
           </a>
           <a href="https://github.com/DearDhruv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-            <span>GitHub</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
             </svg>
+            <span>GitHub</span>
           </a>
           <a href="https://x.com/DearDhruv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-            <span>X (Twitter)</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
+            <span>X (Twitter)</span>
           </a>
           <a href="https://instagram.com/deardhruv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-            <span>Instagram</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
             </svg>
+            <span>Instagram</span>
           </a>
           <a href="/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-            <span>Download Résumé (PDF)</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
+            <span>Download Résumé (PDF)</span>
           </a>
         </div>
 
         <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); align-items: center;">
           <span style="font-family: var(--font-mono); font-size: var(--font-metadata); color: var(--color-text-muted);">Also on:</span>
+          <a href="https://play.google.com/store/apps/developer?id=Dhruv+Patel" class="chip" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Google Play</a>
           <a href="https://about.me/deardhruv" class="chip" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">about.me</a>
           <a href="https://huggingface.co/deardhruv" class="chip" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Hugging Face</a>
           <a href="https://medium.com/@DearDhruv" class="chip" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Medium</a>

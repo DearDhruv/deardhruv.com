@@ -3,7 +3,7 @@
   "environment": {
     "node": "v26.13.0",
     "commit": "51c4aa9",
-    "hugo": "0.169.0"
+    "engine": "astro-v7"
   },
   "viewports": [
     {

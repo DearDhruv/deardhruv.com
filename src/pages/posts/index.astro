@@ -65,16 +65,22 @@ const seriesArticles = [
   containerClass="layout-container-wide"
 >
   <!-- FEATURED SERIES -->
-  <section class="card card-interactive" style="margin-bottom: var(--space-12); padding: var(--space-8);">
+  <section class="card" style="margin-bottom: var(--space-12); padding: var(--space-8);">
     <div style="display: flex; gap: var(--space-2); align-items: center; margin-bottom: var(--space-3); flex-wrap: wrap;">
       <span class="badge">Featured Series &bull; 6 Parts</span>
       <span class="chip">Complete</span>
     </div>
-    <h2 style="font-size: var(--font-h2); margin: 0 0 var(--space-2) 0;">
-      <a href="/posts/ai_playground_series/" style="text-decoration: none; color: inherit;">
-        Beyond the Model: Building a Private AI Playground
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-2);">
+      <h2 style="font-size: var(--font-h2); margin: 0;">
+        <a href="/posts/ai_playground_series/" style="text-decoration: none; color: inherit;">
+          Beyond the Model: Building a Private AI Playground
+        </a>
+      </h2>
+      <a href="/posts/ai_playground_series/" class="btn btn-secondary" style="white-space: nowrap;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        <span>Series Overview</span>
       </a>
-    </h2>
+    </div>
     <p style="color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-6);">
       An in-depth 6-part engineering series exploring what it really takes to build an offline-first, on-device multimodal AI workstation for Android and iOS using Kotlin Multiplatform, C++20 / NDK, llama.cpp, and Google LiteRT.
     </p>
@@ -83,10 +89,10 @@ const seriesArticles = [
       {seriesArticles.map(art => (
         <a
           href={`/posts/ai_playground_series/${art.slug}/`}
-          class="card"
+          class="card card-interactive"
           style="padding: var(--space-4); text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: var(--space-1); border-color: var(--color-border-subtle);"
         >
-          <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent);">{art.num}</span>
+          <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">{art.num}</span>
           <span style="font-weight: 600; font-size: var(--font-body);">{art.title}</span>
         </a>
       ))}
@@ -104,7 +110,7 @@ const seriesArticles = [
         <article class="card card-interactive" style="padding: var(--space-6);">
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2); flex-wrap: wrap; gap: var(--space-2);">
             <h3 style="font-size: var(--font-h3); margin: 0;">
-              <a href={`/posts/ai_playground_series/${art.slug}/`} style="text-decoration: none; color: inherit;">
+              <a href={`/posts/ai_playground_series/${art.slug}/`} class="card-stretched-link" style="text-decoration: none; color: inherit;">
                 {art.num} - {art.title}
               </a>
             </h3>

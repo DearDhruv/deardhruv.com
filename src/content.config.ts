@@ -6,6 +6,7 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.union([z.string(), z.date()]).optional(),
+    lastmod: z.union([z.string(), z.date()]).optional(),
     description: z.string().optional(),
     tags: z.array(z.string()).optional().default([]),
     series: z.array(z.string()).optional().default([]),
@@ -23,6 +24,7 @@ const other = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.union([z.string(), z.date()]).optional(),
+    lastmod: z.union([z.string(), z.date()]).optional(),
     description: z.string().optional(),
     tags: z.array(z.string()).optional().default([]),
     layout: z.string().optional(),
@@ -38,6 +40,7 @@ const pages = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.union([z.string(), z.date()]).optional(),
+    lastmod: z.union([z.string(), z.date()]).optional(),
     description: z.string().optional(),
     tags: z.array(z.string()).optional().default([]),
     aliases: z.array(z.string()).optional().default([]),

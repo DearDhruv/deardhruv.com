@@ -1,8 +1,4 @@
-/**
- * DearDhruv Layout & Surface System — Precision Technical Editorial
- * Standardized responsive layout primitives, container bounds, spacing, and surface elevations.
- * Compliant with WCAG 2.2 AA and DEARDHRUV_DESIGN_SYSTEM_AND_ASTRO_MIGRATION_ADDENDUM.md Section 5.5 & 5.6.
- */
+/* DearDhruv Layout & Surface Primitives (WCAG 2.2 AA) */
 
 :root {
 
@@ -24,8 +20,8 @@
 
   --width-reading: 72ch;
   --width-default: 1080px;
-  --width-wide: 1140px;
-  --page-gutter: clamp(1rem, 4vw, 2rem);
+  --width-wide: var(--container-wide);
+  --page-gutter: var(--gutter);
 
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -44,18 +40,27 @@
 }
 
 .layout-container {
-  width: min(100% - (var(--page-gutter) * 2), var(--width-default));
+  width: 100%;
+  max-width: var(--width-default);
   margin-inline: auto;
+  padding-inline: var(--gutter);
+  box-sizing: border-box;
 }
 
 .layout-container-wide {
-  width: min(100% - (var(--page-gutter) * 2), var(--width-wide));
+  width: 100%;
+  max-width: var(--container-wide);
   margin-inline: auto;
+  padding-inline: var(--gutter);
+  box-sizing: border-box;
 }
 
 .layout-container-reading {
-  width: min(100% - (var(--page-gutter) * 2), var(--width-reading));
+  width: 100%;
+  max-width: var(--width-reading);
   margin-inline: auto;
+  padding-inline: var(--gutter);
+  box-sizing: border-box;
 }
 
 .layout-section {

@@ -1,9 +1,40 @@
 import type { Context } from "https://edge.netlify.com";
 
+function prefersMarkdown(acceptHeader: string | null): boolean {
+  if (!acceptHeader || !acceptHeader.includes("text/markdown")) {
+    return false;
+  }
+
+  // Parse comma-separated MIME types with optional ;q= weights
+  const items = acceptHeader.split(",").map(part => {
+    const [mime, ...params] = part.trim().split(";");
+    let q = 1.0;
+    for (const p of params) {
+      const [k, v] = p.trim().split("=");
+      if (k === "q" && v) {
+        const parsed = parseFloat(v);
+        if (!isNaN(parsed)) q = parsed;
+      }
+    }
+    return { mime: mime.trim().toLowerCase(), q };
+  });
+
+  const markdownItem = items.find(i => i.mime === "text/markdown");
+  if (!markdownItem || markdownItem.q <= 0) return false;
+
+  // Check if text/html is explicitly preferred over text/markdown
+  const htmlItem = items.find(i => i.mime === "text/html");
+  if (htmlItem && htmlItem.q > markdownItem.q) {
+    return false; // Client explicitly prioritizes HTML
+  }
+
+  return true;
+}
+
 export default async (request: Request, context: Context) => {
   const accept = request.headers.get("accept");
 
-  if (accept && accept.includes("text/markdown")) {
+  if (prefersMarkdown(accept)) {
     const url = new URL(request.url);
 
     // Skip if it's already a file request (has extension) unless it's a directory
@@ -19,8 +50,11 @@ export default async (request: Request, context: Context) => {
       markdownPath += "/index.md";
     }
 
+    // Preserve search params on rewrite
+    const rewriteTarget = markdownPath + url.search;
+
     // Try to fetch the markdown version
-    const response = await context.rewrite(markdownPath);
+    const response = await context.rewrite(rewriteTarget);
 
     // If the rewrite was not successful (e.g. 404), return response without claiming agent readiness
     if (!response.ok) {

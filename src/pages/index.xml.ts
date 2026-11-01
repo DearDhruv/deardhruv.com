@@ -5,7 +5,7 @@ export const GET: APIRoute = async () => {
   const posts = await getCollection('posts');
   const articles = posts
     .filter((p) => !p.id.includes('_index'))
-    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+    .sort((a, b) => new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime());
 
   const SITE_URL = 'https://deardhruv.com';
 
@@ -26,12 +26,12 @@ export const GET: APIRoute = async () => {
   const xml = `<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dhruv Patel - Lead Android &amp; Multiplatform Engineer</title>
+    <title>Dhruv Patel (@DearDhruv) - Lead Android Engineer</title>
     <link>${SITE_URL}/</link>
-    <description>Recent engineering articles, system designs, and on-device AI runtime writeups by Dhruv Patel.</description>
+    <description>Recent engineering articles, system designs, and on-device AI runtime writeups by Dhruv Patel (@DearDhruv).</description>
     <language>en-us</language>
-    <managingEditor>dhruv.time@gmail.com (Dhruv Patel)</managingEditor>
-    <webMaster>dhruv.time@gmail.com (Dhruv Patel)</webMaster>
+    <managingEditor>dhruv.time@gmail.com (Dhruv Patel - @DearDhruv)</managingEditor>
+    <webMaster>dhruv.time@gmail.com (Dhruv Patel - @DearDhruv)</webMaster>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/index.xml" rel="self" type="application/rss+xml"/>
 ${articles.map((post) => {

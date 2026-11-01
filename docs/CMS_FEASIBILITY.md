@@ -39,7 +39,7 @@ This document records the architectural evaluation of Git-backed content authori
 1. **Local CLI (Recommended for long-form engineering articles):**
    ```bash
    node scripts/new-post.js "Article Title"
-   hugo server -D
+   npm run dev
    ```
 2. **Web / Mobile Authoring (When away from workstation):**
    - Press `.` in the GitHub repository or navigate to `https://github.dev/DearDhruv/deardhruv.com`

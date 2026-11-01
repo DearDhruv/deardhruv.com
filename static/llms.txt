@@ -1,6 +1,6 @@
 # Dhruv Patel (@DearDhruv)
 
-> Lead Android & Multiplatform Engineer with extensive production leadership building on-device AI runtimes, Kotlin Multiplatform systems, and high-performance native architectures. Director & Lead Engineer behind AI Playground and VelociHue.
+> Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building on-device AI runtimes, high-performance native architectures, and resilient hardware integrations. Director & Lead Engineer behind AI Playground and VelociHue.
 
 ## Primary Sections
 
@@ -11,7 +11,7 @@
 
 ## Featured Production Systems
 
-- [AI Playground](https://github.com/DearDhruv/Model-Playground): Offline-first, on-device multimodal AI workstation for Android and iOS. Built with Kotlin Multiplatform, Compose Multiplatform, C++20 JNI (llama.cpp v0.7.0), Google AI Edge LiteRT, and Apple MLX. Features dual-model Speculative Turbo decoding, native `fork()` crash isolation for Vulkan drivers, on-device image synthesis (Bonsai 4B), zero-dependency document parsing (25+ formats), and 100% offline activity ledger (`INV-OFFLINE-01`).
+- [AI Playground](https://github.com/DearDhruv/Model-Playground): Offline-first, on-device multimodal AI workstation for Android and iOS. Built with Kotlin Multiplatform (CMP 1.12), C++20 JNI (llama.cpp), Google AI Edge LiteRT (v2.3), and Apple MLX. Features dual-model Speculative Turbo decoding, native `fork()` crash isolation for Vulkan drivers, on-device image synthesis (Bonsai 4B), zero-dependency document parsing (25+ formats), and 100% offline activity ledger (`INV-OFFLINE-01`).
   - Google Play: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
   - GitHub: https://github.com/DearDhruv/Model-Playground
 - [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue): Fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV. Features a shared deterministic game loop, Cloud Firestore schema v5 sync with 3-way union merge, 29-achievement multi-tiered engine, and photo-sensitive accessibility mode.

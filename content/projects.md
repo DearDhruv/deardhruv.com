@@ -12,7 +12,7 @@ This page documents selected engineering projects and case studies. Each entry c
 
 **Summary:** A privacy-first mobile workstation that runs multimodal LLMs and diffusion models locally on phones without cloud dependencies.  
 **Role:** Director & Lead Engineer &middot; **Status:** Production (Google Play & GitHub)  
-**Stack:** Kotlin Multiplatform, Compose Multiplatform, Modern C++20 / NDK (JNI), llama.cpp v0.7.0, Google AI Edge LiteRT, Apple MLX, Vulkan / OpenCL / Metal, SQLDelight  
+**Stack:** Kotlin Multiplatform (CMP 1.12), Modern C++20 / NDK (JNI), llama.cpp, Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan / OpenCL / Metal, SQLDelight (v2.4)  
 
 ### The Problem
 Most AI applications depend entirely on cloud APIs. For users analyzing personal notes, proprietary code, or confidential spreadsheets, sending raw data to remote servers introduces serious privacy concerns, recurring subscription costs, and requires a continuous network connection. I built AI Playground to explore how far consumer phones could be pushed as self-contained, offline-first inference engines.
@@ -65,7 +65,7 @@ flowchart TD
 
 **Summary:** A fast-paced arcade action game engineered to prove that Kotlin Multiplatform and Compose Multiplatform can deliver fluid 60–120 FPS gameplay across phones, tablets, and TVs.  
 **Role:** Director & Lead Engineer &middot; **Status:** Production (Google Play)  
-**Stack:** Kotlin Multiplatform, Compose Multiplatform, Kotlin 2.4.0, Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad)  
+**Stack:** Kotlin Multiplatform (Kotlin 2.4, CMP 1.12), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad)  
 
 ### The Problem
 Cross-platform toolkits often struggle with consistent high-framerate rendering and low-latency input handling in timing-sensitive games. The objective of VelociHue was to build a commercial arcade title sharing 100% of game physics and progression logic while maintaining native-quality frame pacing across mobile and 10-foot television screens.

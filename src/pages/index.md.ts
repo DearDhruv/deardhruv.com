@@ -5,7 +5,7 @@ export const GET: APIRoute = async () => {
   const posts = await getCollection('posts');
   const articles = posts
     .filter((p) => !p.id.includes('_index'))
-    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+    .sort((a, b) => new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime());
 
   const postLinks = articles
     .map((post) => {
@@ -14,9 +14,9 @@ export const GET: APIRoute = async () => {
     })
     .join('\n\n');
 
-  const markdown = `# Dhruv Patel - Lead Android Engineer
+  const markdown = `# Dhruv Patel (@DearDhruv) - Lead Android Engineer
 
-Dhruv Patel - Lead Android & Multiplatform Engineer with extensive production leadership building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.
+Dhruv Patel (@DearDhruv) - Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building sophisticated mobile solutions, on-device AI runtimes, and high-performance native architectures.
 
 ## Latest Posts
 

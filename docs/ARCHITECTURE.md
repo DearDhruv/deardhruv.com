@@ -1,84 +1,77 @@
-# Hugo Layout and Dependency Architecture
+# DearDhruv Architecture & Implementation Specification
 
 **Project:** DearDhruv.com  
-**Engine:** Hugo v0.169.0+extended (target v0.169.0)  
-**Theme:** `hello-friend-ng` Git submodule @ `1a0a16f`  
+**Engine:** Astro v7 (Zero-runtime client hydration, Static MPA)  
+**Hosting & Edge:** Netlify with Netlify Edge Functions  
 
 ---
 
-## 1. Directory Structure & Layout Precedence
+## 1. Directory Structure & Modern Component Architecture
 
-Hugo utilizes a strict precedence lookup where files in the root `./layouts/` directory override matching files in `./themes/hello-friend-ng/layouts/`.
+The platform operates as a modern component-driven static site using Astro 5/7 and TypeScript. All legacy Hugo dependencies, Go template partials, and vendor theme submodules have been completely decommissioned.
 
 ```
 deardhruv.com/
-├── config.toml               # Site-wide settings, taxonomies, menu, outputs
-├── netlify.toml              # Build commands, Edge Functions, CSP headers, redirects
-├── assets/
-│   ├── css/
-│   │   └── custom.css        # Project-owned CSS custom properties, responsive styles
-│   └── js/
-│       └── main.js           # Project-owned JS enhancements
-├── layouts/                  # PROJECT OVERRIDES (Highest Precedence)
-│   ├── _default/
-│   │   ├── baseof.html       # (To be project-owned in Phase 4)
-│   │   ├── hero-page.html    # Profile layout for /about/ and /portfolio/
-│   │   ├── sitemap.html      # Visual tree layout for /sitemap/
-│   │   ├── single.html       # Default article / page layout
-│   │   └── _markup/          # Goldmark hooks (e.g. render-image.html)
-│   ├── partials/
-│   │   ├── head.html         # Meta tags, preconnects, CSS links, JSON-LD
-│   │   ├── header.html       # Header shell and brand
-│   │   ├── menu.html         # Responsive navigation menu
-│   │   ├── footer.html       # Footer with CC license & RSS link
-│   │   ├── hero.html         # Home / profile hero block
-│   │   └── javascript.html   # Bundle builder & WebMCP provider
-│   ├── posts/
-│   │   └── rss.xml           # Section RSS feed
-│   ├── index.html            # Homepage template
-│   ├── index.json            # JSON Feed generation
-│   ├── index.md              # Markdown negotiation representation
-│   └── sitemap.xml           # XML sitemap template
-├── content/                  # Markdown source content
-├── static/                   # Pure static files copied as-is to public/
+├── astro.config.mjs          # Astro engine configuration, markdown-remark plugins
+├── netlify.toml              # Netlify build command, headers, edge function routing
+├── package.json              # Zero runtime JS dependencies; devDependencies: astro, typescript
+├── tsconfig.json             # Strict TypeScript configuration
+├── content/                  # Markdown source collections with typed frontmatter
+│   ├── about.md              # Profile markdown
+│   ├── portfolio.md          # Flagship engineering systems
+│   ├── projects.md           # Technical case studies
+│   ├── posts/                # Technical articles and 6-part AI Playground series
+│   └── other/                # Privacy policies and legal agreements
+├── src/                      # Component-driven Astro implementation
+│   ├── components/           # Reusable UI primitives (SiteHeader, SiteFooter, Card, Badge, etc.)
+│   ├── layouts/              # Semantic base layouts (BaseLayout, ArticleLayout)
+│   ├── pages/                # File-based routes, machine endpoints, and legacy alias redirects
+│   └── content.config.ts     # Type-safe Content Collections schemas (Zod)
+├── static/                   # Pure static assets (copied to dist/ untouched)
+│   ├── css/                  # Precision Technical Editorial design system stylesheets
+│   │   ├── design-system.css # Standardized tokens, semantic palettes, a11y focus rings
+│   │   ├── typography.css    # Fluid clamp scales, zero-shift system-ui font stacks
+│   │   ├── layout.css        # Responsive container bounds, grid, stack, cluster primitives
+│   │   ├── components.css    # Accessible buttons, cards, badges, chips, skip-link
+│   │   └── nav.css           # Responsive navigation header, brand identity, drawers
+│   ├── js/                   # Micro-scripts (theme toggle, theme init; < 5 KB total)
+│   ├── images/               # Optimized WebP/JPEG avatars and diagrams
 │   ├── resume.pdf            # Professional résumé download
-│   ├── llms.txt              # Machine-readable context for AI models
+│   ├── llms.txt              # Machine-readable context for AI models (RFC standard)
+│   ├── llms-full.txt         # Full corpus export for AI assistants
 │   ├── auth.md               # API authentication specs
 │   └── .well-known/          # Discovery endpoints (MCP, OAuth, OIDC, api-catalog)
 ├── netlify/
 │   └── edge-functions/
 │       └── markdown-negotiation.ts  # Content-negotiation for Accept: text/markdown
-└── themes/hello-friend-ng/   # Upstream vendor theme submodule (UNMODIFIED)
+├── scripts/                  # Automated verification gates and continuous audit engine
+└── tests/                    # Automated regression, a11y, contrast, and SEO test suites
 ```
 
 ---
 
-## 2. Asset Pipeline & CSS/JS Compilation
+## 2. Design System & Asset Compilation Pipeline
 
-1. **SCSS Pipeline (`head.html`):**
-   - Resolves `scss/main.scss` via Hugo Pipes: `resources.Get "scss/main.scss" | toCSS (dict "outputStyle" "compressed") | fingerprint`.
-   - Generates `/main.min.[hash].css`.
+1. **Pure CSS Design System (< 45 KB Uncompressed Gate):**
+   - Stylesheets are served statically without heavy runtime bundlers or framework CSS overhead.
+   - Strictly enforced uncompressed budget ensures sub-millisecond CSS parse times.
+   - Native CSS custom properties handle instant dark/light/palette theme switching without layout recalculations.
 
-2. **Custom CSS Pipeline (`head.html`):**
-   - Config points to `customCSS = ["css/custom.css"]`.
-   - Processed via Hugo Pipes: `resources.Get "css/custom.css" | minify | fingerprint`.
-   - Generates `/css/custom.min.[hash].css`.
-   - Fallback to `/css/custom.css` direct link if resource pipeline is bypassed.
+2. **Zero-Framework Client Footprint (< 5 KB Gate):**
+   - Astro static output generates zero hydration bundles (`dist/_astro/` contains 0 client framework runtime JS).
+   - Micro-scripts (`theme-init.js` and `theme-toggle.js`) execute natively with zero external dependencies.
 
-3. **JavaScript Bundling (`javascript.html`):**
-   - Concatenates `js/main.js`, `js/menu.js`, and `js/prism.js`.
-   - Minifies and fingerprints as `/bundle.min.[hash].js` with `defer`.
-   - Injects WebMCP Model Context Protocol integration and Mermaid.js dynamic module loading when required.
+3. **Responsive Viewport Alignment:**
+   - `.site-header-inner`, `.layout-container-wide`, and `.site-footer-inner` share identical `max-width: var(--width-wide)` and `padding-inline: var(--page-gutter)` container bounds, ensuring horizontal alignment across all 6 target viewports (320px, 390px, 768px, 1024px, 1440px, and 1920px).
 
 ---
 
-## 3. Content Negotiation & AI Readiness
+## 3. Content Negotiation & Machine Protocols
 
-1. **Markdown Output Format:**
-   - Declared in `config.toml` under `[outputFormats.Markdown]`.
-   - Generates `/index.md` and page-level `.md` output files.
-2. **Netlify Edge Function:**
+1. **Static Markdown Generation:**
+   - Every canonical page generates a corresponding negotiated `index.md` representation at build time (`src/pages/*.md.ts`).
+2. **Netlify Edge Function (`markdown-negotiation.ts`):**
    - Intercepts requests on `/*`.
-   - If `Accept: text/markdown` is present, rewrites route to `/index.md` and appends `x-agent-ready: true` response header.
-3. **Discovery Documents:**
-   - `Link` headers advertise `/llms.txt`, `/.well-known/api-catalog`, `/.well-known/mcp.json`, and `/sitemap.xml`.
+   - When `Accept: text/markdown` is preferred (evaluated via RFC 9110 quality weights), the edge function rewrites to the `.md` representation and appends `x-agent-ready: true` and `Vary: Accept` response headers.
+3. **Machine Discovery Endpoints:**
+   - `Link` headers and HTML `rel` tags advertise `/llms.txt`, `/.well-known/api-catalog`, `/.well-known/mcp.json`, and `/sitemap.xml`.
