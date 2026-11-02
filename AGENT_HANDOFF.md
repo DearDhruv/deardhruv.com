@@ -1,6 +1,6 @@
 # Agent Handoff
 
-**Execution Plan:** `plans/DEARDHRUV_PAGESPEED_AND_LIGHTHOUSE_REMEDIATION_EXECUTION_PLAN.md`  
+**Operating Contract:** `AGENTS.md` & `GEMINI.md`  
 **Date:** November 2, 2026  
 **Target:** `https://deardhruv.com/`  
 
