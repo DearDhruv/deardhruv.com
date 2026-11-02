@@ -307,7 +307,7 @@ const aboutFaqSchema = normalizedPath === '/about/' ? {
       name: 'Who is Dhruv Patel (@DearDhruv)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 14+ years of experience in native mobile systems, Kotlin Multiplatform, on-device AI runtimes, and retail hardware integrations. He is the creator of AI Playground and VelociHue.'
+        text: 'Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 15+ years of experience in native mobile systems, Kotlin Multiplatform, on-device AI runtimes, and retail hardware integrations. He is the creator of AI Playground and VelociHue.'
       }
     },
     {
@@ -453,17 +453,20 @@ const jsonLdGraph = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph, null, 2)} />
 
   <!-- Design System Token Sheets -->
-  <link rel="stylesheet" href="/css/design-system.css">
-  <link rel="stylesheet" href="/css/typography.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/design-system.css?v=2.3.2">
+  <link rel="stylesheet" href="/css/typography.css?v=2.3.2">
+  <link rel="stylesheet" href="/css/layout.css?v=2.3.2">
+  <link rel="stylesheet" href="/css/components.css?v=2.3.2">
+  <link rel="stylesheet" href="/css/nav.css?v=2.3.2">
 
   <!-- Zero-flash synchronous theme and palette initialization -->
   <script is:inline>
     (() => {
       try {
-        const q = new URLSearchParams(window.location.search), ls = localStorage, doc = document.documentElement;
+        const q = new URLSearchParams(window.location.search);
+        let ls;
+        try { ls = window.localStorage; } catch (_) { ls = { getItem: () => null, setItem: () => {} }; }
+        const doc = document.documentElement;
         const t = q.get('theme'), p = q.get('palette'), sw = q.get('palette-switcher');
         const v = ['cyan', 'emerald', 'amber', 'indigo'];
         const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -499,17 +502,33 @@ const jsonLdGraph = {
 
   <PaletteSwitcher />
 
-  <script is:inline src="/js/theme-toggle.js"></script>
+  <script is:inline src="/js/theme-toggle.js?v=2.3.2"></script>
   <script is:inline>
     (() => {
       const menuBtn = document.getElementById('menu-toggle');
       const siteNav = document.getElementById('site-navigation');
       const backdrop = document.getElementById('site-nav-backdrop');
 
+      function updateNavPosition() {
+        if (!siteNav || !menuBtn || !siteNav.classList.contains('is-open')) return;
+        try {
+          const bR = menuBtn.getBoundingClientRect();
+          const headerInner = menuBtn.closest('.site-header-inner') || document.querySelector('.site-header-inner');
+          if (headerInner) {
+            const hR = headerInner.getBoundingClientRect();
+            const rightOffset = Math.round(hR.right - bR.right);
+            siteNav.style.right = rightOffset + 'px';
+            siteNav.style.left = 'auto';
+          }
+        } catch (_) {}
+      }
+
       function closeMenu() {
         if (!siteNav || !siteNav.classList.contains('is-open')) return;
         siteNav.classList.remove('is-open');
         document.body.classList.remove('menu-open');
+        siteNav.style.right = '';
+        siteNav.style.left = '';
         if (menuBtn) {
           menuBtn.setAttribute('aria-expanded', 'false');
           menuBtn.classList.remove('is-active');
@@ -524,6 +543,12 @@ const jsonLdGraph = {
         menuBtn.setAttribute('aria-expanded', String(open));
         menuBtn.classList.toggle('is-active', open);
         if (backdrop) backdrop.classList.toggle('is-open', open);
+        if (open) {
+          updateNavPosition();
+        } else {
+          siteNav.style.right = '';
+          siteNav.style.left = '';
+        }
       }
 
       if (menuBtn && siteNav) {
@@ -555,13 +580,38 @@ const jsonLdGraph = {
           link.addEventListener('click', closeMenu);
         });
 
-        // Close on Escape key
+        // Accessible keyboard navigation (Escape to close, Tab focus trapping)
         document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+          if (!siteNav.classList.contains('is-open')) return;
+          if (e.key === 'Escape') {
             closeMenu();
             menuBtn.focus();
+            return;
+          }
+          if (e.key === 'Tab') {
+            const focusables = [menuBtn, ...siteNav.querySelectorAll('a[href], button:not([disabled])')];
+            if (focusables.length === 0) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
           }
         });
+
+        function handleViewportResize() {
+          if (window.innerWidth > 1024) {
+            closeMenu();
+          } else {
+            updateNavPosition();
+          }
+        }
+        window.addEventListener('resize', handleViewportResize, { passive: true });
+        window.addEventListener('orientationchange', handleViewportResize, { passive: true });
       }
     })();
   </script>
@@ -576,7 +626,7 @@ const jsonLdGraph = {
       margin: var(--space-6, 1.5rem) 0;
       padding: var(--space-4, 1rem);
       background-color: var(--color-bg-surface-elevated, #18181b);
-      border: 1px solid var(--color-border, #27272a);
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-lg, 12px);
       box-sizing: border-box;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
@@ -595,6 +645,8 @@ const jsonLdGraph = {
       let rendering = false;
 
       function getMermaidConfig(isLight) {
+        const docStyle = window.getComputedStyle(document.documentElement);
+        const accent = docStyle.getPropertyValue('--color-accent').trim() || (isLight ? '#b45309' : '#fbbf24');
         return {
           startOnLoad: false,
           securityLevel: 'loose',
@@ -602,8 +654,8 @@ const jsonLdGraph = {
           themeVariables: isLight ? {
             primaryColor: '#f1f5f9',
             primaryTextColor: '#0f172a',
-            primaryBorderColor: '#d97706',
-            lineColor: '#d97706',
+            primaryBorderColor: accent,
+            lineColor: accent,
             secondaryColor: '#ffffff',
             tertiaryColor: '#f8fafc',
             fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
@@ -612,8 +664,8 @@ const jsonLdGraph = {
             background: '#0f172a',
             primaryColor: '#1e293b',
             primaryTextColor: '#f8fafc',
-            primaryBorderColor: '#f59e0b',
-            lineColor: '#f59e0b',
+            primaryBorderColor: accent,
+            lineColor: accent,
             secondaryColor: '#18181b',
             tertiaryColor: '#09090b',
             fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
@@ -680,13 +732,13 @@ const jsonLdGraph = {
 
       const observer = new MutationObserver((mutations) => {
         for (const m of mutations) {
-          if (m.type === 'attributes' && m.attributeName === 'data-theme') {
+          if (m.type === 'attributes' && (m.attributeName === 'data-theme' || m.attributeName === 'data-palette')) {
             renderMermaidCharts();
             break;
           }
         }
       });
-      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'data-palette'] });
     })();
   </script>
 </body>

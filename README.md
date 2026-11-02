@@ -41,17 +41,22 @@ npm test
 ```
 ├── content/              # Markdown articles, series, and legal pages
 ├── dist/                 # Generated static production output
-├── docs/                 # Architecture, audit reports, plans, and handoffs
+├── docs/                 # Architecture, audit reports, policies, and handoffs
 ├── netlify/              # Netlify edge functions (content negotiation)
-├── plans/                # Execution plans and audit specifications
-├── scripts/              # Helper scripts (verify-routes, audit engine, new-post)
+├── scripts/              # Verification, audit engine, and report generation scripts
 ├── src/                  # Astro layouts, pages, components, and content config
 ├── static/               # Static assets, styles, avatars, and discovery endpoints
 ├── tests/                # Automated regression, a11y, contrast, and SEO test suites
+├── AGENTS.md             # AI Agent Engineering Rules & Operating Contract
+├── GEMINI.md             # Gemini / Antigravity Agent Configuration & Rules
 ├── astro.config.mjs      # Astro configuration and markdown integrations
 ├── netlify.toml          # Netlify build, routing, headers, and security policies
 └── package.json          # Project scripts and dependencies
 ```
+
+## 🤖 AI Agent Engineering Rules
+
+All AI agents (Antigravity, Gemini, Claude, Cursor, Copilot) operating in this repository must read and adhere to [AGENTS.md](AGENTS.md) and [GEMINI.md](GEMINI.md). These files establish binding non-negotiable budgets (CSS < 45 KB, JS < 5 KB, 0 KB hydration runtime), verified work history (15+ years experience), touch containment rules, and mandatory quality verification gates.
 
 ## 🧪 Testing & Verification
 
@@ -59,7 +64,7 @@ npm test
 # Run all automated test suites
 npm test
 
-# Run permanent continuous audit engine (172 checks across 6 modules)
+# Run permanent continuous audit engine (176 checks across 6 modules)
 npm run audit
 
 # Run specialized audit modules
@@ -90,7 +95,7 @@ npm run new:post
 - **LinkedIn**: [Dhruv Patel](https://www.linkedin.com/in/deardhruv/)
 - **X (Twitter)**: [@DearDhruv](https://x.com/DearDhruv)
 - **Instagram**: [@DearDhruv](https://instagram.com/deardhruv)
-- **Google Play**: [Dhruv Patel Apps](https://play.google.com/store/apps/developer?id=Dhruv+Patel)
+- **Google Play**: [Dhruv Patel Apps](https://play.google.com/store/apps/dev?id=5177092407740817842)
 
 ## 📄 License
 

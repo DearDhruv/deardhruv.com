@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-11-02T14:15:00Z",
+  "build_target": "dist",
+  "categories": {
+    "css": {
+      "count": 5,
+      "uncompressed_bytes": 45781,
+      "budget_bytes": 46080,
+      "files": [
+        { "file": "css/components.css", "bytes": 19939 },
+        { "file": "css/nav.css", "bytes": 10204 },
+        { "file": "css/design-system.css", "bytes": 8199 },
+        { "file": "css/typography.css", "bytes": 4892 },
+        { "file": "css/layout.css", "bytes": 2547 }
+      ]
+    },
+    "javascript": {
+      "count": 2,
+      "uncompressed_bytes": 4617,
+      "budget_bytes": 5000,
+      "hydration_framework_bytes": 0,
+      "files": [
+        { "file": "js/theme-toggle.js", "bytes": 3610 },
+        { "file": "js/theme-init.js", "bytes": 1007 }
+      ]
+    },
+    "optimized_images": {
+      "count": 2,
+      "format": "webp",
+      "total_bytes": 9338,
+      "files": [
+        { "file": "_astro/pro_pic_small.CsLjXADs_Z1tD89j.webp", "bytes": 1038 },
+        { "file": "_astro/pro_pic_small.CsLjXADs_Z1uftFR.webp", "bytes": 8300 }
+      ]
+    },
+    "favicons_and_icons": {
+      "count": 8,
+      "total_bytes": 134317,
+      "files": [
+        { "file": "android-chrome-512x512.png", "bytes": 75938 },
+        { "file": "android-chrome-192x192.png", "bytes": 24360 },
+        { "file": "apple-touch-icon.png", "bytes": 22551 },
+        { "file": "favicon.ico", "bytes": 6710 },
+        { "file": "favicon-32x32.png", "bytes": 2065 },
+        { "file": "favicon.svg", "bytes": 1398 },
+        { "file": "favicon-16x16.png", "bytes": 840 },
+        { "file": "safari-pinned-tab.svg", "bytes": 455 }
+      ]
+    },
+    "html_pages": {
+      "count": 28,
+      "total_bytes": 1319149,
+      "average_page_bytes": 47112,
+      "largest_page": {
+        "file": "posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.html",
+        "bytes": 100486
+      }
+    },
+    "markdown_mirrors": {
+      "count": 24,
+      "total_bytes": 217962
+    },
+    "ai_and_manifests": {
+      "count": 17,
+      "total_bytes": 58474
+    },
+    "static_documents": {
+      "count": 1,
+      "file": "resume.pdf",
+      "bytes": 231673
+    }
+  }
+}

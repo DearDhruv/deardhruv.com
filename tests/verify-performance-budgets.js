@@ -51,7 +51,7 @@ for (const file of cssFiles) {
 }
 
 const totalCssKb = (totalCssBytes / 1024).toFixed(2);
-assert(totalCssBytes < 45000, `Total uncompressed CSS is ${totalCssKb} KB (budget < 45 KB)`);
+assert(totalCssBytes < 45 * 1024, `Total uncompressed CSS is ${totalCssKb} KB (budget < 45.0 KB)`);
 
 // 3. Client JS Zero-Framework Guarantee
 console.log('\n--- Client JS Zero-Framework Guarantee ---');

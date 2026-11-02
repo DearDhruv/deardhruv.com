@@ -6,6 +6,21 @@ import { fileURLToPath } from 'node:url';
 
 function rehypeDemoteHeadings() {
   return (tree) => {
+    let hasH1 = false;
+    function checkForH1(node) {
+      if (node && node.type === 'element' && node.tagName === 'h1') {
+        hasH1 = true;
+        return;
+      }
+      if (node && node.children && !hasH1) {
+        node.children.forEach(checkForH1);
+      }
+    }
+    checkForH1(tree);
+
+    // If markdown has no h1, its headings (h2+) already nest correctly under the layout h1
+    if (!hasH1) return;
+
     function visit(node) {
       if (node && node.type === 'element') {
         if (/^h[1-5]$/.test(node.tagName)) {
@@ -106,6 +121,9 @@ export default defineConfig({
   markdown: {
     processor: unified({
       rehypePlugins: [rehypeDemoteHeadings]
-    })
+    }),
+    shikiConfig: {
+      theme: 'css-variables'
+    }
   }
 });

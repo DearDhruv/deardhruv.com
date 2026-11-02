@@ -1,7 +1,7 @@
 id,claim,source,value,date_checked,confidence,conflict,owner_decision,approved_for_publication,notes
-FACT-01,current_role,Resume Page 1,Lead Android Engineer,2026-11-01,high,none,Dhruv Patel,true,"Lead Android Engineer with 14+ years experience"
+FACT-01,current_role,Resume Page 1,Lead Android Engineer,2026-11-01,high,none,Dhruv Patel,true,"Lead Android Engineer with 15+ years experience"
 FACT-02,current_employer,Resume Page 1,"IMPACT Commerce, Denmark",2026-11-01,high,SageStar snippet,Approved IMPACT Commerce,true,"Feb 2022 – Present; Denmark (hybrid) and remote"
-FACT-03,years_experience,Resume Page 1,14+ years,2026-11-01,high,none,Approved 14+ years,true,"Career started Feb 2010 (16 years total, 14+ professional)"
+FACT-03,years_experience,Resume Page 1,15+ years,2026-11-01,high,none,Approved 15+ years,true,"Career started Feb 2010 (16 years total, 15+ professional)"
 FACT-04,ai_playground_android,Resume Page 4,Live on Google Play,2026-11-01,high,none,Approved Live Play Store,true,"https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground"
 FACT-05,ai_playground_ios,Resume Page 4,"Ready, Planned to release soon",2026-11-01,high,none,Approved Planned / In Development,true,"Do not claim live on App Store until public URL live"
 FACT-06,velocihue_android,Resume Page 4,Live on Google Play,2026-11-01,high,none,Approved Live Play Store,true,"https://play.google.com/store/apps/details?id=com.deardhruv.velocihue"

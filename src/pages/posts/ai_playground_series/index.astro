@@ -75,7 +75,7 @@ const parts = [
             {p.readingTime}
           </span>
         </div>
-        <h2 style="font-size: var(--font-h3); margin: 0 0 var(--space-3) 0;">
+        <h2 class="card-title" style="font-size: var(--font-h3); margin: 0 0 var(--space-3) 0;">
           <a href={`/posts/ai_playground_series/${p.slug}/`} class="card-stretched-link" style="text-decoration: none; color: inherit;">
             {p.title}
           </a>
@@ -85,8 +85,8 @@ const parts = [
         </p>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--color-border-subtle); padding-top: var(--space-3);">
           <span style="font-family: var(--font-mono); font-size: var(--font-overline); color: var(--color-text-secondary);" set:html={p.topics} />
-          <a href={`/posts/ai_playground_series/${p.slug}/`} class="btn btn-secondary" style="padding: var(--space-2) var(--space-4); min-height: 36px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <a href={`/posts/ai_playground_series/${p.slug}/`} class="btn btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             <span>Read Part {p.part}</span>
           </a>
         </div>

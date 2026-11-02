@@ -1,0 +1,99 @@
+{
+  "version": "2.1.0",
+  "commit": "5629da6a2030365a5ec9cce28ff5974b6290660d",
+  "branch": "feature/portfolio",
+  "timestamp": "2026-11-02T13:31:05.006Z",
+  "status": "PASSED",
+  "metrics": {
+    "htmlDocuments": 28,
+    "legacyRoutesTracked": 39,
+    "cssTotalBytes": 45686,
+    "cssTotalKb": "44.62",
+    "clientJsBytes": 4617,
+    "clientJsKb": "4.51",
+    "clientHydrationBytes": 0,
+    "viewportsTested": 27,
+    "internalLinksCrawled": 873,
+    "brokenInternalLinks": 0
+  },
+  "suites": [
+    {
+      "id": "routes",
+      "name": "Legacy Routes Parity (39/39)",
+      "passed": true,
+      "command": "node scripts/verify-routes.js"
+    },
+    {
+      "id": "assets",
+      "name": "Static Assets & Discovery Files",
+      "passed": true,
+      "command": "node tests/verify-assets.js"
+    },
+    {
+      "id": "links",
+      "name": "Internal Link Crawler (873 links)",
+      "passed": true,
+      "command": "node tests/verify-links.js"
+    },
+    {
+      "id": "html",
+      "name": "W3C/WCAG HTML Standards Validator",
+      "passed": true,
+      "command": "node scripts/verify-html-standards.js"
+    },
+    {
+      "id": "viewport",
+      "name": "25-Breakpoint Viewport Matrix",
+      "passed": true,
+      "command": "node tests/verify-viewport-matrix.js"
+    },
+    {
+      "id": "visual",
+      "name": "Visual Hierarchy & Landmarks",
+      "passed": true,
+      "command": "node tests/verify-visual-regression.js"
+    },
+    {
+      "id": "contrast",
+      "name": "WCAG AA Design Token Contrast",
+      "passed": true,
+      "command": "node tests/verify-contrast.js"
+    },
+    {
+      "id": "a11y",
+      "name": "Accessibility Semantic Tokens",
+      "passed": true,
+      "command": "node tests/verify-a11y-tokens.js"
+    },
+    {
+      "id": "perf",
+      "name": "Performance Budgets & Zero Hydration",
+      "passed": true,
+      "command": "node tests/verify-performance-budgets.js"
+    },
+    {
+      "id": "edge",
+      "name": "Netlify Edge Markdown Negotiation",
+      "passed": true,
+      "command": "node tests/verify-edge-functions.js"
+    },
+    {
+      "id": "seo",
+      "name": "SEO, OpenGraph, JSON-LD & Bot Hygiene",
+      "passed": true,
+      "command": "node tests/verify-seo-metadata.js"
+    },
+    {
+      "id": "interactive",
+      "name": "Interactive Containers & Stretched Links",
+      "passed": true,
+      "command": "node tests/verify-interactive-containers.js"
+    },
+    {
+      "id": "employer",
+      "name": "Employer Attribution Separation",
+      "passed": true,
+      "command": "node tests/verify-employer-portfolio.js"
+    }
+  ]
+}

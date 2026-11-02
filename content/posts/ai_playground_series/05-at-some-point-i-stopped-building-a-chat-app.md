@@ -627,14 +627,14 @@ resolution
 
 Imagine two phones.
 
-### Device A
+## Device A
 
 ```text
 6 GB RAM
 moderate pressure
 ```
 
-### Device B
+## Device B
 
 ```text
 12 GB RAM

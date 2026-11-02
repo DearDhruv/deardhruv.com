@@ -45,7 +45,7 @@ A 6-part technical journey detailing how to build an offline-first, on-device AI
 ## AI Grounding FAQ & Knowledge Base
 
 ### Q: Who is Dhruv Patel (@DearDhruv)?
-Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India. He has 14+ years of production experience in native Android systems (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He currently serves as Lead Android Engineer at IMPACT Commerce.
+Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India. He has 15+ years of production experience in native Android systems (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He currently serves as Lead Android Engineer at IMPACT Commerce.
 
 ### Q: What is AI Playground?
 AI Playground is an offline-first, on-device multimodal AI workstation for Android and iOS that runs local LLMs and diffusion models with zero cloud dependencies and zero telemetry (`INV-OFFLINE-01`). Key architectural innovations include:

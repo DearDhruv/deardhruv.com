@@ -1,9 +1,53 @@
 # Dependency directories
 node_modules/
-.vscode/
-.idea/
-.DS_Store
+jspm_packages/
+.pnp
+.pnp.js
 
-# Astro output & cache
+# Production build outputs & caches
 dist/
 .astro/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.output/
+
+# IDE and Editor artifacts
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Netlify local dev
+.netlify/
+

@@ -1,7 +1,4 @@
-/* DearDhruv Layout & Surface Primitives (WCAG 2.2 AA) */
-
 :root {
-
   --space-0: 0;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -22,11 +19,6 @@
   --width-default: 1080px;
   --width-wide: var(--container-wide);
   --page-gutter: var(--gutter);
-
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-full: 9999px;
 }
 
 .layout-shell {
@@ -39,48 +31,26 @@
   flex: 1 0 auto;
 }
 
-.layout-container {
+:is(.layout-container, .layout-container-wide, .layout-container-reading) {
   width: 100%;
-  max-width: var(--width-default);
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-inline: max(var(--gutter), env(safe-area-inset-left)) max(var(--gutter), env(safe-area-inset-right));
   box-sizing: border-box;
 }
 
-.layout-container-wide {
-  width: 100%;
-  max-width: var(--container-wide);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  box-sizing: border-box;
-}
-
-.layout-container-reading {
-  width: 100%;
-  max-width: var(--width-reading);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  box-sizing: border-box;
-}
+.layout-container { max-width: var(--width-default); }
+.layout-container-wide { max-width: var(--container-wide); }
+.layout-container-reading { max-width: var(--width-reading); }
 
 .layout-section {
   padding-block: var(--section-gap);
   border-bottom: 1px solid var(--color-divider);
 }
 
-.layout-section:last-of-type {
-  border-bottom: none;
-}
+.layout-section:last-of-type { border-bottom: none; }
 
-.layout-stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.layout-stack > * + * {
-  margin-top: var(--stack-gap, var(--space-4));
-}
+.layout-stack { display: flex; flex-direction: column; justify-content: flex-start; }
+.layout-stack > * + * { margin-top: var(--stack-gap, var(--space-4)); }
 
 .layout-stack-sm > * + * { --stack-gap: var(--space-2); }
 .layout-stack-md > * + * { --stack-gap: var(--space-4); }
@@ -94,9 +64,7 @@
   align-items: center;
 }
 
-.layout-cluster-between {
-  justify-content: space-between;
-}
+.layout-cluster-between { justify-content: space-between; }
 
 .layout-grid-2 {
   display: grid;

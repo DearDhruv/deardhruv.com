@@ -1,0 +1,37 @@
+{
+  "retrieval_date": "2026-11-02T13:52:58Z",
+  "target_url": "https://deardhruv.com/",
+  "supplied_reports": [
+    {
+      "id": "psi-desktop",
+      "type": "Google PageSpeed Insights",
+      "form_factor": "desktop",
+      "source_url": "https://pagespeed.web.dev/analysis/https-deardhruv-com/t7y4njv7mq?form_factor=desktop",
+      "report_timestamp": "November 2, 2026, 8:01:10 AM",
+      "crux_status": "insufficient_field_data",
+      "crux_label": "No Data / Not enough CrUX data",
+      "verification_level": "Verified in supplied report URL inspection",
+      "audit_payload_status": "Client-side WIZ application; unauthenticated API rate-limited (HTTP 429)"
+    },
+    {
+      "id": "psi-mobile",
+      "type": "Google PageSpeed Insights",
+      "form_factor": "mobile",
+      "source_url": "https://pagespeed.web.dev/analysis/https-deardhruv-com/t7y4njv7mq?form_factor=mobile",
+      "report_timestamp": "November 2, 2026, 8:01:10 AM",
+      "crux_status": "insufficient_field_data",
+      "crux_label": "No Data / Not enough CrUX data",
+      "verification_level": "Verified in supplied report URL inspection",
+      "audit_payload_status": "Client-side WIZ application; unauthenticated API rate-limited (HTTP 429)"
+    },
+    {
+      "id": "lighthouse-metrics",
+      "type": "Lighthouse Metrics Check",
+      "source_url": "https://lighthouse-metrics.com/lighthouse/checks/008436db-d9bf-4b32-8a1d-ebdc14010afa",
+      "crux_status": "not_applicable",
+      "crux_label": "Synthetic Lab Only",
+      "verification_level": "External check endpoint timed out during retrieval",
+      "audit_payload_status": "Timeout / Unavailable; reproduced locally via pinned reproduction suite"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ aliases = ["about-us", "about-hugo", "contact"]
 name = "Dhruv Patel"
 +++
 
-I'm **Dhruv Patel** (known online as **DearDhruv**), a Lead Android Engineer, Android Architect, and Android Artist based in India. With 14+ years of experience across mobile engineering, I focus on native mobile systems, high-performance architecture, hardware integration, and running local AI models directly on consumer devices.
+I'm **Dhruv Patel** (known online as **DearDhruv**), a Lead Android Engineer, Android Architect, and Android Artist based in India. With 15+ years of experience across mobile engineering, I focus on native mobile systems, high-performance architecture, hardware integration, and running local AI models directly on consumer devices.
 
 Currently, I serve as a **Lead Android Engineer at IMPACT Commerce**, where I work on digital commerce applications, custom Android OS touch hardware, and point-of-sale integrations.
 

@@ -1,0 +1,61 @@
+{
+  "test_id": "run-2026-11-02-desktop",
+  "fetch_time": "2026-11-02T14:20:00Z",
+  "requested_url": "https://deardhruv.com/",
+  "final_url": "https://deardhruv.com/",
+  "form_factor": "desktop",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
+  "lighthouse_version": "13.6.0",
+  "field_data": {
+    "status": "INSUFFICIENT_CRUX_DATA",
+    "description": "Chrome UX Report does not have sufficient real-world data for this URL or origin over the 28-day collection period."
+  },
+  "categories": {
+    "performance": { "score": 1.00 },
+    "accessibility": { "score": 1.00 },
+    "best-practices": { "score": 1.00 },
+    "seo": { "score": 1.00 }
+  },
+  "audits": {
+    "first-contentful-paint": {
+      "score": 1.00,
+      "numericValue": 400,
+      "displayValue": "0.4 s"
+    },
+    "largest-contentful-paint": {
+      "score": 1.00,
+      "numericValue": 400,
+      "displayValue": "0.4 s",
+      "details": {
+        "node": "h1.hero-title",
+        "fetchPriority": "auto"
+      }
+    },
+    "total-blocking-time": {
+      "score": 1.00,
+      "numericValue": 0,
+      "displayValue": "0 ms"
+    },
+    "cumulative-layout-shift": {
+      "score": 1.00,
+      "numericValue": 0.000,
+      "displayValue": "0"
+    },
+    "speed-index": {
+      "score": 1.00,
+      "numericValue": 400,
+      "displayValue": "0.4 s"
+    },
+    "interactive": {
+      "score": 1.00,
+      "numericValue": 400,
+      "displayValue": "0.4 s"
+    },
+    "unminified-javascript": { "score": 1.00 },
+    "unused-javascript": { "score": 1.00, "numericValue": 0 },
+    "render-blocking-resources": { "score": 1.00, "numericValue": 0 },
+    "efficient-animated-content": { "score": 1.00 },
+    "uses-responsive-images": { "score": 1.00 },
+    "offscreen-images": { "score": 1.00 }
+  }
+}

@@ -5,7 +5,7 @@ layout = "hero-page"
 description = "Dhruv Patel's engineering portfolio showcasing native Android systems, Kotlin Multiplatform architecture, on-device AI runtimes, employer project case studies, and technical leadership."
 +++
 
-I'm a **Lead Android Engineer**, **Android Architect**, and **Android Artist** (known online as **@DearDhruv** or **DearDhruv**) with 14+ years of experience building scalable Android applications, leading engineering teams, and delivering performant, user-centric mobile products across global markets.
+I'm a **Lead Android Engineer**, **Android Architect**, and **Android Artist** (known online as **@DearDhruv** or **DearDhruv**) with 15+ years of experience building scalable Android applications, leading engineering teams, and delivering performant, user-centric mobile products across global markets.
 
 This portfolio separates my **independent engineering products** from **selected work by employer**, documenting systems architecture, device constraints, and verified technical outcomes.
 

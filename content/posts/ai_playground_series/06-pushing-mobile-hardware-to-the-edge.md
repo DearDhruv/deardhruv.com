@@ -83,7 +83,7 @@ The draft model runs at 40–60 tokens per second, quickly drafting a sequence o
 
 If the target agrees with 4 of the candidate tokens, we have advanced 4 tokens in the time it would normally take to generate just 1.5 tokens.
 
-### The Mobile Engineering Catch
+## The Mobile Engineering Catch
 
 On a server, speculative decoding is a matter of spinning up another GPU process. On a phone, it presents three severe hazards:
 
@@ -91,11 +91,11 @@ On a server, speculative decoding is a matter of spinning up another GPU process
 2. **Draft Context Bloat**: If the draft model allocates a standard 4096 or 8192 context buffer, unified memory spikes by hundreds of megabytes before a single token is drafted.
 3. **Draft Self-Pairing**: Accidentally pairing a model with itself or an incompatible tokenizer family creates infinite verification failures.
 
-### The Solution: ADR-202 Hardware Guardrails
+## The Solution: ADR-202 Hardware Guardrails
 
 In `llama_engine.cpp` and our Kotlin domain layer, we codified strict invariants:
 
-#### A. Dynamic Draft Context Capping
+### A. Dynamic Draft Context Capping
 We cap the draft model's context window and batch size strictly to minimum necessary bounds:
 
 ```cpp
@@ -104,7 +104,7 @@ uint32_t draft_n_ctx = std::min(2048u, llama_n_ctx(handle->target_context));
 uint32_t draft_n_batch = std::min(512u, llama_n_batch(handle->target_context));
 ```
 
-#### B. Hardware RAM Admission Tiers
+### B. Hardware RAM Admission Tiers
 We reject Speculative Turbo activation on devices with less than 6 GB RAM, and gate allowable draft sizes on 6–8 GB devices:
 
 ```kotlin
@@ -120,7 +120,7 @@ fun isSpeculativeTurboEligible(totalRamGb: Int, draftSizeBytes: Long): Boolean {
 }
 ```
 
-#### C. Proactive KV Cache Pre-Warming
+### C. Proactive KV Cache Pre-Warming
 When a chat thread loads, `KvCacheSessionManager` proactively pre-warms the session state so dual-model generation starts without thread-switch stutter.
 
 The result? On compatible devices, generation throughput jumps from **9–12 tok/s to 22–28 tok/s** for common conversational queries, while memory consumption remains safely within bounds.
@@ -139,7 +139,7 @@ Initially, bundling native GPU runtime libraries (`libggml-vulkan.so`, `libggml-
 
 Worse yet: GPU compute is not universal. Some budget chips have incomplete Vulkan SPIR-V implementations, and shipping monolithic GPU binaries penalizes users who only run CPU inference.
 
-### The Solution: Play Feature Delivery (`:gpu_engine`)
+## The Solution: Play Feature Delivery (`:gpu_engine`)
 
 We decomposed the engine into a modular dynamic feature module:
 
@@ -172,7 +172,7 @@ In standard Android user space, a native signal 11 inside your process **termina
 
 Even worse: on certain custom vendor builds, driver initialization doesn't crash-it enters an **uninterruptible deadlock**. A standard blocking `waitpid()` will hang the main thread indefinitely.
 
-### The Solution: Fork Isolation with a SIGKILL Watchdog (ADR-203)
+## The Solution: Fork Isolation with a SIGKILL Watchdog (ADR-203)
 
 To guarantee zero host crashes, we built an isolated hardware probe in `llama_engine.cpp`:
 
@@ -249,7 +249,7 @@ During those 30 seconds, real life happens:
 
 In naive chat implementations, the generation is lost completely. When the user reopens the app, the conversation shows a blank response or a frozen spinner.
 
-### The Solution: Periodic Mid-Stream Flushing (ADR-203, T-460)
+## The Solution: Periodic Mid-Stream Flushing (ADR-203, T-460)
 
 We introduced a streaming persistence coordinator in our MVI presentation architecture:
 

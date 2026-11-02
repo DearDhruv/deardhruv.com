@@ -107,16 +107,17 @@ Disallow: /
 Sitemap: https://deardhruv.com/sitemap.xml
 
 # LLM Metadata Endpoints
-llms: https://deardhruv.com/llms.txt
-llms-full: https://deardhruv.com/llms-full.txt
+# llms: https://deardhruv.com/llms.txt
+# llms-full: https://deardhruv.com/llms-full.txt
 
 # Content Signals Protocol
-Content-Signal: ai-train=yes
-Content-Signal: ai-inference=yes
-Content-Signal: ai-input=yes
-Content-Signal: search=yes
-Content-Signals: allow
-AI-Access: allow
-Training: allow
-Inference: allow
-Search: allow
+# Content-Signal: ai-train=yes
+# Content-Signal: ai-inference=yes
+# Content-Signal: ai-input=yes
+# Content-Signal: search=yes
+# Content-Signals: allow
+# AI-Access: allow
+# Training: allow
+# Inference: allow
+# Search: allow
+
