@@ -106,6 +106,9 @@ export default defineConfig({
   markdown: {
     processor: unified({
       rehypePlugins: [rehypeDemoteHeadings]
-    })
+    }),
+    shikiConfig: {
+      theme: 'css-variables'
+    }
   }
 });

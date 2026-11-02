@@ -23,6 +23,25 @@
   --tracking-normal: 0;
   --tracking-wide: 0.04em;
   --tracking-wider: 0.08em;
+
+  /* Shiki CSS variables theme tokens (dark default) */
+  --astro-code-background: var(--color-bg-code);
+  --astro-code-foreground: var(--color-text-primary);
+  --astro-code-token-comment: #8b949e;
+  --astro-code-token-keyword: #f97583;
+  --astro-code-token-function: #b392f0;
+  --astro-code-token-string: #9ecbff;
+  --astro-code-token-string-expression: #9ecbff;
+  --astro-code-token-constant: #79b8ff;
+}
+
+[data-theme="light"] {
+  --astro-code-token-comment: #57606a;
+  --astro-code-token-keyword: #b91c1c;
+  --astro-code-token-function: #6f42c1;
+  --astro-code-token-string: #032f62;
+  --astro-code-token-string-expression: #032f62;
+  --astro-code-token-constant: #005cc5;
 }
 
 h1, h2, h3, h4, .type-display, .type-h1, .type-h2, .type-h3, .type-h4 {
@@ -114,27 +133,41 @@ h1, h2, h3, h4, .type-display, .type-h1, .type-h2, .type-h3, .type-h4 {
   color: var(--color-text-accent);
 }
 
-.type-code-inline, p code, li code {
+.type-code-inline, :not(pre) > code {
   font-family: var(--font-mono);
-  font-size: var(--font-code);
+  font-size: 0.875em;
+  color: var(--color-text-primary);
   background-color: var(--color-bg-code);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-sm);
   padding: 0.15em 0.35em;
   vertical-align: baseline;
+  word-break: break-word;
 }
 
-.type-code-block, pre {
+.type-code-block, pre, .astro-code {
   font-family: var(--font-mono);
   font-size: var(--font-code);
   line-height: var(--line-height-code);
-  background-color: var(--color-bg-code);
+  background-color: var(--color-bg-code) !important;
+  color: var(--color-text-primary);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-md);
   padding: var(--space-4);
   overflow-x: auto;
   max-width: 100%;
   -webkit-overflow-scrolling: touch;
+  margin-block: var(--space-6);
+}
+
+pre code, .astro-code code {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: inherit;
 }
 
 .type-blockquote, blockquote {
@@ -143,7 +176,18 @@ h1, h2, h3, h4, .type-display, .type-h1, .type-h2, .type-h3, .type-h4 {
   font-style: italic;
   line-height: var(--line-height-lead);
   color: var(--color-text-secondary);
+  background-color: var(--color-bg-surface-elevated);
   border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   margin: var(--space-6) 0;
-  padding-left: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+}
+
+.type-blockquote p, blockquote p {
+  color: inherit;
+  margin-block: 0;
+}
+
+.type-blockquote p + p, blockquote p + p {
+  margin-top: var(--space-3);
 }

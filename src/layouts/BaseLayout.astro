@@ -623,7 +623,7 @@ const jsonLdGraph = {
       margin: var(--space-6, 1.5rem) 0;
       padding: var(--space-4, 1rem);
       background-color: var(--color-bg-surface-elevated, #18181b);
-      border: 1px solid var(--color-border, #27272a);
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-lg, 12px);
       box-sizing: border-box;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
@@ -642,6 +642,8 @@ const jsonLdGraph = {
       let rendering = false;
 
       function getMermaidConfig(isLight) {
+        const docStyle = window.getComputedStyle(document.documentElement);
+        const accent = docStyle.getPropertyValue('--color-accent').trim() || (isLight ? '#b45309' : '#fbbf24');
         return {
           startOnLoad: false,
           securityLevel: 'loose',
@@ -649,8 +651,8 @@ const jsonLdGraph = {
           themeVariables: isLight ? {
             primaryColor: '#f1f5f9',
             primaryTextColor: '#0f172a',
-            primaryBorderColor: '#d97706',
-            lineColor: '#d97706',
+            primaryBorderColor: accent,
+            lineColor: accent,
             secondaryColor: '#ffffff',
             tertiaryColor: '#f8fafc',
             fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
@@ -659,8 +661,8 @@ const jsonLdGraph = {
             background: '#0f172a',
             primaryColor: '#1e293b',
             primaryTextColor: '#f8fafc',
-            primaryBorderColor: '#f59e0b',
-            lineColor: '#f59e0b',
+            primaryBorderColor: accent,
+            lineColor: accent,
             secondaryColor: '#18181b',
             tertiaryColor: '#09090b',
             fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
@@ -727,13 +729,13 @@ const jsonLdGraph = {
 
       const observer = new MutationObserver((mutations) => {
         for (const m of mutations) {
-          if (m.type === 'attributes' && m.attributeName === 'data-theme') {
+          if (m.type === 'attributes' && (m.attributeName === 'data-theme' || m.attributeName === 'data-palette')) {
             renderMermaidCharts();
             break;
           }
         }
       });
-      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'data-palette'] });
     })();
   </script>
 </body>
