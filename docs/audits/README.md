@@ -19,4 +19,4 @@ All data in these reports is captured from real tool executions and code inspect
 ## Active Handoff & Implementation Tracking
 
 - **Active Audit Handoff:** [`GEMINI_AUDIT_HANDOFF.md`](./GEMINI_AUDIT_HANDOFF.md)
-- **Implementation Master Plan:** [`plans/DEARDHRUV_WEBSITE_AUDIT_AND_SEARCH_VISIBILITY_IMPLEMENTATION_PLAN.md`](../../plans/DEARDHRUV_WEBSITE_AUDIT_AND_SEARCH_VISIBILITY_IMPLEMENTATION_PLAN.md)
+- **Codified Operating Contract & Engineering Rules:** [`AGENTS.md`](../../AGENTS.md) (All execution plans completed and codified)
