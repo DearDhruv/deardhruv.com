@@ -123,6 +123,34 @@ assert(compCss.includes('.card-interactive:hover,') && compCss.includes('transfo
 assert(compCss.includes('span.chip:hover') && compCss.includes('transform: none;'), 'Static chips maintain dull hover without lift');
 assert(compCss.includes('a.chip:hover') && compCss.includes('transform: translateY(-1px);'), 'Clickable chips apply interactive hover lift');
 
+// 7. Touch Effect & Pseudo-Element Clipping Containment
+console.log('\n--- 7. Touch Effect & Pseudo-Element Clipping Containment ---');
+const navCss = fs.readFileSync(path.join(DIST_DIR, 'css', 'nav.css'), 'utf8');
+const dsCss = fs.readFileSync(path.join(DIST_DIR, 'css', 'design-system.css'), 'utf8');
+
+assert(compCss.includes('.btn {') && compCss.includes('overflow: hidden;'), 'Buttons enforce overflow: hidden to clip touch effects and ripples');
+assert(compCss.includes('.btn {') && compCss.includes('border-radius: var(--radius-md);'), 'Buttons enforce border-radius: var(--radius-md) bounding geometry');
+assert(compCss.includes('.btn {') && compCss.includes('isolation: isolate;'), 'Buttons create independent isolation: isolate stacking context');
+assert(compCss.includes('.card {') && compCss.includes('overflow: hidden;'), 'Card containers enforce overflow: hidden bounding geometry');
+assert(compCss.includes('.card {') && compCss.includes('border-radius: var(--radius-md);'), 'Card containers enforce border-radius: var(--radius-md) bounding geometry');
+assert(compCss.includes('.card {') && compCss.includes('isolation: isolate;'), 'Card containers enforce isolation: isolate to prevent transform clipping leaks');
+assert(compCss.includes('.card-interactive') && compCss.includes('overflow: hidden;'), 'Interactive cards enforce overflow: hidden to contain active states');
+assert(compCss.includes('.card::before') && compCss.includes('border-top-left-radius: inherit;'), 'Card top highlight pseudo-element clips cleanly to card border radius');
+assert(compCss.includes('.card-stretched-link') && compCss.includes('border-radius: var(--radius-md);'), 'Stretched link anchor sets explicit border radius matching card container');
+assert(compCss.includes('.card-stretched-link::after') && compCss.includes('border-radius: inherit;'), 'Stretched link overlay pseudo-element inherits border-radius to prevent bleed');
+assert(compCss.includes('.card-interactive:active') && compCss.includes('scale(0.995)'), 'Interactive cards provide contained tactile active touch feedback');
+assert(compCss.includes('.chip {') && compCss.includes('overflow: hidden;'), 'Chips enforce overflow: hidden to clip active touch feedback');
+assert(compCss.includes('.tag {') && compCss.includes('overflow: hidden;'), 'Tags enforce overflow: hidden to clip active touch feedback');
+assert(compCss.includes(':is(a.chip, a.tag):active'), 'Clickable chips and tags provide tactile active touch feedback');
+assert(compCss.includes('.badge {') && compCss.includes('overflow: hidden;'), 'Badges enforce overflow: hidden to clip boundaries');
+assert(compCss.includes('.palette-switcher-bar') && compCss.includes('overflow: hidden;'), 'Palette switcher capsule enforces overflow: hidden boundary clipping');
+assert(compCss.includes('.palette-footer-toggle') && compCss.includes('overflow: hidden;'), 'Palette footer toggle enforces overflow: hidden boundary clipping');
+assert(navCss.includes('.site-nav-link') && navCss.includes('overflow: hidden;'), 'Navigation links clip active tap states within rounded bounds');
+assert(navCss.includes('.header-icon-btn') && navCss.includes('overflow: hidden;'), 'Header action buttons enforce overflow: hidden boundary clipping');
+assert(navCss.includes('.header-icon-btn') && navCss.includes('scale(0.96)'), 'Header action buttons provide contained active touch feedback');
+assert(dsCss.includes('-webkit-tap-highlight-color: transparent;'), 'Design system suppresses unconstrained native mobile tap highlight rectangles');
+assert(compCss.includes('-webkit-tap-highlight-color: transparent;'), 'Components enforce transparent tap highlight on buttons, chips, and cards');
+
 console.log('\n========================================');
 console.log(`Interactive Container Audit: ${passed} passed, ${failed} failed.`);
 console.log('========================================\n');
@@ -130,5 +158,5 @@ console.log('========================================\n');
 if (failed > 0) {
   process.exit(1);
 } else {
-  console.log('🎉 100% interactive containers are fully clickable with sequential order maintained!\n');
+  console.log('🎉 100% interactive containers are fully clickable with sequential order and touch clipping maintained!\n');
 }

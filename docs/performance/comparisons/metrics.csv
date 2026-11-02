@@ -1,0 +1,18 @@
+category,metric,condition,target,post_remediation,unit,status
+Field,Real User Core Web Vitals,CrUX 28-day,Pass,Insufficient Data,rating,Field data unavailable
+Lab Mobile,Performance Score,Lighthouse Mobile,>=95,100,score,PASS
+Lab Mobile,First Contentful Paint (FCP),Lighthouse Mobile,<=1800,1500,ms,PASS
+Lab Mobile,Largest Contentful Paint (LCP),Lighthouse Mobile,<=2500,1500,ms,PASS
+Lab Mobile,Cumulative Layout Shift (CLS),Lighthouse Mobile,<=0.100,0.000,score,PASS
+Lab Mobile,Total Blocking Time (TBT),Lighthouse Mobile,<=200,0,ms,PASS
+Lab Mobile,Speed Index,Lighthouse Mobile,<=3400,1500,ms,PASS
+Lab Desktop,Performance Score,Lighthouse Desktop,>=95,100,score,PASS
+Lab Desktop,First Contentful Paint (FCP),Lighthouse Desktop,<=900,400,ms,PASS
+Lab Desktop,Largest Contentful Paint (LCP),Lighthouse Desktop,<=1200,400,ms,PASS
+Lab Desktop,Cumulative Layout Shift (CLS),Lighthouse Desktop,<=0.100,0.000,score,PASS
+Lab Desktop,Total Blocking Time (TBT),Lighthouse Desktop,<=50,0,ms,PASS
+Lab Desktop,Speed Index,Lighthouse Desktop,<=1300,400,ms,PASS
+Budget,Total Uncompressed CSS,Build Artifact,<46080,46015,bytes,PASS
+Budget,Total Client JS,Build Artifact,<5120,4617,bytes,PASS
+Budget,Client Hydration Bundles,Build Artifact,0,0,bytes,PASS
+Budget,Astro Static Build Time,CI / Local,<3500,992,ms,PASS

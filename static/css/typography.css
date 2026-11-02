@@ -1,4 +1,3 @@
-/* DearDhruv Typography System (WCAG 2.2 AA) */
 :root {
   --font-display: clamp(2.5rem, 5.5vw, 4.25rem);
   --font-h1: clamp(2rem, 4.2vw, 3.125rem);

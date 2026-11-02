@@ -1,14 +1,14 @@
 {
   "version": "2.1.0",
-  "commit": "de4490b5009d7bfbbb84c3ba6e6a811825776684",
+  "commit": "ef9c3634163e85b803d411e9a9c0687911750683",
   "branch": "feature/portfolio",
-  "timestamp": "2026-11-02T13:49:53.408Z",
+  "timestamp": "2026-11-02T15:00:49.606Z",
   "status": "PASSED",
   "metrics": {
     "htmlDocuments": 28,
     "legacyRoutesTracked": 39,
-    "cssTotalBytes": 45686,
-    "cssTotalKb": "44.62",
+    "cssTotalBytes": 46015,
+    "cssTotalKb": "44.94",
     "clientJsBytes": 4617,
     "clientJsKb": "4.51",
     "clientHydrationBytes": 0,

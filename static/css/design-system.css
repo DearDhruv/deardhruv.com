@@ -1,20 +1,7 @@
-/* DearDhruv Design System Tokens & Surfaces (WCAG 2.2 AA) */
-
 :root {
-
-  --primitive-slate-950: #090d16;
-  --primitive-slate-900: #0f172a;
-  --primitive-slate-850: #141e33;
-  --primitive-slate-700: #334155;
-  --primitive-slate-100: #f1f5f9;
-  --primitive-slate-50:  #f8fafc;
-  --primitive-white:     #ffffff;
-
-  --primitive-cyan-400:  #38bdf8;
   --primitive-cyan-700:  #0369a1;
 
   --primitive-emerald-500: #10b981;
-  --primitive-amber-400:   #fbbf24;
 
   --color-bg-page: #121110;
   --color-bg-surface: #1c1a17;
@@ -238,6 +225,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,

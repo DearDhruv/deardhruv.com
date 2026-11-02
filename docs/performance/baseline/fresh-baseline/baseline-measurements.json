@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-11-02T13:52:58Z",
+  "environment": {
+    "engine": "Astro v7.4.4",
+    "node": "v22.14.0",
+    "os": "macOS Darwin 25.1.0 arm64"
+  },
+  "routes": [
+    {
+      "route": "/",
+      "mobile": {
+        "fcp_ms": 780,
+        "lcp_ms": 1020,
+        "cls": 0.000,
+        "tbt_ms": 0,
+        "speed_index_ms": 850,
+        "transfer_kb": 185.2
+      },
+      "desktop": {
+        "fcp_ms": 290,
+        "lcp_ms": 440,
+        "cls": 0.000,
+        "tbt_ms": 0,
+        "speed_index_ms": 380,
+        "transfer_kb": 185.2
+      }
+    },
+    {
+      "route": "/about/",
+      "mobile": {
+        "fcp_ms": 740,
+        "lcp_ms": 950,
+        "cls": 0.000,
+        "tbt_ms": 0,
+        "speed_index_ms": 810,
+        "transfer_kb": 164.5
+      }
+    },
+    {
+      "route": "/portfolio/",
+      "mobile": {
+        "fcp_ms": 790,
+        "lcp_ms": 1080,
+        "cls": 0.000,
+        "tbt_ms": 0,
+        "speed_index_ms": 860,
+        "transfer_kb": 172.8
+      }
+    },
+    {
+      "route": "/projects/",
+      "mobile": {
+        "fcp_ms": 770,
+        "lcp_ms": 1050,
+        "cls": 0.000,
+        "tbt_ms": 0,
+        "speed_index_ms": 840,
+        "transfer_kb": 169.4
+      }
+    },
+    {
+      "route": "/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/",
+      "mobile": {
+        "fcp_ms": 820,
+        "lcp_ms": 1140,
+        "cls": 0.000,
+        "tbt_ms": 0,
+        "speed_index_ms": 890,
+        "transfer_kb": 198.6
+      }
+    }
+  ],
+  "resource_budgets": {
+    "total_css_uncompressed_bytes": 45781,
+    "total_css_budget_bytes": 46080,
+    "total_client_js_bytes": 4618,
+    "total_client_js_budget_bytes": 5000,
+    "framework_hydration_bundles": 0
+  }
+}
