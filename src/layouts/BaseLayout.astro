@@ -453,11 +453,11 @@ const jsonLdGraph = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph, null, 2)} />
 
   <!-- Design System Token Sheets -->
-  <link rel="stylesheet" href="/css/design-system.css">
-  <link rel="stylesheet" href="/css/typography.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/design-system.css?v=2.3.0">
+  <link rel="stylesheet" href="/css/typography.css?v=2.3.0">
+  <link rel="stylesheet" href="/css/layout.css?v=2.3.0">
+  <link rel="stylesheet" href="/css/components.css?v=2.3.0">
+  <link rel="stylesheet" href="/css/nav.css?v=2.3.0">
 
   <!-- Zero-flash synchronous theme and palette initialization -->
   <script is:inline>
@@ -499,17 +499,33 @@ const jsonLdGraph = {
 
   <PaletteSwitcher />
 
-  <script is:inline src="/js/theme-toggle.js"></script>
+  <script is:inline src="/js/theme-toggle.js?v=2.3.0"></script>
   <script is:inline>
     (() => {
       const menuBtn = document.getElementById('menu-toggle');
       const siteNav = document.getElementById('site-navigation');
       const backdrop = document.getElementById('site-nav-backdrop');
 
+      function updateNavPosition() {
+        if (!siteNav || !menuBtn || !siteNav.classList.contains('is-open')) return;
+        try {
+          const bR = menuBtn.getBoundingClientRect();
+          const headerInner = menuBtn.closest('.site-header-inner') || document.querySelector('.site-header-inner');
+          if (headerInner) {
+            const hR = headerInner.getBoundingClientRect();
+            const rightOffset = Math.round(hR.right - bR.right);
+            siteNav.style.right = rightOffset + 'px';
+            siteNav.style.left = 'auto';
+          }
+        } catch (_) {}
+      }
+
       function closeMenu() {
         if (!siteNav || !siteNav.classList.contains('is-open')) return;
         siteNav.classList.remove('is-open');
         document.body.classList.remove('menu-open');
+        siteNav.style.right = '';
+        siteNav.style.left = '';
         if (menuBtn) {
           menuBtn.setAttribute('aria-expanded', 'false');
           menuBtn.classList.remove('is-active');
@@ -524,6 +540,12 @@ const jsonLdGraph = {
         menuBtn.setAttribute('aria-expanded', String(open));
         menuBtn.classList.toggle('is-active', open);
         if (backdrop) backdrop.classList.toggle('is-open', open);
+        if (open) {
+          updateNavPosition();
+        } else {
+          siteNav.style.right = '';
+          siteNav.style.left = '';
+        }
       }
 
       if (menuBtn && siteNav) {
@@ -562,6 +584,10 @@ const jsonLdGraph = {
             menuBtn.focus();
           }
         });
+
+        // Reposition on resize or orientation change while open
+        window.addEventListener('resize', updateNavPosition, { passive: true });
+        window.addEventListener('orientationchange', updateNavPosition, { passive: true });
       }
     })();
   </script>
