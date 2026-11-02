@@ -64,7 +64,7 @@ NODE_VERSION = "24"
     Cross-Origin-Resource-Policy = "same-origin"
     X-Permitted-Cross-Domain-Policies = "none"
     Vary = "Accept"
-    Link = "</llms.txt>; rel=\"describedby\", </.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp.json>; rel=\"mcp\", </sitemap.xml>; rel=\"sitemap\", </about/>; rel=\"service-doc\", </auth.md>; rel=\"service-doc\""
+    Link = "</llms.txt>; rel=\"describedby\", </.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp.json>; rel=\"mcp\", </sitemap.xml>; rel=\"sitemap\", </about/>; rel=\"service-doc\", </auth.md>; rel=\"service-doc\", </css/design-system.css?v=2.3.2>; rel=\"preload\"; as=\"style\", </css/typography.css?v=2.3.2>; rel=\"preload\"; as=\"style\", </css/layout.css?v=2.3.2>; rel=\"preload\"; as=\"style\", </css/components.css?v=2.3.2>; rel=\"preload\"; as=\"style\", </css/nav.css?v=2.3.2>; rel=\"preload\"; as=\"style\""
 
 [[headers]]
   for = "/.well-known/api-catalog"
