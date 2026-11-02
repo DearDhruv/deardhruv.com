@@ -33,28 +33,32 @@ function prefersMarkdown(acceptHeader) {
     return false;
   }
 
-  const items = acceptHeader.split(",").map(part => {
-    const [mime, ...params] = part.trim().split(";");
-    let q = 1.0;
-    for (const p of params) {
-      const [k, v] = p.trim().split("=");
-      if (k === "q" && v) {
-        const parsed = parseFloat(v);
-        if (!isNaN(parsed)) q = parsed;
+  try {
+    const items = acceptHeader.split(",").map(part => {
+      const [mime, ...params] = part.trim().split(";");
+      let q = 1.0;
+      for (const p of params) {
+        const [k, v] = p.trim().split("=");
+        if (k && k.trim() === "q" && v) {
+          const parsed = parseFloat(v.trim());
+          if (!isNaN(parsed)) q = parsed;
+        }
       }
+      return { mime: mime.trim().toLowerCase(), q };
+    });
+
+    const markdownItem = items.find(i => i.mime === "text/markdown");
+    if (!markdownItem || markdownItem.q <= 0) return false;
+
+    const htmlItem = items.find(i => i.mime === "text/html");
+    if (htmlItem && htmlItem.q > markdownItem.q) {
+      return false;
     }
-    return { mime: mime.trim().toLowerCase(), q };
-  });
 
-  const markdownItem = items.find(i => i.mime === "text/markdown");
-  if (!markdownItem || markdownItem.q <= 0) return false;
-
-  const htmlItem = items.find(i => i.mime === "text/html");
-  if (htmlItem && htmlItem.q > markdownItem.q) {
+    return true;
+  } catch {
     return false;
   }
-
-  return true;
 }
 
 /**
@@ -67,6 +71,11 @@ function runEdgeFunction(urlStr, acceptHeader) {
 
   const [pathname, search] = urlStr.split("?");
   const searchStr = search ? `?${search}` : "";
+
+  // Defense-in-depth: Reject path traversal or null-byte probes
+  if (pathname.includes("..") || pathname.includes("\0")) {
+    return null;
+  }
 
   // Skip if it's already a file request (has extension) unless it's a directory
   if (pathname.includes(".") && !pathname.endsWith("/")) {
@@ -149,6 +158,17 @@ assert(
   missingReq && missingReq.status === 404 && !missingReq.headers["x-agent-ready"],
   "Non-existent route returns 404 without mutating headers or claiming x-agent-ready"
 );
+
+// Test Case 6: Defense-in-depth: path traversal and null bytes are rejected
+const traversalReq = runEdgeFunction("/../secret/", "text/markdown");
+assert(traversalReq === null, "Path traversal sequence rejected by edge function");
+
+const nullByteReq = runEdgeFunction("/about/\0malicious", "text/markdown");
+assert(nullByteReq === null, "Null byte sequence rejected by edge function");
+
+// Test Case 7: Defense-in-depth: malformed accept headers handle gracefully
+const malformedReq = runEdgeFunction("/about/", "text/markdown;invalid;q=;;=");
+assert(malformedReq !== null && malformedReq.status === 200, "Malformed Accept header parameter handled gracefully");
 
 // Test Case 4: Content negotiation for key canonical routes
 const testRoutes = [

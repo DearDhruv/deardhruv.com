@@ -46,12 +46,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **15+ Years Industry Experience Synchronization**: Updated total engineering experience claims across website copy, structured schemas, and AI discovery feeds.
 * **Social Profiles Hygiene**: Removed deprecated Dribbble references and updated Google Play Developer Console links to the canonical dev ID URL (`id=5177092407740817842`).
 
+### Security & Release Hardening
+* **Zero-Leak Content Security Policy (CSP)**: Purged legacy/unused origins (`google-analytics.com`, `googletagmanager.com`, `cdnjs.cloudflare.com`) aligning directly with zero-cookie/zero-telemetry guarantees. Added strict defense-in-depth directives: `object-src 'none'`, `base-uri 'self'`, `frame-ancestors 'none'`, `form-action 'self'`, and `upgrade-insecure-requests`.
+* **Cross-Origin Isolation & Defense**: Configured `Cross-Origin-Opener-Policy: same-origin`, `Cross-Origin-Resource-Policy: same-origin`, and `X-Permitted-Cross-Domain-Policies: none`.
+* **Edge Function Defense-in-Depth**: Hardened Netlify edge function with path traversal rejection (`..`), null byte filtering (`\0`), malformed Accept header resilience, and graceful rewrite failure fallbacks.
+* **Storage Sandbox Hardening**: Protected client theme initialization scripts (`theme-init.js`, `theme-toggle.js`, inline layout script) with defensive in-memory storage fallbacks for privacy-hardened browsers and sandboxed webviews where `localStorage` access throws.
+* **HTML Cache-Control & 404 Routing**: Enforced `Cache-Control: public, max-age=0, must-revalidate` for HTML routes and added explicit 404 fallback routing in `netlify.toml`.
+* **Repository Hygiene**: Hardened `.gitignore` against accidental credential leaks, environment files, logs, and operating system artifacts.
+
 ### Quality Assurance & Automated Testing
 * **100% Pass Rate Across 10 Test Suites (`npm test`)**:
   1. `test:routes`: 39/39 legacy route parity.
   2. `test:assets`: 7/7 static discovery assets.
   3. `test:links`: 873/873 internal links verified with 0 broken links.
-  4. `test:edge`: 77/77 Netlify edge function assertions.
+  4. `test:edge`: 80/80 Netlify edge function assertions (including path traversal and malformed header resilience).
   5. `test:contrast`: 14/14 WCAG 2.2 AA contrast pairs.
   6. `test:a11y`: Accessibility tokens and touch target compliance.
   7. `test:content`: Content loader validation across all Markdown files.
@@ -61,5 +69,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **Continuous Audit Engine (`scripts/audit.js`)**: 176/176 checks passed (100.0%) across Health, SEO, Accessibility, Performance, Security, and AI modules.
 * **Strict Performance Budgets**:
   * Uncompressed CSS: 44.64 KB (budget: < 45.0 KB).
-  * Client JavaScript: 4.36 KB (budget: < 5.0 KB).
-  * Maximum HTML Page: 98.02 KB (budget: < 100.0 KB).
+  * Client JavaScript: 4.51 KB (budget: < 5.0 KB).
+  * Maximum HTML Page: 98.13 KB (budget: < 100.0 KB).

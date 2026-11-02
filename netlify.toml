@@ -34,6 +34,11 @@ NODE_VERSION = "24"
   to = "/index.json"
   status = 200
 
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
 [[edge_functions]]
   path = "/*"
   function = "markdown-negotiation"
@@ -53,8 +58,11 @@ NODE_VERSION = "24"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://cdn.jsdelivr.net; font-src 'self' https://cdnjs.cloudflare.com;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests;"
     Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
+    X-Permitted-Cross-Domain-Policies = "none"
     Vary = "Accept"
     Link = "</llms.txt>; rel=\"describedby\", </.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/mcp.json>; rel=\"mcp\", </sitemap.xml>; rel=\"sitemap\", </about/>; rel=\"service-doc\", </auth.md>; rel=\"service-doc\""
 
@@ -112,6 +120,11 @@ NODE_VERSION = "24"
   for = "/resume.pdf"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.png"

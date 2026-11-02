@@ -463,7 +463,10 @@ const jsonLdGraph = {
   <script is:inline>
     (() => {
       try {
-        const q = new URLSearchParams(window.location.search), ls = localStorage, doc = document.documentElement;
+        const q = new URLSearchParams(window.location.search);
+        let ls;
+        try { ls = window.localStorage; } catch (_) { ls = { getItem: () => null, setItem: () => {} }; }
+        const doc = document.documentElement;
         const t = q.get('theme'), p = q.get('palette'), sw = q.get('palette-switcher');
         const v = ['cyan', 'emerald', 'amber', 'indigo'];
         const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
