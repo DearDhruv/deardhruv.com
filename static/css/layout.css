@@ -1,7 +1,6 @@
 /* DearDhruv Layout & Surface Primitives (WCAG 2.2 AA) */
 
 :root {
-
   --space-0: 0;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -22,11 +21,6 @@
   --width-default: 1080px;
   --width-wide: var(--container-wide);
   --page-gutter: var(--gutter);
-
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-full: 9999px;
 }
 
 .layout-shell {

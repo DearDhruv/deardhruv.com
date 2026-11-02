@@ -142,9 +142,6 @@
   box-sizing: border-box;
   cursor: pointer;
   border: 1px solid transparent;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
   transition: all var(--motion-duration-fast) var(--motion-ease);
 }
 
@@ -193,7 +190,7 @@
     border-color: var(--color-border-interactive);
     color: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 12px -2px var(--color-accent-subtle);
   }
 
   .btn-secondary:hover svg {
@@ -202,7 +199,8 @@
 
   .btn-ghost:hover {
     background-color: var(--color-bg-surface-hover);
-    color: var(--color-text-primary);
+    color: var(--color-accent);
+    border-color: var(--color-border-interactive);
     transform: translateY(-1px);
   }
 }
@@ -257,6 +255,7 @@
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  cursor: default;
   transition: all var(--motion-duration-normal) var(--motion-ease);
 }
 
@@ -267,8 +266,9 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
   opacity: 0;
+  box-shadow: 0 0 8px var(--color-accent-subtle);
   transition: opacity var(--motion-duration-normal) var(--motion-ease);
 }
 
@@ -278,13 +278,27 @@
   }
 }
 
-.card {
-  cursor: default;
-}
-
 .card-interactive,
 a.card {
   cursor: pointer;
+}
+
+.card-interactive h2,
+.card-interactive h3,
+.card-interactive h4,
+.card-interactive .card-title,
+.card-interactive .card-stretched-link,
+a.card h2,
+a.card h3,
+a.card h4,
+a.card .card-title {
+  transition: color var(--motion-duration-fast) var(--motion-ease);
+}
+
+.card-arrow {
+  display: inline-block;
+  transition: transform var(--motion-duration-fast) var(--motion-ease),
+              color var(--motion-duration-fast) var(--motion-ease);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -306,10 +320,22 @@ a.card {
     opacity: 1;
   }
 
+  .card-interactive:hover h2,
   .card-interactive:hover h3,
-  a.card:hover h3 {
+  .card-interactive:hover h4,
+  .card-interactive:hover .card-title,
+  .card-interactive:hover .card-stretched-link,
+  a.card:hover h2,
+  a.card:hover h3,
+  a.card:hover h4,
+  a.card:hover .card-title {
     color: var(--color-accent);
-    transition: color var(--motion-duration-fast) var(--motion-ease);
+  }
+
+  .card-interactive:hover .card-arrow,
+  a.card:hover .card-arrow {
+    transform: translateX(4px);
+    color: var(--color-accent);
   }
 }
 
@@ -355,10 +381,7 @@ a.card:focus-visible {
   animation: heroFadeIn 0.5s ease-out both;
 }
 
-.layout-grid-2 > :nth-child(1) { animation: heroFadeIn 0.45s ease-out 0.08s both; }
-.layout-grid-2 > :nth-child(2) { animation: heroFadeIn 0.45s ease-out 0.16s both; }
-.layout-grid-2 > :nth-child(3) { animation: heroFadeIn 0.45s ease-out 0.24s both; }
-.layout-grid-2 > :nth-child(4) { animation: heroFadeIn 0.45s ease-out 0.32s both; }
+.layout-grid-2 > * { animation: heroFadeIn 0.45s ease-out both; }
 
 @media (min-width: 640px) {
   .hero-panel {
@@ -516,9 +539,11 @@ a.card:focus-visible {
     border-color: var(--color-border-strong);
   }
   a.tag:hover {
-    color: var(--color-text-primary);
+    color: var(--color-accent);
     border-color: var(--color-border-interactive);
     background-color: var(--color-bg-surface-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
     cursor: pointer;
   }
 }
@@ -687,56 +712,6 @@ details[open] summary {
   margin-bottom: var(--space-3);
 }
 
-@keyframes scroll-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.js-scroll-animate .scroll-reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--motion-duration-slow) var(--motion-ease),
-              transform var(--motion-duration-slow) var(--motion-ease);
-  will-change: opacity, transform;
-}
-
-.js-scroll-animate .scroll-reveal.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.js-scroll-animate [data-delay="1"]{transition-delay:70ms}.js-scroll-animate [data-delay="2"]{transition-delay:140ms}.js-scroll-animate [data-delay="3"]{transition-delay:210ms}.js-scroll-animate [data-delay="4"]{transition-delay:280ms}
-
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .scroll-reveal,
-    .scroll-driven-auto {
-      animation: scroll-fade-up var(--motion-duration-slow) var(--motion-ease) both;
-      animation-timeline: view();
-      animation-range: entry 5% cover 25%;
-    }
-  }
-}
-
-/* Strict prefers-reduced-motion override */
-@media (prefers-reduced-motion: reduce) {
-  .scroll-reveal,
-  .scroll-driven-auto,
-  .js-scroll-animate .scroll-reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation: none !important;
-    will-change: auto !important;
-  }
-}
-
 .palette-switcher-bar {
   position: fixed;
   bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
@@ -797,7 +772,8 @@ body.menu-open .palette-switcher-bar {
 
 .palette-btn:hover {
   background-color: var(--color-bg-surface-hover);
-  color: var(--color-text-primary);
+  color: var(--color-accent);
+  border-color: var(--color-border-interactive);
 }
 
 .palette-btn[aria-pressed="true"] {
