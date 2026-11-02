@@ -28,7 +28,7 @@ Mobile devices have hard thermal ceilings, volatile memory budgets, and unpredic
 Cloud services are convenient, but keeping compute local protects privacy, eliminates round-trip network latency, and ensures applications work when connections fail. Running on-device LLMs (via `llama.cpp` and `LiteRT`) and keeping documents in a local SQLite database ensures personal data never leaves the device.
 
 ### 3. Share Logic Without Sacrificing Native Feel
-In Kotlin Multiplatform, I favor sharing deterministic core logic—state stores, persistence engines, and game loops—while respecting each platform's native strengths. In VelociHue, Android TV navigation uses native D-pad focus semantics, iOS runs a SwiftUI host, and Android uses Jetpack Compose, all sharing a single deterministic physics loop.
+In Kotlin Multiplatform, I favor sharing deterministic core logic (state stores, persistence engines, and game loops) while respecting each platform's native strengths. In VelociHue, Android TV navigation uses native D-pad focus semantics, iOS runs a SwiftUI host, and Android uses Jetpack Compose, all sharing a single deterministic physics loop.
 
 ### 4. Hardware Integration Demands Defensive State Machines
 Working with physical point-of-sale peripherals (receipt printers, payment terminals) taught me that hardware state can disconnect at any millisecond. I design hardware abstraction layers with isolated IPC channels, timeout fallbacks, and defensive reconnection state machines.
@@ -37,15 +37,15 @@ Working with physical point-of-sale peripherals (receipt printers, payment termi
 
 ## 💼 Career History & Experience
 
-- **Lead Android Engineer** — *IMPACT Commerce, Denmark & India* (Feb 2022 – Present)  
+- **Lead Android Engineer** - *IMPACT Commerce, Denmark & India* (Feb 2022 – Present)  
   Digital commerce mobile applications, custom Android OS research for touch screens, hardware integration (printers, payment terminals), and Jetpack Compose library architectures.
-- **Senior Android Developer** — *PLANOLY, USA & India* (Nov 2018 – Feb 2022)  
+- **Senior Android Developer** - *PLANOLY, USA & India* (Nov 2018 – Feb 2022)  
   Visual planner for Instagram/Pinterest and StoriesEdit template editor; video manipulation using FFmpeg; photo manipulation; MVVM architecture migration; performance optimization.
-- **Tech Lead | Android Engineer** — *Ashapura Softech Inc, India* (Jun 2016 – Oct 2018)  
+- **Tech Lead | Android Engineer** - *Ashapura Softech Inc, India* (Jun 2016 – Oct 2018)  
   Managed and directed teams of Android developers delivering client applications, led technical sessions, and coordinated with external stakeholders.
-- **Team Lead | Senior Android Developer** — *Russmedia Tech, India* (Feb 2014 – Jun 2016)  
+- **Team Lead | Senior Android Developer** - *Russmedia Tech, India* (Feb 2014 – Jun 2016)  
   Android application design, development, and support; authored UI Automator test scripts; managed developer squads and conducted code reviews.
-- **Junior Android Developer** — *Hidden Brains InfoTech, India* (Jan 2012 – Dec 2013)  
+- **Junior Android Developer** - *Hidden Brains InfoTech, India* (Jan 2012 – Dec 2013)  
   Android applications, 2D mobile game development, and early iPhone application development.
 - **Early Career Foundation & Training**  
   - *Orane Inc* (Oct 2011 – Dec 2011): Junior Android Developer (animations & games).  
@@ -65,14 +65,14 @@ Working with physical point-of-sale peripherals (receipt printers, payment termi
 
 I regularly speak with the developer community at Google Developer Group (GDG) DevFest conferences:
 
-- **Dec 2025:** *Jetpack Compose - Game changing features* — GDG DevFest Surat, India (Deep dive into Navigation 3, adaptive layouts, performance boosts, and Accessibility).
-- **Nov 2025:** *Android 17 Mandates Adaptive Layouts* — GDG DevFest Ahmedabad, India (Adaptive UI architecture using window size classes across phones, foldables, tablets, and desktop windows).
-- **Jun 2022:** *What's new in Android* — Gandhinagar, India (Technical overview of APIs and system capabilities introduced in Android 13).
-- **Sep 2019:** *UI & UX with ease for Mobile* — GDG DevFest Surat, India (Handling responsive UI and multi-screen UX across mobile devices).
-- **Sep 2019:** *UI & UX with ease for Mobile* — GDG DevFest Rajkot, India.
-- **Sep 2018:** *Android Jetpack – Slices* — GDG DevFest Ahmedabad, India (Architecture and implementation demo of Android Slices).
-- **Feb 2018:** *DialogFlow Chatbot Workshop* — Gujarat State Student Convention (GSSC 2018), Anand, India.
-- **Feb 2018:** *DialogFlow Workshop* — Rajkot, India.
+- **Dec 2025:** *Jetpack Compose - Game changing features* at GDG DevFest Surat, India (Deep dive into Navigation 3, adaptive layouts, performance boosts, and Accessibility).
+- **Nov 2025:** *Android 17 Mandates Adaptive Layouts* at GDG DevFest Ahmedabad, India (Adaptive UI architecture using window size classes across phones, foldables, tablets, and desktop windows).
+- **Jun 2022:** *What's new in Android* at Gandhinagar, India (Technical overview of APIs and system capabilities introduced in Android 13).
+- **Sep 2019:** *UI & UX with ease for Mobile* at GDG DevFest Surat, India (Handling responsive UI and multi-screen UX across mobile devices).
+- **Sep 2019:** *UI & UX with ease for Mobile* at GDG DevFest Rajkot, India.
+- **Sep 2018:** *Android Jetpack – Slices* at GDG DevFest Ahmedabad, India (Architecture and implementation demo of Android Slices).
+- **Feb 2018:** *DialogFlow Chatbot Workshop* at Gujarat State Student Convention (GSSC 2018), Anand, India.
+- **Feb 2018:** *DialogFlow Workshop* at Rajkot, India.
 
 ---
 

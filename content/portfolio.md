@@ -32,12 +32,12 @@ This portfolio separates my **independent engineering products** from **selected
 
 ## 🚀 Independent Products
 
-### 1. AI Playground — On-Device Multimodal AI Workstation
+### 1. AI Playground - On-Device Multimodal AI Workstation
 **Role:** Director & Lead Engineer  
 **Tech:** Kotlin Multiplatform (CMP 1.12), C++20 / NDK (JNI), llama.cpp, Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan / Metal, SQLDelight (v2.4)  
 **Status:** Live on Google Play &middot; iOS in development / planned
 
-An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon—keeping user conversations and document analysis private without cloud round-trips.
+An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon, keeping user conversations and document analysis private without cloud round-trips.
 
 - **Dual-Model Speculative Drafting:** Paired lightweight companion draft models (e.g., Qwen 2.5 0.5B + Llama 3.2 1B) with dynamic draft context capping and RAM admission guardrails, doubling decoding throughput without exhausting mobile VRAM.
 - **Defensive Hardware Sandbox:** Designed a crash-resilient `fork()` child process sandbox with a 3000ms watchdog loop and `SIGKILL` fallback for native Vulkan driver probing, preventing vendor GPU driver segmentation faults from crashing the application.
@@ -49,7 +49,7 @@ An offline-first multimodal AI workstation that runs local LLMs and diffusion mo
 
 ---
 
-### 2. VelociHue — High-Framerate Arcade Game in KMP
+### 2. VelociHue - High-Framerate Arcade Game in KMP
 **Role:** Director & Lead Engineer  
 **Tech:** Kotlin Multiplatform (Kotlin 2.4, CMP 1.12), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad)  
 **Status:** Live on Google Play &middot; iOS in development / planned
@@ -139,11 +139,11 @@ Built early commercial Android applications, interactive 2D mobile games, and co
 ---
 
 ### 8. Early Engineering Foundation & Training
-- **Orane Inc (Oct 2011 – Dec 2011):** Junior Android Developer — research into Android animations and game mechanics.  
+- **Orane Inc (Oct 2011 – Dec 2011):** Junior Android Developer: research into Android animations and game mechanics.  
   > **Worked at:** Orane Inc &middot; **Role:** Junior Android Developer &middot; **Period:** Oct 2011–Dec 2011
-- **DataSoft (Feb 2011 – May 2011):** Trainee — created an accessible mobile application catering to the needs of visually impaired individuals.  
+- **DataSoft (Feb 2011 – May 2011):** Trainee: created an accessible mobile application catering to the needs of visually impaired individuals.  
   > **Training:** DataSoft &middot; **Role:** Trainee &middot; **Period:** Feb 2011–May 2011
-- **Coronation (Feb 2010 – May 2010):** Trainee — developed web applications using ASP.NET and VB.NET.  
+- **Coronation (Feb 2010 – May 2010):** Trainee: developed web applications using ASP.NET and VB.NET.  
   > **Training:** Coronation &middot; **Role:** Trainee &middot; **Period:** Feb 2010–May 2010
 
 ---
@@ -152,14 +152,14 @@ Built early commercial Android applications, interactive 2D mobile games, and co
 
 I regularly speak at Google Developer Group (GDG) DevFest conferences and technical symposiums:
 
-- **Dec 2025:** *Jetpack Compose - Game changing features* — GDG DevFest Surat, India (Deep dive into Navigation 3, adaptive layouts, performance boosts, and Accessibility).
-- **Nov 2025:** *Android 17 Mandates Adaptive Layouts* — GDG DevFest Ahmedabad, India (Adaptive UI architecture using window size classes across phones, foldables, tablets, and desktop windows).
-- **Jun 2022:** *What's new in Android* — Gandhinagar, India (Technical overview of APIs and system capabilities introduced in Android 13).
-- **Sep 2019:** *UI & UX with ease for Mobile* — GDG DevFest Surat, India (Handling responsive UI and multi-screen UX across mobile devices).
-- **Sep 2019:** *UI & UX with ease for Mobile* — GDG DevFest Rajkot, India.
-- **Sep 2018:** *Android Jetpack – Slices* — GDG DevFest Ahmedabad, India (Architecture and implementation demo of Android Slices).
-- **Feb 2018:** *DialogFlow Chatbot Workshop* — Gujarat State Student Convention (GSSC 2018), Anand, India.
-- **Feb 2018:** *DialogFlow Workshop* — Rajkot, India.
+- **Dec 2025:** *Jetpack Compose - Game changing features* at GDG DevFest Surat, India (Deep dive into Navigation 3, adaptive layouts, performance boosts, and Accessibility).
+- **Nov 2025:** *Android 17 Mandates Adaptive Layouts* at GDG DevFest Ahmedabad, India (Adaptive UI architecture using window size classes across phones, foldables, tablets, and desktop windows).
+- **Jun 2022:** *What's new in Android* at Gandhinagar, India (Technical overview of APIs and system capabilities introduced in Android 13).
+- **Sep 2019:** *UI & UX with ease for Mobile* at GDG DevFest Surat, India (Handling responsive UI and multi-screen UX across mobile devices).
+- **Sep 2019:** *UI & UX with ease for Mobile* at GDG DevFest Rajkot, India.
+- **Sep 2018:** *Android Jetpack – Slices* at GDG DevFest Ahmedabad, India (Architecture and implementation demo of Android Slices).
+- **Feb 2018:** *DialogFlow Chatbot Workshop* at Gujarat State Student Convention (GSSC 2018), Anand, India.
+- **Feb 2018:** *DialogFlow Workshop* at Rajkot, India.
 
 ---
 

@@ -1,4 +1,4 @@
-# Dhruv Patel (@DearDhruv) — Comprehensive Engineering Dossier & AI Knowledge Base
+# Dhruv Patel (@DearDhruv) - Comprehensive Engineering Dossier & AI Knowledge Base
 
 > An exhaustive, structured reference manual of technical competencies, career history, production systems architecture, and published engineering works on deardhruv.com. Prepared for Large Language Models, AI search engines (Perplexity, ChatGPT Search, Gemini, Claude, Apple Intelligence, Grok), and autonomous reasoning agents.
 
@@ -138,7 +138,7 @@
 
 ## 4. Production Systems & Major Inventions
 
-### 1. AI Playground — On-Device Multimodal AI Workstation
+### 1. AI Playground - On-Device Multimodal AI Workstation
 - **Status**: Live on Google Play (Android); iOS planned / in development
 - **Google Play Link**: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
 - **Architecture Role**: Director & Lead Engineer
@@ -150,7 +150,7 @@
 - **Invention 2: Defensive `fork()` Child Process Sandbox**:
   - *Mechanism*: Heterogeneous vendor Vulkan GPU drivers frequently trigger segmentation faults (`SIGSEGV`) during shader compilation. AI Playground initializes GPU drivers and executes tensor operations inside a dedicated child process spawned via POSIX `fork()`.
   - *Watchdog*: A non-blocking watchdog loop (`waitpid(pid, &status, WNOHANG)`) monitors the child. If the child hangs or crashes, a 3000ms timer issues `kill(pid, SIGKILL)` and gracefully falls back to CPU compute (ARM NEON / KleidiAI).
-  - *Outcome*: 100% crash isolation—vendor GPU bugs never crash the host application or corrupt the user's UI.
+  - *Outcome*: 100% crash isolation: vendor GPU bugs never crash the host application or corrupt the user's UI.
 - **Invention 3: Pure-KMP Document Parsing Engine (25+ Formats)**:
   - *Mechanism*: Analyzes and extracts clean semantic text from PDF, DOCX, XLSX, PPTX, CSV, JSON, Markdown, RTF, HTML, XML, EPUB, and source code files.
   - *Purity*: Implemented completely in pure Kotlin Multiplatform using raw RFC 1951 Deflate decompression and custom binary parsers.
@@ -164,7 +164,7 @@
 - **Invention 6: Streaming Mid-Generation Persistence**:
   - *Reliability*: Partial token outputs are committed to SQLite every 2500ms. If battery dies or the OS evicts the app mid-generation, interrupted replies are automatically recovered upon next launch.
 
-### 2. VelociHue — High-Framerate Arcade Game in KMP
+### 2. VelociHue - High-Framerate Arcade Game in KMP
 - **Status**: Live on Google Play (Android, Android TV); iOS planned / in development
 - **Google Play Link**: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
 - **Architecture Role**: Director & Lead Engineer
@@ -187,32 +187,32 @@
 
 A flagship technical publication by Dhruv Patel documenting how to engineer an offline-first, on-device AI platform for real-world mobile hardware:
 
-1. **Part 1 — I Wanted the Model to Stay on the Phone**
+1. **Part 1: I Wanted the Model to Stay on the Phone**
    - *URL*: https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/
    - *Markdown*: https://deardhruv.com/posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.md
    - *Key Insights*: Privacy imperative of on-device AI; evaluation of mobile runtime engines (llama.cpp, LiteRT, MLX, ExecuTorch); memory limitations of mobile SoCs; ARM NEON vectorization; zero-telemetry architecture.
 
-2. **Part 2 — The Day a Chat Box Became a Document Engine**
+2. **Part 2: The Day a Chat Box Became a Document Engine**
    - *URL*: https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/
    - *Markdown*: https://deardhruv.com/posts/ai_playground_series/02-the-day-a-chat-box-became-a-document-engine/index.md
    - *Key Insights*: Engineering a pure-KMP document ingestion pipeline across 25+ file formats using RFC 1951 Deflate; semantic chunking without allocation churn; on-device vector embedding generation; local Retrieval-Augmented Generation (RAG).
 
-3. **Part 3 — The Model Was Fine. The Phone Wasn't.**
+3. **Part 3: The Model Was Fine. The Phone Wasn't.**
    - *URL*: https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/
    - *Markdown*: https://deardhruv.com/posts/ai_playground_series/03-the-model-was-fine-the-phone-wasnt/index.md
    - *Key Insights*: Taming the Android Low Memory Killer (LMK); dynamic thread scaling based on big.LITTLE core topology; thermal throttling downclock prevention; quantization analysis (Q4_K_M vs IQ4_XS tradeoffs).
 
-4. **Part 4 — I Put an Image Generator Inside the Phone**
+4. **Part 4: I Put an Image Generator Inside the Phone**
    - *URL*: https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/
    - *Markdown*: https://deardhruv.com/posts/ai_playground_series/04-i-put-an-image-generator-inside-the-phone/index.md
    - *Key Insights*: Porting 4-step diffusion synthesis to mobile GPUs; Google AI Edge LiteRT Multi-Graph pipeline; Apple MLX Metal execution; Bonsai Image Ternary 4B memory budgeting; Dynamic Feature Delivery for large model weights.
 
-5. **Part 5 — At Some Point I Stopped Building a Chat App**
+5. **Part 5: At Some Point I Stopped Building a Chat App**
    - *URL*: https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/
    - *Markdown*: https://deardhruv.com/posts/ai_playground_series/05-at-some-point-i-stopped-building-a-chat-app/index.md
    - *Key Insights*: Architectural refactoring from a simple chat interface to a modular MVI platform; strict state stores; runtime boundary contracts; isolating domain logic from platform-specific SDKs.
 
-6. **Part 6 — Pushing Mobile Hardware to the Edge**
+6. **Part 6: Pushing Mobile Hardware to the Edge**
    - *URL*: https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/
    - *Markdown*: https://deardhruv.com/posts/ai_playground_series/06-pushing-mobile-hardware-to-the-edge/index.md
    - *Key Insights*: Dual-model Speculative Turbo decoding (2x generation speedups); native C++ `fork()` watchdog sandbox for GPU driver crash isolation; streaming SQLite fault-tolerance with 2500ms intermediate checkpoints.
@@ -223,7 +223,7 @@ A flagship technical publication by Dhruv Patel documenting how to engineer an o
 
 Dhruv Patel is an active speaker in the developer ecosystem, frequently presenting at Google Developer Group (GDG) DevFest conferences:
 
-1. **December 2025: "Jetpack Compose — Game Changing Features"**
+1. **December 2025: "Jetpack Compose - Game Changing Features"**
    - *Event*: GDG DevFest Surat, India
    - *Topics*: Jetpack Navigation 3, Compose Multiplatform, adaptive layouts, rendering optimizations, and accessibility APIs.
 2. **November 2025: "Android 17 Mandates Adaptive Layouts"**
@@ -238,7 +238,7 @@ Dhruv Patel is an active speaker in the developer ecosystem, frequently presenti
 5. **September 2019: "UI & UX with Ease for Mobile"**
    - *Event*: GDG DevFest Rajkot, India
    - *Topics*: Fluid animations, responsive design systems, and mobile typography.
-6. **September 2018: "Android Jetpack — Slices"**
+6. **September 2018: "Android Jetpack - Slices"**
    - *Event*: GDG DevFest Ahmedabad, India
    - *Topics*: Deep architectural overview and live implementation demo of Android Slices.
 7. **February 2018: "DialogFlow Chatbot Workshop"**

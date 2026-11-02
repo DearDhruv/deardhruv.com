@@ -66,7 +66,7 @@ The personal engineering notebook and portfolio hosted at `deardhruv.com` is com
 
 ## Data Subject Rights & Contact
 
-Under global privacy frameworks—including the **General Data Protection Regulation (GDPR)**, the **California Consumer Privacy Act (CCPA / CPRA)**, and applicable regional privacy laws—you have rights regarding your personal information:
+Under global privacy frameworks, including the **General Data Protection Regulation (GDPR)**, the **California Consumer Privacy Act (CCPA / CPRA)**, and applicable regional privacy laws, you have rights regarding your personal information:
 
 * **Right to Access & Portability:** Request confirmation and details of any personal information collected.
 * **Right to Rectification & Erasure:** Request correction or permanent deletion of your data.

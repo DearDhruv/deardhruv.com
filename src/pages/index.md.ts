@@ -15,7 +15,7 @@ export const GET: APIRoute = async () => {
     })
     .join('\n\n');
 
-  const markdown = `# Dhruv Patel (@DearDhruv) — Lead Android Engineer & Systems Architect
+  const markdown = `# Dhruv Patel (@DearDhruv) - Lead Android Engineer & Systems Architect
 
 > Lead Android Engineer, Android Architect, and Android Artist crafting high-performance native architectures, on-device AI runtimes, and low-level hardware interfaces. Director & Lead Engineer behind AI Playground and VelociHue.
 
@@ -53,7 +53,7 @@ export const GET: APIRoute = async () => {
 
 ## Featured Production Systems
 
-### 1. AI Playground — On-Device Multimodal AI Workstation
+### 1. AI Playground - On-Device Multimodal AI Workstation
 - **Google Play**: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
 - **Stack**: Kotlin Multiplatform (CMP 1.12), C++20 / NDK (JNI), llama.cpp, Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan / Metal, SQLDelight (v2.4)
 - **Key Inventions & Innovations**:
@@ -63,7 +63,7 @@ export const GET: APIRoute = async () => {
   - **On-Device Diffusion**: Synthesizes 4-step diffusion images on mobile silicon using Google LiteRT Multi-Graph runtime and Bonsai Image Ternary 4B.
   - **100% Offline Activity Ledger**: Local analytics ledger (SQLDelight v10) tracking usage milestones with strictly zero external network calls (\`INV-OFFLINE-01\`).
 
-### 2. VelociHue — High-Framerate Arcade Game in KMP
+### 2. VelociHue - High-Framerate Arcade Game in KMP
 - **Google Play**: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
 - **Stack**: Kotlin Multiplatform (Kotlin 2.4, CMP 1.12), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad)
 - **Key Innovations**:
@@ -79,29 +79,29 @@ export const GET: APIRoute = async () => {
 
 ## Professional Career & Employer Timeline
 
-- **IMPACT Commerce** (Feb 2022–Present) — *Lead Android Engineer* (Denmark & India)
+- **IMPACT Commerce** (Feb 2022–Present): *Lead Android Engineer* (Denmark & India)
   - Research and architecture for custom Android OS touch displays and retail kiosks.
   - Hardware Abstraction Layer (HAL) connecting checkout terminals and thermal receipt printers over isolated IPC.
   - Multi-tier offline caching for continuous catalog browsing and cart persistence.
-- **PLANOLY** (Nov 2018–Feb 2022) — *Senior Android Developer* (USA & India)
+- **PLANOLY** (Nov 2018–Feb 2022): *Senior Android Developer* (USA & India)
   - Core features for PLANOLY Visual Planner (millions of Instagram/Pinterest creators).
   - StoriesEdit high-fidelity canvas template editor for multi-layer visual design.
   - Native video processing pipelines using FFmpeg for transcoding, filtering, and trimming.
-- **Ashapura Softech Inc** (Jun 2016–Oct 2018) — *Tech Lead | Android Engineer* (India)
+- **Ashapura Softech Inc** (Jun 2016–Oct 2018): *Tech Lead | Android Engineer* (India)
   - Team leadership for client mobile applications, architectural governance, REST contracts.
-- **Russmedia Tech** (Feb 2014–Jun 2016) — *Team Lead | Senior Android Developer* (India)
+- **Russmedia Tech** (Feb 2014–Jun 2016): *Team Lead | Senior Android Developer* (India)
   - European digital publishing and classifieds platforms; authored UI Automator automated testing suites.
-- **Hidden Brains InfoTech** (Jan 2012–Dec 2013) — *Junior Android Developer* (India)
+- **Hidden Brains InfoTech** (Jan 2012–Dec 2013): *Junior Android Developer* (India)
   - Native commercial applications and 2D mobile arcade games.
 
 ## Developer Conference Talks & Speaking Engagements
 
-- **Dec 2025**: *Jetpack Compose - Game changing features* — GDG DevFest Surat (Navigation 3, adaptive layouts, performance, accessibility).
-- **Nov 2025**: *Android 17 Mandates Adaptive Layouts* — GDG DevFest Ahmedabad (Window size classes, foldables, tablets, desktop windows).
-- **Jun 2022**: *What's new in Android* — Gandhinagar (Android 13 APIs & runtime capabilities).
-- **Sep 2019**: *UI & UX with ease for Mobile* — GDG DevFest Surat & Rajkot (Responsive layout architectures).
-- **Sep 2018**: *Android Jetpack – Slices* — GDG DevFest Ahmedabad (Architecture & live implementation).
-- **Feb 2018**: *DialogFlow Chatbot Workshops* — Anand & Rajkot (Conversational UI design).
+- **Dec 2025**: *Jetpack Compose - Game changing features* at GDG DevFest Surat (Navigation 3, adaptive layouts, performance, accessibility).
+- **Nov 2025**: *Android 17 Mandates Adaptive Layouts* at GDG DevFest Ahmedabad (Window size classes, foldables, tablets, desktop windows).
+- **Jun 2022**: *What's new in Android* at Gandhinagar (Android 13 APIs & runtime capabilities).
+- **Sep 2019**: *UI & UX with ease for Mobile* at GDG DevFest Surat & Rajkot (Responsive layout architectures).
+- **Sep 2018**: *Android Jetpack – Slices* at GDG DevFest Ahmedabad (Architecture & live implementation).
+- **Feb 2018**: *DialogFlow Chatbot Workshops* at Anand & Rajkot (Conversational UI design).
 
 ## Education & Honors
 
