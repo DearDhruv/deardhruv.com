@@ -57,6 +57,36 @@ const projectSchemas = [
       'Native Android TV support with D-pad navigation',
       'Reduced-motion and photo-sensitive safety mode'
     ]
+  },
+  {
+    '@type': 'FAQPage',
+    '@id': 'https://deardhruv.com/projects/#faq',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What architectural innovations power AI Playground?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'AI Playground operates 100% offline without cloud telemetry. Innovations include dual-model Speculative Turbo decoding (2x generation speedups), a defensive fork() child process sandbox that prevents vendor Vulkan GPU segmentation faults from crashing the app, pure-KMP document ingestion across 25+ formats using RFC 1951 Deflate, and on-device diffusion image synthesis.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How does VelociHue sustain 60-120 FPS across platforms?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'VelociHue uses Kotlin Multiplatform and Compose Multiplatform with a shared deterministic physics loop that runs at 60 to 120 FPS across Android, Android TV, and iOS. Player progression syncs across devices using Cloud Firestore schema v5 with a 3-way union merge strategy.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What mobile systems engineering principles are featured in these projects?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Key principles include local-first compute to protect user privacy, defensive state machines for hardware peripherals, memory guardrails to withstand the Android Low Memory Killer (LMK), and sharing core business logic across platforms while preserving native platform UX.'
+        }
+      }
+    ]
   }
 ];
 ---

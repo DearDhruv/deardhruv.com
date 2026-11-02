@@ -14,6 +14,8 @@ interface Props {
   modifiedTime?: string;
   author?: string;
   tags?: string[];
+  readingTime?: string;
+  wordCount?: number;
   noindex?: boolean;
   breadcrumbs?: Array<{ name: string; url: string }>;
   schema?: Record<string, any> | Record<string, any>[];
@@ -30,6 +32,8 @@ const {
   modifiedTime,
   author = "Dhruv Patel (@DearDhruv)",
   tags = [],
+  readingTime,
+  wordCount,
   noindex = false,
   breadcrumbs,
   schema
@@ -216,6 +220,17 @@ if (ogType === 'article') {
     image: resolvedOgImage,
     datePublished: publishedTime || '2026-10-05T10:00:00+05:30',
     dateModified: modifiedTime || publishedTime || '2026-10-21T15:30:00+05:30',
+    timeRequired: readingTime ? `PT${parseInt(readingTime) || 5}M` : 'PT5M',
+    ...(wordCount ? { wordCount } : {}),
+    about: [
+      { '@type': 'Thing', name: 'Kotlin Multiplatform', url: 'https://kotlinlang.org/docs/multiplatform.html' },
+      { '@type': 'Thing', name: 'On-Device AI', url: 'https://en.wikipedia.org/wiki/Edge_computing' },
+      { '@type': 'Thing', name: 'Android Architecture', url: 'https://developer.android.com/topic/architecture' },
+      { '@type': 'Thing', name: 'llama.cpp', url: 'https://github.com/ggerganov/llama.cpp' }
+    ],
+    isAccessibleForFree: 'True',
+    copyrightHolder: { '@id': `${siteOrigin}/#person` },
+    copyrightYear: 2026,
     keywords: tags,
     articleSection: 'Mobile Systems & On-Device AI',
     proficiencyLevel: 'Expert',
@@ -420,6 +435,8 @@ const jsonLdGraph = {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@DearDhruv">
   <meta name="twitter:creator" content="@DearDhruv">
+  <meta name="twitter:domain" content="deardhruv.com">
+  <meta name="twitter:url" content={canonical}>
   <meta name="twitter:title" content={formattedTitle}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={resolvedOgImage}>
@@ -436,6 +453,7 @@ const jsonLdGraph = {
   <meta name="theme-color" content="#f59e0b">
 
   <!-- AI Crawling, Agent Protocols & Machine-Readable Feeds -->
+  <meta name="content-signal" content="search=yes, ai-train=yes, ai-inference=yes">
   <link rel="describedby" href="/llms.txt" type="text/markdown">
   <link rel="help" href="/llms-full.txt" type="text/markdown">
   <link rel="mcp" href="/.well-known/mcp.json" type="application/json">

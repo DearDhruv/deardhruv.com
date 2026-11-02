@@ -1,5 +1,6 @@
 +++
 title = "About Dhruv Patel"
+description = "About Dhruv Patel (@DearDhruv): Lead Android Engineer and Architect with 15+ years building native systems, on-device AI, and Kotlin Multiplatform apps."
 date = "2022-08-03"
 layout = "hero-page"
 aliases = ["about-us", "about-hugo", "contact"]

@@ -143,12 +143,14 @@ for (const p of testPages) {
   assert(html.includes('<meta name="twitter:card" content="summary_large_image">'), `${p.title} contains twitter:card`);
   assert(html.includes('<meta name="twitter:site" content="@DearDhruv">'), `${p.title} contains twitter:site`);
   assert(html.includes('<meta name="twitter:creator" content="@DearDhruv">'), `${p.title} contains twitter:creator`);
+  assert(html.includes('<meta name="twitter:domain" content="deardhruv.com">'), `${p.title} contains twitter:domain`);
 
   // AI & Discovery endpoints
   assert(html.includes('<link rel="describedby" href="/llms.txt"'), `${p.title} links /llms.txt`);
   assert(html.includes('<link rel="help" href="/llms-full.txt"'), `${p.title} links /llms-full.txt`);
   assert(html.includes('<link rel="mcp" href="/.well-known/mcp.json"'), `${p.title} links .well-known/mcp.json`);
   assert(html.includes('<meta name="ai-agent" content="enabled=true; policy=/llms.txt; format=markdown">'), `${p.title} declares ai-agent meta tag`);
+  assert(html.includes('<meta name="content-signal" content="search=yes, ai-train=yes, ai-inference=yes">'), `${p.title} declares content-signal meta tag`);
 
   // JSON-LD Structured Data
   const jsonLdMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
@@ -176,10 +178,17 @@ for (const p of testPages) {
         assert(apps.length >= 2, `${p.title} JSON-LD graph contains SoftwareApplication entities (${apps.length} found)`);
       }
 
+      if (p.file === 'projects/index.html' || p.file === 'portfolio/index.html' || p.file === 'about/index.html') {
+        const faq = graph.find(e => e['@type'] === 'FAQPage');
+        assert(faq && Array.isArray(faq.mainEntity) && faq.mainEntity.length > 0, `${p.title} contains structured FAQPage entity`);
+      }
+
       if (p.isArticle) {
         const article = graph.find(e => e['@type'] === 'TechArticle');
         assert(article && article.headline, `${p.title} JSON-LD graph contains TechArticle entity`);
         assert(article && article.author && article.author['@id'] === 'https://deardhruv.com/#person', `${p.title} TechArticle references author #person`);
+        assert(article && article.timeRequired, `${p.title} TechArticle defines timeRequired reading duration`);
+        assert(article && Array.isArray(article.about), `${p.title} TechArticle defines about entity links`);
       }
     } catch (e) {
       assert(false, `${p.title} JSON-LD parsed valid JSON (Error: ${e.message})`);

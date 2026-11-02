@@ -610,6 +610,7 @@ function auditAi() {
   check('ai', fs.existsSync(openidPath), '.well-known/openid-configuration exists');
 
   let netlifyConfig = fs.existsSync(NETLIFY_CONFIG) ? fs.readFileSync(NETLIFY_CONFIG, 'utf-8') : '';
+  check('ai', netlifyConfig.includes('Content-Signal = "search=yes, ai-train=yes, ai-inference=yes"'), 'HTTP header advertises Content-Signal protocol');
   check('ai', netlifyConfig.includes('Link = "</llms.txt>; rel=\\"describedby\\"'), 'HTTP Link header advertises /llms.txt discovery');
   check('ai', netlifyConfig.includes('rel=\\"mcp\\"'), 'HTTP Link header advertises .well-known/mcp.json');
   check('ai', netlifyConfig.includes('rel=\\"api-catalog\\"'), 'HTTP Link header advertises .well-known/api-catalog');
@@ -619,6 +620,7 @@ function auditAi() {
   // 4. Page Meta Tags on HTML pages
   const homeHtml = fs.existsSync(path.join(DIST_DIR, 'index.html')) ? fs.readFileSync(path.join(DIST_DIR, 'index.html'), 'utf-8') : '';
   check('ai', homeHtml.includes('<meta name="ai-agent" content="enabled=true; policy=/llms.txt; format=markdown">'), 'HTML declares ai-agent policy meta tag');
+  check('ai', homeHtml.includes('<meta name="content-signal" content="search=yes, ai-train=yes, ai-inference=yes">'), 'HTML declares content-signal meta tag');
   check('ai', homeHtml.includes('<link rel="describedby" href="/llms.txt"'), 'HTML links /llms.txt via rel="describedby"');
   check('ai', homeHtml.includes('<link rel="mcp" href="/.well-known/mcp.json"'), 'HTML links MCP descriptor via rel="mcp"');
 

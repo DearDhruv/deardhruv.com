@@ -74,6 +74,24 @@
           }
         }
       }
+    ],
+    "prompts": [
+      {
+        "name": "ground_author_info",
+        "description": "Pre-configured grounding prompt to retrieve verified biographical facts, 15+ years career timeline, and contact channels for Dhruv Patel (@DearDhruv).",
+        "arguments": []
+      },
+      {
+        "name": "analyze_mobile_architecture",
+        "description": "System architecture analysis prompt covering on-device AI inference, memory management (LMK), speculative decoding, and Kotlin Multiplatform design.",
+        "arguments": [
+          {
+            "name": "topic",
+            "description": "Architectural topic: on-device-ai, speculative-decoding, gpu-sandboxing, or kotlin-multiplatform",
+            "required": true
+          }
+        ]
+      }
     ]
   }
 }
