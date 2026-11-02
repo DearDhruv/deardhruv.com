@@ -1,8 +1,8 @@
 # Deardhruv.com — Quality Audit & Web Standards Report
 
-**Execution Timestamp:** 2026-11-02T15:56:43.858Z  
+**Execution Timestamp:** 2026-11-02T16:48:08.945Z  
 **Git Branch:** `feature/portfolio`  
-**Git Commit:** `1233de5d063fff8787559dbbcc53bab8f2569689`  
+**Git Commit:** `76de03079c9a72dc1073f653a9b695786ae1ca96`  
 **Site Engine:** Astro Static (Zero Client Hydration)  
 **Overall Status:** 🟢 **ALL QUALITY GATES PASSED (100%)**
 
@@ -34,8 +34,8 @@
 | Metric / Resource | Budget Target | Measured Production Output | Compliance |
 |---|---|---|---|
 | **Client Hydration Bundles** | **0.0 KB** (Zero runtime framework) | **0 bytes** | ✅ **100% Zero Framework** |
-| **Client JavaScript Footprint** | <= 5.0 KB uncompressed | **4.51 KB** (4617 bytes) | ✅ **Within Budget** |
-| **Total Uncompressed CSS** | <= 45.0 KB uncompressed | **44.81 KB** (45888 bytes) | ✅ **Within Budget** |
+| **Client JavaScript Footprint** | <= 5.0 KB uncompressed | **4.67 KB** (4787 bytes) | ✅ **Within Budget** |
+| **Total Uncompressed CSS** | <= 45.0 KB uncompressed | **44.94 KB** (46018 bytes) | ✅ **Within Budget** |
 | **HTML Page Inventory** | >= 25 canonical documents | **28 static HTML documents** | ✅ **Verified** |
 | **Tracked Legacy Routes** | 39 routes parity | **39/39 routes resolved cleanly** | ✅ **100% Parity** |
 | **Internal Link Health** | 0 broken links | **873/873 internal links resolve (0 broken)** | ✅ **100% Clean** |

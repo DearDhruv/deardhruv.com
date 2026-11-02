@@ -5,14 +5,14 @@
 - Node/package manager: Node 24, npm
 - Build command/output: `npm run build:astro` -> `dist/` (27 pages + 6 data/markdown mirrors)
 - Deployment provider/environment: Netlify Global Edge CDN
-- Current branch/commit: `feature/portfolio` (`1233de5`)
-- Last Audit Timestamp: 2026-11-02T15:56:43.858Z
+- Current branch/commit: `feature/portfolio` (`76de030`)
+- Last Audit Timestamp: 2026-11-02T16:48:08.945Z
 
 ## Completed Phases
 - [x] **Phase 0 — Repository orientation and baseline preservation** — Recorded toolchain, 39 legacy routes, 87 tracked resources, 0 broken links — commit SHA `0d67f4f`
 - [x] **Phase 1 — Standards, policy and test strategy** — Authored 7 comprehensive engineering policies under `docs/policies/` (`browser-support.md`, `accessibility-checklist.md`, `responsive-matrix.md`, `interaction-design-policy.md`, `performance-budgets.md`, `quality-gates-and-severity.md`, `tool-and-environment-limitations.md`)
 - [x] **Phase 2 — Fast quality gates on every commit** — Wired standard `quality:*` scripts in `package.json`; fast pre-commit gate (`npm run quality:quick`)
-- [x] **Phase 3 — Lighthouse and performance automation** — Zero client hydration framework, JS 4.51 KB <= 5.0 KB, CSS 44.81 KB <= 45.0 KB, HTML <= 100 KB (`npm run quality:perf`)
+- [x] **Phase 3 — Lighthouse and performance automation** — Zero client hydration framework, JS 4.67 KB <= 5.0 KB, CSS 44.94 KB <= 45.0 KB, HTML <= 100 KB (`npm run quality:perf`)
 - [x] **Phase 4 — Accessibility automation and manual testing** — WCAG 2.2 AA verified; contrast >= 4.74:1 (up to 17.79:1); landmarks, single H1, skip links, touch targets >= 44px (`npm run quality:a11y`)
 - [x] **Phase 5 — Cross-browser and device responsiveness** — 25-breakpoint viewport matrix (320px to 3840px), safe area insets, 72ch measure, responsive containment (`npm run quality:browser`, `npm run quality:visual`)
 - [x] **Phase 6 — HTML, CSS, JS and asset quality** — 425 W3C/WCAG HTML assertions pass with 0 errors (`scripts/verify-html-standards.js`, `npm run quality:html`)
