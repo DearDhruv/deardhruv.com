@@ -453,11 +453,11 @@ const jsonLdGraph = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph, null, 2)} />
 
   <!-- Design System Token Sheets -->
-  <link rel="stylesheet" href="/css/design-system.css?v=2.3.0">
-  <link rel="stylesheet" href="/css/typography.css?v=2.3.0">
-  <link rel="stylesheet" href="/css/layout.css?v=2.3.0">
-  <link rel="stylesheet" href="/css/components.css?v=2.3.0">
-  <link rel="stylesheet" href="/css/nav.css?v=2.3.0">
+  <link rel="stylesheet" href="/css/design-system.css?v=2.3.1">
+  <link rel="stylesheet" href="/css/typography.css?v=2.3.1">
+  <link rel="stylesheet" href="/css/layout.css?v=2.3.1">
+  <link rel="stylesheet" href="/css/components.css?v=2.3.1">
+  <link rel="stylesheet" href="/css/nav.css?v=2.3.1">
 
   <!-- Zero-flash synchronous theme and palette initialization -->
   <script is:inline>
@@ -499,7 +499,7 @@ const jsonLdGraph = {
 
   <PaletteSwitcher />
 
-  <script is:inline src="/js/theme-toggle.js?v=2.3.0"></script>
+  <script is:inline src="/js/theme-toggle.js?v=2.3.1"></script>
   <script is:inline>
     (() => {
       const menuBtn = document.getElementById('menu-toggle');
@@ -577,17 +577,38 @@ const jsonLdGraph = {
           link.addEventListener('click', closeMenu);
         });
 
-        // Close on Escape key
+        // Accessible keyboard navigation (Escape to close, Tab focus trapping)
         document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+          if (!siteNav.classList.contains('is-open')) return;
+          if (e.key === 'Escape') {
             closeMenu();
             menuBtn.focus();
+            return;
+          }
+          if (e.key === 'Tab') {
+            const focusables = [menuBtn, ...siteNav.querySelectorAll('a[href], button:not([disabled])')];
+            if (focusables.length === 0) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
           }
         });
 
-        // Reposition on resize or orientation change while open
-        window.addEventListener('resize', updateNavPosition, { passive: true });
-        window.addEventListener('orientationchange', updateNavPosition, { passive: true });
+        function handleViewportResize() {
+          if (window.innerWidth > 1024) {
+            closeMenu();
+          } else {
+            updateNavPosition();
+          }
+        }
+        window.addEventListener('resize', handleViewportResize, { passive: true });
+        window.addEventListener('orientationchange', handleViewportResize, { passive: true });
       }
     })();
   </script>

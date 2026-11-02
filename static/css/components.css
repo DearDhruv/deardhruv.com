@@ -661,13 +661,16 @@ button,
 
 @media (max-width: 640px) {
   .site-footer {
-    padding-block: var(--space-8);
+    padding-top: var(--space-8);
+    padding-bottom: max(var(--space-8), calc(var(--space-8) + env(safe-area-inset-bottom, 0px)));
   }
 
   .site-footer-inner {
     flex-direction: column;
     text-align: center;
     gap: var(--space-4);
+    padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
   }
 
   .site-footer-links {
@@ -753,7 +756,8 @@ details[open] summary {
   box-sizing: border-box;
 }
 
-.palette-switcher-bar[hidden] {
+.palette-switcher-bar[hidden],
+body.menu-open .palette-switcher-bar {
   display: none !important;
 }
 
