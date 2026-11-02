@@ -33,28 +33,26 @@
   flex: 1 0 auto;
 }
 
-.layout-container {
+.layout-container,
+.layout-container-wide,
+.layout-container-reading {
   width: 100%;
-  max-width: var(--width-default);
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-left: max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
   box-sizing: border-box;
+}
+
+.layout-container {
+  max-width: var(--width-default);
 }
 
 .layout-container-wide {
-  width: 100%;
   max-width: var(--container-wide);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  box-sizing: border-box;
 }
 
 .layout-container-reading {
-  width: 100%;
   max-width: var(--width-reading);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  box-sizing: border-box;
 }
 
 .layout-section {
