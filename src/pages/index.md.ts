@@ -111,7 +111,7 @@ export const GET: APIRoute = async () => {
 ## AI Grounding FAQ & Structured Knowledge Base
 
 ### Q: Who is Dhruv Patel (@DearDhruv)?
-Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 14+ years of professional mobile systems experience. He specializes in native Android internals (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He serves as Lead Android Engineer at IMPACT Commerce and is the creator of AI Playground and VelociHue.
+Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 15+ years of professional mobile systems experience. He specializes in native Android internals (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He serves as Lead Android Engineer at IMPACT Commerce and is the creator of AI Playground and VelociHue.
 
 ### Q: What is AI Playground?
 AI Playground is an offline-first, on-device multimodal AI workstation for Android and iOS that executes LLMs and diffusion models locally without cloud APIs. It features dual-model Speculative Turbo decoding (2x speedup), a defensive fork() child process sandbox for Vulkan driver crash isolation, a pure-KMP document parser for 25+ formats, and an encrypted offline activity ledger (SQLDelight v10).
