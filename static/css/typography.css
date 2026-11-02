@@ -23,7 +23,6 @@
   --tracking-wide: 0.04em;
   --tracking-wider: 0.08em;
 
-  /* Shiki CSS variables theme tokens (dark default) */
   --astro-code-background: var(--color-bg-code);
   --astro-code-foreground: var(--color-text-primary);
   --astro-code-token-comment: #8b949e;
@@ -43,10 +42,7 @@
   --astro-code-token-constant: #005cc5;
 }
 
-h1, h2, h3, h4, .type-display, .type-h1, .type-h2, .type-h3, .type-h4 {
-  font-family: var(--font-sans);
-  color: var(--color-text-primary);
-}
+:is(h1, h2, h3, h4, .type-display, .type-h1, .type-h2, .type-h3, .type-h4) { font-family: var(--font-sans); color: var(--color-text-primary); }
 
 .type-display, h1.display {
   font-size: var(--font-display);
@@ -159,7 +155,7 @@ h1, h2, h3, h4, .type-display, .type-h1, .type-h2, .type-h3, .type-h4 {
   margin-block: var(--space-6);
 }
 
-pre code, .astro-code code {
+:is(pre, .astro-code) code {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -182,11 +178,5 @@ pre code, .astro-code code {
   padding: var(--space-4) var(--space-5);
 }
 
-.type-blockquote p, blockquote p {
-  color: inherit;
-  margin-block: 0;
-}
-
-.type-blockquote p + p, blockquote p + p {
-  margin-top: var(--space-3);
-}
+:is(.type-blockquote, blockquote) p { color: inherit; margin-block: 0; }
+:is(.type-blockquote, blockquote) p + p { margin-top: var(--space-3); }

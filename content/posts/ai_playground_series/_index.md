@@ -5,7 +5,7 @@ date = "2026-10-21"
 layout = "series"
 +++
 
-A six-part architectural series detailing the engineering challenges of building **[AI Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)** — an offline-first multimodal AI workstation running local LLMs and diffusion models directly on consumer Android and iOS devices.
+A six-part architectural series detailing the engineering challenges of building **[AI Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)** - an offline-first multimodal AI workstation running local LLMs and diffusion models directly on consumer Android and iOS devices.
 
 ### Articles in this Series
 

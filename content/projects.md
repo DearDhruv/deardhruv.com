@@ -10,7 +10,7 @@ This page documents selected engineering case studies across **independent produ
 
 ## 🚀 Independent Products & Case Studies
 
-### 1. AI Playground — On-Device Multimodal AI Workstation
+### 1. AI Playground - On-Device Multimodal AI Workstation
 
 **Summary:** A privacy-first mobile workstation that runs multimodal LLMs and diffusion models locally on phones without cloud dependencies.  
 **Role:** Director & Lead Engineer &middot; **Status:** Live on Google Play &middot; iOS in development / planned  
@@ -62,7 +62,7 @@ flowchart TD
 
 ---
 
-### 2. VelociHue — High-Framerate Arcade Game in KMP
+### 2. VelociHue - High-Framerate Arcade Game in KMP
 
 **Summary:** A fast-paced arcade action game engineered to prove that Kotlin Multiplatform and Compose Multiplatform can deliver fluid 60–120 FPS gameplay across phones, tablets, and TVs.  
 **Role:** Director & Lead Engineer &middot; **Status:** Live on Google Play &middot; iOS in development / planned  

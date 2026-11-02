@@ -1,11 +1,11 @@
 # Continuous Site Audit & Health Report
 
-**Audit Timestamp:** 2026-11-02T15:44:37.536Z (11/2/2026, 9:14:37 PM GMT+5:30)  
+**Audit Timestamp:** 2026-11-02T18:41:49.070Z (11/3/2026, 12:11:49 AM GMT+5:30)  
 **Environment:** Static Output (`dist/`)  
 **Target:** [deardhruv.com](https://deardhruv.com)  
 **Auditor Engine:** Built-in Continuous Audit Engine (`scripts/audit.js`)  
-**Execution Duration:** 27.1ms  
-**Overall Status:** **HEALTHY (100% PASS)** (176/176 checks passed — 100.0%)
+**Execution Duration:** 26.2ms  
+**Overall Status:** **HEALTHY (100% PASS)** (178/178 checks passed — 100.0%)
 
 ---
 
@@ -18,8 +18,8 @@
 | **3. Accessibility & Tokens** | 22 | 0 | 22 | 100.0% | ✅ PASS |
 | **4. Performance & Runtime JS** | 6 | 0 | 6 | 100.0% | ✅ PASS |
 | **5. Security Headers & Leaks** | 9 | 0 | 9 | 100.0% | ✅ PASS |
-| **6. AI Discovery & Agent Readiness** | 20 | 0 | 20 | 100.0% | ✅ PASS |
-| **TOTAL / OVERALL** | **176** | **0** | **176** | **100.0%** | **HEALTHY (100% PASS)** |
+| **6. AI Discovery & Agent Readiness** | 22 | 0 | 22 | 100.0% | ✅ PASS |
+| **TOTAL / OVERALL** | **178** | **0** | **178** | **100.0%** | **HEALTHY (100% PASS)** |
 
 ---
 
@@ -186,9 +186,9 @@
 **Score:** 6/6 checks passed
 
 - ✅ Total uncompressed CSS is within budget (44.94 KB < 45.0 KB)
-- ✅ Total uncompressed Client JS is within budget (4.51 KB < 5.0 KB)
+- ✅ Total uncompressed Client JS is within budget (4.67 KB < 5.0 KB)
 - ✅ Zero runtime client hydration bundles generated (0 found)
-- ✅ Maximum HTML page size within budget (98.13 KB for posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.html < 100 KB)
+- ✅ Maximum HTML page size within budget (99.28 KB for posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.html < 100 KB)
 - ✅ Static assets configured with 1-year immutable caching in netlify.toml
 - ✅ Icons configured with 30-day caching in netlify.toml
 
@@ -208,7 +208,7 @@
 
 ### 6. AI Discovery & Agent Readiness
 
-**Score:** 20/20 checks passed
+**Score:** 22/22 checks passed
 
 - ✅ llms.txt exists and exceeds 1KB
 - ✅ llms.txt declares AI Grounding FAQ & Knowledge Base
@@ -222,11 +222,13 @@
 - ✅ .well-known/oauth-protected-resource exists
 - ✅ .well-known/oauth-authorization-server exists
 - ✅ .well-known/openid-configuration exists
+- ✅ HTTP header advertises Content-Signal protocol
 - ✅ HTTP Link header advertises /llms.txt discovery
 - ✅ HTTP Link header advertises .well-known/mcp.json
 - ✅ HTTP Link header advertises .well-known/api-catalog
 - ✅ Netlify Edge Function configured for markdown-negotiation
 - ✅ HTML declares ai-agent policy meta tag
+- ✅ HTML declares content-signal meta tag
 - ✅ HTML links /llms.txt via rel="describedby"
 - ✅ HTML links MCP descriptor via rel="mcp"
 - ✅ All 23 canonical routes have corresponding index.md mirrors (0 missing)

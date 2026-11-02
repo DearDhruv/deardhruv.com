@@ -1,6 +1,6 @@
-# Dhruv Patel — Personal Portfolio & Engineering Blog ([deardhruv.com](https://deardhruv.com))
+# Dhruv Patel - Personal Portfolio & Engineering Blog ([deardhruv.com](https://deardhruv.com))
 
-Personal website, engineering case studies, and architecture writing of **Dhruv Patel** (known online as **DearDhruv**) — Lead Android Engineer, Android Architect, and Android Artist.
+Personal website, engineering case studies, and architecture writing of **Dhruv Patel** (known online as **DearDhruv**): Lead Android Engineer, Android Architect, and Android Artist.
 
 Built with **Astro** (zero-client hydration framework, < 5 KB JavaScript runtime footprint), strictly adhering to WCAG 2.2 AA accessibility, precision design system tokens, and comprehensive machine-readable AI agent protocols. Hosted on **Netlify**.
 
