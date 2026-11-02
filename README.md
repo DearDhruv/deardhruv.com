@@ -59,7 +59,7 @@ npm test
 # Run all automated test suites
 npm test
 
-# Run permanent continuous audit engine (172 checks across 6 modules)
+# Run permanent continuous audit engine (176 checks across 6 modules)
 npm run audit
 
 # Run specialized audit modules
@@ -90,7 +90,7 @@ npm run new:post
 - **LinkedIn**: [Dhruv Patel](https://www.linkedin.com/in/deardhruv/)
 - **X (Twitter)**: [@DearDhruv](https://x.com/DearDhruv)
 - **Instagram**: [@DearDhruv](https://instagram.com/deardhruv)
-- **Google Play**: [Dhruv Patel Apps](https://play.google.com/store/apps/developer?id=Dhruv+Patel)
+- **Google Play**: [Dhruv Patel Apps](https://play.google.com/store/apps/dev?id=5177092407740817842)
 
 ## 📄 License
 
