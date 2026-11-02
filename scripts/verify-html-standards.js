@@ -14,10 +14,11 @@
  * 6. Accessible landmark coverage: <header>, <nav>, <main id="main">, <footer>
  * 7. Accessible skip-to-content navigation link
  * 8. Strict single <h1> document heading
- * 9. Alternative text attributes on 100% of <img> tags
- * 10. Zero duplicate element IDs within the document scope
- * 11. Zero illegal nested interactive elements (<a> in <a>, <button> in <button>)
- * 12. Valid Schema.org JSON-LD syntax
+ * 9. Strict sequential heading hierarchy (zero heading level skips)
+ * 10. Alternative text attributes on 100% of <img> tags
+ * 11. Zero duplicate element IDs within the document scope
+ * 12. Zero illegal nested interactive elements (<a> in <a>, <button> in <button>)
+ * 13. Valid Schema.org JSON-LD syntax
  */
 
 const fs = require('fs');
@@ -164,7 +165,23 @@ for (const filePath of htmlFiles) {
     relPath
   );
 
-  // 9. Image alt text
+  // 9. Strict sequential heading hierarchy (zero heading skips e.g. h1 -> h3 or h2 -> h4)
+  const headingElements = [...content.matchAll(/<h([1-6])\b[^>]*>/gi)].map(m => parseInt(m[1], 10));
+  let headingSkips = [];
+  for (let i = 1; i < headingElements.length; i++) {
+    const prev = headingElements[i - 1];
+    const curr = headingElements[i];
+    if (curr > prev + 1) {
+      headingSkips.push(`h${prev} -> h${curr}`);
+    }
+  }
+  assert(
+    headingSkips.length === 0,
+    `Strict sequential heading progression (zero heading level skips; found: ${headingSkips.length === 0 ? '0' : headingSkips.join(', ')})`,
+    relPath
+  );
+
+  // 10. Image alt text
   const imgMatches = [...content.matchAll(/<img\b([^>]*)>/gi)];
   let allImagesHaveAlt = true;
   for (const match of imgMatches) {

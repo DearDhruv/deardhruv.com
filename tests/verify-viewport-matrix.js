@@ -160,31 +160,51 @@ assert(
   'CSS honors prefers-reduced-motion: reduce with animation neutralization'
 );
 
-// 3. Document Viewport Meta Audit
-console.log('\n--- 3. Rendered Document Viewport Meta Consistency ---');
+// 3. Document Viewport Meta & No-Blowout Audit across all HTML
+console.log('\n--- 3. Rendered Document Viewport Meta & Overflow Audit ---');
 
-const representativePages = [
-  'index.html',
-  'about/index.html',
-  'portfolio/index.html',
-  'projects/index.html',
-  'posts/index.html',
-  'posts/ai_playground_series/index.html',
-  'posts/ai_playground_series/01-i-wanted-the-model-to-stay-on-the-phone/index.html',
-  'sitemap/index.html',
-  '404.html'
-];
-
-for (const p of representativePages) {
-  const full = path.join(DIST_DIR, p);
-  if (fs.existsSync(full)) {
-    const html = fs.readFileSync(full, 'utf-8');
-    assert(
-      html.includes('name="viewport" content="width=device-width, initial-scale=1.0"'),
-      `Page ${p} declares standard responsive viewport meta tag`
-    );
+function getAllHtml(dir) {
+  let list = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) list.push(...getAllHtml(full));
+    else if (entry.name.endsWith('.html')) list.push(full);
   }
+  return list;
 }
+
+const allHtmlFiles = getAllHtml(DIST_DIR);
+let checkedHtmlCount = 0;
+
+for (const full of allHtmlFiles) {
+  const rel = path.relative(DIST_DIR, full);
+  const html = fs.readFileSync(full, 'utf-8');
+
+  // Skip legacy refresh stubs
+  if (html.includes('http-equiv="refresh"') || html.includes('http-equiv=refresh')) continue;
+
+  checkedHtmlCount++;
+
+  assert(
+    html.includes('name="viewport" content="width=device-width, initial-scale=1.0"') ||
+    html.includes('name="viewport" content="width=device-width,initial-scale=1.0"'),
+    `Document ${rel} declares responsive viewport meta tag`
+  );
+
+  // Check no element has inline width > 320px
+  const fixedWidthMatches = [...html.matchAll(/style=["'][^"']*width:\s*([0-9]+)px/gi)];
+  let hasBlowout = false;
+  for (const m of fixedWidthMatches) {
+    if (parseInt(m[1], 10) > 320) hasBlowout = true;
+  }
+  assert(!hasBlowout, `Document ${rel} has zero fixed element widths exceeding 320px`);
+}
+
+// 4. Media query breakpoint coverage in CSS
+console.log('\n--- 4. CSS Media Query Coverage ---');
+assert(layoutCss.includes('@media (max-width: 640px)'), 'CSS includes mobile layout breakpoint (@media (max-width: 640px))');
+assert(navCss.includes('@media (max-width: 1024px)'), 'CSS includes compact/tablet navigation breakpoint (@media (max-width: 1024px))');
+assert(compCss.includes('@media (max-width: 480px)'), 'CSS includes narrow-phone component breakpoint (@media (max-width: 480px))');
 
 console.log(`\n========================================`);
 console.log(`Viewport Matrix Results: ${passed} passed, ${failed} failed`);

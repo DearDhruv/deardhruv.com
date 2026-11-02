@@ -67,6 +67,7 @@ const suites = [
   { id: 'seo', name: 'SEO, OpenGraph, JSON-LD & Bot Hygiene', cmd: 'node tests/verify-seo-metadata.js' },
   { id: 'interactive', name: 'Interactive Containers & Stretched Links', cmd: 'node tests/verify-interactive-containers.js' },
   { id: 'employer', name: 'Employer Attribution Separation', cmd: 'node tests/verify-employer-portfolio.js' },
+  { id: 'audit', name: 'Continuous Site Health & Security Audit', cmd: 'node scripts/audit.js' },
 ];
 
 const suiteResults = [];

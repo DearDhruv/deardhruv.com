@@ -1,8 +1,8 @@
 {
   "version": "2.1.0",
-  "commit": "760e80ca2bf9812e4e45e15ccbce99b244952bb5",
+  "commit": "5c3a54f442535bef506b6dc4c9b36d3e2f3513ab",
   "branch": "feature/portfolio",
-  "timestamp": "2026-11-02T13:32:57.308Z",
+  "timestamp": "2026-11-02T13:46:04.512Z",
   "status": "PASSED",
   "metrics": {
     "htmlDocuments": 28,
@@ -94,6 +94,12 @@
       "name": "Employer Attribution Separation",
       "passed": true,
       "command": "node tests/verify-employer-portfolio.js"
+    },
+    {
+      "id": "audit",
+      "name": "Continuous Site Health & Security Audit",
+      "passed": true,
+      "command": "node scripts/audit.js"
     }
   ]
 }
