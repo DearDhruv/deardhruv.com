@@ -206,6 +206,19 @@
   padding: 0;
 }
 
+.header-resume-btn {
+  gap: 6px;
+  padding: 0 var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.theme-toggle-label {
+  display: none !important;
+}
+
 .header-icon-btn:hover,
 .header-resume-btn:hover,
 .theme-toggle-btn:hover,
