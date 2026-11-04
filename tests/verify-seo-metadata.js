@@ -167,6 +167,17 @@ for (const p of testPages) {
       assert(person && person.sameAs && person.sameAs.includes('https://github.com/DearDhruv'), `${p.title} Person entity has public GitHub profile`);
       assert(person && JSON.stringify(person.image).includes('/pp/pro_pic.jpg'), `${p.title} Person entity references high-res portrait (/pp/pro_pic.jpg)`);
 
+      if (person && Array.isArray(person.performerIn)) {
+        for (const evt of person.performerIn) {
+          assert(evt['@type'] === 'Event', `${p.title} performerIn item is @type Event`);
+          assert(evt.eventStatus, `${p.title} Event (${evt.name}) declares eventStatus`);
+          assert(evt.endDate, `${p.title} Event (${evt.name}) declares endDate`);
+          assert(evt.location && evt.location.address, `${p.title} Event (${evt.name}) declares location.address`);
+          assert(evt.image && (typeof evt.image === 'string' || Array.isArray(evt.image)), `${p.title} Event (${evt.name}) declares image`);
+          assert(evt.organizer && evt.organizer.name, `${p.title} Event (${evt.name}) declares organizer`);
+        }
+      }
+
       const website = graph.find(e => e['@type'] === 'WebSite');
       assert(website && website.url === 'https://deardhruv.com/', `${p.title} JSON-LD graph contains WebSite entity`);
 

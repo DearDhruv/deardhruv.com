@@ -1716,8 +1716,8 @@ console.log(`✅ Generated ${statusCsvPath} (${statusAndRedirects.length} record
 const reconciliationMd = `# Baseline Route Manifest & URL Inventory Reconciliation
 
 **Audit Date:** 2026-11-01  
-**Phase:** Phase A0 — Establish repository and website baseline  
-**Task ID:** Task A0.2 — Build the full URL manifest  
+**Phase:** Phase A0 - Establish repository and website baseline  
+**Task ID:** Task A0.2 - Build the full URL manifest  
 **Auditor:** Senior Technical Engineer & Audit Specialist (Gemini)  
 **Target Repository:** \`deardhruv.com\`  
 **Target Output:** \`dist/\`  
@@ -1759,7 +1759,7 @@ Every discrepancy across repository counts, XML sitemap, and build artifacts is 
    - *Explanation:* The homepage (\`/\`) is rendered from \`src/pages/index.astro\` as an interactive component-driven hub rather than a pure Markdown document in \`content/\`. The other 22 routes correspond 1:1 to content Markdown source files.
 
 2. **Canonical Content Routes (23 routes) vs XML Sitemap (23 URLs)**:
-   - *Difference:* **0 (Exact Parity — 100%)**.
+   - *Difference:* **0 (Exact Parity: 100%)**.
    - *Explanation:* Every single canonical content page is published in \`sitemap.xml\`. No extraneous URLs, no missing URLs, and no alias URLs are present.
 
 3. **XML Sitemap (23 URLs) vs Generated HTML Files (28 files)**:
@@ -1786,7 +1786,7 @@ Every discrepancy across repository counts, XML sitemap, and build artifacts is 
    - *Explanation:* \`/feed.json\` is a Netlify rewrite redirect defined in \`netlify.toml\` that rewrites to \`/index.json\` with HTTP status 200. It is a live public route served by Netlify edge without requiring a standalone physical file on disk.
 
 6. **Generated HTML Files (28 files) vs Live Crawled HTML Documents (28 files)**:
-   - *Difference:* **0 (Exact Parity — 100%)**.
+   - *Difference:* **0 (Exact Parity: 100%)**.
    - *Explanation:* The crawler script traverses the document graph starting from the site root, checking 100% of discovered HTML files. All 903 internal hyperlink references resolve without broken targets (0 broken links).
 
 ---

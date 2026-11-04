@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * DearDhruv.com — Permanent Continuous Audit Engine
+ * DearDhruv.com - Permanent Continuous Audit Engine
  * 
  * High-performance, zero-dependency site auditor testing against static dist/.
  * Modules: health, seo, a11y, perf, security, ai.
@@ -689,7 +689,7 @@ function generateMarkdownReport(durationMs) {
 **Target:** [deardhruv.com](https://deardhruv.com)  
 **Auditor Engine:** Built-in Continuous Audit Engine (\`scripts/audit.js\`)  
 **Execution Duration:** ${durationMs.toFixed(1)}ms  
-**Overall Status:** **${statusVerdict}** (${totalPassed}/${totalChecks} checks passed — ${overallScore}%)
+**Overall Status:** **${statusVerdict}** (${totalPassed}/${totalChecks} checks passed - ${overallScore}%)
 
 ---
 
@@ -781,7 +781,7 @@ function main() {
   const startTime = performance.now();
 
   console.log(`${colors.bold}${colors.magenta}======================================================${colors.reset}`);
-  console.log(`${colors.bold}${colors.magenta}     DEARDHRUV.COM — CONTINUOUS AUDIT ENGINE          ${colors.reset}`);
+  console.log(`${colors.bold}${colors.magenta}     DEARDHRUV.COM: CONTINUOUS AUDIT ENGINE           ${colors.reset}`);
   console.log(`${colors.bold}${colors.magenta}======================================================${colors.reset}`);
   console.log(`${colors.dim}Target: ${DIST_DIR}${colors.reset}`);
   console.log(`${colors.dim}Time:   ${new Date().toISOString()}${colors.reset}`);
