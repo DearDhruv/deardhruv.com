@@ -5,8 +5,8 @@
 - Node/package manager: Node 24, npm
 - Build command/output: `npm run build:astro` -> `dist/` (27 pages + 6 data/markdown mirrors)
 - Deployment provider/environment: Netlify Global Edge CDN
-- Current branch/commit: `master` (`12587ef`)
-- Last Audit Timestamp: 2026-11-04T08:05:56.676Z
+- Current branch/commit: `master` (`ad15e8f`)
+- Last Audit Timestamp: 2026-11-04T08:20:08.864Z
 
 ## Completed Phases
 - [x] **Phase 0: Repository orientation and baseline preservation** - Recorded toolchain, 39 legacy routes, 87 tracked resources, 0 broken links - commit SHA `0d67f4f`

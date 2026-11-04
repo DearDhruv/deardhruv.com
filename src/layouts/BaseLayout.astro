@@ -83,77 +83,6 @@ const breadcrumbsListSchema = {
   }))
 };
 
-const isProfilePage = normalizedPath === '/' || normalizedPath === '/about/' || normalizedPath === '/portfolio/';
-
-const speakingEvents = isProfilePage ? [
-  {
-    '@type': 'Event',
-    name: 'GDG DevFest Surat 2025: Jetpack Compose Game Changing Features',
-    description: 'Deep dive into Jetpack Compose, Navigation 3, adaptive layouts, performance boosts, and Accessibility by Dhruv Patel at GDG DevFest Surat.',
-    startDate: '2025-12-01T09:30:00+05:30',
-    endDate: '2025-12-01T17:30:00+05:30',
-    eventStatus: 'https://schema.org/EventScheduled',
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    image: [
-      `${siteOrigin}/images/pro_pic_small.jpg`,
-      `${siteOrigin}/pp/pro_pic.jpg`
-    ],
-    location: {
-      '@type': 'Place',
-      name: 'GDG DevFest Surat',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Surat',
-        addressRegion: 'Gujarat',
-        addressCountry: 'IN'
-      }
-    },
-    organizer: {
-      '@type': 'Organization',
-      name: 'Google Developer Group Surat',
-      url: 'https://gdg.community.dev/gdg-surat/'
-    },
-    performer: {
-      '@type': 'Person',
-      name: 'Dhruv Patel',
-      url: `${siteOrigin}/`
-    }
-  },
-  {
-    '@type': 'Event',
-    name: 'GDG DevFest Ahmedabad 2025: Android 17 Mandates Adaptive Layouts',
-    description: 'Technical session on designing adaptive UI architectures across phones, foldables, tablets, and desktop windows using Window Size Classes by Dhruv Patel.',
-    startDate: '2025-11-01T09:30:00+05:30',
-    endDate: '2025-11-01T17:30:00+05:30',
-    eventStatus: 'https://schema.org/EventScheduled',
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    image: [
-      `${siteOrigin}/images/pro_pic_small.jpg`,
-      `${siteOrigin}/pp/pro_pic.jpg`
-    ],
-    location: {
-      '@type': 'Place',
-      name: 'GDG DevFest Ahmedabad',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Ahmedabad',
-        addressRegion: 'Gujarat',
-        addressCountry: 'IN'
-      }
-    },
-    organizer: {
-      '@type': 'Organization',
-      name: 'Google Developer Group Ahmedabad',
-      url: 'https://gdg.community.dev/gdg-ahmedabad/'
-    },
-    performer: {
-      '@type': 'Person',
-      name: 'Dhruv Patel',
-      url: `${siteOrigin}/`
-    }
-  }
-] : undefined;
-
 const personSchema = {
   '@type': 'Person',
   '@id': `${siteOrigin}/#person`,
@@ -198,7 +127,6 @@ const personSchema = {
       skills: 'On-Device AI, llama.cpp, Google AI Edge LiteRT, Apple MLX, Speculative Decoding, Vulkan'
     }
   ],
-  ...(speakingEvents ? { performerIn: speakingEvents } : {}),
   description: 'Lead Android Engineer, Android Architect, and Android Artist building on-device AI runtimes and high-performance native architectures with extensive production leadership.',
   disambiguatingDescription: 'Lead Android Engineer, Android Architect, and Android Artist known online as @DearDhruv, specializing in on-device AI inference, Kotlin Multiplatform, native C++ NDK, and offline-first mobile systems.',
   mainEntityOfPage: `${siteOrigin}/`,
@@ -218,6 +146,7 @@ const personSchema = {
     'https://play.google.com/store/apps/dev?id=5177092407740817842'
   ],
   knowsAbout: [
+    'GDG DevFest Speaker (Surat & Ahmedabad)',
     'Android Architecture',
     'Kotlin Multiplatform (KMP)',
     'On-Device AI Runtimes',
