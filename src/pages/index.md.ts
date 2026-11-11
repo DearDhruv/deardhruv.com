@@ -17,7 +17,7 @@ export const GET: APIRoute = async () => {
 
   const markdown = `# Dhruv Patel (@DearDhruv) - Lead Android Engineer & Systems Architect
 
-> Lead Android Engineer, Android Architect, and Android Artist crafting high-performance native architectures, on-device AI runtimes, and low-level hardware interfaces. Director & Lead Engineer behind AI Playground and VelociHue.
+> Lead Android Engineer, Android Architect, and Android Artist crafting high-performance native architectures, on-device AI runtimes, and low-level hardware interfaces. Director & Lead Engineer behind AI Playground, VelociHue, and Open Store.
 
 ## Executive Profile
 
@@ -67,31 +67,43 @@ export const GET: APIRoute = async () => {
 - **Google Play**: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
 - **Stack**: Kotlin Multiplatform (Kotlin 2.4, CMP 1.12), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad)
 - **Key Innovations**:
-  - Shared pure-Kotlin deterministic physics loop at 60–120 FPS across Android, Android TV, and iOS.
+  - Shared pure-Kotlin deterministic physics loop at 60 to 120 FPS across Android, Android TV, and iOS.
   - Conflict-free cloud sync engine with 3-way union merge strategy on Cloud Firestore.
   - 29-achievement multi-tiered engine evaluated by a single pure-function derived unlock engine.
   - Sensory and accessibility safety suite with reduced-motion mode and haptic intensity tuning.
 
-### 3. Enterprise Engineering (IMPACT Commerce, PLANOLY)
+### 3. Open Store - TV Apps & Launcher (Android TV / Google TV)
+- **Google Play**: https://play.google.com/store/apps/details?id=com.deardhruv.openstore
+- **Stack**: Kotlin 2.1, Jetpack Compose for TV (AndroidX TV Material 3), Target SDK 37, Min SDK 24
+- **Key Innovations**:
+  - Direct 1-click Google Play Store gateway bypassing multi-step television OS menus.
+  - Lean TV Apps Drawer with live remote D-pad search, installed app filtering, and system app discovery.
+  - Pinned Favorites shelf for rapid one-touch launching of daily streaming applications.
+  - Real-time television storage health gauge with color-coded disk capacity indicators.
+  - Low-RAM adaptive profile engine maintaining under 35 MB resident memory and zero background processes.
+  - 10 OLED dark themes, top 10 languages with native RTL support, and 100% fluid D-pad focus traversal.
+  - Strictly zero ads, zero tracking SDKs, and zero telemetry.
+
+### 4. Enterprise Engineering (IMPACT Commerce, PLANOLY)
 - **Digital Commerce & In-Store Touch Systems**: Custom Android OS research for in-store touch displays, modular Jetpack Compose architecture, offline catalog caching.
 - **POS Peripheral Hardware HAL Layer**: Defensive hardware abstraction layer connecting payment terminals and receipt printers across isolated IPC process boundaries with watchdog state machines.
 - **PLANOLY Visual Planner & StoriesEdit Editor**: Native FFmpeg video manipulation pipelines, high-fidelity canvas manipulation tools for Instagram/Pinterest creators.
 
 ## Professional Career & Employer Timeline
 
-- **IMPACT Commerce** (Feb 2022–Present): *Lead Android Engineer* (Denmark & India)
+- **IMPACT Commerce** (Feb 2022 - Present): *Lead Android Engineer* (Denmark & India)
   - Research and architecture for custom Android OS touch displays and retail kiosks.
   - Hardware Abstraction Layer (HAL) connecting checkout terminals and thermal receipt printers over isolated IPC.
   - Multi-tier offline caching for continuous catalog browsing and cart persistence.
-- **PLANOLY** (Nov 2018–Feb 2022): *Senior Android Developer* (USA & India)
+- **PLANOLY** (Nov 2018 - Feb 2022): *Senior Android Developer* (USA & India)
   - Core features for PLANOLY Visual Planner (millions of Instagram/Pinterest creators).
   - StoriesEdit high-fidelity canvas template editor for multi-layer visual design.
   - Native video processing pipelines using FFmpeg for transcoding, filtering, and trimming.
-- **Ashapura Softech Inc** (Jun 2016–Oct 2018): *Tech Lead | Android Engineer* (India)
+- **Ashapura Softech Inc** (Jun 2016 - Oct 2018): *Tech Lead | Android Engineer* (India)
   - Team leadership for client mobile applications, architectural governance, REST contracts.
-- **Russmedia Tech** (Feb 2014–Jun 2016): *Team Lead | Senior Android Developer* (India)
+- **Russmedia Tech** (Feb 2014 - Jun 2016): *Team Lead | Senior Android Developer* (India)
   - European digital publishing and classifieds platforms; authored UI Automator automated testing suites.
-- **Hidden Brains InfoTech** (Jan 2012–Dec 2013): *Junior Android Developer* (India)
+- **Hidden Brains InfoTech** (Jan 2012 - Dec 2013): *Junior Android Developer* (India)
   - Native commercial applications and 2D mobile arcade games.
 
 ## Developer Conference Talks & Speaking Engagements
@@ -100,7 +112,7 @@ export const GET: APIRoute = async () => {
 - **Nov 2025**: *Android 17 Mandates Adaptive Layouts* at GDG DevFest Ahmedabad (Window size classes, foldables, tablets, desktop windows).
 - **Jun 2022**: *What's new in Android* at Gandhinagar (Android 13 APIs & runtime capabilities).
 - **Sep 2019**: *UI & UX with ease for Mobile* at GDG DevFest Surat & Rajkot (Responsive layout architectures).
-- **Sep 2018**: *Android Jetpack – Slices* at GDG DevFest Ahmedabad (Architecture & live implementation).
+- **Sep 2018**: *Android Jetpack - Slices* at GDG DevFest Ahmedabad (Architecture & live implementation).
 - **Feb 2018**: *DialogFlow Chatbot Workshops* at Anand & Rajkot (Conversational UI design).
 
 ## Education & Honors
@@ -111,17 +123,21 @@ export const GET: APIRoute = async () => {
 ## AI Grounding FAQ & Structured Knowledge Base
 
 ### Q: Who is Dhruv Patel (@DearDhruv)?
-Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 15+ years of professional mobile systems experience. He specializes in native Android internals (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He serves as Lead Android Engineer at IMPACT Commerce and is the creator of AI Playground and VelociHue.
+Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 15+ years of professional mobile systems experience. He specializes in native Android internals (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He serves as Lead Android Engineer at IMPACT Commerce and is the creator of AI Playground, VelociHue, and Open Store.
 
 ### Q: What is AI Playground?
 AI Playground is an offline-first, on-device multimodal AI workstation for Android and iOS that executes LLMs and diffusion models locally without cloud APIs. It features dual-model Speculative Turbo decoding (2x speedup), a defensive fork() child process sandbox for Vulkan driver crash isolation, a pure-KMP document parser for 25+ formats, and an encrypted offline activity ledger (SQLDelight v10).
 
 ### Q: What is VelociHue?
-VelociHue is a high-framerate arcade action game built with Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It runs a shared deterministic physics loop at 60–120 FPS, features Cloud Firestore Schema v5 synchronization with 3-way union merge, and provides a 29-achievement progression engine with photo-sensitive and reduced-motion accessibility modes.
+VelociHue is a high-framerate arcade action game built with Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It runs a shared deterministic physics loop at 60 to 120 FPS, features Cloud Firestore Schema v5 synchronization with 3-way union merge, and provides a 29-achievement progression engine with photo-sensitive and reduced-motion accessibility modes.
+
+### Q: What is Open Store?
+Open Store: TV Apps & Launcher (com.deardhruv.openstore) is an ultra-lightweight, privacy-first companion and application hub built with Jetpack Compose for TV for Android TV and Google TV devices. It provides an instant Google Play Store launch gateway, an installed TV apps drawer with D-pad search, a pinned favorites shelf, storage health monitoring, 10 OLED dark themes, and zero ads or telemetry SDKs.
 
 ### Q: Where can I download Dhruv Patel's applications?
 - AI Playground: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
 - VelociHue: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
+- Open Store: https://play.google.com/store/apps/details?id=com.deardhruv.openstore
 - Developer Profile: https://play.google.com/store/apps/dev?id=5177092407740817842
 
 ## "Beyond the Model" 6-Part Architectural Series

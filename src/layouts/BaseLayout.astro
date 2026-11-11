@@ -129,6 +129,8 @@ const personSchema = {
   ],
   description: 'Lead Android Engineer, Android Architect, and Android Artist building on-device AI runtimes and high-performance native architectures with extensive production leadership.',
   disambiguatingDescription: 'Lead Android Engineer, Android Architect, and Android Artist known online as @DearDhruv, specializing in on-device AI inference, Kotlin Multiplatform, native C++ NDK, and offline-first mobile systems.',
+  gender: 'https://schema.org/Male',
+  nationality: { '@type': 'Country', name: 'India' },
   mainEntityOfPage: `${siteOrigin}/`,
   knowsLanguage: ['en', 'gu', 'hi'],
   sameAs: [
@@ -172,7 +174,9 @@ const personSchema = {
     'Jetpack Compose for TV',
     'Living-Room D-Pad Navigation Ergonomics',
     'Cloud Firestore Schema v5',
-    'Android TV & Leanback'
+    'Generative Engine Optimization (GEO)',
+    'Edge AI & Compute Optimization',
+    'Quantized Neural Networks (GGUF)'
   ]
 };
 
@@ -247,7 +251,10 @@ if (ogType === 'article') {
       `${siteOrigin}/projects/`,
       `${siteOrigin}/posts/ai_playground_series/`,
       `${siteOrigin}/about/`,
-      `${siteOrigin}/resume.pdf`
+      `${siteOrigin}/resume.pdf`,
+      'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
+      'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
+      'https://play.google.com/store/apps/details?id=com.deardhruv.openstore'
     ]
   };
 } else if (normalizedPath === '/portfolio/') {

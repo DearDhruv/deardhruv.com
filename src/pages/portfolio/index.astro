@@ -45,6 +45,24 @@ const portfolioSchemas = [
     description: 'High-framerate arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS.'
   },
   {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/portfolio/#openstore',
+    name: 'Open Store: TV Apps & Launcher',
+    alternateName: 'Open Store',
+    operatingSystem: 'Android TV, Google TV',
+    applicationCategory: 'UtilitiesApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.openstore',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.openstore',
+    description: 'Lightweight, privacy-first companion, smart launcher, and app hub crafted specifically for Android TV and Google TV devices.'
+  },
+  {
     '@type': 'FAQPage',
     '@id': 'https://deardhruv.com/portfolio/#faq',
     mainEntity: [
@@ -69,7 +87,15 @@ const portfolioSchemas = [
         name: 'What independent products has Dhruv Patel engineered?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Dhruv is the creator of AI Playground (an offline-first, on-device multimodal AI workstation running local LLMs and diffusion models with zero cloud roundtrips) and VelociHue (a 60-120 FPS arcade action game built with Kotlin Multiplatform and Compose Multiplatform).'
+          text: 'Dhruv is the creator of AI Playground (an offline-first, on-device multimodal AI workstation running local LLMs and diffusion models with zero cloud roundtrips), VelociHue (a 60-120 FPS arcade action game built with Kotlin Multiplatform and Compose Multiplatform), and Open Store (a privacy-first Android TV companion, launcher, and application hub).'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What is Open Store?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Open Store is a lightweight, privacy-first companion, smart launcher, and app hub crafted specifically for Android TV and Google TV devices. Built with Kotlin and Jetpack Compose for TV, it delivers a direct Google Play Store gateway, a lean TV apps drawer with D-pad remote search, a pinned favorites shelf, storage health monitoring, 10 OLED dark themes, and zero ads.'
         }
       }
     ]

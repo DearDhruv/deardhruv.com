@@ -83,7 +83,7 @@
 
 ### 1. IMPACT Commerce (Denmark & India)
 - **Title**: Lead Android Engineer
-- **Period**: February 2022 – Present
+- **Period**: February 2022 - Present
 - **Domain**: Digital Commerce, In-Store Retail Hardware, POS Peripherals
 - **Core Responsibilities & Deliverables**:
   - Directed research and system architecture for custom Android OS builds running on interactive in-store touch displays and commercial kiosk terminals.
@@ -94,7 +94,7 @@
 
 ### 2. PLANOLY (USA & India)
 - **Title**: Senior Android Developer
-- **Period**: November 2018 – February 2022
+- **Period**: November 2018 - February 2022
 - **Domain**: Social Media Planning, Creative Media Editing, Creator Tools
 - **Core Responsibilities & Deliverables**:
   - Engineered core features for PLANOLY Visual Planner (serving millions of creators scheduling content to Instagram and Pinterest).
@@ -105,7 +105,7 @@
 
 ### 3. Ashapura Softech Inc (India)
 - **Title**: Tech Lead | Android Engineer
-- **Period**: June 2016 – October 2018
+- **Period**: June 2016 - October 2018
 - **Domain**: Enterprise Client Applications, Consulting
 - **Core Responsibilities & Deliverables**:
   - Led and directed distributed squads of Android developers delivering enterprise mobile applications across varied client verticals.
@@ -114,7 +114,7 @@
 
 ### 4. Russmedia Tech (India)
 - **Title**: Team Lead | Senior Android Developer
-- **Period**: February 2014 – June 2016
+- **Period**: February 2014 - June 2016
 - **Domain**: Publishing, Digital Media, Classifieds Platforms
 - **Core Responsibilities & Deliverables**:
   - Managed mobile application development and maintenance for European publishing and digital classifieds platforms.
@@ -123,16 +123,16 @@
 
 ### 5. Hidden Brains InfoTech (India)
 - **Title**: Junior Android Developer
-- **Period**: January 2012 – December 2013
+- **Period**: January 2012 - December 2013
 - **Domain**: Mobile Applications, 2D Gaming, Early iOS Interop
 - **Core Responsibilities & Deliverables**:
   - Developed commercial native Android applications and 2D mobile arcade games using early Android SDKs and canvas APIs.
   - Gained foundational experience in memory management, touch event dispatching, and cross-platform native logic.
 
-### 6. Early Foundation & Trainee Roles (2010 – 2011)
-- **Orane Inc** (Oct 2011 – Dec 2011): Junior Android Developer focusing on mobile animations and 2D interactive games.
-- **DataSoft** (Feb 2011 – May 2011): Engineering Trainee developing an accessible mobile utility application for visually impaired individuals.
-- **Coronation** (Feb 2010 – May 2010): Web Development Trainee working with ASP.NET and VB.NET.
+### 6. Early Foundation & Trainee Roles (2010 - 2011)
+- **Orane Inc** (Oct 2011 - Dec 2011): Junior Android Developer focusing on mobile animations and 2D interactive games.
+- **DataSoft** (Feb 2011 - May 2011): Engineering Trainee developing an accessible mobile utility application for visually impaired individuals.
+- **Coronation** (Feb 2010 - May 2010): Web Development Trainee working with ASP.NET and VB.NET.
 
 ---
 
