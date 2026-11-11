@@ -12,7 +12,7 @@ I'm **Dhruv Patel** (known online as **DearDhruv**), a Lead Android Engineer, An
 
 Currently, I serve as a **Lead Android Engineer at IMPACT Commerce**, where I work on digital commerce applications, custom Android OS touch hardware, and point-of-sale integrations.
 
-Beyond enterprise systems, I design and build independent open-source products. Two projects where I've documented my work in detail are **[AI Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)**, an offline-first mobile workstation for running local LLMs and diffusion models, and **[VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)**, a fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android and Android TV.
+Beyond enterprise systems, I design and build independent open-source products. Three projects where I've documented my work in detail are **[AI Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground)**, an offline-first mobile workstation for running local LLMs and diffusion models, **[VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue)**, a fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS, and **[Open Store](https://play.google.com/store/apps/details?id=com.deardhruv.openstore)**, a lightweight, privacy-first companion and app hub crafted specifically for Android TV and Google TV devices.
 
 👉 **Portfolio:** [Explore engineering highlights and employer case studies](/portfolio/)
 
@@ -23,7 +23,7 @@ Beyond enterprise systems, I design and build independent open-source products. 
 I prefer working on problems where software directly meets hardware limits. A few principles that guide how I build:
 
 ### 1. Build for Real Device Constraints
-Mobile devices have hard thermal ceilings, volatile memory budgets, and unpredictable battery drains. When building AI Playground, running inference directly on a phone meant accounting for vendor Vulkan driver segmentation faults. Rather than pretending mobile drivers never crash, I moved inference into a defensive `fork()` child process sandbox with a 3000ms watchdog loop. If a driver crashes, the child process is terminated with `SIGKILL` without taking down the user's UI.
+Mobile devices and television dongles have hard thermal ceilings, volatile memory budgets, and unpredictable battery or hardware constraints. In Open Store for Android TV, constrained living-room hardware requires adaptive low-RAM profile engines with automatic gradient bypasses and cooperative memory pressure trimming (`onTrimMemory`). In AI Playground, running inference directly on a phone meant accounting for vendor Vulkan driver segmentation faults. Rather than pretending mobile drivers never crash, I moved inference into a defensive `fork()` child process sandbox with a 3000ms watchdog loop. If a driver crashes, the child process is terminated with `SIGKILL` without taking down the user's UI.
 
 ### 2. Prefer Local Processing Where Practical
 Cloud services are convenient, but keeping compute local protects privacy, eliminates round-trip network latency, and ensures applications work when connections fail. Running on-device LLMs (via `llama.cpp` and `LiteRT`) and keeping documents in a local SQLite database ensures personal data never leaves the device.

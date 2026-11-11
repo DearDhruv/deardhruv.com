@@ -46,13 +46,13 @@
       },
       {
         "name": "get_project_architecture",
-        "description": "Returns in-depth systems architecture and engineering trade-offs for AI Playground (on-device AI workstation), VelociHue (KMP arcade game), or retail hardware HAL integrations.",
+        "description": "Returns in-depth systems architecture and engineering trade-offs for AI Playground (on-device AI workstation), VelociHue (KMP arcade game), Open Store (Android TV companion & app hub), or retail hardware HAL integrations.",
         "inputSchema": {
           "type": "object",
           "properties": {
             "project": {
               "type": "string",
-              "enum": ["ai-playground", "velocihue", "retail-hardware-hal", "planoly-video-pipeline"],
+              "enum": ["ai-playground", "velocihue", "openstore", "retail-hardware-hal", "planoly-video-pipeline"],
               "description": "Name of the production system to inspect."
             }
           },

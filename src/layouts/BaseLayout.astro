@@ -168,6 +168,9 @@ const personSchema = {
     'POSIX fork() Sandboxing',
     'Android Low Memory Killer (LMK)',
     'SQLDelight & SQLite',
+    'Android TV & Google TV (Leanback)',
+    'Jetpack Compose for TV',
+    'Living-Room D-Pad Navigation Ergonomics',
     'Cloud Firestore Schema v5',
     'Android TV & Leanback'
   ]
@@ -262,7 +265,8 @@ if (ogType === 'article') {
       `${siteOrigin}/projects/`,
       `${siteOrigin}/resume.pdf`,
       'https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground',
-      'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue'
+      'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
+      'https://play.google.com/store/apps/details?id=com.deardhruv.openstore'
     ]
   };
 } else if (normalizedPath === '/about/') {
@@ -309,7 +313,7 @@ const aboutFaqSchema = normalizedPath === '/about/' ? {
       name: 'Who is Dhruv Patel (@DearDhruv)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 15+ years of experience in native mobile systems, Kotlin Multiplatform, on-device AI runtimes, and retail hardware integrations. He is the creator of AI Playground and VelociHue.'
+        text: 'Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India with 15+ years of experience in native mobile systems, Kotlin Multiplatform, on-device AI runtimes, and retail hardware integrations. He is the creator of AI Playground, VelociHue, and Open Store.'
       }
     },
     {
@@ -317,7 +321,7 @@ const aboutFaqSchema = normalizedPath === '/about/' ? {
       name: 'What does Dhruv Patel specialize in?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Dhruv specializes in native Android development (Kotlin, Jetpack Compose, C++20 NDK), Kotlin Multiplatform (CMP 1.12), on-device AI runtimes (llama.cpp, Google AI Edge LiteRT, Apple MLX), speculative decoding, defensive POSIX fork() process sandboxing, and retail POS hardware integrations.'
+        text: 'Dhruv specializes in native Android development (Kotlin, Jetpack Compose, C++20 NDK), Kotlin Multiplatform (CMP 1.12), on-device AI runtimes (llama.cpp, Google AI Edge LiteRT, Apple MLX), speculative decoding, defensive POSIX fork() process sandboxing, Android TV Leanback architectures, and retail POS hardware integrations.'
       }
     },
     {
@@ -334,6 +338,14 @@ const aboutFaqSchema = normalizedPath === '/about/' ? {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'VelociHue is a high-framerate arcade game built in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It runs a shared deterministic physics loop at 60-120 FPS with Cloud Firestore schema v5 sync and 29 achievements.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Open Store?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Open Store is a lightweight, privacy-first companion and app hub crafted specifically for Android TV and Google TV devices. Built with Kotlin and Jetpack Compose for TV (AndroidX TV Material 3), it delivers a 1-click Google Play Store gateway, an installed TV apps drawer with real-time remote search, quick launch pinned favorites, storage health monitoring, 10 OLED dark themes, and 100% fluid D-pad navigation with zero ads.'
       }
     },
     {

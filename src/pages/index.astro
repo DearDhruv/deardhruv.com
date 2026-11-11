@@ -38,6 +38,24 @@ const homeSchemas = [
     installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
     downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.velocihue',
     description: 'High-framerate arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS.'
+  },
+  {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/#app-openstore',
+    name: 'Open Store: TV Apps & Launcher',
+    alternateName: 'Open Store',
+    operatingSystem: 'Android TV, Google TV',
+    applicationCategory: 'UtilitiesApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.openstore',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.openstore',
+    description: 'Lightweight, privacy-first companion and app hub for Android TV and Google TV devices featuring a Google Play Store gateway, TV apps drawer, storage monitoring, and D-pad ergonomics.'
   }
 ];
 ---
@@ -206,7 +224,7 @@ const homeSchemas = [
         </p>
       </div>
 
-      <div class="layout-grid-2">
+      <div class="layout-grid-3">
         <!-- AI Playground -->
         <article class="card card-interactive">
           <div style="margin-bottom: var(--space-3);">
@@ -221,15 +239,15 @@ const homeSchemas = [
             </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
-            An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon, keeping user conversations and documents private without cloud round-trips. Built with Kotlin Multiplatform, C++20 JNI bindings to llama.cpp, Google AI Edge LiteRT, and Apple MLX. Includes dual-model speculative drafting (2x speedup) and a native <code>fork()</code> sandbox to isolate Vulkan driver crashes.
+            An offline-first multimodal AI workstation running local LLMs and diffusion models directly on mobile silicon with zero cloud telemetry. Features multi-engine runtimes (llama.cpp JNI, LiteRT, Apple MLX Metal), dual-model Speculative Turbo decoding (2x speedup), native <code>fork()</code> Vulkan crash isolation, on-device Bonsai 4B diffusion, and pure-KMP document parsing across 25+ formats.
           </p>
           <div class="layout-cluster" style="margin-bottom: var(--space-6);">
             <span class="chip">KMP</span>
             <span class="chip">Compose MP</span>
-            <span class="chip">Image Generation</span>
-            <span class="chip">C++20 NDK</span>
+            <span class="chip">Image Gen</span>
             <span class="chip">llama.cpp</span>
-            <span class="chip">Vulkan/Metal</span>
+            <span class="chip">LiteRT</span>
+            <span class="chip">MLX/Metal</span>
           </div>
           <div class="layout-cluster">
             <a href="https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
@@ -261,7 +279,7 @@ const homeSchemas = [
             </h3>
           </div>
           <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
-            A fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV. Runs at 60–120 FPS using a shared deterministic physics loop, conflict-free Cloud Firestore schema v5 sync with 3-way union merge, and 29 progressive achievements.
+            A high-framerate arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. Runs at 60-120 FPS using a shared deterministic physics loop, Boost and Overdrive speed surges, zero-allocation hot-path rendering, conflict-free Cloud Firestore schema v5 sync, and 29 progressive achievements.
           </p>
           <div class="layout-cluster" style="margin-bottom: var(--space-6);">
             <span class="chip">KMP</span>
@@ -272,6 +290,45 @@ const homeSchemas = [
           </div>
           <div class="layout-cluster">
             <a href="https://play.google.com/store/apps/details?id=com.deardhruv.velocihue" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4.5 3.5v17a1.5 1.5 0 0 0 2.25 1.3l13.5 -8.5a1.5 1.5 0 0 0 0 -2.6l-13.5 -8.5a1.5 1.5 0 0 0 -2.25 1.3z" />
+                <path d="M4.5 3.5l10.5 10.5" />
+                <path d="M4.5 20.5l10.5 -10.5" />
+              </svg>
+              <span>Google Play</span>
+            </a>
+            <a href="/projects/" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <span>Case Study</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Open Store -->
+        <article class="card card-interactive">
+          <div style="margin-bottom: var(--space-3);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
+              <span style="font-family: var(--font-mono); font-size: var(--font-overline); text-transform: uppercase; color: var(--color-accent); font-weight: 700;">System 03</span>
+              <span class="badge">Utility &middot; Android TV App Hub</span>
+            </div>
+            <h3 style="font-size: var(--font-h3); margin: 0 0 var(--space-2) 0;">
+              <a href="/projects/" class="card-stretched-link" style="text-decoration: none; color: inherit;">
+                Open Store
+              </a>
+            </h3>
+          </div>
+          <p style="color: var(--color-text-secondary); font-size: var(--font-body-small); line-height: 1.6; margin-bottom: var(--space-4);">
+            A lightweight, privacy-first companion and app hub crafted specifically for Android TV and Google TV devices. Built with Kotlin and Jetpack Compose for TV, providing an instant 1-click gateway to launch the Google Play Store, an installed TV apps drawer with real-time remote search, storage health monitoring, 10 OLED dark themes, and 100% fluid D-pad navigation with zero ads.
+          </p>
+          <div class="layout-cluster" style="margin-bottom: var(--space-6);">
+            <span class="chip">Android TV</span>
+            <span class="chip">Compose for TV</span>
+            <span class="chip">D-Pad Focus</span>
+            <span class="chip">Storage Health</span>
+            <span class="chip">SDK 37</span>
+          </div>
+          <div class="layout-cluster">
+            <a href="https://play.google.com/store/apps/details?id=com.deardhruv.openstore" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4.5 3.5v17a1.5 1.5 0 0 0 2.25 1.3l13.5 -8.5a1.5 1.5 0 0 0 0 -2.6l-13.5 -8.5a1.5 1.5 0 0 0 -2.25 1.3z" />
                 <path d="M4.5 3.5l10.5 10.5" />

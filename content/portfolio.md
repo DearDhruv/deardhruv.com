@@ -34,16 +34,17 @@ This portfolio separates my **independent engineering products** from **selected
 
 ### 1. AI Playground - On-Device Multimodal AI Workstation
 **Role:** Director & Lead Engineer  
-**Tech:** Kotlin Multiplatform (CMP 1.12), C++20 / NDK (JNI), llama.cpp, Google AI Edge LiteRT (v2.3), Apple MLX, Vulkan / Metal, SQLDelight (v2.4)  
-**Status:** Live on Google Play &middot; iOS in development / planned
+**Tech:** Kotlin Multiplatform (CMP 1.12), C++20 / NDK (JNI), llama.cpp v0.8.0, Google AI Edge LiteRT, Apple MLX Swift / Metal GPU, stable-diffusion.cpp, SQLDelight  
+**Status:** Live on Google Play (v1.7.7 Production) &middot; iOS in development
 
-An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon, keeping user conversations and document analysis private without cloud round-trips.
+An offline-first multimodal AI workstation that runs local LLMs and diffusion models directly on mobile silicon, keeping user conversations, documents, and generated images private with zero cloud telemetry (`INV-OFFLINE-01`).
 
-- **Dual-Model Speculative Drafting:** Paired lightweight companion draft models (e.g., Qwen 2.5 0.5B + Llama 3.2 1B) with dynamic draft context capping and RAM admission guardrails, doubling decoding throughput without exhausting mobile VRAM.
-- **Defensive Hardware Sandbox:** Designed a crash-resilient `fork()` child process sandbox with a 3000ms watchdog loop and `SIGKILL` fallback for native Vulkan driver probing, preventing vendor GPU driver segmentation faults from crashing the application.
-- **Pure-KMP Document Engine:** Built an offline semantic parser extracting structured text across 25+ file formats (PDF, DOCX, XLSX, PPTX, CSV, JSON, Markdown, RTF) using pure RFC 1951 Deflate decompression without external binaries or cloud services.
-- **On-Device Diffusion:** Synthesizes 4-step diffusion images on mobile silicon using Google LiteRT Multi-Graph runtime and Bonsai Image Ternary 4B.
-- **Offline Activity Ledger:** Local analytics ledger (SQLDelight v10) tracking usage milestones with strictly zero external network calls (`INV-OFFLINE-01`).
+- **Multi-Engine On-Device Runtimes:** Runs GGUF models via high-performance `llama.cpp` JNI bindings with dynamic multi-binary `LlamaEngineLoader` (OpenCL/Vulkan GPU routing on Android and native Metal GPU on iOS), Safetensors models via Apple MLX Swift on iOS, and MediaPipe `.task` models.
+- **Dual-Model Speculative Turbo Decoding:** Couples compact companion draft models (e.g. Qwen 2.5 0.5B) with target models (e.g. Llama 3.2 1B). Dynamic draft context capping and KV cache session pre-warming double decoding throughput on local mobile silicon without VRAM exhaustion.
+- **Defensive Hardware Sandbox:** Designed a crash-resilient `fork()` child process watchdog sandbox with a 3000ms loop and `kill(pid, SIGKILL)` fallback for native Vulkan driver probing, preventing vendor GPU driver segmentation faults from crashing the application UI.
+- **On-Device Diffusion & Bonsai Image Ternary 4B:** Local text-to-image synthesis supporting 16 curated models across Android (LiteRT multi-graph, `stable-diffusion.cpp` GGUF) and iOS (Apple MLX Metal GPU, Core ML), with 4-step synthesis via Bonsai Image Ternary 4B (FLUX.2-klein quantized to 1.58-bit/2-bit ternary weights) and W3C PNG `tEXt` chunk attribution metadata.
+- **Pure-KMP Document Parsing Engine:** Offline semantic extraction across 25+ file formats (TXT, LOG, MD, CSV, TSV, JSON, XML, YAML, DOCX, DOC, XLSX, XLS, PPTX, PPT, RTF, ODT, ODS, ODP) using pure RFC 1951 Deflate decompression without external binaries or cloud services.
+- **Context Intelligence & System Integration:** System-wide text selection action (`ACTION_PROCESS_TEXT`), context-aware smart clipboard detection (20+ chars) with one-tap action pills, offline touch-to-talk speech-to-text, and 11 localized languages with native RTL support.
 
 👉 **Artifacts & Links:** [Google Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground) &middot; [6-Part Engineering Blog Series](/posts/ai_playground_series/)
 
@@ -51,18 +52,42 @@ An offline-first multimodal AI workstation that runs local LLMs and diffusion mo
 
 ### 2. VelociHue - High-Framerate Arcade Game in KMP
 **Role:** Director & Lead Engineer  
-**Tech:** Kotlin Multiplatform (Kotlin 2.4, CMP 1.12), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad)  
-**Status:** Live on Google Play &middot; iOS in development / planned
+**Tech:** Kotlin Multiplatform (Kotlin 2.4.21, CMP 1.12.2), Target SDK 37 (Android 17), Cloud Firestore (Schema v5), Android TV (Leanback & D-pad), iOS 18 (SwiftUI & Metal)  
+**Status:** Live on Google Play (v0.1.8 Production) &middot; Android TV Live &middot; iOS Playable
 
-A fast-paced arcade action game engineered with Kotlin Multiplatform and Compose Multiplatform, shipping natively on Android and Android TV, with shared physics and deterministic progression logic across platforms.
+A fast-paced arcade action game engineered with Kotlin Multiplatform and Compose Multiplatform, shipping natively on Android and Android TV with shared physics and deterministic progression logic across platforms.
 
-- **Shared Pure-Kotlin Game Engine:** Deterministic game loop running at 60–120 FPS managing color-matching physics, projectiles, and power-ups across Android and iOS with 100% shared logic.
+- **Shared Pure-Kotlin Game Engine:** Deterministic game loop running at 60-120 FPS managing color-matching physics, projectiles, and power-ups across Android, Android TV, and iOS with 100% shared logic.
+- **Boost & Overdrive Speed Surge:** Reactive gauge accrual from perfect passes, edge grazes, asteroid kills, and wormholes, delivering 2.2x world speed surges, obstacle shattering, and auto-magnetism.
+- **Zero-Allocation Hot-Path Rendering:** Eliminated 11 `BoxWithConstraints` subcompositions on the rendering hot path, implementing GPU-scaled canvas `drawText` via `rememberTextMeasurer` in `ScorePopUpLayer` with memoized draw states.
 - **Conflict-Free Cloud Sync Engine (Schema v5):** Multi-device synchronization backed by Cloud Firestore with a 3-way union merge strategy that reconciles player progression, cosmetics, and streaks across devices.
-- **29-Achievement Multi-Tiered Engine:** Progression system evaluated by a pure-function derived unlock engine with retroactive upgrade backfill across player levels.
+- **Interactive Pilot Academy & Adaptive Ergonomics:** 6-module interactive training academy reusing real in-game UI components, with posture classification adapting for foldables, flips, tablets, and phones.
+- **Native Android TV & Living Room Parity:** Dedicated television deployment with Leanback manifest declarations, D-pad remote navigation (Down to fire, Up to boost), and living-room TV ad gating.
+- **29-Achievement Multi-Tiered Engine:** Progression system evaluated by a pure-function derived unlock engine (`AchievementUnlockComputation`) with retroactive upgrade backfill across player levels.
 - **Sensory & Accessibility Suite:** Built-in photo-sensitive and reduced-motion safety mode, granular SFX/music volume controls, and dynamic haptic feedback scaling.
-- **Native Android TV & 10-Foot UI:** Dedicated television deployment with Leanback manifest declarations and D-pad remote navigation focus states.
 
 👉 **Artifacts & Links:** [Google Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue) &middot; [Technical Project Deep-Dive](/projects/)
+
+---
+
+### 3. Open Store - TV Apps & Launcher for Android TV
+**Role:** Author & Lead Engineer  
+**Tech:** Kotlin 2.1.10, Jetpack Compose for TV (AndroidX TV Material 3), Target SDK 37 (Android 17), Android TV (Leanback), R8 Minification, Background Concurrency (`Dispatchers.IO`)  
+**Status:** Live on Google Play (v1.0.7 Production) &middot; Exclusively for Android TV & Google TV
+
+A lightweight, privacy-first companion, smart launcher, and app hub engineered specifically for Android TV and Google TV devices, providing an instant gateway to open the Google Play Store, manage installed apps, monitor storage health, and navigate living-room settings with zero ads and zero telemetry.
+
+- **Google Play Store Gateway:** Instant 1-click shortcut to launch the official Google Play Store on Android TV and Google TV devices where the store icon is hidden or buried by the system launcher.
+- **My TV Apps Drawer & Instant Remote Search:** High-resolution 2D grid displaying all installed TV and system applications with real-time D-pad remote search, 3-way smart sorting (A-Z/Z-A, Recently Installed, Recently Updated), and bloatware app hiding.
+- **Quick Launch Pinned Favorites Shelf:** Dedicated living-room top shelf pinning up to 6 frequently used apps for instant 1-click launching and remote navigation.
+- **App Details & Context Actions:** Long-press or Menu button context actions to open apps, view version labels (`vX.Y.Z`), pin/unpin favorites, hide/unhide applications, open system App Info/permissions, safe uninstall, or jump directly to the Play Store listing.
+- **Living-Room Quick TV Settings & Storage Health:** Direct TV shortcuts to Storage, Applications, Network & Internet, and Bluetooth Remotes & Accessories with robust fallback intent chains, plus a real-time storage gauge with color-coded capacity indicators.
+- **10 OLED Dark Themes & Top 10 Languages:** Hand-crafted dark palettes tailored for OLED living-room screens, localized in English, Spanish, Hindi, German, French, Japanese, Portuguese, Russian, Arabic (RTL), and Simplified Chinese with automatic TV system language detection and RTL-aware horizontal traversal (`rtlFocusProperties`).
+- **100% Fluid D-Pad Navigation & Zero Focus Traps:** Engineered strictly for remote controls with focus memory, 2D traversal, deterministic default active selection on fresh launch, seamless focus preservation on warm resume, smooth press scale damping (`0.98f`), trailing long-press release defusing, and column-proportional hero-to-shelf routing.
+- **Adaptive Low-RAM Engine & Memory Trimming:** Automatic gradient bypass and zero-scale focus on budget TV hardware; cooperative OS memory pressure trimming (`onTrimMemory`), running at 57 MB PSS standard and 52 MB PSS in low-RAM mode on 4K TV.
+- **Zero Ads & 100% Privacy:** No advertisements, no background telemetry, no tracking SDKs, and automatic sanitization of pinned/hidden lists on every scan to eliminate ghost slots.
+
+👉 **Artifacts & Links:** [Google Play Store](https://play.google.com/store/apps/details?id=com.deardhruv.openstore) &middot; [Open Store Legal & Privacy](/other/open-store-app/)
 
 ---
 

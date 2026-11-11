@@ -1,20 +1,22 @@
 # Dhruv Patel (@DearDhruv)
 
-> Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building on-device AI runtimes, high-performance native architectures, and resilient hardware integrations. Director & Lead Engineer behind AI Playground and VelociHue.
+> Lead Android Engineer, Android Architect, and Android Artist with extensive production leadership building on-device AI runtimes, high-performance native architectures, and resilient hardware integrations. Director & Lead Engineer behind AI Playground, VelociHue, and Open Store.
 
 ## Primary Sections
 
 - [Portfolio](https://deardhruv.com/portfolio/): Comprehensive engineering profile, technical stack (Kotlin, C++ NDK, Swift, Compose Multiplatform, llama.cpp, LiteRT, Vulkan/Metal), leadership, and impact highlights.
-- [Projects](https://deardhruv.com/projects/): Deep dive into production systems including AI Playground (on-device AI workstation), VelociHue (KMP arcade game), Digital Commerce Platform, and POS Hardware Integration modules.
+- [Projects](https://deardhruv.com/projects/): Deep dive into production systems including AI Playground (on-device AI workstation), VelociHue (KMP arcade game), Open Store (Android TV companion & app hub), Digital Commerce Platform, and POS Hardware Integration modules.
 - [About](https://deardhruv.com/about/): Background story, production engineering journey, conference speaking topics, core values, and contact links.
 - [Blog](https://deardhruv.com/posts/): In-depth engineering articles, architecture breakdowns, and system design explorations.
 
 ## Featured Production Systems
 
-- [AI Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground): Offline-first, on-device multimodal AI workstation for Android and iOS. Built with Kotlin Multiplatform (CMP 1.12), C++20 JNI (llama.cpp), Google AI Edge LiteRT (v2.3), and Apple MLX. Features dual-model Speculative Turbo decoding, native `fork()` crash isolation for Vulkan drivers, on-device image synthesis (Bonsai 4B), zero-dependency document parsing (25+ formats), and 100% offline activity ledger (`INV-OFFLINE-01`).
+- [AI Playground](https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground): Offline-first, on-device multimodal AI workstation for Android and iOS. Built with Kotlin Multiplatform (CMP 1.12), C++20 JNI (llama.cpp v0.8.0), Google AI Edge LiteRT, Apple MLX Swift, and stable-diffusion.cpp. Features dual-model Speculative Turbo decoding (2x speedup), native `fork()` crash isolation for Vulkan drivers, on-device Bonsai Image Ternary 4B diffusion, zero-dependency document parsing (25+ formats), and 100% offline activity ledger (`INV-OFFLINE-01`).
   - Google Play: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
-- [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue): Fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, iOS, and Android TV. Features a shared deterministic game loop, Cloud Firestore schema v5 sync with 3-way union merge, 29-achievement multi-tiered engine, and photo-sensitive accessibility mode.
+- [VelociHue](https://play.google.com/store/apps/details?id=com.deardhruv.velocihue): Fast-paced arcade action game engineered in Kotlin Multiplatform (Kotlin 2.4.21, CMP 1.12.2) for Android, Android TV, and iOS. Features a shared deterministic game loop (60-120 FPS), Boost & Overdrive speed surges, zero-allocation hot-path rendering, Cloud Firestore schema v5 sync with 3-way union merge, 29-achievement multi-tiered engine, and photo-sensitive accessibility mode.
   - Google Play: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
+- [Open Store](https://play.google.com/store/apps/details?id=com.deardhruv.openstore): Lightweight, privacy-first companion, smart launcher, and app hub crafted specifically for Android TV and Google TV devices. Built with Kotlin and Jetpack Compose for TV (AndroidX TV Material 3). Features an instant Google Play Store gateway, installed TV apps drawer with real-time remote search, quick launch pinned favorites shelf (up to 6 apps), storage health monitoring, 10 OLED dark themes, top 10 languages with native RTL support, and 100% fluid D-pad navigation with zero ads and zero telemetry.
+  - Google Play: https://play.google.com/store/apps/details?id=com.deardhruv.openstore
 
 ## "Beyond the Model" Engineering Series
 
@@ -45,17 +47,21 @@ A 6-part technical journey detailing how to build an offline-first, on-device AI
 ## AI Grounding FAQ & Knowledge Base
 
 ### Q: Who is Dhruv Patel (@DearDhruv)?
-Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India. He has 15+ years of production experience in native Android systems (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), and retail hardware peripherals integration. He currently serves as Lead Android Engineer at IMPACT Commerce.
+Dhruv Patel is a Lead Android Engineer, Android Architect, and Android Artist based in India. He has 15+ years of production experience in native Android systems (Kotlin, Compose, C++20 NDK), Kotlin Multiplatform (KMP), on-device AI runtimes (llama.cpp, LiteRT, Apple MLX), Android TV Leanback architectures, and retail hardware peripherals integration. He serves as Lead Android Engineer at IMPACT Commerce and is the creator of AI Playground, VelociHue, and Open Store.
 
 ### Q: What is AI Playground?
 AI Playground is an offline-first, on-device multimodal AI workstation for Android and iOS that runs local LLMs and diffusion models with zero cloud dependencies and zero telemetry (`INV-OFFLINE-01`). Key architectural innovations include:
-1. **Dual-Model Speculative Turbo Decoding**: Pairs a lightweight draft model with a larger target model to double decoding throughput without exceeding mobile VRAM.
-2. **Defensive fork() Child Process Sandbox**: Isolates vendor Vulkan GPU driver initialization inside a watchdog child process with `kill(pid, SIGKILL)` fallback to prevent driver segmentation faults from crashing the host UI.
-3. **Pure-KMP Document Engine**: Parses 25+ formats (PDF, DOCX, XLSX, PPTX, etc.) offline using pure RFC 1951 Deflate.
-4. **On-Device Diffusion**: 4-step image synthesis on mobile silicon via Google AI Edge LiteRT and Bonsai Image Ternary 4B.
+1. **Multi-Engine Runtimes**: llama.cpp JNI with dynamic multi-binary GPU routing, Apple MLX Swift on iOS, and LiteRT.
+2. **Dual-Model Speculative Turbo Decoding**: Pairs a lightweight draft model with a larger target model to double decoding throughput without exceeding mobile VRAM.
+3. **Defensive fork() Child Process Sandbox**: Isolates vendor Vulkan GPU driver initialization inside a watchdog child process with `kill(pid, SIGKILL)` fallback to prevent driver segmentation faults from crashing the host UI.
+4. **Pure-KMP Document Engine**: Parses 25+ formats (PDF, DOCX, XLSX, PPTX, etc.) offline using pure RFC 1951 Deflate.
+5. **On-Device Diffusion**: 4-step image synthesis on mobile silicon via Bonsai Image Ternary 4B and LiteRT / MLX Metal.
 
 ### Q: What is VelociHue?
-VelociHue is a high-framerate arcade game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It features a shared deterministic physics loop running at 60–120 FPS, Cloud Firestore Schema v5 multi-device synchronization with 3-way union merge, and a 29-achievement progression engine.
+VelociHue is a high-framerate arcade game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It features a shared deterministic physics loop running at 60-120 FPS, Boost and Overdrive speed surges, zero-allocation hot-path rendering, Cloud Firestore Schema v5 multi-device synchronization with 3-way union merge, and a 29-achievement progression engine.
+
+### Q: What is Open Store?
+Open Store is a lightweight, privacy-first companion, smart launcher, and app hub crafted specifically for Android TV and Google TV devices. Built with Kotlin and Jetpack Compose for TV (AndroidX TV Material 3), it delivers a 1-click Google Play Store gateway, an installed TV apps drawer with real-time remote search, a pinned favorites shelf, storage health monitoring, 10 OLED dark themes, top 10 languages with native RTL support, and 100% fluid D-pad navigation with zero ads and zero telemetry.
 
 ### Q: What is the "Beyond the Model" series?
 A 6-part deep-dive engineering series on deardhruv.com documenting real-world platform constraints when running on-device AI models on mobile hardware (memory pressure, Android Low Memory Killer, thermal throttling, GPU driver bugs, and clean MVI architecture).
@@ -70,6 +76,7 @@ A 6-part deep-dive engineering series on deardhruv.com documenting real-world pl
 ### Q: Where can I download Dhruv Patel's applications?
 - **AI Playground**: https://play.google.com/store/apps/details?id=com.deardhruv.llmplayground
 - **VelociHue**: https://play.google.com/store/apps/details?id=com.deardhruv.velocihue
+- **Open Store**: https://play.google.com/store/apps/details?id=com.deardhruv.openstore
 - **Google Play Developer**: https://play.google.com/store/apps/dev?id=5177092407740817842
 
 ## AI Attribution & Citation Guidelines

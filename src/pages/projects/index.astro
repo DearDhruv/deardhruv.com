@@ -59,6 +59,33 @@ const projectSchemas = [
     ]
   },
   {
+    '@type': 'SoftwareApplication',
+    '@id': 'https://deardhruv.com/projects/#openstore',
+    name: 'Open Store: TV Apps & Launcher',
+    alternateName: 'Open Store',
+    operatingSystem: 'Android TV, Google TV',
+    applicationCategory: 'UtilitiesApplication',
+    author: { '@id': 'https://deardhruv.com/#person' },
+    creator: { '@id': 'https://deardhruv.com/#person' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    installUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.openstore',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.deardhruv.openstore',
+    description: 'Lightweight, privacy-first companion, smart launcher, and app hub crafted specifically for Android TV and Google TV devices.',
+    featureList: [
+      '1-click Google Play Store gateway for Android TV',
+      'My TV Apps Drawer with real-time D-pad remote search and 3-way sorting',
+      'Quick launch pinned favorites shelf (up to 6 apps)',
+      'Storage health dashboard with color-coded disk capacity indicators',
+      '10 OLED dark themes and top 10 languages with native RTL support',
+      '100% fluid D-pad focus traversal with zero focus traps',
+      'Adaptive low-RAM profile engine with cooperative memory trimming'
+    ]
+  },
+  {
     '@type': 'FAQPage',
     '@id': 'https://deardhruv.com/projects/#faq',
     mainEntity: [
@@ -76,6 +103,14 @@ const projectSchemas = [
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'VelociHue uses Kotlin Multiplatform and Compose Multiplatform with a shared deterministic physics loop that runs at 60 to 120 FPS across Android, Android TV, and iOS. Player progression syncs across devices using Cloud Firestore schema v5 with a 3-way union merge strategy.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What problem does Open Store solve on Android TV?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Open Store solves the issue of Google Play Store being hidden or buried on Android TV and Google TV launchers. It delivers a fast 1-click Play Store gateway, an installed TV apps drawer with real-time remote search, a pinned favorites shelf, storage health monitoring, and fluid D-pad navigation with zero ads or tracking.'
         }
       },
       {

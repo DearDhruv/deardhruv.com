@@ -16,10 +16,10 @@ Browse application-specific privacy declarations, data handling notices, and ser
 
 ### 1. AI Playground
 
-An offline-first generative AI studio designed to run large language models, document reasoning pipelines, and diffusion models entirely on-device using LiteRT, MediaPipe, and ExecuTorch runtimes.
+An offline-first generative AI workstation designed to run large language models, document reasoning pipelines across 25+ formats, and on-device diffusion image synthesis entirely on local hardware using native C++ JNI llama.cpp, Google AI Edge LiteRT, Apple MLX Swift, and stable-diffusion.cpp runtimes.
 
 * **[AI Playground Privacy Policy](/other/ai-playground/privacy-policy-ai-playground-app/)**  
-  Details our zero-telemetry architecture: prompts, chat logs, embeddings, documents, and generated media remain in local device memory and sandboxed app storage. No inference data is ever transmitted to cloud servers.
+  Details our zero-telemetry architecture: prompts, chat logs, embeddings, documents, and generated media remain strictly in local device memory and sandboxed app storage (`INV-OFFLINE-01`). No inference data is ever transmitted to cloud servers.
 * **[AI Playground Terms of Service](/other/ai-playground/terms-ai-playground-app/)**  
   Outlines software licensing, local compute disclaimers, open model weights usage, and user responsibilities.
 * **[AI Playground Legal Overview](/other/ai-playground/)**  
@@ -29,12 +29,12 @@ An offline-first generative AI studio designed to run large language models, doc
 
 ### 2. Open Store
 
-A lightweight, modern Android package distribution client and application store interface built for developer efficiency.
+A clean, privacy-first companion, smart launcher, and app hub engineered specifically for Android TV and Google TV devices. Built with Kotlin and Jetpack Compose for TV, it provides an instant 1-click gateway to launch the Google Play Store, manage installed TV apps, monitor device storage, and customize living-room shortcuts with zero ads and zero telemetry.
 
 * **[Open Store Privacy Policy](/other/open-store-app/privacy-policy-open-store-app/)**  
-  Explains package query mechanisms, direct repository downloads, and anonymous crash reporting without personal user identity tracking.
+  Explains our local-first privacy architecture: zero advertisements, zero background analytics telemetry, and zero tracking SDKs. Installed package queries and storage metrics are evaluated strictly on the local television device.
 * **[Open Store Terms of Service](/other/open-store-app/terms-open-store-app/)**  
-  Covers open-source client distribution terms, third-party APK repositories, and installation disclaimers.
+  Covers application usage terms, system settings shortcut disclaimers, and limitation of liability for Android TV and Google TV devices.
 * **[Open Store Legal Overview](/other/open-store-app/)**  
   Dedicated hub for Open Store documentation and legal notices.
 
@@ -42,7 +42,7 @@ A lightweight, modern Android package distribution client and application store 
 
 ### 3. VelociHue
 
-A fast-paced color reflex arcade game developed for Android devices and Google Play.
+A fast-paced arcade action game engineered in Kotlin Multiplatform and Compose Multiplatform for Android, Android TV, and iOS. It runs a shared deterministic physics loop at 60-120 FPS, features Cloud Firestore schema v5 synchronization, Boost and Overdrive speed surges, and a 29-achievement progression engine.
 
 * **[VelociHue Privacy Policy](/other/veloci-hue/privacy-policy-veloci-hue-game/)**  
   Covers Google Play Games integration, anonymous local high scores, AdMob advertising disclosure, and crash telemetry.

@@ -7,7 +7,7 @@ date = "2026-05-29"
 
 **Terms & Conditions**
 
-These terms and conditions apply to the Open Store app for mobile devices, together with any related services operated by DearDhruv (collectively, the "Application"). DearDhruv is hereby referred to as the "Service Provider".
+These terms and conditions apply to the Open Store: TV Apps & Launcher app (`com.deardhruv.openstore`) for Android TV and Google TV devices, together with any related services operated by Dhruv Patel (DearDhruv, collectively the "Application"). Dhruv Patel is hereby referred to as the "Service Provider".
 
 By downloading or using the Application, you agree to these Terms and Conditions. You should read them carefully before using the Application.
 

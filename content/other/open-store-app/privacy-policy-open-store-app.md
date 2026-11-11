@@ -7,7 +7,7 @@ date = "2026-05-29"
 
 **Privacy Policy**
 
-This privacy policy applies to the Open Store app for mobile devices, together with any related services operated by DearDhruv (collectively, the "Application"). DearDhruv is hereby referred to as the "Service Provider".
+This privacy policy applies to the Open Store: TV Apps & Launcher app (`com.deardhruv.openstore`) for Android TV and Google TV devices, together with any related services operated by Dhruv Patel (DearDhruv, collectively the "Application"). Dhruv Patel is hereby referred to as the "Service Provider".
 
 **Information Collection and Use**
 
