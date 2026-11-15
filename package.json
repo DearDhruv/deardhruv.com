@@ -45,8 +45,8 @@
     "new:post": "node scripts/new-post.js"
   },
   "devDependencies": {
-    "@astrojs/markdown-remark": "^7.3.5",
-    "astro": "^7.4.4",
-    "typescript": "^7.0.2"
+    "@astrojs/markdown-remark": "7.3.5",
+    "astro": "7.4.4",
+    "typescript": "7.0.2"
   }
 }
